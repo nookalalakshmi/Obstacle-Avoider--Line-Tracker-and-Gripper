@@ -1,0 +1,165 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0073)http://svn.killerwolves.net/cgi-bin/viewvc/avr/ctlpanel/usb.h?view=markup -->
+<HTML lang=en xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>[svn] View of /avr/ctlpanel/usb.h</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8"><!-- ViewVC :: http://www.viewvc.org/ -->
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR><LINK 
+href="[svn] View of -avr-ctlpanel-usb_files/styles.css" type=text/css 
+rel=stylesheet></HEAD>
+<BODY>
+<DIV class=vc_navheader>
+<FORM action=/cgi-bin/viewvc/ method=get>
+<TABLE 
+style="PADDING-RIGHT: 0.1em; PADDING-LEFT: 0.1em; PADDING-BOTTOM: 0.1em; PADDING-TOP: 0.1em">
+  <TBODY>
+  <TR>
+    <TD><STRONG><A 
+      href="http://svn.killerwolves.net/cgi-bin/viewvc/">[svn]</A> / <A 
+      href="http://svn.killerwolves.net/cgi-bin/viewvc/avr/">avr</A> / <A 
+      href="http://svn.killerwolves.net/cgi-bin/viewvc/avr/ctlpanel/">ctlpanel</A> 
+      / <A 
+      href="http://svn.killerwolves.net/cgi-bin/viewvc/avr/ctlpanel/usb.h?view=log">usb.h</A> 
+      </STRONG></TD>
+    <TD style="TEXT-ALIGN: right"><STRONG>Repository:</STRONG> <SELECT 
+      onchange=submit() name=root> <OPTION value=*viewroots*>Repository 
+        Listing</OPTION> <OPTGROUP label="Subversion Repositories"><OPTION 
+          selected>svn</OPTION></OPTGROUP></SELECT> <INPUT type=submit value=Go> 
+  </TD></TR></TBODY></TABLE></FORM></DIV>
+<DIV 
+style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FLOAT: right; PADDING-BOTTOM: 5px; PADDING-TOP: 5px"><A 
+href="http://www.viewvc.org/"><IMG height=48 alt="ViewVC logotype" 
+src="[svn] View of -avr-ctlpanel-usb_files/logo.png" width=128></A></DIV>
+<H1>View of /avr/ctlpanel/usb.h</H1>
+<P style="MARGIN: 0px"><A 
+href="http://svn.killerwolves.net/cgi-bin/viewvc/avr/ctlpanel/"><IMG height=16 
+alt="Parent Directory" 
+src="[svn] View of -avr-ctlpanel-usb_files/back_small.png" width=16> Parent 
+Directory</A> | <A 
+href="http://svn.killerwolves.net/cgi-bin/viewvc/avr/ctlpanel/usb.h?view=log"><IMG 
+height=16 alt="Revision Log" src="[svn] View of -avr-ctlpanel-usb_files/log.png" 
+width=16> Revision Log</A> </P>
+<HR>
+
+<DIV class=vc_summary>Revision <A 
+href="http://svn.killerwolves.net/cgi-bin/viewvc?view=rev&amp;revision=25"><STRONG>25</STRONG></A> 
+- (<A 
+href="http://svn.killerwolves.net/cgi-bin/viewvc/avr/ctlpanel/usb.h?revision=25"><STRONG>download</STRONG></A>) 
+(<A 
+href="http://svn.killerwolves.net/cgi-bin/viewvc/avr/ctlpanel/usb.h?revision=25&amp;content-type=text%2Fplain"><STRONG>as 
+text</STRONG></A>) (<A 
+href="http://svn.killerwolves.net/cgi-bin/viewvc/avr/ctlpanel/usb.h?annotate=25"><STRONG>annotate</STRONG></A>) 
+<BR><EM>Wed Mar 26 13:33:11 2008 UTC</EM> (8 months, 4 weeks ago) by 
+<EM>klightspeed</EM> <BR>File size: 2244 byte(s) <PRE class=vc_log>Initial import of miscellaneous programming adventures
+</PRE></DIV>
+<DIV id=vc_markup><PRE><PRE>#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_CMD</FONT> 0x36
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_RD</FONT> 0x35
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_WR</FONT> 0x34
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_SEL_EP0OUT</FONT>		0x02
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_SEL_EP0IN</FONT>		0x03
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_SEL_EP1IN</FONT>		0x04
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_SEL_EP1OUT</FONT>		0x05
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_SEL_EP2OUT</FONT>		0x06
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_SEL_EP2IN</FONT>		0x07
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_SEL_EP3OUT</FONT>		0x08
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_SEL_EP3IN</FONT>		0x09
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_TRXSTAT_EP0OUT</FONT>	0x42
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_TRXSTAT_EP0IN</FONT>	0x43
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_TRXSTAT_EP1IN</FONT>	0x44
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_TRXSTAT_EP1OUT</FONT>	0x45
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_TRXSTAT_EP2OUT</FONT>	0x46
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_TRXSTAT_EP2IN</FONT>	0x47
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_TRXSTAT_EP3OUT</FONT>	0x48
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_TRXSTAT_EP3IN</FONT>	0x49
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_STAT_EP0OUT</FONT>		0x82
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_STAT_EP0IN</FONT>		0x83
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_STAT_EP1IN</FONT>		0x84
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_STAT_EP1OUT</FONT>		0x85
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_STAT_EP2OUT</FONT>		0x86
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_STAT_EP2IN</FONT>		0x87
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_STAT_EP3OUT</FONT>		0x88
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_STAT_EP3IN</FONT>		0x89
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_SET_HUB_ADDR</FONT> 	0xD0
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_SET_FN1_ADDR</FONT> 	0xD1
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_SET_FN2_ADDR</FONT> 	0xD2
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_SET_FN3_ADDR</FONT> 	0xD3
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_FN_ENABLE</FONT>		7
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_SET_EP_ENABLE</FONT> 	0xD8
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_EP1_ENABLE</FONT>		1
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_EP2_ENABLE</FONT>		2
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_EP3_ENABLE</FONT>		3
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_BUFFER</FONT>		0xF0
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_ACK</FONT>			0xF1
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_CLRBUF</FONT>		0xF2
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_SET_MODE</FONT> 		0xF3
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_MODE_EMBEDDED</FONT>	7
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_MODE_SOFTCONN</FONT>	4
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_MODE_DEBUG</FONT>		3
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_MODE_CLKRUN</FONT>		2
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_MODE_NOLZCLK</FONT>	1
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_MODE_REMWAKE</FONT>	0
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_READ_INTR_REG</FONT>	0xF4
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_INTR_EP0OUT</FONT>		2
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_INTR_EP0IN</FONT>		3
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_INTR_EP1IN</FONT>		4
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_INTR_EP1OUT</FONT>		5
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_INTR_EP2OUT</FONT>		6
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_INTR_EP2IN</FONT>		7
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_INTR_EP3OUT</FONT>		8
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_INTR_EP3IN</FONT>		9
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_INTR_RESET</FONT>		14
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_FRAMENO</FONT>		0xF5
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_RESUME</FONT>		0xF6
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_VALIDATE</FONT>		0xFA
+
+<B><FONT color=#228b22>void</FONT></B> <B><FONT color=#0000ff>usb_i2c_cmd</FONT></B> (uint8_t cmd);
+<B><FONT color=#228b22>int</FONT></B> <B><FONT color=#0000ff>usb_i2c_send</FONT></B> (uint8_t cmd, uint8_t len, uint8_t *data);
+<B><FONT color=#228b22>void</FONT></B> <B><FONT color=#0000ff>usb_i2c_recv</FONT></B> (uint8_t cmd, uint8_t len, uint8_t *data);
+<B><FONT color=#228b22>void</FONT></B> <B><FONT color=#0000ff>usb_reset</FONT></B> (<B><FONT color=#228b22>void</FONT></B>);
+<B><FONT color=#228b22>int</FONT></B> <B><FONT color=#0000ff>usb_send</FONT></B> (uint8_t ep, uint8_t len, uint8_t *data);
+<B><FONT color=#228b22>int</FONT></B> <B><FONT color=#0000ff>usb_recv</FONT></B> (uint8_t ep, uint8_t *data);
+<B><FONT color=#228b22>int</FONT></B> <B><FONT color=#0000ff>usb_stat</FONT></B> (uint8_t ep);
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_STAT_SETUP</FONT>		2
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_STAT_STALLED</FONT>	3
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_STAT_PKT</FONT>		4
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_STAT_BUFFULL</FONT>	5
+
+<B><FONT color=#228b22>int</FONT></B> <B><FONT color=#0000ff>usb_trxstat</FONT></B> (uint8_t ep);
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_TRXSTAT_SUCCESS</FONT>	0
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_TRXSTAT_SETUP</FONT>	5
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_TRXSTAT_PKT</FONT>		6
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_TRXSTAT_PRVNR</FONT>	7
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_TRXSTAT_STALL</FONT>	0
+
+
+</PRE>
+</PRE></DIV>
+<HR>
+
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <ADDRESS><A href="mailto:svn@killerwolves.net">Subversion 
+      Administrator</A></ADDRESS></TD>
+    <TD style="TEXT-ALIGN: right"><STRONG><A 
+      href="http://svn.killerwolves.net/cgi-bin/viewvc/*docroot*/help_rootview.html">ViewVC 
+      Help</A></STRONG></TD></TR>
+  <TR>
+    <TD>Powered by <A href="http://viewvc.tigris.org/">ViewVC 1.0.5</A></TD>
+    <TD style="TEXT-ALIGN: right">&nbsp;</TD></TR></TBODY></TABLE></BODY></HTML>

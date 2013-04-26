@@ -1,0 +1,295 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: Basics of Design Engineering - Electrical/Electronic - Electric Motors - Introduction to Electric Motors
+Date: Sat, 11 Apr 2009 15:27:16 +0530
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://machinedesign.com/BDE/Electrical/bdeee1/bdeee1_1.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5579
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Basics of Design Engineering - Electrical/Electronic =
+- Electric Motors - Introduction to Electric Motors</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<META content=3D"MSHTML 6.00.6000.16788" name=3DGENERATOR></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD></FONT><FONT face=3DArial,Verdana,SanSerif>
+      <H2>MOTORS</H2></FONT>
+      <P><FONT class=3Dintro face=3DArial,Verdana,SanSerif =
+size=3D2><B>Electric=20
+      motors, both ac and dc types, come in many shapes and sizes. Some =
+are=20
+      standardized versions for general-purpose applications. Others are =
+
+      intended for specific tasks. In any case, motors should be =
+selected to=20
+      satisfy the dynamic requirements of the machines on which they are =
+applied=20
+      without exceeding rated motor temperature. Thus, the first and =
+most=20
+      important step in motor selection is determining load =
+characteristics --=20
+      torque and speed versus time. Selection is also based on mission =
+goals,=20
+      power available, and cost.</B></FONT></P>
+      <P>
+      <HR width=3D"100%" color=3D#0033ff SIZE=3D1>
+
+      <P></P>
+      <P><FONT class=3Dbody face=3DArial,Verdana,SanSerif>Starting and =
+running=20
+      torque are the first parameters to consider when sizing a motor. =
+Starting=20
+      torque requirements can vary from a small percentage of full load =
+to a=20
+      value several times full-load torque. Starting torque varies =
+because of a=20
+      change in load conditions or the mechanical nature of the machine. =
+The=20
+      latter could be caused by the lubricant, wear of moving parts, or =
+other=20
+      reasons.</FONT></P>
+      <P><FONT class=3Dbody face=3DArial,Verdana,SanSerif>Motor torque =
+supplied to=20
+      the driven machine must be more than that required from start to =
+full=20
+      speed. The greater the reserve torque, the more rapid the=20
+      acceleration.</FONT></P>
+      <P><FONT class=3Dbody face=3DArial,Verdana,SanSerif>Drive systems =
+that use=20
+      gear reducers have parts that rotate at different speeds. To =
+calculate=20
+      acceleration torque required for these systems, rotating =
+components must=20
+      be reduced to a common base. The part inertias are usually =
+converted to=20
+      their equivalent value at the drive shaft. Equivalent inertia=20
+      <I>W</I><SUB>2</SUB><I>K</I><SUB>2</SUB><SUP>2</SUP> of the load =
+only is=20
+      found from:<BR><BR></FONT></P>
+      <CENTER>
+      <P><FONT class=3Dbody=20
+      =
+face=3DArial,Verdana,SanSerif><I><B>W</B></I><SUB><B>2</B></SUB><I><B>K</=
+B></I><B><SUB>2</SUB><SUP>2</SUP>=20
+      =
+=3D(W<SUB>1</SUB>K<SUB>1</SUB><SUP>2</SUP>)(N<SUB>1</SUB>/N<SUB>2</SUB>)<=
+SUP>2</SUP></B></FONT></P></CENTER>
+      <P><FONT class=3Dbody face=3DArial,Verdana,SanSerif>where=20
+      <I>W</I><SUB>1</SUB><I>K</I><SUP>2</SUP><SUB>1</SUB> =3D load =
+inertia in=20
+      lb-ft<SUP>2</SUP>, <I>N</I><SUB>1</SUB> =3D load speed in rpm, and =
+
+      <I>N</I><SUB>2</SUB> =3D motor speed in rpm.</FONT></P>
+      <P><FONT class=3Dbody face=3DArial,Verdana,SanSerif>Bodies having=20
+      straight-line motion are often connected to rotating driving units =
+by=20
+      rack-and-pinion, cable, or cam mechanisms. For these parts, the =
+equivalent=20
+      <I>WK</I><SUP>2</SUP> is found from:<BR><BR></FONT></P>
+      <CENTER>
+      <P><FONT class=3Dbody =
+face=3DArial,Verdana,SanSerif><I><B>WK<SUP>2</SUP> =3D=20
+      W(S/2=CE=A0N)<SUP>2</SUP></B></I></FONT></P></CENTER>
+      <P><FONT class=3Dbody face=3DArial,Verdana,SanSerif><BR><BR>where =
+<I>W</I> =3D=20
+      load weight, <I>S</I> =3D translation speed in fpm, =CE=A0 is pi, =
+and <I>N</I> =3D=20
+      rotational speed in rpm. <!-- end original content =
+--></FONT></P></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD>
+      <P><FONT class=3Dbody =
+face=3DArial,Verdana,SanSerif><B>Acceleration=20
+      time:</B></FONT><BR><FONT class=3Dbody=20
+      face=3DArial,Verdana,SanSerif>Acceleration time of a motor-driven =
+machine is=20
+      directly proportional to total inertia and inversely proportional =
+to the=20
+      torque. For motors with constant acceleration torque, acceleration =
+time=20
+      is:<BR></FONT>
+      <CENTER>
+      <P><FONT class=3Dbody face=3DArial,Verdana,SanSerif><IMG =
+height=3D45=20
+      alt=3D"WK equation" src=3D"" width=3D113></FONT></P></CENTER>
+      <P><FONT class=3Dbody face=3DArial,Verdana,SanSerif>where=20
+      <I>WK</I><SUP>2</SUP> =3D rotational inertia in lb-ft<SUP>2</SUP>, =
+
+      (<I>N</I><SUB>2</SUB> - <I>N</I><SUB>1</SUB>) =3D the speed =
+difference, and=20
+      <I>T<SUB>x</SUB></I> =3D acceleration torque in lb-ft. For =
+translating=20
+      bodies, acceleration time is:<BR></FONT></P>
+      <CENTER>
+      <P><FONT class=3Dbody face=3DArial,Verdana,SanSerif><IMG =
+height=3D47 alt=3DMotors=20
+      src=3D"" width=3D103 align=3DNo border=3D0></FONT></P></CENTER>
+      <P><FONT class=3Dbody face=3DArial,Verdana,SanSerif>where <I>W</I> =
+=3D weight of=20
+      the load in lb, (<I>S</I><SUB>2</SUB> - <I>S</I><SUB>1</SUB>) =3D =
+the=20
+      translation speed difference, and <I>F<SUB>x</SUB></I> =3D =
+translation force=20
+      in lb.</FONT></P>
+      <P><FONT class=3Dbody face=3DArial,Verdana,SanSerif>An =
+approximation method is=20
+      necessary to find acceleration time if acceleration torque is not =
+linear=20
+      during speed increase. The quickest method is to break up the =
+speed versus=20
+      torque curves of the driving unit and the driven machine into =
+segments and=20
+      calculate acceleration time for each segment. Accurate =
+acceleration times=20
+      usually result. <!-- end original content --></FONT></P></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD><FONT class=3Dbody face=3DArial,Verdana,SanSerif>
+      <P><B>Power rating:</B><BR>The horsepower required to drive a =
+machine is=20
+      typically referred to as motor load. The most common equation for =
+power=20
+      based on torque and rotational speed is: hp =3D (torque X =
+rpm)/5,250.=20
+      <P>If load is not constant and follows a definite cycle, a =
+horsepower=20
+      versus time curve for the driven machine is helpful. From this =
+curve both=20
+      peak and rms horsepower can be determined. Rms load horsepower =
+indicates=20
+      the necessary continuous motor rating. Peak load horsepower is not =
+
+      necessarily an indication of the required motor rating. However, =
+when a=20
+      peak load is maintained for a period of time, the motor rating =
+usually=20
+      should not be less than peak load horsepower. =
+</FONT></P></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD><FONT class=3Dbody face=3DArial,Verdana,SanSerif><B>Duty=20
+      cycle:</B><BR>Continuous steady-running loads over long periods =
+are=20
+      demonstrated by fans and blowers. On the other hand, machines with =
+
+      flywheels may have wide variations in running loads. Often, the =
+flywheel=20
+      supplies the energy to do the work, and the motor does nothing but =
+restore=20
+      lost energy to the flywheel. Therefore, choosing the proper motor =
+also=20
+      depends on whether the load is steady, varies, follows a =
+repetitive cycle=20
+      of variation, or has pulsating torque or shocks.=20
+      <P>For example, motors that run continuously in fans and blowers =
+for hours=20
+      or days may be selected on the basis of continuous load. But =
+devices like=20
+      automatically controlled compressors and pumps start a number of =
+times per=20
+      hour. And motors in some machine tools start and stop many times =
+per=20
+      minute.=20
+      <P>Duty cycle is a fixed repetitive load pattern over a given =
+period of=20
+      time which is expressed as the ratio of on-time to cycle period. =
+When=20
+      operating cycle is such that the motor operates at idle or a =
+reduced load=20
+      for more than 25% of the time, duty cycle becomes a factor in =
+sizing the=20
+      motor. Also, energy required to start a motor (that is, =
+accelerating the=20
+      inertia of the motor as well as the driven load) is much higher =
+than for=20
+      steady-state operation, so frequent starting could overheat the =
+motor.=20
+      <P>For most motors (except squirrel-cage motors during =
+acceleration and=20
+      plugging) current is almost directly proportional to developed =
+torque. At=20
+      constant speed, torque is proportional to horsepower. For =
+accelerating=20
+      loads and overloads on motors that have considerable droop, =
+equivalent=20
+      horsepower is used as the load factor. The next step in sizing the =
+motor=20
+      is to examine motor performance curves to see if the motor has =
+enough=20
+      starting torque to overcome machine static friction, to accelerate =
+the=20
+      load to full running speed, and to handle maximum overload.=20
+  </FONT></P></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD><FONT class=3Dbody face=3DArial,Verdana,SanSerif><B>Service=20
+      factors:</B><BR>A change in NEMA standards for service factors and =
+
+      temperature rise has been brought about because of better =
+insulation. For=20
+      instance, a 1.15 service factor -- once standard for all open =
+motors -- is=20
+      no longer standard above 200 hp.=20
+      <P>Temperature rises are measured by the resistance method in the=20
+      temperature rise table. Motor nameplate temperature rise is always =
+
+      expressed for the maximum allowable load. That is, if the motor =
+has a=20
+      service factor greater than unity, the nameplate temperature rise =
+is=20
+      expressed for the overload. Two Class-B insulated motors having =
+1.15 and=20
+      1.25 service factors will, therefore, each be rated for a =
+90=C2=B0C rise. But=20
+      the second motor will have to be larger than the first in order to =
+
+      dissipate the additional heat it generates at 125% load.=20
+      <P>Service factor indicates how much over the nameplate rating a =
+motor can=20
+      be driven without overheating. NEMA Standard MGI-143 defines =
+service=20
+      factor of an ac motor as "...a multiplier which, when applied to =
+the rated=20
+      horsepower, indicates a permissible horsepower loading which may =
+be=20
+      carried under the conditions specified for the service factor..." =
+In other=20
+      words, multiplying nameplate horsepower by the service factor =
+tells how=20
+      much the motor can be overloaded without overheating. Generally, =
+service=20
+      factors:=20
+      <UL>
+        <LI>Handle a known overload, which is occasional.=20
+        <LI>Provide a factor of safety where the environment or service=20
+        condition is not well defined, especially for general-purpose =
+motors.=20
+        <LI>Obtain cooler-than-normal motor operation at rated load, =
+thus=20
+        lengthening insulation life. </LI></UL></FONT></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD><FONT class=3Dbody face=3DArial,Verdana,SanSerif><B>Motor=20
+      efficiency:</B><BR>Small universal motors have an efficiency of =
+about 30%,=20
+      while 95% efficiencies are common for three-phase machines. In=20
+      less-efficient motors, the amount of power wasted can be reduced =
+by more=20
+      careful application and improved motor design.=20
+      <P>Motor efficiency also depends on actual motor load versus rated =
+load,=20
+      being greatest near rated load and falling off rapidly for under =
+and=20
+      overload conditions. =
+</FONT></P></TD></TR></TBODY></TABLE></BODY></HTML>

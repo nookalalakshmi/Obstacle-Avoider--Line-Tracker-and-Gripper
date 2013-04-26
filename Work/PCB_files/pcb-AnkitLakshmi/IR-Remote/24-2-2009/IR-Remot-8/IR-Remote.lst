@@ -1,0 +1,148 @@
+   1               		.file	"IR-Remote.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	__vector_11
+  20               	__vector_11:
+  21               	.LFB7:
+  22               	.LM1:
+  23 0000 1F92      		push __zero_reg__
+  24 0002 0F92      		push r0
+  25 0004 0FB6      		in r0,__SREG__
+  26 0006 0F92      		push r0
+  27 0008 1124      		clr __zero_reg__
+  28 000a 8F93      		push r24
+  29               	/* prologue: Signal */
+  30               	/* frame size = 0 */
+  31               	.LM2:
+  32 000c C29A      		sbi 56-32,2
+  33               	.LM3:
+  34 000e 83E1      		ldi r24,lo8(19)
+  35 0010 82BF      		out 82-32,r24
+  36               	/* epilogue start */
+  37               	.LM4:
+  38 0012 8F91      		pop r24
+  39 0014 0F90      		pop r0
+  40 0016 0FBE      		out __SREG__,r0
+  41 0018 0F90      		pop r0
+  42 001a 1F90      		pop __zero_reg__
+  43 001c 1895      		reti
+  44               	.LFE7:
+  46               	.global	main
+  48               	main:
+  49               	.LFB8:
+  50               	.LM5:
+  51               	/* prologue: function */
+  52               	/* frame size = 0 */
+  53               	.LM6:
+  54 001e 14BA      		out 52-32,__zero_reg__
+  55               	.LM7:
+  56 0020 87EC      		ldi r24,lo8(-57)
+  57 0022 87BB      		out 55-32,r24
+  58               	.LM8:
+  59 0024 81EF      		ldi r24,lo8(-15)
+  60 0026 81BB      		out 49-32,r24
+  61               	.LM9:
+  62 0028 81E0      		ldi r24,lo8(1)
+  63 002a 89BF      		out 89-32,r24
+  64               	.LM10:
+  65 002c 82E0      		ldi r24,lo8(2)
+  66 002e 83BF      		out 83-32,r24
+  67               	.LM11:
+  68 0030 83E1      		ldi r24,lo8(19)
+  69 0032 82BF      		out 82-32,r24
+  70               	.LM12:
+  71               	/* #APP */
+  72               	 ;  53 "IR-Remote.c" 1
+  73 0034 7894      		sei
+  74               	 ;  0 "" 2
+  75               	/* #NOAPP */
+  76 0036 00C0      		rjmp .L16
+  77               	.LVL0:
+  78               	.L6:
+  79 0038 80E0      		ldi r24,lo8(0)
+  80 003a 90E0      		ldi r25,hi8(0)
+  81               	.LVL1:
+  82               	.L5:
+  83               	.LBB2:
+  84               	.LBB3:
+  85               	.LM13:
+  86 003c C19A      		sbi 56-32,1
+  87               	.LM14:
+  88 003e 9098      		cbi 50-32,0
+  89               	.LM15:
+  90 0040 0196      		adiw r24,1
+  91 0042 47E2      		ldi r20,hi8(10000)
+  92 0044 8031      		cpi r24,lo8(10000)
+  93 0046 9407      		cpc r25,r20
+  94 0048 01F4      		brne .L5
+  95               	.LBE3:
+  96               	.LM16:
+  97 004a 2F5F      		subi r18,lo8(-(1))
+  98 004c 3F4F      		sbci r19,hi8(-(1))
+  99               	.LVL2:
+ 100               	.L14:
+ 101 004e 2436      		cpi r18,100
+ 102 0050 3105      		cpc r19,__zero_reg__
+ 103 0052 04F0      		brlt .L6
+ 104 0054 00C0      		rjmp .L17
+ 105               	.LVL3:
+ 106               	.L8:
+ 107               	.LBE2:
+ 108               	.LBB4:
+ 109               	.LBB5:
+ 110               	.LM17:
+ 111 0056 C198      		cbi 56-32,1
+ 112               	.LM18:
+ 113 0058 909A      		sbi 50-32,0
+ 114               	.LM19:
+ 115 005a 0196      		adiw r24,1
+ 116 005c 47E2      		ldi r20,hi8(10000)
+ 117 005e 8031      		cpi r24,lo8(10000)
+ 118 0060 9407      		cpc r25,r20
+ 119 0062 01F4      		brne .L8
+ 120               	.LBE5:
+ 121               	.LM20:
+ 122 0064 2F5F      		subi r18,lo8(-(1))
+ 123 0066 3F4F      		sbci r19,hi8(-(1))
+ 124 0068 2436      		cpi r18,100
+ 125 006a 3105      		cpc r19,__zero_reg__
+ 126 006c 01F4      		brne .L9
+ 127               	.L16:
+ 128 006e 20E0      		ldi r18,lo8(0)
+ 129 0070 30E0      		ldi r19,hi8(0)
+ 130               	.LVL4:
+ 131 0072 00C0      		rjmp .L14
+ 132               	.LVL5:
+ 133               	.L17:
+ 134 0074 20E0      		ldi r18,lo8(0)
+ 135 0076 30E0      		ldi r19,hi8(0)
+ 136               	.LVL6:
+ 137               	.L9:
+ 138 0078 80E0      		ldi r24,lo8(0)
+ 139 007a 90E0      		ldi r25,hi8(0)
+ 140               	.LVL7:
+ 141 007c 00C0      		rjmp .L8
+ 142               	.LBE4:
+ 143               	.LFE8:
+ 177               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 IR-Remote.c
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/cc7UgmDd.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/cc7UgmDd.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/cc7UgmDd.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/cc7UgmDd.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/cc7UgmDd.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/cc7UgmDd.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/cc7UgmDd.s:20     .text:00000000 __vector_11
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/cc7UgmDd.s:48     .text:0000001e main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

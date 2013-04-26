@@ -1,0 +1,72 @@
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 10px; PADDING-BOTTOM: 0px; MARGIN: 0px 20px 20px; LINE-HEIGHT: 15px; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Geneva, Arial, sans-serif; BACKGROUND-COLOR: #aaa; xxxbackground: url(bg.gif)
+}
+H1 {
+	COLOR: #555; FONT-FAMILY: Georgia, Times, serif
+}
+H2 {
+	COLOR: #555; FONT-FAMILY: Georgia, Times, serif
+}
+H3 {
+	COLOR: #555; FONT-FAMILY: Georgia, Times, serif
+}
+P UL LI {
+	COLOR: #555
+}
+A {
+	COLOR: #111
+}
+HR {
+	BORDER-TOP: #555 1px dotted
+}
+A:link {
+	PADDING-BOTTOM: 0px; BORDER-BOTTOM: #bbb 1px solid; TEXT-DECORATION: none
+}
+A:visited {
+	PADDING-BOTTOM: 0px; BORDER-BOTTOM: #bbb 1px solid; TEXT-DECORATION: none
+}
+A:active {
+	PADDING-BOTTOM: 0px; BORDER-BOTTOM: #bbb 1px solid; TEXT-DECORATION: none
+}
+A:hover {
+	PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #ddd; TEXT-DECORATION: none; BORDER-BOTTOM-STYLE: none
+}
+A.selflink {
+	FONT-WEIGHT: bold; BORDER-BOTTOM: white 0px solid; TEXT-DECORATION: none
+}
+#page {
+	WIDTH: 700px
+}
+#pageheader {
+	PADDING-TOP: 40px; HEIGHT: 60px; TEXT-ALIGN: right
+}
+#pageheader .title {
+	FONT-WEIGHT: bold; FONT-SIZE: 38px; FLOAT: left; MARGIN-LEFT: 20px; COLOR: #fff; FONT-FAMILY: Georgia, Times, serif; LETTER-SPACING: 0px; TEXT-ALIGN: left; text-shadow: #aaa 0px 0px 5px
+}
+#pageheader .title A {
+	COLOR: #fff; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+#pageheader .title A:hover {
+	COLOR: #fff; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: transparent; BORDER-BOTTOM-STYLE: none
+}
+#pageheader .search {
+	
+}
+#pagenav {
+	BORDER-RIGHT: #bbbbbb 1px solid; PADDING-RIGHT: 20px; BORDER-TOP: #bbbbbb 1px solid; PADDING-LEFT: 20px; PADDING-BOTTOM: 10px; BORDER-LEFT: #bbbbbb 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #bbbbbb 1px solid; BACKGROUND-COLOR: #fff
+}
+#pagenav P {
+	DISPLAY: inline
+}
+#pagetext {
+	BORDER-RIGHT: #bbb 1px solid; PADDING-RIGHT: 20px; BORDER-TOP: #bbb 1px solid; PADDING-LEFT: 20px; PADDING-BOTTOM: 10px; BORDER-LEFT: #bbb 1px solid; COLOR: #555; PADDING-TOP: 10px; BORDER-BOTTOM: #bbb 1px solid; BACKGROUND-COLOR: #fff
+}
+#pagefooter {
+	CLEAR: both; PADDING-LEFT: 20px; PADDING-TOP: 15px; HEIGHT: 30px
+}
+#pagefooter A {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; COLOR: #666; BORDER-TOP-STYLE: none; PADDING-TOP: 2px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+#pagefooter A:hover {
+	COLOR: #111; BACKGROUND-COLOR: #eee
+}

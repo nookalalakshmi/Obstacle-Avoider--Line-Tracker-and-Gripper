@@ -1,0 +1,949 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0065)http://www.roboticsconnection.com/p-67-line-following-sensor.aspx -->
+<HTML xmlns="https://www.w3.org/1999/xhtml"><HEAD class=head><TITLE>I2C Line Following Robot Sensor</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="I2C Line Following Robot Sensor" name=description>
+<META 
+content="I2C Line Following Sensor, Line Following Sensor, Line Follower, Robot Line Following Sensor, Robot Line Follower, Line Following" 
+name=keywords>
+<META content=K62hHzciXAPvIcl+obNTpXaKxR9GdzoPMnJGo8P0Qvk= name=verify-v1><LINK 
+href="I2C Line Following Robot Sensor_files/style.css" type=text/css 
+rel=stylesheet><LINK href="I2C Line Following Robot Sensor_files/Tabs.css" 
+type=text/css rel=stylesheet><LINK 
+href="I2C Line Following Robot Sensor_files/rotator.css" type=text/css 
+rel=stylesheet><LINK href="I2C Line Following Robot Sensor_files/rc.css" 
+type=text/css rel=stylesheet>
+<SCRIPT src="I2C Line Following Robot Sensor_files/formValidate.js" 
+type=text/javascript></SCRIPT>
+<LINK href="favicon.ico" rel="shortcut icon"><LINK href="animated_favicon1.gif" 
+type=image/gif rel=icon>
+<SCRIPT type=text/javascript>
+        <!--
+        var displayTime, speed, wait, banner1, banner2, link1, link2, bannerIndex, bannerLocations, bannerURLs;
+
+        function initVar() {
+        
+          // Enter the location of the banner graphics in the array below.
+          bannerLocations = new Array(
+            "skins/skin_3/images/rc_banners/SerializerWLBanner_550x100.jpg",
+            "skins/skin_3/images/rc_banners/TraxsterMFKitBanner_550x100.jpg",
+            "skins/skin_3/images/rc_banners/StingerKitBanner_550x100.jpg",
+            "skins/skin_3/images/rc_banners/RangeWizardBanner_550x100.jpg",
+            "skins/skin_3/images/rc_banners/RelayWizardBanner_550x100.jpg",
+            "skins/skin_3/images/rc_banners/Sharp700kBanner_550x100.jpg",
+            "skins/skin_3/images/rc_banners/SensorPlatform_550x100.jpg",
+            "skins/skin_3/images/rc_banners/I2cADIOBanner_550x100.jpg");
+        
+          // Enter the URL's to which the banners will link to in the array below.
+          bannerURLs = new Array(
+            "http://www.RoboticsConnection.com/p-16-serializer-net-robot-controller.aspx",
+            "http://www.RoboticsConnection.com/p-85-traxster-net-micro-framework-robot-kit.aspx",
+            "http://www.RoboticsConnection.com/p-78-stinger-windowsce-kit.aspx",
+            "http://www.roboticsconnection.com/p-86-rangewizard-beta.aspx",
+            "http://www.RoboticsConnection.com/c-5-robot-controllers.aspx",
+            "http://www.roboticsconnection.com/p-87-sharp-gp2y0a700k-ir-sensor.aspx",
+            "http://www.roboticsconnection.com/p-88-sensor-platform.aspx",
+            "http://www.RoboticsConnection.com/c-5-robot-controllers.aspx");
+            
+          imgCnt = bannerLocations.length
+          bannerIndex = imgCnt-1;
+        }
+
+        function rotate() {
+            if (document.images) {
+                bannerIndex++
+               
+                if (bannerIndex == imgCnt)
+                {
+                    bannerIndex = 0
+                }
+                document.adBanner.src=bannerLocations[bannerIndex]
+                setTimeout("rotate()", 4 * 1000)   
+            }
+        }
+        
+        function nextLink()
+        {
+            document.location.href = bannerURLs[bannerIndex]
+        }
+        -->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY bottomMargin=10 bgColor=#ffffff leftMargin=0 topMargin=10 
+onload="initVar(); rotate()" rightMargin=0 marginheight="10" marginwidth="10"><!-- PAGE INVOCATION: '/p-67-line-following-sensor.aspx' --><!-- PAGE REFERRER: '' --><!-- STORE LOCALE: 'en-US' --><!-- CUSTOMER LOCALE: 'en-US' --><!-- STORE VERSION: 'AspDotNetStorefront ML 7.0.2.5/7.0.2.5' --><!-- CACHE MENUS: 'True' --><!-- to center your pages, set text-align: center --><!-- to left justify your pages, set text-align: center --><!-- if using dynamic full width page sizes, the left-right align has no effect (obviously) -->
+<DIV 
+style="MARGIN-TOP: 10px; MARGIN-BOTTOM: 10px; MARGIN-LEFT: auto; TEXT-ALIGN: center" 
+bgcolor="#FFFFFF"><!-- for dynamic full width page sizes, leave centerdiv width at 100% --><!-- for fixed width page sizes, set centerdiv width:800px (or whatever you want) --><!-- to left align, set margin-right: auto; --><!-- to center align, set margin-left: auto; margin-right: auto; -->
+<DIV id=centerdiv style="WIDTH: 800px; MARGIN-RIGHT: auto" bgcolor="#FFFFFF"><!-- Main Logo Area -->
+<TABLE cellSpacing=0 cellPadding=0 width=800 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD id=header vAlign=top align=left width=570 height=70><A 
+      href="http://www.roboticsconnection.com/default.aspx"><IMG 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      alt="Go to Homepage" 
+      src="I2C Line Following Robot Sensor_files/RC_Logo_Homepage.jpg"></A> </TD>
+    <TD id=cartInfoText><A class=Nav 
+      href="http://www.roboticsconnection.com/shoppingcart.aspx">Shopping 
+      Cart</A> | <A class=Nav 
+      href="http://www.roboticsconnection.com/search.aspx">Search</A><BR><BR><A 
+      class=Nav 
+      href="http://www.roboticsconnection.com/shoppingcart.aspx">Shopping Cart 
+      items</A> (0) </TD></TR></TBODY></TABLE><!-- Horizontal Navigation Bar Area -->
+<TABLE cellSpacing=0 cellPadding=0 width=800 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD id=horizontalNavBar vAlign=top 
+    background="I2C Line Following Robot Sensor_files/Horizontal_Nav_Background.jpg" 
+    height=40>
+      <SCRIPT src="I2C Line Following Robot Sensor_files/A573G988.js" 
+      type=text/javascript></SCRIPT>
+
+      <SCRIPT src="I2C Line Following Robot Sensor_files/A573S188.js" 
+      type=text/javascript></SCRIPT>
+
+      <SCRIPT src="I2C Line Following Robot Sensor_files/A573Z388.js" 
+      type=text/javascript></SCRIPT>
+
+      <SCRIPT src="I2C Line Following Robot Sensor_files/A573W888.js" 
+      type=text/javascript></SCRIPT>
+
+      <SCRIPT src="I2C Line Following Robot Sensor_files/A573Q288.js" 
+      type=text/javascript></SCRIPT>
+
+      <SCRIPT src="I2C Line Following Robot Sensor_files/A573R388.js" 
+      type=text/javascript></SCRIPT>
+
+      <SCRIPT type=text/javascript>
+//<![CDATA[
+/*** ComponentArt Web.UI client-side storage for PageMenu ***/
+window.ComponentArt_Storage_PageMenu=[['p0',-1,[],[[30,'Home'],[17,'default.aspx'],[40,'TopItemLook']]],['p1',-1,[],[[30,'Distributors'],[17,'t-distributors.aspx'],[40,'TopItemLook']]],['p2',-1,[],[[30,'Contact Us'],[17,'t-contact.aspx'],[40,'TopItemLook']]],['p3',-1,[],[[30,'User Forums'],[17,'userForums'],[40,'TopItemLook']]],['p4',-1,[],[[30,'Blog'],[17,'http://robotics-connection.blogspot.com/'],[40,'TopItemLook']]],['p5',-1,[],[[30,'Press'],[17,'t-press.aspx'],[40,'TopItemLook']]]];
+window.ComponentArt_ItemLooks_PageMenu=[[0,'DefaultItemLook',1,'MenuItem',2,'MenuItemHover',5,2,6,5,7,15,8,7,9,'MenuItemDown',10,'MenuItemDown',27,0,28,0],[0,'TopItemLook',1,'TopMenuItem',2,'TopMenuItemHover',5,9,6,12,7,12,8,7,27,0,28,0],[0,'ScrollUpItemLook',1,'ScrollItem',2,'ScrollItemH',3,13,4,15,9,'ScrollItemA',23,'scroll_up.gif',27,0,28,0],[0,'ScrollDownItemLook',1,'ScrollItem',2,'ScrollItemH',3,13,4,15,9,'ScrollItemA',23,'scroll_down.gif',27,0,28,0],[0,'BreakItem',3,1,4,'100%',23,'break.gif',27,0,28,0]];
+window.ComponentArt_ScrollLooks_PageMenu=[[0,'ScrollDownItemLook'],[0,'ScrollUpItemLook']];
+
+//]]>
+</SCRIPT>
+
+      <DIV id=PageMenu></DIV><INPUT id=PageMenu_ContextData type=hidden 
+      name=PageMenu_ContextData>
+      <SCRIPT type=text/javascript>
+//<![CDATA[
+/*** ComponentArt_Menu_Startup_PageMenu 2007_1_1590_2 ***/
+window.ComponentArt_Init_PageMenu = function() {
+if (!(window.cart_menu_kernel_loaded && window.cart_menu_support_loaded))
+{
+	setTimeout('ComponentArt_Init_PageMenu()', 500);
+	return;
+}
+if (!(window.cart_menu_documentmousedownhandled))
+{
+ComponentArt_AddEventHandler(document,'mousedown',new Function('event','ComponentArt_Menu_DocumentMouseDown(event)'));
+window.cart_menu_documentmousedownhandled = true;
+}
+window.PageMenu = new ComponentArt_Menu('PageMenu',ComponentArt_Storage_PageMenu,ComponentArt_ItemLooks_PageMenu,ComponentArt_ScrollLooks_PageMenu,null,false);
+PageMenu.Postback = function() { __doPostBack('PageMenu','') };
+PageMenu.PropertyStorageArray = [
+['ApplicationPath','/'],['AutoPostBackOnSelect',false],['AutoPostBackOnCheckChanged',false],['BaseUrl',''],['CascadeCollapse',false],['ClientEvents',null],['ClientSideOnContextMenuHide',null],['ClientSideOnContextMenuShow',null],['ClientSideOnItemMouseOut',null],['ClientSideOnItemMouseOver',null],['ClientSideOnItemSelect',null],['ClientTemplates',[]],['CollapseDelay',0],['CollapseDuration',200],['CollapseSlide',0],['CollapseTransition',0],['CollapseTransitionCustomFilter',null],['ContextControlId',null],['ContextData',null],['ContextMenu',0],['ControlId','PageMenu'],['CssClass','TopMenuGroup'],['DefaultChildSelectedItemLookId',''],['DefaultDisabledItemLookId',''],['DefaultGroupCssClass','MenuGroup'],['DefaultGroupExpandDirection',0],['DefaultGroupExpandOffsetX',0],['DefaultGroupExpandOffsetY',0],['DefaultGroupHeight',null],['DefaultGroupItemSpacing',1],['DefaultGroupOrientation',0],['DefaultGroupWidth',null],['DefaultItemLookId','DefaultItemLook'],['DefaultItemTextAlign',0],['DefaultItemTextWrap',false],['DefaultSelectedItemLookId',''],['DefaultTarget',''],['ExpandDelay',0],['ExpandDisabledItems',true],['ExpandDuration',0],['ExpandOnClick',false],['ExpandSlide',0],['ExpandTransition',0],['ExpandTransitionCustomFilter',null],['ForceHighlightedItemID',''],['Height',null],['HideSelectElements',cart_browser_hideselects && true],['HighlightExpandedPath',true],['ImagesBaseUrl','skins/skin_3/images/'],['MultiPageId',null],['Orientation',1],['OverlayWindowedElements',cart_browser_overlays && true],['PlaceHolderId','PageMenu'],['ScrollingEnabled',true],['SelectedItemPostBackID',null],['ShadowColor','#8D8F95'],['ShadowEnabled',true],['ShadowOffset',2],['TopGroupExpandDirection',0],['TopGroupExpandOffsetX',0],['TopGroupExpandOffsetY',0],['TopGroupItemSpacing',1],['Width',null]
+];
+PageMenu.LoadProperties();
+ComponentArt_Menu_MarkSelectedItem(PageMenu);
+ComponentArt_Menu_MarkForceHighlightedItem(PageMenu);
+PageMenu.Initialize();
+ComponentArt_Menu_RenderMenu(PageMenu);
+ComponentArt_Menu_InitKeyboard(PageMenu);
+window.PageMenu_loaded = true;
+}
+ComponentArt_Init_PageMenu();
+//]]>
+</SCRIPT>
+       </TD></TR></TBODY></TABLE><!-- Breadcrumb Area -->
+<TABLE cellSpacing=0 cellPadding=0 width=800 align=center border=0>
+  <TBODY>
+  <TR><!-- Put breadcrumb & user login here -->
+    <TD class=breadCrumb style="HEIGHT: 30px" vAlign=top align=left width=400>
+      <DIV align=left><SPAN class=BCHighlight>Now In: </SPAN><SPAN 
+      class=SectionTitleText><A class=SectionTitleText 
+      href="http://www.roboticsconnection.com/c-4-robot-sensors.aspx">Robot 
+      Sensors</A> → Line Following Sensor</SPAN></DIV></TD>
+    <TD class=breadCrumb style="HEIGHT: 30px" vAlign=top align=right 
+      width=400><DIV align=right>&nbsp;&nbsp;<A class=Nav 
+      href="http://www.roboticsconnection.com/signin.aspx">Login</A></DIV></TD></TR></TBODY></TABLE><!-- Vertical Navigation and Content Area -->
+<TABLE cellSpacing=0 cellPadding=0 width=800 align=center border=0>
+  <TBODY>
+  <TR><!-- height was 580 -->
+    <TD vAlign=top width=800 height=500>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR><!-- Vertical Navigation Area -->
+          <TD id=verticalNavBar vAlign=top width=170 height=500>
+            <TABLE cellSpacing=0 cellPadding=0 width=170 border=0>
+              <TBODY>
+              <TR width="170">
+                <TD height=5 170?><BACKGROUND="SKINS Spacer.jpg? rc_banners 
+                  images Skin_3></TD></TR>
+              <TR width="170">
+                <TD 
+                background="I2C Line Following Robot Sensor_files/Main_Sub_Header.jpg" 
+                height=40 170?>
+                  <P 
+                  style="FONT-WEIGHT: bold; COLOR: #ffffff">&nbsp;&nbsp;&nbsp;&nbsp;Products</P></TD></TR>
+              <TR width="170">
+                <TD width=170>
+                  <UL><BR>
+                    <LI class=RCProducts><A 
+                    href="http://www.roboticsconnection.com/c-3-robot-kits.aspx">Robot 
+                    Kits 
+                    <LI class=RCProducts><A 
+                    href="http://www.roboticsconnection.com/c-5-robot-controllers.aspx">Robot 
+                    Controllers 
+                    <LI class=RCProducts><A 
+                    href="http://www.roboticsconnection.com/c-4-robot-sensors.aspx">Robot 
+                    Sensors 
+                    <LI class=RCProducts><A 
+                    href="http://www.roboticsconnection.com/c-6-robot-turrets.aspx">Robot 
+                    Turrets 
+                    <LI class=RCProducts><A 
+                    href="http://www.roboticsconnection.com/c-7-robot-motors.aspx">Robot 
+                    Motors 
+                    <LI class=RCProducts><A 
+                    href="http://www.roboticsconnection.com/c-9-robot-electronics.aspx">Robot 
+                    Electronics 
+                    <LI class=RCProducts><A 
+                    href="http://www.roboticsconnection.com/c-19-combo-kits.aspx">Combo 
+                    Kits 
+                    <LI class=RCProducts><A 
+                    href="http://www.roboticsconnection.com/c-10-embedded-controllers.aspx">Embedded 
+                    Controllers </LI></UL></A></TD></TR>
+              <TR width="170">
+                <TD width=170 
+                background="I2C Line Following Robot Sensor_files/Main_Sub_Header_Blue.jpg" 
+                height=40>
+                  <P 
+                  style="FONT-WEIGHT: bold; COLOR: #ffffff">&nbsp;&nbsp;&nbsp;&nbsp;Example 
+                  Apps</P></TD></TR>
+              <TR width="170">
+                <TD vAlign=top height=30>
+                  <UL><BR>
+                    <LI class=RCProducts><A 
+                    href="http://www.roboticsconnection.com/t-RoboticApplications.aspx">Example 
+                    Applications </LI></UL></A></TD></TR>
+              <TR width="170">
+                <TD width=170 
+                background="I2C Line Following Robot Sensor_files/Main_Sub_Header_Yellow.jpg" 
+                height=40>
+                  <P 
+                  style="FONT-WEIGHT: bold; COLOR: #ffffff">&nbsp;&nbsp;&nbsp;&nbsp;Robotics 
+                  Studio</P></TD></TR>
+              <TR width="170">
+                <TD vAlign=top height=30>
+                  <UL><BR>
+                    <LI class=RCProducts><A 
+                    href="http://www.roboticsconnection.com/t-microsoftroboticsstudio.aspx">MSRS 
+                    Services </LI></UL></A></TD></TR></TBODY></TABLE>
+            <TABLE>
+              <TBODY>
+              <TR vAlign=bottom>
+                <TD><!--img src="skins/Skin_3/images/rc_logos/wep.gif" /-->
+                  <P class=RCProducts><STRONG>We will be closed Saturday, Dec 20 
+                  thru Friday Jan 2 for Christmas holidays.</STRONG> 
+              </P></TD></TR></TBODY></TABLE>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD 
+                style="PADDING-RIGHT: 10px; PADDING-LEFT: 30px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px" 
+                vAlign=top>
+                  <SCRIPT language=Javascript 
+                  src="I2C Line Following Robot Sensor_files/getSeal.htm"></SCRIPT>
+                </TD></TR></TBODY></TABLE>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD 
+                style="PADDING-RIGHT: 10px; PADDING-LEFT: 15px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px" 
+                vAlign=top><A 
+                  href="http://www.roboticsconnection.com/t-security.aspx"><IMG 
+                  alt="Review our Security Policy" 
+                  src="I2C Line Following Robot Sensor_files/controlScanInfoIcon.gif"></A> 
+                </TD></TR></TBODY></TABLE>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD 
+                style="PADDING-RIGHT: 10px; PADDING-LEFT: 15px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px" 
+                vAlign=top><!-- START CONTROLSCAN CODE --><A 
+                  href="https://www.controlscan.com/seal/verify2.php?subid=3571&amp;id=99" 
+                  target=verify><IMG 
+                  oncontextmenu="alert('Copying Prohibited by Law - Trademark of ControlScan.com'); return false;" 
+                  alt="Internet Security By ControlScan" 
+                  src="I2C Line Following Robot Sensor_files/sealx2.png" 
+                  border=0></A> 
+            <!-- STOP CONTROLSCAN CODE --></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!-- Main Content Area --></TD>
+    <TD id=content vAlign=top align=left width=625 cellspacing="0" 
+    cellpadding="0"><!-- XmlPackage: product.linefollowingsensor.xml.config -->
+      <TABLE cellSpacing=0 cellPadding=0 width=610 border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top align=left>
+            <TABLE cellSpacing=0 cellPadding=0 width=610 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=center align=left width=610 bgColor=#ffffff>
+                  <TABLE cellSpacing=1 cellPadding=0 width=610 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <SCRIPT 
+                        src="I2C Line Following Robot Sensor_files/A573G988.js" 
+                        type=text/javascript></SCRIPT>
+
+                        <SCRIPT 
+                        src="I2C Line Following Robot Sensor_files/A573S188.js" 
+                        type=text/javascript></SCRIPT>
+
+                        <SCRIPT 
+                        src="I2C Line Following Robot Sensor_files/A573Z388.js" 
+                        type=text/javascript></SCRIPT>
+
+                        <SCRIPT 
+                        src="I2C Line Following Robot Sensor_files/A573C488.js" 
+                        type=text/javascript></SCRIPT>
+
+                        <SCRIPT 
+                        src="I2C Line Following Robot Sensor_files/A573I688.js" 
+                        type=text/javascript></SCRIPT>
+
+                        <SCRIPT 
+                        src="I2C Line Following Robot Sensor_files/A573B188.js" 
+                        type=text/javascript></SCRIPT>
+
+                        <SCRIPT type=text/javascript>
+                                      //
+                                        /*** ComponentArt Web.UI client-side storage for TabStrip1 ***/
+                                        window.ComponentArt_Storage_TabStrip1=
+                                        [
+                                          ['p0',-1,[],[[57,'Overview']]],
+                                          ['p1',-1,[],[[57,'Reading & Addressing Info']]],
+                                          ['p2',-1,[],[[57,'Images']]]
+                                        ];
+                                        
+                                        window.ComponentArt_ItemLooks_TabStrip1=
+                                        [
+                                          [0,'DefaultTabLook',1,'DefaultTab',2,'DefaultTabHover',0,5,6,10,7,10,8,5,11,'tab_left_icon.gif',12,'hover_tab_left_icon.gif',13,3,14,21,17,'tab_right_icon.gif',18,'hover_tab_right_icon.gif',19,3,20,21],
+                                          [0,'SelectedTabLook',1,'SelectedTab',5,4,6,10,7,10,8,4,11,'selected_tab_left_icon.gif',13,3,14,21,17,'selected_tab_right_icon.gif',19,3,20,21]
+                                        ];
+                                        
+                                        window.ComponentArt_ScrollLooks_TabStrip1=
+                                        [
+                                          [0,'DefaultTabLook'],
+                                          [0,'DefaultTabLook'],
+                                          [0,'DefaultTabLook'],
+                                          [0,'DefaultTabLook']
+                                        ];
+        
+                                        //</SCRIPT>
+
+                        <DIV class=TopGroup id=TabStrip1_div>
+                        <DIV 
+                        style="VISIBILITY: hidden; OVERFLOW: hidden; WIDTH: 1px; HEIGHT: 0px">.</DIV></DIV><INPUT 
+                        id=TabStrip1_Data type=hidden name=TabStrip1_Data><INPUT 
+                        id=TabStrip1_Properties type=hidden 
+                        name=TabStrip1_Properties><INPUT 
+                        id=TabStrip1_SelectedNode type=hidden value=p0 
+                        name=TabStrip1_SelectedNode><INPUT 
+                        id=TabStrip1_ScrollData type=hidden value=0 
+                        name=TabStrip1_ScrollData>
+                        <SCRIPT type=text/javascript>
+                                  var varTabImageUrl = "skins/skin_3/images/rc_tabs/";
+
+                                  
+					                    function ComponentArt_Init_TabStrip1() 
+                                        {
+					                        if (!(window.cart_tabstrip_kernel_loaded && window.cart_tabstrip_support_loaded))
+					                        {
+						                        setTimeout('ComponentArt_Init_TabStrip1()', 50);
+						                        return;
+					                        }
+                                
+                                            window.TabStrip1 = new ComponentArt_TabStrip('TabStrip1',ComponentArt_Storage_TabStrip1,ComponentArt_ItemLooks_TabStrip1,ComponentArt_ScrollLooks_TabStrip1);
+                                            TabStrip1.PropertyStorageArray = [
+                                            ['ApplicationPath',''],
+                                            ['AutoPostBackOnSelect',false],
+                                            ['BaseUrl',''],
+                                            ['ChildSelectedTabPostBackIDs',[]],
+                                            ['ClientSideOnTabMouseOut',null],
+                                            ['ClientSideOnTabMouseOver',null],
+                                            ['ClientSideOnTabSelect',null],
+                                            ['ClientTemplates',[]],
+                                            ['ControlId','TabStrip1'],
+                                            ['DefaultChildSelectedItemLookId',''],
+                                            ['DefaultDisabledItemLookId',''],
+                                            ['DefaultGroupAlign',0],
+                                            ['DefaultGroupCssClass',null],
+                                            ['DefaultGroupExpandDirection',0],
+                                            ['DefaultGroupExpandOffsetX',0],
+                                            ['DefaultGroupExpandOffsetY',0],
+                                            ['DefaultGroupFirstSeparatorHeight',null],
+                                            ['DefaultGroupFirstSeparatorWidth',null],
+                                            ['DefaultGroupFullExpand',true],
+                                            ['DefaultGroupHeight',null],
+                                            ['DefaultGroupLastSeparatorHeight',null],
+                                            ['DefaultGroupLastSeparatorWidth',null],
+                                            ['DefaultGroupSeparatorHeight',null],
+                                            ['DefaultGroupSeparatorImagesFolderUrl',null],
+                                            ['DefaultGroupSeparatorWidth',null],
+                                            ['DefaultGroupShowSeparators',false],
+                                            ['DefaultGroupTabSpacing',1],
+                                            ['DefaultGroupWidth',null],
+                                            ['DefaultItemLookId','DefaultTabLook'],
+                                            ['DefaultItemTextAlign',0],
+                                            ['DefaultItemTextWrap',false],
+                                            ['DefaultSelectedItemLookId','SelectedTabLook'],
+                                            ['DefaultTarget',''],
+                                            ['Height',null],
+                                            ['ImagesBaseUrl',varTabImageUrl],
+                                            ['MultiPageId','MultiPage1'],
+                                            ['Orientation',0],
+                                            ['PlaceHolderId','TabStrip1_div'],
+                                            ['ScrollingEnabled',false],
+                                            ['ScrollDataInput','TabStrip1_ScrollData'],
+                                            ['SelectedNodeInput','TabStrip1_SelectedNode'],
+                                            ['SelectedTabPostBackID','p0'],
+                                            ['TabOrientation',0],
+                                            ['TopGroupAlign',0],
+                                            ['TopGroupCssClass',null],
+                                            ['TopGroupFirstSeparatorHeight',null],
+                                            ['TopGroupFirstSeparatorWidth',null],
+                                            ['TopGroupFullExpand',true],
+                                            ['TopGroupHeight',null],
+                                            ['TopGroupLastSeparatorHeight',null],
+                                            ['TopGroupLastSeparatorWidth',null],
+                                            ['TopGroupSeparatorHeight',null],
+                                            ['TopGroupSeparatorImagesFolderUrl',null],
+                                            ['TopGroupSeparatorWidth',null],
+                                            ['TopGroupShowSeparators',false],
+                                            ['TopGroupTabSpacing',0],
+                                            ['TopGroupWidth',null],
+                                            ['Width',null]
+                                            ];
+                                            TabStrip1.LoadProperties();
+                                            ComponentArt_ClientStateControls[ComponentArt_ClientStateControls.length] = TabStrip1;
+                                            TabStrip1.Render();
+                                            ComponentArt_TabStrip_InitKeyboard(TabStrip1);
+                                            window.TabStrip1_loaded = true;
+                                        }
+                                        
+                                        ComponentArt_Init_TabStrip1();
+									</SCRIPT>
+                      </TD>
+                      <TD vAlign=top align=right><A class=ProductNavLink 
+                        href="http://www.roboticsconnection.com/p-65-serializer-wiring-harness.aspx"><IMG 
+                        src="I2C Line Following Robot Sensor_files/previous.gif" 
+                        border=0></A>&nbsp;&nbsp;<A class=ProductNavLink 
+                        href="http://www.roboticsconnection.com/c-4-robot-sensors.aspx"><IMG 
+                        src="I2C Line Following Robot Sensor_files/up.gif" 
+                        border=0></A>&nbsp;&nbsp;<A class=ProductNavLink 
+                        href="http://www.roboticsconnection.com/p-80-single-line-following-sensor.aspx"><IMG 
+                        src="I2C Line Following Robot Sensor_files/next.gif" 
+                        border=0></A>&nbsp;</TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD>
+                  <SCRIPT 
+                  src="I2C Line Following Robot Sensor_files/A573A488.js" 
+                  type=text/javascript></SCRIPT>
+                  <INPUT id=MultiPage1_SelectedIndex type=hidden value=0 
+                  name=MultiPage1_SelectedIndex>
+                  <TABLE class=MultiPage id=MultiPage1_table cellSpacing=0 
+                  cellPadding=0 width=600 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD style="VERTICAL-ALIGN: top">
+                        <TABLE class=PageContent id=Pageview1 
+                        style="DISPLAY: none; WIDTH: 600px" cellSpacing=0 
+                        cellPadding=0 border=0 NAME="Pageview1">
+                          <TBODY>
+                          <TR>
+                            <TD style="VERTICAL-ALIGN: top">
+                              <TABLE class=RCProducts>
+                                <TBODY>
+                                <TR>
+                                <TD vAlign=top width=600>
+                                <H1 class=RCProducts>I2C Line Following 
+                                Sensor</H1></TD></TR>
+                                <TR>
+                                <TD 
+                                style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px" 
+                                vAlign=top>
+                                <DIV align=center>
+                                <SCRIPT type=text/javascript>
+function popupimg(url)
+	{
+	window.open('popup.aspx?src=' + url,'LargerImage6783751','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,copyhistory=no,width=600,height=270,left=0,top=0');
+	return (true);
+	}
+</SCRIPT>
+                                <IMG id=ProductPic67 style="CURSOR: pointer" 
+                                onclick="popupimg('images/PRODUCT/large/67.jpg')" 
+                                alt="Click here to view larger image" 
+                                src="I2C Line Following Robot Sensor_files/67.jpg" 
+                                border=0 name=ProductPic67><BR><IMG height=4 
+                                src="I2C Line Following Robot Sensor_files/spacer.gif" 
+                                width=1 border=0><BR>
+                                <DIV align=center><A 
+                                onclick="popupimg('images/PRODUCT/large/67.jpg');" 
+                                href="javascript:void(0);"><IMG 
+                                alt="Click here to view larger image" 
+                                src="I2C Line Following Robot Sensor_files/showlarger.gif" 
+                                align=absMiddle 
+                                border=0></A></DIV><BR></DIV></TD>
+                                <TD vAlign=top width="100%">
+                                <P class=RCProducts>This I2C Line Following 
+                                sensor allows your robot to track a line on the 
+                                floor using five sensors. The five onboard 
+                                sensors see white or black, which allow you to 
+                                track a white line against a black background, 
+                                or a black line against a white 
+                                background.<BR><BR>In addition to the five 
+                                onboard sensors, we added two additional inputs 
+                                to the sides of the board. This allows you to 
+                                connect any kind of sensor that outputs 0-5V, 
+                                and query them through the board. This allows 
+                                you to connect additional <A 
+                                href="http://www.roboticsconnection.com/pc-80-4-single-line-following-sensor.aspx">Single 
+                                Line Following Sensors</A>, Bump Sensors, and/or 
+                                Cliff detection sensors.<BR><BR>When queried, 
+                                the onboard firmware returns a single byte 
+                                representing the status of all five sensors and 
+                                the two additional inputs, in a range from 0 to 
+                                127, where 0 means all sensors see 'white' and 
+                                127 means all sensors see 'black'.<BR><BR>The 
+                                sensor board has four typical I2C inputs (Vcc, 
+                                Sda, Scl, and Gnd), two GPIO inputs (Gnd, Vcc, 
+                                Signal), and requires a Vcc of +5V.<BR><BR>The 
+                                sensing distance is approximately 0.04 inches to 
+                                0.5 inches (1mm to 12mm).<BR><BR>Two holes on 
+                                the board allow the Line Following sensor board 
+                                to be rigidly mounted to your robot. <BR><BR>The 
+                                Line Following sensor board has a bi-color 
+                                (red/green) LED. The Red LED is used to indicate 
+                                when power is applied to the sensor. The Green 
+                                LED flashes to communicate the currently 
+                                programmed I2C address upon power up. It is then 
+                                used to indicate if any of the sensors see white 
+                                or black. If the green LED is off, then all of 
+                                the sensors see black, otherwise if any of the 
+                                seven sensors see white, the green LED lights 
+                                up.<BR><BR>This board is a great accessory to 
+                                our <A 
+                                href="http://www.roboticsconnection.com/p-63-serializer-wl.aspx">Serializer 
+                                WL .NET robot 
+                                controller!</A></P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+                        <TABLE class=PageContent id=Pageview2 
+                        style="DISPLAY: none; WIDTH: 600px; HEIGHT: 100%" 
+                        cellSpacing=0 cellPadding=0 border=0 NAME="Pageview2">
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE class=RCProducts>
+                                <TBODY>
+                                <TR>
+                                <TD vAlign=top width=600>
+                                <H1 class=RCProducts>Registers:</H1>
+                                <P class=RCProducts>You can read the I2C line 
+                                sensor by issuing an I2C read of the programmed 
+                                address.<BR><BR>A single byte representing the 
+                                status of the seven sensors will be returned, 
+                                ranging from 0 to 127, where 0 means all sensors 
+                                see 'white' and 127 means all sensors see 
+                                'black'<BR><BR>The two blue colums on the right 
+                                represent the two optional GPIO inputs on the 
+                                side of the Line Follower. If nothing is 
+                                connected, then their readings will be 
+                                '0'.<BR><BR>
+                                <TABLE class=ProductInfo cellSpacing=0>
+                                <TBODY>
+                                <TR>
+                                <TD class=hed>S1</TD>
+                                <TD class=hed>S2</TD>
+                                <TD class=hed>S3</TD>
+                                <TD class=hed>S4</TD>
+                                <TD class=hed>S5</TD>
+                                <TD class=hee>IO1</TD>
+                                <TD class=hee>IO2</TD>
+                                <TD class=hed>Reading</TD></TR>
+                                <TR>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>0</TD></TR>
+                                <TR>
+                                <TD>1</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>1</TD></TR>
+                                <TR>
+                                <TD>0</TD>
+                                <TD>1</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>2</TD></TR>
+                                <TR>
+                                <TD>1</TD>
+                                <TD>1</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>0</TD>
+                                <TD>3</TD></TR>
+                                <TR>
+                                <TD>...</TD>
+                                <TD>...</TD>
+                                <TD>...</TD>
+                                <TD>...</TD>
+                                <TD>...</TD>
+                                <TD>...</TD>
+                                <TD>...</TD>
+                                <TD>...</TD></TR>
+                                <TR>
+                                <TD>1</TD>
+                                <TD>1</TD>
+                                <TD>1</TD>
+                                <TD>1</TD>
+                                <TD>1</TD>
+                                <TD>0</TD>
+                                <TD>1</TD>
+                                <TD>125</TD></TR>
+                                <TR>
+                                <TD>1</TD>
+                                <TD>1</TD>
+                                <TD>1</TD>
+                                <TD>1</TD>
+                                <TD>1</TD>
+                                <TD>1</TD>
+                                <TD>0</TD>
+                                <TD>126</TD></TR>
+                                <TR>
+                                <TD>1</TD>
+                                <TD>1</TD>
+                                <TD>1</TD>
+                                <TD>1</TD>
+                                <TD>1</TD>
+                                <TD>1</TD>
+                                <TD>1</TD>
+                                <TD>127</TD></TR></TBODY></TABLE></P>
+                                <H1 class=RCProducts>I2C Reading and Addressing 
+                                information:</H1>
+                                <P class=RCProducts>The I2C Line Following 
+                                sensor comes pre-programmed with a default 
+                                address of 0x50, however, it can be reprogrammed 
+                                with a new address, just in case your system 
+                                requires multiple line following 
+                                sensors.<BR><BR>To change the address of the 
+                                Line Following Sensor, it must first be the only 
+                                device connected to your I2C bus. Then, you can 
+                                write the following 3 sequence commands 0xA0, 
+                                0xAA, 0xA5, in the correct order, followed by 
+                                the new address. For example to change the Line 
+                                Following Sensor address from 0x50 (default) to 
+                                0x58, issue the following byte sequence to 
+                                address 0x50: 0xA0, 0xAA, 0xA5, 
+                                0x58.<BR><BR>NOTE: No other command may be 
+                                issued in the middle of the sequence. The 
+                                sequence consists of 4 separate write 
+                                transactions on the I2C bus.<BR><BR>The table 
+                                below shows the possible addressing values, and 
+                                the corresponding number of LED flashes you'll 
+                                see when the device powers up.<BR><BR>
+                                <TABLE class=ProductInfo cellSpacing=0>
+                                <TBODY>
+                                <TR>
+                                <TD class=hed>Decimal</TD>
+                                <TD class=hed>Hex</TD>
+                                <TD class=hed>LED Flashes</TD></TR>
+                                <TR>
+                                <TD class=ProductInfo>80</TD>
+                                <TD class=ProductInfo>50</TD>
+                                <TD class=ProductInfo>1</TD></TR>
+                                <TR>
+                                <TD class=ProductInfo>82</TD>
+                                <TD class=ProductInfo>52</TD>
+                                <TD class=ProductInfo>2</TD></TR>
+                                <TR>
+                                <TD class=ProductInfo>84</TD>
+                                <TD class=ProductInfo>54</TD>
+                                <TD class=ProductInfo>3</TD></TR>
+                                <TR>
+                                <TD class=ProductInfo>86</TD>
+                                <TD class=ProductInfo>56</TD>
+                                <TD class=ProductInfo>4</TD></TR>
+                                <TR>
+                                <TD class=ProductInfo>88</TD>
+                                <TD class=ProductInfo>58</TD>
+                                <TD class=ProductInfo>5</TD></TR>
+                                <TR>
+                                <TD class=ProductInfo>90</TD>
+                                <TD class=ProductInfo>5A</TD>
+                                <TD 
+                                class=ProductInfo>6</TD></TR></TBODY></TABLE></P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+                        <TABLE class=PageContent id=Pageview3 
+                        style="DISPLAY: none; WIDTH: 600px" cellSpacing=0 
+                        cellPadding=0 border=0 NAME="Pageview3">
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE class=RCProducts>
+                                <TBODY>
+                                <TR>
+                                <TD vAlign=top width=600>
+                                <P class=RCProducts>
+                                <H1 class=RCProducts>Top View:</H1><IMG 
+                                class=RCProducts 
+                                alt="I2C Line Following Sensor Top View" 
+                                src="I2C Line Following Robot Sensor_files/med_LineFollower_1.jpg">
+                                <H1 class=RCProducts>Bottom View:</H1><IMG 
+                                class=RCProducts 
+                                alt="I2C Line Following Sensor Bottom View" 
+                                src="I2C Line Following Robot Sensor_files/med_LineFollower_2.jpg">
+                                <H1 class=RCProducts>Single Line Sensors 
+                                connected to optional inputs:</H1><IMG 
+                                class=RCProducts 
+                                alt="Single Line Sensors connected to optional inputs:" 
+                                src="I2C Line Following Robot Sensor_files/med_LineSensor_1.jpg">
+                                <H1 class=RCProducts>Line Following Sensor sees 
+                                All White (0 0 0 0 0):</H1><IMG class=RCProducts 
+                                alt="I2C Line Following Sensor - Sees All White (0 0 0 0 0)" 
+                                src="I2C Line Following Robot Sensor_files/linesensorreflection_1.jpg"><BR><BR>
+                                <H1 class=RCProducts>Line Following Sensor sees 
+                                All Black (1 1 1 1 1):</H1><IMG class=RCProducts 
+                                alt="I2C Line Following Sensor - Sees All Black (1 1 1 1 1)" 
+                                src="I2C Line Following Robot Sensor_files/linesensorreflection_2.jpg"><BR><BR>
+                                <H1 class=RCProducts>Line Following Sensor sees 
+                                4 White, 1 Black (0 0 1 0 0):</H1><IMG 
+                                class=RCProducts 
+                                alt="I2C Line Following Sensor - Sees 4 White, 1 Black (0 0 1 0 0)" 
+                                src="I2C Line Following Robot Sensor_files/linesensorreflection_3.jpg">
+                                <P></P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+                  <SCRIPT type=text/javascript>
+                            //
+													function ComponentArt_Init_MultiPage1() 
+                          {
+													  if(!window.ComponentArt_MultiPage_Kernel_Loaded)
+														{
+                              setTimeout('ComponentArt_Init_MultiPage1()', 100); 
+                              return; 
+                            }
+													
+													  window.MultiPage1 = new ComponentArt_MultiPage('MultiPage1');
+													  MultiPage1.ControlId = 'MultiPage1';
+													  MultiPage1.AddPage(new ComponentArt_PageView('Pageview1','Pageview1'));
+													  MultiPage1.AddPage(new ComponentArt_PageView('Pageview2','Pageview2'));
+													  MultiPage1.AddPage(new ComponentArt_PageView('Pageview3','Pageview3'));
+                            MultiPage1.AddPage(new ComponentArt_PageView('Pageview4','Pageview4'));
+                            MultiPage1.AddPage(new ComponentArt_PageView('Pageview5','Pageview5'));
+													  MultiPage1.SetPageIndex(0,true);
+													
+													  window.MultiPage1_loaded = true;
+													}
+													ComponentArt_Init_MultiPage1();
+													//</SCRIPT>
+                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR><SMALL><IMG 
+      src="I2C Line Following Robot Sensor_files/mailicon.gif" align=absMiddle 
+      border=0>&nbsp;<A 
+      href="http://www.roboticsconnection.com/EMailproduct.aspx?productid=67&amp;categoryid=0">E-mail 
+      this product to a friend</A></SMALL><BR><BR>
+      <HR color=#666666 SIZE=1>
+      <BR clear=all>
+      <SCRIPT type=text/javascript>
+function popupwh(title,url,w,h)
+	{
+	window.open('popup.aspx?title=' + title + '&src=' + url,'Popup83751','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,copyhistory=no,width=' + w + ',height=' + h + ',left=0,top=0');
+	return (true);
+	}
+function popuptopicwh(title,topic,w,h,scrollbars)
+	{
+	window.open('popup.aspx?title=' + title + '&topic=' + topic,'Popup83751','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=' + scrollbars + ',resizable=no,copyhistory=no,width=' + w + ',height=' + h + ',left=0,top=0');
+	return (true);
+	}
+function popuporderoptionwh(title,id,w,h,scrollbars)
+	{
+	window.open('popup.aspx?title=' + title + '&orderoptionid=' + id,'Popup83751','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=' + scrollbars + ',resizable=no,copyhistory=no,width=' + w + ',height=' + h + ',left=0,top=0');
+	return (true);
+	}
+function popupkitgroupwh(title,kitgroupid,w,h,scrollbars)
+	{
+	window.open('popup.aspx?title=' + title + '&kitgroupid=' + kitgroupid,'Popup83751','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=' + scrollbars + ',resizable=no,copyhistory=no,width=' + w + ',height=' + h + ',left=0,top=0');
+	return (true);
+	}
+function popupkititemwh(title,kititemid,w,h,scrollbars)
+	{
+	window.open('popup.aspx?title=' + title + '&kititemid=' + kititemid,'Popup83751','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=' + scrollbars + ',resizable=no,copyhistory=no,width=' + w + ',height=' + h + ',left=0,top=0');
+	return (true);
+	}
+function popup(title,url)
+	{
+	popupwh(title,url,600,375);
+	return (true);
+	}
+function popuptopic(title,topic,scrollbars)
+	{
+	popuptopicwh(title,topic,600,375,scrollbars);
+	return (true);
+	}
+</SCRIPT>
+      <A name=KitInPostBack></A>
+      <DIV align=left><B>Base Price: $29.95 </B><BR><B>Customized Price: 
+      $29.95</B> <BR>
+      <P><B>Your Kit Is Ready To Purchase!</B>
+      <DIV>
+      <SCRIPT language=JavaScript type=text/javascript>
+<!--
+var VariantMinimumQty_67_77 = 0;
+var SelectedVariantInventory_67_77 = 1942;
+function AddToCartForm_67_77_Validator(theForm)
+	{
+	submitonce(theForm);
+	if ((theForm.Quantity.value*1) < 1)
+	{
+		alert("Please specify the quantity you want to add to your cart");
+		theForm.Quantity.focus();
+		submitenabled(theForm);
+		return (false);
+    }
+	submitenabled(theForm);
+	return (true);
+	}
+//-->
+</SCRIPT>
+
+      <FORM id=AddToCartForm_67_77 style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" 
+      name=AddToCartForm_67_77 
+      onsubmit="return validateForm(this) &amp;&amp; AddToCartForm_67_77_Validator(this)" 
+      action=addtocart.aspx?returnurl=showproduct.aspx%3fProductID%3d67%26SEName%3dline-following-sensor 
+      method=post><INPUT id=VariantStyle type=hidden value=0 
+      name=VariantStyle><INPUT id=IsWishList type=hidden value=0 
+      name=IsWishList><INPUT id=IsGiftRegistry type=hidden value=0 
+      name=IsGiftRegistry><INPUT id=UpsellProducts type=hidden 
+      name=UpsellProducts> <INPUT id=CartRecID type=hidden value=0 
+      name=CartRecID> <INPUT id=ProductID type=hidden value=67 name=ProductID> 
+      <INPUT id=VariantID type=hidden value=77 name=VariantID> 
+      <SMALL>Quantity:</SMALL> <INPUT id=Quantity 
+      onkeyup="if(typeof(getShipping) == 'function'){getShipping()}" maxLength=4 
+      onchange="if(typeof(getShipping) == 'function'){getShipping()}" size=3 
+      value=1 name=Quantity><INPUT type=hidden 
+      value="[req][integer][number][blankalert=Please enter a quantity][invalidalert=Please enter a number for the quantity]" 
+      name=Quantity_vldt>&nbsp;<INPUT class=AddToCartButton onclick="document.AddToCartForm_67_77.IsWishList.value='0';document.AddToCartForm_67_77.IsGiftRegistry.value='0';if(validateForm(document.AddToCartForm_67_77) &amp;&amp; AddToCartForm_67_77_Validator(document.AddToCartForm_67_77)) {document.AddToCartForm_67_77.submit();}" type=button value="Add to Cart">&nbsp;<INPUT class=AddToWishButton onclick="document.AddToCartForm_67_77.IsWishList.value='1';if(validateForm(document.AddToCartForm_67_77) &amp;&amp; AddToCartForm_67_77_Validator(document.AddToCartForm_67_77)) {document.AddToCartForm_67_77.submit();}" type=button value="Add to Wish List">&nbsp;<INPUT class=AddToGiftButton onclick="document.AddToCartForm_67_77.IsGiftRegistry.value='1';if(validateForm(document.AddToCartForm_67_77) &amp;&amp; AddToCartForm_67_77_Validator(document.AddToCartForm_67_77)) {document.AddToCartForm_67_77.submit();}" type=button value="Add to Gift Registry"></FORM></DIV>
+      <P></P>
+      <P></P></DIV>
+      <SCRIPT type=text/javascript>
+                    function deleteimage(itemID, el)
+                    {
+                        el.innerHTML='';
+                        var fn = document.getElementById('FileNameH_'+itemID);
+                        var imgfn = document.getElementById('Img_'+itemID);
+                        fn.value='';
+                        imgfn.style.display ='none';
+                    }
+                </SCRIPT>
+
+      <FORM action=p-67-line-following-sensor.aspx method=post 
+      encType=multipart/form-data><INPUT type=hidden value=true 
+      name=IsKitSubmit><INPUT type=hidden value=0 name=CartRecID>
+      <DIV 
+      align=center><BR><INPUT type=submit value="Update Kit Price"></DIV></FORM>
+      <DIV><BR>
+      <TABLE 
+      style="BORDER-RIGHT: #444444 0px solid; BORDER-TOP: #444444 0px solid; BORDER-LEFT: #444444 0px solid; BORDER-BOTTOM: #444444 0px solid" 
+      cellSpacing=0 cellPadding=2 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top align=left><IMG 
+            src="I2C Line Following Robot Sensor_files/relatedproducts.gif" 
+            border=0><BR>
+            <TABLE 
+            style="BORDER-RIGHT: #444444 1px solid; BORDER-TOP: #444444 1px solid; BORDER-LEFT: #444444 1px solid; BORDER-BOTTOM: #444444 1px solid" 
+            cellSpacing=0 cellPadding=4 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD class=RelatedProductsBoxStyle vAlign=top align=left>
+                  <P><B></B></P>
+              <TR>
+                <TD vAlign=top align=middle><A 
+                  href="http://www.roboticsconnection.com/p-32-12-jumper-wires-female-to-female.aspx"><IMG 
+                  id=ProductPic32 style="CURSOR: pointer" 
+                  src="I2C Line Following Robot Sensor_files/32.jpg" border=0 
+                  name=ProductPic32></A><BR><A 
+                  href="http://www.roboticsconnection.com/p-32-12-jumper-wires-female-to-female.aspx">12" 
+                  Jumper Wires (Female-To-Female)</A></TD>
+                <TD vAlign=top align=middle><A 
+                  href="http://www.roboticsconnection.com/p-31-12-jumper-wires-male-to-female.aspx"><IMG 
+                  id=ProductPic31 style="CURSOR: pointer" 
+                  src="I2C Line Following Robot Sensor_files/31.jpg" border=0 
+                  name=ProductPic31></A><BR><A 
+                  href="http://www.roboticsconnection.com/p-31-12-jumper-wires-male-to-female.aspx">12" 
+                  Jumper Wires (Male-To-Female)</A></TD>
+                <TD vAlign=top align=middle><A 
+                  href="http://www.roboticsconnection.com/p-16-serializer-net-robot-controller.aspx"><IMG 
+                  id=ProductPic16 style="CURSOR: pointer" 
+                  src="I2C Line Following Robot Sensor_files/16.jpg" border=0 
+                  name=ProductPic16></A><BR><A 
+                  href="http://www.roboticsconnection.com/p-16-serializer-net-robot-controller.aspx">Serializer 
+                  .NET Robot Controller</A></TD>
+                <TD vAlign=top align=middle><A 
+                  href="http://www.roboticsconnection.com/p-80-single-line-following-sensor.aspx"><IMG 
+                  id=ProductPic80 style="CURSOR: pointer" 
+                  src="I2C Line Following Robot Sensor_files/80.jpg" border=0 
+                  name=ProductPic80></A><BR><A 
+                  href="http://www.roboticsconnection.com/p-80-single-line-following-sensor.aspx">Single 
+                  Line Following 
+        Sensor</A></TD></TR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><A 
+      name=Specs></A></DIV>
+      <SCRIPT language=javascript type=text/javascript>
+				var sc_project=362580; 
+				var sc_invisible=1; 
+				var sc_partition=1; 
+				var sc_security=""; 
+				var sc_https=1; 
+				</SCRIPT>
+
+      <SCRIPT language=javascript 
+      src="I2C Line Following Robot Sensor_files/counter.js" 
+      type=text/javascript></SCRIPT>
+    </TD></TR></TBODY></TABLE><!-- Footer Area -->
+<TABLE cellSpacing=0 cellPadding=0 width=800 align=center border=0><!--DWLayoutTable-->
+  <TBODY>
+  <TR>
+    <TD id=footer vAlign=top width=780 
+    background="I2C Line Following Robot Sensor_files/Footer.jpg" height=80>
+      <P class=FooterNav text-align="center"><BR><A class=FooterNav 
+      href="http://www.roboticsconnection.com/t-returns.aspx">Return Policy</A> 
+      | <A class=FooterNav 
+      href="http://www.roboticsconnection.com/t-privacy.aspx">Privacy Policy</A> 
+      | <A class=FooterNav 
+      href="http://www.roboticsconnection.com/t-security.aspx">Security 
+      Policy</A> | <A class=FooterNav 
+      href="http://www.roboticsconnection.com/sitemap.aspx">Site Map<BR><BR><A 
+      class=FooterNav 
+      href="http://www.roboticsconnection.com/t-copyright.aspx">Copyright © 
+      2004-2008 Summerour Robotics Corporation. All Rights Reserved.</A> 
+  </P></TD></TR>
+  <TR>
+    <TD vAlign=top width=780 height=30 ,>
+      <P class=MSRSCentered>Summerour Robotics Corp 
+      (www.RoboticsConnection.com)<BR>4355 Cobb Pkwy. Suite J148 Atlanta, 
+      Georgia 30339 Phone: 1-888-731-4035 </P></TD></TR>
+  <TR>
+    <TD vAlign=top width=780 
+height=10></TD></TR></TBODY></TABLE></DIV></DIV></BODY></HTML>

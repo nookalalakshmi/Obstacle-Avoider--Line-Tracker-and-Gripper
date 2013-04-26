@@ -1,0 +1,847 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: Motor Formulas
+Date: Fri, 10 Apr 2009 17:25:25 +0530
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0081_01C9BA01.55A54D40"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5579
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0081_01C9BA01.55A54D40
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.elec-toolbox.com/Formulas/Motor/mtrform.htm
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Motor Formulas</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252"><LINK=20
+href=3D"/favicon.ico" type=3Dimage/x-icon rel=3D"shortcut icon">
+<META content=3D"MSHTML 6.00.6000.16788" name=3DGENERATOR>
+<META content=3D"none, default" name=3D"Microsoft Theme"></HEAD>
+<BODY>
+<P align=3Dcenter><IMG height=3D95=20
+src=3D"http://www.elec-toolbox.com/images/mtrform.gif" width=3D319></P>
+<P align=3Dcenter><FONT color=3D#000000>Here are some&nbsp; =
+<EM><STRONG>motor=20
+formulas</STRONG></EM> that may be useful.</FONT></P>
+<P align=3Dcenter>&nbsp;</P>
+<HR>
+
+<P align=3Dleft><STRONG><BIG><BIG><FONT color=3D#000000>Options:=20
+</FONT></BIG></BIG><BR>- <A=20
+href=3D"http://www.elec-toolbox.com/Formulas/Useful/formulas.htm">Useful =
+Formulas=20
+Formulas</A><BR>- <A=20
+href=3D"http://www.elec-toolbox.com/Formulas/Transformer/xfmrform.htm">Tr=
+ansformer=20
+Formulas</A> </STRONG></P>
+<HR>
+
+<BLOCKQUOTE>
+  <BLOCKQUOTE>
+    <BLOCKQUOTE>
+      <P align=3Dleft><STRONG><FONT color=3D#000000>Calculating Motor=20
+      Speed:</FONT></STRONG></P>
+      <P align=3Dleft><FONT color=3D#000080>A squirrel cage induction =
+motor is a=20
+      constant speed device. It cannot operate for any length of time at =
+speeds=20
+      below those shown on the nameplate without danger of burning=20
+      out.</FONT></P>
+      <P align=3Dleft><STRONG><FONT color=3D#000000>To Calculate the =
+<EM>speed of a=20
+      induction motor</EM>, apply this formula:</FONT></STRONG></P>
+      <P align=3Dcenter><STRONG><FONT =
+color=3D#ff0000>S<EM>rpm</EM></FONT> =3D <U>120=20
+      x=20
+      =
+F<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;=20
+      P</STRONG></P></BLOCKQUOTE>
+    <BLOCKQUOTE>
+      <P align=3Dleft><FONT color=3D#ff0000>S<EM>rpm</EM></FONT> =3D =
+synchronous=20
+      revolutions per minute.<BR><FONT color=3D#ff0000>120 </FONT>&nbsp; =
+=3D=20
+      constant<BR><FONT=20
+      color=3D#ff0000>F</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =3D =
+supply=20
+      frequency (in cycles/sec)<BR><FONT color=3D#ff0000>P&nbsp;=20
+      </FONT>&nbsp;&nbsp;&nbsp;&nbsp; =3D number of motor winding =
+poles</P>
+      <P align=3Dleft><FONT color=3D#000000><STRONG>Example: =
+</STRONG></FONT>What is=20
+      the synchronous of a motor having 4 poles connected to a 60 hz =
+power=20
+      supply?</P>
+      <P align=3Dcenter><STRONG><FONT =
+color=3D#ff0000>S<EM>rpm</EM></FONT> =3D <U>120=20
+      x=20
+      =
+F<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;=20
+      P<BR><FONT color=3D#ff0000>S<EM>rpm</EM></FONT> =3D <U>120 x=20
+      =
+60<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;=20
+      4<BR><FONT color=3D#ff0000>S<EM>rpm</EM></FONT> =3D=20
+      =
+<U>7200<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;=20
+      4<BR><FONT color=3D#ff0000>S<EM>rpm</EM></FONT> =3D 1800 =
+rpm</STRONG></P>
+      <HR>
+    </BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+<BLOCKQUOTE>
+  <BLOCKQUOTE>
+    <BLOCKQUOTE>
+      <P align=3Dleft><STRONG><FONT color=3D#000000>Calculating Braking=20
+      Torque:</FONT></STRONG></P>
+      <P align=3Dleft><FONT color=3D#000080>Full-load motor torque is =
+calculated to=20
+      determine the required braking torque of a =
+motor.</FONT><STRONG><FONT=20
+      color=3D#000000><BR>To Determine <EM>braking torque</EM> of a =
+motor, apply=20
+      this formula:</FONT></STRONG></P>
+      <P align=3Dcenter><STRONG><FONT color=3D#ff0000>T</FONT><FONT =
+color=3D#000000>=20
+      =3D<U> 5252 x HP<BR></U><EM>&nbsp;&nbsp;&nbsp; =
+rpm</EM></FONT></STRONG></P>
+      <P align=3Dleft><FONT color=3D#ff0000>T </FONT><FONT=20
+      color=3D#000000>&nbsp;&nbsp;&nbsp;&nbsp; =3D full-load motor =
+torque (in=20
+      lb-ft)<BR></FONT><FONT color=3D#ff0000>5252</FONT><FONT =
+color=3D#000000> =3D=20
+      constant (33,000 divided by 3.14 x 2 =3D 5252)<BR></FONT><FONT=20
+      color=3D#ff0000>HP </FONT><FONT color=3D#000000>&nbsp;&nbsp; =3D =
+motor=20
+      horsepower<BR></FONT><FONT color=3D#ff0000>rpm</FONT><FONT =
+color=3D#000000> =3D=20
+      speed of motor shaft</FONT></P>
+      <P align=3Dleft><FONT color=3D#000000><STRONG>Example:</STRONG> =
+</FONT><FONT=20
+      color=3D#000080>What is the braking torque of a 60 HP, 240V motor =
+rotating=20
+      at 1725 rpm?</FONT></P>
+      <P align=3Dcenter><STRONG><FONT color=3D#ff0000>T</FONT><FONT =
+color=3D#000000>=20
+      =3D<U> 5252 x HP<BR></U><EM>&nbsp;&nbsp;&nbsp; =
+rpm</EM></FONT><BR><FONT=20
+      color=3D#ff0000>T</FONT><FONT color=3D#000000> =3D<U> 5252 x=20
+      60<BR></U>&nbsp;&nbsp;&nbsp;&nbsp; 1725</FONT><BR><FONT=20
+      color=3D#ff0000>T</FONT><FONT color=3D#000000> =3D<U>=20
+      315,120<BR></U><EM>&nbsp;&nbsp;&nbsp;&nbsp; =
+1725</EM></FONT><BR><FONT=20
+      color=3D#ff0000>T</FONT><FONT color=3D#000000> =3D 182.7=20
+      lb-ft</FONT></STRONG></P>
+      <HR>
+
+      <P><FONT color=3D#000000><STRONG>Calculating =
+Work:</STRONG></FONT></P>
+      <P>Work is applying a force over a distance. Force is any cause =
+that=20
+      changes the position, motion, direction, or shape of an object. =
+Work is=20
+      done when a force overcomes a resistance. Resistance is any force =
+that=20
+      tends to hinder the movement of an object.If an applied force does =
+not=20
+      cause motion the no work is produced.</P>
+      <P>To calculate the amount of work produced, apply this =
+formula:</P>
+      <P align=3Dcenter><STRONG><FONT color=3D#ff0000>W</FONT> =3D F x=20
+    D</STRONG></P></BLOCKQUOTE></BLOCKQUOTE>
+  <BLOCKQUOTE>
+    <BLOCKQUOTE>
+      <P align=3Dleft><FONT color=3D#ff0000>W</FONT> =3D work (in =
+lb-ft)<BR><FONT=20
+      color=3D#ff0000>F</FONT>&nbsp; =3D force (in lb)<BR><FONT=20
+      color=3D#ff0000>D</FONT>&nbsp; =3D distance (in ft)</P>
+      <P align=3Dleft><FONT =
+color=3D#000000><STRONG>Example:</STRONG></FONT> How=20
+      much work is required to carry a 25 lb bag of groceries vertically =
+from=20
+      street level to the 4th floor of a building 30' above street =
+level?</P>
+      <P align=3Dcenter><STRONG><FONT color=3D#ff0000>W</FONT> =3D F x=20
+      D</STRONG><BR><STRONG><FONT color=3D#ff0000>W</FONT> =3D 25 x=20
+      30</STRONG><BR><STRONG><FONT color=3D#ff0000>W</FONT> =3D 750 =
+-lb</STRONG></P>
+      <HR>
+
+      <P align=3Dleft><FONT color=3D#000000><STRONG>Calculating=20
+      Torque:</STRONG></FONT><BR></P></BLOCKQUOTE></BLOCKQUOTE>
+  <BLOCKQUOTE>
+    <BLOCKQUOTE>
+      <P align=3Dleft><FONT color=3D#000080>Torque is the force that =
+produces=20
+      rotation. It causes an object to rotate. Torque consist of a force =
+acting=20
+      on distance. Torque, like work, is measured is pound-feet (lb-ft). =
+
+      However, torque, unlike work, may exist even though no movement=20
+      occurs.</FONT></P>
+      <P align=3Dleft><STRONG><FONT color=3D#000000>To calculate torque, =
+apply this=20
+      formula:</FONT></STRONG></P>
+      <P align=3Dcenter><STRONG><FONT color=3D#ff0000>T </FONT><FONT =
+color=3D#000000>=3D=20
+      </FONT><FONT color=3D#000080>F x D</FONT></STRONG></P>
+      <P align=3Dleft><STRONG><FONT color=3D#ff0000>T</FONT><FONT =
+color=3D#000000> =3D=20
+      torque (in lb-ft)<BR></FONT><FONT color=3D#ff0000>F</FONT><FONT=20
+      color=3D#000000> =3D force (in lb)<BR></FONT><FONT =
+color=3D#ff0000>D</FONT><FONT=20
+      color=3D#000000> =3D distance (in ft)</FONT></STRONG></P>
+      <P align=3Dleft><STRONG><FONT color=3D#000000>Example: =
+</FONT></STRONG><FONT=20
+      color=3D#000080>What is the torque produced by a 60 lb force =
+pushing on a 3'=20
+      lever arm?</FONT></P>
+      <P align=3Dcenter><STRONG><FONT color=3D#ff0000>T </FONT><FONT =
+color=3D#000000>=3D=20
+      </FONT><FONT color=3D#000080>F x D<BR></FONT><FONT =
+color=3D#ff0000>T=20
+      </FONT><FONT color=3D#000000>=3D </FONT><FONT color=3D#000080>60 x =
+
+      3<BR></FONT><FONT color=3D#ff0000>T </FONT><FONT =
+color=3D#000000>=3D=20
+      </FONT><FONT color=3D#000080>180 lb ft</FONT></STRONG></P>
+      <HR>
+
+      <P><FONT color=3D#000000><STRONG>Calculating Full-load=20
+      Torque:</STRONG></FONT></P>
+      <P><FONT color=3D#000080>Full-load torque is the torque to produce =
+the rated=20
+      power at full speed of the motor. The amount of torque a motor =
+produces at=20
+      rated power and full speed can be found by using a =
+horsepower-to-torque=20
+      conversion chart. When using the <A=20
+      =
+href=3D"http://www.elec-toolbox.com/Formulas/Motor/hpconv.gif">conversion=
+=20
+      chart</A>, place a straight edge along the two known quantities =
+and read=20
+      the unknown quantity on the third line.</FONT></P></BLOCKQUOTE>
+    <BLOCKQUOTE>
+      <P align=3Dleft><FONT color=3D#000000><STRONG>To calculate motor =
+full-load=20
+      torque, apply this formula:</STRONG></FONT></P>
+      <P align=3Dcenter><STRONG><FONT color=3D#ff0000>T</FONT><FONT =
+color=3D#000000> =3D=20
+      <U>HP x 5252<BR></U>&nbsp;&nbsp;&nbsp; =
+rpm</FONT></STRONG></P></BLOCKQUOTE>
+    <BLOCKQUOTE>
+      <P><STRONG><FONT color=3D#ff0000>T</FONT><FONT color=3D#000000> =
+=3D torque (in=20
+      lb-ft)<BR></FONT><FONT color=3D#ff0000>HP</FONT><FONT =
+color=3D#000000> =3D=20
+      horsepower<BR></FONT><FONT color=3D#ff0000>5252</FONT><FONT =
+color=3D#000000> =3D=20
+      constant<BR></FONT><FONT color=3D#ff0000>rpm</FONT><FONT =
+color=3D#000000> =3D=20
+      revolutions per minute</FONT></STRONG></P>
+      <P><STRONG><FONT color=3D#000000>Example: </FONT></STRONG><FONT=20
+      color=3D#000080>What is the FLT (Full-load torque) of a 30HP motor =
+operating=20
+      at 1725 rpm?</FONT></P>
+      <P align=3Dcenter><STRONG><FONT color=3D#ff0000>T</FONT><FONT =
+color=3D#000000> =3D=20
+      <U>HP x 5252<BR></U>&nbsp;&nbsp;&nbsp; rpm</FONT><BR><FONT=20
+      color=3D#ff0000>T</FONT><FONT color=3D#000000> =3D <U>30 x=20
+      5252<BR></U>&nbsp;&nbsp;&nbsp;&nbsp; 1725</FONT><BR><FONT=20
+      color=3D#ff0000>T</FONT><FONT color=3D#000000> =3D=20
+      <U>157,560<BR></U>&nbsp;&nbsp;&nbsp;&nbsp; 1725</FONT><BR><FONT=20
+      color=3D#ff0000>T</FONT><FONT color=3D#000000> =3D 91.34=20
+      lb-ft</FONT></STRONG></P>
+      <HR>
+
+      <P align=3Dleft><FONT color=3D#000000><STRONG>Calculating=20
+      Horsepower:</STRONG></FONT></P>
+      <P align=3Dleft><FONT color=3D#000080>Electrical power is rated in =
+horsepower=20
+      or watts. A horsepower is a unit of power equal to 746 watts or =
+33,0000=20
+      lb-ft per minute (550 lb-ft per second). A watt is a unit of =
+measure equal=20
+      to the power produced by a current of 1 amp across the potential=20
+      difference of 1 volt. It is 1/746 of 1 horsepower. The watt is the =
+base=20
+      unit of electrical power. Motor power is rated in horsepower and=20
+      watts.<BR>Horsepower is used to measure the energy produced by an =
+electric=20
+      motor while doing work. </FONT></P>
+      <P align=3Dleft><FONT color=3D#000000><STRONG>To calculate the =
+horsepower of a=20
+      motor when current and efficiency, and voltage are known, apply =
+this=20
+      formula:</STRONG></FONT></P>
+      <P align=3Dcenter><STRONG><FONT color=3D#ff0000>HP </FONT><FONT=20
+      color=3D#000080>=3D <U>V x I x=20
+      Eff<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+      746</FONT></STRONG></P>
+      <P align=3Dleft><STRONG><FONT color=3D#ff0000>HP </FONT><FONT =
+color=3D#000080>=3D=20
+      horsepower<BR></FONT><FONT color=3D#ff0000>V </FONT><FONT=20
+      color=3D#000080>&nbsp;&nbsp; =3D voltage<BR></FONT><FONT =
+color=3D#ff0000>I=20
+      </FONT><FONT color=3D#000080>&nbsp;&nbsp;&nbsp; =3D curent=20
+      (amps)<BR></FONT><FONT color=3D#ff0000>Eff.</FONT><FONT =
+color=3D#000080> =3D=20
+      efficiency</FONT></STRONG></P>
+      <P align=3Dleft><STRONG><FONT color=3D#000000>Example:</FONT><FONT =
+
+      color=3D#000080> What is the horsepower of a 230v motor pulling 4 =
+amps and=20
+      having 82% efficiency?</FONT></STRONG></P>
+      <P align=3Dcenter><STRONG><FONT color=3D#ff0000>HP </FONT><FONT=20
+      color=3D#000080>=3D <U>V x I x=20
+      Eff<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+746</FONT><BR><FONT=20
+      color=3D#ff0000>HP </FONT><FONT color=3D#000080>=3D <U>230 x 4 x=20
+      .82</U><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+746</FONT><BR><FONT=20
+      color=3D#ff0000>HP </FONT><FONT color=3D#000080>=3D=20
+      <U>754.4<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+      746</FONT><BR><FONT color=3D#ff0000>HP </FONT><FONT =
+color=3D#000080>=3D 1=20
+      Hp<BR><BR></FONT></STRONG>Eff =3D efficiency / HP =3D horsepower / =
+V =3D volts /=20
+      A =3D amps / PF =3D power factor</P>
+      <DIV align=3Dcenter>
+      <CENTER>
+      <TABLE cellSpacing=3D3 border=3D2>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dmiddle =
+colSpan=3D5><STRONG>Horsepower=20
+            Formulas</STRONG></TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dmiddle rowSpan=3D2><FONT =
+color=3D#ff0000>To=20
+            Find</FONT></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle rowSpan=3D2><FONT =
+color=3D#008000>Use=20
+            Formula</FONT></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle colSpan=3D3><FONT=20
+            color=3D#000000>Example</FONT></TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dmiddle>Given</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>Find</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><STRONG><FONT=20
+            color=3D#000000>Solution</FONT></STRONG></TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dmiddle>HP</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><STRONG><FONT=20
+            color=3D#ff0000>HP</FONT></STRONG> <STRONG><FONT=20
+            color=3D#000000>=3D</FONT></STRONG> <FONT =
+color=3D#008000><U>I X E X=20
+            Eff.</U><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+746</FONT></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>240V, 20A, 85% Eff.</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>HP</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><STRONG><FONT=20
+            color=3D#ff0000>HP</FONT></STRONG> <STRONG><FONT=20
+            color=3D#000000>=3D</FONT></STRONG> <FONT =
+color=3D#008000><U>240V x 20A x=20
+            85%<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+            746</FONT><BR><STRONG><FONT=20
+        color=3D#000000>HP=3D5.5</FONT></STRONG></TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dmiddle>I</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><STRONG><FONT=20
+            color=3D#ff0000>I</FONT></STRONG> <FONT =
+color=3D#000000>=3D</FONT> <U>HP x=20
+            746<BR></U>&nbsp;&nbsp;&nbsp;&nbsp; E X Eff x PF</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>10HP, 240V, <BR>90% Eff., =
+88% PF</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>I</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><STRONG><FONT =
+color=3D#ff0000>I=20
+            </FONT><FONT color=3D#000000>=3D</FONT></STRONG> <FONT=20
+            color=3D#008000><U>10HP x =
+746<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+            240V x 90% x 88%</FONT><BR><STRONG><FONT color=3D#000000>I =
+=3D 39=20
+            A</FONT></STRONG></TD></TR></TBODY></TABLE></CENTER></DIV>
+      <P><FONT color=3D#000000><STRONG>To calculate the horsepower of a =
+motor when=20
+      the speed and torque are known, apply this =
+formula:</STRONG></FONT></P>
+      <P align=3Dcenter><STRONG><FONT color=3D#ff0000>HP</FONT><FONT =
+color=3D#000000>=20
+      =3D <U>rpm x=20
+      T(torque)<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+      5252(constant)</FONT></STRONG></P>
+      <P align=3Dleft><STRONG><FONT color=3D#000000>Example: What is the =
+horsepower=20
+      of a 1725 rpm motor with a FLT 3.1 lb-ft?</FONT></STRONG></P>
+      <P align=3Dcenter><STRONG><FONT color=3D#ff0000>HP</FONT><FONT =
+color=3D#000000>=20
+      =3D <U>rpm x =
+T<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+      5252<BR></FONT><FONT color=3D#ff0000>HP</FONT><FONT =
+color=3D#000000> =3D <U>1725=20
+      x 3.1<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+      5252<BR></FONT><FONT color=3D#ff0000>HP</FONT><FONT =
+color=3D#000000> =3D=20
+      <U>5347.5<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+      5252<BR></FONT><FONT color=3D#ff0000>HP</FONT><FONT =
+color=3D#000000> =3D 1=20
+      hp</FONT></STRONG></P>
+      <HR>
+    </BLOCKQUOTE>
+    <BLOCKQUOTE>
+      <P align=3Dleft><STRONG><FONT color=3D#000000>Calculating =
+Synchronous=20
+      Speed:</FONT></STRONG></P>
+      <P align=3Dleft><FONT color=3D#000080>AC motors are considered =
+constant speed=20
+      motors. This is because the synchronous speed of an induction =
+motor is=20
+      based on the supply frequency and the number of poles in the motor =
+
+      winding. Motor are designed for 60 hz use have synchronous speeds =
+of 3600,=20
+      1800, 1200, 900, 720, 600, 514, and 450 rpm. </FONT></P>
+      <P align=3Dleft><FONT color=3D#000000><STRONG>To calculate =
+synchronous speed=20
+      of an induction motor, apply this formula:</STRONG></FONT></P>
+      <P align=3Dcenter><STRONG><FONT =
+color=3D#ff0000>rpm<SMALL>syn</FONT><FONT=20
+      color=3D#000000> =3D<U> </SMALL>120 x=20
+      =
+f<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;=20
+      Np</FONT></STRONG></P>
+      <P align=3Dleft><STRONG><FONT =
+color=3D#000000>rpm<SMALL>syn</SMALL> =3D=20
+      synchronous speed (in=20
+      =
+rpm)<BR>f&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+=3D=20
+      supply frequency in =
+(cycles/sec)<BR>Np&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+      =3D&nbsp; number of motor poles</FONT></STRONG></P>
+      <P align=3Dleft><STRONG><FONT color=3D#000000>Example: =
+</FONT></STRONG><FONT=20
+      color=3D#000080>What is the synchronous speed of a four pole motor =
+operating=20
+      at 50 hz.?</FONT></P>
+      <P align=3Dcenter><STRONG><FONT =
+color=3D#ff0000>rpm<SMALL>syn</FONT><FONT=20
+      color=3D#000000> =3D<U> </SMALL>120 x=20
+      =
+f<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;=20
+      Np<BR></FONT><FONT color=3D#ff0000>rpm<SMALL>syn</FONT><FONT =
+color=3D#000000>=20
+      =3D<U> </SMALL>120 x=20
+      =
+50<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;=20
+      4<BR></FONT><FONT color=3D#ff0000>rpm<SMALL>syn</FONT><FONT =
+color=3D#000000>=20
+      =3D<U>=20
+      =
+</SMALL>6000<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;=20
+      4<BR></FONT><FONT color=3D#ff0000>rpm<SMALL>syn</FONT><FONT =
+color=3D#000000> =3D=20
+      </SMALL>1500 rpm</FONT></STRONG></P>
+      <HR>
+    </BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+<P align=3Dcenter><FONT size=3D4><STRONG><IMG height=3D16=20
+src=3D"http://www.elec-toolbox.com/images/strobe.gif" width=3D16> <A=20
+href=3D"http://www.elec-toolbox.com/calculators/calculators.htm">Check =
+out these=20
+Online Calculators!</A></STRONG></FONT></P>
+<HR>
+
+<P align=3Dcenter><FONT color=3D#000080 size=3D3>If there is anything =
+you would like=20
+to add or if you have any comments please feel free to <A=20
+href=3D"http://www.elec-toolbox.com/email.htm">email E.T.E.</A> =
+</FONT></P>
+<P align=3Dcenter><FONT color=3D#ff0000 size=3D3><A=20
+href=3D"http://www.elec-toolbox.com/main.html">Back to Main =
+Page</A></FONT></P>
+<H5 align=3Dcenter><B><I><FONT color=3D#400040 size=3D4>2007, =
+Electricians Toolbox=20
+Etc...</FONT><FONT color=3D#ffff00 size=3D4><BR><IMG height=3D94=20
+src=3D"http://www.elec-toolbox.com/images/etesym.jpg" =
+width=3D110><BR></FONT><FONT=20
+color=3D#000080 size=3D3>Design by</FONT><FONT color=3D#ff8000 size=3D3> =
+<A=20
+href=3D"http://www.elec-toolbox.com/email.htm">TC</A></I></B> =
+</FONT></H5>
+<P align=3Dcenter><FONT color=3D#ee7700 size=3D1>Information found here =
+was excerpted=20
+from <EM>Electrical motor Controls</EM> by Rockis &amp; Mazur</FONT></P>
+<P align=3Dleft><STRONG><FONT color=3D#000000 size=3D3><!--webbot =
+bot=3D"Timestamp" S-Type=3D"EDITED" S-Format=3D"%m/%d/%y %I:%M %p" =
+startspan -->03/14/08=20
+01:23=20
+PM<!--webbot bot=3D"Timestamp" i-checksum=3D"28891" endspan =
+--></FONT></STRONG></P></BODY></HTML>
+
+------=_NextPart_000_0081_01C9BA01.55A54D40
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.elec-toolbox.com/images/mtrform.gif
+
+R0lGODdhPwFfAPcAAAAAAAgAABAAABgAACEAACkAADEAADkAAEIAAEoAAFoAAAgACCEACCkACBAQ
+EEoQEBgQISEYISEhISEhKSkhITUcIEIhIVoYISkpKUopKVIpKRghORMhSSEpOQwhWgAhnGMAAGsA
+AHMAAGsACGsICGsYGFohIXMpLXsAAI4CAowYGpQhKaAICK0AAJkgHpwhKbUAAL0AAMYAAMYICK0Q
+GK0YGLMUHL0UGM4AANYAANYEANMPDecAAO8AAO0ODvAgIAgpUhApXhAxWhgpWhgpYwAplAApnAAp
+pTExMUI5QkJCQko9PU9ER2kxNWhXXWdnZ3guPYZZWYNub5R0cLtEQbtdWL1wWrJycIR+gYyEhJx9
+e7WFdZaPkKmZlLqXkrWvqt43JOhDJ+9GJe9HLvc+KfdKMfdSIe9SKfdSKe9SMfdSMe9aIfVcLfdj
+MetvLfdvMelNRfdOOfdaOfdaSOFpU9eDWOR/c9ufjOK3itm4sca9wdq7vdLO0uTU1uvr6+v///8A
+AP8QEP8YGP8YIf8hIf8pKf8xMf85Mf85Of85Qv9CQv9KKf9KMf9KOf9KSv9SKf9SMf9aLf9SOf9a
+Of9jKf9jMf9rMf9zKf9jOf9rOf9SQv9aQv9jQv9rQv9eWP9ra/dzOfd7Of9zNf97NfdzQvd4R/9z
+Rv97RvmHOP+EQveESv+IRvmRQf+MSvmZQfmfR/+EUv+MUv+USveUUv+UUv+cSvecUvulTvtzc/97
+hP+gVvmOgfuQkP+OlvuYnP+gpfe1Sv+tSve1Uve9Uv+tUv+1Uv+9Uve1Wve9Wv+tWv+1Wv+9Wv/G
+Wv+1Y/+9Y//GY//OY//Ga//Oa//Gc//Oc/fWjPfOlPfWlPetrf+trf+1rf/BoP/Gpf/OnP/SnP/m
+ov+9rf/Grf/nrf/vrf+1tf+9tfe9vf+9xv/Gxv/Wxv/nxv+9zv/Gzv/Ozv/ezv/nzv+91v/G1v/W
+1v//3v/e5//n5//35///5//v7//37///7//39///9/f////3/////yH5BAEAAAAALAAAAAA/AV8A
+AAj+AP8JHEiwoMGDCBMqXMiwocOHECNKVOhPYMV/FytmtMgRY8eNHkOCHPmxJEiRJVGqJLkyJUuW
+E2PKnEmzps2aG3N61MiRp06eO4MGBeoT5U+NP4UWTcq0p9KhTjuGnHqR6sCqWK9qlZqV61arXsOC
+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
+
+------=_NextPart_000_0081_01C9BA01.55A54D40
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.elec-toolbox.com/images/strobe.gif
+
+R0lGODlhEAAQAPcKAAAAAIAAAACAAICAAAAAgIAAgACAgICAgAQEBIwcDPwE/IR8fEQMBExERMQs
+DJSEjGwUBOSEPPTUjCQEBIRMLNxcJOysXEQkFGxcZLSstGQ8JMzExKwkDNRMHCwkLPTEdBQEBKx8
+VFQMBNQ0FJyUlOycTPzsrDQEBJxsROR0NFQsHHRsbHRELAwEBJwkDFRMTJSMjHwcBOyMRPTclIxc
+PNxkLOy0ZLy8vGw8JOTc5LQsDPTMfLyUbFwUBNQ8FDwcFFw0HHx0dAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAMDAwP8AAAD/AP//AAAA//8A/wD//////yH/C05FVFNDQVBFMi4wAwHo
+AwAh+QQBAgAKACwAAAAAEAAQAEcI5wAVqGjwAscLFisWwICBAoOKCwoUQKjQIYUMEztmzPgQoUOM
+FhEZuOCgg0MMCCghxGAwAUREBSAqmChRwUGHDj5S+HCp4AKQCxNOQOghQoRQBgw8PJToMQaHCh9M
+fBihAwLLiBM6RKhRIYKNDxYcuPCRAMHLiCBEjPXhIAbPiD8aYADCgsaKBzwy5NgQgsJPBRNEnEzQ
+g8HKoiJAmFUgwiSHxxx86IjhAkLLiBM5OKgxw0TnsDFETIgookKNzTskWNhhocPj0RFjyCiRIsUI
+B48dVIBwFqYPCykqUKwwAnZvtC1AgOwdEAAh+QQBAgAKACwAAAAAEAAQAAcI0QAV/GjwokEDDBiC
+LFgQBEODHwo8NMBBgQUGCgsyZMiBj8SKBh48XGAwQQQDkiAAgEgZ0oMCBiJiiOhx4oRKABNSAlCg
+QIQLCD1MMlgJYkLOnT05JIDA4MRREE4BIO1RwcHSGB0gQCWZk2eMCCOWuuCQ4sRJpyB4JvhQgUMM
+Dhxk9ICJkqcIGSmUuhgxoqmIv0hPQJDhYOyIHiAYJOAgAmnSsBBE1IwxwoUInjwnxKgaGSbZBGkx
+KzjRw0EMCDFiOKApGvMEmKdNhm7NM6VO2gEBACH5BAECAAoALAAAAAAQABAABwjAABVMaPCCIAYM
+BxbAOIChwQQFHhpgKIhhxQMSGXLcgLGigYePHkCAACASwISTIEAqAMFgZEmRJ0kCUCBQxASSI01O
+OHFzpoITEE64BIESpU8GLlpOAMGTqc2lNEW4gLCTqU4RDG5GHcEB68mdIiDYBEGTQQUXPbJmPdEj
+hliyAkdU4NBjJ4OwLrr6VBAjwogADAJDSMBVBE2aAEaUGOEWQgwOFWLAPQzCRQWuMR7HOHG4M9Me
+CRK87UxaAQCZpQMCACH5BAECAAoALAAAAAAQABAABwjVABVMaPCCIAYMBxaQQIFBww8FHhpgKIhh
+xQMYGXLgQ0EDiIePHkAAGAliwgQGIkBc8Kig5EiSE070ECHzhAKBJ0QCAFESJUoOIm7KnLBTZEwG
+EBK4CKrgRIwTOwGcqOACgggHFSDcFOGCgUkGFTgkiAFhRAStCkSM6MEAhAgZOmLE4FBhh4ubDDoA
+PTnCgVgdKSIwnTCCqogJPUaIdRDh6U0FMWT4eMoAKQe/TG8CGFHCQQyUPTikSDDh8U0QLiqMIJvA
+QQ+bpk/LFEH2ROnYpkXqjh0QACH+71RoaXMgR0lGIGZpbGUgd2FzIGFzc2VtYmxlZCB3aXRoIEdJ
+RiBDb25zdHJ1Y3Rpb24gU2V0IGZyb206DQoNCkFsY2hlbXkgTWluZHdvcmtzIEluYy4NClAuTy4g
+Qm94IDUwMA0KQmVldG9uLCBPbnRhcmlvDQpMMEcgMUEwDQpDQU5BREEuDQoNClRoaXMgY29tbWVu
+dCBibG9jayB3aWxsIG5vdCBhcHBlYXIgaW4gZmlsZXMgY3JlYXRlZCB3aXRoIGEgcmVnaXN0ZXJl
+ZCB2ZXJzaW9uIG9mIEdJRiBDb25zdHJ1Y3Rpb24gU2V0ACH/C0dJRkNPTm5iMS4wAgQADgEAAgAD
+AAAAAAAAAAAAAQAODQACAAUAAAAAAAAAAAANRkxBU0hJfjIuR0lGAA4NAAIABwAAAAAAAAAAAA1G
+TEFTSEl+My5HSUYADg0AAgAJAAAAAAAAAAAADUZMQVNISX40LkdJRgAAOw==
+
+------=_NextPart_000_0081_01C9BA01.55A54D40
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: http://www.elec-toolbox.com/images/etesym.jpg
+
+/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB
+AQEBAQICAQECAQEBAgICAgICAgICAQICAgICAgICAgL/2wBDAQEBAQEBAQEBAQECAQEBAgICAgIC
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgL/wAARCABeAG4DASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD+/Cii
+ig6AooooAKKKKACv5Rf+Cbf/AAceeBP2+P8Agsj+0N+x74cvvO/ZZ8deANM0/wDYM8S3ngzWPCfi
+Lxb47+Beh+IfFnxs1PxHox0LUdQk/wCE58P3/jXXtEv9f1TwtZ6L4V+AGgaXN4Ws/GnifV4p+f8A
++Ds//gqlqP7Hf7JGj/sW/BnxH4fg+O37bfh/xt4a+JUU9h4W8Uaj4I/ZIutE1Pwd8RrmbR7/AMRi
+78IeIPGuraynhzw9q1zoOpWNzpXh7x+2mXuk+JdF0vUbX/Mp+E/xR8d/A74p/DT41fC7Xf8AhF/i
+b8H/AIgeDfij8OvEv9maPrX/AAjvjv4f+ItO8WeEdd/sbxFp93p+rfZPEGk6fcfZb+0urO4+z+Vd
+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
+Qw8KGGqTX//Z
+
+------=_NextPart_000_0081_01C9BA01.55A54D40--

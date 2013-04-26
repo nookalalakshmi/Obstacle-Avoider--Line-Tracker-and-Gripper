@@ -1,0 +1,2752 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0135)http://publib.boulder.ibm.com/infocenter/pseries/v5r3/advanced/tocView.jsp?view=toc&topic=/com.ibm.aix.files/doc/aixfiles/termios.h.htm -->
+<HTML><HEAD><TITLE>Contents</TITLE>
+<STYLE type=text/css>.cMenu {
+	BORDER-RIGHT: buttonhighlight 2px outset; BORDER-TOP: buttonhighlight 2px outset; VISIBILITY: hidden; BORDER-LEFT: buttonhighlight 2px outset; CURSOR: default; BORDER-BOTTOM: buttonhighlight 2px outset; POSITION: absolute; BACKGROUND-COLOR: #ffffff
+}
+TD.disable {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: lightgrey
+}
+.tdbottom {
+	BORDER-BOTTOM: inactiveborder 1px solid
+}
+.tdright {
+	BORDER-RIGHT: #999999 1px solid
+}
+.dMenu {
+	VISIBILITY: hidden; WIDTH: 20px; CURSOR: default; POSITION: absolute
+}
+</STYLE>
+
+<META http-equiv=Content-Type content="text/html; charset=UTF-8">
+<STYLE type=text/css>BODY {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; FONT: icon; BORDER-LEFT: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: 0px; BACKGROUND-COLOR: window
+}
+UL {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; MARGIN-LEFT: 20px; BORDER-RIGHT-WIDTH: 0px
+}
+#root {
+	MARGIN-TOP: 5px; MARGIN-LEFT: 5px
+}
+UL.expanded {
+	DISPLAY: block
+}
+UL.collapsed {
+	DISPLAY: none
+}
+LI {
+	MARGIN-TOP: 3px; LIST-STYLE-IMAGE: none; WHITE-SPACE: nowrap; LIST-STYLE-TYPE: none
+}
+IMG {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 4px 0px 0px; BORDER-LEFT: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: 0px
+}
+A {
+	PADDING-RIGHT: 2px; COLOR: windowtext; WHITE-SPACE: nowrap; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+A.active {
+	BACKGROUND: highlight; COLOR: #ffffff
+}
+TD.active {
+	BACKGROUND: highlight; COLOR: #ffffff
+}
+A.active:hover {
+	BACKGROUND: highlight; COLOR: #ffffff; TEXT-DECORATION: underline
+}
+.h {
+	VISIBILITY: hidden
+}
+</STYLE>
+
+<SCRIPT language=JavaScript>
+
+// Preload images
+minus = new Image();
+minus.src = "images"+"/minus.gif";
+plus = new Image();
+plus.src = "images"+"/plus.gif";
+toc_open_img = new Image();
+toc_open_img.src = "images"+"/toc_open.gif";
+toc_closed_img = new Image();
+toc_closed_img.src = "images"+"/toc_closed.gif";
+folder_img = new Image();
+folder_img.src = "images"+"/container_obj.gif";
+topic_img = new Image();
+topic_img.src = "images"+"/topic.gif";
+altTopicClosed = "Topic\u0020closed";
+altTopicOpen = "Topic\u0020open";
+<!-- uat4i00000009 1/3 -->
+altBookClosed="Book closed";
+altBookOpen="Book open";
+<!-- end of uat4i00000009 1/3 -->
+</SCRIPT>
+
+<SCRIPT language=JavaScript src="tocView_files/toc.js"></SCRIPT>
+
+<SCRIPT language=JavaScript src="tocView_files/tocview.js"></SCRIPT>
+
+<SCRIPT language=JavaScript> 
+function getDisable(){
+	return "Disabled";
+}
+/**
+ * Loads the specified table of contents
+ */		
+function loadTOC(tocHref)
+{
+<!-- uat4i00000009 2/3 -->
+	// navigate to this toc, if not already loaded
+	if (window.location.href.indexOf("tocView.jsp?toc="+escape(tocHref)) != -1){
+		var links = document.getElementsByTagName("A")
+	  	     for(var i=0;i<links.length;i++){
+		  	    if (links[i].name=="opened"){
+			  	    var plus_minus = getPlusMinus(links[i]);
+			  		if (plus_minus != null)
+			  		{	
+			    		if (isCollapsed(plus_minus)) 
+			   				expand(plus_minus);
+			  			scrollIntoView(links[i]);
+			  		}
+					  return;
+		  	    }
+	  	    }
+	  } else {
+		 window.location.replace("tocView.jsp?toc="+tocHref);
+	  }
+<!-- end of uat4i00000009 2/3 -->
+}
+
+var tocTitle = "";
+var tocId = "";
+
+// The flag used in toc.js-highlightTopic()
+// to prevent the book from opening when a 
+// quick action occured.
+var quickActionClicked=false;
+	
+function onloadHandler()
+{
+<!-- uat4i00000020 2/5 -->
+<!-- initMouseMove();  -->
+<!-- end of uat4i00000020 2/5 -->
+
+	
+	tocTitle = 'AIX\u0020documentation';
+	
+	var tocTopic = "../topic/com.ibm.aix.doc/doc/base/aixinformation.htm";
+	// set title on the content toolbar
+	parent.parent.parent.setContentToolbarTitle(tocTitle);
+		
+	var topicSelected=false;
+	// select specified topic, or else the book
+	var topic = "../topic/com.ibm.aix.files/doc/aixfiles/termios.h.htm";
+	if (topic != "about:blank" && topic != tocTopic) {
+		if (topic.indexOf(window.location.protocol) != 0 && topic.length > 2) {
+			// remove the .. from topic
+			topic = topic.substring(2);
+			// remove advanced/tocView.jsp from path to obtain contextPath
+			var contextPath = window.location.pathname;
+			var slash = contextPath.lastIndexOf('/');
+			if(slash > 0) {
+				slash = contextPath.lastIndexOf('/', slash-1);
+				if(slash >= 0) {
+					contextPath = contextPath.substr(0, slash);
+					topic = window.location.protocol + "//" +window.location.host + contextPath + topic;
+				}
+			}			
+		}
+		topicSelected = selectTopic(escape(topic));
+	} else {
+		topicSelected = selectTopicById(tocId);
+	}
+
+	if(!topicSelected){
+		if(parent.parent.activityFiltering){
+			askShowAll();
+		}
+	}
+
+
+	focusHandler("e");
+	var leftmenu = document.getElementById("leftmenu");
+	var divWidth = parseInt(document.getElementById("divtable").offsetWidth);
+	divWidth = divWidth;
+	leftmenu.style.width = divWidth  +"px";
+}
+
+var askShowAllDialog;
+var w = 470;
+var h = 270;
+
+function askShowAll(){
+
+	var l = top.screenLeft + (top.document.body.clientWidth - w) / 2;
+	var t = top.screenTop + (top.document.body.clientHeight - h) / 2;
+
+	// move the dialog just a bit higher than the middle
+	if (t-50 > 0) t = t-50;
+	
+	window.location="javascript://needModal";
+	askShowAllDialog = window.open("askShowAll.jsp", "askShowAllDialog", "resizable=yes,height="+h+",width="+w+",left="+l+",top="+t );
+	askShowAllDialog.focus(); 
+}
+
+function yesShowAll(){
+	window.parent.parent.showAll();
+}
+
+function closeAskShowAllDialog(){
+	try {
+		if (askShowAllDialog){
+			askShowAllDialog.close();
+		}
+	}
+	catch(e) {}
+}
+
+// uat4i00000002
+function closeQuickSearchDialog(){
+	try {
+		if (quickSingleSearchDialog){
+			quickSingleSearchDialog.close();
+		}
+		
+		if(quickSubSearchDialog){
+		quickSubSearchDialog.close();
+		}
+	}
+	catch(e) {}
+}
+
+// end of uat4i00000002
+
+function onunloadHandler() {
+	closeAskShowAllDialog();
+	
+
+	document.body.innerHTML = "";
+
+}
+
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY dir=ltr tabIndex=0 onload=onloadHandler() onunload=onunloadHandler()>
+<UL class=expanded id=root dir=ltr>
+  <LI><!-- uat4i00000015 2/2 --><!-- uat4i00000020 4/5--><!-- uat4i00000454 2/2 --><IMG 
+  title="Book closed" alt="Book closed" src="tocView_files/toc_closed.gif"><A 
+  id=b0 onmouseover=addChild(this) style="FONT-WEIGHT: bold" 
+  onfocus=addChild(this) 
+  onclick='if(window.loadTOC){loadTOC("/com.ibm.helpweb.doc/toc.xml");} else {window.location.replace("tocView.jsp?toc="+"/com.ibm.helpweb.doc/toc.xml");} ' 
+  href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.helpweb.doc/welcome.htm" 
+  name=/com.ibm.helpweb.doc/toc.xml>System p and AIX information center home</A> 
+<!-- end of uat4i00000020 4/5--><!-- end of uat4i00000015 2/2 --><!-- end of uat4i00000454 2/2 -->
+  <LI><!-- uat4i00000015 2/2 --><!-- uat4i00000020 4/5--><!-- uat4i00000454 2/2 --><IMG 
+  title="Book closed" alt="Book closed" src="tocView_files/toc_closed.gif"><A 
+  id=b1 onmouseover=addChild(this) style="FONT-WEIGHT: bold" 
+  onfocus=addChild(this) 
+  onclick='if(window.loadTOC){loadTOC("/com.ibm.pseries.doc/toc.xml");} else {window.location.replace("tocView.jsp?toc="+"/com.ibm.pseries.doc/toc.xml");} ' 
+  href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.pseries.doc/hardware_docs/hardware.htm" 
+  name=/com.ibm.pseries.doc/toc.xml>System p hardware</A> <!-- end of uat4i00000020 4/5--><!-- end of uat4i00000015 2/2 --><!-- end of uat4i00000454 2/2 -->
+  <LI><!-- uat4i00000020 3/5--><!-- uat4i00000015 1/2--><!-- uat4i00000009 3/3--><!-- uat4i00000454 1/2 --><IMG 
+  class=expanded title="Book open" onclick="" alt="Book open" 
+  src="tocView_files/toc_open.gif"><A id=b2 onmouseover=addChild(this) 
+  style="FONT-WEIGHT: bold" onfocus=addChild(this) 
+  onclick='loadTOC("/com.ibm.aix.doc/toc.xml")' 
+  href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/aixinformation.htm" 
+  name=opened>AIX documentation</A> <!-- end of uat4i00000015 1/2 --><!-- end of uat4i00000020 3/5--><!-- end of uat4i00000009 3/3--><!-- end of uat4i00000454 1/2 -->
+  <UL class=expanded dir=ltr>
+    <LI><IMG class=collapsed title="Topic closed" onclick="" alt="Topic closed" 
+    src="tocView_files/plus.gif"><A id=t2_0 onmouseover=addChild(this) 
+    onfocus=addChild(this) 
+    href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/notices.htm"><IMG 
+    alt="" src="tocView_files/container_obj.gif">Notices</A>
+    <UL class=collapsed>
+      <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_0_0 
+      onmouseover=addChild(this) onfocus=addChild(this) 
+      href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/copyrights.htm"><IMG 
+      alt="" src="tocView_files/topic.gif">Other copyrights</A> </LI></UL>
+    <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_1 
+    onmouseover=addChild(this) onfocus=addChild(this) 
+    href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/aixpdfs.htm"><IMG 
+    alt="" src="tocView_files/topic.gif">AIX PDFs</A> 
+    <LI><IMG class=collapsed title="Topic closed" onclick="" alt="Topic closed" 
+    src="tocView_files/plus.gif"><A id=t2_2 onmouseover=addChild(this) 
+    onfocus=addChild(this) 
+    href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/commandsreference.htm"><IMG 
+    alt="" src="tocView_files/container_obj.gif">Commands reference</A>
+    <UL class=collapsed>
+      <LI><IMG class=collapsed title="Topic closed" onclick="" 
+      alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0 
+      onmouseover=addChild(this) onfocus=addChild(this) 
+      href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/alphabeticallistofcommands.htm"><IMG 
+      alt="" src="tocView_files/container_obj.gif">Alphabetical list of 
+      commands</A>
+      <UL class=collapsed>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_0 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">a</A>
+        <UL class=collapsed id=2_0_0></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_1 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">b</A>
+        <UL class=collapsed id=2_0_1></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_2 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">c</A>
+        <UL class=collapsed id=2_0_2></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_3 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">d</A>
+        <UL class=collapsed id=2_0_3></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_4 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">e</A>
+        <UL class=collapsed id=2_0_4></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_5 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">f</A>
+        <UL class=collapsed id=2_0_5></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_6 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">g</A>
+        <UL class=collapsed id=2_0_6></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_7 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">h</A>
+        <UL class=collapsed id=2_0_7></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_8 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">i</A>
+        <UL class=collapsed id=2_0_8></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_9 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">j</A>
+        <UL class=collapsed id=2_0_9></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_10 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">k</A>
+        <UL class=collapsed id=2_0_10></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_11 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">l</A>
+        <UL class=collapsed id=2_0_11></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_12 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">m</A>
+        <UL class=collapsed id=2_0_12></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_13 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">n</A>
+        <UL class=collapsed id=2_0_13></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_14 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">o</A>
+        <UL class=collapsed id=2_0_14></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_15 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">p</A>
+        <UL class=collapsed id=2_0_15></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_16 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">q</A>
+        <UL class=collapsed id=2_0_16></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_17 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">r</A>
+        <UL class=collapsed id=2_0_17></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_18 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">s</A>
+        <UL class=collapsed id=2_0_18></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_19 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">t</A>
+        <UL class=collapsed id=2_0_19></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_20 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">u</A>
+        <UL class=collapsed id=2_0_20></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_21 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">v</A>
+        <UL class=collapsed id=2_0_21></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_22 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">w</A>
+        <UL class=collapsed id=2_0_22></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_23 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">x</A>
+        <UL class=collapsed id=2_0_23></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_24 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">y</A>
+        <UL class=collapsed id=2_0_24></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_0_25 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">z</A>
+        <UL class=collapsed id=2_0_25></UL></LI></UL>
+      <LI><IMG class=collapsed title="Topic closed" onclick="" 
+      alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1 
+      onmouseover=addChild(this) onfocus=addChild(this) 
+      href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/categoricallistofcommands.htm"><IMG 
+      alt="" src="tocView_files/container_obj.gif">Categorical list of 
+      commands</A>
+      <UL class=collapsed>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_0 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">Communications and Networking</A>
+        <UL class=collapsed id=2_1_0></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_1 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">Diagnostics</A>
+        <UL class=collapsed id=2_1_1></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_2 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">Documentation</A>
+        <UL class=collapsed id=2_1_2></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_3 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">Editing</A>
+        <UL class=collapsed id=2_1_3></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_4 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">Files, Directories, and File 
+        Systems</A>
+        <UL class=collapsed id=2_1_4></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_5 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">Games</A>
+        <UL class=collapsed id=2_1_5></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_6 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">Installation and Maintenance</A>
+        <UL class=collapsed id=2_1_6></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_7 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">Language Management</A>
+        <UL class=collapsed id=2_1_7></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_8 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">Performance Management</A>
+        <UL class=collapsed id=2_1_8></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_9 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">Printing and Spoolers</A>
+        <UL class=collapsed id=2_1_9></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_10 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">Security and User Management</A>
+        <UL class=collapsed id=2_1_10></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_11 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">Shells</A>
+        <UL class=collapsed id=2_1_11></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_12 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">Software Development</A>
+        <UL class=collapsed id=2_1_12></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_13 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">System Management</A>
+        <UL class=collapsed id=2_1_13></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_14 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">Text Formatting</A>
+        <UL class=collapsed id=2_1_14></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_15 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">User Environment</A>
+        <UL class=collapsed id=2_1_15></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_16 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" 
+        src="tocView_files/container_obj.gif">Utilities</A>
+        <UL class=collapsed id=2_1_16></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_2_1_17 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="about:blank"><IMG alt="" src="tocView_files/container_obj.gif">X 
+        Windows</A>
+        <UL class=collapsed id=2_1_17></UL></LI></UL></LI></UL>
+    <LI><IMG class=collapsed title="Topic closed" onclick="" alt="Topic closed" 
+    src="tocView_files/plus.gif"><A id=t2_3 onmouseover=addChild(this) 
+    onfocus=addChild(this) 
+    href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/filesreference.htm"><IMG 
+    alt="" src="tocView_files/container_obj.gif">Files reference</A>
+    <UL class=collapsed>
+      <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_0 
+      onmouseover=addChild(this) onfocus=addChild(this) 
+      href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/aixfiles.htm"><IMG 
+      alt="" src="tocView_files/topic.gif">Files Reference</A> 
+      <LI><IMG class=collapsed title="Topic closed" onclick="" 
+      alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_1 
+      onmouseover=addChild(this) onfocus=addChild(this) 
+      href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/About.htm#avrki135sall"><IMG 
+      alt="" src="tocView_files/container_obj.gif">About This Book</A>
+      <UL class=collapsed>
+        <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_1_0 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/About.htm#a109f0f27"><IMG 
+        alt="" src="tocView_files/topic.gif">How to Use This Book</A> 
+        <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_1_1 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/About.htm#a109f0f2d"><IMG 
+        alt="" src="tocView_files/topic.gif">Highlighting</A> 
+        <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_1_2 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/About.htm#wq2"><IMG 
+        alt="" src="tocView_files/topic.gif">Case-Sensitivity in AIX</A> 
+        <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_1_3 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/About.htm#a3b2abd8677janb"><IMG 
+        alt="" src="tocView_files/topic.gif">ISO 9000</A> 
+        <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_1_4 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/About.htm#a109f0f32"><IMG 
+        alt="" src="tocView_files/topic.gif">Related Publications</A> </LI></UL>
+      <LI><IMG class=collapsed title="Topic closed" onclick="" 
+      alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2 
+      onmouseover=addChild(this) onfocus=addChild(this) 
+      href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Chapter_1.htm#a2561fd457judy"><IMG 
+      alt="" src="tocView_files/container_obj.gif">System Files</A>
+      <UL class=collapsed>
+        <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_0 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Chapter_1.htm#a2561fd896judy"><IMG 
+        alt="" src="tocView_files/topic.gif">Types of Files</A> 
+        <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_1 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Chapter_1.htm#a2561fe264judy"><IMG 
+        alt="" src="tocView_files/topic.gif">File-Naming Conventions</A> 
+        <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_2 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Chapter_1.htm#a2561fe486judy"><IMG 
+        alt="" src="tocView_files/topic.gif">System Files</A> 
+        <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_3 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Chapter_1.htm#a2561ff152judy"><IMG 
+        alt="" src="tocView_files/topic.gif">Related Information</A> 
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_4 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/acct_cfg.htm#acct_cfg"><IMG 
+        alt="" src="tocView_files/container_obj.gif">acct.cfg File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_4_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/acct_cfg.htm#wq6"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_4_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/acct_cfg.htm#wq7"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_4_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/acct_cfg.htm#wq8"><IMG 
+          alt="" src="tocView_files/topic.gif">Examples</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_4_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/acct_cfg.htm#wq9"><IMG 
+          alt="" src="tocView_files/topic.gif">File</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_4_4 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/acct_cfg.htm#wq10"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_5 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/admin_4.htm#admin_4"><IMG 
+        alt="" src="tocView_files/container_obj.gif">admin File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_5_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/admin_4.htm#wq11"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_5_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/admin_4.htm#wq12"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_5_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/admin_4.htm#wq16"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_6 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/aliases.htm#a114c1a55"><IMG 
+        alt="" src="tocView_files/container_obj.gif">aliases File for Mail</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_6_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/aliases.htm#a114c1a56"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_6_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/aliases.htm#a114c1a58"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_6_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/aliases.htm#a114c1a63"><IMG 
+          alt="" src="tocView_files/topic.gif">Files</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_6_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/aliases.htm#a114c1a69"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_7 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/audit_BNU.htm#sa41d0kaye"><IMG 
+        alt="" src="tocView_files/container_obj.gif">audit File for BNU</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_7_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/audit_BNU.htm#a134x94179"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_7_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/audit_BNU.htm#a134x9417b"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_7_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/audit_BNU.htm#a134x94181"><IMG 
+          alt="" src="tocView_files/topic.gif">Files</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_7_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/audit_BNU.htm#a134x94183"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_8 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/backup.htm#a15295cb"><IMG 
+        alt="" src="tocView_files/container_obj.gif">backup File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_8_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/backup.htm#a15295cd"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_8_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/backup.htm#a15295cf"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_8_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/backup.htm#a57f067"><IMG 
+          alt="" src="tocView_files/topic.gif">Header Records</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_8_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/backup.htm#a57f066"><IMG 
+          alt="" src="tocView_files/topic.gif">By-Name Format</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_8_4 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/backup.htm#a57f06e"><IMG 
+          alt="" src="tocView_files/topic.gif">By-Inode Format</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_8_5 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/backup.htm#a1749122"><IMG 
+          alt="" src="tocView_files/topic.gif">Constants</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_8_6 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/backup.htm#a152963b"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_9 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/bincmds.htm#aw51a0frit"><IMG 
+        alt="" src="tocView_files/container_obj.gif">bincmds File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_9_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/bincmds.htm#a355f939"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_9_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/bincmds.htm#a355f93a"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_9_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/bincmds.htm#a355f93b"><IMG 
+          alt="" src="tocView_files/topic.gif">Security</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_9_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/bincmds.htm#a355f93c"><IMG 
+          alt="" src="tocView_files/topic.gif">Examples</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_9_4 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/bincmds.htm#a355f93e"><IMG 
+          alt="" src="tocView_files/topic.gif">Files</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_9_5 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/bincmds.htm#a355f93f"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_10 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/BOOTP.htm#a027b48a609stcl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">BOOTP Relay Agent 
+        Configuration File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_10_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/BOOTP.htm#a027b48a673stcl"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_10_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/BOOTP.htm#a027b48a742stcl"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_10_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/BOOTP.htm#a027b48b218stcl"><IMG 
+          alt="" src="tocView_files/topic.gif">Example</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_10_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/BOOTP.htm#a027b48b341stcl"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_11 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/bootparams.htm#a213x9a1db"><IMG 
+        alt="" src="tocView_files/container_obj.gif">bootparams File for NFS</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_11_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/bootparams.htm#a213x9a1dd"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_11_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/bootparams.htm#a213x9a1e0"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_11_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/bootparams.htm#a213x9a1e5"><IMG 
+          alt="" src="tocView_files/topic.gif">Examples</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_11_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/bootparams.htm#bf7f4e0210kevi"><IMG 
+          alt="" src="tocView_files/topic.gif">Files</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_11_4 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/bootparams.htm#slb8230bob"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_12 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ca_cfg.htm#ca_cfg"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ca.cfg File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_12_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ca_cfg.htm#wq36"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_12_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ca_cfg.htm#wq37"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_12_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ca_cfg.htm#wq38"><IMG 
+          alt="" src="tocView_files/topic.gif">Examples</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_12_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ca_cfg.htm#wq39"><IMG 
+          alt="" src="tocView_files/topic.gif">File</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_12_4 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ca_cfg.htm#wq40"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_13 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/cdromd.conf.htm#cdromd_conf"><IMG 
+        alt="" src="tocView_files/container_obj.gif">cdromd.conf File Format</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_13_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/cdromd.conf.htm#a287x923e3"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_13_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/cdromd.conf.htm#a287x923e9"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_13_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/cdromd.conf.htm#wq43"><IMG 
+          alt="" src="tocView_files/topic.gif">Examples</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_13_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/cdromd.conf.htm#wq44"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_14 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ClientHostName.info.htm#a3b2ac75164janb"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ClientHostName.info 
+File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_14_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ClientHostName.info.htm#a3b2ac75179janb"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_14_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ClientHostName.info.htm#a3b2ac75221janb"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_14_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ClientHostName.info.htm#a3b2ac75576janb"><IMG 
+          alt="" src="tocView_files/topic.gif">Example</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_14_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ClientHostName.info.htm#a3b2ac75618janb"><IMG 
+          alt="" src="tocView_files/topic.gif">Files</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_14_4 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ClientHostName.info.htm#a3b2ac75645janb"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_15 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/clsnmp.conf.htm#clsnmp_conf"><IMG 
+        alt="" src="tocView_files/container_obj.gif">clsnmp.conf File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_15_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/clsnmp.conf.htm#wq51"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=collapsed title="Topic closed" onclick="" 
+          alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_15_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/clsnmp.conf.htm#wq52"><IMG 
+          alt="" src="tocView_files/container_obj.gif">Description</A>
+          <UL class=collapsed id=3_2_15_1></UL>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_15_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/clsnmp.conf.htm#wq57"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_16 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Command.htm#ei470kaye"><IMG 
+        alt="" src="tocView_files/container_obj.gif">Command (C.*) Files for 
+        BNU</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_16_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Command.htm#a144x929b"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_16_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Command.htm#a144x929f"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=collapsed title="Topic closed" onclick="" 
+          alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_16_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Command.htm#a144x92ae"><IMG 
+          alt="" src="tocView_files/container_obj.gif">Examples</A>
+          <UL class=collapsed id=3_2_16_2></UL>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_16_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Command.htm#a144x92cd"><IMG 
+          alt="" src="tocView_files/topic.gif">Files</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_16_4 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Command.htm#a144x92d4"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_17 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/compver_4.htm#compver_4"><IMG 
+        alt="" src="tocView_files/container_obj.gif">compver File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_17_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/compver_4.htm#wq66"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_17_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/compver_4.htm#wq67"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_17_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/compver_4.htm#wq68"><IMG 
+          alt="" src="tocView_files/topic.gif">Examples</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_17_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/compver_4.htm#wq69"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_18 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/config.htm#evc0frit"><IMG 
+        alt="" src="tocView_files/container_obj.gif">config File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_18_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/config.htm#a35b925e379stue"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=collapsed title="Topic closed" onclick="" 
+          alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_18_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/config.htm#a35b925e427stue"><IMG 
+          alt="" src="tocView_files/container_obj.gif">Description</A>
+          <UL class=collapsed id=3_2_18_1></UL>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_18_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/config.htm#a35b925f600stue"><IMG 
+          alt="" src="tocView_files/topic.gif">Security</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_18_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/config.htm#a35b925f694stue"><IMG 
+          alt="" src="tocView_files/topic.gif">Examples</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_18_4 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/config.htm#a35b9260156stue"><IMG 
+          alt="" src="tocView_files/topic.gif">Files</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_18_5 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/config.htm#a35b9260305stue"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_19 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/consdef.htm#wh381kevi"><IMG 
+        alt="" src="tocView_files/container_obj.gif">consdef File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_19_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/consdef.htm#c014b2a845kevi"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_19_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/consdef.htm#c014b2a991kevi"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_19_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/consdef.htm#c014b2c785kevi"><IMG 
+          alt="" src="tocView_files/topic.gif">Examples</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_19_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/consdef.htm#c014b2d859kevi"><IMG 
+          alt="" src="tocView_files/topic.gif">Files</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_19_4 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/consdef.htm#c014b2e578kevi"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_20 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/copyright_4.htm#copyright_4"><IMG 
+        alt="" src="tocView_files/container_obj.gif">copyright File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_20_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/copyright_4.htm#wq87"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_20_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/copyright_4.htm#wq88"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_21 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.pkf.htm#cthaspkf"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ct_has.pkf File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_21_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.pkf.htm#wq89"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_21_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.pkf.htm#wq90"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_21_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.pkf.htm#wq91"><IMG 
+          alt="" src="tocView_files/topic.gif">Security</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_21_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.pkf.htm#wq92"><IMG 
+          alt="" src="tocView_files/topic.gif">Restrictions</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_21_4 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.pkf.htm#wq93"><IMG 
+          alt="" src="tocView_files/topic.gif">Examples</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_21_5 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.pkf.htm#wq94"><IMG 
+          alt="" src="tocView_files/topic.gif">Location</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_21_6 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.pkf.htm#wq95"><IMG 
+          alt="" src="tocView_files/topic.gif">Files</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_21_7 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.pkf.htm#wq96"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_22 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.qkf.htm#cthasqkf"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ct_has.qkf File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_22_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.qkf.htm#wq97"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_22_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.qkf.htm#wq98"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_22_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.qkf.htm#wq99"><IMG 
+          alt="" src="tocView_files/topic.gif">Security</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_22_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.qkf.htm#wq100"><IMG 
+          alt="" src="tocView_files/topic.gif">Restrictions</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_22_4 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.qkf.htm#wq101"><IMG 
+          alt="" src="tocView_files/topic.gif">Examples</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_22_5 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.qkf.htm#wq102"><IMG 
+          alt="" src="tocView_files/topic.gif">Location</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_22_6 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.qkf.htm#wq103"><IMG 
+          alt="" src="tocView_files/topic.gif">Files</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_22_7 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.qkf.htm#wq104"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_23 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.thl.htm#cthasthl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ct_has.thl File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_23_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.thl.htm#wq105"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_23_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.thl.htm#wq106"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_23_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.thl.htm#wq107"><IMG 
+          alt="" src="tocView_files/topic.gif">Security</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_23_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.thl.htm#wq108"><IMG 
+          alt="" src="tocView_files/topic.gif">Restrictions</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_23_4 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.thl.htm#wq109"><IMG 
+          alt="" src="tocView_files/topic.gif">Examples</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_23_5 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.thl.htm#wq110"><IMG 
+          alt="" src="tocView_files/topic.gif">Location</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_23_6 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.thl.htm#wq111"><IMG 
+          alt="" src="tocView_files/topic.gif">Files</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_23_7 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_has.thl.htm#wq112"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_24 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctcasd.cfg.htm#ctcasdf"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ctcasd.cfg File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_24_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctcasd.cfg.htm#wq113"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_24_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctcasd.cfg.htm#wq114"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_24_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctcasd.cfg.htm#wq115"><IMG 
+          alt="" src="tocView_files/topic.gif">Restrictions</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_24_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctcasd.cfg.htm#wq116"><IMG 
+          alt="" src="tocView_files/topic.gif">Examples</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_24_4 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctcasd.cfg.htm#wq117"><IMG 
+          alt="" src="tocView_files/topic.gif">Location</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_24_5 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctcasd.cfg.htm#wq118"><IMG 
+          alt="" src="tocView_files/topic.gif">Files</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_24_6 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctcasd.cfg.htm#wq119"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_25 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctrmc.acls.htm#rmcacl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ctrmc.acls File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_25_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctrmc.acls.htm#wq120"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_25_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctrmc.acls.htm#wq121"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_25_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctrmc.acls.htm#wq122"><IMG 
+          alt="" src="tocView_files/topic.gif">Implementation Specifics</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_25_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctrmc.acls.htm#wq123"><IMG 
+          alt="" src="tocView_files/topic.gif">Location</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_25_4 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctrmc.acls.htm#wq124"><IMG 
+          alt="" src="tocView_files/topic.gif">Files</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_25_5 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctrmc.acls.htm#wq125"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_26 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctsec_map.global.htm#ctsec_map.global"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ctsec_map.global File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_26_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctsec_map.global.htm#wq126"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_26_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctsec_map.global.htm#wq127"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_26_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctsec_map.global.htm#wq129"><IMG 
+          alt="" src="tocView_files/topic.gif">Security</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_26_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctsec_map.global.htm#wq130"><IMG 
+          alt="" src="tocView_files/topic.gif">Restrictions</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_26_4 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctsec_map.global.htm#wq131"><IMG 
+          alt="" src="tocView_files/topic.gif">Implementation Specifics</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_26_5 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctsec_map.global.htm#wq132"><IMG 
+          alt="" src="tocView_files/topic.gif">Location</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_26_6 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctsec_map.global.htm#wq133"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_27 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctsec_map.local.htm#ctsec_map.local"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ctsec_map.local File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_27_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctsec_map.local.htm#wq134"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_27_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctsec_map.local.htm#wq135"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_27_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctsec_map.local.htm#wq137"><IMG 
+          alt="" src="tocView_files/topic.gif">Security</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_27_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctsec_map.local.htm#wq138"><IMG 
+          alt="" src="tocView_files/topic.gif">Restrictions</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_27_4 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctsec_map.local.htm#wq139"><IMG 
+          alt="" src="tocView_files/topic.gif">Implementation Specifics</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_27_5 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctsec_map.local.htm#wq140"><IMG 
+          alt="" src="tocView_files/topic.gif">Location</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_27_6 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctsec_map.local.htm#wq141"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_28 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Data.htm#fh4170kaye"><IMG 
+        alt="" src="tocView_files/container_obj.gif">Data (D.*) Files for 
+BNU</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_28_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Data.htm#a144x9308"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_28_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Data.htm#a144x930c"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_28_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Data.htm#a144x9317"><IMG 
+          alt="" src="tocView_files/topic.gif">Files</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_28_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Data.htm#a144x931d"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_29 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/hty.htm#a0fbedb0274stcl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">/dev/hty File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_29_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/hty.htm#c2216e2490cand"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_29_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/hty.htm#c2216e2667cand"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_29_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/hty.htm#c2216e3038cand"><IMG 
+          alt="" src="tocView_files/topic.gif">Files</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_29_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/hty.htm#c2216e3287cand"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_30 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/rhp.htm#a0fbedb4725stcl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">/dev/rhp File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_30_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/rhp.htm#c2216b0843cand"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_30_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/rhp.htm#c2216b1001cand"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_30_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/rhp.htm#c2216b1421cand"><IMG 
+          alt="" src="tocView_files/topic.gif">Files</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_30_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/rhp.htm#c2216b1642cand"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_31 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/DHCP_Client.htm#a027b4b9659stcl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">DHCP Client Configuration 
+        File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_31_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/DHCP_Client.htm#a027b4b9723stcl"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_31_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/DHCP_Client.htm#a027b4b9791stcl"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_31_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/DHCP_Client.htm#a027b4ba422stcl"><IMG 
+          alt="" src="tocView_files/topic.gif">Example</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_31_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/DHCP_Client.htm#a027b4ba717stcl"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_32 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/DHCP_Server.htm#a027b4c6720stcl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">DHCP Server Configuration 
+        File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_32_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/DHCP_Server.htm#a027b4c6785stcl"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=collapsed title="Topic closed" onclick="" 
+          alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_32_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/DHCP_Server.htm#a027b4c6853stcl"><IMG 
+          alt="" src="tocView_files/container_obj.gif">Description</A>
+          <UL class=collapsed id=3_2_32_1></UL>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_32_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/DHCP_Server.htm#a027b4ca626stcl"><IMG 
+          alt="" src="tocView_files/topic.gif">Examples</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_32_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/DHCP_Server.htm#a027b4cb011stcl"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_33 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/depend_4.htm#depend_4"><IMG 
+        alt="" src="tocView_files/container_obj.gif">depend File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_33_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/depend_4.htm#wq191"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_33_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/depend_4.htm#wq192"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_33_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/depend_4.htm#wq196"><IMG 
+          alt="" src="tocView_files/topic.gif">Examples</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_33_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/depend_4.htm#wq197"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_34 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/dir.htm#a12492e"><IMG 
+        alt="" src="tocView_files/container_obj.gif">dir File</A>
+        <UL class=collapsed>
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_34_0 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/dir.htm#a124930"><IMG 
+          alt="" src="tocView_files/topic.gif">Purpose</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_34_1 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/dir.htm#a124932"><IMG 
+          alt="" src="tocView_files/topic.gif">Syntax</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_34_2 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/dir.htm#a124934"><IMG 
+          alt="" src="tocView_files/topic.gif">Description</A> 
+          <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_2_34_3 
+          onmouseover=addChild(this) onfocus=addChild(this) 
+          href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/dir.htm#a124948"><IMG 
+          alt="" src="tocView_files/topic.gif">Related Information</A> </LI></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_35 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/dpid2.conf.htm#dpid2.conf"><IMG 
+        alt="" src="tocView_files/container_obj.gif">dpid2.conf File</A>
+        <UL class=collapsed id=3_2_35></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_36 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/dsinfo.htm#amqcg287ria"><IMG 
+        alt="" src="tocView_files/container_obj.gif">dsinfo File</A>
+        <UL class=collapsed id=3_2_36></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_37 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/dumpdates.htm#a15092d"><IMG 
+        alt="" src="tocView_files/container_obj.gif">dumpdates File</A>
+        <UL class=collapsed id=3_2_37></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_38 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/e789_ctbl.htm#oy31a0kaye"><IMG 
+        alt="" src="tocView_files/container_obj.gif">e789_ctbl File for HCON</A>
+        <UL class=collapsed id=3_2_38></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_39 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/e789_ktbl.htm#a5z3200kaye"><IMG 
+        alt="" src="tocView_files/container_obj.gif">e789_ktbl File for HCON</A>
+        <UL class=collapsed id=3_2_39></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_40 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/eimadmin.conf.htm#eimadmin_conf"><IMG 
+        alt="" src="tocView_files/container_obj.gif">eimadmin.conf File</A>
+        <UL class=collapsed id=3_2_40></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_41 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/environ.htm#amr1b0frit"><IMG 
+        alt="" src="tocView_files/container_obj.gif">environ File</A>
+        <UL class=collapsed id=3_2_41></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_42 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/environment.htm#a243y98ff1"><IMG 
+        alt="" src="tocView_files/container_obj.gif">environment File</A>
+        <UL class=collapsed id=3_2_42></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_43 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/errors.htm#ga470kaye"><IMG 
+        alt="" src="tocView_files/container_obj.gif">errors File for BNU</A>
+        <UL class=collapsed id=3_2_43></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_44 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ethers.htm#a213x9a13e"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ethers File for NIS</A>
+        <UL class=collapsed id=3_2_44></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_45 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/events.htm#a137914cd"><IMG 
+        alt="" src="tocView_files/container_obj.gif">events File</A>
+        <UL class=collapsed id=3_2_45></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_46 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Execute.htm#sh4250kaye"><IMG 
+        alt="" src="tocView_files/container_obj.gif">Execute (X.*) Files for 
+        BNU</A>
+        <UL class=collapsed id=3_2_46></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_47 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/exports.htm#ztq20mart"><IMG 
+        alt="" src="tocView_files/container_obj.gif">exports File for NFS</A>
+        <UL class=collapsed id=3_2_47></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_48 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/fig.htm#a129a17ea8"><IMG 
+        alt="" src="tocView_files/container_obj.gif">.fig File</A>
+        <UL class=collapsed id=3_2_48></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_49 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/filesystems.htm#a1249cf"><IMG 
+        alt="" src="tocView_files/container_obj.gif">filesystems File</A>
+        <UL class=collapsed id=3_2_49></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_50 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Foreign.htm#ya42f0kaye"><IMG 
+        alt="" src="tocView_files/container_obj.gif">Foreign File for BNU</A>
+        <UL class=collapsed id=3_2_50></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_51 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/forward.htm#vhhbg12flanc"><IMG 
+        alt="" src="tocView_files/container_obj.gif">.forward File</A>
+        <UL class=collapsed id=3_2_51></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_52 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ftpaccess.ctl.htm#ftpaccess_ctl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ftpaccess.ctl File</A>
+        <UL class=collapsed id=3_2_52></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_53 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/group_security.htm#xxa1e0frit"><IMG 
+        alt="" src="tocView_files/container_obj.gif">/etc/group File</A>
+        <UL class=collapsed id=3_2_53></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_54 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/group.htm#bsb100frit"><IMG 
+        alt="" src="tocView_files/container_obj.gif">/etc/security/group 
+File</A>
+        <UL class=collapsed id=3_2_54></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_55 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/groupings.htm#wlm052grouping"><IMG 
+        alt="" src="tocView_files/container_obj.gif">Workload Manager groupings 
+        File</A>
+        <UL class=collapsed id=3_2_55></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_56 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/hostmibd.conf.htm#hostmibd_conf"><IMG 
+        alt="" src="tocView_files/container_obj.gif">hostmibd.conf File</A>
+        <UL class=collapsed id=3_2_56></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_57 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/image.data.htm#cd99658021doug"><IMG 
+        alt="" src="tocView_files/container_obj.gif">image.data File</A>
+        <UL class=collapsed id=3_2_57></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_58 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/image.data.htm#ids"><IMG 
+        alt="" src="tocView_files/container_obj.gif">/etc/security/.ids File</A>
+        <UL class=collapsed id=3_2_58></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_59 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/INed.htm#a8d13160lein"><IMG 
+        alt="" src="tocView_files/container_obj.gif">INed Files</A>
+        <UL class=collapsed id=3_2_59></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_60 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/info.htm#wojqi113doug"><IMG 
+        alt="" src="tocView_files/container_obj.gif">.info File</A>
+        <UL class=collapsed id=3_2_60></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_61 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/inittab.htm#a241y97e94"><IMG 
+        alt="" src="tocView_files/container_obj.gif">inittab File</A>
+        <UL class=collapsed id=3_2_61></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_62 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/irs.conf.htm#a12300002rmb"><IMG 
+        alt="" src="tocView_files/container_obj.gif">irs.conf File</A>
+        <UL class=collapsed id=3_2_62></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_63 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ispaths.htm#a135a1990d"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ispaths File</A>
+        <UL class=collapsed id=3_2_63></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_64 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/isprime.htm#a135a198ef"><IMG 
+        alt="" src="tocView_files/container_obj.gif">isprime File</A>
+        <UL class=collapsed id=3_2_64></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_65 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/kshrc.htm#cd6f5e7517bill"><IMG 
+        alt="" src="tocView_files/container_obj.gif">.kshrc File</A>
+        <UL class=collapsed id=3_2_65></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_66 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/lapi_subroutines.htm#lapi_subroutines"><IMG 
+        alt="" src="tocView_files/container_obj.gif">lapi_subroutines 
+        Information</A>
+        <UL class=collapsed id=3_2_66></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_67 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ldapid.ldif.template.htm#ldapid_ldif_template"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ldapid.ldif.template 
+        File</A>
+        <UL class=collapsed id=3_2_67></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_68 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/limits.htm#hor130frit"><IMG 
+        alt="" src="tocView_files/container_obj.gif">limits File</A>
+        <UL class=collapsed id=3_2_68></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_69 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/local_domain.htm#local_domain"><IMG 
+        alt="" src="tocView_files/container_obj.gif">local_domain File</A>
+        <UL class=collapsed id=3_2_69></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_70 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/login.cfg.htm#a93c11df9"><IMG 
+        alt="" src="tocView_files/container_obj.gif">login.cfg File</A>
+        <UL class=collapsed id=3_2_70></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_71 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/lpacl.htm#lpacl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">lpacl Information</A>
+        <UL class=collapsed id=3_2_71></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_72 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/maildelivery.htm#w5cf0sara"><IMG 
+        alt="" src="tocView_files/container_obj.gif">.maildelivery File for 
+        MH</A>
+        <UL class=collapsed id=3_2_72></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_73 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/methods.cfg.htm#i991220004julie"><IMG 
+        alt="" 
+        src="tocView_files/container_obj.gif">/usr/lib/security/methods.cfg 
+        File</A>
+        <UL class=collapsed id=3_2_73></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_74 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/mhl.format.htm#hu5140sara"><IMG 
+        alt="" src="tocView_files/container_obj.gif">mhl.format File</A>
+        <UL class=collapsed id=3_2_74></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_75 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/mh_profile.htm#a9ebsara"><IMG 
+        alt="" src="tocView_files/container_obj.gif">.mh_profile File</A>
+        <UL class=collapsed id=3_2_75></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_76 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/mibII.my.htm#a101c12277"><IMG 
+        alt="" src="tocView_files/container_obj.gif">mibII.my File</A>
+        <UL class=collapsed id=3_2_76></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_77 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/mkuser.default.htm#a3179465"><IMG 
+        alt="" src="tocView_files/container_obj.gif">mkuser.default File</A>
+        <UL class=collapsed id=3_2_77></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_78 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/mtstailor.htm#p4c50sara"><IMG 
+        alt="" src="tocView_files/container_obj.gif">mtstailor File for MH</A>
+        <UL class=collapsed id=3_2_78></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_79 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/mrouted.conf.htm#fmbqo28asoni"><IMG 
+        alt="" src="tocView_files/container_obj.gif">mrouted.conf File</A>
+        <UL class=collapsed id=3_2_79></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_80 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/netgroup.htm#xqr310mart"><IMG 
+        alt="" src="tocView_files/container_obj.gif">netgroup File for NIS</A>
+        <UL class=collapsed id=3_2_80></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_81 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/netmasks.htm#a213x9a1a7"><IMG 
+        alt="" src="tocView_files/container_obj.gif">netmasks File for NIS</A>
+        <UL class=collapsed id=3_2_81></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_82 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/netsvc.conf.htm#a135fbdf880stcl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">netsvc.conf File</A>
+        <UL class=collapsed id=3_2_82></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_83 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/networks_NFS.htm#a213x9a173"><IMG 
+        alt="" src="tocView_files/container_obj.gif">networks File for NFS</A>
+        <UL class=collapsed id=3_2_83></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_84 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/NLSvec.htm#a142a1ab54"><IMG 
+        alt="" src="tocView_files/container_obj.gif">NLSvec File</A>
+        <UL class=collapsed id=3_2_84></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_85 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ntp.conf.htm#a13e0fad155stcl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ntp.conf File</A>
+        <UL class=collapsed id=3_2_85></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_86 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ntp.keys.htm#a13e0fb8248stcl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ntp.keys File</A>
+        <UL class=collapsed id=3_2_86></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_87 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/objects.htm#a1219943"><IMG 
+        alt="" src="tocView_files/container_obj.gif">objects File</A>
+        <UL class=collapsed id=3_2_87></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_88 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/pam_aix.htm#pam_aix"><IMG 
+        alt="" src="tocView_files/container_obj.gif">pam_aix Module</A>
+        <UL class=collapsed id=3_2_88></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_89 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/pam_allow.htm#pam_allow"><IMG 
+        alt="" src="tocView_files/container_obj.gif">pam_allow Module</A>
+        <UL class=collapsed id=3_2_89></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_90 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/pam_allowroot.htm#pam_allowroot"><IMG 
+        alt="" src="tocView_files/container_obj.gif">pam_allowroot Module</A>
+        <UL class=collapsed id=3_2_90></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_91 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/pam_ckfile.htm#pam_ckfile"><IMG 
+        alt="" src="tocView_files/container_obj.gif">pam_ckfile Module</A>
+        <UL class=collapsed id=3_2_91></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_92 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/pam_mkuserhome.htm#pam_mkuserhome"><IMG 
+        alt="" src="tocView_files/container_obj.gif">pam_mkuserhome Module</A>
+        <UL class=collapsed id=3_2_92></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_93 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/pam_permission.htm#pam_permission"><IMG 
+        alt="" src="tocView_files/container_obj.gif">pam_permission Module</A>
+        <UL class=collapsed id=3_2_93></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_94 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/pam_prohibit.htm#pam_prohibit"><IMG 
+        alt="" src="tocView_files/container_obj.gif">pam_prohibit Module</A>
+        <UL class=collapsed id=3_2_94></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_95 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/pam_rhosts_auth.htm#pam_rhosts_auth"><IMG 
+        alt="" src="tocView_files/container_obj.gif">pam_rhosts_auth Module</A>
+        <UL class=collapsed id=3_2_95></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_96 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/pam.conf.htm#pam.conf"><IMG 
+        alt="" src="tocView_files/container_obj.gif">pam.conf File</A>
+        <UL class=collapsed id=3_2_96></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_97 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/passwd.htm#x9a1f0frit"><IMG 
+        alt="" src="tocView_files/container_obj.gif">/etc/passwd File</A>
+        <UL class=collapsed id=3_2_97></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_98 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/passwd_policy.htm#passwd_policy"><IMG 
+        alt="" src="tocView_files/container_obj.gif">passwd_policy File</A>
+        <UL class=collapsed id=3_2_98></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_99 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/passwd_security.htm#a1219924"><IMG 
+        alt="" src="tocView_files/container_obj.gif">/etc/security/passwd 
+        File</A>
+        <UL class=collapsed id=3_2_99></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_100 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/pcnfsd.conf.htm#a9a396d742blai"><IMG 
+        alt="" src="tocView_files/container_obj.gif">pcnfsd.conf Configuration 
+        File</A>
+        <UL class=collapsed id=3_2_100></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_101 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/pkginfo_4.htm#pkginfo_4"><IMG 
+        alt="" src="tocView_files/container_obj.gif">pkginfo File</A>
+        <UL class=collapsed id=3_2_101></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_102 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/pkgmap_4.htm#pkgmap_4"><IMG 
+        alt="" src="tocView_files/container_obj.gif">pkgmap File</A>
+        <UL class=collapsed id=3_2_102></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_103 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/policy_cfg.htm#policy_cfg"><IMG 
+        alt="" src="tocView_files/container_obj.gif">policy.cfg File</A>
+        <UL class=collapsed id=3_2_103></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_104 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/portlog.htm#d15faa8905amy"><IMG 
+        alt="" src="tocView_files/container_obj.gif">portlog File</A>
+        <UL class=collapsed id=3_2_104></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_105 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/proc.htm#files-proc"><IMG 
+        alt="" src="tocView_files/container_obj.gif">/proc File</A>
+        <UL class=collapsed id=3_2_105></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_106 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/proxyldiftemplate.htm#proxyldiftemplate"><IMG 
+        alt="" src="tocView_files/container_obj.gif">proxy.ldif.template 
+File</A>
+        <UL class=collapsed id=3_2_106></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_107 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/pwdhist.htm#d15fadb111amy"><IMG 
+        alt="" src="tocView_files/container_obj.gif">pwdhist File</A>
+        <UL class=collapsed id=3_2_107></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_108 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/publickey.htm#ydr1a0mart"><IMG 
+        alt="" src="tocView_files/container_obj.gif">publickey File for NIS</A>
+        <UL class=collapsed id=3_2_108></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_109 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/qconfig.htm#a33194f1"><IMG 
+        alt="" src="tocView_files/container_obj.gif">qconfig File</A>
+        <UL class=collapsed id=3_2_109></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_110 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/rc.boot.htm#a142c114f9"><IMG 
+        alt="" src="tocView_files/container_obj.gif">rc.boot File</A>
+        <UL class=collapsed id=3_2_110></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_111 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/rc.tcpip.htm#utd4300sami"><IMG 
+        alt="" src="tocView_files/container_obj.gif">rc.tcpip File for 
+TCP/IP</A>
+        <UL class=collapsed id=3_2_111></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_112 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/realm.map.htm#realm.map"><IMG 
+        alt="" src="tocView_files/container_obj.gif">realm.map File</A>
+        <UL class=collapsed id=3_2_112></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_113 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/remote.unknown.htm#yl80kaye"><IMG 
+        alt="" src="tocView_files/container_obj.gif">remote.unknown File for 
+        BNU</A>
+        <UL class=collapsed id=3_2_113></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_114 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/resource_data_input.htm#resource_data_input"><IMG 
+        alt="" src="tocView_files/container_obj.gif">resource_data_input 
+        Information</A>
+        <UL class=collapsed id=3_2_114></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_115 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/rmccli.htm#rmccli"><IMG 
+        alt="" src="tocView_files/container_obj.gif">rmccli Information</A>
+        <UL class=collapsed id=3_2_115></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_116 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/roles.htm#vghyo2d9soni"><IMG 
+        alt="" src="tocView_files/container_obj.gif">roles File</A>
+        <UL class=collapsed id=3_2_116></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_117 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/rpc.htm#kkq60mart"><IMG 
+        alt="" src="tocView_files/container_obj.gif">rpc File for NFS</A>
+        <UL class=collapsed id=3_2_117></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_118 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/sectoldif.cfg.htm#sectoldifcfg"><IMG 
+        alt="" src="tocView_files/container_obj.gif">sectoldif.cfg Configuration 
+        File</A>
+        <UL class=collapsed id=3_2_118></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_119 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/security_default.htm#security_default"><IMG 
+        alt="" src="tocView_files/container_obj.gif">security_default File</A>
+        <UL class=collapsed id=3_2_119></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_120 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/sendmail.cf.htm#a134c1ae"><IMG 
+        alt="" src="tocView_files/container_obj.gif">sendmail.cf File</A>
+        <UL class=collapsed id=3_2_120></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_121 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/setinfo_4.htm#setinfo_4"><IMG 
+        alt="" src="tocView_files/container_obj.gif">setinfo File</A>
+        <UL class=collapsed id=3_2_121></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_122 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/setup.csh.htm#a165a1c560"><IMG 
+        alt="" src="tocView_files/container_obj.gif">setup.csh File</A>
+        <UL class=collapsed id=3_2_122></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_123 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/setup.sh.htm#a129a18161"><IMG 
+        alt="" src="tocView_files/container_obj.gif">setup.sh File</A>
+        <UL class=collapsed id=3_2_123></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_124 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/slp.conf.htm#slp.conf"><IMG 
+        alt="" src="tocView_files/container_obj.gif">slp.conf File</A>
+        <UL class=collapsed id=3_2_124></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_125 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/smi.my.htm#a8kf11f0sara"><IMG 
+        alt="" src="tocView_files/container_obj.gif">smi.my File</A>
+        <UL class=collapsed id=3_2_125></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_126 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/smitacl.group.htm#gjhyo3e5soni"><IMG 
+        alt="" src="tocView_files/container_obj.gif">smitacl.group File</A>
+        <UL class=collapsed id=3_2_126></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_127 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/smitacl.user.htm#mlhyo1d3soni"><IMG 
+        alt="" src="tocView_files/container_obj.gif">smitacl.user File</A>
+        <UL class=collapsed id=3_2_127></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_128 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/snmpd.conf.htm#a101c122b0"><IMG 
+        alt="" src="tocView_files/container_obj.gif">snmpd.conf File</A>
+        <UL class=collapsed id=3_2_128></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_129 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/snmpd.boots.htm#snmpd.boots"><IMG 
+        alt="" src="tocView_files/container_obj.gif">snmpd.boots File</A>
+        <UL class=collapsed id=3_2_129></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_130 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/snmpdv3.conf.htm#snmpdv3_conf"><IMG 
+        alt="" src="tocView_files/container_obj.gif">snmpdv3.conf File</A>
+        <UL class=collapsed id=3_2_130></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_131 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/snmpmibd.conf.htm#snmpmibd_conf"><IMG 
+        alt="" src="tocView_files/container_obj.gif">snmpmibd.conf File</A>
+        <UL class=collapsed id=3_2_131></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_132 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/socks5c.conf.htm#a12300005rmb"><IMG 
+        alt="" src="tocView_files/container_obj.gif">socks5c.conf File</A>
+        <UL class=collapsed id=3_2_132></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_133 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/space_4.htm#space_4"><IMG 
+        alt="" src="tocView_files/container_obj.gif">space File</A>
+        <UL class=collapsed id=3_2_133></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_134 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/srf.htm#a129a17e62"><IMG 
+        alt="" src="tocView_files/container_obj.gif">.srf File</A>
+        <UL class=collapsed id=3_2_134></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_135 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/streamcmds.htm#a7co140frit"><IMG 
+        alt="" src="tocView_files/container_obj.gif">streamcmds File</A>
+        <UL class=collapsed id=3_2_135></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_136 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/sysck.cfg.htm#a26991c8"><IMG 
+        alt="" src="tocView_files/container_obj.gif">sysck.cfg File</A>
+        <UL class=collapsed id=3_2_136></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_137 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/syslog.conf.htm#a0b221c101jan"><IMG 
+        alt="" src="tocView_files/container_obj.gif">syslog.conf File</A>
+        <UL class=collapsed id=3_2_137></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_138 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/targets.htm#targets"><IMG 
+        alt="" src="tocView_files/container_obj.gif">targets File</A>
+        <UL class=collapsed id=3_2_138></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_139 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Temporary.htm#azg4b0kaye"><IMG 
+        alt="" src="tocView_files/container_obj.gif">Temporary (TM.*) Files for 
+        BNU</A>
+        <UL class=collapsed id=3_2_139></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_140 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/times.htm#wlmtimes"><IMG 
+        alt="" src="tocView_files/container_obj.gif">Workload Manager .times 
+        File</A>
+        <UL class=collapsed id=3_2_140></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_141 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/unix.map.htm#unixmap"><IMG 
+        alt="" src="tocView_files/container_obj.gif">unix.map File</A>
+        <UL class=collapsed id=3_2_141></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_142 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/updaters.htm#a213x9a0fe"><IMG 
+        alt="" src="tocView_files/container_obj.gif">updaters File for NIS</A>
+        <UL class=collapsed id=3_2_142></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_143 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/user.htm#mnm220frit"><IMG 
+        alt="" src="tocView_files/container_obj.gif">user File</A>
+        <UL class=collapsed id=3_2_143></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_144 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/user.roles.htm#bnhyoefsoni"><IMG 
+        alt="" src="tocView_files/container_obj.gif">user.roles File</A>
+        <UL class=collapsed id=3_2_144></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_145 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/vfs.htm#a12491ed"><IMG 
+        alt="" src="tocView_files/container_obj.gif">vfs File</A>
+        <UL class=collapsed id=3_2_145></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_146 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/classes.htm#sleep0510depriv"><IMG 
+        alt="" src="tocView_files/container_obj.gif">Workload Manager classes 
+        File</A>
+        <UL class=collapsed id=3_2_146></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_147 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/limits_wlm.htm#limit0510wlmwcc"><IMG 
+        alt="" src="tocView_files/container_obj.gif">Workload Manager limits 
+        File</A>
+        <UL class=collapsed id=3_2_147></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_148 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/rules.htm#rules0510wlmconf"><IMG 
+        alt="" src="tocView_files/container_obj.gif">Workload Manager rules 
+        File</A>
+        <UL class=collapsed id=3_2_148></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_149 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/shares.htm#shares0510fle"><IMG 
+        alt="" src="tocView_files/container_obj.gif">Workload Manager shares 
+        File</A>
+        <UL class=collapsed id=3_2_149></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_150 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/xferstats.htm#na4170kaye"><IMG 
+        alt="" src="tocView_files/container_obj.gif">xferstats File for BNU</A>
+        <UL class=collapsed id=3_2_150></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_2_151 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/xtab.htm#fzq80mart"><IMG 
+        alt="" src="tocView_files/container_obj.gif">xtab File for NFS</A>
+        <UL class=collapsed id=3_2_151></UL></LI></UL>
+      <LI><IMG class=collapsed title="Topic closed" onclick="" 
+      alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_3 
+      onmouseover=addChild(this) onfocus=addChild(this) 
+      href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Chapter_2.htm#ldm20clm"><IMG 
+      alt="" src="tocView_files/container_obj.gif">File Formats</A>
+      <UL class=collapsed id=3_3></UL>
+      <LI><IMG class=collapsed title="Topic closed" onclick="" 
+      alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_4 
+      onmouseover=addChild(this) onfocus=addChild(this) 
+      href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Chapter_3.htm#szd32c0chri"><IMG 
+      alt="" src="tocView_files/container_obj.gif">Special Files</A>
+      <UL class=collapsed id=3_4></UL>
+      <LI><IMG class=collapsed title="Topic closed" onclick="" 
+      alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5 
+      onmouseover=addChild(this) onfocus=addChild(this) 
+      href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Chapter_4.htm#a257b96aa"><IMG 
+      alt="" src="tocView_files/container_obj.gif">Header Files</A>
+      <UL class=collapsed>
+        <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_5_0 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Chapter_4.htm#a30392704"><IMG 
+        alt="" src="tocView_files/topic.gif">Related Information</A> 
+        <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_5_1 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/List.htm#a58f014"><IMG 
+        alt="" src="tocView_files/topic.gif">List of Major Control Block Header 
+        Files</A> 
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_2 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ct_ffdc.h.htm#ct_ffdc.h"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ct_ffdc.h File</A>
+        <UL class=collapsed id=3_5_2></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_3 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/dirent.h.htm#kko50clm"><IMG 
+        alt="" src="tocView_files/container_obj.gif">dirent.h File</A>
+        <UL class=collapsed id=3_5_3></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_4 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/dlfcn.h.htm#a08199700bcl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">dlfcn.h File</A>
+        <UL class=collapsed id=3_5_4></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_5 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/eucioctl.h.htm#kbcpi2a8manu"><IMG 
+        alt="" src="tocView_files/container_obj.gif">eucioctl.h File</A>
+        <UL class=collapsed id=3_5_5></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_6 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/fcntl.h.htm#a142916a"><IMG 
+        alt="" src="tocView_files/container_obj.gif">fcntl.h File</A>
+        <UL class=collapsed id=3_5_6></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_7 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/filsys.h.htm#a1249138"><IMG 
+        alt="" src="tocView_files/container_obj.gif">filsys.h File</A>
+        <UL class=collapsed id=3_5_7></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_8 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/flock.h.htm#a1429512"><IMG 
+        alt="" src="tocView_files/container_obj.gif">flock.h File</A>
+        <UL class=collapsed id=3_5_8></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_9 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/fullstat.h.htm#a7632clm"><IMG 
+        alt="" src="tocView_files/container_obj.gif">fullstat.h File</A>
+        <UL class=collapsed id=3_5_9></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_10 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/grp.h.htm#i08199706bcl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">grp.h File</A>
+        <UL class=collapsed id=3_5_10></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_11 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/iconv.h.htm#a143c1807"><IMG 
+        alt="" src="tocView_files/container_obj.gif">iconv.h File</A>
+        <UL class=collapsed id=3_5_11></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_12 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/inode.h.htm#a84c163"><IMG 
+        alt="" src="tocView_files/container_obj.gif">inode.h File</A>
+        <UL class=collapsed id=3_5_12></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_13 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/inttypes.h.htm#a0mkm98a6"><IMG 
+        alt="" src="tocView_files/container_obj.gif">inttypes.h File</A>
+        <UL class=collapsed id=3_5_13></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_14 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ipc.h.htm#f6dc076251stcl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ipc.h File</A>
+        <UL class=collapsed id=3_5_14></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_15 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/iso646.h.htm#i08199701bcl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">iso646.h File</A>
+        <UL class=collapsed id=3_5_15></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_16 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ldr.h.htm#ldr_h"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ldr.h File</A>
+        <UL class=collapsed id=3_5_16></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_17 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/limits.h.htm#a139934da"><IMG 
+        alt="" src="tocView_files/container_obj.gif">limits.h File</A>
+        <UL class=collapsed id=3_5_17></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_18 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/libperfstat.h.htm#libperfstat"><IMG 
+        alt="" src="tocView_files/container_obj.gif">libperfstat.h File</A>
+        <UL class=collapsed id=3_5_18></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_19 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/math.h.htm#joe1150clm"><IMG 
+        alt="" src="tocView_files/container_obj.gif">math.h File</A>
+        <UL class=collapsed id=3_5_19></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_20 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/mode.h.htm#lc42230clm"><IMG 
+        alt="" src="tocView_files/container_obj.gif">mode.h File</A>
+        <UL class=collapsed id=3_5_20></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_21 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/msg.h.htm#f7099c2417stcl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">msg.h File</A>
+        <UL class=collapsed id=3_5_21></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_22 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/mtio.h.htm#mtio_h"><IMG 
+        alt="" src="tocView_files/container_obj.gif">mtio.h File</A>
+        <UL class=collapsed id=3_5_22></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_23 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/param.h.htm#daj3b0clm"><IMG 
+        alt="" src="tocView_files/container_obj.gif">param.h File</A>
+        <UL class=collapsed id=3_5_23></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_24 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/pmapi.h.htm#pmapi.h"><IMG 
+        alt="" src="tocView_files/container_obj.gif">pmapi.h File</A>
+        <UL class=collapsed id=3_5_24></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_25 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/poll.h.htm#a16691c07"><IMG 
+        alt="" src="tocView_files/container_obj.gif">poll.h File</A>
+        <UL class=collapsed id=3_5_25></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_26 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/pthread.h.htm#a08199702bcl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">pthread.h File</A>
+        <UL class=collapsed id=3_5_26></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_27 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/pwd.h.htm#i08199707bcl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">pwd.h File</A>
+        <UL class=collapsed id=3_5_27></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_28 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/pwdpolicy.h.htm#pwdpolicy.h"><IMG 
+        alt="" src="tocView_files/container_obj.gif">pwdpolicy.h File</A>
+        <UL class=collapsed id=3_5_28></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_29 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/sem.h.htm#a298911cb"><IMG 
+        alt="" src="tocView_files/container_obj.gif">sem.h File</A>
+        <UL class=collapsed id=3_5_29></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_30 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/sgtty.h.htm#a335f969d"><IMG 
+        alt="" src="tocView_files/container_obj.gif">sgtty.h File</A>
+        <UL class=collapsed id=3_5_30></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_31 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/shm.h.htm#f7099da253stcl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">shm.h File</A>
+        <UL class=collapsed id=3_5_31></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_32 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/spc.h.htm#a9cf832a393sylv"><IMG 
+        alt="" src="tocView_files/container_obj.gif">spc.h File</A>
+        <UL class=collapsed id=3_5_32></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_33 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/srcobj.h.htm#dak1c0gaco"><IMG 
+        alt="" src="tocView_files/container_obj.gif">srcobj.h File</A>
+        <UL class=collapsed id=3_5_33></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_34 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/stat.h.htm#bwi1170clm"><IMG 
+        alt="" src="tocView_files/container_obj.gif">stat.h File</A>
+        <UL class=collapsed id=3_5_34></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_35 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/statfs.h.htm#ddj5320clm"><IMG 
+        alt="" src="tocView_files/container_obj.gif">statfs.h File</A>
+        <UL class=collapsed id=3_5_35></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_36 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/statvfs.h.htm#da3fe3d638mich"><IMG 
+        alt="" src="tocView_files/container_obj.gif">statvfs.h File</A>
+        <UL class=collapsed id=3_5_36></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_37 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/systemcfg.h.htm#d0e210a782mary"><IMG 
+        alt="" src="tocView_files/container_obj.gif">systemcfg.h File</A>
+        <UL class=collapsed id=3_5_37></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_38 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/tar.h.htm#a49c21676"><IMG 
+        alt="" src="tocView_files/container_obj.gif">tar.h File</A>
+        <UL class=collapsed id=3_5_38></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_39 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/termio.h.htm#a2839775"><IMG 
+        alt="" src="tocView_files/container_obj.gif">termio.h File</A>
+        <UL class=collapsed id=3_5_39></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_40 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/termios.h.htm#a2839b1d"><IMG 
+        alt="" src="tocView_files/container_obj.gif">termios.h File</A>
+        <UL class=collapsed id=3_5_40></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_41 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/termiox.h.htm#o4kpi28cmanu"><IMG 
+        alt="" src="tocView_files/container_obj.gif">termiox.h File</A>
+        <UL class=collapsed id=3_5_41></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_42 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/types.h.htm#tfj3a0clm"><IMG 
+        alt="" src="tocView_files/container_obj.gif">types.h File</A>
+        <UL class=collapsed id=3_5_42></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_43 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/unistd.h.htm#a14397eb"><IMG 
+        alt="" src="tocView_files/container_obj.gif">unistd.h File</A>
+        <UL class=collapsed id=3_5_43></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_44 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/utmp.h.htm#a206c167"><IMG 
+        alt="" src="tocView_files/container_obj.gif">utmp.h File</A>
+        <UL class=collapsed id=3_5_44></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_45 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/values.h.htm#cdj150clm"><IMG 
+        alt="" src="tocView_files/container_obj.gif">values.h File</A>
+        <UL class=collapsed id=3_5_45></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_46 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/vmount.h.htm#bc3570clm"><IMG 
+        alt="" src="tocView_files/container_obj.gif">vmount.h File</A>
+        <UL class=collapsed id=3_5_46></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_47 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/wctype.h.htm#i08199703bcl"><IMG 
+        alt="" src="tocView_files/container_obj.gif">wctype.h File</A>
+        <UL class=collapsed id=3_5_47></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_48 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/wlm.h.htm#super0510fudge"><IMG 
+        alt="" src="tocView_files/container_obj.gif">wlm.h File</A>
+        <UL class=collapsed id=3_5_48></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_49 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/x25sdefs.h.htm#pj230glov"><IMG 
+        alt="" src="tocView_files/container_obj.gif">x25sdefs.h File for 
+X.25</A>
+        <UL class=collapsed id=3_5_49></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_50 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/cb_call_struct.htm#gc31150unkn"><IMG 
+        alt="" src="tocView_files/container_obj.gif">cb_call_struct Structure 
+        for X.25</A>
+        <UL class=collapsed id=3_5_50></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_51 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/cb_circuit_info_struct.htm#nr31e0unkn"><IMG 
+        alt="" src="tocView_files/container_obj.gif">cb_circuit_info_struct 
+        Structure for X.25</A>
+        <UL class=collapsed id=3_5_51></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_52 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/cb_clear_struct.htm#gk31360unkn"><IMG 
+        alt="" src="tocView_files/container_obj.gif">cb_clear_struct Structure 
+        for X.25</A>
+        <UL class=collapsed id=3_5_52></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_53 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/cb_data_struct.htm#df11c0unkn"><IMG 
+        alt="" src="tocView_files/container_obj.gif">cb_data_struct Structure 
+        for X.25</A>
+        <UL class=collapsed id=3_5_53></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_54 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/cb_dev_info_struct.htm#ru5370unkn"><IMG 
+        alt="" src="tocView_files/container_obj.gif">cb_dev_info_struct 
+        Structure for X.25</A>
+        <UL class=collapsed id=3_5_54></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_55 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/cb_fac_struct.htm#vpq1350unkn"><IMG 
+        alt="" src="tocView_files/container_obj.gif">cb_fac_struct Structure for 
+        X.25</A>
+        <UL class=collapsed id=3_5_55></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_56 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/cb_int_data_struct.htm#a2y1100unkn"><IMG 
+        alt="" src="tocView_files/container_obj.gif">cb_int_data_struct 
+        Structure for X.25</A>
+        <UL class=collapsed id=3_5_56></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_57 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/cb_link_name_struct.htm#ee4270unkn"><IMG 
+        alt="" src="tocView_files/container_obj.gif">cb_link_name_struct 
+        Structure for X.25</A>
+        <UL class=collapsed id=3_5_57></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_58 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/cb_link_stats_struct.htm#gi240unkn"><IMG 
+        alt="" src="tocView_files/container_obj.gif">cb_link_stats_struct, 
+        x25_query_data, or x25_stats Structure for X.25</A>
+        <UL class=collapsed id=3_5_58></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_59 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/cb_msg_struct.htm#a5q2e0unkn"><IMG 
+        alt="" src="tocView_files/container_obj.gif">cb_msg_struct Structure for 
+        X.25</A>
+        <UL class=collapsed id=3_5_59></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_60 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/cb_pvc_alloc_struct.htm#xdq20unkn"><IMG 
+        alt="" src="tocView_files/container_obj.gif">cb_pvc_alloc_struct 
+        Structure for X.25</A>
+        <UL class=collapsed id=3_5_60></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_61 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/cb_res_struct.htm#azl4340unkn"><IMG 
+        alt="" src="tocView_files/container_obj.gif">cb_res_struct Structure for 
+        X.25</A>
+        <UL class=collapsed id=3_5_61></UL>
+        <LI><IMG class=collapsed title="Topic closed" onclick="" 
+        alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_5_62 
+        onmouseover=addChild(this) onfocus=addChild(this) 
+        href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/ctr_array_struct.htm#te5260unkn"><IMG 
+        alt="" src="tocView_files/container_obj.gif">ctr_array_struct Structure 
+        for X.25</A>
+        <UL class=collapsed id=3_5_62></UL></LI></UL>
+      <LI><IMG class=collapsed title="Topic closed" onclick="" 
+      alt="Topic closed" src="tocView_files/plus.gif"><A id=t2_3_6 
+      onmouseover=addChild(this) onfocus=addChild(this) 
+      href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/Chapter_5.htm#pdxem2e0stcl"><IMG 
+      alt="" src="tocView_files/container_obj.gif">Directories</A>
+      <UL class=collapsed id=3_6></UL>
+      <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_3_7 
+      onmouseover=addChild(this) onfocus=addChild(this) 
+      href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/aixfiles02.htm#wq2319"><IMG 
+      alt="" src="tocView_files/topic.gif">Index</A> </LI></UL>
+    <LI><IMG class=collapsed title="Topic closed" onclick="" alt="Topic closed" 
+    src="tocView_files/plus.gif"><A id=t2_4 onmouseover=addChild(this) 
+    onfocus=addChild(this) 
+    href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/how-tos.htm"><IMG 
+    alt="" src="tocView_files/container_obj.gif">How-to's</A>
+    <UL class=collapsed id=4></UL>
+    <LI><IMG class=collapsed title="Topic closed" onclick="" alt="Topic closed" 
+    src="tocView_files/plus.gif"><A id=t2_5 onmouseover=addChild(this) 
+    onfocus=addChild(this) 
+    href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.install/doc/insgdrf/insgdrf-kickoff.htm"><IMG 
+    alt="" src="tocView_files/container_obj.gif">Installation and migration</A>
+    <UL class=collapsed id=5></UL>
+    <LI><IMG class=collapsed title="Topic closed" onclick="" alt="Topic closed" 
+    src="tocView_files/plus.gif"><A id=t2_6 onmouseover=addChild(this) 
+    onfocus=addChild(this) 
+    href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/networkingandcommunications.htm"><IMG 
+    alt="" src="tocView_files/container_obj.gif">Networks and communication</A>
+    <UL class=collapsed id=6></UL>
+    <LI><IMG class=collapsed title="Topic closed" onclick="" alt="Topic closed" 
+    src="tocView_files/plus.gif"><A id=t2_7 onmouseover=addChild(this) 
+    onfocus=addChild(this) 
+    href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/performance.htm"><IMG 
+    alt="" src="tocView_files/container_obj.gif">Performance management and 
+    tuning</A>
+    <UL class=collapsed id=7></UL>
+    <LI><IMG class=collapsed title="Topic closed" onclick="" alt="Topic closed" 
+    src="tocView_files/plus.gif"><A id=t2_8 onmouseover=addChild(this) 
+    onfocus=addChild(this) 
+    href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.printergd/doc/printrgd/printrgd-kickoff.htm"><IMG 
+    alt="" src="tocView_files/container_obj.gif">Printers and Printing</A>
+    <UL class=collapsed id=8></UL>
+    <LI><IMG class=collapsed title="Topic closed" onclick="" alt="Topic closed" 
+    src="tocView_files/plus.gif"><A id=t2_9 onmouseover=addChild(this) 
+    onfocus=addChild(this) 
+    href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/productandapplicationdocumentation.htm"><IMG 
+    alt="" src="tocView_files/container_obj.gif">Product and application 
+    documentation</A>
+    <UL class=collapsed id=9></UL>
+    <LI><IMG class=collapsed title="Topic closed" onclick="" alt="Topic closed" 
+    src="tocView_files/plus.gif"><A id=t2_10 onmouseover=addChild(this) 
+    onfocus=addChild(this) 
+    href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/programmingforaix.htm"><IMG 
+    alt="" src="tocView_files/container_obj.gif">Programming for AIX</A>
+    <UL class=collapsed id=10></UL>
+    <LI><IMG class=collapsed title="Topic closed" onclick="" alt="Topic closed" 
+    src="tocView_files/plus.gif"><A id=t2_11 onmouseover=addChild(this) 
+    onfocus=addChild(this) 
+    href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.security/doc/security/security-kickoff.htm"><IMG 
+    alt="" src="tocView_files/container_obj.gif">Security</A>
+    <UL class=collapsed id=11></UL>
+    <LI><IMG class=collapsed title="Topic closed" onclick="" alt="Topic closed" 
+    src="tocView_files/plus.gif"><A id=t2_12 onmouseover=addChild(this) 
+    onfocus=addChild(this) 
+    href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/managingyoursystem.htm"><IMG 
+    alt="" src="tocView_files/container_obj.gif">System management</A>
+    <UL class=collapsed id=12></UL>
+    <LI><IMG class=collapsed title="Topic closed" onclick="" alt="Topic closed" 
+    src="tocView_files/plus.gif"><A id=t2_13 onmouseover=addChild(this) 
+    onfocus=addChild(this) 
+    href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/technicalreferences.htm"><IMG 
+    alt="" src="tocView_files/container_obj.gif">Technical reference</A>
+    <UL class=collapsed id=13></UL>
+    <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_14 
+    onmouseover=addChild(this) onfocus=addChild(this) 
+    href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/troubleshooting.htm"><IMG 
+    alt="" src="tocView_files/topic.gif">Troubleshooting</A> 
+    <LI><IMG class=h alt="" src="tocView_files/plus.gif"><A id=t2_15 
+    onmouseover=addChild(this) onfocus=addChild(this) 
+    href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.elearning/doc/aix.elearning/learningandtutorials.htm"><IMG 
+    alt="" src="tocView_files/topic.gif">Learning and tutorials</A> 
+    <LI><IMG class=collapsed title="Topic closed" onclick="" alt="Topic closed" 
+    src="tocView_files/plus.gif"><A id=t2_16 onmouseover=addChild(this) 
+    onfocus=addChild(this) 
+    href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/glossary.htm"><IMG 
+    alt="" src="tocView_files/container_obj.gif">Glossary</A>
+    <UL class=collapsed id=16></UL></LI></UL>
+  <SCRIPT language=JavaScript>tocId="b"+2</SCRIPT>
+
+  <LI><!-- uat4i00000015 2/2 --><!-- uat4i00000020 4/5--><!-- uat4i00000454 2/2 --><IMG 
+  title="Book closed" alt="Book closed" src="tocView_files/toc_closed.gif"><A 
+  id=b3 onmouseover=addChild(this) style="FONT-WEIGHT: bold" 
+  onfocus=addChild(this) 
+  onclick='if(window.loadTOC){loadTOC("/com.ibm.aix.resources/toc.xml");} else {window.location.replace("tocView.jsp?toc="+"/com.ibm.aix.resources/toc.xml");} ' 
+  href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.resources/aixresources.htm" 
+  name=/com.ibm.aix.resources/toc.xml>AIX resources</A> <!-- end of uat4i00000020 4/5--><!-- end of uat4i00000015 2/2 --><!-- end of uat4i00000454 2/2 -->
+  <LI><!-- uat4i00000015 2/2 --><!-- uat4i00000020 4/5--><!-- uat4i00000454 2/2 --><IMG 
+  title="Book closed" alt="Book closed" src="tocView_files/toc_closed.gif"><A 
+  id=b4 onmouseover=addChild(this) style="FONT-WEIGHT: bold" 
+  onfocus=addChild(this) 
+  onclick='if(window.loadTOC){loadTOC("/com.ibm.aix.messagecenter/toc.xml");} else {window.location.replace("tocView.jsp?toc="+"/com.ibm.aix.messagecenter/toc.xml");} ' 
+  href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.messagecenter/messagecenter.htm" 
+  name=/com.ibm.aix.messagecenter/toc.xml>AIX message center</A> <!-- end of uat4i00000020 4/5--><!-- end of uat4i00000015 2/2 --><!-- end of uat4i00000454 2/2 -->
+  <LI><!-- uat4i00000015 2/2 --><!-- uat4i00000020 4/5--><!-- uat4i00000454 2/2 --><IMG 
+  title="Book closed" alt="Book closed" src="tocView_files/toc_closed.gif"><A 
+  id=b5 onmouseover=addChild(this) style="FONT-WEIGHT: bold" 
+  onfocus=addChild(this) 
+  onclick='if(window.loadTOC){loadTOC("/com.ibm.help.ic.doc/toc.xml");} else {window.location.replace("tocView.jsp?toc="+"/com.ibm.help.ic.doc/toc.xml");} ' 
+  href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.help.ic.doc/using_system/about_the_system.html" 
+  name=/com.ibm.help.ic.doc/toc.xml>Viewing information in the information 
+  center</A> <!-- end of uat4i00000020 4/5--><!-- end of uat4i00000015 2/2 --><!-- end of uat4i00000454 2/2 -->
+  <LI><!-- uat4i00000015 2/2 --><!-- uat4i00000020 4/5--><!-- uat4i00000454 2/2 --><IMG 
+  title="Book closed" alt="Book closed" src="tocView_files/toc_closed.gif"><A 
+  id=b6 onmouseover=addChild(this) style="FONT-WEIGHT: bold" 
+  onfocus=addChild(this) 
+  onclick='if(window.loadTOC){loadTOC("/com.ibm.ibmcom.doc/toc.xml");} else {window.location.replace("tocView.jsp?toc="+"/com.ibm.ibmcom.doc/toc.xml");} ' 
+  href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.ibmcom.doc/footerssi.htm" 
+  name=/com.ibm.ibmcom.doc/toc.xml>ibm.com: About IBM - Privacy - Contact</A> <!-- end of uat4i00000020 4/5--><!-- end of uat4i00000015 2/2 --><!-- end of uat4i00000454 2/2 --></LI></UL><IFRAME 
+title="Layout frame: dynLoadFrame" style="VISIBILITY: hidden" tabIndex=-1 
+name=dynLoadFrame src="about:blank" frameBorder=no width=0 scrolling=no 
+height=0>
+    </IFRAME><IFRAME title="Layout frame: syncFrame" 
+style="VISIBILITY: hidden" tabIndex=-1 name=syncFrame 
+src="tocView_files/sync.htm" frameBorder=no width=0 scrolling=no 
+height=0>
+    </IFRAME>
+<STYLE type=text/css>.hight {
+	PADDING-RIGHT: 2px; COLOR: highlighttext; WHITE-SPACE: nowrap; TEXT-DECORATION: none
+}
+.hight:hover {
+	PADDING-RIGHT: 2px; COLOR: highlighttext; WHITE-SPACE: nowrap; TEXT-DECORATION: none
+}
+.disable#singleTopicPrint {
+	PADDING-RIGHT: 2px; BACKGROUND: none transparent scroll repeat 0% 0%; CURSOR: default; COLOR: lightgrey; WHITE-SPACE: nowrap; TEXT-DECORATION: none
+}
+.disable#singleTopicSearch {
+	PADDING-RIGHT: 2px; BACKGROUND: none transparent scroll repeat 0% 0%; CURSOR: default; COLOR: lightgrey; WHITE-SPACE: nowrap; TEXT-DECORATION: none
+}
+</STYLE>
+<!-- uat4i00000020 5/5-->
+<DIV class=cMenu id=leftmenu dir=ltr 
+onmouseover="this.style.visibility='visible'" onmouseout=hidePopupMenu()>
+<TABLE id=divtable cellSpacing=0 cellPadding=3 border=0>
+  <TBODY>
+  <TR>
+    <TD class=tdright id=lsingleTopicPrint align=middle width=25 bgColor=#c0c0c0 
+    height=27><IMG title="Print this topic" height=16 alt="Print this topic" 
+      src="tocView_files/e_print_edit.gif" width=16> </TD>
+    <TD id=psingleTopicPrint onmouseover=highlightitem(this) noWrap><FONT 
+      size=-1><A class=menuanchor id=singleTopicPrint 
+      onfocus=highlightitem(this.parentNode.parentNode) tabIndex=1 
+      href="javascript://needModal">Print this topic</A></FONT> </TD></TR>
+  <TR>
+    <TD class=tdright id=lsubTopicsPrint align=middle width=25 bgColor=#c0c0c0 
+    height=27>&nbsp; </TD>
+    <TD class=tdbottom id=psubTopicsPrint onmouseover=highlightitem(this) 
+      noWrap><FONT size=-1><A class=menuanchor id=subTopicsPrint 
+      onfocus=highlightitem(this.parentNode.parentNode) tabIndex=2 
+      href="javascript://needModal">Print this topic and subtopics</A></FONT> 
+  </TD></TR>
+  <TR>
+    <TD class=tdright id=lsingleTopicSearch align=middle width=25 
+    bgColor=#c0c0c0 height=27><IMG title="Search this topic" height=16 
+      alt="Search this topic" src="tocView_files/e_search_results_view.gif" 
+      width=16> </TD>
+    <TD id=psingleTopicSearch onmouseover=highlightitem(this) noWrap><FONT 
+      size=-1><A class=menuanchor id=singleTopicSearch 
+      onfocus=highlightitem(this.parentNode.parentNode) tabIndex=3 
+      href="javascript://needModal">Search this topic</A></FONT> </TD></TR>
+  <TR>
+    <TD class=tdright id=lsubTopicsSearch align=middle width=25 bgColor=#c0c0c0 
+    height=27>&nbsp; </TD>
+    <TD id=psubTopicsSearch onmouseover=highlightitem(this) noWrap><FONT 
+      size=-1><A class=menuanchor id=subTopicsSearch 
+      onfocus=highlightitem(this.parentNode.parentNode) tabIndex=4 
+      href="javascript://needModal">Search this topic and subtopics</A></FONT> 
+      <LABEL id=searchLabela accessKey=h for=hideanchor></LABEL><A id=hideanchor 
+      href="javascript:void%20window.location.reload();"></A></TD></TR></TBODY></TABLE></DIV>
+<DIV class=dMenu onmousedown=showPopupMenu(this) id=imagmenu dir=ltr 
+title="Open Quick Menu"><IMG alt="Open Quick Menu" 
+src="tocView_files/float.gif"> 
+</DIV><!-- end of uat4i00000020 5/5--></BODY></HTML>

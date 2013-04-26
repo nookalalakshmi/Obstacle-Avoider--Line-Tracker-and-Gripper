@@ -1,0 +1,96 @@
+#define USB_CMD 0x36
+#define USB_RD 0x35
+#define USB_WR 0x34
+
+#define USB_SEL_EP0OUT		0x02
+#define USB_SEL_EP0IN		0x03
+#define USB_SEL_EP1IN		0x04
+#define USB_SEL_EP1OUT		0x05
+#define USB_SEL_EP2OUT		0x06
+#define USB_SEL_EP2IN		0x07
+#define USB_SEL_EP3OUT		0x08
+#define USB_SEL_EP3IN		0x09
+
+#define USB_TRXSTAT_EP0OUT	0x42
+#define USB_TRXSTAT_EP0IN	0x43
+#define USB_TRXSTAT_EP1IN	0x44
+#define USB_TRXSTAT_EP1OUT	0x45
+#define USB_TRXSTAT_EP2OUT	0x46
+#define USB_TRXSTAT_EP2IN	0x47
+#define USB_TRXSTAT_EP3OUT	0x48
+#define USB_TRXSTAT_EP3IN	0x49
+
+#define USB_STAT_EP0OUT		0x82
+#define USB_STAT_EP0IN		0x83
+#define USB_STAT_EP1IN		0x84
+#define USB_STAT_EP1OUT		0x85
+#define USB_STAT_EP2OUT		0x86
+#define USB_STAT_EP2IN		0x87
+#define USB_STAT_EP3OUT		0x88
+#define USB_STAT_EP3IN		0x89
+
+#define USB_SET_HUB_ADDR 	0xD0
+#define USB_SET_FN1_ADDR 	0xD1
+#define USB_SET_FN2_ADDR 	0xD2
+#define USB_SET_FN3_ADDR 	0xD3
+
+#define USB_FN_ENABLE		7
+
+#define USB_SET_EP_ENABLE 	0xD8
+
+#define USB_EP1_ENABLE		1
+#define USB_EP2_ENABLE		2
+#define USB_EP3_ENABLE		3
+
+#define USB_BUFFER		0xF0
+
+#define USB_ACK			0xF1
+
+#define USB_CLRBUF		0xF2
+
+#define USB_SET_MODE 		0xF3
+
+#define USB_MODE_EMBEDDED	7
+#define USB_MODE_SOFTCONN	4
+#define USB_MODE_DEBUG		3
+#define USB_MODE_CLKRUN		2
+#define USB_MODE_NOLZCLK	1
+#define USB_MODE_REMWAKE	0
+
+#define USB_READ_INTR_REG	0xF4
+
+#define USB_INTR_EP0OUT		2
+#define USB_INTR_EP0IN		3
+#define USB_INTR_EP1IN		4
+#define USB_INTR_EP1OUT		5
+#define USB_INTR_EP2OUT		6
+#define USB_INTR_EP2IN		7
+#define USB_INTR_EP3OUT		8
+#define USB_INTR_EP3IN		9
+#define USB_INTR_RESET		14
+
+#define USB_FRAMENO		0xF5
+
+#define USB_RESUME		0xF6
+
+#define USB_VALIDATE		0xFA
+
+void usb_i2c_cmd (uint8_t cmd);
+int usb_i2c_send (uint8_t cmd, uint8_t len, uint8_t *data);
+void usb_i2c_recv (uint8_t cmd, uint8_t len, uint8_t *data);
+void usb_reset (void);
+int usb_send (uint8_t ep, uint8_t len, uint8_t *data);
+int usb_recv (uint8_t ep, uint8_t *data);
+int usb_stat (uint8_t ep);
+#define USB_STAT_SETUP		2
+#define USB_STAT_STALLED	3
+#define USB_STAT_PKT		4
+#define USB_STAT_BUFFULL	5
+
+int usb_trxstat (uint8_t ep);
+#define USB_TRXSTAT_SUCCESS	0
+#define USB_TRXSTAT_SETUP	5
+#define USB_TRXSTAT_PKT		6
+#define USB_TRXSTAT_PRVNR	7
+#define USB_TRXSTAT_STALL	0
+

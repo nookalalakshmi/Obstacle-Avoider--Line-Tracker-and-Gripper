@@ -1,0 +1,253 @@
+   1               		.file	"IR-Remote.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	getstartbit
+  20               	getstartbit:
+  21               	.LFB7:
+  22               	.LM1:
+  23               	/* prologue: function */
+  24               	/* frame size = 0 */
+  25               	.LM2:
+  26 0000 8299      		sbic 48-32,2
+  27 0002 00C0      		rjmp .L4
+  28               	.LM3:
+  29 0004 8299      		sbic 48-32,2
+  30 0006 00C0      		rjmp .L3
+  31               	.LM4:
+  32 0008 81E0      		ldi r24,lo8(1)
+  33 000a 90E0      		ldi r25,hi8(1)
+  34 000c 9093 0000 		sts (a)+1,r25
+  35 0010 8093 0000 		sts a,r24
+  36 0014 0895      		ret
+  37               	.L3:
+  38               	.LM5:
+  39 0016 1092 0000 		sts (a)+1,__zero_reg__
+  40 001a 1092 0000 		sts a,__zero_reg__
+  41               	.L4:
+  42 001e 0895      		ret
+  43               	.LFE7:
+  45               	.global	getdatabit
+  47               	getdatabit:
+  48               	.LFB8:
+  49               	.LM6:
+  50               	/* prologue: function */
+  51               	/* frame size = 0 */
+  52               	.LM7:
+  53 0020 8299      		sbic 48-32,2
+  54 0022 00C0      		rjmp .L6
+  55               	.LM8:
+  56 0024 81E0      		ldi r24,lo8(1)
+  57 0026 90E0      		ldi r25,hi8(1)
+  58 0028 9093 0000 		sts (b)+1,r25
+  59 002c 8093 0000 		sts b,r24
+  60               	.LM9:
+  61 0030 C29A      		sbi 56-32,2
+  62 0032 0895      		ret
+  63               	.L6:
+  64               	.LM10:
+  65 0034 1092 0000 		sts (b)+1,__zero_reg__
+  66 0038 1092 0000 		sts b,__zero_reg__
+  67 003c 0895      		ret
+  68               	.LFE8:
+  70               	.global	__vector_1
+  72               	__vector_1:
+  73               	.LFB9:
+  74               	.LM11:
+  75 003e 1F92      		push __zero_reg__
+  76 0040 0F92      		push r0
+  77 0042 0FB6      		in r0,__SREG__
+  78 0044 0F92      		push r0
+  79 0046 1124      		clr __zero_reg__
+  80 0048 2F93      		push r18
+  81 004a 3F93      		push r19
+  82 004c 4F93      		push r20
+  83 004e 5F93      		push r21
+  84 0050 6F93      		push r22
+  85 0052 7F93      		push r23
+  86 0054 8F93      		push r24
+  87 0056 9F93      		push r25
+  88               	/* prologue: Signal */
+  89               	/* frame size = 0 */
+  90               	.LBB6:
+  91               	.LBB7:
+  92               	.LM12:
+  93 0058 8299      		sbic 48-32,2
+  94 005a 00C0      		rjmp .L10
+  95               	.LM13:
+  96 005c 8299      		sbic 48-32,2
+  97 005e 00C0      		rjmp .L11
+  98               	.LM14:
+  99 0060 81E0      		ldi r24,lo8(1)
+ 100 0062 90E0      		ldi r25,hi8(1)
+ 101 0064 9093 0000 		sts (a)+1,r25
+ 102 0068 8093 0000 		sts a,r24
+ 103 006c 00C0      		rjmp .L10
+ 104               	.L11:
+ 105               	.LM15:
+ 106 006e 1092 0000 		sts (a)+1,__zero_reg__
+ 107 0072 1092 0000 		sts a,__zero_reg__
+ 108               	.L10:
+ 109               	.LBE7:
+ 110               	.LBE6:
+ 111               	.LM16:
+ 112 0076 8091 0000 		lds r24,a
+ 113 007a 9091 0000 		lds r25,(a)+1
+ 114 007e 0197      		sbiw r24,1
+ 115 0080 01F4      		brne .L20
+ 116 0082 45E0      		ldi r20,lo8(5)
+ 117 0084 50E0      		ldi r21,hi8(5)
+ 118               	.LVL0:
+ 119               	.LBB8:
+ 120               	.LBB9:
+ 121               	.LM17:
+ 122 0086 61E0      		ldi r22,lo8(1)
+ 123 0088 70E0      		ldi r23,hi8(1)
+ 124 008a 00C0      		rjmp .L13
+ 125               	.L18:
+ 126 008c 7093 0000 		sts (b)+1,r23
+ 127 0090 6093 0000 		sts b,r22
+ 128               	.LM18:
+ 129 0094 C29A      		sbi 56-32,2
+ 130 0096 00C0      		rjmp .L14
+ 131               	.L22:
+ 132               	.LM19:
+ 133 0098 1092 0000 		sts (b)+1,__zero_reg__
+ 134 009c 1092 0000 		sts b,__zero_reg__
+ 135               	.L14:
+ 136               	.LBE9:
+ 137               	.LBE8:
+ 138               	.LM20:
+ 139 00a0 2091 0000 		lds r18,b
+ 140 00a4 3091 0000 		lds r19,(b)+1
+ 141 00a8 2130      		cpi r18,1
+ 142 00aa 3105      		cpc r19,__zero_reg__
+ 143 00ac 01F4      		brne .L15
+ 144               	.LM21:
+ 145 00ae 85B3      		in r24,53-32
+ 146 00b0 042E      		mov r0,r20
+ 147 00b2 00C0      		rjmp 2f
+ 148 00b4 220F      	1:	lsl r18
+ 149 00b6 331F      		rol r19
+ 150 00b8 0A94      	2:	dec r0
+ 151 00ba 02F4      		brpl 1b
+ 152 00bc 822B      		or r24,r18
+ 153 00be 85BB      		out 53-32,r24
+ 154               	.LM22:
+ 155 00c0 C298      		cbi 56-32,2
+ 156               	.LM23:
+ 157 00c2 1092 0000 		sts (b)+1,__zero_reg__
+ 158 00c6 1092 0000 		sts b,__zero_reg__
+ 159 00ca 00C0      		rjmp .L16
+ 160               	.L15:
+ 161               	.LM24:
+ 162 00cc 25B3      		in r18,53-32
+ 163 00ce CB01      		movw r24,r22
+ 164 00d0 042E      		mov r0,r20
+ 165 00d2 00C0      		rjmp 2f
+ 166 00d4 880F      	1:	lsl r24
+ 167 00d6 991F      		rol r25
+ 168 00d8 0A94      	2:	dec r0
+ 169 00da 02F4      		brpl 1b
+ 170 00dc 8095      		com r24
+ 171 00de 8223      		and r24,r18
+ 172 00e0 85BB      		out 53-32,r24
+ 173               	.L16:
+ 174               	.LM25:
+ 175 00e2 4150      		subi r20,lo8(-(-1))
+ 176 00e4 5040      		sbci r21,hi8(-(-1))
+ 177 00e6 8FEF      		ldi r24,hi8(-1)
+ 178 00e8 4F3F      		cpi r20,lo8(-1)
+ 179 00ea 5807      		cpc r21,r24
+ 180 00ec 01F0      		breq .L17
+ 181               	.L13:
+ 182               	.LBB11:
+ 183               	.LBB10:
+ 184               	.LM26:
+ 185 00ee 829B      		sbis 48-32,2
+ 186 00f0 00C0      		rjmp .L18
+ 187 00f2 00C0      		rjmp .L22
+ 188               	.L17:
+ 189               	.LBE10:
+ 190               	.LBE11:
+ 191               	.LM27:
+ 192 00f4 1092 0000 		sts (a)+1,__zero_reg__
+ 193 00f8 1092 0000 		sts a,__zero_reg__
+ 194               	.L20:
+ 195               	/* epilogue start */
+ 196               	.LM28:
+ 197 00fc 9F91      		pop r25
+ 198 00fe 8F91      		pop r24
+ 199 0100 7F91      		pop r23
+ 200 0102 6F91      		pop r22
+ 201 0104 5F91      		pop r21
+ 202 0106 4F91      		pop r20
+ 203               	.LVL1:
+ 204 0108 3F91      		pop r19
+ 205 010a 2F91      		pop r18
+ 206 010c 0F90      		pop r0
+ 207 010e 0FBE      		out __SREG__,r0
+ 208 0110 0F90      		pop r0
+ 209 0112 1F90      		pop __zero_reg__
+ 210 0114 1895      		reti
+ 211               	.LFE9:
+ 213               	.global	main
+ 215               	main:
+ 216               	.LFB10:
+ 217               	.LM29:
+ 218               	/* prologue: function */
+ 219               	/* frame size = 0 */
+ 220               	.LM30:
+ 221 0116 84E0      		ldi r24,lo8(4)
+ 222 0118 87BB      		out 55-32,r24
+ 223               	.LM31:
+ 224 011a 8FE3      		ldi r24,lo8(63)
+ 225 011c 84BB      		out 52-32,r24
+ 226               	.LM32:
+ 227 011e 80E4      		ldi r24,lo8(64)
+ 228 0120 8BBF      		out 91-32,r24
+ 229               	.LM33:
+ 230 0122 82E0      		ldi r24,lo8(2)
+ 231 0124 85BF      		out 85-32,r24
+ 232               	.LM34:
+ 233               	/* #APP */
+ 234               	 ;  159 "IR-Remote.c" 1
+ 235 0126 7894      		sei
+ 236               	 ;  0 "" 2
+ 237               	/* #NOAPP */
+ 238               	.L24:
+ 239 0128 00C0      		rjmp .L24
+ 240               	.LFE10:
+ 242               	.global	ledout
+ 243               	.global	ledout
+ 244               		.section .bss
+ 247               	ledout:
+ 248 0000 0000      		.skip 2,0
+ 249               		.lcomm a,2
+ 250               		.lcomm b,2
+ 299               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 IR-Remote.c
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccqvM9xr.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccqvM9xr.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccqvM9xr.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccqvM9xr.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccqvM9xr.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccqvM9xr.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccqvM9xr.s:20     .text:00000000 getstartbit
+                             .bss:00000002 a
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccqvM9xr.s:47     .text:00000020 getdatabit
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccqvM9xr.s:249    .bss:00000004 b
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccqvM9xr.s:72     .text:0000003e __vector_1
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccqvM9xr.s:215    .text:00000116 main
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccqvM9xr.s:247    .bss:00000000 ledout
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

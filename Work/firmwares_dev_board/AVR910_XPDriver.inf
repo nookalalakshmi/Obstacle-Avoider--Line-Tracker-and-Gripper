@@ -1,0 +1,55 @@
+; Windows XP Driver for AVR910USB Programmer
+; Copyright (c) 2008 PNLab Technologies
+
+[Version] 
+Signature="$Windows NT$" 
+Class=Ports
+ClassGuid={4D36E978-E325-11CE-BFC1-08002BE10318} 
+Provider=%COMPANY% 
+LayoutFile=layout.inf
+DriverVer=18/02/2008,1.0.0.0
+
+[Manufacturer] 
+%MFGNAME% = ManufName
+
+[DestinationDirs] 
+DefaultDestDir=12 
+
+[ManufName] 
+%Programmer% = Programmer, USB\VID_16C0&PID_05E1
+
+;------------------------------------------------------------------------------
+;  Windows 2000/XP Sections
+;------------------------------------------------------------------------------
+
+[Programmer.NT]
+CopyFiles=USBProgrammerCopyFileSection
+AddReg=Programmer.NT.AddReg 
+
+[USBProgrammerCopyFileSection]
+usbser.sys,,,0x20
+
+[Programmer.NT.AddReg] 
+HKR,,DevLoader,,*ntkern 
+HKR,,NTMPDriver,,usbser.sys 
+HKR,,EnumPropPages32,,"MsPorts.dll,SerialPortPropPageProvider" 
+
+[Programmer.NT.Services] 
+AddService=usbser, 0x00000002, DriverService
+
+[DriverService] 
+DisplayName=%SERVICE%
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%12%\usbser.sys 
+
+;------------------------------------------------------------------------------
+;  String Definitions
+;------------------------------------------------------------------------------
+
+[Strings] 
+COMPANY="PNLab Technologies"
+MFGNAME="www.pnlabvn.com"
+Programmer="PNLab AVR910 USB Programmer" 
+SERVICE="PNlab USB-232 Emulation Driver"

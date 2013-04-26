@@ -1,0 +1,87 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN">
+<!-- saved from url=(0123)http://publib.boulder.ibm.com/infocenter/pseries/v5r3/advanced/help.jsp?topic=/com.ibm.aix.files/doc/aixfiles/termios.h.htm -->
+<!------------------------------------------------------------------------------
+ ! Copyright (c) 2000, 2004 IBM Corporation and others.
+ ! All rights reserved. This program and the accompanying materials 
+ ! are made available under the terms of the Eclipse Public License v1.0
+ ! which accompanies this distribution, and is available at
+ ! http://www.eclipse.org/legal/epl-v10.html
+ ! 
+ ! Contributors:
+ !     IBM Corporation - initial API and implementation
+ -------------------------------------------------------------------------------><HTML><HEAD><TITLE>Help</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=UTF-8">
+<STYLE type=text/css>HTML {
+	BACKGROUND: buttonface
+}
+</STYLE>
+
+<SCRIPT language=JavaScript>
+
+var maximizeListeners=new Object();
+function registerMaximizeListener(name, listener){
+	maximizeListeners[name]=listener;
+}
+function notifyMaximizeListeners(maximizedNotRestored){
+	for(i in maximizeListeners){
+		try{
+			maximizeListeners[i](maximizedNotRestored);
+		}catch(exc){}
+	}
+}
+
+var leftCols = "29.5%";
+var rightCols = "70.5%";
+
+function toggleFrame(title)
+{
+	var frameset = document.getElementById("helpFrameset"); 
+	var navFrameSize = frameset.getAttribute("cols");
+	var comma = navFrameSize.indexOf(',');
+	var left = navFrameSize.substring(0,comma);
+	var right = navFrameSize.substring(comma+1);
+
+	if (left == "*" || right == "*") {
+		// restore frames
+		frameset.frameSpacing="3";
+		frameset.setAttribute("border", "6");
+		frameset.setAttribute("cols", leftCols+","+rightCols);
+		notifyMaximizeListeners(false);
+	} else {
+		// the "cols" attribute is not always accurate, especially after resizing.
+		// offsetWidth is also not accurate, so we do a combination of both and 
+		// should get a reasonable behavior
+
+		var leftSize = NavFrame.document.body.offsetWidth;
+		var rightSize = ContentFrame.document.body.offsetWidth;
+
+		
+		leftCols = leftSize * 100 / (leftSize + rightSize);
+		rightCols = 100 - leftCols;
+
+		// maximize the frame.
+		//leftCols = left;
+		//rightCols = right;
+		// Assumption: the content toolbar does not have a default title.
+
+		if (title != "") // this is the left side for left-to-right rendering
+			frameset.setAttribute("cols", "100%,*");
+		else // this is the content toolbar
+			frameset.setAttribute("cols", "*,100%");
+	
+		frameset.frameSpacing="0";
+		frameset.setAttribute("border", "1");
+		notifyMaximizeListeners(true);
+	}
+}
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD><FRAMESET 
+id=helpFrameset 
+style="BORDER-RIGHT: buttonface 4px solid; BORDER-TOP: buttonface 0px solid; BORDER-LEFT: buttonface 4px solid; BORDER-BOTTOM: buttonface 4px solid" 
+border=6 frameSpacing=3 frameBorder=1 cols=29.5%,70.5% scrolling="no"><FRAME 
+class=nav title="Layout frame: NavFrame" name=NavFrame marginWidth=0 
+marginHeight=0 src="help_files/nav.htm" frameBorder=1 scrolling=no 
+resize="yes"><FRAME class=content title="Layout frame: ContentFrame" 
+name=ContentFrame marginWidth=0 marginHeight=0 src="help_files/content.htm" 
+frameBorder=0 scrolling=no resize="yes"></FRAMESET></HTML>

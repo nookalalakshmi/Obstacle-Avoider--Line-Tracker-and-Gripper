@@ -1,0 +1,9 @@
+#addbox {
+	OVERFLOW: hidden; WIDTH: 580px; CLIP: rect(0px 580px 0px 105px); POSITION: relative; HEIGHT: 105px
+}
+#banner1 {
+	LEFT: 0px; WIDTH: 550px; POSITION: relative; TOP: 5px; HEIGHT: 100px
+}
+#banner2 {
+	LEFT: 570px; WIDTH: 550px; POSITION: relative; TOP: -55px! important; HEIGHT: 100px
+}

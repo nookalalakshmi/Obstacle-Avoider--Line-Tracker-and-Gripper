@@ -1,0 +1,114 @@
+ {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+BODY {
+	MARGIN: 8px; LINE-HEIGHT: 133%; FONT-FAMILY: serif; BACKGROUND-COLOR: #e0ffff; font-color: black; max-width: 1024px
+}
+A:link {
+	COLOR: blue
+}
+A:visited {
+	COLOR: darkmagenta
+}
+A:hover {
+	BACKGROUND-COLOR: #a0ffff
+}
+A:active {
+	LEFT: 1px; COLOR: darkmagenta; POSITION: relative; TOP: 1px
+}
+abbr {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; BORDER-BOTTOM-WIDTH: 1px; BORDER-RIGHT-WIDTH: 1px
+}
+P {
+	MARGIN: 0px 0px 0.4em; TEXT-INDENT: 0px
+}
+EM {
+	FONT-WEIGHT: bold; MARGIN: 0px 0.1em; FONT-STYLE: normal
+}
+STRONG {
+	FONT-WEIGHT: bold; MARGIN: 0px 0.1em; COLOR: red; FONT-STYLE: normal
+}
+TT {
+	MARGIN: 0px 0.2em
+}
+OL {
+	MARGIN: 1em 2.5em
+}
+UL {
+	MARGIN: 1em 2.5em
+}
+HR {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; BORDER-BOTTOM-WIDTH: 1px; BORDER-RIGHT-WIDTH: 1px
+}
+DIV.abst {
+	FONT-FAMILY: sans-serif
+}
+DIV.para {
+	CLEAR: both
+}
+.equ {
+	MARGIN: 1em 2em; TEXT-INDENT: 0px
+}
+.indent {
+	MARGIN-LEFT: 2em
+}
+UL.flat {
+	MARGIN: 0px
+}
+.rset {
+	FLOAT: right; MARGIN: 0px 0px 0.5em 0.5em
+}
+.lset {
+	FLOAT: left; MARGIN: 0px 0.5em 0.5em 0px
+}
+UL.flat LI {
+	LIST-STYLE-TYPE: none
+}
+A.imglnk IMG {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.iequ {
+	FONT-WEIGHT: bold; WHITE-SPACE: nowrap
+}
+.clr {
+	CLEAR: both
+}
+.it {
+	FONT-STYLE: italic
+}
+PRE.lst {
+	PADDING-RIGHT: 0.5em; PADDING-LEFT: 0.5em; FLOAT: left; PADDING-BOTTOM: 0.5em; MARGIN: 1em; LINE-HEIGHT: 1em; PADDING-TOP: 0.5em; BACKGROUND-COLOR: white
+}
+H1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 2em; FLOAT: left; PADDING-BOTTOM: 0.3em; LINE-HEIGHT: 1em; PADDING-TOP: 0.3em; FONT-FAMILY: sans-serif
+}
+P.hdd {
+	MARGIN-TOP: 0.5em; FLOAT: right; TEXT-ALIGN: right
+}
+HR.hds {
+	CLEAR: both; MARGIN-BOTTOM: 1em
+}
+H3 {
+	FONT-SIZE: 1.5em; MARGIN: 2em 0px 0.5em; FONT-FAMILY: sans-serif
+}
+H4 {
+	FONT-SIZE: 1.2em; MARGIN: 1em 0px 0.2em; FONT-FAMILY: sans-serif
+}
+H5 {
+	FONT-SIZE: 1em; MARGIN: 0.5em 0px 0em; FONT-FAMILY: sans-serif
+}
+.indent {
+	MARGIN-LEFT: 2em
+}
+TABLE.lst {
+	BORDER-RIGHT: black 2px solid; BORDER-TOP: black 2px solid; MARGIN: 4px; BORDER-LEFT: black 2px solid; BORDER-BOTTOM: black 2px solid; BORDER-COLLAPSE: collapse
+}
+TABLE.lst TH {
+	BORDER-RIGHT: black 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: black 1px solid; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; BORDER-LEFT: black 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: black 2px solid; FONT-FAMILY: monospace; WHITE-SPACE: nowrap; BACKGROUND-COLOR: white
+}
+TABLE.lst TD {
+	BORDER-RIGHT: black 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: black 1px solid; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; BORDER-LEFT: black 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: monospace; WHITE-SPACE: nowrap; BACKGROUND-COLOR: white
+}
+P.foot {
+	CLEAR: both; MARGIN: 2em 1em 1em; TEXT-INDENT: 0px
+}

@@ -1,0 +1,282 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0077)http://publib.boulder.ibm.com/infocenter/pseries/v5r3/advanced/tocToolbar.jsp -->
+<HTML><HEAD><TITLE>Toolbar</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=UTF-8">
+<STYLE type=text/css>HTML {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+BODY {
+	BACKGROUND: buttonface
+}
+#titleText {
+	FONT-WEIGHT: bold; COLOR: windowtext
+}
+.buttonOn A {
+	BORDER-RIGHT: highlight 1px solid; BORDER-TOP: highlight 1px solid; DISPLAY: block; BACKGROUND: window; MARGIN-LEFT: 2px; VERTICAL-ALIGN: middle; BORDER-LEFT: highlight 1px solid; WIDTH: 20px; MARGIN-RIGHT: 2px; BORDER-BOTTOM: highlight 1px solid; WRITING-MODE: tb-rl; HEIGHT: 20px
+}
+.button A {
+	BORDER-RIGHT: buttonface 1px solid; BORDER-TOP: buttonface 1px solid; DISPLAY: block; MARGIN-LEFT: 2px; VERTICAL-ALIGN: middle; BORDER-LEFT: buttonface 1px solid; WIDTH: 20px; MARGIN-RIGHT: 2px; BORDER-BOTTOM: buttonface 1px solid; WRITING-MODE: tb-rl; HEIGHT: 20px
+}
+.button A:hover {
+	BORDER-RIGHT: buttonshadow 1px solid; BORDER-TOP: buttonhighlight 1px solid; BORDER-LEFT: buttonhighlight 1px solid; BORDER-BOTTOM: buttonshadow 1px solid
+}
+#b2:hover {
+	BORDER-RIGHT: buttonface 1px solid; BORDER-TOP: buttonface 1px solid; BORDER-LEFT: buttonface 1px solid; BORDER-BOTTOM: buttonface 1px solid
+}
+.separator {
+	BORDER-RIGHT: buttonface 3px solid; BORDER-TOP: buttonface 2px solid; BORDER-LEFT: buttonface 3px solid; WIDTH: 1px; BORDER-BOTTOM: buttonface 2px solid; HEIGHT: 100%; BACKGROUND-COLOR: buttonshadow
+}
+#container {
+	BORDER-BOTTOM: buttonshadow 1px solid
+}
+</STYLE>
+
+<SCRIPT language=JavaScript>
+
+var bRestore = false;
+// uat4i00000006
+var highlightButtonTooltipOn="Turn Highlight off ";
+var highlightButtonTooltipOff="Turn Highlight on";
+// end of uat4i00000006
+// Preload images
+
+	var filter = new Image();
+	filter.src = "images/e_filter.gif";
+
+	var synchnav = new Image();
+	synchnav.src = "images/e_synch_nav.gif";
+
+	var maximize_restore = new Image();
+	maximize_restore.src = "images/e_maximize.gif";
+
+
+function setTitle(label)
+{
+	if( label == null) label = "";
+	var title = document.getElementById("titleText");
+	if (title == null) return;
+	var text = title.lastChild;
+	if (text == null) return;
+	text.nodeValue = label;
+}
+
+
+function registerMaximizedChangedListener(){
+	// get to the frameset
+	var p = parent;
+	while (p && !p.registerMaximizeListener)
+		p = p.parent;
+	
+	if (p!= null){
+		p.registerMaximizeListener('tocToolbar', maximizedChanged);
+	}
+}
+registerMaximizedChangedListener();
+
+/**
+ * Handler for double click: maximize/restore this view
+ * Note: Mozilla browsers prior to 1.2.1 do not support programmatic frame resizing well.
+ */
+function mouseDblClickHandler(e) {
+	// ignore double click on buttons
+	var target=window.event.srcElement;
+	if (target.tagName && (target.tagName == "A" || target.tagName == "IMG"))
+		return;
+	toggleFrame();
+	return false;
+}		
+function restore_maximize(button)
+{
+	toggleFrame();
+	if (isIE && button && document.getElementById(button)){
+		document.getElementById(button).blur();
+	}
+}
+function toggleFrame(){
+	// get to the frameset
+	var p = parent;
+	while (p && !p.toggleFrame)
+		p = p.parent;
+	
+	if (p!= null){
+		p.toggleFrame('Contents&nbsp;');
+	}
+	document.selection.clear;	
+}
+
+function maximizedChanged(maximizedNotRestored){
+	if(maximizedNotRestored){
+		document.getElementById("maximize_restore").src="images/e_restore.gif";
+		document.getElementById("maximize_restore").setAttribute("title", "Restore");
+		document.getElementById("maximize_restore").setAttribute("alt", "Restore");
+		bRestore = true;
+	}else{
+		document.getElementById("maximize_restore").src="images/e_maximize.gif";
+		document.getElementById("maximize_restore").setAttribute("title", "Maximize");
+		document.getElementById("maximize_restore").setAttribute("alt", "Maximize");
+		bRestore = false;
+	}
+}
+
+document.ondblclick = mouseDblClickHandler;
+
+
+function setButtonState(buttonName, pressed) {
+	if(!document.getElementById("tdb_"+buttonName))
+		return;
+	if(pressed){
+		document.getElementById("tdb_"+buttonName).className="buttonOn";
+	}else{
+		document.getElementById("tdb_"+buttonName).className="button";
+	}
+}
+
+function setWindowStatus(buttonName){
+	
+		if (buttonName == "filter"){
+			if (buttonName == "maximize_restore"){
+				if (bRestore){
+					window.status = "Restore";
+				}else{
+					window.status = "Maximize";
+				}
+				//uat4i00000006
+			} else if(buttonName == "toggle_highlight"){
+				if (document.getElementById("tdb_toggle_highlight").className=="buttonOn"){
+					window.status = highlightButtonTooltipOn;
+				}else{
+					window.status = highlightButtonTooltipOff;
+				}
+				//end of uat4i00000006
+			} else{
+				window.status = "Filter off";
+			}
+		}
+	
+		if (buttonName == "synchnav"){
+			if (buttonName == "maximize_restore"){
+				if (bRestore){
+					window.status = "Restore";
+				}else{
+					window.status = "Maximize";
+				}
+				//uat4i00000006
+			} else if(buttonName == "toggle_highlight"){
+				if (document.getElementById("tdb_toggle_highlight").className=="buttonOn"){
+					window.status = highlightButtonTooltipOn;
+				}else{
+					window.status = highlightButtonTooltipOff;
+				}
+				//end of uat4i00000006
+			} else{
+				window.status = "Refresh / Show Current Topic";
+			}
+		}
+	
+		if (buttonName == "maximize_restore"){
+			if (buttonName == "maximize_restore"){
+				if (bRestore){
+					window.status = "Restore";
+				}else{
+					window.status = "Maximize";
+				}
+				//uat4i00000006
+			} else if(buttonName == "toggle_highlight"){
+				if (document.getElementById("tdb_toggle_highlight").className=="buttonOn"){
+					window.status = highlightButtonTooltipOn;
+				}else{
+					window.status = highlightButtonTooltipOff;
+				}
+				//end of uat4i00000006
+			} else{
+				window.status = "Maximize";
+			}
+		}
+	
+}
+
+/**
+ * Close filterManger window when its opener is closed.
+ */
+function onunloadHandler()
+{
+	try{
+		if (filterDialog){		
+			filterDialog.close();
+		}
+	}catch(e){}
+	if(this.name == "tocToolbarFrame" && window.parent.tocViewFrame){
+			window.parent.tocViewFrame.window.location.reload();
+	}
+}
+function onloadHandler(){
+	// get to the frameset
+	var p = parent;
+	while (p && !p.toggleFrame)
+		p = p.parent;
+	
+	if (p!= null){
+		var frameset = p.document.getElementById("helpFrameset"); 
+		if(frameset != null) {
+			var navFrameSize = frameset.getAttribute("cols");
+			var comma = navFrameSize.indexOf(',');
+			var left = navFrameSize.substring(0,comma);
+			var right = navFrameSize.substring(comma+1);
+	
+			if (left == "*" || right == "*") {
+				maximizedChanged(true);
+			}
+		}
+	}
+	
+}
+</SCRIPT>
+
+<SCRIPT language=JavaScript src="tocToolbar_files/navActions.js"></SCRIPT>
+</SCRIPT>
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY dir=ltr onload=onloadHandler() onunload=onunloadHandler()>
+<TABLE id=container style="PADDING-LEFT: 5px" height="100%" cellSpacing=0 
+cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD style="FONT: icon" vAlign=center noWrap>
+      <DIV id=titleTextTableDiv style="OVERFLOW: hidden; HEIGHT: 22px">
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD style="FONT: icon" noWrap>
+            <DIV 
+      id=titleText>&nbsp;Contents&nbsp;</DIV></TD></TR></TBODY></TABLE></DIV>
+      <DIV style="RIGHT: 0px; POSITION: absolute; TOP: 1px">
+      <TABLE height="100%" cellSpacing=1 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align=right>
+            <TABLE style="BACKGROUND: buttonface" height="100%" cellSpacing=0 
+            cellPadding=0 align=right border=0>
+              <TBODY>
+              <TR>
+                <TD class=button id=tdb_filter align=middle height=18><A id=b0 
+                  onmouseover="javascript:setWindowStatus('filter');return true;" 
+                  title="Filter off" onmouseout="window.status='';" 
+                  href="javascript:openFilter('b0');" reg4i00000019 of end><IMG 
+                  id=filter title="Filter off" alt="Filter off" 
+                  src="tocToolbar_files/e_filter.gif" border=0> </A></TD>
+                <TD class=button id=tdb_synchnav align=middle height=18><A 
+                  id=b1 
+                  onmouseover="javascript:setWindowStatus('synchnav');return true;" 
+                  title="Refresh / Show Current Topic" 
+                  onmouseout="window.status='';" 
+                  href="javascript:resynchNav('b1');" reg4i00000019 of end><IMG 
+                  id=synchnav title="Refresh / Show Current Topic" 
+                  alt="Refresh / Show Current Topic" 
+                  src="tocToolbar_files/e_synch_nav.gif" border=0> </A></TD>
+                <TD class=button id=tdb_maximize_restore align=middle 
+                  height=18><A id=b2 
+                  onmouseover="javascript:setWindowStatus('maximize_restore');return true;" 
+                  title=Maximize onmouseout="window.status='';" 
+                  href="javascript:restore_maximize('b2');" reg4i00000019 of 
+                  end><IMG id=maximize_restore title=Maximize alt=Maximize 
+                  src="tocToolbar_files/e_maximize.gif" border=0> 
+              </A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

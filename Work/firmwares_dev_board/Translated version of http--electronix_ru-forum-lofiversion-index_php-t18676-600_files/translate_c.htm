@@ -1,0 +1,2203 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0231)http://72.14.235.102/translate_c?hl=en&sl=ru&u=http://electronix.ru/forum/lofiversion/index.php/t18676-600.html&prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&usg=ALkJrhgAt1WK7z81YZk3v2P7JaL2cNayLQ -->
+<HTML lang=en xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>Developer Forum Electronics - Electronics developers forum> USB programmer AVR910</TITLE>
+<SCRIPT>(function (){ 
+function ti_(){this.t={};this.tick=function(a,b){this.t[a]=[(new Date).getTime(),b]};this.tick("start")}var ti_a=new ti_;window.jstiming={Timer:ti_,load:ti_a};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;
+ })()
+</SCRIPT>
+
+<SCRIPT src="translate_c_files/translate_c.js"></SCRIPT>
+
+<SCRIPT>_intlStrings._originalText = "Original Russian text:";_intlStrings._interfaceDirection="ltr";_intlStrings._interfaceAlign="left";_intlStrings._langpair="ru|en";_intlStrings._feedbackUrl="http://translate.google.com/translate_suggestion";_intlStrings._suggestTranslation="Suggest a better translation"  ;_intlStrings._submit="Contribute";_intlStrings._suggestThanks="Thank you for contributing your translation suggestion to Google Translate.";_intlStrings._reverse=false;</SCRIPT>
+
+<STYLE type=text/css>.google-src-text {
+	DISPLAY: none! important
+}
+.google-src-active-text {
+	DISPLAY: block! important; COLOR: black! important
+}
+.google-src-active-text FONT {
+	COLOR: black! important
+}
+.google-src-active-text A:link {
+	COLOR: blue! important; TEXT-DECORATION: underline! important
+}
+.google-src-active-text A:visited {
+	COLOR: purple! important; TEXT-DECORATION: underline! important
+}
+.google-src-active-text A:active {
+	COLOR: red! important; TEXT-DECORATION: underline! important
+}
+</STYLE>
+
+<META http-equiv=content-type content="text/html; charset=UTF-8">
+<META content=index,follow name=robots><LINK rev=stylesheet media=screen 
+href="translate_c_files/lofiscreen.css" rel=stylesheet><LINK rev=stylesheet 
+media=handheld href="translate_c_files/lofihandheld.css" rel=stylesheet><LINK 
+rev=stylesheet media=print href="translate_c_files/lofiprint.css" 
+rel=stylesheet>
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY 
+onload="_setupIW();_csi('ru','en','http://electronix.ru/forum/lofiversion/index.php/t18676-600.html');">
+<DIV id=ipbwrapper>
+<DIV class=ipbnavsmall><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left"><A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fact%3DHelp&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhijNNT_J8Ph_LfTfTMBkBUfQUeGoQ">Help</A> 
+- <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fact%3DSearch&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhjygtggaliPMSK446yxa8bR2lUc0A">Search</A> 
+- <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fact%3DMembers&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhg5l7paBoDdNfB5loEaMlv0070KOA">Members</A> 
+- <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fact%3Dcalendar&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhmN0MlNauxZ6leTOvMG-n6pKVlvw">Calendar</A></SPAN> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fact%3DHelp&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhijNNT_J8Ph_LfTfTMBkBUfQUeGoQ">Help</A> 
+- <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fact%3DSearch&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhjygtggaliPMSK446yxa8bR2lUc0A">Search</A> 
+- <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fact%3DMembers&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhg5l7paBoDdNfB5loEaMlv0070KOA">Members</A> 
+- <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fact%3Dcalendar&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhmN0MlNauxZ6leTOvMG-n6pKVlvw">Calendar</A></SPAN> 
+</DIV>
+<DIV id=largetext><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Full Version: <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fshowtopic%3D18676&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhgwrTdp5nnphIRyMsqa4xOtSIXUhA">USB 
+programmer AVR910</A></SPAN> Full Version: <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fshowtopic%3D18676&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhgwrTdp5nnphIRyMsqa4xOtSIXUhA">USB 
+programmer AVR910</A></SPAN> </DIV>
+<DIV class=ipbnav><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left"><A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhgCOV5exSB9BSyqo2EOsp1ut_hc3Q">Форум 
+разработчиков электроники - Electronics developers forum</A> &gt; <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/f74.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhjBf9XYMe4P_00wJinJss0PAypRNw">Микроконтроллеры 
+(МК) - Microcontrollers (MCs)</A> &gt; <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/f10.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhjarmY27zMM20TtSKPDcKbeV1xK2A">AVR</A></SPAN> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhgCOV5exSB9BSyqo2EOsp1ut_hc3Q">Developer 
+Forum Electronics - Electronics developers forum&gt;</A> <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/f74.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhjBf9XYMe4P_00wJinJss0PAypRNw">microcontrollers 
+(MC) - Microcontrollers (MCs)&gt;</A> <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/f10.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhjarmY27zMM20TtSKPDcKbeV1xK2A">AVR</A></SPAN> 
+</DIV>
+<DIV class=ipbpagespan><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Pages: <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-0.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhbqP7MMAtTxeo569GSTgtspPKfcA">1</A> 
+, <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-50.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhgA69Ty5nSAQeN7iCpUqEmwapziXQ">2</A> 
+, <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-100.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhmgG-flRsF0ESApHmIq208-olPqA">3</A> 
+, <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-150.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhj3djFi25jrNJvkqHI4pauubIsiqQ">4</A> 
+, <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-200.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhitGvRaVU_ecijq-5-YbsB00cJrvQ">5</A> 
+, <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-250.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhgF2o-guEt2DS1XSzNDjqZ8V9EqPA">6</A> 
+, <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-300.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhggVg8DcMyYlv_sAn2-gZLR0QFQDg">7</A> 
+, <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-350.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhMmpqN8nBPLTDIQD-6fhtUoHEjlw">8</A> 
+, <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-400.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhiN-ljHZzvKD8cSw9QIIDLjarQZDQ">9</A> 
+, <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-450.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhipTluzsuQLuWQEuxPKoMgqafaKTA">10</A> 
+, <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-500.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhF65GWRejRm-q0LZ_YgGK1GANQnA">11</A> 
+, <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-550.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhh664ckDLc_Q7B34Ng9-ekR_8Nd_A">12</A> 
+, <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-600.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhgAt1WK7z81YZk3v2P7JaL2cNayLQ">13</A> 
+, <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-650.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhg0yc7L_OrEGVMXyymnGG3ymaG1fA">14</A> 
+, <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-700.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhQLIbb6Pyo1g1GFFuT_ZlIzxpWEg">15</A> 
+, <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-750.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhijy8gqbVIWJm3wp5wY34OQbZKMYw">16</A> 
+, <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-800.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhe8kwDj2FVPrY2s2XBk5GU6nvx2g">17</A></SPAN> 
+Pages: <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-0.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhbqP7MMAtTxeo569GSTgtspPKfcA">1,</A> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-50.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhgA69Ty5nSAQeN7iCpUqEmwapziXQ">2,</A> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-100.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhmgG-flRsF0ESApHmIq208-olPqA">3,</A> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-150.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhj3djFi25jrNJvkqHI4pauubIsiqQ">4,</A> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-200.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhitGvRaVU_ecijq-5-YbsB00cJrvQ">5,</A> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-250.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhgF2o-guEt2DS1XSzNDjqZ8V9EqPA">6,</A> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-300.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhggVg8DcMyYlv_sAn2-gZLR0QFQDg">7,</A> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-350.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhMmpqN8nBPLTDIQD-6fhtUoHEjlw">8,</A> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-400.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhiN-ljHZzvKD8cSw9QIIDLjarQZDQ">9,</A> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-450.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhipTluzsuQLuWQEuxPKoMgqafaKTA">10,</A> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-500.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhF65GWRejRm-q0LZ_YgGK1GANQnA">11,</A> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-550.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhh664ckDLc_Q7B34Ng9-ekR_8Nd_A">12,</A> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-600.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhgAt1WK7z81YZk3v2P7JaL2cNayLQ">13,</A> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-650.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhg0yc7L_OrEGVMXyymnGG3ymaG1fA">14,</A> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-700.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhQLIbb6Pyo1g1GFFuT_ZlIzxpWEg">15,</A> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-750.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhijy8gqbVIWJm3wp5wY34OQbZKMYw">16,</A> 
+<A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/lofiversion/index.php/t18676-800.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhe8kwDj2FVPrY2s2XBk5GU6nvx2g">17</A></SPAN> 
+</DIV>
+<DIV id=ipbcontent>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>prottoss </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 7 2008, 
+14:57</SPAN> Feb 7 2008, 14:57</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">[ <B>Coder Perm; 
+day177</B> quote][/quote]А скажу я вот что.</SPAN> <B>[Coder Perm; day177</B> 
+quote] [/ quote] And I will say this.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Программатор работает на простом 
+протоколе ATMEL AVR910 для утилиты AVRProg из пакета AVRStudio.</SPAN> 
+Programmer works on a simple protocol ATMEL AVR910 for utilities AVRProg package 
+AVRStudio.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">С этой утилитой 
+мой программатор работает отлично, ибо и утилита и программатор соблюдают 
+вышеназыванный протокол в строгости</SPAN> With this tool, my programmer is 
+working perfectly, for the utility and observed a programmer vyshenazyvanny 
+protocol strictness</SPAN> <IMG style="VERTICAL-ALIGN: middle" alt=smile.gif 
+src="translate_c_files/smile.gif" border=0 emoid=":)"> . <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Если ПО, работающее с программатором 
+начинает выдумывать свое или чего то не договоаривает по протоклу - программатор 
+имеет полное право висеть сколько ему вздумаетсмя - ибо он не челове и даже не 
+ПЕнтиум - у него просто не хватает ресурсов понять, чего там ему жует ПО.</SPAN> 
+If the software works with a programmer starts to invent his or what is not 
+dogovoarivaet on protoklu - the programmer has the full right to hold what he 
+vzdumaetsmya - because he is not human, or even Pentium - he simply lacks the 
+resources to understand what he chews on it.</SPAN> <BR><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">То бишь я хочу сказать - что ПО 
+вышеназванное (AVP-OPP II) кривое, вот и не работает Ваш программатор.</SPAN> 
+That bish I want to say - that the above (AVP-OPP II) curve, that's not your 
+programmer.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Если у ПО есть 
+исходники - можно попытать счастья разобраться в проблеме...</SPAN> If the 
+software is the source - you can try their luck to understand the problem 
+...</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">В конце концов мы 
+же здесь называем себя программистами, не так ли?</SPAN> In the end, we here 
+call themselves programmers, is not it?</SPAN> <BR><BR></DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>zltigo </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 7 2008, 
+15:06</SPAN> Feb 7 2008, 15:06</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo(post=361516:date=Feb 7 2008, 14&#58;57:name=prottoss)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">QUOTE(prottoss @ 
+Feb 7 2008, 14:57) [snapback]361516[/snapback]</SPAN> QUOTE (prottoss @ Feb 7 
+2008, 14:57) [snapback] 361516 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><BR>... <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">программатор имеет полное право висеть 
+сколько ему вздумаетсмя ....</SPAN> programmer has the full right to hold what 
+he vzdumaetsmya ....</SPAN> <BR><!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Желаю со временем изменить свои взгляды 
+на программирование.</SPAN> I wish in time to change their views on 
+programming.</SPAN> <BR><BR><BR></DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>prottoss </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 7 2008, 
+15:48</SPAN> Feb 7 2008, 15:48</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo(post=361522:date=Feb 7 2008, 19&#58;06:name=zltigo)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">(zltigo @ Feb 7 
+2008, 19:06) [snapback]361522[/snapback]</SPAN> (zltigo @ Feb 7 2008, 19:06) 
+[snapback] 361522 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Желаю со временем изменить свои взгляды 
+на программирование.</SPAN> I wish in time to change their views on 
+programming.</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Сорри, возможно, я грубо 
+выразился.</SPAN> Sorry, may I put it rudely.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">На самом деле программатор не висит, а 
+ждет завершения команды.</SPAN> In fact, the programmer does not hang, but is 
+waiting for the completion of the team.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Прерывания ожидания по таймауту в нем 
+не предусмотрено.</SPAN> Abandonment waiting for a timeout in it is not 
+stipulated.</SPAN> <BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Кстати, вывести из ступора программатор 
+можно, если послать ему несколько символов "?"</SPAN> By the way, to withdraw 
+from the stupor programmer can, if you send him a few characters?</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">либо других, которых нет в протоколе 
+AVR910.</SPAN> or others who are not in the record AVR910.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Автоматом очищается внутренний буфер 
+команд.</SPAN> Automatically clears the internal buffer commands.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Кстати, так делает AVRProg v.1.4 при 
+старте и при выполнении команд пользователя</SPAN> By the way, so does AVRProg 
+v.1.4 at startup, and in carrying out the commands a user</SPAN> 
+<BR><BR></DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>smk </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 7 2008, 
+16:08</SPAN> Feb 7 2008, 16:08</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">От чего зависит 
+полнота содержимого в меню "Device", что в окошке AVRprog?</SPAN> Which 
+determines the completeness of the contents of the menu "Device", that in the 
+window AVRprog?</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Столкнулся с тем 
+что бывает разное, хотя в обоих случаях устанавливал студию с одними и теми же 
+файлами для инсталляции.</SPAN> Faced with the fact that it is different, 
+although in both cases, the studio set with the same files for 
+installation.</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>IgorKossak </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 7 2008, 
+16:21</SPAN> Feb 7 2008, 16:21</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo(post=361563:date=Feb 7 2008, 15&#58;08:name=smk)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">(smk @ Feb 7 
+2008, 15:08) [snapback]361563[/snapback]</SPAN> (smk @ Feb 7 2008, 15:08) 
+[snapback] 361563 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">От чего зависит полнота содержимого в 
+меню "Device", что в окошке AVRprog?</SPAN> Which determines the completeness of 
+the contents of the menu "Device", that in the window AVRprog?</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Столкнулся с тем что бывает разное, 
+хотя в обоих случаях устанавливал студию с одними и теми же файлами для 
+инсталляции.</SPAN> Faced with the fact that it is different, although in both 
+cases, the studio set with the same files for installation.</SPAN> <BR><!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">AVRprog опрашивает программатор на 
+предмет поддерживаемых Devices.</SPAN> AVRprog queries the programmer for the 
+supported Devices.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">По крайней мере есть такая команда в 
+протоколе.</SPAN> At least there is a team in the protocol.</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>prottoss </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 7 2008, 
+16:24</SPAN> Feb 7 2008, 16:24</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo(post=361563:date=Feb 7 2008, 20&#58;08:name=smk)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">(smk @ Feb 7 
+2008, 20:08) [snapback]361563[/snapback]</SPAN> (smk @ Feb 7 2008, 20:08) 
+[snapback] 361563 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">От чего зависит полнота содержимого в 
+меню "Device", что в окошке AVRprog?</SPAN> Which determines the completeness of 
+the contents of the menu "Device", that in the window AVRprog?</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Столкнулся с тем что бывает разное, 
+хотя в обоих случаях устанавливал студию с одними и теми же файлами для 
+инсталляции.</SPAN> Faced with the fact that it is different, although in both 
+cases, the studio set with the same files for installation.</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Определяется двумя фактами:</SPAN> 
+Determined by two facts:</SPAN> <BR><BR>1. <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Тем, что поддерживает AVRProg 
+1.4</SPAN> Those that supported AVRProg 1.4</SPAN> <BR><BR>2. <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Тем, что выводит при запросе 
+программатор - таблицу поддерживаемых чипов.</SPAN> That the conclusions in the 
+request for the programmer - a table supported chips.</SPAN> <BR><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Вообще AVR делятся по способу 
+программирования - по словам и страницами - некоторые чипы могут поддерживать 
+оба режима программирования, некоторое - только по словам.</SPAN> Generally AVR 
+divided by way of programming - in the words and pages - some of the chips can 
+support both the regime of programming, some - only words.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Программатор поддерживает оба режима - 
+им можно программировать любые AVR - было бы соответствующее ПО.</SPAN> 
+Programmer supports both the regime - they can use to program any AVR - it would 
+be applicable.</SPAN> <BR><BR><BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Вообще, почему у Вас получилось два 
+разных списка ответить не могу.</SPAN> In fact, why you get two different list, 
+I can not answer.</SPAN> <BR><BR></DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>Marian </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 7 2008, 
+21:43</SPAN> Feb 7 2008, 21:43</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo(post=358940:date=Feb 1 2008, 16&#58;31:name=Lubitel)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">(Lubitel @ Feb 1 
+2008, 16:31) [snapback]358940[/snapback]</SPAN> (Lubitel @ Feb 1 2008, 16:31) 
+[snapback] 358940 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Я не совсем понял.</SPAN> I do not 
+quite understand.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Так с вистой ни кто не смог 
+запустить?</SPAN> So with vistoy or who could not run?</SPAN> <BR><!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Если будет интересно, попробовал 
+программатор под Vista.</SPAN> If you are interested, try programmer under 
+Vista.</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">(Vista SP1 En, 
+установлена на виртуальную машину VMWare. Проверить, с нормально установленной 
+Vista, нет возможности)</SPAN> (Vista SP1 En, a virtual machine on VMWare. Check 
+with normally installed Vista, there is no way)</SPAN> <BR><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Нормально работает с AVR Programmer из 
+AVR Studio 4.</SPAN> Normally working with AVR Programmer of the AVR Studio 
+4.</SPAN> <BR><BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Да, программатор 
+собран по схеме <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fs%3D%26showtopic%3D18676%26view%3Dfindpost%26p%3D225114&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhDIFhfH0_Zr78GMamfD5ycP55R3Q" 
+target=_blank>http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fs%3D%26showtopic%3D18676%26view%3Dfindpost%26p%3D225114&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhDIFhfH0_Zr78GMamfD5ycP55R3Q</A></SPAN> 
+Yes, the programmer is compiled on a <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fs%3D%26showtopic%3D18676%26view%3Dfindpost%26p%3D225114&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhDIFhfH0_Zr78GMamfD5ycP55R3Q" 
+target=_blank>http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fs%3D%26showtopic%3D18676%26view%3Dfindpost%26p%3D225114&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhhDIFhfH0_Zr78GMamfD5ycP55R3Q</A></SPAN> 
+<BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Прошит файлом от 
+Alfa <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fs%3D%26showtopic%3D18676%26view%3Dfindpost%26p%3D220497&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhj8QZRrubv8mtDjZMLRFYmXp5s88A" 
+target=_blank>http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fs%3D%26showtopic%3D18676%26view%3Dfindpost%26p%3D220497&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhj8QZRrubv8mtDjZMLRFYmXp5s88A</A></SPAN> 
+Proshit file from Alfa <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fs%3D%26showtopic%3D18676%26view%3Dfindpost%26p%3D220497&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhj8QZRrubv8mtDjZMLRFYmXp5s88A" 
+target=_blank>http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fs%3D%26showtopic%3D18676%26view%3Dfindpost%26p%3D220497&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhj8QZRrubv8mtDjZMLRFYmXp5s88A</A></SPAN> 
+<BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Драйвера 
+использовал от программатора prottoss</SPAN> Driver used by the programmer 
+prottoss</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>skufaev </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 9 2008, 
+00:41</SPAN> Feb 9 2008, 00:41</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Собрал 
+программатор, предварительно загубив 2 меги</SPAN> Collected programmer 
+previously zagubiv 2 Megi</SPAN> <IMG style="VERTICAL-ALIGN: middle" 
+alt=smile.gif src="translate_c_files/smile.gif" border=0 emoid=":)"> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Основные проблему у всех кто собирал - 
+с фузами.</SPAN> The main problem for all who gather - with fuzami.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Первые 2 контроллера загубил кривым LPT 
+программатором - слишком длинные провода были до порта.</SPAN> The first 2 
+controller загубил curves LPT programmer - the wires were too long to 
+port.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">А ATtiny13 
+прошить не получиться никак?</SPAN> ATtiny13 And please do not get any?</SPAN> 
+<SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Ее нет в списке доступных тел в 
+студии</SPAN> It is not in the list of available phone in the studio</SPAN> <IMG 
+style="VERTICAL-ALIGN: middle" alt=sad.gif src="translate_c_files/sad.gif" 
+border=0 emoid=":("></DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>smk </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 9 2008, 
+12:38</SPAN> Feb 9 2008, 12:38</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">А ATtiny13 прошить не получиться 
+никак?</SPAN> ATtiny13 And please do not get any?</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">AT Tiny24 тоже нет, но как я понял, 
+просто берешь и программируешь.</SPAN> AT Tiny24 also not, as I understand it, 
+just take and programmiruesh.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">А то, что с фузами работать 
+никак...</SPAN> And what does work with fuzami ...</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">попробую побороть функциями С в 
+WinAVR:</SPAN> To try to combat roles in WinAVR:</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">/*</SPAN> / *</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">FUSES =</SPAN> FUSES =</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">{</SPAN> (</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">.low = LFUSE_DEFAULT,</SPAN> . low = 
+LFUSE_DEFAULT,</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">.high = (BOOTSZ0 &amp; BOOTSZ1 &amp; 
+EESAVE &amp; SPIEN &amp; JTAGEN),</SPAN> . high = (BOOTSZ0 &amp; BOOTSZ1 &amp; 
+EESAVE &amp; SPIEN &amp; JTAGEN),</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">.extended = EFUSE_DEFAULT,</SPAN> . 
+extended = EFUSE_DEFAULT,</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">};</SPAN> );</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">*/</SPAN> * /</SPAN> <BR><BR><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Определяется двумя фактами:</SPAN> 
+Determined by two facts:</SPAN> <BR><BR>1. <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Тем, что поддерживает AVRProg 
+1.4</SPAN> Those that supported AVRProg 1.4</SPAN> <BR><BR>2. <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Тем, что выводит при запросе 
+программатор - таблицу поддерживаемых чипов.</SPAN> That the conclusions in the 
+request for the programmer - a table supported chips.</SPAN> 
+<!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">А как узнать и то и то?</SPAN> And how 
+do you know and then it?</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>prottoss </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 9 2008, 
+12:49</SPAN> Feb 9 2008, 12:49</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">В прошлом годе ну 
+как ни бандитом меня объявили - просили выложить исходники - выложил, никто их 
+не читает и даже не курит</SPAN> In the past year as well, or bandit I announced 
+- asked to lay out the source - laid out, one does not read them, and even 
+non-smokers</SPAN> <IMG style="VERTICAL-ALIGN: middle" alt=crying.gif 
+src="translate_c_files/crying.gif" border=0 emoid=":crying:"> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Вот из файла avr910devices.h</SPAN> 
+Here is the file avr910devices.h</SPAN> <BR><BR><!--c1-->
+<DIV class=codetop></DIV>
+<DIV class=codemain><!--ec1--><BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">#ifndef AVR910DEVICES_H</SPAN> # ifndef 
+AVR910DEVICES_H</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">#define AVR910DEVICES_H</SPAN> # define 
+AVR910DEVICES_H</SPAN> <BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">#include "stdafx.h"</SPAN> # include 
+"stdafx.h"</SPAN> <BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">// коды микроконтроллеров и поддержка 
+поллинга и страничного режима записи</SPAN> / / Codes microcontrollers and 
+support pollinga page and recording mode</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">PROGMEM UCHAR DeviceDesc[] =</SPAN> 
+PROGMEM UCHAR DeviceDesc [] =</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">{</SPAN> (</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x13 ,0xFF, //AT90S1200</SPAN> 0x13, 
+0xFF, / / AT90S1200</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x20 ,0x7F, //AT90S2313A</SPAN> 0x20, 
+0x7F, / / AT90S2313A</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x28 ,0x7F, //AT90S4414A</SPAN> 0x28, 
+0x7F, / / AT90S4414A</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x30 ,0xFF, //AT90S4433A</SPAN> 0x30, 
+0xFF, / / AT90S4433A</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x34 ,0xFF, //AT90S2333A</SPAN> 0x34, 
+0xFF, / / AT90S2333A</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x38 ,0x7F, //AT90S8515A</SPAN> 0x38, 
+0x7F, / / AT90S8515A</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x48 ,0xFF, //AT90S2323A</SPAN> 0x48, 
+0xFF, / / AT90S2323A</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x4c ,0xFF, //AT90S2343A</SPAN> 0x4c, 
+0xFF, / / AT90S2343A</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x51 ,0xFF, //tn10</SPAN> 0x51, 0xFF, / 
+/ tn10</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">0x55 ,0xFF, 
+//tn12</SPAN> 0x55, 0xFF, / / tn12</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x56 ,0xFF, //tn15</SPAN> 0x56, 0xFF, / 
+/ tn15</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">0x68 ,0xFF, 
+//AT90S8535</SPAN> 0x68, 0xFF, / / AT90S8535</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x6c ,0xFF, //AT90S4434</SPAN> 0x6c, 
+0xFF, / / AT90S4434</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x86 ,0xFF, //AT89S8252&nbsp;&nbsp;bug 
+in avrprog in Block write Mode!(See Note 18 for Workaround)</SPAN> 0x86, 0xFF, / 
+/ AT89S8252 bug in avrprog in Block write Mode! (See Note 18 for 
+Workaround)</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">0x87 ,0xFF, 
+//AT89S53&nbsp;&nbsp;&nbsp;&nbsp;bug in avrprog</SPAN> 0x87, 0xFF, / / AT89S53 
+bug in avrprog</SPAN> <BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">// Devices which support Page 
+Programming.</SPAN> / / Devices which support Page Programming.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Dont forget the Page Size</SPAN> Dont 
+forget the Page Size</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">// of different Devices.</SPAN> / / Of 
+different Devices.</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">// Maximum ist 0x40, due to limitated 
+RAM in 2313 Chip.</SPAN> / / Maximum ist 0x40, due to limitated RAM in 2313 
+Chip.</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">// (Pages with 
+bigger Pages are programmed multiple times)</SPAN> / / (Pages with bigger Pages 
+are programmed multiple times)</SPAN> <BR><BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">// unofficial Device Codes.</SPAN> / / 
+Unofficial Device Codes.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Match avrdude.conf with tis 
+"avr910-devcode"</SPAN> Match avrdude.conf with tis "avr910-devcode"</SPAN> 
+<BR><BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">/*</SPAN> / 
+*</SPAN> <BR><BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">// avr910-devcode 
+,Pagesite in Words</SPAN> / / Avr910-devcode, Pagesite in Words</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x01 ,0x40, //m640&nbsp;&nbsp; 
+avr910-Devicecode not official!</SPAN> 0x01, 0x40, / / m640 avr910-Devicecode 
+not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//&nbsp;&nbsp;0x02 ,0x40, 
+//m644&nbsp;&nbsp; avr910-Devicecode not official!</SPAN> / / 0x02, 0x40, / / 
+m644 avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//&nbsp;&nbsp;0x03 ,0x40, 
+//m645&nbsp;&nbsp; avr910-Devicecode not official!</SPAN> / / 0x03, 0x40, / / 
+m645 avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x04 ,0x40, //m649&nbsp;&nbsp; 
+avr910-Devicecode not official!</SPAN> 0x04, 0x40, / / m649 avr910-Devicecode 
+not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x05 ,0x40, 
+//m6490&nbsp;&nbsp;avr910-Devicecode not official!</SPAN> 0x05, 0x40, / / m6490 
+avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x06 ,0x40, //90PWM2 avr910-Devicecode 
+not official!</SPAN> 0x06, 0x40, / / 90PWM2 avr910-Devicecode not 
+official!</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">0x07 ,0x40, 
+//90PWM3 avr910-Devicecode not official!</SPAN> 0x07, 0x40, / / 90PWM3 
+avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x08 ,0x40, 
+//m1280&nbsp;&nbsp;avr910-Devicecode not official!</SPAN> 0x08, 0x40, / / m1280 
+avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x09 ,0x40, 
+//m1281&nbsp;&nbsp;avr910-Devicecode not official!</SPAN> 0x09, 0x40, / / m1281 
+avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//&nbsp;&nbsp;0x0a ,0x40, 
+//m2560&nbsp;&nbsp;avr910-Devicecode not official!</SPAN> / / 0x0a, 0x40, / / 
+m2560 avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//&nbsp;&nbsp;0x0b ,0x40, 
+//m2561&nbsp;&nbsp;avr910-Devicecode not official!</SPAN> / / 0x0b, 0x40, / / 
+m2561 avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//&nbsp;&nbsp;0x0c ,0x40, 
+//m3250&nbsp;&nbsp;avr910-Devicecode not official!</SPAN> / / 0x0c, 0x40, / / 
+m3250 avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//&nbsp;&nbsp;0x0d ,0x40, 
+//m6450&nbsp;&nbsp;avr910-Devicecode not official!</SPAN> / / 0x0d, 0x40, / / 
+m6450 avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x0e ,0x10, //tn24&nbsp;&nbsp; 
+avr910-Devicecode not official!</SPAN> 0x0e, 0x10, / / tn24 avr910-Devicecode 
+not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x1a ,0x10, //tn25&nbsp;&nbsp; 
+avr910-Devicecode not official!</SPAN> 0x1a, 0x10, / / tn25 avr910-Devicecode 
+not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x0f ,0x20, 
+//tn44&nbsp;&nbsp;avr910-Devicecode not official!</SPAN> 0x0f, 0x20, / / tn44 
+avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x1b ,0x20, 
+//tn45&nbsp;&nbsp;avr910-Devicecode not official!</SPAN> 0x1b, 0x20, / / tn45 
+avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x14 ,0x20, 
+//tn84&nbsp;&nbsp;avr910-Devicecode not official!</SPAN> 0x14, 0x20, / / tn84 
+avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x1c ,0x20, 
+//tn85&nbsp;&nbsp;avr910-Devicecode not official!</SPAN> 0x1c, 0x20, / / tn85 
+avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x1d ,0x40, //CAN128 avr910-Devicecode 
+not official!</SPAN> 0x1d, 0x40, / / CAN128 avr910-Devicecode not 
+official!</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">0x23 ,0x10, 
+//tn2313&nbsp;&nbsp;avr910-Devicecode not official!</SPAN> 0x23, 0x10, / / 
+tn2313 avr910-Devicecode not official!</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">(STK500 Code used)</SPAN> (STK500 Code 
+used)</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">0x31 ,0x20, 
+//m48&nbsp;&nbsp;avr910-Devicecode not official!</SPAN> 0x31, 0x20, / / m48 
+avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x33 ,0x20, //m88&nbsp;&nbsp; 
+avr910-Devicecode not official!</SPAN> 0x33, 0x20, / / m88 avr910-Devicecode not 
+official!</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">0x35 ,0x40, 
+//m168&nbsp;&nbsp; avr910-Devicecode not official!</SPAN> 0x35, 0x40, / / m168 
+avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//&nbsp;&nbsp;0x36 ,0x40, 
+//m165&nbsp;&nbsp; avr910-Devicecode not official!</SPAN> / / 0x36, 0x40, / / 
+m165 avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x37 ,0x40, //m164&nbsp;&nbsp; 
+avr910-Devicecode not official!</SPAN> 0x37, 0x40, / / m164 avr910-Devicecode 
+not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x39 ,0x40, //m324&nbsp;&nbsp; 
+avr910-Devicecode not official!</SPAN> 0x39, 0x40, / / m324 avr910-Devicecode 
+not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//&nbsp;&nbsp;0x3c ,0x40, 
+//m325&nbsp;&nbsp; avr910-Devicecode not official!</SPAN> / / 0x3c, 0x40, / / 
+m325 avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x3d ,0x40, //m329&nbsp;&nbsp; 
+avr910-Devicecode not official!</SPAN> 0x3d, 0x40, / / m329 avr910-Devicecode 
+not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x3e ,0x40, 
+//m3290&nbsp;&nbsp;avr910-Devicecode not official!</SPAN> 0x3e, 0x40, / / m3290 
+avr910-Devicecode not official!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x57 ,0x10, //tn13&nbsp;&nbsp; 
+avr910-Devicecode not official!</SPAN> 0x57, 0x10, / / tn13 avr910-Devicecode 
+not official!</SPAN> <BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//Appearance of this Devicecodes does 
+not mean this Devices are or will be fully supported !</SPAN> / / Appearance of 
+this Devicecodes does not mean this Devices are or will be fully 
+supported!</SPAN> <BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">*/</SPAN> * /</SPAN> <BR><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">// official Devicecodes as matched in 
+AVRProg V1.40</SPAN> / / Official Devicecodes as matched in AVRProg V1.40</SPAN> 
+<BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">0x3a ,0x20, 
+//m8515, Pagesize 32 words (0x20,)</SPAN> 0x3a, 0x20, / / m8515, Pagesize 32 
+words (0x20,)</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x41 ,0x40, //m103</SPAN> 0x41, 0x40, / 
+/ m103</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">0x43 ,0x40, 
+//m128</SPAN> 0x43, 0x40, / / m128</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x45 ,0x40, //m64</SPAN> 0x45, 0x40, / 
+/ m64</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">0x5e ,0x10, 
+//tn26</SPAN> 0x5e, 0x10, / / tn26</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x60 ,0x40, //m161</SPAN> 0x60, 0x40, / 
+/ m161</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">0x62 ,0x40, 
+//m162</SPAN> 0x62, 0x40, / / m162</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x64 ,0x40, //m163</SPAN> 0x64, 0x40, / 
+/ m163</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">0x69 ,0x20, 
+//m8535</SPAN> 0x69, 0x20, / / m8535</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x72 ,0x40, //m32</SPAN> 0x72, 0x40, / 
+/ m32</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">0x74 ,0x40, 
+//m16</SPAN> 0x74, 0x40, / / m16</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x76 ,0x20, //m8</SPAN> 0x76, 0x20, / / 
+m8</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">0x78 ,0x40, 
+//m169</SPAN> 0x78, 0x40, / / m169</SPAN> <BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x00,&nbsp;&nbsp;//End of Table</SPAN> 
+0x00, / / End of Table</SPAN> <BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">// Devices with known avr910 
+Devicecodes, but not supported with this Programmer</SPAN> / / Devices with 
+known avr910 Devicecodes, but not supported with this Programmer</SPAN> 
+<BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//&nbsp;&nbsp;0x42 ,0x40, //m603 
+obsolete</SPAN> / / 0x42, 0x40, / / m603 obsolete</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//&nbsp;&nbsp;0x50&nbsp;&nbsp; //tn11 
+Needs additional High Voltage Hardware and uses different Protocoll!</SPAN> / / 
+0x50 / / tn11 Needs additional High Voltage Hardware and uses different 
+Protocoll!</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">No 
+Support!</SPAN> No Support!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//&nbsp;&nbsp;0x58&nbsp;&nbsp; //tn19 
+Obsolete</SPAN> / / 0x58 / / tn19 Obsolete</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//&nbsp;&nbsp;0x5c&nbsp;&nbsp; //tn28 
+Only supported in parallel Programming Mode!</SPAN> / / 0x5c / / tn28 Only 
+supported in parallel Programming Mode!</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//&nbsp;&nbsp;0x65 ,0x20, //m83 
+obsolete</SPAN> / / 0x65, 0x20, / / m83 obsolete</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//&nbsp;&nbsp;0x70&nbsp;&nbsp; 
+//AT90C8534&nbsp;&nbsp;unknown Hardware, untested!</SPAN> / / 0x70 / / AT90C8534 
+unknown Hardware, untested!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//&nbsp;&nbsp;0x71&nbsp;&nbsp; 
+//AT90C8544&nbsp;&nbsp;unknown Hardware, untested!</SPAN> / / 0x71 / / AT90C8544 
+unknown Hardware, untested!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//&nbsp;&nbsp;0x80&nbsp;&nbsp; 
+//AT89C1051&nbsp;&nbsp;unknown Hardware, untested!</SPAN> / / 0x80 / / AT89C1051 
+unknown Hardware, untested!</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">//&nbsp;&nbsp;0x81&nbsp;&nbsp; 
+//AT89C2051&nbsp;&nbsp;unknown Hardware, untested!</SPAN> / / 0x81 / / AT89C2051 
+unknown Hardware, untested!</SPAN> <BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">};</SPAN> );</SPAN> <BR><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">#endif//AVR910DEVICES_H</SPAN> # endif 
+/ / AVR910DEVICES_H</SPAN> 
+<BR><BR><BR><!--c2--></DIV><!--ec2--><BR><BR></DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>domowoj </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 9 2008, 
+13:05</SPAN> Feb 9 2008, 13:05</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Для нормальной 
+полноценной работы нужно иметь несколько</SPAN> For normal to work need to have 
+a few</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">программаторов.</SPAN> 
+programmers.</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">С STK200 навертое, почти все начинали- 
+PONYPROG есть с обноленным ПО.</SPAN> On the STK200 navertoe, nearly 
+all-PONYPROG have started with obnolennym software.</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Программатор ПРОТТОССа.</SPAN> 
+Programmer PROTTOSSa.</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">AVRISPmkII .Они дополняют друг 
+друга.</SPAN> AVRISPmkII. They complement each other.</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Хорошего инструмента не бывает 
+много!</SPAN> A good tool is not a lot!</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>smk </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 10 2008, 
+17:45</SPAN> Feb 10 2008, 17:45</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x13 ,0xFF, //AT90S1200</SPAN> 0x13, 
+0xFF, / / AT90S1200</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x20 ,0x7F, //AT90S2313A</SPAN> 0x20, 
+0x7F, / / AT90S2313A</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x28 ,0x7F, //AT90S4414A</SPAN> 0x28, 
+0x7F, / / AT90S4414A</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x30 ,0xFF, //AT90S4433A</SPAN> 0x30, 
+0xFF, / / AT90S4433A</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x34 ,0xFF, //AT90S2333A</SPAN> 0x34, 
+0xFF, / / AT90S2333A</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x38 ,0x7F, //AT90S8515A</SPAN> 0x38, 
+0x7F, / / AT90S8515A</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x48 ,0xFF, //AT90S2323A</SPAN> 0x48, 
+0xFF, / / AT90S2323A</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x4c ,0xFF, //AT90S2343A</SPAN> 0x4c, 
+0xFF, / / AT90S2343A</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x51 ,0xFF, //tn10</SPAN> 0x51, 0xFF, / 
+/ tn10</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">0x55 ,0xFF, 
+//tn12</SPAN> 0x55, 0xFF, / / tn12</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x56 ,0xFF, //tn15</SPAN> 0x56, 0xFF, / 
+/ tn15</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">0x68 ,0xFF, 
+//AT90S8535</SPAN> 0x68, 0xFF, / / AT90S8535</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x6c ,0xFF, //AT90S4434</SPAN> 0x6c, 
+0xFF, / / AT90S4434</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">0x86 ,0xFF, //AT89S8252 bug in avrprog 
+in Block write Mode!(See Note 18 for Workaround)</SPAN> 0x86, 0xFF, / / 
+AT89S8252 bug in avrprog in Block write Mode! (See Note 18 for 
+Workaround)</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">0x87 ,0xFF, 
+//AT89S53 bug in avrprog</SPAN> 0x87, 0xFF, / / AT89S53 bug in avrprog</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Да, этот список у меня на том компе где 
+2000-ка.</SPAN> Yes, this list I have on the computer where the 2000-ka.</SPAN> 
+<SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">А на том, где ХР есть еще мега8, мега16 
+и еще что-то.</SPAN> And for that, where XP is still mega8, mega16 and something 
+else.</SPAN> <BR><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Для нормальной полноценной работы нужно 
+иметь несколько</SPAN> For normal to work need to have a few</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">программаторов.</SPAN> 
+programmers.</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Использую тот, что в прикрепленном 
+файле.</SPAN> Using what is in the attached file.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">А вообще хочется прошивать прямо из 
+студии.</SPAN> But in general, want proshivat directly from the studio.</SPAN> 
+<SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Вот бы г-н PROTTOSS довел до ума свое 
+хорошее начинание.</SPAN> That would be Mr. PROTTOSS brought to mind a good 
+beginning.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Может пообещаем 
+за апгрейд чуток "на пиво"?</SPAN> It may promise to upgrade sensitive "to the 
+beer?</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>zltigo </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 10 2008, 
+18:04</SPAN> Feb 10 2008, 18:04</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo(post=362357:date=Feb 9 2008, 13&#58;05:name=domowoj)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">QUOTE(domowoj @ 
+Feb 9 2008, 13:05) [snapback]362357[/snapback]</SPAN> QUOTE (domowoj @ Feb 9 
+2008, 13:05) [snapback] 362357 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Для нормальной полноценной работы нужно 
+иметь несколько</SPAN> For normal to work need to have a few</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">программаторов.</SPAN> 
+programmers.</SPAN> <BR><!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Зачем???</SPAN> Why???</SPAN> <BR><!--quoteo-->
+<DIV class=quotetop>QUOTE </DIV>
+<DIV class=quotemain><!--quotec--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Они дополняют друг друга.</SPAN> They 
+complement each other.</SPAN> <BR><!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Чем?</SPAN> What?</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Ну PonyProg, конечно, ржать умеет, как 
+никто другой, и интерфейс максимально кривой, но это к делу совсем не 
+относится</SPAN> Well PonyProg, of course, can neigh like anyone else, and the 
+interface maximum curve, but this is the case does not apply</SPAN> <IMG 
+style="VERTICAL-ALIGN: middle" alt=smile.gif src="translate_c_files/smile.gif" 
+border=0 emoid=":)"> . <BR><BR><BR><!--quoteo(post=362714:date=Feb 10 2008, 17&#58;45:name=smk)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">QUOTE(smk @ Feb 
+10 2008, 17:45) [snapback]362714[/snapback]</SPAN> QUOTE (smk @ Feb 10 2008, 
+17:45) [snapback] 362714 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">А вообще хочется прошивать прямо из 
+студии.</SPAN> But in general, want proshivat directly from the studio.</SPAN> 
+<SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Вот бы г-н PROTTOSS довел до ума свое 
+хорошее начинание.</SPAN> That would be Mr. PROTTOSS brought to mind a good 
+beginning.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Может пообещаем 
+за апгрейд чуток "на пиво"?</SPAN> It may promise to upgrade sensitive "to the 
+beer?</SPAN> <BR><!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Ничего не имею против поставок пива 
+<B>protoss</B> -у, но "напоминаю" о существовании универсально-бюджетного 
+варианта от Atmel - AVRDragon.</SPAN> Do not have to supply beer 
+<B>protoss-in,</B> but "remind" the existence of a universally-budget version of 
+Atmel - AVRDragon.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">И желаемая интеграция и 5 интерфейсов 
+программирования, и приемлимая командная строка, и открытый протокол, и 
+альтернативный софт, и хоть и ограниченный, но отладчик в придачу.</SPAN> And 
+the desired integration and 5 programming interfaces, and priemlimaya command 
+line, and an open protocol, and alternative software, and even if limited, but 
+the debugger into the bargain.</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>prottoss </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 10 2008, 
+18:14</SPAN> Feb 10 2008, 18:14</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo(post=362715:date=Feb 10 2008, 22&#58;04:name=zltigo)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">(zltigo @ Feb 10 
+2008, 22:04) [snapback]362715[/snapback]</SPAN> (zltigo @ Feb 10 2008, 22:04) 
+[snapback] 362715 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Ничего не имею против поставок пива 
+<B>protoss</B> -у...</SPAN> Do not have to supply beer <B>protoss-in</B> 
+...</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><IMG 
+style="VERTICAL-ALIGN: middle" alt=smile.gif src="translate_c_files/smile.gif" 
+border=0 emoid=":)"> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Спасибо.</SPAN> 
+Thank you.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Я тоже думаю, что 
+Дракон лучшая альтернатива в плане сервисов</SPAN> I also think that the dragon 
+the best alternative in terms of service</SPAN> <BR><BR><!--quoteo(post=362714:date=Feb 10 2008, 21&#58;45:name=smk)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">(smk @ Feb 10 
+2008, 21:45) [snapback]362714[/snapback]</SPAN> (smk @ Feb 10 2008, 21:45) 
+[snapback] 362714 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Вот бы г-н PROTTOSS довел до ума свое 
+хорошее начинание.</SPAN> That would be Mr. PROTTOSS brought to mind a good 
+beginning.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Может пообещаем 
+за апгрейд чуток "на пиво"?</SPAN> It may promise to upgrade sensitive "to the 
+beer?</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Пиво я, конечно, люблю.</SPAN> Beer, I, 
+of course, love.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">НО в данный момент занят зарабатыванием 
+на хлеб с маслом:-) И времени на еще один проект нет совершенно.</SPAN> But at 
+the moment, is busy earning bread and butter :-) And the time for another 
+project is not perfect.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Но я не понял, что Вы имеете ввиду под 
+апгрейдом?</SPAN> But I did not understand what you mean by apgreydom?</SPAN> 
+<SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">AVR910 апгрейдить, как мне кажется, уже 
+больше некуда.</SPAN> AVR910 apgreydit seems to be no longer nowhere.</SPAN> 
+<SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Программы, поддерживающие протокол 
+AVR910 (CV и компания) и так шьют через него все AVR худо-бедно.</SPAN> Programs 
+that support the protocol AVR910 (CV and Company) and the so-sew through it all 
+AVR artistic poorly.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">ПО под win32 создавать под него , как я 
+уже говорил,мне сейчас некогда.</SPAN> Software under win32 build under it, as I 
+said, I now once.</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>skufaev </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 10 2008, 
+23:23</SPAN> Feb 10 2008, 23:23</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">А в чем засада 
+шитья меги13 через 910 из студии?</SPAN> What's ambush sewing megi13 through 910 
+of the studio?</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Тока через 
+кодвижн можно или как?</SPAN> Current through kodvizhn can be or what?</SPAN> 
+</DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>GDI </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 11 2008, 
+12:26</SPAN> Feb 11 2008, 12:26</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">А вообще хочется прошивать прямо из 
+студии.</SPAN> But in general, want proshivat directly from the studio.</SPAN> 
+<SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Вот бы г-н PROTTOSS довел до ума свое 
+хорошее начинание.</SPAN> That would be Mr. PROTTOSS brought to mind a good 
+beginning.</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Какие проблемы?</SPAN> What 
+problems?</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Прошиваете в 
+железо от prottos-а адаптированную прошивку от avrdoper-а, она есть в этой ветке 
+вместе с исходниками и получаете STK-500 совместимый программатор, который 
+работает из студии и у которого нет проблем со списком кристаллов.</SPAN> 
+Proshivaete of iron from prottos-adapted and firmware from avrdoper-but it is in 
+this line, together with the sources and get STK-500 compatible programmer who 
+works from the studio and who has no problems with the list of crystals.</SPAN> 
+</DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>skufaev </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 11 2008, 
+21:59</SPAN> Feb 11 2008, 21:59</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">А после 
+альфовской прошивки его надо апгрейдить в самой студии?</SPAN> And after 
+alfovskoy firmware apgreydit it should be in the studio?</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Там есть СТК500 апгрейд.</SPAN> There 
+is STK500 upgrade.</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>Marian </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 11 2008, 
+22:18</SPAN> Feb 11 2008, 22:18</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo(post=363286:date=Feb 11 2008, 20&#58;59:name=skufaev)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">(skufaev @ Feb 11 
+2008, 20:59) [snapback]363286[/snapback]</SPAN> (skufaev @ Feb 11 2008, 20:59) 
+[snapback] 363286 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">А после альфовской прошивки его надо 
+апгрейдить в самой студии?</SPAN> And after alfovskoy firmware apgreydit it 
+should be in the studio?</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Там есть СТК500 апгрейд.</SPAN> There 
+is STK500 upgrade.</SPAN> <BR><!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Апгрейдить не надо.</SPAN> Apgreydit 
+not necessary.</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>smk </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 11 2008, 
+23:50</SPAN> Feb 11 2008, 23:50</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">который работает из студии и у которого 
+нет проблем со списком кристаллов.</SPAN> which works from the studio and who 
+has no problems with the list of crystals.</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Сделал.</SPAN> Did.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">По "connect" студия программатор 
+видит.</SPAN> According to "connect" studio programmer sees.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Сам программатор на программирует и не 
+читает.</SPAN> Sam programmer for programming and not read.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">МК исправный и другим программатором 
+нормально программируется.</SPAN> MK fault and the other programmer normally 
+programmed.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Что 
+делать?</SPAN> What should I do?</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">что не так?</SPAN> What's wrong?</SPAN> 
+</DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>smk </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 12 2008, 
+02:23</SPAN> Feb 12 2008, 02:23</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Прошил MyDopper, 
+установил родной драйвер.</SPAN> Proshil MyDopper, found the native 
+driver.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Вот все, что 
+удалось получить:</SPAN> That is all that managed to obtain:</SPAN> 
+<BR><BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Setting mode and 
+device parameters..</SPAN> Setting mode and device parameters ..</SPAN> OK! 
+<BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Entering 
+programming mode..</SPAN> Entering programming mode ..</SPAN> FAILED! <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Leaving programming mode..</SPAN> 
+Leaving programming mode ..</SPAN> OK! <BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Что делать?</SPAN> What should I 
+do?</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>Alfa </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 12 2008, 
+06:56</SPAN> Feb 12 2008, 06:56</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo(post=363401:date=Feb 12 2008, 04&#58;23:name=smk)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">(smk @ Feb 12 
+2008, 04:23) [snapback]363401[/snapback]</SPAN> (smk @ Feb 12 2008, 04:23) 
+[snapback] 363401 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Прошил MyDopper, установил родной 
+драйвер.</SPAN> Proshil MyDopper, found the native driver.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Вот все, что удалось получить:</SPAN> 
+That is all that managed to obtain:</SPAN> <BR><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Setting mode and device 
+parameters..</SPAN> Setting mode and device parameters ..</SPAN> OK! <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Entering programming mode..</SPAN> 
+Entering programming mode ..</SPAN> FAILED! <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Leaving programming mode..</SPAN> 
+Leaving programming mode ..</SPAN> OK! <BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Что делать?</SPAN> What should I 
+do?</SPAN> <BR><!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">че делать, че делать.</SPAN> Che do, 
+human do.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">сухари 
+сушить.</SPAN> rusks dry.</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">не заходит в режим 
+программирования:</SPAN> does not go into programming mode:</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">- попробуйте поменять скорость.</SPAN> 
+- Try to change the speed.</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">- посмотрите осциллом что происходит на 
+ногах программирования и ресете - доходят ли сигналы, отвечает ли 
+программируемый процессор</SPAN> - Ostsillom see what happens on the legs and 
+reset programming - whether the signals come, whether it is a programmable 
+processor</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">- перезагружать 
+компьютер пока не заработает</SPAN> - Restart the computer does not work 
+yet</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">- отключать - 
+включать программатор пока не заработает.</SPAN> - Off - to include the 
+programmer is not yet working.</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">- покурить исходники на предмет входа в 
+режим программирования</SPAN> - Smoke source for the entrance to the programming 
+mode</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">- забить на этот 
+программатор</SPAN> - Hammer on this programmer</SPAN> 
+<BR><BR><BR><BR></DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>GDI </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 12 2008, 
+09:59</SPAN> Feb 12 2008, 09:59</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Что делать?</SPAN> What should I 
+do?</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Насколько я помню, там надо на 
+последней вкладке поиграться с клоками, до тех пор, пока не станут доступны без 
+ошибок вкладки с фьюзами, после этого программатор работает нормально.</SPAN> As 
+far as I remember, there must be at the last tab to play once in klokami, until 
+not become available without a problem with tabs fyuzami, after the programmer 
+is working properly.</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>smk </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 12 2008, 
+10:09</SPAN> Feb 12 2008, 10:09</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">там надо на последней вкладке 
+поиграться с клоками</SPAN> there must be at the last tab to play once in 
+klokami</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Имеется ввиду ISP Freguency?</SPAN> 
+There is a view of ISP Freguency?</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Перебрал все.</SPAN> Perebral 
+all.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Железо с 
+прошивкой от PROTTOSS работало.</SPAN> Iron with proshivkoy of PROTTOSS 
+worked.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Ума не приложу 
+почему у кого-то работает, а у меня нет.</SPAN> Uma why not put someone works, 
+and I do not.</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>GDI </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 12 2008, 
+11:00</SPAN> Feb 12 2008, 11:00</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Имеется ввиду ISP Freguency?</SPAN> 
+There is a view of ISP Freguency?</SPAN> 
+<!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Скорее всего да, я давно не пользовался 
+этим программатором и точно не помню, частота ISP должна быть меньше чем 1/4 
+частоты тактирования целевого контроллера, т.е.</SPAN> Most likely yes, I have 
+not used this programmer and do not remember exactly, the frequency of ISP 
+should be less than 1 / 4 frequency taktirovaniya trust controller, ie</SPAN> 
+<SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">если контроллер новый то меньше 250кГц, 
+кстати с прошивкой mydoper на выводе LED не будет клока, как это было в прошивке 
+Prottoss-а.</SPAN> If the new controller is less 250kGts way to proshivkoy 
+mydoper to withdraw LED will not kloka, as was the firmware Prottoss-a.</SPAN> 
+</DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>smk </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 12 2008, 
+11:05</SPAN> Feb 12 2008, 11:05</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">кстати с прошивкой mydoper на выводе 
+LED не будет клока, как это было в прошивке Prottoss-а.</SPAN> By the way with 
+proshivkoy mydoper to withdraw LED will not kloka, as was the firmware 
+Prottoss-a.</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Это не принципиально.</SPAN> This is 
+not a principle.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Целевой тактируется внутренним 
+ген.</SPAN> Trust taktiruetsya domestic gene.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">и другой программатор его видит.</SPAN> 
+and another programmer sees it.</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>GDI </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 12 2008, 
+12:40</SPAN> Feb 12 2008, 12:40</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">частота ISP должна быть меньше чем 1/4 
+частоты тактирования целевого контроллера</SPAN> ISP frequency must be less than 
+1 / 4 frequency taktirovaniya target controller</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><BR></DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>smk </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 12 2008, 
+14:12</SPAN> Feb 12 2008, 14:12</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">частота ISP должна быть меньше чем 1/4 
+частоты тактирования целевого контроллера</SPAN> ISP frequency must be less than 
+1 / 4 frequency taktirovaniya target controller</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Они все меньше.</SPAN> They are all 
+smaller.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Тактовая МК 8 
+МГц.</SPAN> MK 8 MHz clock speed.</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>GDI </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 12 2008, 
+15:33</SPAN> Feb 12 2008, 15:33</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Кондер на ресете 
+какой?</SPAN> Konder to reset what?</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Может поменьше надо поставить, да и 
+осциллом сигналы глянуть не помешает.</SPAN> It may have little place, and look 
+ostsillom signals will not interfere.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">клок ISP всо же для начала надо 
+поменьше поставить, я не помню уже какие настройки там вообще есть, да и студия 
+была у меня 4,12 может от этого зависит...</SPAN> klok ISP vso as the starter 
+should be smaller place, I do not remember what the settings are already there 
+at all is, and the studio was on my 4,12 may depended on it ...</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">может стоит пойти на сайт AVRDOPER-а и 
+там посмотреть инструкции, если есть они или форумы...</SPAN> may be to go to 
+the site AVRDOPER-a and there to see how, if they or forums ...</SPAN> 
+</DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>smk </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 12 2008, 
+19:29</SPAN> Feb 12 2008, 19:29</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Кондер на ресете какой?</SPAN> Konder 
+to reset what?</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Никакого нет.</SPAN> No no.</SPAN> 
+<BR><BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Как я только что 
+обратил внимание - с моей стороны было ошибкой воспринять буквально слова: 
+"залей прошивку от dopper-a в железо PROTTOSSa".</SPAN> I just drew the 
+attention - in my hand, it was a mistake to accept the word literally: "zaley 
+firmware from dopper-a in the iron PROTTOSSa".</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Если D+ и D- совпали и программатор 
+студия видит, то вот с выводами MOSI, MISO и SCK явно не то.</SPAN> If the D + 
+and D-matched and programmer studio sees it now with the findings of MOSI, MISO 
+and SCK are clearly not that.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Кстати, кто подскажет где там 
+что?</SPAN> By the way, who suggest that where there?</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Обе схемы прикрепляю.</SPAN> Both 
+schemes prikreplyayu.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Спасибо!</SPAN> Thank you!</SPAN> 
+<BR><BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">А как в той 
+прошиве, что mydopper и ранее упоминавшейся main?</SPAN> And how in the proshive 
+that mydopper previously mentioned main?</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>Marian </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 12 2008, 
+22:49</SPAN> Feb 12 2008, 22:49</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo(post=363850:date=Feb 12 2008, 18&#58;29:name=smk)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">(smk @ Feb 12 
+2008, 18:29) [snapback]363850[/snapback]</SPAN> (smk @ Feb 12 2008, 18:29) 
+[snapback] 363850 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Никакого нет.</SPAN> No no.</SPAN> 
+<BR><BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Как я только что 
+обратил внимание - с моей стороны было ошибкой воспринять буквально слова: 
+"залей прошивку от dopper-a в железо PROTTOSSa".</SPAN> I just drew the 
+attention - in my hand, it was a mistake to accept the word literally: "zaley 
+firmware from dopper-a in the iron PROTTOSSa".</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Если D+ и D- совпали и программатор 
+студия видит, то вот с выводами MOSI, MISO и SCK явно не то.</SPAN> If the D + 
+and D-matched and programmer studio sees it now with the findings of MOSI, MISO 
+and SCK are clearly not that.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Кстати, кто подскажет где там 
+что?</SPAN> By the way, who suggest that where there?</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Обе схемы прикрепляю.</SPAN> Both 
+schemes prikreplyayu.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Спасибо!</SPAN> Thank you!</SPAN> 
+<BR><BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">А как в той 
+прошиве, что mydopper и ранее упоминавшейся main?</SPAN> And how in the proshive 
+that mydopper previously mentioned main?</SPAN> <BR><!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Прочитайте внимательно пост <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fs%3D%26showtopic%3D18676%26view%3Dfindpost%26p%3D220497&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhj8QZRrubv8mtDjZMLRFYmXp5s88A" 
+target=_blank>http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fs%3D%26showtopic%3D18676%26view%3Dfindpost%26p%3D220497&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhj8QZRrubv8mtDjZMLRFYmXp5s88A</A></SPAN> 
+Read carefully the post <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fs%3D%26showtopic%3D18676%26view%3Dfindpost%26p%3D220497&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhj8QZRrubv8mtDjZMLRFYmXp5s88A" 
+target=_blank>http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fs%3D%26showtopic%3D18676%26view%3Dfindpost%26p%3D220497&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhj8QZRrubv8mtDjZMLRFYmXp5s88A</A></SPAN> 
+<BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Внимание на слово 
+"Портировал".</SPAN> Note the word "ported."</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">( выводы местами менять не надо 
+)</SPAN> (Findings of places do not need to change)</SPAN> <BR><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">А проблемы с работой программатора были 
+и меня, поищите мои сообщения в этой ветке.</SPAN> A problem with the work of 
+the programmer and have me look for my messages in this branch.</SPAN> 
+<BR></DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>smk </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 12 2008, 
+23:43</SPAN> Feb 12 2008, 23:43</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Прочитайте внимательно пост <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fs%3D%26am...st%26p%3D220497&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhjh4Xrw8QuDnb-vWQKBCgwCtr78TQ" 
+target=_blank>http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fs%3D%26am...st%26p%3D220497&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhjh4Xrw8QuDnb-vWQKBCgwCtr78TQ</A></SPAN> 
+Read carefully the post <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fs%3D%26am...st%26p%3D220497&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhjh4Xrw8QuDnb-vWQKBCgwCtr78TQ" 
+target=_blank>http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fs%3D%26am...st%26p%3D220497&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhjh4Xrw8QuDnb-vWQKBCgwCtr78TQ</A></SPAN> 
+<!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Вообще-то с этого начал.</SPAN> 
+Actually, this started.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Ну да ладно, все кажись заработало, 
+осталось проверить под 2000-кой.</SPAN> Well, all right, all кажись work, still 
+under the 2000 check-Khoi.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Причина была в том, что не определил 
+устройство нужным файлом с параметрами.</SPAN> The reason was that it is not 
+necessary to determine the device file with the parameters.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Использовал файл PROTTOSa, а сечас 
+драйвер от dopper_a.</SPAN> Use a file PROTTOSa, a driver from sechas 
+dopper_a.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Так что там на 
+счет Win2000, какой драйвер для USB использовать и какой драйвер для девайса 
+поможет?</SPAN> So there on account of Win2000, which driver to use a USB driver 
+for devaysa help?</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Спасибо!</SPAN> Thank you!</SPAN> 
+</DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>smk </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 18 2008, 
+19:50</SPAN> Feb 18 2008, 19:50</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Под Win2000 не 
+заработало.</SPAN> Under Win2000 does not work.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">У кого-то работает под 2000 ?</SPAN> 
+Someone working under 2000?</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>AlexMad </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 18 2008, 
+20:32</SPAN> Feb 18 2008, 20:32</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">А вот у меня 
+немного другая проблема: не работает на USB1.0</SPAN> But I have a slightly 
+different problem: not working on USB1.0</SPAN> <IMG 
+style="VERTICAL-ALIGN: middle" alt=07.gif src="translate_c_files/07.gif" 
+border=0 emoid=":07:"> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">пробовал разные 
+варианты прошивок, драйверов (от Protossa и USBasp).</SPAN> try different 
+variations of firmware, drivers (from Protossa and USBasp).</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Программатор видится, удается даже 
+читать фьюзы с таргета, а как только жму program или read, начинает что-то 
+делать и тихо висит.</SPAN> Programmer seems able to even read fyuzy targeta, 
+but as soon as zhmu program, or read, is beginning to do something and quietly 
+hanging.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">В варианте 
+драйвера и прошивки аля стк500 он через минуту говорит, что "програм 
+файлед".</SPAN> In the version of the driver and firmware Alja stk500 next 
+minute he said that "pro fayled.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">В варианте с аврпрогом - просто 
+висит.</SPAN> In the version with avrprogom - just hangs.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Тот же программатор, тот же драйвер, но 
+на машине, где есть усб2.0 - все работает на ура.</SPAN> The same programmer, 
+same driver, but by car, where there is usb2.0 - all working on the 
+cheers.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Есть ли какие-то 
+ограничения на потокол усб или это все-таки решаемая проблема?</SPAN> Are there 
+any restrictions on potokol USB or is it all, a problem?</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Дело в том, что эти программаторы нам 
+нужны для разъездов, с собой обычно относительно старенькие ноутбуки, на которых 
+еще нет усб2, но уже нет ком-порта, поэтому и хочется найти решение.</SPAN> The 
+point is that those programmers, we need to on journeys, usually with a 
+relatively old notebook PC, which is not yet usb2, but there is no com port, and 
+therefore wants to find a solution.</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>smk </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 18 2008, 
+20:38</SPAN> Feb 18 2008, 20:38</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">вот у меня немного другая проблема: не 
+работает на USB1.0</SPAN> now I have a little different problem: not working on 
+USB1.0</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">На WinXP и USB1.0 работает без 
+проблем.</SPAN> On WinXP USB1.0 and works without problems.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Подозреваю, что Вам хорошо бы 
+подключить Ваши буки к сети и обновить ПО.</SPAN> I suspect that you are well 
+connected to your network beeches and update software.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Не знаю почему точно, но я почти 
+наверняка прав...</SPAN> I do not know why exactly, but I am almost certain 
+rights ...</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Попробуйте.</SPAN> Try it.</SPAN> 
+</DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>AlexMad </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 19 2008, 
+10:46</SPAN> Feb 19 2008, 10:46</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo(post=367311:date=Feb 18 2008, 20&#58;38:name=smk)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">(smk @ Feb 18 
+2008, 20:38) [snapback]367311[/snapback]</SPAN> (smk @ Feb 18 2008, 20:38) 
+[snapback] 367311 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">На WinXP и USB1.0 работает без 
+проблем.</SPAN> On WinXP USB1.0 and works without problems.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Подозреваю, что Вам хорошо бы 
+подключить Ваши буки к сети и обновить ПО.</SPAN> I suspect that you are well 
+connected to your network beeches and update software.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Не знаю почему точно, но я почти 
+наверняка прав...</SPAN> I do not know why exactly, but I am almost certain 
+rights ...</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Попробуйте.</SPAN> Try it.</SPAN> <BR><!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Так...</SPAN> So ...</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">тогда, если не трудно - какая именно 
+прошивка и какой драйвер?</SPAN> whereas, if not difficult - what exactly is 
+firmware and driver?</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Может, я пропустил что-то, пока 
+пробовал?</SPAN> Maybe I missed something, yet tried?</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Там еще были разные варианты с 
+резистором на линии D+.</SPAN> There have been different versions of resistor on 
+the D +.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Может тут 
+промахиваюсь?</SPAN> Maybe there promahivayus?</SPAN> <BR><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">З.Ы.</SPAN> Z.Y.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Сейчас дело не в ноутбуках - я пробую 
+на двух офисных машинах, на которых нет второго усб, сеть там есть, но причем 
+она?</SPAN> Now is not the laptop - I try for two office machines, where there 
+is no second USB, the network there, but with it?</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>smk </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 19 2008, 
+11:41</SPAN> Feb 19 2008, 11:41</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">[attachmentid=18154][attachmentid=18155][attachmentid=18156]Схема, 
+прошивка, ini</SPAN> [attachmentid = 18154] [attachmentid = 18155] [attachmentid 
+= 18156] Scheme, firmware, ini</SPAN> <BR><BR><BR><BR><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">сеть там есть, но причем она?</SPAN> 
+network there, but with it?</SPAN> 
+<!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">версия драйвера USB...</SPAN> driver 
+USB ...</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>Marian </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Feb 19 2008, 
+18:12</SPAN> Feb 19 2008, 18:12</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo(post=367308:date=Feb 18 2008, 19&#58;32:name=AlexMad)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">(AlexMad @ Feb 18 
+2008, 19:32) [snapback]367308[/snapback]</SPAN> (AlexMad @ Feb 18 2008, 19:32) 
+[snapback] 367308 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">А вот у меня немного другая проблема: 
+не работает на USB1.0</SPAN> But I have a slightly different problem: not 
+working on USB1.0</SPAN> <IMG style="VERTICAL-ALIGN: middle" alt=07.gif 
+src="translate_c_files/07.gif" border=0 emoid=":07:"> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">пробовал разные варианты прошивок, 
+драйверов (от Protossa и USBasp).</SPAN> try different variations of firmware, 
+drivers (from Protossa and USBasp).</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Программатор видится, удается даже 
+читать фьюзы с таргета, а как только жму program или read, начинает что-то 
+делать и тихо висит.</SPAN> Programmer seems able to even read fyuzy targeta, 
+but as soon as zhmu program, or read, is beginning to do something and quietly 
+hanging.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">В варианте 
+драйвера и прошивки аля стк500 он через минуту говорит, что "програм 
+файлед".</SPAN> In the version of the driver and firmware Alja stk500 next 
+minute he said that "pro fayled.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">В варианте с аврпрогом - просто 
+висит.</SPAN> In the version with avrprogom - just hangs.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Тот же программатор, тот же драйвер, но 
+на машине, где есть усб2.0 - все работает на ура.</SPAN> The same programmer, 
+same driver, but by car, where there is usb2.0 - all working on the 
+cheers.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Есть ли какие-то 
+ограничения на потокол усб или это все-таки решаемая проблема?</SPAN> Are there 
+any restrictions on potokol USB or is it all, a problem?</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Дело в том, что эти программаторы нам 
+нужны для разъездов, с собой обычно относительно старенькие ноутбуки, на которых 
+еще нет усб2, но уже нет ком-порта, поэтому и хочется найти решение.</SPAN> The 
+point is that those programmers, we need to on journeys, usually with a 
+relatively old notebook PC, which is not yet usb2, but there is no com port, and 
+therefore wants to find a solution.</SPAN> <BR><!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Может быть дело в том, что некоторые 
+порты USB ограничивают питание, выдаваемое в порт.</SPAN> Maybe the fact that 
+some USB ports limit the power granted to the port.</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Косвенный признак этого, от порта не 
+работает 2.5 винчестер, необходимо дополнительное внешнее питание.</SPAN> 
+Indirect signs of this, the port is not working 2.5 hard drive, you need an 
+additional external power.</SPAN> <BR></DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>AlexMad </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Mar 3 2008, 
+18:36</SPAN> Mar 3 2008, 18:36</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo(post=367559:date=Feb 19 2008, 11&#58;41:name=smk)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">(smk @ Feb 19 
+2008, 11:41) [snapback]367559[/snapback]</SPAN> (smk @ Feb 19 2008, 11:41) 
+[snapback] 367559 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">[attachmentid=18154][attachmentid=18155][attachmentid=18156]Схема, 
+прошивка, ini</SPAN> [attachmentid = 18154] [attachmentid = 18155] [attachmentid 
+= 18156] Scheme, firmware, ini</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">версия драйвера USB...</SPAN> driver 
+USB ...</SPAN> <BR><!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><BR><BR><!--quoteo(post=367824:date=Feb 19 2008, 18&#58;12:name=Marian)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">(Marian @ Feb 19 
+2008, 18:12) [snapback]367824[/snapback]</SPAN> (Marian @ Feb 19 2008, 18:12) 
+[snapback] 367824 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Может быть дело в том, что некоторые 
+порты USB ограничивают питание, выдаваемое в порт.</SPAN> Maybe the fact that 
+some USB ports limit the power granted to the port.</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Косвенный признак этого, от порта не 
+работает 2.5 винчестер, необходимо дополнительное внешнее питание.</SPAN> 
+Indirect signs of this, the port is not working 2.5 hard drive, you need an 
+additional external power.</SPAN> 
+<BR><!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Сегодня проверил как раз на ноутбуках, 
+где усб 1.0 - всё работает, все хорошо.</SPAN> Today, just checked on laptops, 
+where USB 1.0 - it works, everything is good.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Смущает только, что на тех двух 
+машинах, что есть в офисе так ничего и не завелось.</SPAN> Embarrassed only that 
+the two machines, which have in the office so do not zavelos.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Питания хватает, даже пробовал запитать 
+программатор от таргета.</SPAN> Food shortage, even tried zapitat programmer 
+from targeta.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Начинает 
+программировать и теряет связь.</SPAN> Start program, and lose us.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Видимо, это проблема конкретных 
+материнок.</SPAN> Apparently, this is a problem specific materinok.</SPAN> 
+</DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>Pyku_He_oTTyda </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Mar 3 2008, 
+18:53</SPAN> Mar 3 2008, 18:53</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Видимо, это проблема конкретных 
+материнок.</SPAN> Apparently, this is a problem specific materinok.</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">или конкретного шнура</SPAN> or a 
+cord</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>AlexMad </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Mar 4 2008, 
+00:02</SPAN> Mar 4 2008, 00:02</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo(post=373710:date=Mar 3 2008, 18&#58;53:name=Pyku_He_oTTyda)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">(Pyku_He_oTTyda @ 
+Mar 3 2008, 18:53) [snapback]373710[/snapback]</SPAN> (Pyku_He_oTTyda @ Mar 3 
+2008, 18:53) [snapback] 373710 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">или конкретного шнура</SPAN> or a 
+cord</SPAN> <BR><!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">именно материнок, потому что подключал 
+на том же шнуре.</SPAN> namely materinok because connected to the same 
+cable.</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>xinod2000 </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Mar 5 2008, 
+01:10</SPAN> Mar 5 2008, 01:10</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">У меня под 2000-й 
+работало - поначалу коряво на родных дровишках, апосля подправил из ХР инишник и 
+подсунул ХР-ые дрова - вообще везде залетало....</SPAN> I have a 2000-s work - 
+initially koryavo at home drovishkah, aposlya sub inishnik of HR and HR-podsunul 
+s wood - even zaletalo everywhere ....</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">только в ОСП 2 каждый раз передергивать 
+надобно было...</SPAN> only 2 SWAps every peredergivat must needs be, it was 
+...</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">потом у меня чето 
+глюконуло в машине на работе и перестало под 2000-й арбайтать, а дома все окей 
+(прост на работе аппарат зад%:?ый - полный комплект семеновского софта - че тока 
+аппарат не чудит</SPAN> then I cheto glyukonulo in the car at work and no longer 
+under the 2000 th arbaytat and homes all Okay (easy on the work of the unit 
+ass%:? first - a complete set of software semenovskogo - Che current device is 
+not chudit</SPAN> <IMG style="VERTICAL-ALIGN: middle" alt=yeah.gif 
+src="translate_c_files/yeah.gif" border=0 emoid=":yeah:"> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">) - дак что разработчику 
+респект...</SPAN> ) - DAK that developers respect ...</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">еще одну копию программатора 
+презентовал молодежи - пущай учатся програмить...</SPAN> another copy of the 
+programmer presented youth - puschay learn to program ...</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>kurtis </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Mar 11 2008, 
+20:42</SPAN> Mar 11 2008, 20:42</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">А ни кто не 
+сталкивался с тем что avr910 через avrdude программирует ОЧЕНЬ 
+медленно???</SPAN> But nor can not impinge upon the fact that avr910 through 
+programs avrdude VERY slowly???</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Дядя Гугль находит эту ссылку <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://www.nongnu.org/avrdude/user-manual/avrdude_17.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhi03ofWfuE4LQGbXXDzQRLGc9Ct8w" 
+target=_blank>http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://www.nongnu.org/avrdude/user-manual/avrdude_17.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhi03ofWfuE4LQGbXXDzQRLGc9Ct8w</A></SPAN> 
+Uncle Google is the link <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://www.nongnu.org/avrdude/user-manual/avrdude_17.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhi03ofWfuE4LQGbXXDzQRLGc9Ct8w" 
+target=_blank>http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://www.nongnu.org/avrdude/user-manual/avrdude_17.html&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhi03ofWfuE4LQGbXXDzQRLGc9Ct8w</A></SPAN> 
+<BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">где есть решение 
+проблемы</SPAN> where there is a solution to the problem</SPAN> <BR><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Problem: I'm using linux and my AVR910 
+programmer is really slow.</SPAN> Problem: I'm using linux and my AVR910 
+programmer is really slow.</SPAN> <BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Solution (short): setserial port 
+low_latency</SPAN> Solution (short): setserial port low_latency</SPAN> 
+<BR><BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Solution (long): 
+There are two problems here.</SPAN> Solution (long): There are two problems 
+here.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">First, the system 
+may wait some time before it passes data from the serial port to the 
+program.</SPAN> First, the system may wait some time before it passes data from 
+the serial port to the program.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Under Linux the following command works 
+around this (you may need root privileges for this).</SPAN> Under Linux the 
+following command works around this (you may need root privileges for 
+this).</SPAN> <BR><BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">setserial port 
+low_latency</SPAN> setserial port low_latency</SPAN> <BR><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Secondly, the serial interface chip may 
+delay the interrupt for some time.</SPAN> Secondly, the serial interface chip 
+may delay the interrupt for some time.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">This behaviour can be changed by 
+setting the FIFO-threshold to one.</SPAN> This behaviour can be changed by 
+setting the FIFO-threshold to one.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Under Linux this can only be done by 
+changing the kernel source in drivers/char/serial.c.</SPAN> Under Linux this can 
+only be done by changing the kernel source in drivers / char / serial.c.</SPAN> 
+<SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Search the file for UART_FCR_TRIGGER_8 
+and replace it with UART_FCR_TRIGGER_1.</SPAN> Search the file for 
+UART_FCR_TRIGGER_8 and replace it with UART_FCR_TRIGGER_1.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Note that overall performance might 
+suffer if there is high throughput on serial lines.</SPAN> Note that overall 
+performance might suffer if there is high throughput on serial lines.</SPAN> 
+<SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Also note that you are modifying the 
+kernel at your own risk.</SPAN> Also note that you are modifying the kernel at 
+your own risk.</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">но это для Линукса, для Виндовса там 
+говорится что</SPAN> but it is for Linux, for Vindovsa it says that</SPAN> 
+<BR><BR><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Problem: I'm not using linux and my 
+AVR910 programmer is really slow.</SPAN> Problem: I'm not using linux and my 
+AVR910 programmer is really slow.</SPAN> <BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Solutions: The reasons for this are the 
+same as above.</SPAN> Solutions: The reasons for this are the same as 
+above.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">If you know how 
+to work around this on your OS, please let us know.</SPAN> If you know how to 
+work around this on your OS, please let us know.</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">собсно вопрос, как добиться того, чтоб 
+avrdude программировал микросхемы черех avr910 не по 2-3 минуты, а значительно 
+быстрее - порядка 15-20 секунд как это делает AvrProg???Или может кто-то 
+подскажет какой-то программатор который работает из командной строки???</SPAN> 
+sobsno question as to ensure that the programmed chip avrdude chereh avr910 not 
+for 2-3 minutes, and much faster - about 15-20 seconds as it does AvrProg??? Or 
+can someone tell a programmer who works from a command line???</SPAN> 
+</DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Te}{Ho_ReaLiTy</SPAN> Te) 
+(Ho_ReaLiTy</SPAN> </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Mar 12 2008, 
+09:07</SPAN> Mar 12 2008, 09:07</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Очень жаль, что 
+для виндовс висты нет драйверов, так как там уже успользуется другая технология 
+работы порта юсб, и в комплект уже не входит usbser.sys, и вообще не работает ни 
+один авр юсб программатор, а лпт и ком в ноутбуке отсутствуют</SPAN> It is a 
+pity that the windows do not whist drivers, as there already uspolzuetsya other 
+technology work yusb port and power is no longer usbser.sys, and no work, no ABP 
+yusb programmer and LUT and competence in the laptop missing</SPAN> <IMG 
+style="VERTICAL-ALIGN: middle" alt=05.gif src="translate_c_files/05.gif" 
+border=0 emoid=":05:"> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">пришлось 
+поставить дополнительную систему ХР, что есть не очень хорошо, CоdeVIsionAVR 
+быстрее компилил под вистой</SPAN> accounted for an additional system of XP that 
+is not very good, CodeVIsionAVR quickly compiling a vistoy</SPAN> <IMG 
+style="VERTICAL-ALIGN: middle" alt=wassat.gif src="translate_c_files/wassat.gif" 
+border=0 emoid=":wassat:"></DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>Petka </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Mar 12 2008, 
+10:37</SPAN> Mar 12 2008, 10:37</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo(post=378023:date=Mar 12 2008, 09&#58;07:name=Te}{Ho_ReaLiTy)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">(Te}{Ho_ReaLiTy @ 
+Mar 12 2008, 09:07) [snapback]378023[/snapback]</SPAN> (Te) (Ho_ReaLiTy @ Mar 12 
+2008, 09:07) [snapback] 378023 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Очень жаль, что для виндовс висты нет 
+драйверов, так как там уже успользуется другая технология работы порта юсб, и в 
+комплект уже не входит usbser.sys, и вообще не работает ни один авр юсб 
+программатор, а лпт и ком в ноутбуке отсутствуют</SPAN> It is a pity that the 
+windows do not whist drivers, as there already uspolzuetsya other technology 
+work yusb port and power is no longer usbser.sys, and no work, no ABP yusb 
+programmer and LUT and competence in the laptop missing</SPAN> <IMG 
+style="VERTICAL-ALIGN: middle" alt=05.gif src="translate_c_files/05.gif" 
+border=0 emoid=":05:"> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">пришлось 
+поставить дополнительную систему ХР, что есть не очень хорошо, CоdeVIsionAVR 
+быстрее компилил под вистой</SPAN> accounted for an additional system of XP that 
+is not very good, CodeVIsionAVR quickly compiling a vistoy</SPAN> <IMG 
+style="VERTICAL-ALIGN: middle" alt=wassat.gif src="translate_c_files/wassat.gif" 
+border=0 emoid=":wassat:"><BR><!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Я уже предлагал решение, в котором 
+отсутствуют данные проблемы.</SPAN> I have already proposed a solution in which 
+the missing data problem.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Всего одна дополнительная 
+микросхема.</SPAN> Only one additional chip.</SPAN> 
+(http://electronix.ru/forum/index.php?s=&amp;showtopic=42679&amp;view=findpost&amp;p=373099) 
+</DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>GDI </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Mar 12 2008, 
+11:07</SPAN> Mar 12 2008, 11:07</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">собсно вопрос, как добиться того, чтоб 
+avrdude программировал микросхемы черех avr910 не по 2-3 минуты, а значительно 
+быстрее - порядка 15-20 секунд как это делает AvrProg???Или может кто-то 
+подскажет какой-то программатор который работает из командной строки???</SPAN> 
+sobsno question as to ensure that the programmed chip avrdude chereh avr910 not 
+for 2-3 minutes, and much faster - about 15-20 seconds as it does AvrProg??? Or 
+can someone tell a programmer who works from a command line???</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Прошить в программатор AVR910USB 
+прошивку от AVRDOPER, эта прошивка есть в адаптированном виде в этой ветке и не 
+далее как на предыдущей странице обсуждалась, называется my_doper.</SPAN> 
+Proshit in programmer AVR910USB firmware from AVRDOPER, this firmware is adapted 
+in this branch and not just on the previous page was discussed, called 
+my_doper.</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>kurtis </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Mar 12 2008, 
+16:40</SPAN> Mar 12 2008, 16:40</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Я попробовал 
+прошивку Alfa которая расположена в этой теме на 21й странице, прошил ею 
+программатор, подключая его к USB я вижу что подключился именно AVR-Doper, а не 
+AVR910 USB Programmer.</SPAN> I tried firmware Alfa is located in the subject at 
+21y visit, I ask her programmer, connect it to the USB, I see that it is 
+connected AVR-Doper, and not AVR910 USB Programmer.</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">но когда я с помощью avrdude пытаюсь 
+что-то прошить оно мне пишет</SPAN> but when I try using avrdude something 
+proshit he writes to me</SPAN> <BR><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">&gt;avrdude -c avr910 -P avrdoper -p 
+m32 -u -U flash:w:main.hex</SPAN> &gt; avrdude-c avr910-P avrdoper-p m32-u-U 
+flash: w: main.hex</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">avrdude: ser_open(): can't open device 
+"avrdoper": ═х єфрхЄё эрщЄш єърчрээ√щ Їр</SPAN> avrdude: ser_open (): can't open 
+device "avrdoper": ═ x єфрхЄе эрщЄш єърчрээ √ y Їр</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">щы.</SPAN> schy.</SPAN> 
+<!--QuoteEnd--></DIV><!--QuoteEEnd--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">(Сорри за крякозыблы)</SPAN> (Sorry for 
+kryakozybly)</SPAN> <BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">в документации же на AVR-Doper написано 
+что его следует использовать вместе с avrdude с такими параметрами:</SPAN> The 
+documentation is in the AVR-Doper says that it should be used with avrdude with 
+the following parameters:</SPAN> <BR><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">&gt;avrdude -c stk500v2 -P avrdoper -p 
+m32</SPAN> &gt; avrdude-c stk500v2-P avrdoper-p m32</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">found 5 busses</SPAN> found 5 
+busses</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">avrdude: 
+avrdoper_open(): Device not found.</SPAN> avrdude: avrdoper_open (): Device not 
+found.</SPAN> <BR><!--QuoteEnd--></DIV><!--QuoteEEnd--><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">но тут тоже ничего не получается</SPAN> 
+but it also did not get</SPAN> <BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Может я как-то неправильно использую 
+прошивку сделанную Alfa и мне следует использовать другие параметры командной 
+строки???</SPAN> Maybe I was wrong to use a firmware made by Alfa, and I should 
+use the other command line parameters???</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>Alfa </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Mar 13 2008, 
+07:00</SPAN> Mar 13 2008, 07:00</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo(post=378307:date=Mar 12 2008, 18&#58;40:name=kurtis)-->
+<DIV class=quotetop><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">(kurtis @ Mar 12 
+2008, 18:40) [snapback]378307[/snapback]</SPAN> (kurtis @ Mar 12 2008, 18:40) 
+[snapback] 378307 [/ snapback]</SPAN> </DIV>
+<DIV class=quotemain><!--quotec--><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Может я как-то неправильно использую 
+прошивку сделанную Alfa и мне следует использовать другие параметры командной 
+строки???</SPAN> Maybe I was wrong to use a firmware made by Alfa, and I should 
+use the other command line parameters???</SPAN> <BR><!--QuoteEnd--></DIV><!--QuoteEEnd--><BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Помнится мне тоже не уделось запустить 
+с avrdude.</SPAN> I remember I did not pay to run with avrdude.</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Когда я этим занимался, в dude только 
+появилась поддержка dopera, а сборки под win32 еще не было или я просто не нашел 
+(собственно не особо напрягался).</SPAN> When I deal with it, the dude just has 
+the support dopera, and assembly under win32 has not yet been, or I simply could 
+not find (actually not very napryagalsya).</SPAN> <BR><SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Прошивал с помощью Stk500.exe из 
+комплекта поставки avrstudio.</SPAN> Proshival through Stk500.exe of the package 
+avrstudio.</SPAN> <BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Командная строка 
+такая STK500.EXE -dATMEGA16 -e -ccom2 -ifmain.hex -pf -vf -I3MHz</SPAN> 
+Commandline such STK500.EXE-dATMEGA16-e-ccom2-ifmain.hex-pf-vf-I3MHz</SPAN> 
+<BR><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">com порт, 
+процессор и хекс файл может отличаться....</SPAN> com port processor and heks 
+file may vary ....</SPAN> <BR><BR><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Думаю правильнее пользоваться не 
+каким-та там dude, а прогой от производителя</SPAN> I think not to use whatever 
+is there dude, and progoy from the manufacturer</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>GDI </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Mar 13 2008, 
+10:14</SPAN> Mar 13 2008, 10:14</SPAN> </DIV></DIV>
+<DIV class=postcontent><!--quoteo-->
+<DIV class=quotetop></DIV>
+<DIV class=quotemain><!--quotec--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Может я как-то неправильно использую 
+прошивку сделанную Alfa и мне следует использовать другие параметры командной 
+строки???</SPAN> Maybe I was wrong to use a firmware made by Alfa, and I should 
+use the other command line parameters???</SPAN> <!--QuoteEnd--></DIV><!--QuoteEEnd--><SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Драйвер то заменили юсбшный?</SPAN> The 
+driver then replaced yusbshny?</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">или от AVR910USB остался?</SPAN> or 
+AVR910USB left?</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">я работал через 
+дуде под линуксом, но пришлось перекомпилить прошивку под использование HID, а с 
+виртуальным СОМ-портом как то не получилось, а под виндами все работало через 
+вирт ком, только я пользовался AVR Studio</SPAN> I worked through the dude on 
+Linux, but had perekompilit firmware for the use of HID, but with a virtual COM 
+port as it did not work, but under vindami all worked through Wirth com, I just 
+used the AVR Studio</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>Dmitry77 </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Mar 13 2008, 
+20:15</SPAN> Mar 13 2008, 20:15</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Собрал 
+программатор, проверил на работе на ПК - все работает....А вот дома на ноутбуке 
+пишет "AVRProg error getting ID" (это CodeVision).</SPAN> Collected programmer, 
+checked at work on a PC - everything works .... And here at home on a notebook 
+writes "AVRProg error getting ID" (this CodeVision).</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Protoss раннее уже писал, что к нему 
+обращались некоторые люди с этой проблемой....В чем же дело?!</SPAN> Protoss 
+early wrote that he treated some people with this problem .... What is the 
+problem?</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Материнка 
+такая?!</SPAN> Materinka this?</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Питание USB - проверил +5V.</SPAN> 
+Power USB - check +5 V.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Стоит на ноуте ХР sp2.</SPAN> It is 
+necessary to noute XP sp2.</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Пробовал и в AVR Studio - пишет что не 
+поддерживается плата....</SPAN> Tried and AVR Studio - says that is not 
+supported fee ....</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Вообщем может кто сталкивался?!</SPAN> 
+Other words: nothing could who had?</SPAN> <SPAN onmouseover=_tipon(this) 
+onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">А то надоели уже попытки 
+шаманства.....2-й день уже.......</SPAN> And it is already tired of trying 
+shamanstva ..... Day 2 already .......</SPAN> </DIV></DIV>
+<DIV class=postwrapper>
+<DIV class=posttopbar>
+<DIV class=postname>Dmitry77 </DIV>
+<DIV class=postdate><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Mar 13 2008, 
+23:41</SPAN> Mar 13 2008, 23:41</SPAN> </DIV></DIV>
+<DIV class=postcontent><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Вроде 
+заработало.....Начал перебирать имеющиеся на ноуте USB-порты и на "мышкином" 
+месте программатор "завелся"...</SPAN> It seems to work ..... I started to look 
+over the available noute USB-ports and to "myshkinom" place programmer 
+"zavelsya" ...</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">AVRProg - летает, 
+работает без сбоев; CodeVision и AVRospII - редко, но сбоят- помогает 
+вытыкание/втыкание шнурка USB.....Вот такие пироги!</SPAN> AVRProg - flies works 
+smoothly; CodeVision and AVRospII - rarely, but sboyat-assisted vytykanie / 
+vtykanie shoelaces USB ..... These are the pies!</SPAN> <SPAN 
+onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN class=google-src-text 
+style="DIRECTION: ltr; TEXT-ALIGN: left">Спасибо Protoss'у за девайс!</SPAN> 
+Thank you for Protoss'u devays!</SPAN> </DIV></DIV></DIV>
+<DIV class=smalltext><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">This is a "lo-fi" 
+version of our main content.</SPAN> This is a "lo-fi" version of our main 
+content.</SPAN> <SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">To view the full 
+version with more information, formatting and images, please <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fshowtopic%3D18676&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhgwrTdp5nnphIRyMsqa4xOtSIXUhA">click 
+here</A> .</SPAN> To view the full version with more information, formatting and 
+images, please <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://electronix.ru/forum/index.php%3Fshowtopic%3D18676&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhgwrTdp5nnphIRyMsqa4xOtSIXUhA">click 
+here.</A></SPAN> </DIV></DIV>
+<DIV id=ipbcopyright><SPAN onmouseover=_tipon(this) onmouseout=_tipoff()><SPAN 
+class=google-src-text style="DIRECTION: ltr; TEXT-ALIGN: left">Invision Power 
+Board © 2001-2009 <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://www.invisionpower.com/&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhguNG7f32m7-N7zgPQUL1xp7fBEog">Invision 
+Power Services, Inc.</A></SPAN> <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://www.invisionpower.com/&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhguNG7f32m7-N7zgPQUL1xp7fBEog">Invision 
+Power</A> Board © 2001-2009 Invision Power <A 
+href="http://72.14.235.102/translate_c?hl=en&amp;sl=ru&amp;u=http://www.invisionpower.com/&amp;prev=/search%3Fq%3DPROTOSS%2BAVR910%2BUSB%2BProgrammer%2Bsource%2Bcode%26hl%3Den&amp;usg=ALkJrhguNG7f32m7-N7zgPQUL1xp7fBEog">Services, 
+Inc.</A></SPAN> </DIV></BODY></HTML>

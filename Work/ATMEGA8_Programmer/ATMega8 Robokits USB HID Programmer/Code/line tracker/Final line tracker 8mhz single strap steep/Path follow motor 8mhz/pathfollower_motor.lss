@@ -1,0 +1,666 @@
+
+pathfollower_motor.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000002a8  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          0000000c  00800060  000002a8  0000031c  2**0
+                  ALLOC
+  2 .stab         0000087c  00000000  00000000  0000031c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000802  00000000  00000000  00000b98  2**0
+                  CONTENTS, READONLY, DEBUGGING
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	2c c0       	rjmp	.+88     	; 0x5c <__bad_interrupt>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	29 c0       	rjmp	.+82     	; 0x5c <__bad_interrupt>
+   a:	28 c0       	rjmp	.+80     	; 0x5c <__bad_interrupt>
+   c:	27 c0       	rjmp	.+78     	; 0x5c <__bad_interrupt>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	25 c0       	rjmp	.+74     	; 0x5c <__bad_interrupt>
+  12:	a7 c0       	rjmp	.+334    	; 0x162 <__vector_9>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	22 c0       	rjmp	.+68     	; 0x5c <__bad_interrupt>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+  1e:	1e c0       	rjmp	.+60     	; 0x5c <__bad_interrupt>
+  20:	1d c0       	rjmp	.+58     	; 0x5c <__bad_interrupt>
+  22:	1c c0       	rjmp	.+56     	; 0x5c <__bad_interrupt>
+  24:	1b c0       	rjmp	.+54     	; 0x5c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	e8 ea       	ldi	r30, 0xA8	; 168
+  3a:	f2 e0       	ldi	r31, 0x02	; 2
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <.do_copy_data_start>
+
+0000003e <.do_copy_data_loop>:
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+
+00000042 <.do_copy_data_start>:
+  42:	a0 36       	cpi	r26, 0x60	; 96
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <.do_copy_data_loop>
+
+00000048 <__do_clear_bss>:
+  48:	10 e0       	ldi	r17, 0x00	; 0
+  4a:	a0 e6       	ldi	r26, 0x60	; 96
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+  52:	ac 36       	cpi	r26, 0x6C	; 108
+  54:	b1 07       	cpc	r27, r17
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+  58:	17 d1       	rcall	.+558    	; 0x288 <main>
+  5a:	24 c1       	rjmp	.+584    	; 0x2a4 <_exit>
+
+0000005c <__bad_interrupt>:
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
+
+0000005e <speed>:
+	}
+	
+}
+
+void speed(char direction,int value)
+{
+  5e:	48 2f       	mov	r20, r24
+	//This function will take value as speed and direction and will implement accordingly
+	int i=0;
+	while(TCNT0< 254)
+		{
+			for(i=0;i<255-value;i++)
+  60:	2f ef       	ldi	r18, 0xFF	; 255
+  62:	30 e0       	ldi	r19, 0x00	; 0
+  64:	26 1b       	sub	r18, r22
+  66:	37 0b       	sbc	r19, r23
+  68:	0d c0       	rjmp	.+26     	; 0x84 <speed+0x26>
+			{
+				PORTB=0x00;
+  6a:	18 ba       	out	0x18, r1	; 24
+{
+	//This function will take value as speed and direction and will implement accordingly
+	int i=0;
+	while(TCNT0< 254)
+		{
+			for(i=0;i<255-value;i++)
+  6c:	01 96       	adiw	r24, 0x01	; 1
+  6e:	82 17       	cp	r24, r18
+  70:	93 07       	cpc	r25, r19
+  72:	dc f3       	brlt	.-10     	; 0x6a <speed+0xc>
+  74:	80 e0       	ldi	r24, 0x00	; 0
+  76:	90 e0       	ldi	r25, 0x00	; 0
+  78:	02 c0       	rjmp	.+4      	; 0x7e <speed+0x20>
+			{
+				PORTB=0x00;
+			}
+			for(i=0;i<value;i++)
+			{
+				PORTB=direction;
+  7a:	48 bb       	out	0x18, r20	; 24
+		{
+			for(i=0;i<255-value;i++)
+			{
+				PORTB=0x00;
+			}
+			for(i=0;i<value;i++)
+  7c:	01 96       	adiw	r24, 0x01	; 1
+  7e:	86 17       	cp	r24, r22
+  80:	97 07       	cpc	r25, r23
+  82:	dc f3       	brlt	.-10     	; 0x7a <speed+0x1c>
+
+void speed(char direction,int value)
+{
+	//This function will take value as speed and direction and will implement accordingly
+	int i=0;
+	while(TCNT0< 254)
+  84:	82 b7       	in	r24, 0x32	; 50
+  86:	8e 3f       	cpi	r24, 0xFE	; 254
+  88:	18 f4       	brcc	.+6      	; 0x90 <speed+0x32>
+  8a:	80 e0       	ldi	r24, 0x00	; 0
+  8c:	90 e0       	ldi	r25, 0x00	; 0
+  8e:	ef cf       	rjmp	.-34     	; 0x6e <speed+0x10>
+  90:	08 95       	ret
+
+00000092 <path_follower_motor>:
+
+void path_follower_motor(int detectline)
+{
+	//Set the direction and speed according to the line detected
+	char direction;
+	switch(detectline)
+  92:	82 30       	cpi	r24, 0x02	; 2
+  94:	91 05       	cpc	r25, r1
+  96:	29 f1       	breq	.+74     	; 0xe2 <path_follower_motor+0x50>
+  98:	83 30       	cpi	r24, 0x03	; 3
+  9a:	91 05       	cpc	r25, r1
+  9c:	24 f4       	brge	.+8      	; 0xa6 <path_follower_motor+0x14>
+  9e:	01 97       	sbiw	r24, 0x01	; 1
+  a0:	09 f0       	breq	.+2      	; 0xa4 <path_follower_motor+0x12>
+  a2:	5e c0       	rjmp	.+188    	; 0x160 <path_follower_motor+0xce>
+  a4:	07 c0       	rjmp	.+14     	; 0xb4 <path_follower_motor+0x22>
+  a6:	83 30       	cpi	r24, 0x03	; 3
+  a8:	91 05       	cpc	r25, r1
+  aa:	91 f1       	breq	.+100    	; 0x110 <path_follower_motor+0x7e>
+  ac:	04 97       	sbiw	r24, 0x04	; 4
+  ae:	09 f0       	breq	.+2      	; 0xb2 <path_follower_motor+0x20>
+  b0:	57 c0       	rjmp	.+174    	; 0x160 <path_follower_motor+0xce>
+  b2:	45 c0       	rjmp	.+138    	; 0x13e <path_follower_motor+0xac>
+	{
+		case 1:	//forward
+				direction=0x81;
+				pathfound=1;
+  b4:	81 e0       	ldi	r24, 0x01	; 1
+  b6:	80 93 69 00 	sts	0x0069, r24
+			{
+				PORTB=0x00;
+			}
+			for(i=0;i<value;i++)
+			{
+				PORTB=direction;
+  ba:	21 e8       	ldi	r18, 0x81	; 129
+  bc:	0e c0       	rjmp	.+28     	; 0xda <path_follower_motor+0x48>
+	char direction;
+	switch(detectline)
+	{
+		case 1:	//forward
+				direction=0x81;
+				pathfound=1;
+  be:	80 e0       	ldi	r24, 0x00	; 0
+  c0:	90 e0       	ldi	r25, 0x00	; 0
+	int i=0;
+	while(TCNT0< 254)
+		{
+			for(i=0;i<255-value;i++)
+			{
+				PORTB=0x00;
+  c2:	18 ba       	out	0x18, r1	; 24
+{
+	//This function will take value as speed and direction and will implement accordingly
+	int i=0;
+	while(TCNT0< 254)
+		{
+			for(i=0;i<255-value;i++)
+  c4:	01 96       	adiw	r24, 0x01	; 1
+  c6:	87 33       	cpi	r24, 0x37	; 55
+  c8:	91 05       	cpc	r25, r1
+  ca:	d9 f7       	brne	.-10     	; 0xc2 <path_follower_motor+0x30>
+  cc:	80 e0       	ldi	r24, 0x00	; 0
+  ce:	90 e0       	ldi	r25, 0x00	; 0
+			{
+				PORTB=0x00;
+			}
+			for(i=0;i<value;i++)
+			{
+				PORTB=direction;
+  d0:	28 bb       	out	0x18, r18	; 24
+		{
+			for(i=0;i<255-value;i++)
+			{
+				PORTB=0x00;
+			}
+			for(i=0;i<value;i++)
+  d2:	01 96       	adiw	r24, 0x01	; 1
+  d4:	88 3c       	cpi	r24, 0xC8	; 200
+  d6:	91 05       	cpc	r25, r1
+  d8:	d9 f7       	brne	.-10     	; 0xd0 <path_follower_motor+0x3e>
+
+void speed(char direction,int value)
+{
+	//This function will take value as speed and direction and will implement accordingly
+	int i=0;
+	while(TCNT0< 254)
+  da:	82 b7       	in	r24, 0x32	; 50
+  dc:	8e 3f       	cpi	r24, 0xFE	; 254
+  de:	78 f3       	brcs	.-34     	; 0xbe <path_follower_motor+0x2c>
+  e0:	08 95       	ret
+				pathfound=1;
+				speed(direction,200);
+				return;
+		case 2:	//right
+				direction=0x41;
+				pathfound=1;
+  e2:	81 e0       	ldi	r24, 0x01	; 1
+  e4:	80 93 69 00 	sts	0x0069, r24
+			{
+				PORTB=0x00;
+			}
+			for(i=0;i<value;i++)
+			{
+				PORTB=direction;
+  e8:	21 e4       	ldi	r18, 0x41	; 65
+  ea:	0e c0       	rjmp	.+28     	; 0x108 <path_follower_motor+0x76>
+				pathfound=1;
+				speed(direction,200);
+				return;
+		case 2:	//right
+				direction=0x41;
+				pathfound=1;
+  ec:	80 e0       	ldi	r24, 0x00	; 0
+  ee:	90 e0       	ldi	r25, 0x00	; 0
+	int i=0;
+	while(TCNT0< 254)
+		{
+			for(i=0;i<255-value;i++)
+			{
+				PORTB=0x00;
+  f0:	18 ba       	out	0x18, r1	; 24
+{
+	//This function will take value as speed and direction and will implement accordingly
+	int i=0;
+	while(TCNT0< 254)
+		{
+			for(i=0;i<255-value;i++)
+  f2:	01 96       	adiw	r24, 0x01	; 1
+  f4:	83 32       	cpi	r24, 0x23	; 35
+  f6:	91 05       	cpc	r25, r1
+  f8:	d9 f7       	brne	.-10     	; 0xf0 <path_follower_motor+0x5e>
+  fa:	80 e0       	ldi	r24, 0x00	; 0
+  fc:	90 e0       	ldi	r25, 0x00	; 0
+			{
+				PORTB=0x00;
+			}
+			for(i=0;i<value;i++)
+			{
+				PORTB=direction;
+  fe:	28 bb       	out	0x18, r18	; 24
+		{
+			for(i=0;i<255-value;i++)
+			{
+				PORTB=0x00;
+			}
+			for(i=0;i<value;i++)
+ 100:	01 96       	adiw	r24, 0x01	; 1
+ 102:	8c 3d       	cpi	r24, 0xDC	; 220
+ 104:	91 05       	cpc	r25, r1
+ 106:	d9 f7       	brne	.-10     	; 0xfe <path_follower_motor+0x6c>
+
+void speed(char direction,int value)
+{
+	//This function will take value as speed and direction and will implement accordingly
+	int i=0;
+	while(TCNT0< 254)
+ 108:	82 b7       	in	r24, 0x32	; 50
+ 10a:	8e 3f       	cpi	r24, 0xFE	; 254
+ 10c:	78 f3       	brcs	.-34     	; 0xec <path_follower_motor+0x5a>
+ 10e:	08 95       	ret
+				pathfound=1;
+				speed(direction,220);
+				return;
+		case 3:	//left
+				direction=0x82;
+				pathfound=1;
+ 110:	81 e0       	ldi	r24, 0x01	; 1
+ 112:	80 93 69 00 	sts	0x0069, r24
+			{
+				PORTB=0x00;
+			}
+			for(i=0;i<value;i++)
+			{
+				PORTB=direction;
+ 116:	22 e8       	ldi	r18, 0x82	; 130
+ 118:	0e c0       	rjmp	.+28     	; 0x136 <path_follower_motor+0xa4>
+				pathfound=1;
+				speed(direction,220);
+				return;
+		case 3:	//left
+				direction=0x82;
+				pathfound=1;
+ 11a:	80 e0       	ldi	r24, 0x00	; 0
+ 11c:	90 e0       	ldi	r25, 0x00	; 0
+	int i=0;
+	while(TCNT0< 254)
+		{
+			for(i=0;i<255-value;i++)
+			{
+				PORTB=0x00;
+ 11e:	18 ba       	out	0x18, r1	; 24
+{
+	//This function will take value as speed and direction and will implement accordingly
+	int i=0;
+	while(TCNT0< 254)
+		{
+			for(i=0;i<255-value;i++)
+ 120:	01 96       	adiw	r24, 0x01	; 1
+ 122:	83 32       	cpi	r24, 0x23	; 35
+ 124:	91 05       	cpc	r25, r1
+ 126:	d9 f7       	brne	.-10     	; 0x11e <path_follower_motor+0x8c>
+ 128:	80 e0       	ldi	r24, 0x00	; 0
+ 12a:	90 e0       	ldi	r25, 0x00	; 0
+			{
+				PORTB=0x00;
+			}
+			for(i=0;i<value;i++)
+			{
+				PORTB=direction;
+ 12c:	28 bb       	out	0x18, r18	; 24
+		{
+			for(i=0;i<255-value;i++)
+			{
+				PORTB=0x00;
+			}
+			for(i=0;i<value;i++)
+ 12e:	01 96       	adiw	r24, 0x01	; 1
+ 130:	8c 3d       	cpi	r24, 0xDC	; 220
+ 132:	91 05       	cpc	r25, r1
+ 134:	d9 f7       	brne	.-10     	; 0x12c <path_follower_motor+0x9a>
+
+void speed(char direction,int value)
+{
+	//This function will take value as speed and direction and will implement accordingly
+	int i=0;
+	while(TCNT0< 254)
+ 136:	82 b7       	in	r24, 0x32	; 50
+ 138:	8e 3f       	cpi	r24, 0xFE	; 254
+ 13a:	78 f3       	brcs	.-34     	; 0x11a <path_follower_motor+0x88>
+ 13c:	08 95       	ret
+				pathfound=1;
+				speed(direction,220);
+				return;
+		case 4:	//stop
+				direction=0x00;
+				flag=1;
+ 13e:	81 e0       	ldi	r24, 0x01	; 1
+ 140:	90 e0       	ldi	r25, 0x00	; 0
+ 142:	90 93 64 00 	sts	0x0064, r25
+ 146:	80 93 63 00 	sts	0x0063, r24
+ 14a:	07 c0       	rjmp	.+14     	; 0x15a <path_follower_motor+0xc8>
+ 14c:	80 e0       	ldi	r24, 0x00	; 0
+ 14e:	90 e0       	ldi	r25, 0x00	; 0
+			{
+				PORTB=0x00;
+			}
+			for(i=0;i<value;i++)
+			{
+				PORTB=direction;
+ 150:	18 ba       	out	0x18, r1	; 24
+		{
+			for(i=0;i<255-value;i++)
+			{
+				PORTB=0x00;
+			}
+			for(i=0;i<value;i++)
+ 152:	01 96       	adiw	r24, 0x01	; 1
+ 154:	8f 3f       	cpi	r24, 0xFF	; 255
+ 156:	91 05       	cpc	r25, r1
+ 158:	d9 f7       	brne	.-10     	; 0x150 <path_follower_motor+0xbe>
+
+void speed(char direction,int value)
+{
+	//This function will take value as speed and direction and will implement accordingly
+	int i=0;
+	while(TCNT0< 254)
+ 15a:	82 b7       	in	r24, 0x32	; 50
+ 15c:	8e 3f       	cpi	r24, 0xFE	; 254
+ 15e:	b0 f3       	brcs	.-20     	; 0x14c <path_follower_motor+0xba>
+ 160:	08 95       	ret
+
+00000162 <__vector_9>:
+
+void path_follower_motor(int detectline);//Function to set speed and direction of move
+void speed(char direction,int value);	//Sets the speed
+
+SIGNAL(SIG_OVERFLOW0)            	// signal handler for tcnt0 overflow interrupt
+{
+ 162:	1f 92       	push	r1
+ 164:	0f 92       	push	r0
+ 166:	0f b6       	in	r0, 0x3f	; 63
+ 168:	0f 92       	push	r0
+ 16a:	11 24       	eor	r1, r1
+ 16c:	2f 93       	push	r18
+ 16e:	3f 93       	push	r19
+ 170:	4f 93       	push	r20
+ 172:	5f 93       	push	r21
+ 174:	6f 93       	push	r22
+ 176:	7f 93       	push	r23
+ 178:	8f 93       	push	r24
+ 17a:	9f 93       	push	r25
+ 17c:	af 93       	push	r26
+ 17e:	bf 93       	push	r27
+ 180:	ef 93       	push	r30
+ 182:	ff 93       	push	r31
+	
+	//Every 500 micro sec
+	if(startcount==0)
+ 184:	80 91 67 00 	lds	r24, 0x0067
+ 188:	90 91 68 00 	lds	r25, 0x0068
+ 18c:	89 2b       	or	r24, r25
+ 18e:	79 f4       	brne	.+30     	; 0x1ae <__vector_9+0x4c>
+ 190:	80 e5       	ldi	r24, 0x50	; 80
+ 192:	93 ec       	ldi	r25, 0xC3	; 195
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 194:	29 e1       	ldi	r18, 0x19	; 25
+ 196:	30 e0       	ldi	r19, 0x00	; 0
+ 198:	f9 01       	movw	r30, r18
+ 19a:	31 97       	sbiw	r30, 0x01	; 1
+ 19c:	f1 f7       	brne	.-4      	; 0x19a <__vector_9+0x38>
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 19e:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 1a0:	d9 f7       	brne	.-10     	; 0x198 <__vector_9+0x36>
+	{
+		_delay_ms(5000);	//During first time entering this mode delay is used
+		startcount++;
+ 1a2:	81 e0       	ldi	r24, 0x01	; 1
+ 1a4:	90 e0       	ldi	r25, 0x00	; 0
+ 1a6:	90 93 68 00 	sts	0x0068, r25
+ 1aa:	80 93 67 00 	sts	0x0067, r24
+	}
+	TCNT0  = TIMER_0_CNT;
+ 1ae:	80 ec       	ldi	r24, 0xC0	; 192
+ 1b0:	82 bf       	out	0x32, r24	; 50
+	
+	if(flag==0)
+ 1b2:	80 91 63 00 	lds	r24, 0x0063
+ 1b6:	90 91 64 00 	lds	r25, 0x0064
+ 1ba:	89 2b       	or	r24, r25
+ 1bc:	21 f5       	brne	.+72     	; 0x206 <__vector_9+0xa4>
+	{	//PORTB=0x00;
+		if((!bit_is_clear(PINC,1) && !bit_is_clear(PINC,2)))
+ 1be:	99 9b       	sbis	0x13, 1	; 19
+ 1c0:	05 c0       	rjmp	.+10     	; 0x1cc <__vector_9+0x6a>
+ 1c2:	9a 9b       	sbis	0x13, 2	; 19
+ 1c4:	03 c0       	rjmp	.+6      	; 0x1cc <__vector_9+0x6a>
+			detectline=1;	//forward
+ 1c6:	81 e0       	ldi	r24, 0x01	; 1
+ 1c8:	90 e0       	ldi	r25, 0x00	; 0
+ 1ca:	14 c0       	rjmp	.+40     	; 0x1f4 <__vector_9+0x92>
+		else if((bit_is_clear(PINC,1) && !bit_is_clear(PINC,2)))
+ 1cc:	99 99       	sbic	0x13, 1	; 19
+ 1ce:	05 c0       	rjmp	.+10     	; 0x1da <__vector_9+0x78>
+ 1d0:	9a 9b       	sbis	0x13, 2	; 19
+ 1d2:	03 c0       	rjmp	.+6      	; 0x1da <__vector_9+0x78>
+			detectline=2;	//right
+ 1d4:	82 e0       	ldi	r24, 0x02	; 2
+ 1d6:	90 e0       	ldi	r25, 0x00	; 0
+ 1d8:	0d c0       	rjmp	.+26     	; 0x1f4 <__vector_9+0x92>
+		else if((!bit_is_clear(PINC,1) && bit_is_clear(PINC,2)))
+ 1da:	99 9b       	sbis	0x13, 1	; 19
+ 1dc:	05 c0       	rjmp	.+10     	; 0x1e8 <__vector_9+0x86>
+ 1de:	9a 99       	sbic	0x13, 2	; 19
+ 1e0:	03 c0       	rjmp	.+6      	; 0x1e8 <__vector_9+0x86>
+			detectline=3;	//left
+ 1e2:	83 e0       	ldi	r24, 0x03	; 3
+ 1e4:	90 e0       	ldi	r25, 0x00	; 0
+ 1e6:	06 c0       	rjmp	.+12     	; 0x1f4 <__vector_9+0x92>
+		else if((bit_is_clear(PINC,1) && bit_is_clear(PINC,2)))
+ 1e8:	99 99       	sbic	0x13, 1	; 19
+ 1ea:	08 c0       	rjmp	.+16     	; 0x1fc <__vector_9+0x9a>
+ 1ec:	9a 99       	sbic	0x13, 2	; 19
+ 1ee:	06 c0       	rjmp	.+12     	; 0x1fc <__vector_9+0x9a>
+			detectline=4;	//stop;
+ 1f0:	84 e0       	ldi	r24, 0x04	; 4
+ 1f2:	90 e0       	ldi	r25, 0x00	; 0
+ 1f4:	90 93 6b 00 	sts	0x006B, r25
+ 1f8:	80 93 6a 00 	sts	0x006A, r24
+				
+		path_follower_motor(detectline);		
+ 1fc:	80 91 6a 00 	lds	r24, 0x006A
+ 200:	90 91 6b 00 	lds	r25, 0x006B
+ 204:	46 df       	rcall	.-372    	; 0x92 <path_follower_motor>
+		
+	}
+	if(flag==1 && backflag==0 && pathfound==1)
+ 206:	80 91 63 00 	lds	r24, 0x0063
+ 20a:	90 91 64 00 	lds	r25, 0x0064
+ 20e:	01 97       	sbiw	r24, 0x01	; 1
+ 210:	51 f5       	brne	.+84     	; 0x266 <__vector_9+0x104>
+ 212:	80 91 65 00 	lds	r24, 0x0065
+ 216:	90 91 66 00 	lds	r25, 0x0066
+ 21a:	89 2b       	or	r24, r25
+ 21c:	21 f5       	brne	.+72     	; 0x266 <__vector_9+0x104>
+ 21e:	80 91 69 00 	lds	r24, 0x0069
+ 222:	81 30       	cpi	r24, 0x01	; 1
+ 224:	01 f5       	brne	.+64     	; 0x266 <__vector_9+0x104>
+	{
+		stopcount=0;
+ 226:	10 92 62 00 	sts	0x0062, r1
+ 22a:	10 92 61 00 	sts	0x0061, r1
+ 22e:	81 e0       	ldi	r24, 0x01	; 1
+ 230:	90 e0       	ldi	r25, 0x00	; 0
+		while(bit_is_clear(PINC,1) && bit_is_clear(PINC,2)) 
+		{
+			sbi(PORTB,2);
+			PORTB=0x42;		//Reverse
+ 232:	22 e4       	ldi	r18, 0x42	; 66
+ 234:	04 c0       	rjmp	.+8      	; 0x23e <__vector_9+0xdc>
+	if(flag==1 && backflag==0 && pathfound==1)
+	{
+		stopcount=0;
+		while(bit_is_clear(PINC,1) && bit_is_clear(PINC,2)) 
+		{
+			sbi(PORTB,2);
+ 236:	c2 9a       	sbi	0x18, 2	; 24
+			PORTB=0x42;		//Reverse
+ 238:	28 bb       	out	0x18, r18	; 24
+ 23a:	80 e0       	ldi	r24, 0x00	; 0
+ 23c:	90 e0       	ldi	r25, 0x00	; 0
+		
+	}
+	if(flag==1 && backflag==0 && pathfound==1)
+	{
+		stopcount=0;
+		while(bit_is_clear(PINC,1) && bit_is_clear(PINC,2)) 
+ 23e:	99 99       	sbic	0x13, 1	; 19
+ 240:	02 c0       	rjmp	.+4      	; 0x246 <__vector_9+0xe4>
+ 242:	9a 9b       	sbis	0x13, 2	; 19
+ 244:	f8 cf       	rjmp	.-16     	; 0x236 <__vector_9+0xd4>
+ 246:	90 93 64 00 	sts	0x0064, r25
+ 24a:	80 93 63 00 	sts	0x0063, r24
+		{
+			sbi(PORTB,2);
+			PORTB=0x42;		//Reverse
+			flag=0;
+		}
+		PORTB=0x00;
+ 24e:	18 ba       	out	0x18, r1	; 24
+		cbi(PORTB,2);
+ 250:	c2 98       	cbi	0x18, 2	; 24
+		if(!bit_is_clear(PINC,1) && !bit_is_clear(PINC,2))
+ 252:	99 9b       	sbis	0x13, 1	; 19
+ 254:	08 c0       	rjmp	.+16     	; 0x266 <__vector_9+0x104>
+ 256:	9a 9b       	sbis	0x13, 2	; 19
+ 258:	06 c0       	rjmp	.+12     	; 0x266 <__vector_9+0x104>
+		{
+			backflag=1;
+ 25a:	81 e0       	ldi	r24, 0x01	; 1
+ 25c:	90 e0       	ldi	r25, 0x00	; 0
+ 25e:	90 93 66 00 	sts	0x0066, r25
+ 262:	80 93 65 00 	sts	0x0065, r24
+		}
+	}
+	
+}
+ 266:	ff 91       	pop	r31
+ 268:	ef 91       	pop	r30
+ 26a:	bf 91       	pop	r27
+ 26c:	af 91       	pop	r26
+ 26e:	9f 91       	pop	r25
+ 270:	8f 91       	pop	r24
+ 272:	7f 91       	pop	r23
+ 274:	6f 91       	pop	r22
+ 276:	5f 91       	pop	r21
+ 278:	4f 91       	pop	r20
+ 27a:	3f 91       	pop	r19
+ 27c:	2f 91       	pop	r18
+ 27e:	0f 90       	pop	r0
+ 280:	0f be       	out	0x3f, r0	; 63
+ 282:	0f 90       	pop	r0
+ 284:	1f 90       	pop	r1
+ 286:	18 95       	reti
+
+00000288 <main>:
+/*----------------------------------------------------------------
+-----------------MAIN PROGRAM-------------------------------------
+-----------------------------------------------------------------*/
+int main(void)
+{
+	DDRD=0x0F;						//SET DATA DIRECTION REGISTER
+ 288:	8f e0       	ldi	r24, 0x0F	; 15
+ 28a:	81 bb       	out	0x11, r24	; 17
+	DDRC=0x00;						//SET 1 for OUTPUT PORT
+ 28c:	14 ba       	out	0x14, r1	; 20
+	DDRB = 0xC7;					//SET 0 FOR INPUT PORT
+ 28e:	87 ec       	ldi	r24, 0xC7	; 199
+ 290:	87 bb       	out	0x17, r24	; 23
+									//CONFIGURE AS PER REQUIREMENT
+									//DEFAULT ALL OTHERS ARE INPUT
+									//CHANGE ACCORDING TO USE
+		
+	TCCR0 = TMC8_CK64;       		// use CLK/64 prescale value
+ 292:	83 e0       	ldi	r24, 0x03	; 3
+ 294:	83 bf       	out	0x33, r24	; 51
+    TCNT0  = TIMER_0_CNT;        			// reset TCNT0
+ 296:	80 ec       	ldi	r24, 0xC0	; 192
+ 298:	82 bf       	out	0x32, r24	; 50
+    TIMSK  = _BV(TOIE0);         	// enable TCNT0 overflow 
+ 29a:	81 e0       	ldi	r24, 0x01	; 1
+ 29c:	89 bf       	out	0x39, r24	; 57
+    
+    sei();                       	// enable interrupts 
+ 29e:	78 94       	sei
+ 	sbi(PORTC,4);
+ 2a0:	ac 9a       	sbi	0x15, 4	; 21
+ 2a2:	ff cf       	rjmp	.-2      	; 0x2a2 <main+0x1a>
+
+000002a4 <_exit>:
+ 2a4:	f8 94       	cli
+
+000002a6 <__stop_program>:
+ 2a6:	ff cf       	rjmp	.-2      	; 0x2a6 <__stop_program>

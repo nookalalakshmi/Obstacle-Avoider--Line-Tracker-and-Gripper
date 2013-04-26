@@ -1,0 +1,2286 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0055)http://forums.trossenrobotics.com/showthread.php?t=2284 -->
+<HTML lang=en dir=ltr xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>[How To] Build a robot gripper with force feedback - Trossen Robotics Community</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=ISO-8859-1">
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR>
+<META 
+content="[How To] Build a robot gripper with force feedback, robot community, robotic community, robo community, robot forum, robotic forum, robo forum, discuss robotics, discuss robots, robot discussion, robotic discussion, robot debate, robot contest, robot competition, robot, robotics, robot tools, robot development, robot tutorials, robot reviews" 
+name=keywords>
+<META 
+content="[How To] Build a robot gripper with force feedback Published Tutorials" 
+name=description><!-- CSS Stylesheet -->
+<STYLE id=vbulletin_css type=text/css>BODY {
+	BACKGROUND: #0681b4; MARGIN: 0px; FONT: 9pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif; COLOR: #26353f
+}
+A:link {
+	COLOR: #26353f
+}
+body_alink {
+	COLOR: #26353f
+}
+A:visited {
+	COLOR: #26353f
+}
+body_avisited {
+	COLOR: #26353f
+}
+A:hover {
+	COLOR: #4f5459
+}
+A:active {
+	COLOR: #4f5459
+}
+body_ahover {
+	COLOR: #4f5459
+}
+.page {
+	BACKGROUND: #0681b4; COLOR: #26353f
+}
+TD {
+	FONT: 9pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif
+}
+TH {
+	FONT: 9pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif
+}
+P {
+	FONT: 9pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif
+}
+LI {
+	FONT: 9pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif
+}
+.tborder {
+	BACKGROUND: #181b16; COLOR: #000000
+}
+.tcat {
+	BACKGROUND: url(http://forums.trossenrobotics.com/ambience/misc/cat_back.gif) #f9f9f9 repeat-x left top; FONT: bold 9pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif; COLOR: #0b2943
+}
+.tcat A:link {
+	COLOR: #26353f; TEXT-DECORATION: underline
+}
+.tcat_alink {
+	COLOR: #26353f; TEXT-DECORATION: underline
+}
+.tcat A:visited {
+	COLOR: #26353f; TEXT-DECORATION: underline
+}
+.tcat_avisited {
+	COLOR: #26353f; TEXT-DECORATION: underline
+}
+.tcat A:hover {
+	COLOR: #4f5459; TEXT-DECORATION: none
+}
+.tcat A:active {
+	COLOR: #4f5459; TEXT-DECORATION: none
+}
+.tcat_ahover {
+	COLOR: #4f5459; TEXT-DECORATION: none
+}
+.thead {
+	BACKGROUND: url(http://forums.trossenrobotics.com/ambience/misc/strip_back.gif) #f9f9f9 repeat-x left top; FONT: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif; COLOR: #0b2943
+}
+.thead A:link {
+	COLOR: #0b2943
+}
+.thead_alink {
+	COLOR: #0b2943
+}
+.thead A:visited {
+	COLOR: #0b2943
+}
+.thead_avisited {
+	COLOR: #0b2943
+}
+.thead A:hover {
+	COLOR: #0b2943
+}
+.thead A:active {
+	COLOR: #0b2943
+}
+.thead_ahover {
+	COLOR: #0b2943
+}
+.tfoot {
+	BACKGROUND: url(http://forums.trossenrobotics.com/ambience/misc/strip_back.gif) #f9f9f9 repeat-x left top; COLOR: #0b2943
+}
+.tfoot A:link {
+	COLOR: #0b2943
+}
+.tfoot_alink {
+	COLOR: #0b2943
+}
+.tfoot A:visited {
+	COLOR: #0b2943
+}
+.tfoot_avisited {
+	COLOR: #0b2943
+}
+.tfoot A:hover {
+	COLOR: #0b2943
+}
+.tfoot A:active {
+	COLOR: #0b2943
+}
+.tfoot_ahover {
+	COLOR: #0b2943
+}
+.alt1 {
+	BORDER-TOP: #ffffff 1px solid; BACKGROUND: #f7f7f7; BORDER-LEFT: #ffffff 1px solid; COLOR: #000000
+}
+.alt1Active {
+	BORDER-TOP: #ffffff 1px solid; BACKGROUND: #f7f7f7; BORDER-LEFT: #ffffff 1px solid; COLOR: #000000
+}
+.alt2 {
+	BORDER-TOP: #ffffff 1px solid; BACKGROUND: #d9f6fc; BORDER-LEFT: #ffffff 1px solid; COLOR: #000000
+}
+.alt2Active {
+	BORDER-TOP: #ffffff 1px solid; BACKGROUND: #d9f6fc; BORDER-LEFT: #ffffff 1px solid; COLOR: #000000
+}
+.inlinemod {
+	BACKGROUND: #ebf0f4; COLOR: #000000
+}
+.wysiwyg {
+	BACKGROUND: #fdfdfd; FONT: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif; COLOR: #000000
+}
+TEXTAREA {
+	FONT: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif
+}
+.bginput {
+	FONT: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif
+}
+.bginput OPTION {
+	FONT-SIZE: 10pt; FONT-FAMILY: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif
+}
+.bginput OPTGROUP {
+	FONT-SIZE: 10pt; FONT-FAMILY: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif
+}
+.button {
+	FONT: 12px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif
+}
+SELECT {
+	FONT: 12px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif
+}
+OPTION {
+	FONT-SIZE: 12px; FONT-FAMILY: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif
+}
+OPTGROUP {
+	FONT-SIZE: 12px; FONT-FAMILY: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif
+}
+.smallfont {
+	FONT: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif; COLOR: #26353f
+}
+.time {
+	COLOR: #26353f
+}
+.navbar {
+	FONT: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif; COLOR: #26353f
+}
+.highlight {
+	FONT-WEIGHT: bold; COLOR: #ff0000
+}
+.fjsel {
+	BACKGROUND: #3e5c92; COLOR: #e0e0f6
+}
+.fjdpth0 {
+	BACKGROUND: #f7f7f7; COLOR: #000000
+}
+.panel {
+	BORDER-RIGHT: 2px outset; PADDING-RIGHT: 10px; BORDER-TOP: 2px outset; PADDING-LEFT: 10px; BACKGROUND: #f7f7f7; PADDING-BOTTOM: 10px; BORDER-LEFT: 2px outset; COLOR: #000000; PADDING-TOP: 10px; BORDER-BOTTOM: 2px outset
+}
+.panelsurround {
+	BACKGROUND: #f0f1f3; COLOR: #000000
+}
+LEGEND {
+	FONT: 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif; COLOR: #4f5459
+}
+.vbmenu_control {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 6px; BACKGROUND: url(http://forums.trossenrobotics.com/ambience/misc/cat2_back.gif) #f7f7f7; PADDING-BOTTOM: 3px; FONT: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif; COLOR: #4f5459; PADDING-TOP: 3px; WHITE-SPACE: nowrap
+}
+.vbmenu_control A:link {
+	COLOR: #4f5459; TEXT-DECORATION: none
+}
+.vbmenu_control_alink {
+	COLOR: #4f5459; TEXT-DECORATION: none
+}
+.vbmenu_control A:visited {
+	COLOR: #4f5459; TEXT-DECORATION: none
+}
+.vbmenu_control_avisited {
+	COLOR: #4f5459; TEXT-DECORATION: none
+}
+.vbmenu_control A:hover {
+	COLOR: #4f5459; TEXT-DECORATION: underline
+}
+.vbmenu_control A:active {
+	COLOR: #4f5459; TEXT-DECORATION: underline
+}
+.vbmenu_control_ahover {
+	COLOR: #4f5459; TEXT-DECORATION: underline
+}
+.vbmenu_popup {
+	BORDER-RIGHT: #181b16 1px solid; BORDER-TOP: #181b16 1px solid; BACKGROUND: #ffffff; BORDER-LEFT: #181b16 1px solid; COLOR: #000000; BORDER-BOTTOM: #181b16 1px solid; TEXT-ALIGN: left
+}
+.vbmenu_option {
+	BORDER-RIGHT: #181b16 1px solid; BORDER-TOP: #181b16 1px solid; BACKGROUND: #c3cbd0; FONT: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif; BORDER-LEFT: #181b16 1px solid; CURSOR: pointer; COLOR: #26353f; BORDER-BOTTOM: #181b16 1px solid; WHITE-SPACE: nowrap
+}
+.vbmenu_option A:link {
+	COLOR: #26353f; TEXT-DECORATION: none
+}
+.vbmenu_option_alink {
+	COLOR: #26353f; TEXT-DECORATION: none
+}
+.vbmenu_option A:visited {
+	COLOR: #26353f; TEXT-DECORATION: none
+}
+.vbmenu_option_avisited {
+	COLOR: #26353f; TEXT-DECORATION: none
+}
+.vbmenu_option A:hover {
+	COLOR: #26353f; TEXT-DECORATION: none
+}
+.vbmenu_option A:active {
+	COLOR: #26353f; TEXT-DECORATION: none
+}
+.vbmenu_option_ahover {
+	COLOR: #26353f; TEXT-DECORATION: none
+}
+.vbmenu_hilite {
+	BORDER-RIGHT: #181b16 1px solid; BORDER-TOP: #181b16 1px solid; BACKGROUND: #768f9f; FONT: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif; BORDER-LEFT: #181b16 1px solid; CURSOR: pointer; COLOR: #101a21; BORDER-BOTTOM: #181b16 1px solid; WHITE-SPACE: nowrap
+}
+.vbmenu_hilite A:link {
+	COLOR: #101a21; TEXT-DECORATION: none
+}
+.vbmenu_hilite_alink {
+	COLOR: #101a21; TEXT-DECORATION: none
+}
+.vbmenu_hilite A:visited {
+	COLOR: #101a21; TEXT-DECORATION: none
+}
+.vbmenu_hilite_avisited {
+	COLOR: #101a21; TEXT-DECORATION: none
+}
+.vbmenu_hilite A:hover {
+	COLOR: #101a21; TEXT-DECORATION: none
+}
+.vbmenu_hilite A:active {
+	COLOR: #101a21; TEXT-DECORATION: none
+}
+.vbmenu_hilite_ahover {
+	COLOR: #101a21; TEXT-DECORATION: none
+}
+.bigusername {
+	FONT-SIZE: 12pt
+}
+TD.thead {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px
+}
+TH.thead {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px
+}
+DIV.thead {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px
+}
+.pagenav A {
+	TEXT-DECORATION: none
+}
+.pagenav TD {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px
+}
+.shade {
+	COLOR: #777777; TEXT-DECORATION: none
+}
+A.shade:link {
+	COLOR: #777777; TEXT-DECORATION: none
+}
+A.shade:visited {
+	COLOR: #777777; TEXT-DECORATION: none
+}
+A.shade:active {
+	COLOR: #ff4400; TEXT-DECORATION: underline
+}
+A.shade:hover {
+	COLOR: #ff4400; TEXT-DECORATION: underline
+}
+.tcat .shade {
+	COLOR: #dddddd
+}
+.thead .shade {
+	COLOR: #dddddd
+}
+.tfoot .shade {
+	COLOR: #dddddd
+}
+.fieldset {
+	MARGIN-BOTTOM: 6px
+}
+.fieldset {
+	FONT-SIZE: 12px
+}
+.fieldset TD {
+	FONT-SIZE: 12px
+}
+.fieldset P {
+	FONT-SIZE: 12px
+}
+.fieldset LI {
+	FONT-SIZE: 12px
+}
+TABLE.border {
+	BORDER-RIGHT: #181b16 1px solid; BORDER-LEFT: #181b16 1px solid; BORDER-BOTTOM: #b6b6b6 1px solid
+}
+.info {
+	BORDER-RIGHT: #505050 2px solid; PADDING-RIGHT: 0px; BORDER-TOP: #505050 1px solid; PADDING-LEFT: 3px; MARGIN-BOTTOM: 3px; PADDING-BOTTOM: 3px; BORDER-LEFT: #505050 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: #505050 2px solid; BACKGROUND-COLOR: #f1f1f1
+}
+.announce_l {
+	BORDER-TOP: #ffffff 1px solid; BACKGROUND: #e3eaf0; BORDER-LEFT: #ffffff 1px solid; COLOR: #6c737a
+}
+.announce_r {
+	BORDER-TOP: #ffffff 1px solid; BACKGROUND: #ebf0f4; BORDER-LEFT: #ffffff 1px solid; COLOR: #6c737a
+}
+.stuck {
+	BORDER-TOP: #ffffff 1px solid; BACKGROUND: #ebf0f4; BORDER-LEFT: #ffffff 1px solid; COLOR: #6c737a
+}
+.spacer {
+	PADDING-RIGHT: 7px; PADDING-LEFT: 7px; PADDING-BOTTOM: 7px; PADDING-TOP: 7px
+}
+#rssitems {
+	FONT-SIZE: 11px; MARGIN-RIGHT: 0px
+}
+#content {
+	PADDING-RIGHT: 1em; PADDING-LEFT: 1em; PADDING-BOTTOM: 1em; PADDING-TOP: 1em
+}
+</STYLE>
+<LINK 
+href="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/vbulletin_important.css" 
+type=text/css rel=stylesheet><!-- / CSS Stylesheet --><!-- Deluxe Menu -->
+<SCRIPT type=text/javascript>var 
+            dmWorkPath = "/tr-horz-menu/deluxe-menu.files/";</SCRIPT>
+
+<SCRIPT 
+src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/dmenu.js" 
+type=text/javascript></SCRIPT>
+<!-- (c) 2007, by Deluxe-Menu.com -->
+<SCRIPT 
+src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/yahoo-dom-event.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/connection-min.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    function trBTN_onclick() 
+    {
+     sQuerryStringValue = document.getElementById("txtTRRedirectSearchBox").value;
+     sCategoryID = document.getElementById("ddTRSearchBoxCategories").value; 
+     if(sQuerryStringValue!="")
+     {
+         location.href ="http://www.trossenrobotics.com/store/Search.aspx?SearchTerms=" + sQuerryStringValue  + "&amp;CatID=" + sCategoryID;
+         return false;
+     }
+     else
+     {
+         document.getElementById("txtTRRedirectSearchBox").focus();
+         alert("No Search Critiea Entered");
+         return false;		
+     } 
+    }
+</SCRIPT>
+<!-- 123 flash chat server begin -->
+<SCRIPT type=text/javascript>
+        <!--
+	function openChat()
+	{
+		window.open('123flashchat.php', '_123flashchat', 'HEIGHT=476,resizable=yes,WIDTH=634');
+	}
+        //-->
+        </SCRIPT>
+<!-- 123 flash chat server end -->
+<SCRIPT type=text/javascript>
+
+<!--
+var SESSIONURL = "";
+var SECURITYTOKEN = "guest";
+var IMGDIR_MISC = "http://forums.trossenrobotics.com/ambience/misc";
+var vb_disable_ajax = parseInt("0", 10);
+// -->
+</SCRIPT>
+
+<SCRIPT 
+src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/vbulletin_global.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/vbulletin_menu.js" 
+type=text/javascript></SCRIPT>
+<LINK title="TR Community" href="http://feeds.trossenrobotics.com/trcommunity" 
+type=application/rss+xml rel=alternate><LINK title="TR Community - Blogs" 
+href="http://feeds.trossenrobotics.com/TRCommunity-Blogs" 
+type=application/rss+xml rel=alternate><LINK 
+title="Trossen Robotics Community - Published Tutorials - RSS Feed" 
+href="external.php?type=RSS2&amp;forumids=119&amp;lastpost=1" 
+type=application/rss+xml rel=alternate>
+<SCRIPT 
+src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/ame.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+<!--
+function vba_attach_win(threadid)
+{
+	openWindow('http://forums.trossenrobotics.com/misc.php?do=showattachments&t=' + threadid, 480, 300);
+}
+-->
+</SCRIPT>
+
+<SCRIPT 
+src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/vbulletin_post_loader.js" 
+type=text/javascript></SCRIPT>
+
+<STYLE id=vbulletin_showthread_css type=text/css>#links DIV {
+	WHITE-SPACE: nowrap
+}
+#links IMG {
+	VERTICAL-ALIGN: middle
+}
+</STYLE>
+</HEAD>
+<BODY onload="">
+<DIV align=center><!-- TR Header -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width=575 height=80><IMG alt="trossen robotics header" 
+      src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/header.jpg" 
+      useMap=#trheader border=0> <MAP id=trheader name=trheader><AREA 
+        shape=RECT alt="trossen robotics header" coords=5,5,410,70 
+        href="http://www.trossenrobotics.com/"></MAP></TD>
+    <TD 
+    style="BACKGROUND-IMAGE: url(/images/header/header-repeat.jpg); BACKGROUND-REPEAT: repeat-x" 
+    height=80>&nbsp;</TD></TR></TBODY></TABLE>
+<TABLE 
+style="BACKGROUND-IMAGE: url(/tr-horz-menu/data.files/HeaderRepeat.gif); WIDTH: 100%; BACKGROUND-REPEAT: repeat-x; HEIGHT: 38px" 
+cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR align=middle>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width=700 border=0>
+        <TBODY>
+        <TR>
+          <TD><!-- Deluxe Menu --><NOSCRIPT>
+            <P><A href="http://deluxe-menu.com/">you will need to activate java 
+            to view this menu by Deluxe-Menu.com</A></P></NOSCRIPT><!-- Code for Deluxe Menu Items. Generated by Deluxe Tuner -->
+            <DIV class=dmlinks 
+            style="FONT: bold 10px Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none"><A 
+            href="http://www.trossenrobotics.com/">SHOPPING</A> <A 
+            href="http://www.trossenrobotics.com/Robots.aspx">Robot Kits</A> <A 
+            href="http://www.trossenrobotics.com/robot-parts.aspx">Robot 
+            Parts</A> <A 
+            href="http://www.trossenrobotics.com/educational-robotics-division.aspx">Educational 
+            Robotics</A> <A 
+            href="http://www.trossenrobotics.com/c/usb-serial-rfid-readers-tags-kits.aspx">RFID</A> 
+            <A href="http://www.trossenrobotics.com/contact.aspx">CONTACT</A> <A 
+            href="http://www.trossenrobotics.com/shoppinghelp.aspx">SHOPPING 
+            HELP</A> <A 
+            href="http://www.trossenrobotics.com/contact.aspx">Contact</A> <A 
+            href="https://trossenrobotics.americommerce.com/store/login.aspx">Log 
+            In / Order Status</A> <A 
+            href="http://www.trossenrobotics.com/store/ShopCart.aspx">View 
+            Cart</A> <A 
+            href="http://www.trossenrobotics.com/terms-conditions-policies.aspx">Terms, 
+            Conditions &amp; Policies</A> <A 
+            href="http://forums.trossenrobotics.com/">COMMUNITY</A> <A 
+            href="http://forums.trossenrobotics.com/">Community Home</A> <A 
+            href="http://forums.trossenrobotics.com/vb_index.php">Forums</A> <A 
+            href="http://forums.trossenrobotics.com/forumdisplay.php?f=118">TRC 
+            Tutorials</A> <A 
+            href="http://forums.trossenrobotics.com/blog.php">Member Blogs</A> 
+            <A href="http://forums.trossenrobotics.com/downloads.php">Data 
+            Center</A> <A href="http://forums.trossenrobotics.com/gallery">Image 
+            Galleries</A> <A 
+            href="http://forums.trossenrobotics.com/calendar.php?c=1">Calendar</A> 
+            <A href="http://forums.trossenrobotics.com/links">Links 
+            Directory</A> <A 
+            href="http://www.trossenrobotics.com/contest.aspx">CONTEST</A> <A 
+            href="http://blog.trossenrobotics.com/index.php">BLOG</A> <A 
+            href="http://www.trossenrobotics.com/TrossenRoboticsAffiliates.aspx">AFFILIATES</A> 
+            <A 
+            href="https://trossenrobotics.americommerce.com/store/affiliates/login2.aspx">Sign 
+            In</A> <A 
+            href="http://www.trossenrobotics.com/TrossenRoboticsLogos.aspx">Logos 
+            / Graphics</A> <A 
+            href="http://www.trossenrobotics.com/TrossenRoboticsAffiliates.aspx">About</A> 
+            </DIV><!-- End of Code for Deluxe Menu Items --><!-- (c) 2006, Deluxe-Menu.com -->
+            <SCRIPT 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/deluxe-menu.js" 
+            type=text/javascript></SCRIPT>
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!-- robot tutorials, robot forum, robot community, robotic forum, robo community, robot discussion, robot contest, robo forum, robot competition, robot development, discuss robotics, robotic community, discuss robots, robot reviews, robotic discussion, robotics, robot debate, robot, robot tools --><!-- /TR Header --><!-- content table --><!-- open content container -->
+<DIV align=center>
+<DIV class=page style="WIDTH: 100%; TEXT-ALIGN: left">
+<DIV 
+style="PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px" 
+align=left>
+<DIV class=vbmenu_popup id=vbbloglinks_menu style="DISPLAY: none" align=left>
+<TABLE cellSpacing=1 cellPadding=4 border=0>
+  <TBODY>
+  <TR>
+    <TD class=thead><A 
+      href="http://forums.trossenrobotics.com/blog.php">Blogs</A></TD></TR>
+  <TR>
+    <TD class=vbmenu_option><A 
+      href="http://forums.trossenrobotics.com/blog.php?do=list">Recent 
+      Entries</A></TD></TR>
+  <TR>
+    <TD class=vbmenu_option><A 
+      href="http://forums.trossenrobotics.com/blog.php?do=list&amp;blogtype=best">Best 
+      Entries</A></TD></TR>
+  <TR>
+    <TD class=vbmenu_option><A 
+      href="http://forums.trossenrobotics.com/blog.php?do=bloglist&amp;blogtype=best">Best 
+      Blogs</A></TD></TR>
+  <TR>
+    <TD class=vbmenu_option><A 
+      href="http://forums.trossenrobotics.com/blog.php?do=bloglist">Blog 
+    List</A></TD></TR>
+  <TR>
+    <TD class=vbmenu_option><A 
+      href="http://forums.trossenrobotics.com/blog_search.php?do=search">Search 
+      Blogs</A></TD></TR></TBODY></TABLE></DIV><BR><!-- breadcrumb, login, pm info -->
+<TABLE class=tborder cellSpacing=1 cellPadding=6 width="100%" align=center 
+border=0>
+  <TBODY>
+  <TR>
+    <TD class=alt1 width="100%">
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR vAlign=bottom>
+          <TD><A onclick="history.back(1); return false;" 
+            href="http://forums.trossenrobotics.com/showthread.php?t=2284#"><IMG 
+            alt="Go Back" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/navbits_start.gif" 
+            border=0></A></TD>
+          <TD>&nbsp;</TD>
+          <TD width="100%"><SPAN class=navbar><A accessKey=1 
+            href="http://forums.trossenrobotics.com/vb_index.php">Trossen 
+            Robotics Community</A></SPAN> <SPAN class=navbar>&gt; <A 
+            href="http://forums.trossenrobotics.com/forumdisplay.php?f=118">Community 
+            Tutorials</A></SPAN> <SPAN class=navbar>&gt; <A 
+            href="http://forums.trossenrobotics.com/forumdisplay.php?f=119">Published 
+            Tutorials</A></SPAN> </TD></TR>
+        <TR>
+          <TD class=navbar style="FONT-SIZE: 10pt; PADDING-TOP: 1px" 
+            colSpan=3><A 
+            href="http://forums.trossenrobotics.com/showthread.php?t=2284"><IMG 
+            class=inlineimg alt="Reload this Page" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/navbits_finallink_ltr.gif" 
+            border=0></A> <STRONG><SPAN style="COLOR: green"><B>How 
+            To</B></SPAN> Build a robot gripper with force feedback 
+        </STRONG></TD></TR></TBODY></TABLE></TD>
+    <TD class=alt2 
+    style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px" 
+    noWrap><!-- login form -->
+      <FORM 
+      onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)" 
+      action=login.php?do=login method=post>
+      <SCRIPT 
+      src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/vbulletin_md5.js" 
+      type=text/javascript></SCRIPT>
+
+      <TABLE cellSpacing=3 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=smallfont style="WHITE-SPACE: nowrap"><LABEL 
+            for=navbar_username>User Name</LABEL></TD>
+          <TD><INPUT class=bginput id=navbar_username style="FONT-SIZE: 11px" 
+            onfocus="if (this.value == 'User Name') this.value = '';" 
+            accessKey=u tabIndex=101 size=10 value="User Name" 
+            name=vb_login_username></TD>
+          <TD class=smallfont noWrap><LABEL for=cb_cookieuser_navbar><INPUT 
+            id=cb_cookieuser_navbar accessKey=c tabIndex=103 type=checkbox 
+            value=1 name=cookieuser>Remember Me?</LABEL></TD></TR>
+        <TR>
+          <TD class=smallfont><LABEL for=navbar_password>Password</LABEL></TD>
+          <TD><INPUT class=bginput id=navbar_password style="FONT-SIZE: 11px" 
+            tabIndex=102 type=password size=10 name=vb_login_password></TD>
+          <TD><INPUT class=button title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accessKey=s tabIndex=104 type=submit value="Log in"></TD></TR></TBODY></TABLE><INPUT 
+      type=hidden name=s> <INPUT type=hidden value=guest name=securitytoken> 
+      <INPUT type=hidden value=login name=do> <INPUT type=hidden 
+      name=vb_login_md5password> <INPUT type=hidden 
+      name=vb_login_md5password_utf> 
+</FORM><!-- / login form --></TD></TR></TBODY></TABLE><!-- / breadcrumb, login, pm info --><!-- nav buttons bar -->
+<DIV class=tborder 
+style="BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 1px; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; PADDING-TOP: 1px">
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  <TBODY>
+  <TR align=middle>
+    <TD class=vbmenu_control><A 
+      href="http://forums.trossenrobotics.com/register.php" 
+      rel=nofollow>Register</A></TD>
+    <TD class=vbmenu_control><A 
+      href="http://forums.trossenrobotics.com/links/index.php">Links</A></TD>
+    <TD class=vbmenu_control><A 
+      href="http://forums.trossenrobotics.com/downloads.php">Data Center</A></TD>
+    <TD class=vbmenu_control><A id=vbbloglinks 
+      href="http://forums.trossenrobotics.com/blog.php">Blogs</A>
+      <SCRIPT type=text/javascript>vbmenu_register("vbbloglinks");</SCRIPT>
+    </TD>
+    <TD class=vbmenu_control><A 
+      href="http://forums.trossenrobotics.com/gallery">Gallery</A></TD>
+    <TD class=vbmenu_control><A accessKey=5 
+      href="http://forums.trossenrobotics.com/faq.php" rel=help>FAQ</A></TD>
+    <TD class=vbmenu_control><A id=community accessKey=6 
+      href="http://forums.trossenrobotics.com/showthread.php?t=2284&amp;nojs=1#community" 
+      rel=nofollow>Community</A>
+      <SCRIPT type=text/javascript> vbmenu_register("community"); </SCRIPT>
+       </TD>
+    <TD class=vbmenu_control><A 
+      href="http://forums.trossenrobotics.com/calendar.php">Calendar</A></TD>
+    <TD class=vbmenu_control><A accessKey=2 
+      href="http://forums.trossenrobotics.com/search.php?do=getdaily">Today's 
+      Posts</A></TD>
+    <TD class=vbmenu_control><A id=navbar_search accessKey=4 
+      href="http://forums.trossenrobotics.com/search.php" 
+      rel=nofollow>Search</A> </TD></TR></TBODY></TABLE></DIV><!-- / nav buttons bar --><BR>
+<TABLE class=tborder cellSpacing=1 cellPadding=6 width="100%" align=center 
+border=0>
+  <TBODY>
+  <TR>
+    <TD class=alt1 width="100%"><STRONG>Published Tutorials</STRONG> <SPAN 
+      class=smallfont><BR>For finished tutorials. Tutorials entered here will be 
+      live and show up on various areas of the TRC Community. If you have a 
+      tutorial in progress, please start it in the TRC Tutorial 
+  Drafts.</SPAN></TD></TR></TBODY></TABLE><BR><!-- NAVBAR POPUP MENUS --><!-- community link menu -->
+<DIV class=vbmenu_popup id=community_menu style="MARGIN-TOP: 3px; DISPLAY: none" 
+align=left>
+<TABLE cellSpacing=1 cellPadding=4 border=0>
+  <TBODY>
+  <TR>
+    <TD class=thead>Community Links</TD></TR>
+  <TR>
+    <TD class=vbmenu_option><A 
+      href="http://forums.trossenrobotics.com/group.php">Social Groups</A></TD></TR>
+  <TR>
+    <TD class=vbmenu_option><A 
+      href="http://forums.trossenrobotics.com/album.php">Pictures &amp; Albums 
+      </A></TD></TR>
+  <TR>
+    <TD class=vbmenu_option><A 
+      href="http://forums.trossenrobotics.com/memberlist.php">Members 
+  List</A></TD></TR></TBODY></TABLE></DIV><!-- / community link menu --><!-- header quick search form -->
+<DIV class=vbmenu_popup id=navbar_search_menu 
+style="MARGIN-TOP: 3px; DISPLAY: none" align=left>
+<TABLE cellSpacing=1 cellPadding=4 border=0>
+  <TBODY>
+  <TR>
+    <TD class=thead>Search Forums</TD></TR>
+  <TR>
+    <TD class=vbmenu_option title=nohilite>
+      <FORM action=search.php?do=process method=post><INPUT type=hidden 
+      value=process name=do> <INPUT type=hidden value=1 name=quicksearch> <INPUT 
+      type=hidden value=1 name=childforums> <INPUT type=hidden value=1 
+      name=exactname> <INPUT type=hidden name=s> <INPUT type=hidden value=guest 
+      name=securitytoken> 
+      <DIV><INPUT class=bginput tabIndex=1001 size=25 name=query><INPUT class=button tabIndex=1004 type=submit value=Go></DIV>
+      <DIV style="MARGIN-TOP: 6px"><LABEL for=rb_nb_sp0><INPUT id=rb_nb_sp0 
+      tabIndex=1002 type=radio CHECKED value=0 name=showposts>Show 
+      Tutorials</LABEL> &nbsp; <LABEL for=rb_nb_sp1><INPUT id=rb_nb_sp1 
+      tabIndex=1003 type=radio value=1 name=showposts>Show Posts</LABEL> 
+      </DIV></FORM></TD></TR>
+  <TR>
+    <TD class=vbmenu_option><A 
+      href="http://forums.trossenrobotics.com/tags.php" rel=nofollow>Tag 
+      Search</A></TD></TR>
+  <TR>
+    <TD class=vbmenu_option><A accessKey=4 
+      href="http://forums.trossenrobotics.com/search.php" rel=nofollow>Advanced 
+      Search</A></TD></TR>
+  <TR>
+    <TD class=thead>Search Links</TD></TR>
+  <TR>
+    <TD class=vbmenu_option title=nohilite>
+      <FORM action=http://forums.trossenrobotics.com/links/search.php?do=process 
+      method=post><INPUT type=hidden value=searchresults name=do> <INPUT 
+      type=hidden value=1 name=quicksearch> <INPUT type=hidden name=s> <INPUT 
+      type=hidden value=guest name=securitytoken> 
+      <DIV><INPUT class=bginput tabIndex=1001 size=25 name=string><INPUT class=button tabIndex=1004 type=submit value=Go></DIV></FORM></TD></TR>
+  <TR>
+    <TD class=vbmenu_option><A accessKey=4 
+      href="http://forums.trossenrobotics.com/links/search.php" 
+      rel=nofollow>Advanced Search</A></TD></TR>
+  <TR>
+    <TD class=thead>Search Blogs</TD></TR>
+  <TR>
+    <TD class=vbmenu_option title=nohilite>
+      <FORM action=blog_search.php?do=dosearch method=post><INPUT type=hidden 
+      name=s> <INPUT type=hidden value=guest name=securitytoken> <INPUT 
+      type=hidden value=dosearch name=do> <INPUT type=hidden value=1 
+      name=quicksearch> 
+      <DIV><INPUT class=bginput tabIndex=2003 size=25 name=text><INPUT class=button tabIndex=2004 type=submit value=Go></DIV></FORM></TD></TR>
+  <TR>
+    <TD class=vbmenu_option><A 
+      href="http://forums.trossenrobotics.com/blog_tag.php" rel=nofollow>Tag 
+      Search</A></TD></TR>
+  <TR>
+    <TD class=vbmenu_option><A 
+      href="http://forums.trossenrobotics.com/blog_search.php?do=search">Advanced 
+      Search</A></TD></TR>
+  <TR>
+    <TD class=thead>Search Gallery</TD></TR>
+  <TR>
+    <TD class=vbmenu_option title=nohilite>
+      <FORM action=http://forums.trossenrobotics.com/gallery/search.php 
+      method=post><INPUT type=hidden name=s> <INPUT type=hidden 
+      value=searchresults name=do> <INPUT type=hidden value=1 name=quicksearch> 
+      <INPUT type=hidden value=0 name=catids[]> <INPUT class=bginput size=25 
+      name=string> <INPUT class=button type=submit value=Go></FORM></TD></TR>
+  <TR>
+    <TD class=vbmenu_option><A 
+      href="http://forums.trossenrobotics.com/gallery/search.php?">Advanced 
+      Search</A></TD></TR></TBODY></TABLE></DIV><!-- / header quick search form --><!-- / NAVBAR POPUP MENUS --><!-- PAGENAV POPUP -->
+<DIV class=vbmenu_popup id=pagenav_menu style="DISPLAY: none">
+<TABLE cellSpacing=1 cellPadding=4 border=0>
+  <TBODY>
+  <TR>
+    <TD class=thead noWrap>Go to Page...</TD></TR>
+  <TR>
+    <TD class=vbmenu_option title=nohilite>
+      <FORM id=pagenav_form onsubmit="return this.gotopage()" 
+      action=vb_index.php method=get><INPUT class=bginput id=pagenav_itxt 
+      style="FONT-SIZE: 11px" size=4> <INPUT class=button id=pagenav_ibtn type=button value=Go> 
+  </FORM></TD></TR></TBODY></TABLE></DIV><!-- / PAGENAV POPUP -->
+<TABLE class=page cellSpacing=0 cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=top>
+    <TD style="PADDING-RIGHT: 10px" width=183>
+      <DIV style="PADDING-BOTTOM: 10px">
+      <TABLE class=tborder cellSpacing=1 cellPadding=6 width="100%" align=center 
+      border=0>
+        <THEAD>
+        <TR>
+          <TD class=tcat colSpan=0><A style="FLOAT: right" 
+            onclick="return toggle_collapse('module_47')" 
+            href="http://forums.trossenrobotics.com/showthread.php?t=2284#top"><IMG 
+            id=collapseimg_module_47 alt="" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/collapse_tcat.gif" 
+            border=0></A> <SPAN class=smallfont><STRONG>» Navigation 
+            Menu</STRONG></SPAN></TD></TR></THEAD>
+        <TBODY id=collapseobj_module_47>
+        <TR>
+          <TD class=alt2><!-- The Community -->
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" border=0>
+              <TBODY>
+              <TR onmouseover="this.className='alt1'" 
+              onmouseout="this.className='alt2'">
+                <TD><A href="http://forums.trossenrobotics.com/">Homepage</A> 
+                </TD></TR>
+              <TR onmouseover="this.className='alt1'" 
+              onmouseout="this.className='alt2'">
+                <TD id=topforumsmenu><A 
+                  href="http://forums.trossenrobotics.com/vb_index.php" 
+                  target=_self>Forums</A>
+                  <SCRIPT 
+                  type=text/javascript>vbmenu_register("topforumsmenu");</SCRIPT>
+                   </TD></TR>
+              <TR onmouseover="this.className='alt1'" 
+              onmouseout="this.className='alt2'">
+                <TD><IMG style="VERTICAL-ALIGN: bottom" alt=NEW 
+                  src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/new-yellow-bg.jpg">&nbsp;&nbsp;<A 
+                  style="FONT-WEIGHT: bold" 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=118">TRC 
+                  Tutorials</A> </TD></TR>
+              <TR onmouseover="this.className='alt1'" 
+              onmouseout="this.className='alt2'">
+                <TD><A 
+                  href="http://forums.trossenrobotics.com/blog.php">Member 
+                  Blogs</A> </TD></TR>
+              <TR onmouseover="this.className='alt1'" 
+              onmouseout="this.className='alt2'">
+                <TD id=topdatacentermenu><IMG style="VERTICAL-ALIGN: bottom" 
+                  alt=NEW 
+                  src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/new-yellow-bg.jpg">&nbsp;&nbsp; 
+                  <A style="FONT-WEIGHT: bold" 
+                  href="http://forums.trossenrobotics.com/downloads.php" 
+                  target=_self>Data Center</A>
+                  <SCRIPT type=text/javascript>vbmenu_register("topdatacentermenu");</SCRIPT>
+                   </TD></TR>
+              <TR onmouseover="this.className='alt1'" 
+              onmouseout="this.className='alt2'">
+                <TD><A href="http://forums.trossenrobotics.com/gallery">Image 
+                  Galleries</A> </TD></TR>
+              <TR onmouseover="this.className='alt1'" 
+              onmouseout="this.className='alt2'">
+                <TD><A href="http://forums.trossenrobotics.com/links">Links 
+                  Directory</A> </TD></TR>
+              <TR onmouseover="this.className='alt1'" 
+              onmouseout="this.className='alt2'">
+                <TD><A 
+                  href="http://forums.trossenrobotics.com/sendmessage.php" 
+                  rel=nofollow>Contact Us</A> </TD></TR></TBODY></TABLE><!-- / The Community --><!-- Data Center Menu -->
+            <DIV class=vbmenu_popup id=topdatacentermenu_menu 
+            style="DISPLAY: none">
+            <TABLE cellSpacing=1 cellPadding=5 border=0>
+              <TBODY>
+              <TR>
+                <TD class=thead align=middle><A 
+                  href="http://forums.trossenrobotics.com/downloads.php">Data 
+                  Center Home </A></TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/downloads.php?do=cat&amp;id=5">CAD 
+                  Files </A></TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/downloads.php?do=cat&amp;id=6">Demos 
+                  / Example Code / Widgets </A></TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/downloads.php?do=cat&amp;id=7">Drivers 
+                  / Libraries / Firmware </A></TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/downloads.php?do=cat&amp;id=2">Kinematics 
+                  / Algorithms</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/downloads.php?do=cat&amp;id=3">Manuals 
+                  / Spec Sheets / Documentation </A></TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/downloads.php?do=cat&amp;id=1">Motion 
+                  / Script Files </A></TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/downloads.php?do=cat&amp;id=4">Software 
+                  </A></TD></TR></TBODY></TABLE></DIV><!-- / Data Center menu --><!-- Forums Menu -->
+            <DIV class=vbmenu_popup id=topforumsmenu_menu style="DISPLAY: none">
+            <TABLE cellSpacing=1 cellPadding=5 border=0>
+              <TBODY>
+              <TR>
+                <TD class=thead align=middle><A 
+                  href="http://forums.trossenrobotics.com/vb_index.php">Forums 
+                  Home </A></TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=101">Project 
+                  Showcase</A> </TD></TR>
+              <TR>
+                <TD class=thead align=middle><A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=22">Robotics 
+                  </A></TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=9">Robotics 
+                  General Discussion</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=106">Humanoids, 
+                  Walkers &amp; Crawlers</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=121">Mech 
+                  Warfare</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=116">Rovers</A> 
+                </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=21">Software 
+                  &amp; Programming</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=117">TRS 
+                  Open Source Project</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=31">IO 
+                  Boards &amp; Controllers</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=36">Sensors</A> 
+                </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=102">Actuators</A> 
+                </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=52">Mechanics 
+                  / Construction</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=47">Brains 
+                  of my Robot</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=63">Power</A> 
+                </TD></TR>
+              <TR>
+                <TD class=thead align=middle><A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=118">Community 
+                  Tutorials</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=120">Tutorial 
+                  Drafts</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=119">Published 
+                  Tutorials</A> </TD></TR>
+              <TR>
+                <TD class=thead align=middle><A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=122">Community 
+                  Product Reviews</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=123">Product 
+                  Review Drafts</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=124">Published 
+                  Product Reviews</A> </TD></TR>
+              <TR>
+                <TD class=thead align=middle><A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=103">Other</A> 
+                </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=115">Off 
+                  Topic</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=66">Feedback 
+                  &amp; Suggestions</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=105">Projects 
+                  For Request and/or Sale</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=104">Garage 
+                  Sale</A> </TD></TR>
+              <TR>
+                <TD class=thead align=middle><A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=81">RFID 
+                  Development</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;<A 
+                  href="http://forums.trossenrobotics.com/forumdisplay.php?f=82">RFID 
+                  Development</A> </TD></TR></TBODY></TABLE></DIV><!-- / Forums menu --><!-- Shopping -->
+            <HR SIZE=1>
+
+            <TABLE class=alt1 style="HEIGHT: 35px" cellSpacing=0 cellPadding=0 
+            width="100%" border=1>
+              <TBODY>
+              <TR onmouseover="this.className='alt1'" 
+              onmouseout="this.className='alt2'">
+                <TD class=tcat id=shop_roboticsmenu 
+                style="FONT-SIZE: 11pt; BACKGROUND: #009966" align=middle><A 
+                  href="http://www.trossenrobotics.com/" target=_self>Shop 
+                  Robotics</A>
+                  <SCRIPT type=text/javascript>vbmenu_register("shop_roboticsmenu");</SCRIPT>
+                   </TD></TR></TBODY></TABLE><!-- / Shopping --><!-- Shopping Menu -->
+            <DIV class=vbmenu_popup id=shop_roboticsmenu_menu 
+            style="DISPLAY: none">
+            <TABLE cellSpacing=1 cellPadding=5 border=0>
+              <TBODY>
+              <TR>
+                <TD class=thead align=middle height=25><A 
+                  href="http://www.trossenrobotics.com/default.aspx">Trossen 
+                  Robotics Home</A> </TD></TR>
+              <TR>
+                <TD class=thead align=middle>&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/Robots.aspx">Shop 
+                  Robots</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/c/2652-Full-Robotics-Systems.aspx">Full 
+                  Robotic Systems</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/robot-kits.aspx">Robot 
+                  Kits by Type</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/domestic-robots.aspx">Domestic 
+                  Robots</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/robot-kits-by-experience-level.aspx">Robot 
+                  Kits by Experience</A> </TD></TR>
+              <TR>
+                <TD class=thead align=middle>&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/robot-parts.aspx">Shop 
+                  Robot Parts</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/c/3090-I-O-Boards-Robot-Controllers.aspx">I/O 
+                  Boards &amp; Robot Controllers</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/c/2664-Motor-Controllers.aspx">Motor 
+                  Controllers</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/c/2668-Sensors.aspx">Sensors</A> 
+                </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/c/3143-Communication.aspx">Communication</A> 
+                </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/c/2695-Motors-Servos-Actuators.aspx">Motors 
+                  / Servos / Actuators</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/c/2683-Mechanics.aspx">Mechanics</A> 
+                </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/c/3107-Wiring-Cables.aspx">Wiring 
+                  / Cables</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/c/3125-Development-Kits.aspx">Development 
+                  Kits</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/c/2739-Power.aspx">Power 
+                  / Batteries</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/c/2731-Lighting-and-Displays.aspx">Lighting 
+                  &amp; Displays</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/c/2743-Accessories.aspx">Robot 
+                  Accessories</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/switches-relays.aspx">Switches 
+                  &amp; Relays</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/category.aspx?catID=3135">Garage 
+                  Sale Items!</A> </TD></TR>
+              <TR>
+                <TD class=thead align=middle>&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/c/2784-RFID.aspx">Shop 
+                  RFID</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/c/2786-RFID-Readers.aspx">RFID 
+                  Readers</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/c/2788-RFID-Tags.aspx">RFID 
+                  Tags</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/c/2785-Starter-Kits.aspx">Starter 
+                  Kits</A> </TD></TR>
+              <TR>
+                <TD class=vbmenu_option>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/store/c/2787-RFID-Books.aspx">RFID 
+                  Books</A> </TD></TR>
+              <TR>
+                <TD class=thead align=middle>&nbsp;&nbsp;<A 
+                  href="http://www.trossenrobotics.com/robot-manufacturers.aspx">Shop 
+                  By Manufacturer</A> </TD></TR></TBODY></TABLE></DIV><!-- / Shopping menu --></TD></TR></TBODY></TABLE></DIV>
+      <DIV style="PADDING-BOTTOM: 10px">
+      <TABLE class=tborder cellSpacing=1 cellPadding=6 width="100%" align=center 
+      border=0>
+        <THEAD>
+        <TR>
+          <TD class=tcat colSpan=0><A style="FLOAT: right" 
+            onclick="return toggle_collapse('module_50')" 
+            href="http://forums.trossenrobotics.com/showthread.php?t=2284#top"><IMG 
+            id=collapseimg_module_50 alt="" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/collapse_tcat.gif" 
+            border=0></A> <SPAN class=smallfont><STRONG>» Chat 
+            Statistics</STRONG></SPAN></TD></TR></THEAD>
+        <TBODY id=collapseobj_module_50>
+        <TR>
+          <TD class=alt2>
+            <DIV class=smallfont>
+            <DIV><B>1</B> Chat Connections.</DIV>
+            <DIV><B>1</B> Logon Users.</DIV>
+            <DIV><B>1</B> Chat Rooms.</DIV></DIV></TD></TR>
+        <TR>
+          <TD class=thead align=middle><A href="javascript:openChat();"><SPAN 
+            class=smallfont><STRONG>Chat Now!</STRONG></SPAN></A></TD></TR>
+        <TR>
+          <TD class=alt2 
+          style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; spacing: 0"><A 
+            href="javascript:openChat();"><IMG alt="Open Chat" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/trcChatModule.jpg" 
+            border=0></A></TD></TR></TBODY></TABLE></DIV>
+      <DIV style="PADDING-BOTTOM: 10px">
+      <TABLE class=tborder cellSpacing=1 cellPadding=4 width="100%" align=center 
+      border=0>
+        <THEAD>
+        <TR>
+          <TD class=tcat colSpan=7><A style="FLOAT: right" 
+            onclick="return toggle_collapse('module_3')" 
+            href="http://forums.trossenrobotics.com/showthread.php?t=2284#top"><IMG 
+            id=collapseimg_module_3 alt="" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/collapse_tcat.gif" 
+            border=0></A> <SPAN class=smallfont><STRONG>» <A 
+            href="http://forums.trossenrobotics.com/calendar.php?c=1">February 
+            2009</A></STRONG></SPAN></TD></TR></THEAD>
+        <TBODY id=collapseobj_module_3>
+        <TR>
+          <TD class=thead align=middle>S</TD>
+          <TD class=thead align=middle>M</TD>
+          <TD class=thead align=middle>T</TD>
+          <TD class=thead align=middle>W</TD>
+          <TD class=thead align=middle>T</TD>
+          <TD class=thead align=middle>F</TD>
+          <TD class=thead align=middle>S</TD></TR>
+        <TR align=middle>
+          <TD class=alt2><SPAN class=smallfont>1 </SPAN></TD>
+          <TD class=alt2 title=Today 
+          style="BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; FONT-WEIGHT: bold; BORDER-LEFT: red 1px solid; BORDER-BOTTOM: red 1px solid"><SPAN 
+            class=smallfont>2 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>3 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>4 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>5 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>6 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>7 </SPAN></TD></TR>
+        <TR align=middle>
+          <TD class=alt2><SPAN class=smallfont>8 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>9 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>10 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>11 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>12 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>13 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>14 </SPAN></TD></TR>
+        <TR align=middle>
+          <TD class=alt2><SPAN class=smallfont>15 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>16 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>17 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>18 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>19 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>20 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>21 </SPAN></TD></TR>
+        <TR align=middle>
+          <TD class=alt2><SPAN class=smallfont>22 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>23 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>24 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>25 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>26 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>27 </SPAN></TD>
+          <TD class=alt2><SPAN class=smallfont>28 
+      </SPAN></TD></TR></TBODY></TABLE></DIV>
+      <DIV style="PADDING-BOTTOM: 10px">
+      <TABLE class=tborder cellSpacing=1 cellPadding=6 width="100%" align=center 
+      border=0>
+        <THEAD>
+        <TR>
+          <TD class=tcat colSpan=0><A style="FLOAT: right" 
+            onclick="return toggle_collapse('module_54')" 
+            href="http://forums.trossenrobotics.com/showthread.php?t=2284#top"><IMG 
+            id=collapseimg_module_54 alt="" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/collapse_tcat.gif" 
+            border=0></A> <SPAN class=smallfont><STRONG>» Recent 
+            Blogs</STRONG></SPAN></TD></TR></THEAD>
+        <TBODY id=collapseobj_module_54>
+        <TR>
+          <TD class=alt2>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/blog.php?b=158">Let there be 
+            light...</A> </DIV></TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/blog.php?b=157">It 
+            begins...</A> </DIV></TD></TR>
+        <TR>
+          <TD class=alt2>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/blog.php?b=156">Wall-e 
+            Project</A> </DIV></TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/blog.php?b=155">This is 
+            really me!</A> </DIV></TD></TR>
+        <TR>
+          <TD class=alt2>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/blog.php?b=154">I are 
+            back</A> </DIV></TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/blog.php?b=153">Green 
+            Machine Reloaded</A> </DIV></TD></TR>
+        <TR>
+          <TD class=alt2>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/blog.php?b=152">Tramp in 
+            '09</A> </DIV></TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/blog.php?b=151">Phidgets 
+            Dumps MSRS</A> </DIV></TD></TR>
+        <TR>
+          <TD class=alt2>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/blog.php?b=147">Rise of the 
+            machines T-1</A> </DIV></TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/blog.php?b=146">Almost time 
+            to get parts for my robot butler</A> </DIV></TD></TR>
+        <TR>
+          <TD class=alt2>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/blog.php?b=145">Well it's 
+            nearly 3am...</A> </DIV></TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/blog.php?b=144">Electronics 
+            are working</A> </DIV></TD></TR>
+        <TR>
+          <TD class=alt2>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/blog.php?b=143">Robosapien 
+            goes to war...</A> </DIV></TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/blog.php?b=142">damn...</A> 
+            </DIV></TD></TR>
+        <TR>
+          <TD class=alt2>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/blog.php?b=141">Need 
+            robo-rific roller derby name</A> </DIV></TD></TR></TBODY></TABLE></DIV>
+      <DIV style="PADDING-BOTTOM: 10px">
+      <TABLE class=tborder cellSpacing=1 cellPadding=6 width="100%" align=center 
+      border=0>
+        <THEAD>
+        <TR>
+          <TD class=tcat colSpan=0><A style="FLOAT: right" 
+            onclick="return toggle_collapse('module_55')" 
+            href="http://forums.trossenrobotics.com/showthread.php?t=2284#top"><IMG 
+            id=collapseimg_module_55 alt="" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/collapse_tcat.gif" 
+            border=0></A> <SPAN class=smallfont><STRONG>» <A 
+            href="http://forums.trossenrobotics.com/links/browselinks.php?do=newlinks&amp;cutoffdate">Robot 
+            Links</A></STRONG></SPAN></TD></TR></THEAD>
+        <TBODY id=collapseobj_module_55>
+        <TR>
+          <TD class=alt2>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/links/showlink.php?do=showdetails&amp;l=17">FIRST 
+            Robotics</A></DIV>
+            <DIV class=smallfont>By <A 
+            href="http://forums.trossenrobotics.com/member.php?u=2">Alex</A> 
+            <BR></DIV></TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/links/showlink.php?do=showdetails&amp;l=54">ID 
+            - University of Idaho - CISR</A></DIV>
+            <DIV class=smallfont>By <A 
+            href="http://forums.trossenrobotics.com/member.php?u=3">Matt</A> 
+            <BR></DIV></TD></TR>
+        <TR>
+          <TD class=alt2>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/links/showlink.php?do=showdetails&amp;l=74">TN 
+            - Vanderbilt University</A></DIV>
+            <DIV class=smallfont>By <A 
+            href="http://forums.trossenrobotics.com/member.php?u=3">Matt</A> 
+            <BR></DIV></TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/links/showlink.php?do=showdetails&amp;l=91">Science 
+            Olympiad National Home Page</A></DIV>
+            <DIV class=smallfont>By <A 
+            href="http://forums.trossenrobotics.com/member.php?u=1711">Adrenalynn</A> 
+            <BR></DIV></TD></TR>
+        <TR>
+          <TD class=alt2>
+            <DIV class=smallfont><A 
+            href="http://forums.trossenrobotics.com/links/showlink.php?do=showdetails&amp;l=115">allaboutcircuits.com</A></DIV>
+            <DIV class=smallfont>By <A 
+            href="http://forums.trossenrobotics.com/member.php?u=1563">RKM83</A> 
+            <BR></DIV></TD></TR>
+        <TR>
+          <TD align=middle bgColor=#ccff99>
+            <DIV><A 
+            href="http://forums.trossenrobotics.com/links/addlink.php?c=0"><FONT 
+            style="FONT-WEIGHT: 800; FONT-FAMILY: Arial, Helvetica, sans-serif" 
+            size=3>Add new robot link</FONT></A></DIV></TD></TR></TBODY></TABLE></DIV>
+      <FORM action=http://forums.trossenrobotics.com/poll.php method=post><INPUT 
+      type=hidden value=guest name=securitytoken> 
+      <DIV style="PADDING-BOTTOM: 10px">
+      <TABLE class=tborder cellSpacing=1 cellPadding=6 width="100%" align=center 
+      border=0>
+        <THEAD>
+        <TR>
+          <TD class=tcat colSpan=0><A style="FLOAT: right" 
+            onclick="return toggle_collapse('module_7')" 
+            href="http://forums.trossenrobotics.com/showthread.php?t=2284#top"><IMG 
+            id=collapseimg_module_7 alt="" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/collapse_tcat.gif" 
+            border=0></A> <SPAN class=smallfont><STRONG>» Current 
+            Poll</STRONG></SPAN></TD></TR></THEAD>
+        <TBODY id=collapseobj_module_7>
+        <TR>
+          <TD class=thead>Would you want a MechDAR kit?</TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV class=smallfont>Yes (aka, I pity the fool that doesnt have one) 
+            - 90.48%</DIV><IMG title="19 Votes" height=10 alt="" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bar2-l.gif" 
+            width=3><IMG title="19 Votes" height=10 alt="19 Votes" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bar2.gif" 
+            width=126><IMG title="19 Votes" height=10 alt="" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bar2-r.gif" 
+            width=3> </TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV class=smallfont>No - 9.52%</DIV><IMG title="2 Votes" height=10 
+            alt="" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bar3-l.gif" 
+            width=3><IMG title="2 Votes" height=10 alt="2 Votes" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bar3.gif" 
+            width=13><IMG title="2 Votes" height=10 alt="" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bar3-r.gif" 
+            width=3> </TD></TR>
+        <TR>
+          <TD class=alt2 align=left><SPAN class=smallfont><STRONG>Total Votes: 
+            21</STRONG><BR>You may not vote on this poll.</SPAN> </TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV class=smallfont>» <A 
+            href="http://forums.trossenrobotics.com/poll.php?do=showresults&amp;pollid=13">View 
+            Poll Results</A> <BR>» <A 
+            href="http://forums.trossenrobotics.com/newreply.php?t=2832">Comment 
+            On This Poll</A> <BR>» <A 
+            href="http://forums.trossenrobotics.com/showthread.php?t=2832">This 
+            Poll Has 48 Comments</A> </DIV></TD></TR></TBODY></TABLE></DIV></FORM>
+      <DIV style="PADDING-BOTTOM: 10px">
+      <TABLE class=tborder cellSpacing=1 cellPadding=6 width="100%" align=center 
+      border=0>
+        <THEAD>
+        <TR>
+          <TD class=tcat colSpan=0><A style="FLOAT: right" 
+            onclick="return toggle_collapse('module_1')" 
+            href="http://forums.trossenrobotics.com/showthread.php?t=2284#top"><IMG 
+            id=collapseimg_module_1 alt="" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/collapse_tcat.gif" 
+            border=0></A> <SPAN class=smallfont><STRONG>» <A 
+            href="http://forums.trossenrobotics.com/online.php">Online Users: 
+            142</A></STRONG></SPAN></TD></TR></THEAD>
+        <TBODY id=collapseobj_module_1>
+        <TR>
+          <TD class=thead><SPAN class=smallfont>13 members and 129 
+            guests</SPAN></TD></TR>
+        <TR>
+          <TD class=alt1><SPAN class=smallfont><A 
+            href="http://forums.trossenrobotics.com/member.php?u=1711">Adrenalynn</A>, 
+            <A 
+            href="http://forums.trossenrobotics.com/member.php?u=2286">elios</A>, 
+            <A 
+            href="http://forums.trossenrobotics.com/member.php?u=2409">iBot</A>, 
+            <A 
+            href="http://forums.trossenrobotics.com/member.php?u=2810">johnret</A>, 
+            <A href="http://forums.trossenrobotics.com/member.php?u=2045">Kondo 
+            Dave</A>, <A 
+            href="http://forums.trossenrobotics.com/member.php?u=2157">mallster</A>, 
+            <A 
+            href="http://forums.trossenrobotics.com/member.php?u=2800">Maverick_Hunter_X</A>, 
+            <A 
+            href="http://forums.trossenrobotics.com/member.php?u=1649">mdenton</A>, 
+            <A 
+            href="http://forums.trossenrobotics.com/member.php?u=1705">metaform3d</A>, 
+            <A 
+            href="http://forums.trossenrobotics.com/member.php?u=2586">Resilient</A>, 
+            <A 
+            href="http://forums.trossenrobotics.com/member.php?u=1990">ScuD</A>, 
+            <A 
+            href="http://forums.trossenrobotics.com/member.php?u=2813">shadow</A>, 
+            <A 
+            href="http://forums.trossenrobotics.com/member.php?u=2037">Xan</A></SPAN></TD></TR>
+        <TR>
+          <TD class=alt2><SPAN class=smallfont>Most users ever online was 877, 
+            10-28-2008 at 01:18 AM.</SPAN></TD></TR></TBODY></TABLE></DIV>
+      <DIV style="PADDING-BOTTOM: 10px">
+      <TABLE class=tborder cellSpacing=1 cellPadding=6 width="100%" align=center 
+      border=0>
+        <THEAD>
+        <TR>
+          <TD class=tcat colSpan=0><A style="FLOAT: right" 
+            onclick="return toggle_collapse('module_6')" 
+            href="http://forums.trossenrobotics.com/showthread.php?t=2284#top"><IMG 
+            id=collapseimg_module_6 alt="" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/collapse_tcat.gif" 
+            border=0></A> <SPAN class=smallfont><STRONG>» 
+          Stats</STRONG></SPAN></TD></TR></THEAD>
+        <TBODY id=collapseobj_module_6>
+        <TR>
+          <TD class=alt1><SPAN class=smallfont>Members: 2,362<BR>Threads: 
+            1,661<BR>Posts: 22,835<BR>Top Poster: <A 
+            href="http://forums.trossenrobotics.com/member.php?u=1711">Adrenalynn</A> 
+            (3,753)<BR></SPAN></TD></TR>
+        <TR>
+          <TD class=alt2><SPAN class=smallfont>Welcome to our newest member, 
+            <A 
+            href="http://forums.trossenrobotics.com/member.php?u=2814">jayant24</A></SPAN></TD></TR></TBODY></TABLE></DIV></TD>
+    <TD vAlign=top><A id=poststop name=poststop></A><!-- controls above postbits -->
+      <TABLE style="MARGIN-BOTTOM: 3px" cellSpacing=0 cellPadding=0 width="100%" 
+      border=0>
+        <TBODY>
+        <TR vAlign=bottom>
+          <TD class=smallfont><A 
+            href="http://forums.trossenrobotics.com/newreply.php?do=newreply&amp;noquote=1&amp;p=18675" 
+            rel=nofollow><IMG alt=Comment 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/comment.png" 
+            border=0></A></TD></TR></TBODY></TABLE><!-- / controls above postbits --><!-- toolbar -->
+      <TABLE class=tborder style="BORDER-BOTTOM-WIDTH: 0px" cellSpacing=1 
+      cellPadding=6 width="100%" align=center border=0>
+        <TBODY>
+        <TR>
+          <TD class=tcat width="100%">
+            <DIV class=smallfont> </DIV></TD>
+          <TD class=vbmenu_control id=threadtools noWrap><A accessKey=3 
+            href="http://forums.trossenrobotics.com/showthread.php?t=2284&amp;nojs=1#goto_threadtools">Tutorial 
+            Tools</A>
+            <SCRIPT 
+            type=text/javascript> vbmenu_register("threadtools"); </SCRIPT>
+             </TD>
+          <TD class=vbmenu_control id=displaymodes noWrap><A 
+            href="http://forums.trossenrobotics.com/showthread.php?t=2284&amp;nojs=1#goto_displaymodes">Display 
+            Modes</A>
+            <SCRIPT 
+            type=text/javascript> vbmenu_register("displaymodes"); </SCRIPT>
+             </TD></TR></TBODY></TABLE><!-- / toolbar --><!-- end content table --><!-- / end content table -->
+      <DIV id=posts><!-- post #18675 -->
+      <DIV id=edit18675 
+      style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 6px; PADDING-TOP: 0px"><!-- this is not the last post shown on the page --><!-- Article #18675 --><!-- Header --><A 
+      name=content_start></A>
+      <TABLE class=tborder cellSpacing=0 cellPadding=0 width="100%" align=center 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD class=alt2 
+          style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px" 
+          vAlign=top width="100%" colSpan=2>
+            <DIV 
+            style="PADDING-RIGHT: 10px; FLOAT: left; PADDING-BOTTOM: 10px"><IMG 
+            alt="Build a robot gripper with force feedback" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/thumb_FSRgripperTN.jpg" 
+            border=0> </DIV><STRONG>Build a robot gripper with force 
+            feedback</STRONG> 
+            <DIV class=smallfont>A force feedback gripper for your PC 
+            bot<BR>Published by <A 
+            href="http://forums.trossenrobotics.com/member.php?u=3">Matt</A><BR>08-20-2008 
+            </DIV></TD></TR>
+        <TR>
+          <TD class=alt2 
+          style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px" 
+          vAlign=top>
+            <TABLE id=post18675 cellSpacing=0 cellPadding=0 width="100%" 
+            align=center border=0>
+              <TBODY>
+              <TR>
+                <TD class=alt1 
+                style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px" 
+                vAlign=top width="100%" colSpan=2>
+                  <DIV class=smallfont><STRONG>Build a robot gripper with force 
+                  feedback</STRONG> </DIV>
+                  <HR style="COLOR: #181b16" SIZE=1>
+
+                  <DIV id=post_message_18675 align=justify>Using a <A 
+                  href="http://www.trossenrobotics.com/phidgets.aspx" 
+                  target=_blank>Phidget single servo controller</A> to operate a 
+                  gripper with an <A 
+                  href="http://www.trossenrobotics.com/store/c/2670-Force-Sensors-Pressure-Touch-Sensors.aspx" 
+                  target=_blank>FSR</A> we can create a system with force 
+                  feedback.<BR><BR>
+                  <DIV id=ame_noshow_post_1233570581_1 style="DISPLAY: none"><A 
+                  title="YouTube - Force Sensing Resistor (FSR) &amp; Robotic Gripper" 
+                  href="http://www.youtube.com/watch?v=gtnNByljPq8" 
+                  target=_blank>YouTube - Force Sensing Resistor (FSR) &amp; 
+                  Robotic Gripper</A> </DIV>
+                  <DIV id=ame_doshow_post_1233570581_1 style="DISPLAY: inline">
+                  <DIV align=center>
+                  <TABLE class=tborder style="MARGIN: 10px 0px" cellSpacing=1 
+                  cellPadding=6 width=425>
+                    <THEAD>
+                    <TR>
+                      <TD class=tcat style="TEXT-ALIGN: center" colSpan=2><A 
+                        title="YouTube - Force Sensing Resistor (FSR) &amp; Robotic Gripper" 
+                        href="http://www.youtube.com/watch?v=gtnNByljPq8" 
+                        target=_blank>YouTube - Force Sensing Resistor (FSR) 
+                        &amp; Robotic Gripper</A> </TD></TR></THEAD>
+                    <TBODY>
+                    <TR>
+                      <TD class=panelsurround align=middle>
+                        <OBJECT height=350 width=425><PARAM NAME="movie" VALUE="http://www.youtube.com/v/gtnNByljPq8&amp;ap=%2526fmt%3D18&amp;fs=1"><PARAM NAME="allowFullScreen" VALUE="true">
+                        <embed 
+                        src="http://www.youtube.com/v/gtnNByljPq8&amp;ap=%2526fmt%3D18&amp;fs=1" 
+                        type="application/x-shockwave-flash" 
+                        allowfullscreen="true" width="425" height="350" 
+                        wmode="transparent"></embed></OBJECT></TD></TR></TBODY></TABLE></DIV></DIV></DIV></TD>
+                <TD class=alt1 
+                style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px" 
+                vAlign=top width=200>
+                  <TABLE cellSpacing=0 cellPadding=0 width=200 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=alt1 vAlign=top>
+                        <TABLE class=tborder cellSpacing=1 cellPadding=6 
+                        width="100%" border=0>
+                          <THEAD>
+                          <TR>
+                            <TD class=tcat style="WHITE-SPACE: nowrap">
+                              <DIV><A style="FLOAT: right" 
+                              onclick="return toggle_collapse('gar_19')" 
+                              href="http://forums.trossenrobotics.com/showthread.php?t=2284#top"><IMG 
+                              id=collapseimg_gar_19 alt="" 
+                              src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/collapse_tcat.gif" 
+                              border=0></A>Tutorial Stats</DIV></TD></TR></THEAD>
+                          <TBODY id=collapseobj_gar_19>
+                          <TR>
+                            <TD class=panelsurround>
+                              <DIV class=panel align=left>
+                              <DIV class=fieldset>
+                              <TABLE id=gars_container_19 cellSpacing=1 
+                              cellPadding=6 width=200 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD><STRONG>Difficulty:</STRONG> </TD>
+                                <TD>Moderate</TD></TR>
+                                <TR>
+                                <TD><STRONG>Estimated Time:</STRONG> </TD>
+                                <TD>2-5 hours</TD></TR>
+                                <TR>
+                                <TD colSpan=2>
+                                <TABLE style="WIDTH: 100%">
+                                <TBODY>
+                                <TR>
+                                <TD bgColor=#99cccc height=20><STRONG>Skills 
+                                Required</STRONG> </TD></TR>
+                                <TR>
+                                <TD>
+                                <UL 
+                                style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN-LEFT: 1em; PADDING-TOP: 0px; LIST-STYLE-TYPE: none">
+                                <LI style="MARGIN-LEFT: 0px">Computer 
+                                Programming</LI></UL></TD></TR></TBODY></TABLE></TD></TR>
+                                <TR>
+                                <TD colSpan=2>
+                                <TABLE style="WIDTH: 100%">
+                                <TBODY>
+                                <TR>
+                                <TD bgColor=#99cccc height=20><STRONG>Parts 
+                                Required</STRONG> </TD></TR>
+                                <TR>
+                                <TD>
+                                <UL 
+                                style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN-LEFT: 1em; PADDING-TOP: 0px; LIST-STYLE-TYPE: none">
+                                <LI style="MARGIN-LEFT: 0px">Phidget single 
+                                servo controller<BR>Phidget 8/8/8<BR>Phidget 
+                                Voltage Divider<BR>FSR<BR>Computer<BR>Robot 
+                                Gripper</LI></UL></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></DIV></TD></TR></TBODY></TABLE><BR>
+                        <TABLE class=tborder cellSpacing=1 cellPadding=6 
+                        width="100%" border=0>
+                          <THEAD>
+                          <TR>
+                            <TD class=tcat style="WHITE-SPACE: nowrap">
+                              <DIV><A style="FLOAT: right" 
+                              onclick="return toggle_collapse('gar_1233570581')" 
+                              href="http://forums.trossenrobotics.com/showthread.php?t=2284#top"><IMG 
+                              id=collapseimg_gar_1233570581 alt="" 
+                              src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/collapse_tcat.gif" 
+                              border=0></A>Member rating</DIV></TD></TR></THEAD>
+                          <TBODY id=collapseobj_gar_1233570581>
+                          <TR>
+                            <TD class=panelsurround>
+                              <DIV class=panel align=left>
+                              <DIV class=fieldset>
+                              <TABLE id=gars_container_1233570581 cellSpacing=1 
+                              cellPadding=6 width=200 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD class=alt1>
+                                <TABLE id=gars_quickrate_table1233570581 
+                                width="100%" border=0>
+                                <TBODY>
+                                <TR>
+                                <TD class=alt2 id=gars_this_table1233570581 
+                                colSpan=3>
+                                <TABLE cellSpacing=2 cellPadding=2 width="100%" 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD class=alt2 style="WHITE-SPACE: nowrap" 
+                                align=left>Organization</TD>
+                                <TD class=alt2 align=left>
+                                <DIV style="WHITE-SPACE: nowrap"><IMG title=10% 
+                                height=10 alt=10% 
+                                src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bar2-l.gif" 
+                                width=3><IMG title=10% height=10 alt=10% 
+                                src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bar2.gif" 
+                                width=7><IMG title=10% height=10 alt=10% 
+                                src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bar2-r.gif" 
+                                width=3></DIV></TD>
+                                <TD class=alt2 align=right>1</TD></TR>
+                                <TR>
+                                <TD class=alt2 style="WHITE-SPACE: nowrap" 
+                                align=left>Visual References</TD>
+                                <TD class=alt2 align=left>
+                                <DIV style="WHITE-SPACE: nowrap"><IMG title=10% 
+                                height=10 alt=10% 
+                                src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bar3-l.gif" 
+                                width=3><IMG title=10% height=10 alt=10% 
+                                src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bar3.gif" 
+                                width=7><IMG title=10% height=10 alt=10% 
+                                src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bar3-r.gif" 
+                                width=3></DIV></TD>
+                                <TD class=alt2 align=right>1</TD></TR>
+                                <TR>
+                                <TD class=alt2 style="WHITE-SPACE: nowrap" 
+                                align=left>Clarity</TD>
+                                <TD class=alt2 align=left>
+                                <DIV style="WHITE-SPACE: nowrap"><IMG title=10% 
+                                height=10 alt=10% 
+                                src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bar4-l.gif" 
+                                width=3><IMG title=10% height=10 alt=10% 
+                                src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bar4.gif" 
+                                width=7><IMG title=10% height=10 alt=10% 
+                                src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bar4-r.gif" 
+                                width=3></DIV></TD>
+                                <TD class=alt2 align=right>1</TD></TR>
+                                <TR>
+                                <TD class=tcat align=middle colSpan=3><STRONG>2 
+                                users rated 10% average 
+                                </STRONG></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></DIV></TD></TR></TBODY></TABLE></TD></TR>
+                    <TR>
+                      <TD class=alt1 vAlign=bottom><IMG height=1 alt="" 
+                        src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/clear.gif" 
+                        width=200 border=0> 
+            </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=alt2 
+          style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px" 
+          vAlign=top>
+            <DIV align=center></DIV>
+            <DIV align=right><!-- controls --><A 
+            href="http://forums.trossenrobotics.com/newreply.php?do=newreply&amp;p=18675&amp;noquote=1"><IMG 
+            alt="" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/reply_small.gif" 
+            border=0></A> <!-- / controls --></DIV></TD></TR></TBODY></TABLE><!-- / Article #18675 --></DIV><!-- / post #18675 --><!-- post #18812 -->
+      <DIV id=edit18812 
+      style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 6px; PADDING-TOP: 0px"><!-- this is not the last post shown on the page --><!-- comment #18812 -->
+      <TABLE class=tborder id=post18812 cellSpacing=1 cellPadding=6 width="100%" 
+      align=center border=0>
+        <TBODY>
+        <TR>
+          <TD class=thead>
+            <DIV class=normal style="FLOAT: right">&nbsp; #<A 
+            href="http://forums.trossenrobotics.com/showpost.php?p=18812&amp;postcount=1" 
+            target=new><STRONG>1</STRONG></A> &nbsp; </DIV>
+            <DIV class=normal>By <A 
+            href="http://forums.trossenrobotics.com/member.php?u=2">Alex</A> <!-- status icon and date -->on 08-22-2008 <!-- / status icon and date --></DIV></TD></TR>
+        <TR>
+          <TD class=alt1 id=td_post_18812 vAlign=top width="100%"><!-- message, attachments, sig --><!-- icon and title -->
+            <DIV class=smallfont><STRONG>Re: Build a robot gripper with force 
+            feedback</STRONG> </DIV>
+            <HR style="COLOR: #181b16" SIZE=1>
+<!-- / icon and title --><!-- message -->
+            <DIV>*bump*<BR><BR>Now Published<IMG class=inlineimg 
+            title="Robot Happy" alt="" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/16x16_robot-happy.gif" 
+            border=0></DIV><!-- / message --></TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV align=right><!-- controls --><A 
+            href="http://forums.trossenrobotics.com/newreply.php?do=newreply&amp;p=18812"><IMG 
+            alt="Reply With Quote" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/quote.gif" 
+            border=0></A> <!-- / controls --></DIV></TD></TR></TBODY></TABLE><!-- / comment #18812 --></DIV><!-- / post #18812 --><!-- post #20604 -->
+      <DIV id=edit20604 
+      style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 6px; PADDING-TOP: 0px"><!-- this is not the last post shown on the page --><!-- comment #20604 -->
+      <TABLE class=tborder id=post20604 cellSpacing=1 cellPadding=6 width="100%" 
+      align=center border=0>
+        <TBODY>
+        <TR>
+          <TD class=thead>
+            <DIV class=normal style="FLOAT: right">&nbsp; #<A 
+            href="http://forums.trossenrobotics.com/showpost.php?p=20604&amp;postcount=2" 
+            target=new><STRONG>2</STRONG></A> &nbsp; </DIV>
+            <DIV class=normal>By <A 
+            href="http://forums.trossenrobotics.com/member.php?u=1458">robot 
+            maker</A> <!-- status icon and date -->on 09-22-2008 <!-- / status icon and date --></DIV></TD></TR>
+        <TR>
+          <TD class=alt1 id=td_post_20604 vAlign=top width="100%"><!-- message, attachments, sig --><!-- icon and title -->
+            <DIV class=smallfont><STRONG>Re: Build a robot gripper with force 
+            feedback</STRONG> </DIV>
+            <HR style="COLOR: #181b16" SIZE=1>
+<!-- / icon and title --><!-- message -->
+            <DIV>alex nice video,i getting ready to design a fsr gripper on 5 
+            finger hand,would like to buy the phidgets boards and maybe the 
+            gripper you have or one of the 2 i have that not using for my hand 
+            to play with and learn how to code it,where can i get your demo 
+            code,i also think i only bought 10 fsr,s ,so might need to buy 
+            another one,since these are very good</DIV><!-- / message --></TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV align=right><!-- controls --><A 
+            href="http://forums.trossenrobotics.com/newreply.php?do=newreply&amp;p=20604"><IMG 
+            alt="Reply With Quote" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/quote.gif" 
+            border=0></A> <!-- / controls --></DIV></TD></TR></TBODY></TABLE><!-- / comment #20604 --></DIV><!-- / post #20604 --><!-- post #20610 -->
+      <DIV id=edit20610 
+      style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 6px; PADDING-TOP: 0px"><!-- this is not the last post shown on the page --><!-- comment #20610 -->
+      <TABLE class=tborder id=post20610 cellSpacing=1 cellPadding=6 width="100%" 
+      align=center border=0>
+        <TBODY>
+        <TR>
+          <TD class=thead>
+            <DIV class=normal style="FLOAT: right">&nbsp; #<A 
+            href="http://forums.trossenrobotics.com/showpost.php?p=20610&amp;postcount=3" 
+            target=new><STRONG>3</STRONG></A> &nbsp; </DIV>
+            <DIV class=normal>By <A 
+            href="http://forums.trossenrobotics.com/member.php?u=1741">4mem8</A> 
+<!-- status icon and date -->on 09-22-2008 <!-- / status icon and date --></DIV></TD></TR>
+        <TR>
+          <TD class=alt1 id=td_post_20610 vAlign=top width="100%"><!-- message, attachments, sig --><!-- icon and title -->
+            <DIV class=smallfont><STRONG>Re: Build a robot gripper with force 
+            feedback</STRONG> </DIV>
+            <HR style="COLOR: #181b16" SIZE=1>
+<!-- / icon and title --><!-- message -->
+            <DIV>Thanks Alex for sharing this with us, interesting.</DIV><!-- / message --></TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV align=right><!-- controls --><A 
+            href="http://forums.trossenrobotics.com/newreply.php?do=newreply&amp;p=20610"><IMG 
+            alt="Reply With Quote" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/quote.gif" 
+            border=0></A> <!-- / controls --></DIV></TD></TR></TBODY></TABLE><!-- / comment #20610 --></DIV><!-- / post #20610 --><!-- post #20923 -->
+      <DIV id=edit20923 
+      style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 6px; PADDING-TOP: 0px"><!-- this is not the last post shown on the page --><!-- comment #20923 -->
+      <TABLE class=tborder id=post20923 cellSpacing=1 cellPadding=6 width="100%" 
+      align=center border=0>
+        <TBODY>
+        <TR>
+          <TD class=thead>
+            <DIV class=normal style="FLOAT: right">&nbsp; #<A 
+            href="http://forums.trossenrobotics.com/showpost.php?p=20923&amp;postcount=4" 
+            target=new><STRONG>4</STRONG></A> &nbsp; </DIV>
+            <DIV class=normal>By <A 
+            href="http://forums.trossenrobotics.com/member.php?u=2">Alex</A> <!-- status icon and date -->on 09-29-2008 <!-- / status icon and date --></DIV></TD></TR>
+        <TR>
+          <TD class=alt1 id=td_post_20923 vAlign=top width="100%"><!-- message, attachments, sig --><!-- icon and title -->
+            <DIV class=smallfont><STRONG>Re: Build a robot gripper with force 
+            feedback</STRONG> </DIV>
+            <HR style="COLOR: #181b16" SIZE=1>
+<!-- / icon and title --><!-- message -->
+            <DIV>Sorry for being such a flake guys. I've been busy as all hell 
+            lately and didn't want to just upload the sloppy code I had for this 
+            app, so I needed to clean it up a bit. Anyways, here ya 
+            go:<BR><BR><A 
+            href="http://forums.trossenrobotics.com/downloads.php?do=file&amp;id=111" 
+            target=_blank>http://forums.trossenrobotics.com/downloads.php?do=file&amp;id=111</A><BR><BR>It's 
+            not the best code in the world, but it gives everyone a decent 
+            understanding on how I went about doing it. <BR><BR>NOTE: There are 
+            much better ways of solving this problem and I wrote this code well 
+            over a year ago, so please be gentle with your comments<IMG 
+            class=inlineimg title="Robot Happy" alt="" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/16x16_robot-happy.gif" 
+            border=0></DIV><!-- / message --></TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV align=right><!-- controls --><A 
+            href="http://forums.trossenrobotics.com/newreply.php?do=newreply&amp;p=20923"><IMG 
+            alt="Reply With Quote" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/quote.gif" 
+            border=0></A> <!-- / controls --></DIV></TD></TR></TBODY></TABLE><!-- / comment #20923 --></DIV><!-- / post #20923 --><!-- post #20925 -->
+      <DIV id=edit20925 
+      style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 6px; PADDING-TOP: 0px"><!-- this is not the last post shown on the page --><!-- comment #20925 -->
+      <TABLE class=tborder id=post20925 cellSpacing=1 cellPadding=6 width="100%" 
+      align=center border=0>
+        <TBODY>
+        <TR>
+          <TD class=thead>
+            <DIV class=normal style="FLOAT: right">&nbsp; #<A 
+            href="http://forums.trossenrobotics.com/showpost.php?p=20925&amp;postcount=5" 
+            target=new><STRONG>5</STRONG></A> &nbsp; </DIV>
+            <DIV class=normal>By <A 
+            href="http://forums.trossenrobotics.com/member.php?u=2290">Enusi 
+            Malik</A> <!-- status icon and date -->on 09-29-2008 <!-- / status icon and date --></DIV></TD></TR>
+        <TR>
+          <TD class=alt1 id=td_post_20925 vAlign=top width="100%"><!-- message, attachments, sig --><!-- icon and title -->
+            <DIV class=smallfont><STRONG>Re: Build a robot gripper with force 
+            feedback</STRONG> </DIV>
+            <HR style="COLOR: #181b16" SIZE=1>
+<!-- / icon and title --><!-- message -->
+            <DIV>Nice video, that helped me out alot, that is a good idea for a 
+            variety of robot projects.</DIV><!-- / message --></TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV align=right><!-- controls --><A 
+            href="http://forums.trossenrobotics.com/newreply.php?do=newreply&amp;p=20925"><IMG 
+            alt="Reply With Quote" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/quote.gif" 
+            border=0></A> <!-- / controls --></DIV></TD></TR></TBODY></TABLE><!-- / comment #20925 --></DIV><!-- / post #20925 --><!-- post #20977 -->
+      <DIV id=edit20977 
+      style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 6px; PADDING-TOP: 0px"><!-- this is not the last post shown on the page --><!-- comment #20977 -->
+      <TABLE class=tborder id=post20977 cellSpacing=1 cellPadding=6 width="100%" 
+      align=center border=0>
+        <TBODY>
+        <TR>
+          <TD class=thead>
+            <DIV class=normal style="FLOAT: right">&nbsp; #<A 
+            href="http://forums.trossenrobotics.com/showpost.php?p=20977&amp;postcount=6" 
+            target=new><STRONG>6</STRONG></A> &nbsp; </DIV>
+            <DIV class=normal>By <A 
+            href="http://forums.trossenrobotics.com/member.php?u=1458">robot 
+            maker</A> <!-- status icon and date -->on 09-29-2008 <!-- / status icon and date --></DIV></TD></TR>
+        <TR>
+          <TD class=alt1 id=td_post_20977 vAlign=top width="100%"><!-- message, attachments, sig --><!-- icon and title -->
+            <DIV class=smallfont><STRONG>Re: Build a robot gripper with force 
+            feedback</STRONG> </DIV>
+            <HR style="COLOR: #181b16" SIZE=1>
+<!-- / icon and title --><!-- message -->
+            <DIV>thanks ALEX ,your design will be a big start for my project,i 
+            will be using a different controller and a-d converter,but something 
+            good to play with,since i have phidgets 4 servo controller and many 
+            fsr's only need to buy a phidgets 8/8/8 board<BR><BR>
+            <DIV style="MARGIN: 5px 20px 20px">
+            <DIV class=smallfont style="MARGIN-BOTTOM: 2px">Quote:</DIV>
+            <TABLE cellSpacing=0 cellPadding=6 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD class=alt2 
+                style="BORDER-RIGHT: 1px inset; BORDER-TOP: 1px inset; BORDER-LEFT: 1px inset; BORDER-BOTTOM: 1px inset">
+                  <DIV>Originally Posted by <STRONG>Alex</STRONG> <A 
+                  href="http://forums.trossenrobotics.com/showthread.php?p=20923#post20923" 
+                  rel=nofollow><IMG class=inlineimg alt="View Post" 
+                  src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/viewpost.gif" 
+                  border=0></A> </DIV>
+                  <DIV style="FONT-STYLE: italic">Sorry for being such a flake 
+                  guys. I've been busy as all hell lately and didn't want to 
+                  just upload the sloppy code I had for this app, so I needed to 
+                  clean it up a bit. Anyways, here ya go:<BR><BR><A 
+                  href="http://forums.trossenrobotics.com/downloads.php?do=file&amp;id=111" 
+                  target=_blank>http://forums.trossenrobotics.com/downloads.php?do=file&amp;id=111</A><BR><BR>It's 
+                  not the best code in the world, but it gives everyone a decent 
+                  understanding on how I went about doing it. <BR><BR>NOTE: 
+                  There are much better ways of solving this problem and I wrote 
+                  this code well over a year ago, so please be gentle with your 
+                  comments<IMG class=inlineimg title="Robot Happy" alt="" 
+                  src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/16x16_robot-happy.gif" 
+                  border=0></DIV></TD></TR></TBODY></TABLE></DIV></DIV><!-- / message --></TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV align=right><!-- controls --><A 
+            href="http://forums.trossenrobotics.com/newreply.php?do=newreply&amp;p=20977"><IMG 
+            alt="Reply With Quote" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/quote.gif" 
+            border=0></A> <!-- / controls --></DIV></TD></TR></TBODY></TABLE><!-- / comment #20977 --></DIV><!-- / post #20977 --><!-- post #21041 -->
+      <DIV id=edit21041 
+      style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 6px; PADDING-TOP: 0px"><!-- comment #21041 -->
+      <TABLE class=tborder id=post21041 cellSpacing=1 cellPadding=6 width="100%" 
+      align=center border=0>
+        <TBODY>
+        <TR>
+          <TD class=thead>
+            <DIV class=normal style="FLOAT: right">&nbsp; #<A 
+            href="http://forums.trossenrobotics.com/showpost.php?p=21041&amp;postcount=7" 
+            target=new><STRONG>7</STRONG></A> &nbsp; </DIV>
+            <DIV class=normal>By <A 
+            href="http://forums.trossenrobotics.com/member.php?u=2">Alex</A> <!-- status icon and date -->on 09-30-2008 <!-- / status icon and date --></DIV></TD></TR>
+        <TR>
+          <TD class=alt1 id=td_post_21041 vAlign=top width="100%"><!-- message, attachments, sig --><!-- icon and title -->
+            <DIV class=smallfont><STRONG>Re: Build a robot gripper with force 
+            feedback</STRONG> </DIV>
+            <HR style="COLOR: #181b16" SIZE=1>
+<!-- / icon and title --><!-- message -->
+            <DIV>I know it isn't much, but I hope it'll help get you started at 
+            the very least<IMG class=inlineimg title="Robot Happy" alt="" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/16x16_robot-happy.gif" 
+            border=0></DIV><!-- / message --></TD></TR>
+        <TR>
+          <TD class=alt1>
+            <DIV align=right><!-- controls --><A 
+            href="http://forums.trossenrobotics.com/newreply.php?do=newreply&amp;p=21041"><IMG 
+            alt="Reply With Quote" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/quote.gif" 
+            border=0></A> <!-- / controls --></DIV></TD></TR></TBODY></TABLE><!-- / comment #21041 --></DIV><!-- / post #21041 -->
+      <DIV id=lastpost></DIV></DIV><!-- start content table --><!-- / start content table --><!-- controls below postbits -->
+      <TABLE style="MARGIN-TOP: 0px" cellSpacing=0 cellPadding=0 width="100%" 
+      border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallfont><A 
+            href="http://forums.trossenrobotics.com/newreply.php?do=newreply&amp;noquote=1&amp;p=21041" 
+            rel=nofollow><IMG alt=Comment 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/comment.png" 
+            border=0></A></TD></TR></TBODY></TABLE><!-- / controls below postbits --><!-- social bookmarking links --><BR>
+      <TABLE class=tborder cellSpacing=1 cellPadding=6 width="100%" align=center 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD class=thead>Bookmarks</TD></TR>
+        <TR>
+          <TD class=alt2 style="PADDING-TOP: 0px">
+            <DIV style="CLEAR: both"></DIV>
+            <UL 
+            style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none">
+              <LI class=smallfont 
+              style="MARGIN-TOP: 6px; FLOAT: left; WIDTH: 25%; min-width: 160px"><A 
+              href="http://digg.com/submit?phrase=2&amp;url=http%3A%2F%2Fforums.trossenrobotics.com%2Fshowthread.php%3Ft%3D2284&amp;title=Build+a+robot+gripper+with+force+feedback" 
+              target=socialbookmark><IMG class=inlineimg 
+              alt="Submit Thread to Digg" 
+              src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bookmarksite_digg.gif" 
+              border=0></A> <A style="TEXT-DECORATION: none" 
+              href="http://digg.com/submit?phrase=2&amp;url=http%3A%2F%2Fforums.trossenrobotics.com%2Fshowthread.php%3Ft%3D2284&amp;title=Build+a+robot+gripper+with+force+feedback" 
+              target=socialbookmark>Digg</A> </LI>
+              <LI class=smallfont 
+              style="MARGIN-TOP: 6px; FLOAT: left; WIDTH: 25%; min-width: 160px"><A 
+              href="http://del.icio.us/post?url=http%3A%2F%2Fforums.trossenrobotics.com%2Fshowthread.php%3Ft%3D2284&amp;title=Build+a+robot+gripper+with+force+feedback" 
+              target=socialbookmark><IMG class=inlineimg 
+              alt="Submit Thread to del.icio.us" 
+              src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bookmarksite_delicious.gif" 
+              border=0></A> <A style="TEXT-DECORATION: none" 
+              href="http://del.icio.us/post?url=http%3A%2F%2Fforums.trossenrobotics.com%2Fshowthread.php%3Ft%3D2284&amp;title=Build+a+robot+gripper+with+force+feedback" 
+              target=socialbookmark>del.icio.us</A> </LI>
+              <LI class=smallfont 
+              style="MARGIN-TOP: 6px; FLOAT: left; WIDTH: 25%; min-width: 160px"><A 
+              href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fforums.trossenrobotics.com%2Fshowthread.php%3Ft%3D2284&amp;title=Build+a+robot+gripper+with+force+feedback" 
+              target=socialbookmark><IMG class=inlineimg 
+              alt="Submit Thread to StumbleUpon" 
+              src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bookmarksite_stumbleupon.gif" 
+              border=0></A> <A style="TEXT-DECORATION: none" 
+              href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fforums.trossenrobotics.com%2Fshowthread.php%3Ft%3D2284&amp;title=Build+a+robot+gripper+with+force+feedback" 
+              target=socialbookmark>StumbleUpon</A> </LI>
+              <LI class=smallfont 
+              style="MARGIN-TOP: 6px; FLOAT: left; WIDTH: 25%; min-width: 160px"><A 
+              href="http://slashdot.org/bookmark.pl?title=Build+a+robot+gripper+with+force+feedback&amp;url=http%3A%2F%2Fforums.trossenrobotics.com%2Fshowthread.php%3Ft%3D2284" 
+              target=socialbookmark><IMG class=inlineimg 
+              alt="Submit Thread to Slashdot" 
+              src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bookmarksite_slashdot.gif" 
+              border=0></A> <A style="TEXT-DECORATION: none" 
+              href="http://slashdot.org/bookmark.pl?title=Build+a+robot+gripper+with+force+feedback&amp;url=http%3A%2F%2Fforums.trossenrobotics.com%2Fshowthread.php%3Ft%3D2284" 
+              target=socialbookmark>Slashdot</A> </LI>
+              <LI class=smallfont 
+              style="MARGIN-TOP: 6px; FLOAT: left; WIDTH: 25%; min-width: 160px"><A 
+              href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fforums.trossenrobotics.com%2Fshowthread.php%3Ft%3D2284&amp;title=Build+a+robot+gripper+with+force+feedback" 
+              target=socialbookmark><IMG class=inlineimg 
+              alt="Submit Thread to Google" 
+              src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/bookmarksite_google.gif" 
+              border=0></A> <A style="TEXT-DECORATION: none" 
+              href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fforums.trossenrobotics.com%2Fshowthread.php%3Ft%3D2284&amp;title=Build+a+robot+gripper+with+force+feedback" 
+              target=socialbookmark>Google</A> </LI></UL>
+            <DIV style="CLEAR: both"></DIV></TD></TR></TBODY></TABLE><!-- / social bookmarking links --><!-- lightbox scripts -->
+      <SCRIPT 
+      src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/vbulletin_lightbox.js" 
+      type=text/javascript></SCRIPT>
+
+      <SCRIPT type=text/javascript>
+	<!--
+	vBulletin.register_control("vB_Lightbox_Container", "posts", 1);
+	//-->
+	</SCRIPT>
+<!-- / lightbox scripts --><!-- next / previous links --><BR>
+      <DIV class=smallfont align=center><STRONG>«</STRONG> <A 
+      href="http://forums.trossenrobotics.com/showthread.php?t=2284&amp;goto=nextoldest" 
+      rel=nofollow>Previous Tutorial</A> | <A 
+      href="http://forums.trossenrobotics.com/showthread.php?t=2284&amp;goto=nextnewest" 
+      rel=nofollow>Next Tutorial</A> <STRONG>»</STRONG> </DIV><!-- / next / previous links --><!-- currently active users --><BR>
+      <TABLE class=tborder cellSpacing=1 cellPadding=6 width="100%" align=center 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD class=tcat colSpan=2>Currently Active Users Viewing This 
+            Tutorial: 1 <SPAN class=normal>(0 members and 1 guests)</SPAN> 
+</TD></TR>
+        <TR>
+          <TD class=alt1 colSpan=2><SPAN class=smallfont>&nbsp;</SPAN> 
+        </TD></TR></TBODY></TABLE><!-- end currently active users --><!-- popup menu contents --><BR><!-- thread tools menu -->
+      <DIV class=vbmenu_popup id=threadtools_menu style="DISPLAY: none">
+      <FORM name=threadadminform action=postings.php?t=2284&amp;pollid= 
+      method=post>
+      <TABLE cellSpacing=1 cellPadding=4 border=0>
+        <TBODY>
+        <TR>
+          <TD class=thead>Tutorial Tools<A name=goto_threadtools></A></TD></TR>
+        <TR>
+          <TD class=vbmenu_option><IMG class=inlineimg 
+            alt="Show Printable Version" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/printer.gif"> 
+            <A accessKey=3 
+            href="http://forums.trossenrobotics.com/printthread.php?t=2284" 
+            rel=nofollow>Show Printable Version</A></TD></TR>
+        <TR>
+          <TD class=vbmenu_option><IMG class=inlineimg alt="Email this Page" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/sendtofriend.gif"> 
+            <A 
+            href="http://forums.trossenrobotics.com/sendmessage.php?do=sendtofriend&amp;t=2284" 
+            rel=nofollow>Email this Page</A></TD></TR></TBODY></TABLE></FORM></DIV><!-- / thread tools menu --><!-- **************************************************** --><!-- thread display mode menu -->
+      <DIV class=vbmenu_popup id=displaymodes_menu style="DISPLAY: none">
+      <TABLE cellSpacing=1 cellPadding=4 border=0>
+        <TBODY>
+        <TR>
+          <TD class=thead>Display Modes<A name=goto_displaymodes></A></TD></TR>
+        <TR>
+          <TD class=vbmenu_option title=nohilite><IMG class=inlineimg 
+            alt="Linear Mode" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/mode_linear.gif"> 
+            <STRONG>Linear Mode</STRONG></TD></TR>
+        <TR>
+          <TD class=vbmenu_option><IMG class=inlineimg alt="Hybrid Mode" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/mode_hybrid.gif"> 
+            <A 
+            href="http://forums.trossenrobotics.com/showthread.php?mode=hybrid&amp;t=2284">Switch 
+            to Hybrid Mode</A></TD></TR>
+        <TR>
+          <TD class=vbmenu_option><IMG class=inlineimg alt="Threaded Mode" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/mode_threaded.gif"> 
+            <A 
+            href="http://forums.trossenrobotics.com/showthread.php?p=18675&amp;mode=threaded#post18675">Switch 
+            to Threaded Mode</A></TD></TR></TBODY></TABLE></DIV><!-- / thread display mode menu --><!-- **************************************************** --><!-- **************************************************** --><!-- / popup menu contents --><!-- forum rules and admin links -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+        <TBODY>
+        <TR vAlign=bottom>
+          <TD vAlign=top width="100%">
+            <TABLE class=tborder cellSpacing=1 cellPadding=6 width=210 
+              border=0><THEAD>
+              <TR>
+                <TD class=thead><A style="FLOAT: right" 
+                  onclick="return toggle_collapse('forumrules')" 
+                  href="http://forums.trossenrobotics.com/showthread.php?t=2284#top"><IMG 
+                  id=collapseimg_forumrules alt="" 
+                  src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/collapse_thead.gif" 
+                  border=0></A> Posting Rules </TD></TR></THEAD>
+              <TBODY id=collapseobj_forumrules>
+              <TR>
+                <TD class=alt1 noWrap>
+                  <DIV class=smallfont>
+                  <DIV>You <STRONG>may not</STRONG> post new threads</DIV>
+                  <DIV>You <STRONG>may not</STRONG> post replies</DIV>
+                  <DIV>You <STRONG>may not</STRONG> post attachments</DIV>
+                  <DIV>You <STRONG>may not</STRONG> edit your posts</DIV>
+                  <HR>
+
+                  <DIV><A 
+                  href="http://forums.trossenrobotics.com/misc.php?do=bbcode" 
+                  target=_blank>BB code</A> is <STRONG>On</STRONG></DIV>
+                  <DIV><A 
+                  href="http://forums.trossenrobotics.com/misc.php?do=showsmilies" 
+                  target=_blank>Smilies</A> are <STRONG>On</STRONG></DIV>
+                  <DIV><A 
+                  href="http://forums.trossenrobotics.com/misc.php?do=bbcode#imgcode" 
+                  target=_blank>[IMG]</A> code is <STRONG>On</STRONG></DIV>
+                  <DIV>HTML code is <STRONG>Off</STRONG></DIV>
+                  <HR>
+
+                  <DIV><A 
+                  href="http://forums.trossenrobotics.com/misc.php?do=showrules" 
+                  target=_blank>Forum 
+          Rules</A></DIV></DIV></TD></TR></TBODY></TABLE></TD>
+          <TD class=smallfont align=right>
+            <TABLE cellSpacing=0 cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <DIV class=smallfont 
+                  style="WHITE-SPACE: nowrap; TEXT-ALIGN: left">
+                  <FORM action=forumdisplay.php method=get><INPUT type=hidden 
+                  name=s> <INPUT type=hidden name=daysprune> <STRONG>Forum 
+                  Jump</STRONG><BR><SELECT onchange=this.form.submit(); name=f> 
+                    <OPTGROUP label="Site Areas"> <OPTION value=cp>User 
+                      Control Panel</OPTION> <OPTION value=pm>Private 
+                      Messages</OPTION> <OPTION 
+                      value=subs>Subscriptions</OPTION> <OPTION value=wol>Who's 
+                      Online</OPTION> <OPTION value=search>Search 
+                      Forums</OPTION> <OPTION value=home>Forums Home</OPTION> 
+                    </OPTGROUP> <OPTGROUP label=Forums> <OPTION class=fjdpth0 
+                      value=22>Robotics</OPTION> <OPTION class=fjdpth1 
+                      value=101>&nbsp; &nbsp; Project Showcase</OPTION> <OPTION 
+                      class=fjdpth1 value=9>&nbsp; &nbsp; Robotics General 
+                      Discussion</OPTION> <OPTION class=fjdpth1 value=106>&nbsp; 
+                      &nbsp; Humanoids, Walkers &amp; Crawlers</OPTION> <OPTION 
+                      class=fjdpth1 value=121>&nbsp; &nbsp; Mech 
+                      Warfare</OPTION> <OPTION class=fjdpth1 value=116>&nbsp; 
+                      &nbsp; Rovers</OPTION> <OPTION class=fjdpth1 
+                      value=21>&nbsp; &nbsp; Software and Programming</OPTION> 
+                      <OPTION class=fjdpth1 value=117>&nbsp; &nbsp; TRS Open 
+                      Source Project</OPTION> <OPTION class=fjdpth1 
+                      value=31>&nbsp; &nbsp; I/O Boards and Controllers</OPTION> 
+                      <OPTION class=fjdpth1 value=36>&nbsp; &nbsp; 
+                      Sensors</OPTION> <OPTION class=fjdpth1 value=102>&nbsp; 
+                      &nbsp; Actuators</OPTION> <OPTION class=fjdpth1 
+                      value=52>&nbsp; &nbsp; Mechanics / Construction</OPTION> 
+                      <OPTION class=fjdpth1 value=47>&nbsp; &nbsp; Brains of my 
+                      Robot</OPTION> <OPTION class=fjdpth1 value=63>&nbsp; 
+                      &nbsp; Power</OPTION> <OPTION class=fjdpth1 
+                      value=125>&nbsp; &nbsp; Test Forum</OPTION> <OPTION 
+                      class=fjdpth0 value=118>Community Tutorials</OPTION> 
+                      <OPTION class=fjdpth1 value=120>&nbsp; &nbsp; Tutorial 
+                      Drafts</OPTION> <OPTION class=fjsel value=119 
+                      selected>&nbsp; &nbsp; Published Tutorials</OPTION> 
+                      <OPTION class=fjdpth2 value=128>&nbsp; &nbsp; &nbsp; 
+                      &nbsp; How To:</OPTION> <OPTION class=fjdpth2 
+                      value=129>&nbsp; &nbsp; &nbsp; &nbsp; 
+                      Introduction</OPTION> <OPTION class=fjdpth2 
+                      value=130>&nbsp; &nbsp; &nbsp; &nbsp; Project 
+                      Profile</OPTION> <OPTION class=fjdpth2 value=131>&nbsp; 
+                      &nbsp; &nbsp; &nbsp; Product Feature / Demo</OPTION> 
+                      <OPTION class=fjdpth2 value=132>&nbsp; &nbsp; &nbsp; 
+                      &nbsp; Mod / Hack</OPTION> <OPTION class=fjdpth2 
+                      value=133>&nbsp; &nbsp; &nbsp; &nbsp; Programming</OPTION> 
+                      <OPTION class=fjdpth0 value=122>Community Product 
+                      Reviews</OPTION> <OPTION class=fjdpth1 value=123>&nbsp; 
+                      &nbsp; Product Review Drafts</OPTION> <OPTION 
+                      class=fjdpth1 value=124>&nbsp; &nbsp; Published Product 
+                      Reviews</OPTION> <OPTION class=fjdpth0 
+                      value=103>Other</OPTION> <OPTION class=fjdpth1 
+                      value=115>&nbsp; &nbsp; Off Topic</OPTION> <OPTION 
+                      class=fjdpth1 value=66>&nbsp; &nbsp; Feedback and 
+                      Suggestions</OPTION> <OPTION class=fjdpth1 
+                      value=105>&nbsp; &nbsp; Projects For Request and/or 
+                      Sale</OPTION> <OPTION class=fjdpth1 value=104>&nbsp; 
+                      &nbsp; Garage Sale</OPTION> <OPTION class=fjdpth0 
+                      value=81>RFID Development</OPTION> <OPTION class=fjdpth1 
+                      value=82>&nbsp; &nbsp; RFID Development</OPTION> 
+                  </OPTGROUP></SELECT><INPUT class=button type=submit value=Go> 
+                  </FORM></DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!-- /forum rules and admin links --><BR>
+      <TABLE class=tborder cellSpacing=1 cellPadding=6 width="100%" align=center 
+      border=0>
+        <THEAD>
+        <TR>
+          <TD class=tcat width="100%" colSpan=5><A style="FLOAT: right" 
+            onclick="return toggle_collapse('similarthreads')" 
+            href="http://forums.trossenrobotics.com/showthread.php?t=2284#top"><IMG 
+            id=collapseimg_similarthreads alt="" 
+            src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/collapse_tcat.gif" 
+            border=0></A> Similar Threads<A name=similarthreads></A> 
+        </TD></TR></THEAD>
+        <TBODY id=collapseobj_similarthreads>
+        <TR class=thead align=middle>
+          <TD class=thead width="40%">Tutorial</TD>
+          <TD class=thead noWrap width="15%">Tutorial Starter</TD>
+          <TD class=thead width="20%">Category</TD>
+          <TD class=thead width="5%">Comments</TD>
+          <TD class=thead width="20%">Last Post</TD></TR>
+        <TR>
+          <TD class=alt1 align=left><SPAN class=smallfont><SPAN 
+            style="COLOR: blue"><B>Question(s)</B></SPAN> <A 
+            title="I'm thinking I'm blow hardy enough to write an eductional book on robotics. &#10; &#10;anything you think I need to put in it? &#10; &#10;DB" 
+            href="http://forums.trossenrobotics.com/showthread.php?t=2023">Writing 
+            an educatonal book on robotics</A></SPAN> </TD>
+          <TD class=alt2 noWrap><SPAN class=smallfont>darkback2</SPAN></TD>
+          <TD class=alt1 noWrap><SPAN class=smallfont>Robotics General 
+            Discussion</SPAN></TD>
+          <TD class=alt2 align=middle><SPAN class=smallfont>101</SPAN></TD>
+          <TD class=alt1 align=right><SPAN class=smallfont>09-01-2008 <SPAN 
+            class=time>07:13 PM</SPAN></SPAN></TD></TR>
+        <TR>
+          <TD class=alt1 align=left><SPAN class=smallfont><SPAN 
+            style="COLOR: green"><B>Contest Entry</B></SPAN> <A 
+            title="Hey, &#10;I have had the idea of building a Robot Blind aid floating around in my head for a while, it is best described as a cross between a white cane..." 
+            href="http://forums.trossenrobotics.com/showthread.php?t=1409">The 
+            eyeRobot: Robot Blind Aid</A></SPAN> </TD>
+          <TD class=alt2 noWrap><SPAN class=smallfont>Shrimpy</SPAN></TD>
+          <TD class=alt1 noWrap><SPAN class=smallfont>Project 
+          Showcase</SPAN></TD>
+          <TD class=alt2 align=middle><SPAN class=smallfont>15</SPAN></TD>
+          <TD class=alt1 align=right><SPAN class=smallfont>08-31-2008 <SPAN 
+            class=time>01:54 PM</SPAN></SPAN></TD></TR>
+        <TR>
+          <TD class=alt1 align=left><SPAN class=smallfont><SPAN 
+            style="COLOR: green"><B>Contest Entry</B></SPAN> <A 
+            title="Hello, &#10; &#10;        My entry for this contest is my butler robot , which I call Chives. I had wanted to build a robot that pours drinks and does other..." 
+            href="http://forums.trossenrobotics.com/showthread.php?t=1978">Butler 
+            Robot</A></SPAN> </TD>
+          <TD class=alt2 noWrap><SPAN class=smallfont>airman00</SPAN></TD>
+          <TD class=alt1 noWrap><SPAN class=smallfont>Project 
+          Showcase</SPAN></TD>
+          <TD class=alt2 align=middle><SPAN class=smallfont>11</SPAN></TD>
+          <TD class=alt1 align=right><SPAN class=smallfont>07-31-2008 <SPAN 
+            class=time>10:28 PM</SPAN></SPAN></TD></TR>
+        <TR>
+          <TD class=alt1 align=left><SPAN class=smallfont><SPAN 
+            style="COLOR: green"><B>Contest Entry</B></SPAN> <A 
+            title="RC truck robot conversion &#10;  &#10;  &#10;http://i88.photobucket.com/albums/k199/OracsRevenge/DSCN1143s.jpg &#10;  &#10;This project covers the conversion of a cheap..." 
+            href="http://forums.trossenrobotics.com/showthread.php?t=1987">RC 
+            truck robot conversion</A></SPAN> </TD>
+          <TD class=alt2 noWrap><SPAN class=smallfont>Orac</SPAN></TD>
+          <TD class=alt1 noWrap><SPAN class=smallfont>Project 
+          Showcase</SPAN></TD>
+          <TD class=alt2 align=middle><SPAN class=smallfont>23</SPAN></TD>
+          <TD class=alt1 align=right><SPAN class=smallfont>07-11-2008 <SPAN 
+            class=time>06:08 AM</SPAN></SPAN></TD></TR>
+        <TR>
+          <TD class=alt1 align=left><SPAN class=smallfont><SPAN 
+            style="COLOR: green"><B>Contest Entry</B></SPAN> <A 
+            title="Goal: &#10;Create an autonomous robot that has the potential of fetching me a refreshing adult beverage automatically or manually. Secondary goals..." 
+            href="http://forums.trossenrobotics.com/showthread.php?t=1502">Robot 
+            Buddy</A></SPAN> </TD>
+          <TD class=alt2 noWrap><SPAN class=smallfont>markavdb</SPAN></TD>
+          <TD class=alt1 noWrap><SPAN class=smallfont>Project 
+          Showcase</SPAN></TD>
+          <TD class=alt2 align=middle><SPAN class=smallfont>9</SPAN></TD>
+          <TD class=alt1 align=right><SPAN class=smallfont>07-03-2008 <SPAN 
+            class=time>05:44 PM</SPAN></SPAN></TD></TR></TBODY></TABLE><BR><!-- temp -->
+      <DIV 
+    style="DISPLAY: none"><!-- thread rate --><!-- / thread rate --></DIV></TD></TR></TBODY></TABLE><!-- Do NOT remove this copyright notice. Doing so is a violation of your user agreement! -->
+<DIV class=smallfont align=center>Powered by <A 
+href="http://www.vbadvanced.com/" target=_blank>vBadvanced</A> CMPS v3.1.0</DIV>
+<SCRIPT type=text/javascript>ame_toggle_view({other : 'true',post : 'true',blog : 'true',group : 'true',vm : 'true',sig : 'true'});</SCRIPT>
+<BR>
+<DIV class=smallfont align=center>All times are GMT -5. The time now is <SPAN 
+class=time>05:29 AM</SPAN>.</DIV><BR></DIV></DIV></DIV><!-- / close content container --><!-- /content area table -->
+<FORM action=vb_index.php method=get>
+<TABLE class=page cellSpacing=0 cellPadding=6 width="100%" align=center 
+border=0>
+  <TBODY>
+  <TR>
+    <TD class=tfoot align=right width="100%">
+      <DIV class=smallfont><STRONG><A accessKey=9 
+      href="http://forums.trossenrobotics.com/sendmessage.php" 
+      rel=nofollow>Contact Us</A> - <A 
+      href="http://forums.trossenrobotics.com/">Trossen Robotics Community</A> - 
+      <A href="http://forums.trossenrobotics.com/archive/index.php">Archive</A> 
+      - <A onclick="self.scrollTo(0, 0); return false;" 
+      href="http://forums.trossenrobotics.com/showthread.php?t=2284#top">Top</A> 
+      </STRONG></DIV></TD></TR></TBODY></TABLE><BR>
+<DIV align=center>
+<DIV class=smallfont 
+align=center><!-- Do not remove this copyright notice -->Powered by vBulletin® 
+Version 3.8.1<BR>Copyright ©2000 - 2009, Jelsoft Enterprises Ltd. <!-- Do not remove this copyright notice --></DIV>
+<DIV class=smallfont align=center><!-- Do not remove <img src="http://forums.trossenrobotics.com/cron.php?rand=1233570581" alt="" width="1" height="1" border="0" /> or your scheduled tasks will cease to function --><IMG 
+height=1 alt="" 
+src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/cron.gif" 
+width=1 border=0> <!-- Do not remove <img src="http://forums.trossenrobotics.com/cron.php?rand=1233570581" alt="" width="1" height="1" border="0" /> or your scheduled tasks will cease to function --><BR><A 
+href="http://www.thevbgeek.com/" target=_blank>Tutorial powered by GARS</A> 
+2.1.8m ©2005-2006 </DIV></DIV></FORM>
+<SCRIPT type=text/javascript>
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//-->
+</SCRIPT>
+
+<SCRIPT 
+src="[How To] Build a robot gripper with force feedback - Trossen Robotics Community_files/urchin.htm" 
+type=text/javascript>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+_uacct = "UA-1812945-2";
+urchinTracker();
+</SCRIPT>
+<!-- vBadvanced 6-9-5-2-7 --></DIV></BODY></HTML>

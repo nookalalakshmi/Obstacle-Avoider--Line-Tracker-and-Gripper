@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0060)http://www.cuug.ab.ca/lapierrs/creative/lego/arm2/index.html -->
+<HTML><HEAD><TITLE>Lego Projects: Robot Arm v.2</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="Soleil Lapierre" name=author>
+<META content="© 2003 Soleil Lapierre" name=copyright>
+<META content="text/html; charset=ISO-8859-1" HTTP_EQUIV="content-type">
+<META content="A Lego robot arm." name=description>
+<META content=Soleil,Lapierre,lego,robot,arm name=keywords>
+<META content=TRUE name=MSSmartTagsPreventParsing><LINK 
+href="Lego Projects Robot Arm v_2_files/headings.css" type=text/css 
+rel=stylesheet><LINK href="Lego Projects Robot Arm v_2_files/lego.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY><!--=========================================================--><!-- This document was made by Soleil Lapierre, so buzz off! --><!-- You can look at the HTML formatting for ideas, but no   --><!-- fair stealing my graphics or text without asking.       --><!--=========================================================-->
+<H1 class=ctr>Lego Models:<BR>Robot Arm v.2</H1>
+<P class=ctr><A 
+href="http://www.cuug.ab.ca/lapierrs/creative/lego/arm2/overview_left.jpg"><IMG 
+height=113 src="Lego Projects Robot Arm v_2_files/overview_left_thumb.jpg" 
+width=150 align=left></A> <A 
+href="http://www.cuug.ab.ca/lapierrs/creative/lego/arm2/overview_right.jpg"><IMG 
+height=113 src="Lego Projects Robot Arm v_2_files/overview_right_thumb.jpg" 
+width=150 align=left></A> <BR clear=all></P>
+<P>After the surprising success of my <A 
+href="http://www.cuug.ab.ca/lapierrs/creative/lego/arm1/index.html">previous 
+robot arm</A> I decided to rebuild it from scratch, this time with an improved 
+gripper and powered by an electric motor. I wanted to get incrementally closer 
+to making a Lego version of Radio Shack's Armatron toy. </P>
+<P>I kept the basic structure of the arm the same but increased its size. I used 
+universal joints for all places where the power train needed to flex (ie, at the 
+joints) because I found the method of using a free-wheeling crown gear 
+introduced lateral stress on joints, caused undesirable secondary motion when a 
+joint moved, and wasn't very strong - the crown gears would often slip under 
+high torque. </P>
+<P>This time around I bought a couple of gear packs from Lego shop-at-home to 
+get some gear types I didn't have before and to increase my supply. I totally 
+redesigned the wrist and gripper to take advantage of the large turntable gear, 
+and I'm really proud of how that part turned out. I also designed a manual 
+transmission in the base of the arm so that all the movements could be powered 
+by a single motor, as in the Armatron. </P>
+<P>This arm has five degrees of freedom: </P>
+<OL>
+  <LI>The gripping claw opens and closes, and is strong enough to pick up a 
+  small Lego model. 
+  <LI>The claw rotates 360°. 
+  <LI>The wrist bends up and down and has a range of about 120°. 
+  <LI>The elbow bends horizontally and has about 120° of freedom. Although I 
+  constructed both the wrist and elbow joints to be able to flex through 180°, 
+  in practice they are limited by the use of universal joints to pass power 
+  through the joint. 
+  <LI>The shoulder rotates the arm up and down and has a range of about 90 
+  degrees. </LI></OL>
+<P>The transmission has an engage-disengage control for each axis of motion, and 
+bidirectional motion is accomplished by reversing the electric motor. This 
+limits the ability to move multiple axes at once. Overcoming this would have 
+required a transmission twice as complex, and since this was my first time 
+building a transmission I wanted to keep it as simple as possible. </P>
+<P>One more degree of freedom is needed to equal the Armatron - a rotating base. 
+I could have mounted the whole arm on a rotating base and also powered that with 
+the motor, but then the controls would move with the arm, which is icky. Having 
+stationary controls would require passing five power axes (or one plus four 
+control channels) through a swivel joint, and I have not yet figured out a way 
+to do that with Lego. In the Armatron it is accomplished with nested 
+double-sided ring gears, but Lego does not have such gears. Another way - much 
+simpler - would be to use a seperate motor for each joint. This seems to be the 
+way most Lego robot arms are built. But I only have one motor and I wanted the 
+challenge of running everything with it. The sacrifice was losing the moving 
+base. </P>
+<P>This arm uses about 85 gears, and I really had to gear down to get sufficient 
+torque to move everything and pick up objects. As a result, the arm's motion is 
+deathly slow. This is another problem that could be overcome by using multiple 
+motors. </P>
+<P>The Lego motor I used has a shaft speed of 350RPM, or 5.833 rotations per 
+second. This table shows the gear ratio and effective movement rate for each 
+part of the arm: </P>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TH>Joint</TH>
+    <TH>Cumulative Gear Ratio (Joint axle to Motor)</TH>
+    <TH>Time for Full Arc</TH>
+    <TH>Comments</TH></TR>
+  <TR>
+    <TD>Grip open/close</TD>
+    <TD align=middle>1:2592</TD>
+    <TD>~80 seconds</TD>
+    <TD>Conservative estimate of 60° difference between open and closed 
+      positions. Also there is some play in the mechanism.</TD></TR>
+  <TR>
+    <TD>Wrist rotate</TD>
+    <TD align=middle>1:26244</TD>
+    <TD>75 minutes!</TD>
+    <TD>For a full 360° rotation.</TD></TR>
+  <TR>
+    <TD>Wrist up/down</TD>
+    <TD align=middle>1:43740</TD>
+    <TD>40 minutes</TD>
+    <TD>For an estimated 120° of motion.</TD></TR>
+  <TR>
+    <TD>Elbow left/right</TD>
+    <TD align=middle>1:14580</TD>
+    <TD>15 minutes</TD>
+    <TD>For an estimated 120° of motion.</TD></TR>
+  <TR>
+    <TD>Shoulder up/down</TD>
+    <TD align=middle>1:37800</TD>
+    <TD>27 minutes</TD>
+    <TD>For an estimated 90° of motion.</TD></TR></TBODY></TABLE>
+<P>There are still plenty of things that can be improved in this design, but for 
+now I think I'm done with building robot arms in Lego. At least until I get some 
+more motors. </P>
+<P>Here are some more pictures of the arm with discussion. At the bottom I have 
+provided LDraw/MLcad files showing the construction of the gripper and the power 
+train. </P>
+<P class=ctr><A 
+href="http://www.cuug.ab.ca/lapierrs/creative/lego/arm2/grip_open.jpg"><IMG 
+height=113 src="Lego Projects Robot Arm v_2_files/grip_open_thumb.jpg" width=150 
+align=left></A> <A 
+href="http://www.cuug.ab.ca/lapierrs/creative/lego/arm2/grip_closed.jpg"><IMG 
+height=113 src="Lego Projects Robot Arm v_2_files/grip_closed_thumb.jpg" 
+width=150 align=left></A> <BR clear=all></P>
+<P>The above images show the gripper in its fully open and fully closed 
+positions. At its widest it can fit about ten studs between the two halves. </P>
+<P class=ctr><A 
+href="http://www.cuug.ab.ca/lapierrs/creative/lego/arm2/wrist_left.jpg"><IMG 
+height=113 src="Lego Projects Robot Arm v_2_files/wrist_left_thumb.jpg" 
+width=150 align=left></A> <A 
+href="http://www.cuug.ab.ca/lapierrs/creative/lego/arm2/wrist_right.jpg"><IMG 
+height=113 src="Lego Projects Robot Arm v_2_files/wrist_right_thumb.jpg" 
+width=150 align=left></A> <BR clear=all></P>
+<P>Here are closeups of the wrist joint from the left and right sides. The large 
+grey gear on the left controls the wrist elevation and is driven from the axle 
+on the underside of the blue section of the arm. The gears on the right side of 
+the arm control the wrist rotation; they move a small gear inside the wrist 
+turntable that causes the black half to rotate while the clear half remains 
+stationary (not shown because it's mostly hidden by other bricks; see the MLcad 
+file below if you want to see how it's built). In the second picture you can 
+clearly see the black worm gear that opens and closes the grip. </P>
+<P class=ctr><A 
+href="http://www.cuug.ab.ca/lapierrs/creative/lego/arm2/elbow_left.jpg"><IMG 
+height=113 src="Lego Projects Robot Arm v_2_files/elbow_left_thumb.jpg" 
+width=150 align=left></A> <A 
+href="http://www.cuug.ab.ca/lapierrs/creative/lego/arm2/elbow_right.jpg"><IMG 
+height=113 src="Lego Projects Robot Arm v_2_files/elbow_right_thumb.jpg" 
+width=150 align=left></A> <BR clear=all></P>
+<P>The above pictures show detail of the left and right sides of the elbow 
+joint. Most of the gears inside the frame of the upper arm (yellow) are for 
+converting the horizontal plane of axles to a vertical plane so that they can 
+pass through the elbow joint. The additional gears on the right (stud) side 
+nearer the joint are for actually moving the elbow joint. The blue gear on top 
+is joined by studs to the forearm (blue) and moves it directly. </P>
+<P class=ctr><A 
+href="http://www.cuug.ab.ca/lapierrs/creative/lego/arm2/shoulder_inside.jpg"><IMG 
+height=113 src="Lego Projects Robot Arm v_2_files/shoulder_inside_thumb.jpg" 
+width=150 align=left></A> <A 
+href="http://www.cuug.ab.ca/lapierrs/creative/lego/arm2/trans1.jpg"><IMG 
+height=113 src="Lego Projects Robot Arm v_2_files/trans1_thumb.jpg" width=150 
+align=left></A> <A 
+href="http://www.cuug.ab.ca/lapierrs/creative/lego/arm2/trans2.jpg"><IMG 
+height=113 src="Lego Projects Robot Arm v_2_files/trans2_thumb.jpg" width=150 
+align=left></A> <BR clear=all></P>
+<P>Here are three views of the base of the arm and the transmission and control 
+panel. The first image shows the inside of the shoulder joint as seen from 
+below. Each of the four axles that run to the shoulder is converted from 
+vertical to horizontal by two small crown gears inside the black and red housing 
+you see inside the yellow box, and then feeds through a universal joint aligned 
+with the shoulder's axis of rotation and into the yellow upper arm. </P>
+<P>The second image shows details of the main section of the transmission. The 
+electric motor on the right powers two axles that run horizontally through the 
+transmission from right to left. Each of these two axles can be coupled to 
+either of two of the four vertical axles leading upwards by pushing one of the 
+controls on the near face of the arm base. One control is shown so engaged here. 
+Power feeds from the horizontal powered axle through two gears attached to the 
+grey bar to the horizontal black worm gear. Pushing the control inward tilts the 
+grey bar more towards the vertical, causing the worm gear to engage with the 
+gear attached to the vertical shaft. This mechanism takes up a lot of space 
+which is why the transmission is split into upper and lower halves, each 
+controlling two axles. </P>
+<P>The third image shows the left side of the base, with the fifth control for 
+the shoulder joint. This one is simpler. The lower transmission axle drives one 
+of two side-by-side double-beveled gears. Pushing the control rod in brings two 
+offset small double-beveled gears into contact with the two larger ones, 
+transmitting the power into the small gearbox that drives the chains that move 
+the large yellow gear, which directly moves the shoulder. This gear box includes 
+worm gears, which effectively act as brakes to prevent the shoulder from moving 
+under the weight of the arm and its load. You can see a black chain disappearing 
+up into the red part of the base and then another one appearing nearby to drive 
+the yellow gear; there is more reduction going on between the two chains inside 
+the red housing. </P>
+<P>This is my first attempt at designing any kind of transmission. It works 
+well, but I'm sure I could do much better in terms of simplicity, compactness 
+and capability. </P>
+<P class=ctr><A 
+href="http://www.cuug.ab.ca/lapierrs/creative/lego/arm2/minimum.jpg"><IMG 
+height=113 src="Lego Projects Robot Arm v_2_files/minimum_thumb.jpg" width=150 
+align=left></A> <A 
+href="http://www.cuug.ab.ca/lapierrs/creative/lego/arm2/maximum.jpg"><IMG 
+height=113 src="Lego Projects Robot Arm v_2_files/maximum_thumb.jpg" width=150 
+align=left></A> <BR clear=all></P>
+<P>The lowest the arm can reach is about 9 studs below the base, and the highest 
+it can reach is about 84 studs above the base. </P>
+<P><IMG height=288 src="Lego Projects Robot Arm v_2_files/grab1.jpg" width=384 
+align=left> <IMG height=288 src="Lego Projects Robot Arm v_2_files/grab2.jpg" 
+width=384 align=left> </P>
+<P>Reaching for a small ship... Grabinated! </P>
+<P>The blue one-minifig craft above is about the limit of the arm's lifting 
+ability because anything heavier will destroy the claw mechanism. I could have 
+strengthened the construction to compensate but that would have reduced the 
+clearance around the claw halves and would have made it heavier. </P>
+<H3>MLcad files</H3>
+<P>Note that neither of these model files contains step-by-step instructions. 
+They're meant to be looked at in MLcad and pulled apart. Make sure you have all 
+the latest parts packs installed in LDraw! </P>
+<P><A href="http://www.cuug.ab.ca/lapierrs/creative/lego/arm2/grip.ldr"><IMG 
+height=358 src="Lego Projects Robot Arm v_2_files/grip.jpg" width=256 
+align=left></A> Here's an LDraw/MLcad file containing the complete structure of 
+the wrist joint and gripper. There are two problems with the gripper as shown. 
+One is that it's weak - forcing it open will pop off a brick that anchors the 
+central worm gear in place. The second is that there is room for the worm gear 
+to slide along its axle, which means that there is significant play in the 
+mechanism. Even so, I'm very happy with this part of the model. I decided not to 
+try to fix these problems because it would have made the gripper bulkier and 
+heavier. <BR clear=all></P>
+<P><A 
+href="http://www.cuug.ab.ca/lapierrs/creative/lego/arm2/powertrain.ldr"><IMG 
+height=352 src="Lego Projects Robot Arm v_2_files/powertrain.jpg" width=384 
+align=right></A> Here's another model definition for LDraw or MLcad (I recommend 
+MLcad for this one because it contains some non-Lego primitives). This one shows 
+the complete power train of the arm - all the moving parts. The rest of the 
+construction is left out for clarity and is left as an exercise for the reader. 
+There are a few things to note about this model: </P>
+<OL>
+  <LI>Axle lengths are not exactly as they are in the real arm. 
+  <LI>LDraw lacks models for four types of gears I used in the arm. Specifically 
+  the 9-tooth (red), 15-tooth (blue) and 21-tooth (yellow) large-toothed gears 
+  from sets like <A href="http://guide.lugnet.com/set/803_2">803</A>, and a 
+  36-tooth double-beveled gear from <A 
+  href="http://guide.lugnet.com/set/10076">10076</A>. I've used the nearest 
+  equivalents I could find in the LDraw part set. The colored gears are easily 
+  spotted. The 36-tooth gear is represented in this file by the first 40-tooth 
+  gear along the path from the motor to the yellow shoulder gear (the large grey 
+  gear near the bottom left of the image at right). 
+  <LI>LDraw also lacks models for the type of chain/tread that fits on the 
+  large-toothed gears. This is the kind of chain used as caterpillar treads in 
+  sets like <A href="http://guide.lugnet.com/set/780">780</A>. I've used red 
+  belts generated by MLcad to show where these chains are used in the arm model. 
+
+  <LI>I left out the transmission controls. They are represented here by the 
+  five blue axles. Pushing on them engages axles, as shown, and pulling on them 
+  disengages. </LI></OL>
+<HR>
+
+<P><SMALL>You are at Soleil's home page <A 
+href="http://www.cuug.ab.ca/lapierrs/index.html">Index</A> -&gt; <A 
+href="http://www.cuug.ab.ca/lapierrs/creative/index.html">Creative</A> -&gt; <A 
+href="http://www.cuug.ab.ca/lapierrs/creative/lego/index.html">Lego</A> -&gt; 
+Robot Arm v.2. </SMALL></P>
+<P><SMALL>Copyright (c),© 2003 by <A href="mailto:lapierrs@cuug.ab.ca">Soleil 
+Lapierre</A>.<BR>Last updated November 21, 2003. </SMALL></P></BODY></HTML>

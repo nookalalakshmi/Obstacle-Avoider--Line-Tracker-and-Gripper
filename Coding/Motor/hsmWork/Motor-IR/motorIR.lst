@@ -1,0 +1,147 @@
+   1               		.file	"motorIR.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	__vector_1
+  20               	__vector_1:
+  21               	.LFB7:
+  22               	.LM1:
+  23 0000 1F92      		push __zero_reg__
+  24 0002 0F92      		push r0
+  25 0004 0FB6      		in r0,__SREG__
+  26 0006 0F92      		push r0
+  27 0008 1124      		clr __zero_reg__
+  28               	/* prologue: Signal */
+  29               	/* frame size = 0 */
+  30               	.LM2:
+  31 000a C29A      		sbi 56-32,2
+  32               	/* epilogue start */
+  33               	.LM3:
+  34 000c 0F90      		pop r0
+  35 000e 0FBE      		out __SREG__,r0
+  36 0010 0F90      		pop r0
+  37 0012 1F90      		pop __zero_reg__
+  38 0014 1895      		reti
+  39               	.LFE7:
+  41               	.global	main
+  43               	main:
+  44               	.LFB8:
+  45               	.LM4:
+  46               	/* prologue: function */
+  47               	/* frame size = 0 */
+  48               	.LM5:
+  49 0016 87EC      		ldi r24,lo8(-57)
+  50 0018 87BB      		out 55-32,r24
+  51               	.LM6:
+  52 001a 81EF      		ldi r24,lo8(-15)
+  53 001c 81BB      		out 49-32,r24
+  54               	.LM7:
+  55 001e C29A      		sbi 56-32,2
+  56 0020 80E2      		ldi r24,lo8(20000)
+  57 0022 9EE4      		ldi r25,hi8(20000)
+  58               	.LVL0:
+  59               	.LBB18:
+  60               	.LBB19:
+  61               	.LBB20:
+  62               	.LBB21:
+  63               	.LM8:
+  64 0024 29E1      		ldi r18,lo8(25)
+  65 0026 30E0      		ldi r19,hi8(25)
+  66               	.L4:
+  67 0028 F901      		movw r30,r18
+  68               	.LVL1:
+  69               	/* #APP */
+  70               	 ;  105 "e:/winavr-200812057/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  71 002a 3197      		1: sbiw r30,1
+  72 002c 01F4      		brne 1b
+  73               	 ;  0 "" 2
+  74               	/* #NOAPP */
+  75               	.LBE21:
+  76               	.LBE20:
+  77               	.LM9:
+  78 002e 0197      		sbiw r24,1
+  79               	.LM10:
+  80 0030 01F4      		brne .L4
+  81               	.LBE19:
+  82               	.LBE18:
+  83               	.LM11:
+  84 0032 C298      		cbi 56-32,2
+  85               	.LM12:
+  86 0034 929A      		sbi 50-32,2
+  87               	.LM13:
+  88 0036 939A      		sbi 50-32,3
+  89               	.LM14:
+  90 0038 80E4      		ldi r24,lo8(64)
+  91               	.LVL2:
+  92 003a 8BBF      		out 91-32,r24
+  93               	.LM15:
+  94 003c 82E0      		ldi r24,lo8(2)
+  95 003e 85BF      		out 85-32,r24
+  96               	.LM16:
+  97               	/* #APP */
+  98               	 ;  107 "motorIR.c" 1
+  99 0040 7894      		sei
+ 100               	 ;  0 "" 2
+ 101               	/* #NOAPP */
+ 102               	.LBB22:
+ 103               	.LBB23:
+ 104               	.LBB24:
+ 105               	.LBB25:
+ 106               	.LM17:
+ 107 0042 29E1      		ldi r18,lo8(25)
+ 108 0044 30E0      		ldi r19,hi8(25)
+ 109               	.LVL3:
+ 110               	.L6:
+ 111               	.LBE25:
+ 112               	.LBE24:
+ 113               	.LBE23:
+ 114               	.LBE22:
+ 115               	.LM18:
+ 116 0046 C298      		cbi 56-32,2
+ 117 0048 80E2      		ldi r24,lo8(20000)
+ 118 004a 9EE4      		ldi r25,hi8(20000)
+ 119               	.L5:
+ 120               	.LBB29:
+ 121               	.LBB28:
+ 122               	.LBB27:
+ 123               	.LBB26:
+ 124               	.LM19:
+ 125 004c F901      		movw r30,r18
+ 126               	.LVL4:
+ 127               	/* #APP */
+ 128               	 ;  105 "e:/winavr-200812057/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 129 004e 3197      		1: sbiw r30,1
+ 130 0050 01F4      		brne 1b
+ 131               	 ;  0 "" 2
+ 132               	/* #NOAPP */
+ 133               	.LBE26:
+ 134               	.LBE27:
+ 135               	.LM20:
+ 136 0052 0197      		sbiw r24,1
+ 137               	.LM21:
+ 138 0054 01F4      		brne .L5
+ 139 0056 00C0      		rjmp .L6
+ 140               	.LBE28:
+ 141               	.LBE29:
+ 142               	.LFE8:
+ 176               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 motorIR.c
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/ccN1KToW.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/ccN1KToW.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/ccN1KToW.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/ccN1KToW.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/ccN1KToW.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/ccN1KToW.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/ccN1KToW.s:20     .text:00000000 __vector_1
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/ccN1KToW.s:43     .text:00000016 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

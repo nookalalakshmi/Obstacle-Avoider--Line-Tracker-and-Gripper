@@ -1,0 +1,172 @@
+   1               	# 1 "boot.S"
+   1               	;-the routine writes one page of data from RAM to Flash
+   0               	
+   0               	
+   2               	; the first data location in RAM is pointed to by the Y pointer
+   3               	; the first data location in Flash is pointed to by the Z-pointer
+   4               	;-error handling is not included
+   5               	;-the routine must be placed inside the boot space
+   6               	; (at least the Do_spm sub routine). Only code inside NRWW section can
+   7               	; be read during self-programming (page erase and page write).
+   8               	;-registers used: r0, r1, temp1 (r16), temp2 (r17), looplo (r24),
+   9               	; loophi (r25), spmcrval (r20)
+  10               	; storing and restoring of registers is not included in the routine
+  11               	; register usage can be optimized at the expense of code size
+  12               	;-It is assumed that either the interrupt table is moved to the Boot
+  13               	; loader section or that the interrupts are disabled.
+  14               	.equ PAGESIZEB = PAGESIZE*2 ;PAGESIZEB is page size in BYTES, not words
+  15               	.org SMALLBOOTSTART
+  16               	Write_page:
+  17               	; page erase
+  18:boot.S        **** ldi spmcrval, (1<<PGERS) | (1<<SPMEN)
+  19:boot.S        **** rcallDo_spm
+  20               	; re-enable the RWW section
+  21:boot.S        **** ldi spmcrval, (1<<RWWSRE) | (1<<SPMEN)
+  22:boot.S        **** rcallDo_spm
+  23               	; transfer data from RAM to Flash page buffer
+  24:boot.S        **** ldi looplo, low(PAGESIZEB) ;init loop variable
+  25:boot.S        **** ldi loophi, high(PAGESIZEB) ;not required for PAGESIZEB<=256
+  26               	Wrloop:
+  27:boot.S        **** ld r0, Y+
+  28:boot.S        **** ld r1, Y+
+  29:boot.S        **** ldi spmcrval, (1<<SPMEN)
+  30:boot.S        **** rcallDo_spm
+  31:boot.S        **** adiw ZH:ZL, 2
+  32:boot.S        **** sbiw loophi:looplo, 2 ;use subi for PAGESIZEB<=256
+  33:boot.S        **** brne Wrloop
+  34               	; execute page write
+  35:boot.S        **** subi ZL, low(PAGESIZEB) ;restore pointer
+  36:boot.S        **** sbci ZH, high(PAGESIZEB) ;not required for PAGESIZEB<=256
+  37:boot.S        **** ldi spmcrval, (1<<PGWRT) | (1<<SPMEN)
+  38:boot.S        **** rcallDo_spm
+  39               	; re-enable the RWW section
+  40:boot.S        **** ldi spmcrval, (1<<RWWSRE) | (1<<SPMEN)
+  41:boot.S        **** rcallDo_spm
+  42               	; read back and check, optional
+  43:boot.S        **** ldi looplo, low(PAGESIZEB) ;init loop variable
+  44:boot.S        **** ldi loophi, high(PAGESIZEB) ;not required for PAGESIZEB<=256
+  45:boot.S        **** subi YL, low(PAGESIZEB) ;restore pointer
+  46:boot.S        **** sbci YH, high(PAGESIZEB)
+  47               	Rdloop:
+  48:boot.S        **** lpm r0, Z+
+  49:boot.S        **** ld r1, Y+
+  50:boot.S        **** cpse r0, r1
+  51:boot.S        **** rjmp Error
+  52:boot.S        **** sbiw loophi:looplo, 1 ;use subi for PAGESIZEB<=256
+  53:boot.S        **** brne Rdloop
+  54               	220
+  55               	2486T–AVR–05/08
+  56:boot.S        **** ATmega8(L)
+  57               	; return to RWW section
+  58               	; verify that RWW section is safe to read
+  59               	Return:
+  60:boot.S        **** in temp1, SPMCR
+  61:boot.S        **** sbrs temp1, RWWSB ; If RWWSB is set, the RWW section is not
+  62:boot.S        **** ready yet
+  63:boot.S        **** ret
+  64               	; re-enable the RWW section
+  65:boot.S        **** ldi spmcrval, (1<<RWWSRE) | (1<<SPMEN)
+  66:boot.S        **** rcallDo_spm
+  67:boot.S        **** rjmp Return
+  68               	Do_spm:
+  69               	; check for previous SPM complete
+  70               	Wait_spm:
+  71:boot.S        **** in temp1, SPMCR
+  72:boot.S        **** sbrc temp1, SPMEN
+  73:boot.S        **** rjmp Wait_spm
+  74               	; input: spmcrval determines SPM action
+  75               	; disable interrupts if enabled, store status
+  76:boot.S        **** in temp2, SREG
+  77:boot.S        **** cli
+  78               	; check that no EEPROM write access is present
+  79               	Wait_ee:
+  80:boot.S        **** sbic EECR, EEWE
+  81:boot.S        **** rjmp Wait_ee
+  82               	; SPM timed sequence
+  83:boot.S        **** out SPMCR, spmcrval
+  84:boot.S        **** spm
+  85               	; restore SREG (to enable interrupts if originally enabled)
+  86:boot.S        **** out SREG, temp2
+  87:boot.S        **** ret...
+DEFINED SYMBOLS
+C:\Users\ankit\AppData\Local\Temp/ccfKp7bz.s:0      .text:00000000 L0F0
+              boot.S:16     .text:00000000 Write_page
+              boot.S:18     .text:00000000 L0F1
+              boot.S:18     .text:00000000 L0L0
+              boot.S:19     .text:00000000 L0L1
+              boot.S:21     .text:00000000 L0L2
+              boot.S:22     .text:00000000 L0L3
+              boot.S:24     .text:00000000 L0L4
+              boot.S:25     .text:00000000 L0L5
+              boot.S:26     .text:00000000 Wrloop
+              boot.S:27     .text:00000000 L0L6
+              boot.S:28     .text:00000000 L0L7
+              boot.S:29     .text:00000000 L0L8
+              boot.S:30     .text:00000000 L0L9
+              boot.S:31     .text:00000000 L0L10
+              boot.S:32     .text:00000000 L0L11
+              boot.S:33     .text:00000000 L0L12
+              boot.S:35     .text:00000000 L0L13
+              boot.S:36     .text:00000000 L0L14
+              boot.S:37     .text:00000000 L0L15
+              boot.S:38     .text:00000000 L0L16
+              boot.S:40     .text:00000000 L0L17
+              boot.S:41     .text:00000000 L0L18
+              boot.S:43     .text:00000000 L0L19
+              boot.S:44     .text:00000000 L0L20
+              boot.S:45     .text:00000000 L0L21
+              boot.S:46     .text:00000000 L0L22
+              boot.S:47     .text:00000000 Rdloop
+              boot.S:48     .text:00000000 L0L23
+              boot.S:49     .text:00000000 L0L24
+              boot.S:50     .text:00000000 L0L25
+              boot.S:51     .text:00000000 L0L26
+              boot.S:52     .text:00000000 L0L27
+              boot.S:53     .text:00000000 L0L28
+              boot.S:56     .text:00000000 L0L29
+              boot.S:59     .text:00000000 Return
+              boot.S:60     .text:00000000 L0L30
+              boot.S:61     .text:00000000 L0L31
+              boot.S:62     .text:00000000 L0L32
+              boot.S:63     .text:00000000 L0L33
+              boot.S:65     .text:00000000 L0L34
+              boot.S:66     .text:00000000 L0L35
+              boot.S:67     .text:00000000 L0L36
+              boot.S:68     .text:00000000 Do_spm
+              boot.S:70     .text:00000000 Wait_spm
+              boot.S:71     .text:00000000 L0L37
+              boot.S:72     .text:00000000 L0L38
+              boot.S:73     .text:00000000 L0L39
+              boot.S:76     .text:00000000 L0L40
+              boot.S:77     .text:00000000 L0L41
+              boot.S:79     .text:00000000 Wait_ee
+              boot.S:80     .text:00000000 L0L42
+              boot.S:81     .text:00000000 L0L43
+              boot.S:83     .text:00000000 L0L44
+              boot.S:84     .text:00000000 L0L45
+              boot.S:86     .text:00000000 L0L46
+              boot.S:87     .text:00000000 L0L47
+
+UNDEFINED SYMBOLS
+SMALLBOOTSTART
+spmcrval
+PGERS
+SPMEN
+RWWSRE
+looplo
+low
+loophi
+high
+ZH
+ZL
+PGWRT
+YL
+YH
+Error
+temp1
+SPMCR
+RWWSB
+temp2
+SREG
+EECR
+EEWE

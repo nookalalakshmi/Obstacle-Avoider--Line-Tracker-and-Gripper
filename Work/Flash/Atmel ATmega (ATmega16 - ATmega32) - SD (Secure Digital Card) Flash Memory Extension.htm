@@ -1,0 +1,421 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://www.captain.at/electronic-atmega-sd-card.php -->
+<HTML><HEAD><TITLE>Atmel ATmega (ATmega16 / ATmega32) - SD (Secure Digital Card) Flash Memory Extension</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1"><LINK 
+href="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/style.css" 
+type=text/css rel=stylesheet><LINK href="/capicon.gif" type=image/gif rel=icon>
+<SCRIPT language=JavaScript 
+src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/captain.js" 
+type=text/javascript></SCRIPT>
+
+<META 
+content="An interdisciplinary website for science, programming, electronics and more." 
+name=Description>
+<META 
+content="science, programming, electronics, Linux, RTAI, fusion, ADEOS, Java, C, hard real time, microcontroller, Atmel, PIC, MMC, E2PROM, FreeBSD" 
+name=Keywords>
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY text=#000000 vLink=#333333 aLink=#0000ff link=#0037b4 bgColor=#ffffff 
+leftMargin=0 topMargin=0 marginheight="0" marginwidth="0"><A name=top></A>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#000000 height=52>
+      <TABLE height=108 cellSpacing=0 cellPadding=0 width="100%" 
+      background="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/ship-back.jpg" 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width="50%"><A href="http://www.captain.at/"><IMG 
+            title="Captain's Universe Home" height=80 
+            alt="Captain's Universe Home" 
+            src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/ship-back2.jpg" 
+            width=395 border=0><BR><IMG title="Captain's Universe Home" 
+            height=29 alt="Captain's Universe Home" 
+            src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/ship-back3.jpg" 
+            width=395 border=0></A></TD>
+          <TD align=right width="50%">
+            <TABLE cellSpacing=4 cellPadding=0 width=300>
+              <TBODY>
+              <TR>
+                <TD rowSpan=4><A href="http://www.captain.at/artemia/"><IMG 
+                  title="SeaMonkey Artemia and Browser" 
+                  style="PADDING-RIGHT: 20px" height=64 
+                  alt="SeaMonkey Artemia and Browser" 
+                  src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/seamonkey64.gif" 
+                  width=64 border=0></A> </TD>
+                <TD class=topt noWrap align=middle bgColor=#1a5a94><A 
+                  class=nav href="http://www.cosmicrays.org/">Cosmic Ray Muon 
+                  Detector</A></TD>
+                <TD class=topt noWrap align=middle bgColor=#1a5a94><A 
+                  class=nav href="http://www.telegarden.org/tg/">TeleGarden 
+                  Pages</A></TD></TR>
+              <TR bgColor=#1a5a94>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.marsbase.net/">Time on Mars</A></TD>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.bryophyllum.com/">Bryophyllum 
+Plants</A></TD></TR>
+              <TR bgColor=#1a5a94>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.jupiterradio.com/j/articles/prob/">Jupiter 
+                  Radio Astronomy</A></TD>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.ancientcoins.biz/pages/">Ancient 
+              Pages</A></TD></TR>
+              <TR bgColor=#1a5a94>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.telegarden.org/salzburg.php">Salzburg Tourist 
+                  Guide</A></TD>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.magnetometer.org/">Earth 
+              Magnetometer</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD bgColor=#ffffff><IMG height=3 
+      src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/t3.gif" 
+      width=1></TD></TR>
+  <TR>
+    <TD bgColor=#000000 height=23>
+      <TABLE class=capmenu cellSpacing=0 cellPadding=3 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%"><A class=nbv style="DISPLAY: inline" 
+            href="http://www.captain.at/">&nbsp; H O M E &nbsp;</A></TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/ajax.php">&nbsp; AJAX &amp; MORE 
+            &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/linux.php">&nbsp; LINUX &amp; MORE 
+            &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/rtai.php">&nbsp; RTAI &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/xenomai.php">&nbsp; XENOMAI &nbsp;</A> 
+          </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/adeos-ipipe.php">&nbsp; ADEOS IPIPE 
+            &nbsp;</A> </TD>
+          <TD class=nay noWrap>&nbsp; &nbsp; </TD></TR></TBODY></TABLE>
+      <TABLE class=capmenu cellSpacing=0 cellPadding=3 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%">&nbsp;</TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/browsers.php">&nbsp; JAVA &amp; BROWSERS 
+            &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/nix.php">&nbsp; *NIX &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=na 
+            href="http://www.captain.at/electronic-index.php">&nbsp; ELECTRONICS 
+            &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/review-index.php">&nbsp; REVIEWS 
+            &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/artemia/">&nbsp; ARTEMIA &nbsp;</A></TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/fairy-shrimp.php">&nbsp; FAIRY SHRIMP 
+            &nbsp;</A></TD>
+          <TD class=nay noWrap>&nbsp; &nbsp; </TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD bgColor=#ffffff><IMG height=3 
+      src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/t3.gif" 
+      width=1></TD></TR>
+  <TR>
+    <TD vAlign=top bgColor=#ffffff>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top bgColor=#eeeeee>
+            <TABLE cellSpacing=0 cellPadding=7 width=180 border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <UL class=uli>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-index.php"><B>Electronics 
+                    Home</B></A> </LI></UL>
+                  <UL class=uli>
+                    <LI class=mcon><B>Atmel ATmega</B><BR><IMG height=8 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-linux-atmel-avr-simulator-gui-vmlab.php">Linux 
+                    Atmel AVR Simulator with GUI</A><BR><IMG height=6 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu style="FONT-WEIGHT: bold" 
+                    href="http://www.captain.at/electronic-atmega-sd-card.php">Atmel 
+                    ATmega - SD card (Secure Digital Card) Flash Memory 
+                    Extension</A><BR><IMG height=6 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-atmega-dcf77.php">Atmel 
+                    ATmega - DCF77 time signal decoder</A><BR><IMG height=6 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-atmega-mmc.php">Atmel 
+                    ATmega - MMC (Multi Media Card) Flash Memory 
+                    Extension</A><BR><IMG height=6 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-atmega-eeprom.php">Atmel 
+                    ATmega I2C EEPROM Example Schematic and C 
+                    program</A><BR><IMG height=6 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-atmega16-serial-port.php">Atmel 
+                    ATmega16 Serial Port Example Schematic and C 
+                    program</A><BR><IMG height=6 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/atmel-programmer/">Atmel 
+                    AVR ATmega16 Programmer Linux</A><BR><IMG height=6 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR></LI></UL>
+                  <UL class=uli>
+                    <LI class=mcon><B>Microchip PIC</B><BR><IMG height=8 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/pic-programmer/">Pic 
+                    Programmer Linux</A><BR><IMG height=6 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/pic-mmc/">PIC - MMC 
+                    Flash Memory Extension</A><BR><IMG height=6 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/pic-ram/">PIC - 
+                    32k/64k RAM Extension</A><BR><IMG height=6 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR></LI></UL>
+                  <UL class=uli>
+                    <LI class=mcon><B>Misc. stuff</B><BR><IMG height=8 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-astronomy-timer-gadgets.php">Astronomy 
+                    Timer Gadgets</A><BR><IMG height=6 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/decoupling/">Decoupling 
+                    the power supply</A><BR><IMG height=6 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/manhattan-board/">Manhattan 
+                    style PCB board prototyping for high frequency RF and 
+                    critical circuits</A><BR><IMG height=6 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/coils/">Coil 
+                    Calculator - Single-layer and mutil-layer coil calculation 
+                    in javascript</A><BR><IMG height=6 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/active-filter/">Active 
+                    Bandpass Filter Javascript Tool</A><BR><IMG height=6 
+                    src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/spacer.gif" 
+                    width=1><BR></LI></UL></TD></TR></TBODY></TABLE></TD>
+          <TD vAlign=top width="100%"><!-- google_ad_section_start --><BR>
+            <TABLE cellSpacing=0 cellPadding=2 width=678 align=center 
+              border=0><TBODY>
+              <TR>
+                <TD><SPAN class=mcon><BR><BR>
+                  <H1>Atmel ATmega (ATmega16 / ATmega32) - SD (Secure Digital 
+                  Card) Flash Memory Extension</H1><BR><BR>This page bases upon 
+                  the page <A 
+                  href="http://www.captain.at/electronic-atmega-mmc.php">Atmel 
+                  ATmega (ATmega16 / ATmega32) - MMC (Multi Media Card) Flash 
+                  Memory Extension</A>. <BR><BR>It is easy to interface a SD 
+                  (Secure Digital Card) with an Atmel ATmega16 (ATmega series) 
+                  via the SPI (Serial Port Interface). This is a very handy data 
+                  logging circuit with lots of memory for data storage. I2C 
+                  RAM's or EEPROM's are hardly available at sizes bigger than 
+                  256kb, so a solution with a large Flash SD card is not to beat 
+                  in both cost effectiveness and storage volume! <BR><BR>
+                  <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-3524547136592145";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "FFFFFF";
+google_color_link = "000000";
+google_color_bg = "FFFFFF";
+google_color_text = "000000";
+google_color_url = "000000";
+//--></SCRIPT>
+
+                  <SCRIPT 
+                  src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/show_ads.htm" 
+                  type=text/javascript>
+</SCRIPT>
+                  <BR>Basically a SD card is a MMC card. The commands are the 
+                  same, the pins are the same, so you can easily replace the MMC 
+                  with a SD card. The only change to make is the firmware and 
+                  that change is only minor: <BR><BR>Instead of checking the 
+                  return value immediately after sending a command to the card <PRE>	if (Command(0x51,0,512,0xFF) != 0) {
+		uart_puts("MMC: read error 1 ");
+		return 1;
+	}
+</PRE>we need to loop and check: <PRE>	uint16_t ix;
+	char r1 =  Command(0x51,0,512,0xFF);
+	for (ix = 0; ix &lt; 50000; ix++) {
+		if (r1 == (char)0x00) break;
+		r1 = SPI(0xFF);
+	}
+	if (r1 != (char)0x00) {
+		uart_puts("MMC: read error 1 ");
+		return 1;
+	}
+</PRE>This is the change in the function "int sendmmc(void)". 
+                  <BR><BR>
+                  <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-3524547136592145";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "FFFFFF";
+google_color_link = "000000";
+google_color_bg = "FFFFFF";
+google_color_text = "000000";
+google_color_url = "000000";
+//--></SCRIPT>
+
+                  <SCRIPT 
+                  src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/show_ads.htm" 
+                  type=text/javascript>
+</SCRIPT>
+                  <BR>This was the only change I did and it worked. But to be 
+                  safe, also implement the loop when sending the 512 byte 
+                  sector/block write command in "int writeramtommc(void)": <PRE>	if (Command(0x58,0,512,0xFF) !=0) {
+		uart_puts("MMC: write error 1 ");
+		return 1;	
+	}
+</PRE>becomes <PRE>	uint16_t ix;
+	char r1 =  Command(0x58,0,512,0xFF);
+	for (ix = 0; ix &lt; 50000; ix++) {
+		if (r1 == (char)0x00) break;
+		r1 = SPI(0xFF);
+	}
+	if (r1 != (char)0x00) {
+		uart_puts("MMC: write error 1 ");
+		return 1;
+	}
+</PRE><BR>The rest of the code remains unchanged. <BR><BR>
+                  <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-3524547136592145";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "FFFFFF";
+google_color_link = "000000";
+google_color_bg = "FFFFFF";
+google_color_text = "000000";
+google_color_url = "000000";
+//--></SCRIPT>
+
+                  <SCRIPT 
+                  src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/show_ads.htm" 
+                  type=text/javascript>
+</SCRIPT>
+                  <BR><BR>Last-Modified: Mon, 18 Jun 2007 17:24:53 GMT</SPAN>
+                  <P></P></TD></TR></TBODY></TABLE><!-- google_ad_section_end -->
+            <CENTER><!-- SiteSearch Google -->
+            <FORM action=http://www.google.com/custom method=get target=_top>
+            <TABLE bgColor=#ffffff border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top noWrap align=left height=32><A 
+                  href="http://www.google.com/"><IMG alt=Google 
+                  src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/Logo_25wht.gif" 
+                  border=0></IMG></A> </TD>
+                <TD noWrap><INPUT type=hidden value=www.captain.at 
+                  name=domains></INPUT> <INPUT maxLength=255 size=31 
+                  name=q></INPUT> 
+                  <INPUT type=submit value=Search name=sa></INPUT> </TD></TR>
+              <TR>
+                <TD>&nbsp;</TD>
+                <TD noWrap>
+                  <TABLE>
+                    <TBODY>
+                    <TR>
+                      <TD><INPUT type=radio value="" name=sitesearch></INPUT> 
+                        <FONT color=#000000 size=-1>Web</FONT> </TD>
+                      <TD><INPUT type=radio CHECKED value=www.captain.at 
+                        name=sitesearch></INPUT> <FONT color=#000000 
+                        size=-1>www.captain.at</FONT> </TD></TR></TBODY></TABLE><INPUT 
+                  type=hidden value=pub-3524547136592145 name=client></INPUT> 
+                  <INPUT type=hidden value=1 name=forid></INPUT> <INPUT 
+                  type=hidden value=ISO-8859-1 name=ie></INPUT> <INPUT 
+                  type=hidden value=ISO-8859-1 name=oe></INPUT> <INPUT 
+                  type=hidden 
+                  value=GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:FFFFFF;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;LH:80;LW:395;L:http://www.captain.at/home/ship-back2.jpg;S:http://www.captain.at;FORID:1; 
+                  name=cof></INPUT> <INPUT type=hidden value=en name=hl></INPUT> 
+                </TD></TR></TBODY></TABLE></FORM><!-- SiteSearch Google --></CENTER></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD bgColor=#ffffff><IMG height=3 
+      src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/t3.gif" 
+      width=1></TD></TR>
+  <TR>
+    <TD bgColor=#1a5a94>
+      <TABLE cellSpacing=0 cellPadding=2 width="100%">
+        <TBODY>
+        <TR>
+          <TD width=60 bgColor=#1a5a94 height=20>
+            <CENTER><A class=bot 
+            href="http://www.captain.at/electronic-atmega-sd-card.php#top">go to 
+            top</A></CENTER></TD>
+          <TD bgColor=#1a5a94 height=20>
+            <TABLE align=center>
+              <TBODY>
+              <TR>
+                <TD class=bot align=right>© 1996-2009 </TD>
+                <TD vAlign=bottom width=103><IMG height=13 
+                  src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/e.gif" 
+                  width=103></TD>
+                <TD class=bot>. All rights reserved.</B></FONT>
+                  <CENTER></CENTER></TD></TR>
+              <TR>
+                <TD class=bot colSpan=3>No reproduction, distribution, 
+                  publishing or transmission of the copyrighted materials at 
+                  this site is permitted. <A class=ab 
+                  href="http://www.captain.at/policy.php">Policy</A></TD></TR></TBODY></TABLE></TD>
+          <TD width=60 bgColor=#1a5a94 height=20>
+            <CENTER><A class=bot 
+            href="http://www.captain.at/electronic-atmega-sd-card.php#top">go to 
+            top</A></CENTER></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD bgColor=#ffffff><IMG height=3 
+      src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/t3.gif" 
+      width=1></TD></TR></TBODY></TABLE>
+<SCRIPT language=JavaScript 
+src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/onw.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="Atmel ATmega (ATmega16 - ATmega32) - SD (Secure Digital Card) Flash Memory Extension_files/urchin.htm" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+_uacct = "UA-85090-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

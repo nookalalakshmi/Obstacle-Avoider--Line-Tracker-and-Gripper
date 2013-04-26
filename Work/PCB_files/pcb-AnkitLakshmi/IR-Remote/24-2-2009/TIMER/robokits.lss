@@ -1,0 +1,205 @@
+
+robokits.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000da  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .stab         000003e4  00000000  00000000  00000130  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  2 .stabstr      000006cf  00000000  00000000  00000514  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	2c c0       	rjmp	.+88     	; 0x5c <__bad_interrupt>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	29 c0       	rjmp	.+82     	; 0x5c <__bad_interrupt>
+   a:	28 c0       	rjmp	.+80     	; 0x5c <__bad_interrupt>
+   c:	27 c0       	rjmp	.+78     	; 0x5c <__bad_interrupt>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	26 c0       	rjmp	.+76     	; 0x5e <__vector_8>
+  12:	24 c0       	rjmp	.+72     	; 0x5c <__bad_interrupt>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	22 c0       	rjmp	.+68     	; 0x5c <__bad_interrupt>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+  1e:	1e c0       	rjmp	.+60     	; 0x5c <__bad_interrupt>
+  20:	1d c0       	rjmp	.+58     	; 0x5c <__bad_interrupt>
+  22:	1c c0       	rjmp	.+56     	; 0x5c <__bad_interrupt>
+  24:	1b c0       	rjmp	.+54     	; 0x5c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	ea ed       	ldi	r30, 0xDA	; 218
+  3a:	f0 e0       	ldi	r31, 0x00	; 0
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <.do_copy_data_start>
+
+0000003e <.do_copy_data_loop>:
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+
+00000042 <.do_copy_data_start>:
+  42:	a0 36       	cpi	r26, 0x60	; 96
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <.do_copy_data_loop>
+
+00000048 <__do_clear_bss>:
+  48:	10 e0       	ldi	r17, 0x00	; 0
+  4a:	a0 e6       	ldi	r26, 0x60	; 96
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+  52:	a0 36       	cpi	r26, 0x60	; 96
+  54:	b1 07       	cpc	r27, r17
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+  58:	1d d0       	rcall	.+58     	; 0x94 <main>
+  5a:	3d c0       	rjmp	.+122    	; 0xd6 <_exit>
+
+0000005c <__bad_interrupt>:
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
+
+0000005e <__vector_8>:
+/*----------------------------------------------------------------
+-----------------FUNCTIONS----------------------------------------
+-----------------------------------------------------------------*/
+
+SIGNAL(SIG_OVERFLOW1)            	// signal handler for tcnt1 overflow interrupt
+{
+  5e:	1f 92       	push	r1
+  60:	0f 92       	push	r0
+  62:	0f b6       	in	r0, 0x3f	; 63
+  64:	0f 92       	push	r0
+  66:	11 24       	eor	r1, r1
+  68:	8f 93       	push	r24
+  6a:	9f 93       	push	r25
+	
+	if (!bit_is_clear(PIND, 6))		//BLINK LED3 ON TIMER INTERRUPT
+  6c:	86 9b       	sbis	0x10, 6	; 16
+  6e:	06 c0       	rjmp	.+12     	; 0x7c <__vector_8+0x1e>
+	{
+		TCNT1 = TIMER_1_CNT;
+  70:	8a e5       	ldi	r24, 0x5A	; 90
+  72:	9e ef       	ldi	r25, 0xFE	; 254
+  74:	9d bd       	out	0x2d, r25	; 45
+  76:	8c bd       	out	0x2c, r24	; 44
+		cbi(PORTB,2);				//LED3 ON
+  78:	c2 98       	cbi	0x18, 2	; 24
+  7a:	05 c0       	rjmp	.+10     	; 0x86 <__vector_8+0x28>
+	}
+	else					
+	{
+		TCNT1 = TIMER_1_CNT;		//ELSE
+  7c:	8a e5       	ldi	r24, 0x5A	; 90
+  7e:	9e ef       	ldi	r25, 0xFE	; 254
+  80:	9d bd       	out	0x2d, r25	; 45
+  82:	8c bd       	out	0x2c, r24	; 44
+		sbi(PORTB,2);				//LED3 OFF	
+  84:	c2 9a       	sbi	0x18, 2	; 24
+	}           	// reset counter to get this interrupt again
+}
+  86:	9f 91       	pop	r25
+  88:	8f 91       	pop	r24
+  8a:	0f 90       	pop	r0
+  8c:	0f be       	out	0x3f, r0	; 63
+  8e:	0f 90       	pop	r0
+  90:	1f 90       	pop	r1
+  92:	18 95       	reti
+
+00000094 <main>:
+-----------------------------------------------------------------*/
+
+int main(void)
+{
+    
+	DDRB=0x04;						//SET DATA DIRECTION REGISTER
+  94:	24 e0       	ldi	r18, 0x04	; 4
+  96:	27 bb       	out	0x17, r18	; 23
+									//ONLY PORTB.0 IS OUTPUT
+									//CONFIGURE AS PER REQUIREMENT
+									//DEFAULT ALL OTHERS ARE INPUT
+									//CHANGE ACCORDING TO USE
+	
+	DDRD=0xC0;						//SET DATA DIRECTION REGISTER
+  98:	80 ec       	ldi	r24, 0xC0	; 192
+  9a:	81 bb       	out	0x11, r24	; 17
+									//DEFAULT ALL OTHERS ARE INPUT
+									//CHANGE ACCORDING TO USE
+	
+	//sbi(PORTB,0);					//LED1 ON (INDICATION FOR READY TO USE)
+
+    TCCR1A = 0x00;               	// disable PWM and Compare Output Mode
+  9c:	1f bc       	out	0x2f, r1	; 47
+    TCCR1B = TMC16_CK1024;       	// use CLK/1024 prescale value
+  9e:	81 e0       	ldi	r24, 0x01	; 1
+  a0:	8e bd       	out	0x2e, r24	; 46
+    TCNT1  = CNT;        	// reset TCNT1
+  a2:	8c ef       	ldi	r24, 0xFC	; 252
+  a4:	9f ef       	ldi	r25, 0xFF	; 255
+  a6:	9d bd       	out	0x2d, r25	; 45
+  a8:	8c bd       	out	0x2c, r24	; 44
+    
+    TIMSK  = _BV(TOIE1);         	// enable TCNT1 overflow 
+  aa:	29 bf       	out	0x39, r18	; 57
+    
+    sei();                       	// enable interrupts 
+  ac:	78 94       	sei
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+  ae:	24 e2       	ldi	r18, 0x24	; 36
+  b0:	34 ef       	ldi	r19, 0xF4	; 244
+  b2:	c9 01       	movw	r24, r18
+  b4:	01 97       	sbiw	r24, 0x01	; 1
+  b6:	f1 f7       	brne	.-4      	; 0xb4 <main+0x20>
+  b8:	c9 01       	movw	r24, r18
+  ba:	01 97       	sbiw	r24, 0x01	; 1
+  bc:	f1 f7       	brne	.-4      	; 0xba <main+0x26>
+  be:	c9 01       	movw	r24, r18
+  c0:	01 97       	sbiw	r24, 0x01	; 1
+  c2:	f1 f7       	brne	.-4      	; 0xc0 <main+0x2c>
+  c4:	c9 01       	movw	r24, r18
+  c6:	01 97       	sbiw	r24, 0x01	; 1
+  c8:	f1 f7       	brne	.-4      	; 0xc6 <main+0x32>
+			_delay_ms(250);
+			_delay_ms(250);	
+			_delay_ms(250);	
+			_delay_ms(250);	
+
+		if (bit_is_clear(PIND, 7))	//BLINK LED2 WITH NORMAL DELAY
+  ca:	87 99       	sbic	0x10, 7	; 16
+  cc:	02 c0       	rjmp	.+4      	; 0xd2 <main+0x3e>
+			sbi(PORTD,7);			//LED2 ON
+  ce:	97 9a       	sbi	0x12, 7	; 18
+  d0:	f0 cf       	rjmp	.-32     	; 0xb2 <main+0x1e>
+		else						//ELSE
+			cbi(PORTD,7);			//LED2 OFF
+  d2:	97 98       	cbi	0x12, 7	; 18
+  d4:	ee cf       	rjmp	.-36     	; 0xb2 <main+0x1e>
+
+000000d6 <_exit>:
+  d6:	f8 94       	cli
+
+000000d8 <__stop_program>:
+  d8:	ff cf       	rjmp	.-2      	; 0xd8 <__stop_program>

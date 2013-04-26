@@ -1,0 +1,213 @@
+   1               		.file	"pathfollower.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  11               		.text
+  12               	.Ltext0:
+  71               	.global	path_follower
+  73               	path_follower:
+   1:pathfollower.c **** 
+   2:pathfollower.c **** //			MADE BY ANKIT-LAKSHMI
+   3:pathfollower.c **** //			PROGRAM FOR PATH FOLLOWER
+   4:pathfollower.c **** 
+   5:pathfollower.c **** /*-------------------------------------------------------------------          
+   6:pathfollower.c ****  Description:
+   7:pathfollower.c ****  The robot will follow a 'black' path near which it is placed. In 
+   8:pathfollower.c ****  situations where it goes out of track, the indicator LEDs will tell 
+   9:pathfollower.c ****  the direction to move to get back its path.
+  10:pathfollower.c ****  
+  11:pathfollower.c ****  Note:
+  12:pathfollower.c ****   _delay_ms() function parameter passed should not exeed
+  13:pathfollower.c ****  262.14ms / F_CPU in mhz.
+  14:pathfollower.c ****  so for 16MHz the maximum paramer should be 16ms.
+  15:pathfollower.c ****  
+  16:pathfollower.c ****  For 1MHz it can be upto 262ms (250 is used for this example).
+  17:pathfollower.c ****   
+  18:pathfollower.c ****  Must be changed to get accurate delay at higher MHz.
+  19:pathfollower.c ****  
+  20:pathfollower.c ****  The timing will differ if the operating frequency is changed.
+  21:pathfollower.c **** ---------------------------------------------------------------------*/
+  22:pathfollower.c **** 
+  23:pathfollower.c **** /*----------------------------------------------------------------
+  24:pathfollower.c **** -----------------HEADER FILES-------------------------------------
+  25:pathfollower.c **** -----------------------------------------------------------------*/
+  26:pathfollower.c **** 
+  27:pathfollower.c **** #include<avr/io.h>					//HEADER FILE FOR AVR INPUT OUTPUT
+  28:pathfollower.c **** #include<compat/deprecated.h>		//HEADER FILE FOR FUNCTIONS LIKE SBI AND CBI
+  29:pathfollower.c **** #include<util/delay.h>				//HEADER FILE FOR DELAY
+  30:pathfollower.c **** 
+  31:pathfollower.c **** /*----------------------------------------------------------------
+  32:pathfollower.c **** -----------------FUNCTIONS----------------------------------------
+  33:pathfollower.c **** -----------------------------------------------------------------*/
+  34:pathfollower.c **** 
+  35:pathfollower.c **** void path_follower(void)
+  36:pathfollower.c **** {
+  74               	me size = 0 */
+  76               	.LM1:
+  77               		sbic 51-32,2
+  78               		rjmp .L2
+  37:pathfollower.c **** 	
+  38:pathfollower.c **** 	if((bit_is_clear(PINC,2)))
+  79               	BB1:
+  80               	/* prologue: function */
+  81 0000 9A99      	/* frame size = 0 */
+  39:pathfollower.c **** 	{
+  40:pathfollower.c **** 		sbi(PORTD,0);
+  83               	abn	68,0,36,.LM0-.LFBB1
+  84               	.LM0:
+  85 0004 909A      	.LFBB1:
+  41:pathfollower.c **** 		cbi(PORTD,1);	//move left
+  86               	wer
+  87               	.global	path_follower
+  42:pathfollower.c **** 		//robotmove('L');
+  43:pathfollower.c **** 		sbi(PORTD,7);
+  89               	n	162,0,0,0
+  91 0008 979A      	.global	path_follower
+  44:pathfollower.c **** 		cbi(PORTB,0);
+  92               	28,0,0,0
+  45:pathfollower.c **** 	}
+  46:pathfollower.c **** 	if((bit_is_clear(PINB,1)))
+  96               	,8;high:(0,11),8,8;;",128,0,0,0
+  47:pathfollower.c **** 	{
+  48:pathfollower.c **** 		sbi(PORTD,1);
+ 100               	,8;high:(0,11),8,8;;",128,0,0,0
+  49:pathfollower.c **** 		cbi(PORTD,0);	//move right
+ 103               	30,0,0,0
+  50:pathfollower.c **** 		//robotmove('R');
+  51:pathfollower.c **** 		sbi(PORTB,0);
+ 106               	clude/avr/fuse.h",130,0,0,0
+  52:pathfollower.c **** 		cbi(PORTD,7);
+ 109               	clude/avr/fuse.h",130,0,0,0
+  53:pathfollower.c **** 	}
+  54:pathfollower.c **** 	if((bit_is_clear(PINC,3)) || (bit_is_clear(PINC,4)) || (bit_is_clear(PINC,5)))
+ 113               	30,0,0,0
+ 118 001e 00C0      	.global	path_follower
+ 120 0022 00C0      	path_follower:
+  55:pathfollower.c **** 	{
+  56:pathfollower.c **** 		sbi(PORTD,0);
+ 122               	6,0,0,path_follower
+ 123               	.global	path_follower
+  57:pathfollower.c **** 		sbi(PORTD,1);	//move forward
+ 125               	n	162,0,0,0
+ 127 0026 919A      	.global	path_follower
+  58:pathfollower.c **** 		//robotmove('F');
+  59:pathfollower.c **** 		sbi(PORTD,7);
+ 128               	28,0,0,0
+  60:pathfollower.c **** 		sbi(PORTB,0);
+ 131               	30,0,0,0
+  61:pathfollower.c **** 	}
+  62:pathfollower.c **** 	if((!bit_is_clear(PINC,2)) && (!bit_is_clear(PINC,3)) && (!bit_is_clear(PINC,4)) && (!bit_is_clear
+ 135               	30,0,0,0
+ 140 0032 00C0      	.global	path_follower
+ 142 0036 00C0      	path_follower:
+ 144 003a 00C0      	.LM0:
+ 145 003c B19B      	.LFBB1:
+ 146 003e 00C0      	/* prologue: function */
+  63:pathfollower.c **** 	{
+  64:pathfollower.c **** 		cbi(PORTD,0);
+ 148               	path_follower:
+  65:pathfollower.c **** 		cbi(PORTD,1);	//stop
+ 150               	6,0,0,path_follower
+ 151               	.global	path_follower
+  66:pathfollower.c **** 		//robotmove('S');
+  67:pathfollower.c **** 		cbi(PORTD,7);
+ 153               	n	162,0,0,0
+ 155 0044 9798      	.global	path_follower
+  68:pathfollower.c **** 		cbi(PORTB,0);
+ 156               	28,0,0,0
+ 160 0048 0895      	.global	path_follower
+ 162               	path_follower:
+ 164               	.LM0:
+ 165               	.LFBB1:
+ 166               	/* prologue: function */
+  69:pathfollower.c **** 	}
+  70:pathfollower.c **** 	/*if((bit_is_clear(PINC,1)))
+  71:pathfollower.c **** 	{
+  72:pathfollower.c **** 		cbi(PORTD,0);
+  73:pathfollower.c **** 		cbi(PORTD,1);	//stop
+  74:pathfollower.c **** 		cbi(PORTD,7);
+  75:pathfollower.c **** 		cbi(PORTB,0);
+  76:pathfollower.c **** 		_delay_ms(1000);
+  77:pathfollower.c **** 		
+  78:pathfollower.c **** 		sbi(PORTD,0);
+  79:pathfollower.c **** 		cbi(PORTD,1);	//move left
+  80:pathfollower.c **** 		//robotmove('L');
+  81:pathfollower.c **** 		sbi(PORTD,7);
+  82:pathfollower.c **** 		cbi(PORTB,0);
+  83:pathfollower.c **** 	}
+  84:pathfollower.c **** 	if((bit_is_clear(PINB,2)))
+  85:pathfollower.c **** 	{
+  86:pathfollower.c **** 		cbi(PORTD,0);
+  87:pathfollower.c **** 		cbi(PORTD,1);	//stop
+  88:pathfollower.c **** 		cbi(PORTD,7);
+  89:pathfollower.c **** 		cbi(PORTB,0);
+  90:pathfollower.c **** 		_delay_ms(1000);
+  91:pathfollower.c **** 		
+  92:pathfollower.c **** 		sbi(PORTD,1);
+  93:pathfollower.c **** 		cbi(PORTD,0);	//move right
+  94:pathfollower.c **** 		//robotmove('R');
+  95:pathfollower.c **** 		sbi(PORTB,0);
+  96:pathfollower.c **** 		cbi(PORTD,7);
+  97:pathfollower.c **** 	}*/
+  98:pathfollower.c **** 	
+  99:pathfollower.c **** }
+ 100:pathfollower.c **** /*----------------------------------------------------------------
+ 101:pathfollower.c **** -----------------MAIN PROGRAM-------------------------------------
+ 102:pathfollower.c **** -----------------------------------------------------------------*/
+ 103:pathfollower.c **** int main(void)
+ 104:pathfollower.c **** {
+ 168               	path_follower:
+ 170               	.LM0:
+ 171               	.LFBB1:
+ 105:pathfollower.c **** 	DDRD=0x8F;						//SET DATA DIRECTION REGISTER
+ 172               	wer
+ 173               	.global	path_follower
+ 175 004c 81BB      	path_follower:
+ 106:pathfollower.c **** 									//SET 1 for OUTPUT PORT
+ 107:pathfollower.c **** 									//SET 0 FOR INPUT PORT
+ 108:pathfollower.c **** 									//ONLY PORTB.0 IS OUTPUT
+ 109:pathfollower.c **** 									//CONFIGURE AS PER REQUIREMENT
+ 110:pathfollower.c **** 									//DEFAULT ALL OTHERS ARE INPUT
+ 111:pathfollower.c **** 									//CHANGE ACCORDING TO USE
+ 112:pathfollower.c **** 	DDRC=0x00;						//SET DATA DIRECTION REGISTER
+ 176               	abs	"path_follower:F(0,15)",36,0,0,path_follower
+ 177               	.global	path_follower
+ 113:pathfollower.c **** 									//SET 1 for OUTPUT PORT
+ 114:pathfollower.c **** 									//SET 0 FOR INPUT PORT
+ 115:pathfollower.c **** 									//ONLY PORTD.7 AND PORTD.6 ARE OUTPUT
+ 116:pathfollower.c **** 									//CONFIGURE AS PER REQUIREMENT
+ 117:pathfollower.c **** 									//DEFAULT ALL OTHERS ARE INPUT
+ 118:pathfollower.c **** 									//CHANGE ACCORDING TO USE
+ 119:pathfollower.c **** 	DDRB = 0x01;
+ 179               	n	162,0,0,0
+ 181 0050 81E0      	.global	path_follower
+ 183               	path_follower:
+ 120:pathfollower.c **** 
+ 121:pathfollower.c **** 	for(;;)
+ 122:pathfollower.c **** 	{
+ 123:pathfollower.c **** 		path_follower();
+ 184               	abs	"path_follower:F(0,15)",36,0,0,path_follower
+ 185               	.global	path_follower
+ 187 0056 00C0      	path_follower:
+ 189               	.LM0:
+ 190               	.LFBB1:
+ 191               	/* prologue: function */
+DEFINED SYMBOLS
+                            *ABS*:00000000 pathfollower.c
+C:\Users\user\AppData\Local\Temp/ccz2gHKh.s:2      *ABS*:0000003f __SREG__
+C:\Users\user\AppData\Local\Temp/ccz2gHKh.s:3      *ABS*:0000003e __SP_H__
+C:\Users\user\AppData\Local\Temp/ccz2gHKh.s:4      *ABS*:0000003d __SP_L__
+C:\Users\user\AppData\Local\Temp/ccz2gHKh.s:5      *ABS*:00000034 __CCP__
+C:\Users\user\AppData\Local\Temp/ccz2gHKh.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\user\AppData\Local\Temp/ccz2gHKh.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\user\AppData\Local\Temp/ccz2gHKh.s:73     .text:00000000 path_follower
+C:\Users\user\AppData\Local\Temp/ccz2gHKh.s:166    .text:0000004a main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

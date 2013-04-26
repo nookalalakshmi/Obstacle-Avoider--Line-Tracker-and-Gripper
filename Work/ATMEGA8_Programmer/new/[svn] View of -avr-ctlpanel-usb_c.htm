@@ -1,0 +1,202 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0084)http://svn.killerwolves.net/cgi-bin/viewvc/avr/ctlpanel/usb.c?view=markup&sortby=rev -->
+<HTML lang=en xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>[svn] View of /avr/ctlpanel/usb.c</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8"><!-- ViewVC :: http://www.viewvc.org/ -->
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR><LINK 
+href="[svn] View of -avr-ctlpanel-usb_c_files/styles.css" type=text/css 
+rel=stylesheet></HEAD>
+<BODY>
+<DIV class=vc_navheader>
+<FORM action=/cgi-bin/viewvc/ method=get>
+<TABLE 
+style="PADDING-RIGHT: 0.1em; PADDING-LEFT: 0.1em; PADDING-BOTTOM: 0.1em; PADDING-TOP: 0.1em">
+  <TBODY>
+  <TR>
+    <TD><STRONG><A 
+      href="http://svn.killerwolves.net/cgi-bin/viewvc/?sortby=rev">[svn]</A> / 
+      <A 
+      href="http://svn.killerwolves.net/cgi-bin/viewvc/avr/?sortby=rev">avr</A> 
+      / <A 
+      href="http://svn.killerwolves.net/cgi-bin/viewvc/avr/ctlpanel/?sortby=rev">ctlpanel</A> 
+      / <A 
+      href="http://svn.killerwolves.net/cgi-bin/viewvc/avr/ctlpanel/usb.c?sortby=rev&amp;view=log">usb.c</A> 
+      </STRONG></TD>
+    <TD style="TEXT-ALIGN: right"><INPUT type=hidden value=rev name=sortby> 
+      <STRONG>Repository:</STRONG> <SELECT onchange=submit() name=root> 
+        <OPTION value=*viewroots*>Repository Listing</OPTION> <OPTGROUP 
+        label="Subversion Repositories"><OPTION 
+      selected>svn</OPTION></OPTGROUP></SELECT> <INPUT type=submit value=Go> 
+  </TD></TR></TBODY></TABLE></FORM></DIV>
+<DIV 
+style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FLOAT: right; PADDING-BOTTOM: 5px; PADDING-TOP: 5px"><A 
+href="http://www.viewvc.org/"><IMG height=48 alt="ViewVC logotype" 
+src="[svn] View of -avr-ctlpanel-usb_c_files/logo.png" width=128></A></DIV>
+<H1>View of /avr/ctlpanel/usb.c</H1>
+<P style="MARGIN: 0px"><A 
+href="http://svn.killerwolves.net/cgi-bin/viewvc/avr/ctlpanel/?sortby=rev"><IMG 
+height=16 alt="Parent Directory" 
+src="[svn] View of -avr-ctlpanel-usb_c_files/back_small.png" width=16> Parent 
+Directory</A> | <A 
+href="http://svn.killerwolves.net/cgi-bin/viewvc/avr/ctlpanel/usb.c?sortby=rev&amp;view=log"><IMG 
+height=16 alt="Revision Log" 
+src="[svn] View of -avr-ctlpanel-usb_c_files/log.png" width=16> Revision Log</A> 
+</P>
+<HR>
+
+<DIV class=vc_summary>Revision <A 
+href="http://svn.killerwolves.net/cgi-bin/viewvc?view=rev&amp;sortby=rev&amp;revision=25"><STRONG>25</STRONG></A> 
+- (<A 
+href="http://svn.killerwolves.net/cgi-bin/viewvc/avr/ctlpanel/usb.c?revision=25"><STRONG>download</STRONG></A>) 
+(<A 
+href="http://svn.killerwolves.net/cgi-bin/viewvc/avr/ctlpanel/usb.c?revision=25&amp;content-type=text%2Fplain"><STRONG>as 
+text</STRONG></A>) (<A 
+href="http://svn.killerwolves.net/cgi-bin/viewvc/avr/ctlpanel/usb.c?annotate=25&amp;sortby=rev"><STRONG>annotate</STRONG></A>) 
+<BR><EM>Wed Mar 26 13:33:11 2008 UTC</EM> (8 months, 4 weeks ago) by 
+<EM>klightspeed</EM> <BR>File size: 3293 byte(s) <PRE class=vc_log>Initial import of miscellaneous programming adventures
+</PRE></DIV>
+<DIV id=vc_markup><PRE><PRE>#<B><FONT color=#5f9ea0>include</FONT></B> <B><FONT color=#bc8f8f>"config.h"</FONT></B>
+#<B><FONT color=#5f9ea0>include</FONT></B> <B><FONT color=#bc8f8f>&lt;avr/io.h&gt;</FONT></B>
+#<B><FONT color=#5f9ea0>include</FONT></B> <B><FONT color=#bc8f8f>"i2c.h"</FONT></B>
+#<B><FONT color=#5f9ea0>include</FONT></B> <B><FONT color=#bc8f8f>"usb.h"</FONT></B>
+
+<B><FONT color=#228b22>void</FONT></B> <B><FONT color=#0000ff>usb_i2c_cmd</FONT></B> (uint8_t cmd){
+    <B><FONT color=#228b22>char</FONT></B> tmp[1];
+    tmp[0] = cmd;
+    i2c_sendto (USB_CMD, 0, 1, tmp);
+}
+
+<B><FONT color=#228b22>int</FONT></B> <B><FONT color=#0000ff>usb_i2c_send</FONT></B> (uint8_t cmd, uint8_t len, uint8_t *data){
+    <B><FONT color=#228b22>char</FONT></B> tmp[1];
+    tmp[0] = cmd;
+    i2c_sendto (USB_CMD, 1, 1, tmp);
+    <B><FONT color=#a020f0>return</FONT></B> i2c_sendto (USB_WR, 0, len, data);
+}
+
+<B><FONT color=#228b22>void</FONT></B> <B><FONT color=#0000ff>usb_i2c_recv</FONT></B> (uint8_t cmd, uint8_t len, uint8_t *data){
+    <B><FONT color=#228b22>char</FONT></B> tmp[1];
+    tmp[0] = cmd;
+    i2c_sendto (USB_CMD, 1, 1, tmp);
+    i2c_recvfrom (USB_RD, 0, len, data);
+}
+
+<B><FONT color=#228b22>void</FONT></B> <B><FONT color=#0000ff>usb_reset</FONT></B> (<B><FONT color=#228b22>void</FONT></B>){
+    <B><FONT color=#228b22>char</FONT></B> data[2];
+    <I><FONT color=#b22222>/* Disable HUB */</FONT></I>
+    data[0] = 0;
+    usb_i2c_send (USB_SET_HUB_ADDR, 1, data);
+    <I><FONT color=#b22222>/* Enable function with default address */</FONT></I>
+    data[0] = _BV(USB_FN_ENABLE);
+    usb_i2c_send (USB_SET_FN1_ADDR, 1, data);
+    <I><FONT color=#b22222>/* Enable endpoint 1 */</FONT></I>
+    data[0] = _BV(USB_EP1_ENABLE);
+    usb_i2c_send (USB_SET_EP_ENABLE, 1, data);
+    <I><FONT color=#b22222>/* Enable Embedded Function, SoftConnect, NoLazyClock, RemoteWakeup */</FONT></I>
+    data[0] = _BV(USB_MODE_EMBEDDED) | 
+	      _BV(USB_MODE_SOFTCONN) |
+	      _BV(USB_MODE_NOLZCLK) |
+	      _BV(USB_MODE_REMWAKE);
+    <I><FONT color=#b22222>/* set extclk (unused) to lowest frequency */</FONT></I>
+    data[1] = 63;
+    usb_i2c_send (USB_SET_MODE, 2, data);
+}
+
+<B><FONT color=#228b22>int</FONT></B> <B><FONT color=#0000ff>usb_send</FONT></B> (uint8_t ep, uint8_t len, uint8_t *data){
+    uint8_t buf[10];
+    uint8_t i;
+    <B><FONT color=#a020f0>if</FONT></B> (len &gt; 8){
+        len = 8;
+    }
+    buf[0] = 0;
+    buf[1] = len;
+    <B><FONT color=#a020f0>for</FONT></B> (i=0; i&lt;len; i++){
+        buf[i+2] = data[i];
+    }
+    <B><FONT color=#a020f0>switch</FONT></B> (ep){
+        <B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0</FONT></B>: i = USB_SEL_EP0IN; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>1</FONT></B>: i = USB_SEL_EP1IN; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>2</FONT></B>: i = USB_SEL_EP2IN; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>3</FONT></B>: i = USB_SEL_EP3IN; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#5f9ea0>default</FONT></B>: <B><FONT color=#a020f0>return</FONT></B> -1;
+    }
+    usb_i2c_cmd (i);
+    len = usb_i2c_send (USB_BUFFER, len + 2, data) - 2;
+    <B><FONT color=#a020f0>if</FONT></B> (len != 0){
+        usb_i2c_cmd (USB_VALIDATE);
+    }
+    <B><FONT color=#a020f0>return</FONT></B> len;
+}
+
+<B><FONT color=#228b22>int</FONT></B> <B><FONT color=#0000ff>usb_recv</FONT></B> (uint8_t ep, uint8_t *data){
+    uint8_t buf[10];
+    uint8_t i;
+    uint8_t len;
+    <B><FONT color=#a020f0>switch</FONT></B> (ep){
+        <B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0</FONT></B>: i = USB_SEL_EP0OUT; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>1</FONT></B>: i = USB_SEL_EP1OUT; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>2</FONT></B>: i = USB_SEL_EP2OUT; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>3</FONT></B>: i = USB_SEL_EP3OUT; <B><FONT color=#a020f0>break</FONT></B>;
+        <B><FONT color=#5f9ea0>default</FONT></B>: <B><FONT color=#a020f0>return</FONT></B> -1;
+    }
+    usb_i2c_cmd (i);
+    usb_i2c_recv (USB_BUFFER, 10, buf);
+    usb_i2c_cmd (USB_CLRBUF);
+    len = buf[1];
+    <B><FONT color=#a020f0>for</FONT></B> (i=0; i&lt;len; i++){
+        data[i] = buf[i+2];
+    }
+    <B><FONT color=#a020f0>return</FONT></B> len;
+}
+
+<B><FONT color=#228b22>int</FONT></B> <B><FONT color=#0000ff>usb_stat</FONT></B> (uint8_t ep){
+    uint8_t i;
+    uint8_t status[1];
+    <B><FONT color=#a020f0>switch</FONT></B> (ep){
+        <B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0x00</FONT></B>: i = USB_STAT_EP0OUT; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0x80</FONT></B>: i = USB_STAT_EP0IN; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0x01</FONT></B>: i = USB_STAT_EP1OUT; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0x81</FONT></B>: i = USB_STAT_EP1IN; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0x02</FONT></B>: i = USB_STAT_EP2OUT; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0x82</FONT></B>: i = USB_STAT_EP2IN; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0x03</FONT></B>: i = USB_STAT_EP3OUT; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0x83</FONT></B>: i = USB_STAT_EP3IN; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#5f9ea0>default</FONT></B>: <B><FONT color=#a020f0>return</FONT></B> -1;
+    }
+    usb_i2c_recv (i, 1, status);
+    <B><FONT color=#a020f0>return</FONT></B> status[0];
+}
+
+<B><FONT color=#228b22>int</FONT></B> <B><FONT color=#0000ff>usb_trxstat</FONT></B> (uint8_t ep){
+    uint8_t i;
+    uint8_t status[1];
+    <B><FONT color=#a020f0>switch</FONT></B> (ep){
+        <B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0x00</FONT></B>: i = USB_TRXSTAT_EP0OUT; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0x80</FONT></B>: i = USB_TRXSTAT_EP0IN; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0x01</FONT></B>: i = USB_TRXSTAT_EP1OUT; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0x81</FONT></B>: i = USB_TRXSTAT_EP1IN; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0x02</FONT></B>: i = USB_TRXSTAT_EP2OUT; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0x82</FONT></B>: i = USB_TRXSTAT_EP2IN; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0x03</FONT></B>: i = USB_TRXSTAT_EP3OUT; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#a020f0>case</FONT></B> <B><FONT color=#5f9ea0>0x83</FONT></B>: i = USB_TRXSTAT_EP3IN; <B><FONT color=#a020f0>break</FONT></B>;
+	<B><FONT color=#5f9ea0>default</FONT></B>: <B><FONT color=#a020f0>return</FONT></B> -1;
+    }
+    usb_i2c_recv (i, 1, status);
+    <B><FONT color=#a020f0>return</FONT></B> status[0];
+}
+
+
+</PRE>
+</PRE></DIV>
+<HR>
+
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <ADDRESS><A href="mailto:svn@killerwolves.net">Subversion 
+      Administrator</A></ADDRESS></TD>
+    <TD style="TEXT-ALIGN: right"><STRONG><A 
+      href="http://svn.killerwolves.net/cgi-bin/viewvc/*docroot*/help_rootview.html">ViewVC 
+      Help</A></STRONG></TD></TR>
+  <TR>
+    <TD>Powered by <A href="http://viewvc.tigris.org/">ViewVC 1.0.5</A></TD>
+    <TD style="TEXT-ALIGN: right">&nbsp;</TD></TR></TBODY></TABLE></BODY></HTML>

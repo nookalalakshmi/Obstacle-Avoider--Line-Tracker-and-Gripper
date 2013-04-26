@@ -1,0 +1,166 @@
+   1               		.file	"robokits.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.global __do_copy_data
+   8               		.global __do_clear_bss
+  10               		.text
+  11               	.Ltext0:
+  70               	.global	wait_debounce
+  72               	wait_debounce:
+   1:robokits.c    **** //			MADE BY ROBOKITS INDIA.
+   2:robokits.c    **** //			VISIT US AT WWW.ROBOKITS.ORG
+   3:robokits.c    **** //			PROGRAM FOR DEBOUNCE
+   4:robokits.c    **** //			WRITTEN FOR PRODUCT ID 19 
+   5:robokits.c    **** 
+   6:robokits.c    **** /*-------------------------------------------------------------------          
+   7:robokits.c    ****  Description:
+   8:robokits.c    ****  This example shows how to debounce a switch input.
+   9:robokits.c    **** 
+  10:robokits.c    ****  Note:
+  11:robokits.c    ****  In certain application debouncing input is required for changing the
+  12:robokits.c    ****  counts at lower speed than the controller frequency.
+  13:robokits.c    ****  
+  14:robokits.c    ****  Even if you want only one increment the counts will be incremented
+  15:robokits.c    ****  several times.
+  16:robokits.c    ****  
+  17:robokits.c    ****  Here wait_debounce function will debounce sw1.
+  18:robokits.c    ****  
+  19:robokits.c    ****  Press sw1 constantly. Led1 will toggle after every 65535 counts.
+  20:robokits.c    **** 
+  21:robokits.c    ****  Change i variable as per requirement. 
+  22:robokits.c    ****  
+  23:robokits.c    ****  The timing will differ if the operating frequency is changed. 
+  24:robokits.c    **** ---------------------------------------------------------------------*/
+  25:robokits.c    **** 
+  26:robokits.c    **** /*----------------------------------------------------------------
+  27:robokits.c    **** -----------------HEADER FILES-------------------------------------
+  28:robokits.c    **** -----------------------------------------------------------------*/
+  29:robokits.c    **** 
+  30:robokits.c    **** #include <avr/io.h>
+  31:robokits.c    **** #include <compat/deprecated.h>		//HEADER FILE FOR FUNCTIONS LIKE SBI AND CBI
+  32:robokits.c    **** 
+  33:robokits.c    **** /*----------------------------------------------------------------
+  34:robokits.c    **** -----------------FUNCTION PROTOTYPES------------------------------
+  35:robokits.c    **** -----------------------------------------------------------------*/
+  36:robokits.c    **** 
+  37:robokits.c    **** void wait_debounce(void);
+  38:robokits.c    **** 
+  39:robokits.c    **** /*----------------------------------------------------------------
+  40:robokits.c    **** -----------------FUNCTIONS----------------------------------------
+  41:robokits.c    **** -----------------------------------------------------------------*/
+  42:robokits.c    **** void wait_debounce(void)
+  43:robokits.c    **** {
+  73               	* prologue end (size=0) */
+  74               	.L3:
+  76               	.LM1:
+  77               		in r25,48-0x20
+  44:robokits.c    ****     unsigned char temp1, temp2;
+  45:robokits.c    ****     unsigned int i;
+  46:robokits.c    ****     
+  47:robokits.c    ****     do {
+  48:robokits.c    ****         temp1 = PIND;                  		// read input
+  79               	48,.LM1-.LFBB1
+  80               	.LM1:
+  81 0000 90B3      		in r25,48-0x20
+  49:robokits.c    ****         for(i=0;i<65535;i++);
+  50:robokits.c    ****         temp2 = PIND;                  		// read input
+  82               	size=0) */
+  83               	.L3:
+  51:robokits.c    ****         temp1 = (temp1 & temp2);       		// debounce input
+  52:robokits.c    ****     } while ( temp1 & _BV(PIND2) );
+  85               	e=0 */
+  86               	/* prologue end (size=0) */
+  87 0004 8923      	.L3:
+  89 0008 00C0      	.LM1:
+  90               		in r25,48-0x20
+  92               	.LM2:
+  93               		in r24,48-0x20
+  95               	.LM3:
+  96               		and r24,r25
+  97               		sbrc r24,2
+  98               		rjmp .L3
+  99               	/* epilogue: frame size=0 */
+ 100               		ret
+ 101               	/* epilogue end (size=1) */
+ 102               	/* function wait_debounce size 6 (5) */
+  53:robokits.c    **** }
+  54:robokits.c    **** 
+  55:robokits.c    **** /*----------------------------------------------------------------
+  56:robokits.c    **** -----------------MAIN PROGRAM-------------------------------------
+  57:robokits.c    **** -----------------------------------------------------------------*/
+  58:robokits.c    **** 
+  59:robokits.c    **** int main(void)
+  60:robokits.c    **** {
+ 103               	d (size=1) */
+ 104               	/* function wait_debounce size 6 (5) */
+  61:robokits.c    **** 	
+  62:robokits.c    **** 	DDRB=0x01;						//SET DATA DIRECTION REGISTER
+ 108               	1:r(0,11)",64,0,0,25
+ 111 000e 87BB      	.Lscope1:
+  63:robokits.c    **** 									//SET 1 for OUTPUT PORT
+  64:robokits.c    **** 									//SET 0 FOR INPUT PORT
+  65:robokits.c    **** 									//ONLY PORTB.0 IS OUTPUT
+  66:robokits.c    **** 									//CONFIGURE AS PER REQUIREMENT
+  67:robokits.c    **** 									//DEFAULT ALL OTHERS ARE INPUT
+  68:robokits.c    **** 									//CHANGE ACCORDING TO USE
+  69:robokits.c    **** 	
+  70:robokits.c    **** 	DDRD=0xC0;						//SET DATA DIRECTION REGISTER
+ 112               	.LFBB1
+ 114 0010 80EC      	.Lscope1:
+  71:robokits.c    **** 									//SET 1 for OUTPUT PORT
+  72:robokits.c    **** 									//SET 0 FOR INPUT PORT
+  73:robokits.c    **** 									//ONLY PORTD.7 AND PORTD.6 ARE OUTPUT
+  74:robokits.c    **** 									//CONFIGURE AS PER REQUIREMENT
+  75:robokits.c    **** 									//DEFAULT ALL OTHERS ARE INPUT
+  76:robokits.c    **** 									//CHANGE ACCORDING TO USE
+  77:robokits.c    **** 	
+  78:robokits.c    **** 	sbi(PORTB,0);					//LED1 ON (INDICATION FOR READY TO USE)
+ 116               	BB1
+ 117               	.Lscope1:
+  79:robokits.c    **** 	
+  80:robokits.c    **** 	sbi(PORTD,2);					//ENABLE PULL UP FOR SW1
+ 119               	BB1
+ 120               	.Lscope1:
+  81:robokits.c    **** 	sbi(PORTD,3);					//ENABLE PULL UP FOR SW2
+ 122               	BB1
+ 123               	.Lscope1:
+ 125               	.global	main
+  82:robokits.c    ****     
+  83:robokits.c    **** 
+  84:robokits.c    ****     for (;;)								/* loop forever */ 
+  85:robokits.c    **** 	{                           
+  86:robokits.c    **** 		sbi(PORTD,7);
+ 127               	.global	main
+  87:robokits.c    ****         wait_debounce();				/* wait until push button PD2 (INT0) is pressed */
+ 129               	,0,0,main
+ 130               	.global	main
+  88:robokits.c    **** 		cbi(PORTD,7);
+ 132               	,0,0,main
+ 133               	.global	main
+  89:robokits.c    **** 		wait_debounce();				/* wait until push button PD2 (INT0) is pressed */
+ 135               	,0,0,main
+ 136               	.global	main
+ 138 0022 00C0      	main:
+ 140               	.LM4:
+ 141               	.LFBB2:
+ 142               	/* prologue: frame size=0 */
+ 143               	/* prologue end (size=0) */
+ 145               	.LM5:
+ 146               		ldi r24,lo8(1)
+ 147               		out 55-0x20,r24
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccDGiY4A.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccDGiY4A.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccDGiY4A.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccDGiY4A.s:5      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccDGiY4A.s:6      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccDGiY4A.s:72     .text:00000000 wait_debounce
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccDGiY4A.s:102    .text:0000000c main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

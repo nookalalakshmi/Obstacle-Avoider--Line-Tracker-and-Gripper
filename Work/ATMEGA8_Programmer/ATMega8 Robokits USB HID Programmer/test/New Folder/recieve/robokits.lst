@@ -1,0 +1,194 @@
+   1               		.file	"robokits.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  11               		.text
+  12               	.Ltext0:
+  71               	.global	spi_slaveinit
+  73               	spi_slaveinit:
+   1:robokits.c    **** 
+   2:robokits.c    **** 
+   3:robokits.c    **** #include <avr/io.h>
+   4:robokits.c    **** #include <avr/interrupt.h>
+   5:robokits.c    **** #include<compat/deprecated.h>		//HEADER FILE FOR FUNCTIONS LIKE SBI AND CBI
+   6:robokits.c    **** #include<util/delay.h>				//HEADER FILE FOR DELAY
+   7:robokits.c    **** 
+   8:robokits.c    **** 
+   9:robokits.c    **** static volatile uint8_t led; 					// use volatile when variable is accessed from interrupts
+  10:robokits.c    **** int volatile pw=100,count=0;
+  11:robokits.c    **** char a,b,c='d';
+  12:robokits.c    **** /*----------------------------------------------------------------
+  13:robokits.c    **** -----------------FUNCTIONS----------------------------------------
+  14:robokits.c    **** -----------------------------------------------------------------*/
+  15:robokits.c    **** 
+  16:robokits.c    **** 
+  17:robokits.c    **** void spi_slaveinit(void)
+  18:robokits.c    **** {
+  74               	me size = 0 */
+  76               	.LM1:
+  77               		ldi r24,lo8(16)
+  78               		out 55-32,r24
+  19:robokits.c    **** 	DDRB=0x10;
+  79               	68,0,18,.LM0-.LFBB1
+  80               	.LM0:
+  81 0000 80E1      	.LFBB1:
+  82 0002 87BB      	/* prologue: function */
+  20:robokits.c    **** 	SPCR=0x40;
+  83               	,spi_slaveinit
+  84               	.global	spi_slaveinit
+  86 0006 8DB9      	spi_slaveinit:
+  21:robokits.c    **** 
+  22:robokits.c    **** }
+  88               	0,0
+  90 0008 0895      	.global	spi_slaveinit
+  92               	spi_slaveinit:
+  94               	.LM0:
+  95               	.LFBB1:
+  96               	/* prologue: function */
+  23:robokits.c    **** char slave_recieve(void)
+  24:robokits.c    **** {
+  97               	,spi_slaveinit
+  98               	.global	spi_slaveinit
+ 100               	spi_slaveinit:
+ 102               	.LM0:
+  25:robokits.c    **** 	while(!(SPSR & (1<<SPIF)));
+ 103               	tabs	"spi_slaveinit:F(0,15)",36,0,0,spi_slaveinit
+ 104               	.global	spi_slaveinit
+ 106 000c 00C0      	spi_slaveinit:
+  26:robokits.c    **** 		sbi(PORTD,6);
+ 107               	tabn	162,0,0,0
+  27:robokits.c    **** 		return SPDR;
+ 110               	"__fuse_t:t(5,1)=(5,2)=s2low:(0,11),0,8;high:(0,11),8,8;;",128,0,0,0
+  28:robokits.c    **** 		
+  29:robokits.c    **** }
+ 114               	"__fuse_t:t(5,1)=(5,2)=s2low:(0,11),0,8;high:(0,11),8,8;;",128,0,0,0
+ 118               	.global	spi_slaveinit
+ 120               	spi_slaveinit:
+ 122               	.LM0:
+  30:robokits.c    **** 	     	
+  31:robokits.c    **** 
+  32:robokits.c    **** /*----------------------------------------------------------------
+  33:robokits.c    **** -----------------MAIN PROGRAM-------------------------------------
+  34:robokits.c    **** -----------------------------------------------------------------*/
+  35:robokits.c    **** 
+  36:robokits.c    **** int main(void)
+  37:robokits.c    **** {
+ 123               	tabs	"spi_slaveinit:F(0,15)",36,0,0,spi_slaveinit
+ 124               	.global	spi_slaveinit
+ 126               	spi_slaveinit:
+ 128               	.LM0:
+ 129               	.LFBB1:
+ 130               	/* prologue: function */
+ 131               	/* frame size = 0 */
+ 133 0016 87BB      	.LM1:
+ 134               		ldi r24,lo8(16)
+ 135               		out 55-32,r24
+ 137 001a 8DB9      	.LM2:
+ 138               		ldi r24,lo8(64)
+ 139               		out 45-32,r24
+ 140               	/* epilogue start */
+  38:robokits.c    ****    
+  39:robokits.c    **** 	
+  40:robokits.c    **** 		
+  41:robokits.c    **** 	spi_slaveinit();
+  42:robokits.c    **** 	while(1)
+  43:robokits.c    **** 	{
+  44:robokits.c    **** 		if(bit_is_clear(PINC,6))
+ 141               	,19,.LM1-.LFBB1
+ 142               	.LM1:
+ 143 001c 9E99      		ldi r24,lo8(16)
+ 144 001e 00C0      		out 55-32,r24
+ 146               	.LM2:
+ 147               		ldi r24,lo8(64)
+ 148               		out 45-32,r24
+ 149               	/* epilogue start */
+ 151 0022 00C0      	.LM3:
+ 152               		ret
+ 154 0024 969A      	.Lscope1:
+ 156               	.global	slave_recieve
+ 158               	slave_recieve:
+ 160               	.LM4:
+ 161               	.LFBB2:
+ 162               	/* prologue: function */
+ 163               	/* frame size = 0 */
+ 164               	.L4:
+ 166 002a 00C0      	.LM5:
+ 167               		sbis 46-32,7
+ 168               		rjmp .L4
+ 170               	.LM6:
+ 171               		sbi 50-32,6
+ 173               	.LM7:
+ 174               		in r24,47-32
+ 175               	/* epilogue start */
+ 177               	.LM8:
+ 178               		ret
+ 180 0030 779B      	.Lscope2:
+ 182               	.global	main
+ 184 0034 969A      	main:
+ 186               	.LM9:
+ 187 0036 8FB1      	.LFBB3:
+ 188               	/* prologue: function */
+ 189               	/* frame size = 0 */
+  45:robokits.c    **** 		{
+  46:robokits.c    **** 		 a= slave_recieve();
+  47:robokits.c    **** 		 b= slave_recieve();
+  48:robokits.c    **** 		 c= slave_recieve();
+  49:robokits.c    **** 		 if(c!='d')
+ 190               	nction
+ 191               	main:
+ 193 003a 01F0      	.LM9:
+  50:robokits.c    **** 		 {
+  51:robokits.c    **** 			 sbi(PORTD,7);
+ 194               	s	"main:F(0,1)",36,0,0,main
+ 195               	.global	main
+ 197 003e 00C0      	main:
+ 199               	.LM9:
+ 200               	.LFBB3:
+ 201               	/* prologue: function */
+ 202               	/* frame size = 0 */
+ 203               	.LBB10:
+ 204               	.LBB11:
+ 206               	.LM10:
+ 207               		ldi r24,lo8(16)
+ 208               		out 55-32,r24
+ 210               	.LM11:
+ 211               		ldi r24,lo8(64)
+ 212 0000 0000      		out 45-32,r24
+ 213               	.L19:
+ 214               	.LBE11:
+ 215               	.LBE10:
+ 217               	.LM12:
+ 218 0002 64        		sbic 51-32,6
+ 219               		rjmp .L19
+ 220               	.L14:
+ 221               	.LBB12:
+ 222               	.LBB13:
+ 224               	.LM13:
+ 225               		sbis 46-32,7
+ 226               		rjmp .L14
+ 228               	.LM14:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\Users\ankit\AppData\Local\Temp/ccxiGXRq.s:2      *ABS*:0000003f __SREG__
+C:\Users\ankit\AppData\Local\Temp/ccxiGXRq.s:3      *ABS*:0000003e __SP_H__
+C:\Users\ankit\AppData\Local\Temp/ccxiGXRq.s:4      *ABS*:0000003d __SP_L__
+C:\Users\ankit\AppData\Local\Temp/ccxiGXRq.s:5      *ABS*:00000034 __CCP__
+C:\Users\ankit\AppData\Local\Temp/ccxiGXRq.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\ankit\AppData\Local\Temp/ccxiGXRq.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\ankit\AppData\Local\Temp/ccxiGXRq.s:73     .text:00000000 spi_slaveinit
+C:\Users\ankit\AppData\Local\Temp/ccxiGXRq.s:96     .text:0000000a slave_recieve
+C:\Users\ankit\AppData\Local\Temp/ccxiGXRq.s:122    .text:00000014 main
+C:\Users\ankit\AppData\Local\Temp/ccxiGXRq.s:204    .data:00000000 pw
+C:\Users\ankit\AppData\Local\Temp/ccxiGXRq.s:211    .bss:00000000 count
+C:\Users\ankit\AppData\Local\Temp/ccxiGXRq.s:217    .data:00000002 c
+                            *COM*:00000001 a
+                            *COM*:00000001 b
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

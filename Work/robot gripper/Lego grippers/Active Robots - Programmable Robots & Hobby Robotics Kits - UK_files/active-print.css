@@ -1,0 +1,18 @@
+BODY {
+	FONT-SIZE: 10pt; BACKGROUND-IMAGE: none; WIDTH: 100%; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+#branding {
+	DISPLAY: none
+}
+#topbar {
+	DISPLAY: none
+}
+#leftmenu {
+	DISPLAY: none
+}
+#contentcell {
+	WIDTH: 100%
+}
+#topmenu {
+	DISPLAY: none
+}

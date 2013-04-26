@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://www.delorie.com/gnu/docs/glibc/libc_256.html -->
+<HTML><HEAD><TITLE>The GNU C Library</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY>
+<CENTER><!-- BEGIN RICH-MEDIA BURST! CODE -->
+<SCRIPT language=JavaScript>
+rnum=Math.round(Math.random() * 100000);
+
+document.write('<scr'+'ipt src="http://www.burstnet.com/cgi-bin/ads/ad1954a.cgi/v=2.0S/sz=468x60A|728x90A/'+rnum+'/RETURN-CODE/JS/"></scr'+'ipt>');
+
+</SCRIPT>
+<NOSCRIPT><A 
+href="http://www.burstnet.com/ads/ad1954a-map.cgi/ns/v=2.0S/sz=468x60A|728x90A/" 
+target=_top><IMG alt="Click Here" 
+src="The GNU C Library_files/lb_sv_time_out.gif" border=0></A> </NOSCRIPT><!-- END BURST CODE -->
+<TABLE cellSpacing=0 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#ffcc99><SMALL><FONT 
+      face="itc avant garde gothic,helvetica,arial"><B>&nbsp; <A 
+      href="http://www.delorie.com/" target=_top>http://www.delorie.com/</A>/<A 
+      href="http://www.delorie.com/gnu/" target=_top>gnu</A>/<A 
+      href="http://www.delorie.com/gnu/docs/" target=_top>docs</A>/<A 
+      href="http://www.delorie.com/gnu/docs/glibc/" 
+      target=_top>glibc</A>/libc_256.html</B></FONT></SMALL></TD>
+    <TD vAlign=top align=right bgColor=#ffcc99><SMALL><FONT 
+      face="itc avant garde gothic,helvetica,arial"><B>&nbsp; <A 
+      href="http://www.delorie.com/search/">search</A> &nbsp; 
+    </B></FONT></SMALL></TD></TR></TBODY></TABLE><A 
+href="http://www.delorie.com/gnu/docs/glibc/bulktrap.html"></A>
+<TABLE cellSpacing=0 cellPadding=5 align=right border=0>
+  <TBODY>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD align=middle bgColor=#ffcc99><SMALL><A 
+      href="http://www.delorie.com/store/books/?glibc"><IMG height=52 
+      src="The GNU C Library_files/book.gif" width=50 border=0><BR>Buy the 
+      book!</A><BR></SMALL></TD></TR>
+  <TR>
+    <TD><BR></TD></TR></TBODY></TABLE><BIG><BIG><B>The GNU C 
+Library</B></BIG></BIG></TD>
+<P></P></CENTER><A name=libc_256.html></A>
+<TABLE cellSpacing=1 cellPadding=1 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc_255.html"> &lt; </A>]</TD>
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc_257.html"> &gt; </A>]</TD>
+    <TD vAlign=center align=left>&nbsp; 
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc_239.html"> &lt;&lt; 
+    </A>]</TD>
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc_237.html"> Up </A>]</TD>
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc_267.html"> &gt;&gt; 
+    </A>]</TD>
+    <TD vAlign=center align=left>&nbsp; 
+    <TD vAlign=center align=left>&nbsp; 
+    <TD vAlign=center align=left>&nbsp; 
+    <TD vAlign=center align=left>&nbsp; 
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc.html#SEC_Top">Top</A>]</TD>
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc_toc.html#SEC_Contents">Contents</A>]</TD>
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc_708.html">Index</A>]</TD>
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc_abt.html#SEC_About"> ? 
+      </A>]</TD></TR></TBODY></TABLE>
+<HR SIZE=1>
+
+<H2>13.11 Control Operations on Files </H2><!--docid::SEC257::-->
+<P><A name=IDX1339></A><A name=IDX1340></A>This section describes how you can 
+perform various other operations on file descriptors, such as inquiring about or 
+setting flags describing the status of the file descriptor, manipulating record 
+locks, and the like. All of these operations are performed by the function 
+<CODE>fcntl</CODE>. </P>
+<P>The second argument to the <CODE>fcntl</CODE> function is a command that 
+specifies which operation to perform. The function and macros that name various 
+flags that are used with it are declared in the header file <TT>`fcntl.h'</TT>. 
+Many of these flags are also used by the <CODE>open</CODE> function; see <A 
+href="http://www.delorie.com/gnu/docs/glibc/libc_238.html">13.1 Opening and 
+Closing Files</A>. <A name=IDX1341></A></P>
+<P><A name=IDX1342></A>
+<DL>
+  <DT><U>Function:</U> int <B>fcntl</B> <I>(int <VAR>filedes</VAR>, int 
+  <VAR>command</VAR>, <SMALL>...</SMALL>)</I> 
+  <DD>The <CODE>fcntl</CODE> function performs the operation specified by 
+  <VAR>command</VAR> on the file descriptor <VAR>filedes</VAR>. Some commands 
+  require additional arguments to be supplied. These additional arguments and 
+  the return value and error conditions are given in the detailed descriptions 
+  of the individual commands. 
+  <P></P>
+  <P>Briefly, here is a list of what the various commands are. </P>
+  <P>
+  <DL compact>
+    <DT><CODE>F_DUPFD</CODE> 
+    <DD>Duplicate the file descriptor (return another file descriptor pointing 
+    to the same open file). See section <A 
+    href="http://www.delorie.com/gnu/docs/glibc/libc_257.html">13.12 Duplicating 
+    Descriptors</A>. 
+    <P></P>
+    <DT><CODE>F_GETFD</CODE> 
+    <DD>Get flags associated with the file descriptor. See section <A 
+    href="http://www.delorie.com/gnu/docs/glibc/libc_258.html">13.13 File 
+    Descriptor Flags</A>. 
+    <P></P>
+    <DT><CODE>F_SETFD</CODE> 
+    <DD>Set flags associated with the file descriptor. See section <A 
+    href="http://www.delorie.com/gnu/docs/glibc/libc_258.html">13.13 File 
+    Descriptor Flags</A>. 
+    <P></P>
+    <DT><CODE>F_GETFL</CODE> 
+    <DD>Get flags associated with the open file. See section <A 
+    href="http://www.delorie.com/gnu/docs/glibc/libc_259.html">13.14 File Status 
+    Flags</A>. 
+    <P></P>
+    <DT><CODE>F_SETFL</CODE> 
+    <DD>Set flags associated with the open file. See section <A 
+    href="http://www.delorie.com/gnu/docs/glibc/libc_259.html">13.14 File Status 
+    Flags</A>. 
+    <P></P>
+    <DT><CODE>F_GETLK</CODE> 
+    <DD>Get a file lock. See section <A 
+    href="http://www.delorie.com/gnu/docs/glibc/libc_264.html">13.15 File 
+    Locks</A>. 
+    <P></P>
+    <DT><CODE>F_SETLK</CODE> 
+    <DD>Set or clear a file lock. See section <A 
+    href="http://www.delorie.com/gnu/docs/glibc/libc_264.html">13.15 File 
+    Locks</A>. 
+    <P></P>
+    <DT><CODE>F_SETLKW</CODE> 
+    <DD>Like <CODE>F_SETLK</CODE>, but wait for completion. See section <A 
+    href="http://www.delorie.com/gnu/docs/glibc/libc_264.html">13.15 File 
+    Locks</A>. 
+    <P></P>
+    <DT><CODE>F_GETOWN</CODE> 
+    <DD>Get process or process group ID to receive <CODE>SIGIO</CODE> signals. 
+    See section <A 
+    href="http://www.delorie.com/gnu/docs/glibc/libc_265.html">13.16 
+    Interrupt-Driven Input</A>. 
+    <P></P>
+    <DT><CODE>F_SETOWN</CODE> 
+    <DD>Set process or process group ID to receive <CODE>SIGIO</CODE> signals. 
+    See section <A 
+    href="http://www.delorie.com/gnu/docs/glibc/libc_265.html">13.16 
+    Interrupt-Driven Input</A>. </DD></DL>
+  <P>This function is a cancellation point in multi-threaded programs. This is a 
+  problem if the thread allocates some resources (like memory, file descriptors, 
+  semaphores or whatever) at the time <CODE>fcntl</CODE> is called. If the 
+  thread gets canceled these resources stay allocated until the program ends. To 
+  avoid this calls to <CODE>fcntl</CODE> should be protected using cancellation 
+  handlers. </P></DD></DL>
+<P></P>
+<P><A name="Duplicating Descriptors"></A>
+<HR SIZE=1>
+
+<TABLE cellSpacing=1 cellPadding=1 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc_255.html"> &lt; </A>]</TD>
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc_257.html"> &gt; </A>]</TD>
+    <TD vAlign=center align=left>&nbsp; 
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc_239.html"> &lt;&lt; 
+    </A>]</TD>
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc_237.html"> Up </A>]</TD>
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc_267.html"> &gt;&gt; 
+    </A>]</TD>
+    <TD vAlign=center align=left>&nbsp; 
+    <TD vAlign=center align=left>&nbsp; 
+    <TD vAlign=center align=left>&nbsp; 
+    <TD vAlign=center align=left>&nbsp; 
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc.html#SEC_Top">Top</A>]</TD>
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc_toc.html#SEC_Contents">Contents</A>]</TD>
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc_708.html">Index</A>]</TD>
+    <TD vAlign=center align=left>[<A 
+      href="http://www.delorie.com/gnu/docs/glibc/libc_abt.html#SEC_About"> ? 
+      </A>]</TD></TR></TBODY></TABLE><BR clear=both>
+<P></P><A href="http://www.delorie.com/gnu/docs/glibc/bulktrap.html"></A>
+<TABLE cellSpacing=0 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#ffcc99><SMALL><FONT 
+      face="itc avant garde gothic,helvetica,arial"><B>&nbsp; <A 
+      href="http://www.delorie.com/users/dj/" target=_top>webmaster</A> &nbsp; 
+      <A href="http://www.delorie.com/donations.html" target=_top>donations</A> 
+      &nbsp; <A href="http://www.delorie.com/store/books/" 
+      target=_top>bookstore</A> &nbsp; </B></FONT></SMALL></TD>
+    <TD vAlign=top align=right bgColor=#ffcc99><SMALL><FONT 
+      face="itc avant garde gothic,helvetica,arial"><B>&nbsp; <A 
+      href="http://www.delorie.com/" target=_top>delorie software</A> &nbsp; <A 
+      href="http://www.delorie.com/privacy.html" target=_top>privacy</A> &nbsp; 
+      </B></FONT></SMALL></TD></TR>
+  <TR>
+    <TD vAlign=top align=left bgColor=#ffcc99><SMALL><FONT 
+      face="itc avant garde gothic,helvetica,arial"><B>&nbsp; <A 
+      href="http://www.delorie.com/copyright.html" target=_top>Copyright © 
+      2003</A> &nbsp; <A href="http://www.delorie.com/users/fsf/" target=_top>by 
+      The Free Software Foundation</A> &nbsp; </B></FONT></SMALL></TD>
+    <TD vAlign=top align=right bgColor=#ffcc99><SMALL><FONT 
+      face="itc avant garde gothic,helvetica,arial"><B>&nbsp; Updated Jun 2003 
+      &nbsp; </B></FONT></SMALL></TD></TR></TBODY></TABLE>
+<CENTER><!-- BEGIN RICH-MEDIA BURST! CODE -->
+<SCRIPT language=JavaScript>
+rnum=Math.round(Math.random() * 100000);
+document.write('<scr'+'ipt src="http://www.burstnet.com/cgi-bin/ads/ba1954a.cgi/v=2.0S/sz=468x60B/'+rnum+'/RETURN-CODE/JS/"></scr'+'ipt>');
+</SCRIPT>
+<NOSCRIPT><A 
+href="http://www.burstnet.com/ads/ba1954a-map.cgi/ns/v=2.0S/sz=468x60B/" 
+target=_top><IMG alt="Click Here" 
+src="The GNU C Library_files/ba_sv_caesar_041603.gif" border=0></A> </NOSCRIPT><!-- END BURST CODE --><BR><SMALL><I>Please take a moment to fill out 
+this <A 
+href="http://websurvey.burstmedia.com/surveyid1/surveysite.asp?Qhcode=ad1954a&amp;Qhcat=13">visitor 
+survey</A></I></SMALL> <BR><SMALL><I>You can help support this site by visiting 
+the advertisers that sponsor it! (only once each, though)</I></SMALL> 
+</CENTER></BODY></HTML>

@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0080)http://read.pudn.com//downloads102/sourcecode/embed/418044/sdCard/sd_cmd.h__.htm -->
+<HTML><HEAD><TITLE>SDMMCyuanma.rar sd_cmd.h</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><LINK 
+href="SDMMCyuanma_rar sd_cmd_files/read_style.css" type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.pudn.com/">http://www.pudn.com/</A> &gt; <A 
+href="http://www.pudn.com/downloads102/sourcecode/embed/detail418044.html">SDMMCyuanma.rar</A> 
+&gt; sd_cmd.h</P><!-- saved from http://www.pudn.com -->
+<SCRIPT src="SDMMCyuanma_rar sd_cmd_files/gg_read1.js"></SCRIPT>
+<BR><PRE class=h name="code"> /*! 
+ *@file     sd_cmd.c 
+ * 
+ *  
+ * 
+ *@version  v1.0.0 
+ *@date     2007 
+ *@author   jacky291@126.com 
+ */ 
+#ifndef __SD_CMD_H 
+#define  __SD_CMD_H 
+ 
+#ifndef __SD_SPI_H 
+#include "sd_spi.h" 
+#endif 
+ 
+#define CMD0    0 
+#define CMD1    1 
+#define CMD2    2 
+#define CMD3    3 
+#define CMD4    4 
+#define CMD5    5 
+#define CMD6    6 
+#define CMD7    7    
+#define CMD8    8 
+#define CMD9    9 
+#define CMD10   10 
+#define CMD11   11 
+#define CMD12   12 
+#define CMD13   13 
+#define CMD14   14 
+#define CMD15   15 
+#define CMD16   16 
+#define CMD17   17 
+#define CMD18   18 
+#define CMD19   19 
+#define CMD20   20 
+#define CMD21   21 
+#define CMD22   22 
+#define CMD23   23 
+#define CMD24   24 
+#define CMD25   25 
+#define CMD26   26 
+#define CMD27   27 
+#define CMD28   28  
+#define CMD29   29 
+#define CMD30   30 
+#define CMD31   31 
+#define CMD32   32 
+#define CMD33   33 
+#define CMD34   34 
+#define CMD35   35 
+#define CMD36   36 
+#define CMD37   37 
+#define CMD38   38 
+#define CMD39   39 
+#define CMD40   40 
+#define CMD41   41 
+#define CMD42   42 
+#define CMD43   43 
+#define CMD44   44 
+#define CMD45   45 
+#define CMD46   46 
+#define CMD47   47 
+#define CMD48   48 
+#define CMD49   49 
+#define CMD50   50 
+#define CMD51   51 
+#define CMD52   52 
+#define CMD53   53 
+#define CMD54   54 
+#define CMD55   55 
+#define CMD56   56 
+#define CMD57   57 
+#define CMD58   58 
+#define CMD59   59 
+/* following is not define */ 
+#define CMD60 
+#define CMD61 
+#define CMD62 
+#define CMD63 
+/* response length */ 
+#define R1   1 
+#define R1b  1 
+#define R2   2 
+#define R3   5 
+ 
+#define SD_NO_ERR              0 
+#define CMD_PARAM_ERR          255 
+#define SD_ERR_CMD_TIMEOUT     254 
+#define SD_ERR_CMD_RESP        253 
+#define SD_CMD_TIMEOUT         2000 
+/*! 
+*@brief 
+*        SD_SendCMD() 
+*        send the command 
+* 
+*@param  uint8 cmd:the command sended 
+*@param  uint8 *param:the command param addr. 
+*@param  uint8 resType:the response type 
+*@param  uint8 *response:the response data addr. 
+*@retval 0:  right	&gt;0:  error code 
+*/ 
+extern uint32 SD_SendCMD(uint8 cmd,uint8 *param,uint8 resType,uint8 *response); 
+ 
+/*! 
+*@brief 
+*        SD_PackParam(uint8 *param, uint32 value) 
+*        format the param,div value to 4 Byte 
+* 
+*@param  *param:param addr(8bits) 
+*@param  uint32 value 
+*@retval none 
+*/ 
+extern void SD_PackParam(uint8 *param, uint32 value); 
+ 
+ 
+/*! 
+*@brief 
+*        SD_BlockCommand(uint8 cmd, uint8 resptype, uint32 parameter) 
+*        send the block command 
+* 
+*@param  uint8 cmd:the command sended 
+*@param  uint8 *param:the command param addr. 
+*@param  uint8 resType:the response type 
+*@param  uint8 *response:the response data addr. 
+*@retval 0:  right	&gt;0:  error code 
+*/ 
+extern uint8 SD_BlockCommand(uint8 cmd, uint8 resptype, uint32 parameter); 
+ 
+ 
+ 
+#endif 
+</PRE>
+<SCRIPT src="SDMMCyuanma_rar sd_cmd_files/2259963.js"></SCRIPT>
+
+<SCRIPT src="SDMMCyuanma_rar sd_cmd_files/gg_read2.js"></SCRIPT>
+<BR></BODY></HTML>

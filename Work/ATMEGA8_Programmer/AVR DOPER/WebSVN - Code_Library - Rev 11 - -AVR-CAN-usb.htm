@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0101)http://avrrepository.org/svn/filedetails.php?repname=Code_Library&path=%2FAVR-CAN%2Fusb.h&rev=11&sc=1 -->
+<HTML><HEAD><TITLE>WebSVN - Code_Library - Rev 11 - /AVR-CAN/usb.h</TITLE>
+<META http-equiv=content-type content=text/html;charset=ISO-8859-1><LINK 
+media=screen 
+href="WebSVN - Code_Library - Rev 11 - -AVR-CAN-usb_files/styles.css" 
+rel=stylesheet><!--[if gte IE 5.5000]>
+<SCRIPT src="WebSVN - Code_Library - Rev 11 - -AVR-CAN-usb_files/png.js" 
+type=text/javascript></SCRIPT>
+<![endif]-->
+<SCRIPT>
+         function checkCB(chBox)
+         {
+            count = 0
+            first = null
+            f = chBox.form
+            for (i = 0 ; i < f.elements.length ; i++)
+            if (f.elements[i].type == 'checkbox' && f.elements[i].checked)
+            {
+               if (first == null && f.elements[i] != chBox)
+                  first = f.elements[i]
+               count += 1
+            }
+            
+            if (count > 2) 
+            {
+               first.checked = false
+               count -= 1
+            }
+         }
+      </SCRIPT>
+
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY>
+<DIV style="TEXT-ALIGN: center"><A href="http://www.avrrepository.com/svn"><IMG 
+style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; WIDTH: 468px; BORDER-BOTTOM: 0px; HEIGHT: 64px" 
+alt=Subversion 
+src="WebSVN - Code_Library - Rev 11 - -AVR-CAN-usb_files/avrepository.png"></A> 
+</DIV>
+<HR>
+
+<DIV align=right>
+<FORM name=projectform action=form.php?path=&amp; method=post><SELECT 
+onchange=javascript:this.form.submit(); name=repname><OPTION 
+  value=Code_Library selected>Code_Library</OPTION><OPTION 
+  value=Sample_Code>Sample_Code</OPTION></SELECT><INPUT type=submit value=Go><INPUT 
+type=hidden value=1 name=selectproj><INPUT type=hidden value=form name=op><INPUT 
+type=hidden value=1 name=sc></FORM></DIV>
+<H2>Code_Library</H2>[<A 
+href="http://avrrepository.org/svn/listing.php?repname=Code_Library&amp;path=%2F&amp;rev=11&amp;sc=1">/]</A> 
+[<A 
+href="http://avrrepository.org/svn/listing.php?repname=Code_Library&amp;path=%2FAVR-CAN%2F&amp;rev=11&amp;sc=1">AVR-CAN/]</A> 
+[<B>usb.h</B>] - Rev 11 
+<P><A 
+href="http://avrrepository.org/svn/diff.php?repname=Code_Library&amp;path=%2FAVR-CAN%2Fusb.h&amp;rev=11&amp;sc=1">Compare 
+with Previous</A> - <A 
+href="http://avrrepository.org/svn/blame.php?repname=Code_Library&amp;path=%2FAVR-CAN%2Fusb.h&amp;rev=11&amp;sc=1">Blame</A> 
+
+<P>
+<HR>
+
+<TABLE width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=row0><PRE><I><FONT color=#b22222>//*****************************************************************************
+</FONT></I><I><FONT color=#b22222>//
+</FONT></I><I><FONT color=#b22222>// Title        : AVR based USB&lt;&gt;CAN adaptor
+</FONT></I><I><FONT color=#b22222>// Authors      : Michael Wolf
+</FONT></I><I><FONT color=#b22222>// File Name    : 'usb.h'
+</FONT></I><I><FONT color=#b22222>// Date         : August 24, 2005
+</FONT></I><I><FONT color=#b22222>// Version      : 1.00
+</FONT></I><I><FONT color=#b22222>// Target MCU   : Atmel AVR ATmega162
+</FONT></I><I><FONT color=#b22222>// Editor Tabs  : 2
+</FONT></I><I><FONT color=#b22222>//
+</FONT></I><I><FONT color=#b22222>// NOTE: The authors in no way will be responsible for damages that you
+</FONT></I><I><FONT color=#b22222>//       coul'd be using this code.
+</FONT></I><I><FONT color=#b22222>//       Use this code at your own risk.
+</FONT></I><I><FONT color=#b22222>//
+</FONT></I><I><FONT color=#b22222>//       This code is distributed under the GNU Public License
+</FONT></I><I><FONT color=#b22222>//       which can be found at http://www.gnu.org/licenses/gpl.txt
+</FONT></I><I><FONT color=#b22222>//
+</FONT></I><I><FONT color=#b22222>// Change Log
+</FONT></I><I><FONT color=#b22222>//
+</FONT></I><I><FONT color=#b22222>// Version  When        Who           What
+</FONT></I><I><FONT color=#b22222>// -------  ----        ---           ----
+</FONT></I><I><FONT color=#b22222>// 1.00     24/08/2005  Michael Wolf  Initial Release
+</FONT></I><I><FONT color=#b22222>//
+</FONT></I><I><FONT color=#b22222>//*****************************************************************************
+</FONT></I>#<B><FONT color=#5f9ea0>include</FONT></B> <FONT color=#bc8f8f><B>&lt;avr/io.h&gt;</FONT></B>
+#<B><FONT color=#5f9ea0>ifndef</FONT></B> <FONT color=#b8860b>__USB_H__</FONT>
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>__USB_H__</FONT>
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_TX_PORT</FONT>		PORTD
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_TX_PIN</FONT>		PIND
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_TX_DIR</FONT>		DDRD
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_RX_PORT</FONT>   PORTE
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_RX_PIN</FONT>    PINE
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_RX_DIR</FONT>    DDRE
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_DATA_PORT</FONT> PORTB
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_DATA_PIN</FONT>  PINB
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_DATA_DIR</FONT>  DDRB
+
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_RD</FONT>   PD3		// FT245BM RD pin
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_WR</FONT>   PD4		// FT245BM WR pin
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_TXE</FONT>  PD5		// FT245BM TXE pin
+#<B><FONT color=#5f9ea0>define</FONT></B> <FONT color=#b8860b>USB_RXF</FONT>  PE0		// FT245BM RXF pin
+
+uint8_t <B><FONT color=#0000ff>usb_getc</FONT></B> (<FONT color=#228b22><B>void</FONT></B>);
+<FONT color=#228b22><B>void</FONT></B> <B><FONT color=#0000ff>usb_putc</FONT></B> (uint8_t tx_byte);
+<FONT color=#228b22><B>void</FONT></B> <B><FONT color=#0000ff>usb_byte2ascii</FONT></B> (uint8_t tx_byte);
+<FONT color=#228b22><B>void</FONT></B> <B><FONT color=#0000ff>usb_puts</FONT></B> (uint8_t * tx_string);
+
+#<B><FONT color=#5f9ea0>endif</FONT></B> // <FONT color=#b8860b>__USB_H__</FONT>
+</PRE></TD></TR></TBODY></TABLE>
+<HR>
+
+<P>
+<CENTER><FONT size=-1><I><B>Powered by <A 
+href="http://websvn.tigris.org/">WebSVN</A> 
+v1.61</B></I></FONT></CENTER></BODY></HTML>

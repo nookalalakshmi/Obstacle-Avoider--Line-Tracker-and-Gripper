@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0043)http://www.hhhh.org/wiml/proj/avr/ssbl.html -->
+<HTML><HEAD><TITLE>A smaller serial bootloader for the ATmega8</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1"><LINK 
+rev=made href="mailto:wiml@hhhh.org">
+<META 
+content="small serial bootloader, Atmel AVR ATmega8 microconroller, bootstrap, boot loader" 
+name=keywords>
+<STYLE type=text/css>PRE {
+	BORDER-RIGHT: black thin solid; PADDING-RIGHT: 0.5em; BORDER-TOP: black thin solid; PADDING-LEFT: 0.5em; BACKGROUND: #d3d3d3; PADDING-BOTTOM: 0.5em; BORDER-LEFT: black thin solid; PADDING-TOP: 0.5em; BORDER-BOTTOM: black thin solid
+}
+P.warn {
+	BORDER-RIGHT: red thin solid; PADDING-RIGHT: 0.5em; BORDER-TOP: red thin solid; PADDING-LEFT: 0.5em; PADDING-BOTTOM: 0.5em; BORDER-LEFT: red thin solid; PADDING-TOP: 0.5em; BORDER-BOTTOM: red thin solid
+}
+</STYLE>
+
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY>
+<H1>Small Serial Bootloader?</H1>
+<H1>Short &amp; Sweet Bootloader?</H1>
+<H1>Somewhat Smaller Bootloader?</H1>
+<P>I got tired of fiddling with the available bootloaders for the Atmel ATmega8 
+chip and wrote my own. This bootloader is designed to be small (fit in the 
+smallest configurable boot block) but still support reasonably fast programming 
+over a serial line. 
+<P>Most other bootloaders seem to be imitating an existing device programmer. 
+SSBL doesn't take that approach; it tries to supply a small set of primitive 
+operations using which the host can program the device. Most of the programming 
+algorithm is therefore carried out by the host instead of by the bootloader. 
+<P>Pros: 
+<UL>
+  <LI>Smaller than most bootloaders. 
+  <LI>Much faster than a bit-bang in-circuit-serial-programmer. 
+  <LI>Doesn't require 8-bit-transparent communication with the host. Data is 
+  transferred in hex; commands/responses are normal printing characters. 
+</LI></UL>
+<P>Cons: 
+<UL>
+  <LI>Doesn't imitate a standalone programmer (unlike the avr910/butterfly/etc. 
+  style bootloaders). 
+  <LI>In fact, doesn't imitate any existing protocol. 
+  <LI>Can't identify the device to the host. The host must already know what 
+  it's programming. 
+  <LI>Doesn't currently support EEPROM programming. 
+  <LI>Can't reset the target chip. </LI></UL>
+<H2>Download</H2>Download it from <A 
+href="ftp://ftp.hhhh.org/pub/wiml/ssbl-r115.tar.gz">ftp://ftp.hhhh.org/pub/wiml/ssbl-r115.tar.gz</A> 
+<SMALL>(10329 bytes, sha1 sum 283f394d4869d3880f7a14c3691556da29251bcf)</SMALL> 
+<H2>SSBL serial protocol</H2>
+<P>Subject to change with changing revisions of the bootloader. 
+<P>Each command is one character, possibly followed by data. Data is sent in 
+hexadecimal. The bootloader responds to unrecognized characters with a question 
+mark. When waiting for a command, the bootloader sends a CR (ascii 
+<TT>0x0D</TT>). The exception to this is the 'p' command, which does not send a 
+CR when it finishes. 
+<P>Hex digits may use either uppercase or lowercase letters. (SSBL always 
+responds with uppercase letters). Whitespace or other characters in hex strings 
+sent to SSBL are not allowed and will cause an error (see below). 
+<P>When the bootloader starts, it prints 'ok' followed by a CR. 
+<P>Communication is at 9600 bps, 8N2. 
+<DL>
+  <DT>Command 'p' (0x70) 
+  <DD>Returns an 's' (0x73), without a trailing CR. This is used to help 
+  distinguish an SSBL bootloader from an avr910, butterfly, or the like. 
+  <DT>Command 'z' (0x7A) 
+  <DD>Followed by four hex digits, loads the Z-register with the specified 
+  value. 
+  <DT>Command 'R' (0x52) 
+  <DD>Followed by two hex digits, which are interpreted as a byte count. Reads 
+  program memory starting at the location pointed to by the Z register, and 
+  returns contents in hexadecimal. The Z register is advanced by the amount 
+  read. A value of 00 will cause 256 bytes to be read. 
+  <DT>Command 'W' (0x57) 
+  <DD>Writes to program memory. The command character is followed by a 
+  <EM>word</EM> count (not a byte count as in 'R'). That many words are read, 
+  and stored into program memory at the location pointed to by the Z register. 
+  The Z register is advanced accordingly. This command does not perform a full 
+  program sequence. The programmer will need to use the 'P' command to complete 
+  the programming operation, and will need to be aware of the page structure of 
+  the target chip. 
+  <DT>Command 'P' (0x50) 
+  <DD>Reads one word into <TT>R0:R1</TT>, then one byte into SPMCR, then 
+  executes an SPM instruction. 
+  <DT>Command 'L' (0x52) 
+  <DD>Reads one byte into SPMCR, then executes an LPM instruction. (The host 
+  will want to set up the Z register beforehand.) The value loaded by LPM is 
+  returned to the host. 
+  <DT>Command 'Q' (0x51) 
+  <DD>Sends some state information back to the host. This might eventually be 
+  used to identify the version of SSBL. Sends a 'z', followed by the contents of 
+  the Z register; then a 'b', followed by the address of the start of the 
+  bootloader. 
+  <DT>Command '@' (0x40) 
+  <DD>Performs an ICALL, transferring control to the address in the Z register. 
+  This is useful for jumping to address 0 to start a loaded program, but could 
+  also be used to call a utility routine. </DD></DL>Unrecognized commands, or 
+unexpected (non-hexadecimal) charcters in a command argument, cause SSBL to 
+return a question mark (0x3F), followed by the usual CR and waiting for a new 
+command. 
+<H2>Configurations</H2>Eventually, the idea is, there will be a couple of 
+<TT>#define</TT>s which will let you build SSBL as either a minimal bootloader 
+(capable of loading program memory and not much else), or a slightly more full 
+featured boot loader, capable of writing to data EEPROM as well. The minimal 
+boot loader will be able to fit into the smallest configurable boot block on the 
+mega8. The current feature set is approximately what I want from the minimal 
+configuration, but it's just a little too large to fit in the smallest boot 
+block. I need to optimize it a little. 
+<P>Also, right now the bootloader checks PORTD.4 and if it's pulled low, it 
+jumps directly to 0x0000 in order to imitate a chip whose BOOTRST fuse is not 
+set. This needs to be configurable, I guess. 
+<H2>Python driver</H2>[Talk a little about ssbl.py, the host-side part of the 
+bootloader. (Reads an Intel Hex file and writes it to the target chip.)] 
+<HR>
+<SMALL><I>$Header: 
+/usr/local/share/cvsroots/users/htdocs/wiml/proj/avr/ssbl.html,v 1.5 2006/06/25 
+03:02:03 wiml Exp $</I> — <A href="http://www.hhhh.org/wiml">my web pages</A> — 
+<A href="mailto:wiml@hhhh.org">mail me</A> </SMALL></BODY></HTML>

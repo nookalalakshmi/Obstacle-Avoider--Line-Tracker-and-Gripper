@@ -1,0 +1,259 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: AVR-Based Serial Port IR Receiver
+Date: Fri, 13 Feb 2009 07:53:51 +0530
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01C98DB0.36033470"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5579
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C98DB0.36033470
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.happy-beginnings.de/IR/
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>AVR-Based Serial Port IR Receiver</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<STYLE type=3Dtext/css>.red {
+	COLOR: #ff0000
+}
+</STYLE>
+
+<META content=3D"MSHTML 6.00.6000.16788" name=3DGENERATOR></HEAD>
+<BODY text=3D#00e000 bgColor=3D#000000>
+<P>
+<H1>AVR-Based Serial Port IR Receiver</H1>
+<H3>This is a simple IR receiver circuit which plugs into a serial port =
+of a=20
+computer. Okay, there are many other circuits of this kind, and most of =
+them are=20
+even simpler, but this circuit has two major advantages: (1) it uses an =
+Atmel=20
+AVR RISC microcontroller (an AT90S2313) instead of the usual PIC =
+microcontroller=20
+and (2) it uses a Maxim MAX232 for the generation of valid RS232 =
+levels.</H3>
+<H3>Advantage 1 is, of course, only valid for all those AVR addicts =
+which have=20
+this device (and the corresponding programmer) ready at hand and don't =
+care=20
+about PICs and PIC programmers. Advantage 2 comes into play if the IR =
+receiver=20
+has to placed at a great distance from the computer; the MAX232 is more =
+likely=20
+to deliver valid signals over bigger distances than cheaper =
+solutions.</H3>
+<H3>The IR receiver can receive it's +5V supply voltage from the =
+keyboard or=20
+mouse connector of the computer (either from an unsued PS/2 port or via =
+a=20
+pass-thru adaptor). If the IR interface is placed at a great distance =
+from the=20
+computer, I power it with an external stabilized 5V DC power supply =
+instead of=20
+the PS/2 port.</H3>
+<H3>The interface communicates at 19200 baud, unidirectionally (that =
+means, it=20
+only transmits data and does not care anything about data which the =
+computer=20
+send), without flow control. For every level transistion in the =
+demodulated IR=20
+signal, it transmits a single byte which corresponds to the time since =
+the=20
+previous transistion, capping off at a value of 255. It works reliable =
+with a=20
+Sony remote control (using the special Sony protocol), and I have also=20
+succesfully tested it with an Onkyo remote control (I think this one =
+uses the=20
+standard RC5 protocol, but I'm not shure). Decoding happens on the =
+computer; I=20
+use <A href=3D"http://www.pcremotecontrol.com/">PC Remote Control</A> =
+for=20
+this.</H3>
+<H3>Okay, 'nuff said, here's the schematic <SPAN class=3Dred>(changed on =
+July 08,=20
+2002 to correct wrong connections to the MAX232)</SPAN>. Obviously, it =
+uses=20
+european symbols.</H3>
+<H3><IMG height=3D484 alt=3DSchematic=20
+src=3D"http://www.happy-beginnings.de/IR/ir-receiver.png" =
+width=3D943></H3>
+<H3><FONT color=3D#ff0000>Attention! It has come recently to my =
+attention that an=20
+SFH601, as shown in the schematic, is not the correct device for that =
+circuit.=20
+In fact, the SFH601 seems to be a 6-pin DIP optocoupler device and no IR =
+
+receiver. Unfortunately, all the devices which were sold to me as =
+"SFH601 IR=20
+receivers/demodulators" carry no markings, but I'm pretty confident now =
+that my=20
+circuit contains the SFH506 instead. The SFH506 isn't produced any more =
+now, so=20
+the TSOP1736 is now commonly used instead (the TSOP1836 is also said to=20
+work).</FONT></H3>
+<H3>Please note that there are different types of MAX232s, which use =
+different=20
+values of external capacitors! Check first which type you've got before=20
+soldering in the caps! Datasheets for these ICs are available at <A=20
+href=3D"http://www.maxim-ic.com/">http://www.maxim-ic.com/</A>.</H3>
+<H3>If the interface is positioned at a rather short distance to the =
+host=20
+computer (I guess a few meters are okay), a simplified version of the =
+RS232=20
+interface may work. The simplfied interface uses a single transistor =
+instead of=20
+the MAX232. The resulting signal voltages are 0V and 5V, which are =
+clearly=20
+outside the RS232 specifications, but are still correctly interpreted by =
+modern=20
+RS232 receiver circuits. The schematic for the simplfied version can =
+downloaded=20
+<A=20
+href=3D"http://www.happy-beginnings.de/IR/ir-receiver-simple-interface.pn=
+g">here</A>.=20
+Please note that I have not yet built this circuit, so it's still =
+untested.</H3>
+<H3>The microcontroller firmware can be downloaded here: <A=20
+href=3D"http://www.happy-beginnings.de/IR/AT2313IR%20V1-1.zip">Firmware =
+V1.1</A>.=20
+If you have questions, feel free to mail me at <A=20
+href=3D"mailto:ks@expose-media.de">ks@expose-media.de</A>.</H3>
+<H3>I also have a (very simple) <A=20
+href=3D"http://www.happy-beginnings.de/IR/IR_RECOGNITION%20V1-0.zip">exam=
+ple</A>=20
+which shows how IR signal recognition can be done inside the=20
+mircocontroller.</H3>
+<H3>- Klaus Stock</H3><BR><BR><BR><BR>Other sites on this server: =
+<BR><BR><A=20
+href=3D"http://www.stock-consulting.com/ROBB">The Raid on Bungling Bay =
+Map=20
+Site</A><BR><A href=3D"http://www.happy-beginnings.de/">Happy Beginnings =
+Wedding=20
+Service (german site)</A><BR><A=20
+href=3D"http://vmps801.stock-consulting.com/">VMPS801 - Virtual Matrix =
+Printer=20
+Simulation of the Commodore MPS801</A><BR><A =
+href=3D"http://www.brin-l.com/">Home=20
+of The David Brin Mailing List</A><BR></BODY></HTML>
+
+------=_NextPart_000_0000_01C98DB0.36033470
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://www.happy-beginnings.de/IR/ir-receiver.png
+
+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
+AAAASUVORK5CYII=
+
+------=_NextPart_000_0000_01C98DB0.36033470--

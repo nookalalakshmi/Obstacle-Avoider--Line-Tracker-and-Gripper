@@ -1,0 +1,122 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0106)http://publib.boulder.ibm.com/infocenter/pseries/v5r3/advanced/searchView.jsp?searchWord=usb.h&maxHits=500 -->
+<!--
+	For grouped search result 
+	uat4i00000025 1/2
+ --><!--
+	end of For grouped search result 
+	uat4i00000025 1/2
+ --><HTML><HEAD><TITLE>Search Results</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=UTF-8">
+<META http-equiv=Pragma content=no-cache>
+<META http-equiv=Expires content=-1>
+<STYLE type=text/css>BODY {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; MARGIN-TOP: 5px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; FONT: icon; MARGIN-LEFT: 5px; BORDER-LEFT: 0px; CURSOR: default; COLOR: windowtext; PADDING-TOP: 0px; BORDER-BOTTOM: 0px; BACKGROUND-COLOR: window
+}
+A {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; WHITE-SPACE: nowrap; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+A.highlight {
+	BACKGROUND: highlight; COLOR: highlighttext
+}
+.active {
+	BACKGROUND: highlight; WIDTH: 100%; COLOR: highlighttext; HEIGHT: 100%
+}
+A.grouptype {
+	PADDING-RIGHT: 2px; COLOR: windowtext; WHITE-SPACE: nowrap; TEXT-DECORATION: none
+}
+A.grouptype:hover {
+	PADDING-RIGHT: 2px; COLOR: windowtext; WHITE-SPACE: nowrap; TEXT-DECORATION: none
+}
+IMG {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 4px 0px 0px; BORDER-LEFT: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: 0px
+}
+TABLE {
+	FONT: icon; WIDTH: 100%; BACKGROUND-COLOR: window
+}
+.list {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; BACKGROUND-COLOR: window
+}
+.label {
+	MARGIN-LEFT: 4px
+}
+.score {
+	PADDING-RIGHT: 5px
+}
+#detailinfo {
+	TEXT-DECORATION: underline
+}
+</STYLE>
+
+<SCRIPT language=JavaScript src="searchView_files/list.js"></SCRIPT>
+
+<SCRIPT language=JavaScript>		
+function showWindowStatus(arg) {
+	try {
+		var statusText = "";
+		if (isIE)
+			statusText = arg.innerText;
+		else if (isMozilla)
+			statusText = arg.lastChild.nodeValue;
+		if (statusText != arg.title) {
+			statusText += " - " + arg.title;
+		}
+		window.status = statusText;
+	} catch (e) {
+	}
+
+}
+function clearWindowStatus() {
+	window.status="";
+}
+function refresh() 
+{ 
+	window.location.replace("searchView.jsp?searchWord=usb.h&maxHits=500");
+}
+function changeGroup(arg)
+{
+	var selectedGroup = arg;
+	var query = "searchWord=usb.h&maxHits=500";
+	var index = query.indexOf("group");
+	var detail = query.indexOf("detail");
+	var url;
+	if(index==-1)
+		url = "searchView.jsp?" + query + "&group=" + selectedGroup;
+	else {
+		url = "searchView.jsp?" + query.substr(0, index - 1) + "&group=" + selectedGroup;
+		if(detail != -1 && detail > index)
+			url += "&detail=true";
+	}
+	window.location.replace(url);
+}
+function details() {
+	var query = "searchWord=usb.h&maxHits=500";
+	var index = query.indexOf("detail");
+	var url;
+	if(index==-1) {
+		url = "searchView.jsp?" + query + "&detail=true";
+		}
+	else {
+		url = "searchView.jsp?" + query.substr(0, index - 1) + query.substr(index + 11, query.length);
+	}
+	window.location.replace(url);
+}
+
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY dir=ltr tabIndex=0>Nothing found.
+<SCRIPT language=JavaScript>
+<!--uat4i00000002-->
+
+top.HelpFrame.NavFrame.showView("search");
+
+<!--end of uat4i00000002-->
+
+//selectTopicById('');
+
+</SCRIPT>
+ </BODY></HTML>

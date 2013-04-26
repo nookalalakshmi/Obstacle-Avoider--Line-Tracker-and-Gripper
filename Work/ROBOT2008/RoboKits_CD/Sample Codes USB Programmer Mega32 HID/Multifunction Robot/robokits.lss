@@ -1,0 +1,860 @@
+
+robokits.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000300  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .debug_aranges 00000020  00000000  00000000  00000354  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  2 .debug_pubnames 00000081  00000000  00000000  00000374  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_info   0000042c  00000000  00000000  000003f5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_abbrev 0000017c  00000000  00000000  00000821  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_line   00000734  00000000  00000000  0000099d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_frame  000000b0  00000000  00000000  000010d4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_str    0000014a  00000000  00000000  00001184  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_loc    0000018d  00000000  00000000  000012ce  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_ranges 00000138  00000000  00000000  0000145b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e0 e0       	ldi	r30, 0x00	; 0
+  68:	f3 e0       	ldi	r31, 0x03	; 3
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <.do_copy_data_start>
+
+0000006c <.do_copy_data_loop>:
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+
+00000070 <.do_copy_data_start>:
+  70:	a0 36       	cpi	r26, 0x60	; 96
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <.do_copy_data_loop>
+
+00000076 <__do_clear_bss>:
+  76:	10 e0       	ldi	r17, 0x00	; 0
+  78:	a0 e6       	ldi	r26, 0x60	; 96
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	a0 36       	cpi	r26, 0x60	; 96
+  82:	b1 07       	cpc	r27, r17
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 c1 00 	call	0x182	; 0x182 <main>
+  8a:	0c 94 7e 01 	jmp	0x2fc	; 0x2fc <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <forward>:
+		}
+	}
+}
+
+void forward(void)
+{
+  92:	8f ef       	ldi	r24, 0xFF	; 255
+  94:	90 e0       	ldi	r25, 0x00	; 0
+  96:	9b bd       	out	0x2b, r25	; 43
+  98:	8a bd       	out	0x2a, r24	; 42
+	OCR1A=255;
+	OCR1B=255;
+  9a:	99 bd       	out	0x29, r25	; 41
+  9c:	88 bd       	out	0x28, r24	; 40
+	sbi(PORTC,0);
+  9e:	a8 9a       	sbi	0x15, 0	; 21
+	cbi(PORTC,1);
+  a0:	a9 98       	cbi	0x15, 1	; 21
+	sbi(PORTC,2);
+  a2:	aa 9a       	sbi	0x15, 2	; 21
+	cbi(PORTC,3);	
+  a4:	ab 98       	cbi	0x15, 3	; 21
+}
+  a6:	08 95       	ret
+
+000000a8 <backward>:
+
+void backward(void)
+{
+  a8:	8f ef       	ldi	r24, 0xFF	; 255
+  aa:	90 e0       	ldi	r25, 0x00	; 0
+  ac:	9b bd       	out	0x2b, r25	; 43
+  ae:	8a bd       	out	0x2a, r24	; 42
+	OCR1A=255;
+	OCR1B=255;
+  b0:	99 bd       	out	0x29, r25	; 41
+  b2:	88 bd       	out	0x28, r24	; 40
+	cbi(PORTC,0);
+  b4:	a8 98       	cbi	0x15, 0	; 21
+	sbi(PORTC,1);
+  b6:	a9 9a       	sbi	0x15, 1	; 21
+	cbi(PORTC,2);
+  b8:	aa 98       	cbi	0x15, 2	; 21
+	sbi(PORTC,3);
+  ba:	ab 9a       	sbi	0x15, 3	; 21
+}
+  bc:	08 95       	ret
+
+000000be <left>:
+
+void left(void)
+{
+  be:	8f ef       	ldi	r24, 0xFF	; 255
+  c0:	90 e0       	ldi	r25, 0x00	; 0
+  c2:	9b bd       	out	0x2b, r25	; 43
+  c4:	8a bd       	out	0x2a, r24	; 42
+	OCR1A=255;
+	OCR1B=255;
+  c6:	99 bd       	out	0x29, r25	; 41
+  c8:	88 bd       	out	0x28, r24	; 40
+	cbi(PORTC,0);
+  ca:	a8 98       	cbi	0x15, 0	; 21
+	sbi(PORTC,1);
+  cc:	a9 9a       	sbi	0x15, 1	; 21
+	sbi(PORTC,2);
+  ce:	aa 9a       	sbi	0x15, 2	; 21
+	cbi(PORTC,3);
+  d0:	ab 98       	cbi	0x15, 3	; 21
+}
+  d2:	08 95       	ret
+
+000000d4 <right>:
+
+void right(void)
+{
+  d4:	8f ef       	ldi	r24, 0xFF	; 255
+  d6:	90 e0       	ldi	r25, 0x00	; 0
+  d8:	9b bd       	out	0x2b, r25	; 43
+  da:	8a bd       	out	0x2a, r24	; 42
+	OCR1A=255;
+	OCR1B=255;
+  dc:	99 bd       	out	0x29, r25	; 41
+  de:	88 bd       	out	0x28, r24	; 40
+	sbi(PORTC,0);
+  e0:	a8 9a       	sbi	0x15, 0	; 21
+	cbi(PORTC,1);
+  e2:	a9 98       	cbi	0x15, 1	; 21
+	cbi(PORTC,2);
+  e4:	aa 98       	cbi	0x15, 2	; 21
+	sbi(PORTC,3);
+  e6:	ab 9a       	sbi	0x15, 3	; 21
+}
+  e8:	08 95       	ret
+
+000000ea <breaks>:
+
+void breaks(void)
+{
+  ea:	1b bc       	out	0x2b, r1	; 43
+  ec:	1a bc       	out	0x2a, r1	; 42
+	OCR1A=0;
+	OCR1B=0;
+  ee:	19 bc       	out	0x29, r1	; 41
+  f0:	18 bc       	out	0x28, r1	; 40
+	sbi(PORTC,0);
+  f2:	a8 9a       	sbi	0x15, 0	; 21
+	sbi(PORTC,1);
+  f4:	a9 9a       	sbi	0x15, 1	; 21
+	sbi(PORTC,2);
+  f6:	aa 9a       	sbi	0x15, 2	; 21
+	sbi(PORTC,3);
+  f8:	ab 9a       	sbi	0x15, 3	; 21
+}
+  fa:	08 95       	ret
+
+000000fc <stop>:
+
+void stop(void)
+{
+  fc:	1b bc       	out	0x2b, r1	; 43
+  fe:	1a bc       	out	0x2a, r1	; 42
+	OCR1A=0;
+	OCR1B=0;
+ 100:	19 bc       	out	0x29, r1	; 41
+ 102:	18 bc       	out	0x28, r1	; 40
+	cbi(PORTC,0);
+ 104:	a8 98       	cbi	0x15, 0	; 21
+	cbi(PORTC,1);
+ 106:	a9 98       	cbi	0x15, 1	; 21
+	cbi(PORTC,2);
+ 108:	aa 98       	cbi	0x15, 2	; 21
+	cbi(PORTC,3);
+ 10a:	ab 98       	cbi	0x15, 3	; 21
+}
+ 10c:	08 95       	ret
+
+0000010e <leftmotor>:
+
+void leftmotor(char speed, char direction)
+{
+ 10e:	66 23       	and	r22, r22
+ 110:	19 f0       	breq	.+6      	; 0x118 <leftmotor+0xa>
+	if(direction)
+	{
+		cbi(PORTC,0);
+ 112:	a8 98       	cbi	0x15, 0	; 21
+		sbi(PORTC,1);
+ 114:	a9 9a       	sbi	0x15, 1	; 21
+ 116:	02 c0       	rjmp	.+4      	; 0x11c <leftmotor+0xe>
+	}
+	else
+	{
+		sbi(PORTC,0);
+ 118:	a8 9a       	sbi	0x15, 0	; 21
+		cbi(PORTC,1);	
+ 11a:	a9 98       	cbi	0x15, 1	; 21
+	}
+	
+	OCR1A=speed;
+ 11c:	90 e0       	ldi	r25, 0x00	; 0
+ 11e:	9b bd       	out	0x2b, r25	; 43
+ 120:	8a bd       	out	0x2a, r24	; 42
+}
+ 122:	08 95       	ret
+
+00000124 <rightmotor>:
+
+void rightmotor(char speed, char direction)
+{
+ 124:	66 23       	and	r22, r22
+ 126:	19 f0       	breq	.+6      	; 0x12e <rightmotor+0xa>
+	if(direction)
+	{
+		cbi(PORTC,2);
+ 128:	aa 98       	cbi	0x15, 2	; 21
+		sbi(PORTC,3);
+ 12a:	ab 9a       	sbi	0x15, 3	; 21
+ 12c:	02 c0       	rjmp	.+4      	; 0x132 <rightmotor+0xe>
+	}
+	else
+	{
+		sbi(PORTC,2);
+ 12e:	aa 9a       	sbi	0x15, 2	; 21
+		cbi(PORTC,3);	
+ 130:	ab 98       	cbi	0x15, 3	; 21
+	}
+	
+	OCR1B=speed;	
+ 132:	90 e0       	ldi	r25, 0x00	; 0
+ 134:	99 bd       	out	0x29, r25	; 41
+ 136:	88 bd       	out	0x28, r24	; 40
+}
+ 138:	08 95       	ret
+
+0000013a <init>:
+
+void init(void)
+{
+ 13a:	a0 9a       	sbi	0x14, 0	; 20
+	sbi(DDRC,0);			//MOTOR1 +
+	sbi(DDRC,1);			//MOTOR1 -
+ 13c:	a1 9a       	sbi	0x14, 1	; 20
+	sbi(DDRC,2);			//MOTOR2 +
+ 13e:	a2 9a       	sbi	0x14, 2	; 20
+	sbi(DDRC,3);			//MOTOR2 -
+ 140:	a3 9a       	sbi	0x14, 3	; 20
+	
+	cbi(DDRD,6);			//LEFT SENSOR
+ 142:	8e 98       	cbi	0x11, 6	; 17
+	cbi(DDRD,7);			//RIGHT SENSOR
+ 144:	8f 98       	cbi	0x11, 7	; 17
+	
+	sbi(DDRA,4);			//LED1
+ 146:	d4 9a       	sbi	0x1a, 4	; 26
+	sbi(DDRA,5);			//LED2
+ 148:	d5 9a       	sbi	0x1a, 5	; 26
+	sbi(DDRA,6);			//LED3
+ 14a:	d6 9a       	sbi	0x1a, 6	; 26
+	sbi(DDRA,7);			//LED4
+ 14c:	d7 9a       	sbi	0x1a, 7	; 26
+	
+	cbi(DDRB,2);			//INT2 switch
+ 14e:	ba 98       	cbi	0x17, 2	; 23
+	sbi(PORTB,2);
+ 150:	c2 9a       	sbi	0x18, 2	; 24
+	cbi(DDRD,1);			//SW1 switch
+ 152:	89 98       	cbi	0x11, 1	; 17
+	sbi(PORTD,1);
+ 154:	91 9a       	sbi	0x12, 1	; 18
+	cbi(DDRD,2);			//INT0 switch
+ 156:	8a 98       	cbi	0x11, 2	; 17
+	sbi(PORTD,2);
+ 158:	92 9a       	sbi	0x12, 2	; 18
+	cbi(DDRD,3);			//INT1 switch
+ 15a:	8b 98       	cbi	0x11, 3	; 17
+	sbi(PORTD,3);	
+ 15c:	93 9a       	sbi	0x12, 3	; 18
+	
+	sbi(DDRD,4);			//PWM Pin for right motor
+ 15e:	8c 9a       	sbi	0x11, 4	; 17
+	sbi(DDRD,5);			//PWM Pin for left motor
+ 160:	8d 9a       	sbi	0x11, 5	; 17
+	
+    sbi(TCCR1A,WGM10);		//PWM timer1 config
+ 162:	8f b5       	in	r24, 0x2f	; 47
+ 164:	81 60       	ori	r24, 0x01	; 1
+ 166:	8f bd       	out	0x2f, r24	; 47
+	sbi(TCCR1A,COM1A1);
+ 168:	8f b5       	in	r24, 0x2f	; 47
+ 16a:	80 68       	ori	r24, 0x80	; 128
+ 16c:	8f bd       	out	0x2f, r24	; 47
+	sbi(TCCR1A,COM1B1);
+ 16e:	8f b5       	in	r24, 0x2f	; 47
+ 170:	80 62       	ori	r24, 0x20	; 32
+ 172:	8f bd       	out	0x2f, r24	; 47
+	sbi(TCCR1B,CS11);
+ 174:	8e b5       	in	r24, 0x2e	; 46
+ 176:	82 60       	ori	r24, 0x02	; 2
+ 178:	8e bd       	out	0x2e, r24	; 46
+	sbi(TCCR1B,WGM12);
+ 17a:	8e b5       	in	r24, 0x2e	; 46
+ 17c:	88 60       	ori	r24, 0x08	; 8
+ 17e:	8e bd       	out	0x2e, r24	; 46
+}
+ 180:	08 95       	ret
+
+00000182 <main>:
+/*----------------------------------------------------------------
+-----------------MAIN PROGRAM-------------------------------------
+-----------------------------------------------------------------*/
+
+int main(void)
+{
+ 182:	0e 94 9d 00 	call	0x13a	; 0x13a <init>
+	char mode;
+	
+	init();
+	
+	led1on;	
+ 186:	dc 9a       	sbi	0x1b, 4	; 27
+ 188:	90 e0       	ldi	r25, 0x00	; 0
+			led3off;
+		
+		if(int2)
+			mode=1;			//Obstacle Avoider mode
+		
+		if(sw1)
+ 18a:	21 e0       	ldi	r18, 0x01	; 1
+ 18c:	30 e0       	ldi	r19, 0x00	; 0
+ 18e:	19 c0       	rjmp	.+50     	; 0x1c2 <main+0x40>
+	led1on;	
+	mode=0; 
+	
+	for(;mode<1;)
+	{
+		if(leftsensoron)
+ 190:	87 99       	sbic	0x10, 7	; 16
+ 192:	02 c0       	rjmp	.+4      	; 0x198 <main+0x16>
+			led2on;
+ 194:	dd 9a       	sbi	0x1b, 5	; 27
+ 196:	01 c0       	rjmp	.+2      	; 0x19a <main+0x18>
+		else
+			led2off;
+ 198:	dd 98       	cbi	0x1b, 5	; 27
+		
+		if(rightsensoron)
+ 19a:	86 99       	sbic	0x10, 6	; 16
+ 19c:	02 c0       	rjmp	.+4      	; 0x1a2 <main+0x20>
+			led3on;
+ 19e:	de 9a       	sbi	0x1b, 6	; 27
+ 1a0:	01 c0       	rjmp	.+2      	; 0x1a4 <main+0x22>
+		else
+			led3off;
+ 1a2:	de 98       	cbi	0x1b, 6	; 27
+		
+		if(int2)
+ 1a4:	86 b3       	in	r24, 0x16	; 22
+			mode=1;			//Obstacle Avoider mode
+		
+		if(sw1)
+ 1a6:	81 99       	sbic	0x10, 1	; 16
+ 1a8:	02 c0       	rjmp	.+4      	; 0x1ae <main+0x2c>
+ 1aa:	82 e0       	ldi	r24, 0x02	; 2
+ 1ac:	08 c0       	rjmp	.+16     	; 0x1be <main+0x3c>
+ 1ae:	90 e0       	ldi	r25, 0x00	; 0
+ 1b0:	96 95       	lsr	r25
+ 1b2:	87 95       	ror	r24
+ 1b4:	96 95       	lsr	r25
+ 1b6:	87 95       	ror	r24
+ 1b8:	82 27       	eor	r24, r18
+ 1ba:	93 27       	eor	r25, r19
+ 1bc:	81 70       	andi	r24, 0x01	; 1
+			mode=2;			//Right Wall Hugger
+			
+		if(int0)
+ 1be:	93 e0       	ldi	r25, 0x03	; 3
+ 1c0:	82 9b       	sbis	0x10, 2	; 16
+ 1c2:	89 2f       	mov	r24, r25
+	init();
+	
+	led1on;	
+	mode=0; 
+	
+	for(;mode<1;)
+ 1c4:	88 23       	and	r24, r24
+ 1c6:	21 f3       	breq	.-56     	; 0x190 <main+0xe>
+			
+		if(int0)
+			mode=3;			//Line Follower
+	}
+	
+	if(mode==1)
+ 1c8:	81 30       	cpi	r24, 0x01	; 1
+ 1ca:	09 f0       	breq	.+2      	; 0x1ce <main+0x4c>
+ 1cc:	55 c0       	rjmp	.+170    	; 0x278 <main+0xf6>
+	}
+}
+
+void forward(void)
+{
+	OCR1A=255;
+ 1ce:	2f ef       	ldi	r18, 0xFF	; 255
+ 1d0:	30 e0       	ldi	r19, 0x00	; 0
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 1d2:	60 e5       	ldi	r22, 0x50	; 80
+ 1d4:	73 ec       	ldi	r23, 0xC3	; 195
+	
+	if(mode==1)
+	{
+		for(;1;)
+		{
+			if(leftsensoron && rightsensoron)
+ 1d6:	49 e1       	ldi	r20, 0x19	; 25
+ 1d8:	50 e0       	ldi	r21, 0x00	; 0
+ 1da:	87 99       	sbic	0x10, 7	; 16
+ 1dc:	21 c0       	rjmp	.+66     	; 0x220 <main+0x9e>
+ 1de:	86 99       	sbic	0x10, 6	; 16
+ 1e0:	1f c0       	rjmp	.+62     	; 0x220 <main+0x9e>
+	cbi(PORTC,3);	
+}
+
+void backward(void)
+{
+	OCR1A=255;
+ 1e2:	3b bd       	out	0x2b, r19	; 43
+ 1e4:	2a bd       	out	0x2a, r18	; 42
+	OCR1B=255;
+ 1e6:	39 bd       	out	0x29, r19	; 41
+ 1e8:	28 bd       	out	0x28, r18	; 40
+	cbi(PORTC,0);
+ 1ea:	a8 98       	cbi	0x15, 0	; 21
+	sbi(PORTC,1);
+ 1ec:	a9 9a       	sbi	0x15, 1	; 21
+	cbi(PORTC,2);
+ 1ee:	aa 98       	cbi	0x15, 2	; 21
+	sbi(PORTC,3);
+ 1f0:	ab 9a       	sbi	0x15, 3	; 21
+ 1f2:	88 e8       	ldi	r24, 0x88	; 136
+ 1f4:	93 e1       	ldi	r25, 0x13	; 19
+ 1f6:	fa 01       	movw	r30, r20
+ 1f8:	31 97       	sbiw	r30, 0x01	; 1
+ 1fa:	f1 f7       	brne	.-4      	; 0x1f8 <main+0x76>
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 1fc:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 1fe:	d9 f7       	brne	.-10     	; 0x1f6 <main+0x74>
+}
+
+void left(void)
+{
+	OCR1A=255;
+ 200:	3b bd       	out	0x2b, r19	; 43
+ 202:	2a bd       	out	0x2a, r18	; 42
+	OCR1B=255;
+ 204:	39 bd       	out	0x29, r19	; 41
+ 206:	28 bd       	out	0x28, r18	; 40
+	cbi(PORTC,0);
+ 208:	a8 98       	cbi	0x15, 0	; 21
+	sbi(PORTC,1);
+ 20a:	a9 9a       	sbi	0x15, 1	; 21
+	sbi(PORTC,2);
+ 20c:	aa 9a       	sbi	0x15, 2	; 21
+	cbi(PORTC,3);
+ 20e:	ab 98       	cbi	0x15, 3	; 21
+ 210:	80 e1       	ldi	r24, 0x10	; 16
+ 212:	97 e2       	ldi	r25, 0x27	; 39
+ 214:	fa 01       	movw	r30, r20
+ 216:	31 97       	sbiw	r30, 0x01	; 1
+ 218:	f1 f7       	brne	.-4      	; 0x216 <main+0x94>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 21a:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 21c:	d9 f7       	brne	.-10     	; 0x214 <main+0x92>
+ 21e:	21 c0       	rjmp	.+66     	; 0x262 <main+0xe0>
+				backward();
+				_delay_ms(500);
+				left();
+				_delay_ms(1000);
+			}
+			else if(leftsensoron)
+ 220:	87 99       	sbic	0x10, 7	; 16
+ 222:	09 c0       	rjmp	.+18     	; 0x236 <main+0xb4>
+	cbi(PORTC,3);
+}
+
+void right(void)
+{
+	OCR1A=255;
+ 224:	3b bd       	out	0x2b, r19	; 43
+ 226:	2a bd       	out	0x2a, r18	; 42
+	OCR1B=255;
+ 228:	39 bd       	out	0x29, r19	; 41
+ 22a:	28 bd       	out	0x28, r18	; 40
+	sbi(PORTC,0);
+ 22c:	a8 9a       	sbi	0x15, 0	; 21
+	cbi(PORTC,1);
+ 22e:	a9 98       	cbi	0x15, 1	; 21
+	cbi(PORTC,2);
+ 230:	aa 98       	cbi	0x15, 2	; 21
+	sbi(PORTC,3);
+ 232:	ab 9a       	sbi	0x15, 3	; 21
+ 234:	0a c0       	rjmp	.+20     	; 0x24a <main+0xc8>
+			else if(leftsensoron)
+			{
+				right();
+				_delay_ms(200);
+			}
+			else if(rightsensoron)
+ 236:	86 99       	sbic	0x10, 6	; 16
+ 238:	0c c0       	rjmp	.+24     	; 0x252 <main+0xd0>
+	sbi(PORTC,3);
+}
+
+void left(void)
+{
+	OCR1A=255;
+ 23a:	3b bd       	out	0x2b, r19	; 43
+ 23c:	2a bd       	out	0x2a, r18	; 42
+	OCR1B=255;
+ 23e:	39 bd       	out	0x29, r19	; 41
+ 240:	28 bd       	out	0x28, r18	; 40
+	cbi(PORTC,0);
+ 242:	a8 98       	cbi	0x15, 0	; 21
+	sbi(PORTC,1);
+ 244:	a9 9a       	sbi	0x15, 1	; 21
+	sbi(PORTC,2);
+ 246:	aa 9a       	sbi	0x15, 2	; 21
+	cbi(PORTC,3);
+ 248:	ab 98       	cbi	0x15, 3	; 21
+ 24a:	cb 01       	movw	r24, r22
+ 24c:	01 97       	sbiw	r24, 0x01	; 1
+ 24e:	f1 f7       	brne	.-4      	; 0x24c <main+0xca>
+ 250:	08 c0       	rjmp	.+16     	; 0x262 <main+0xe0>
+	}
+}
+
+void forward(void)
+{
+	OCR1A=255;
+ 252:	3b bd       	out	0x2b, r19	; 43
+ 254:	2a bd       	out	0x2a, r18	; 42
+	OCR1B=255;
+ 256:	39 bd       	out	0x29, r19	; 41
+ 258:	28 bd       	out	0x28, r18	; 40
+	sbi(PORTC,0);
+ 25a:	a8 9a       	sbi	0x15, 0	; 21
+	cbi(PORTC,1);
+ 25c:	a9 98       	cbi	0x15, 1	; 21
+	sbi(PORTC,2);
+ 25e:	aa 9a       	sbi	0x15, 2	; 21
+	cbi(PORTC,3);	
+ 260:	ab 98       	cbi	0x15, 3	; 21
+			else
+			{
+				forward();
+			}
+			
+			if(leftsensoron)
+ 262:	87 99       	sbic	0x10, 7	; 16
+ 264:	02 c0       	rjmp	.+4      	; 0x26a <main+0xe8>
+				led2on;
+ 266:	dd 9a       	sbi	0x1b, 5	; 27
+ 268:	01 c0       	rjmp	.+2      	; 0x26c <main+0xea>
+			else
+				led2off;
+ 26a:	dd 98       	cbi	0x1b, 5	; 27
+			
+			if(rightsensoron)
+ 26c:	86 99       	sbic	0x10, 6	; 16
+ 26e:	02 c0       	rjmp	.+4      	; 0x274 <main+0xf2>
+				led3on;
+ 270:	de 9a       	sbi	0x1b, 6	; 27
+ 272:	b3 cf       	rjmp	.-154    	; 0x1da <main+0x58>
+			else
+				led3off;
+ 274:	de 98       	cbi	0x1b, 6	; 27
+ 276:	b1 cf       	rjmp	.-158    	; 0x1da <main+0x58>
+		}
+	}
+	else if(mode==2)
+ 278:	82 30       	cpi	r24, 0x02	; 2
+ 27a:	39 f5       	brne	.+78     	; 0x2ca <main+0x148>
+	{
+		sbi(PORTC,2);
+		cbi(PORTC,3);	
+	}
+	
+	OCR1B=speed;	
+ 27c:	62 e3       	ldi	r22, 0x32	; 50
+ 27e:	70 e0       	ldi	r23, 0x00	; 0
+	{
+		sbi(PORTC,0);
+		cbi(PORTC,1);	
+	}
+	
+	OCR1A=speed;
+ 280:	2f ef       	ldi	r18, 0xFF	; 255
+ 282:	30 e0       	ldi	r19, 0x00	; 0
+ 284:	44 ed       	ldi	r20, 0xD4	; 212
+ 286:	50 e3       	ldi	r21, 0x30	; 48
+	}
+	else if(mode==2)
+	{
+		for(;1;)
+		{
+			if(rightsensoron)
+ 288:	86 99       	sbic	0x10, 6	; 16
+ 28a:	0c c0       	rjmp	.+24     	; 0x2a4 <main+0x122>
+		cbi(PORTC,2);
+		sbi(PORTC,3);
+	}
+	else
+	{
+		sbi(PORTC,2);
+ 28c:	aa 9a       	sbi	0x15, 2	; 21
+		cbi(PORTC,3);	
+ 28e:	ab 98       	cbi	0x15, 3	; 21
+	}
+	
+	OCR1B=speed;	
+ 290:	39 bd       	out	0x29, r19	; 41
+ 292:	28 bd       	out	0x28, r18	; 40
+		cbi(PORTC,0);
+		sbi(PORTC,1);
+	}
+	else
+	{
+		sbi(PORTC,0);
+ 294:	a8 9a       	sbi	0x15, 0	; 21
+		cbi(PORTC,1);	
+ 296:	a9 98       	cbi	0x15, 1	; 21
+	}
+	
+	OCR1A=speed;
+ 298:	1b bc       	out	0x2b, r1	; 43
+ 29a:	1a bc       	out	0x2a, r1	; 42
+ 29c:	ca 01       	movw	r24, r20
+ 29e:	01 97       	sbiw	r24, 0x01	; 1
+ 2a0:	f1 f7       	brne	.-4      	; 0x29e <main+0x11c>
+ 2a2:	08 c0       	rjmp	.+16     	; 0x2b4 <main+0x132>
+		cbi(PORTC,2);
+		sbi(PORTC,3);
+	}
+	else
+	{
+		sbi(PORTC,2);
+ 2a4:	aa 9a       	sbi	0x15, 2	; 21
+		cbi(PORTC,3);	
+ 2a6:	ab 98       	cbi	0x15, 3	; 21
+	}
+	
+	OCR1B=speed;	
+ 2a8:	79 bd       	out	0x29, r23	; 41
+ 2aa:	68 bd       	out	0x28, r22	; 40
+		cbi(PORTC,0);
+		sbi(PORTC,1);
+	}
+	else
+	{
+		sbi(PORTC,0);
+ 2ac:	a8 9a       	sbi	0x15, 0	; 21
+		cbi(PORTC,1);	
+ 2ae:	a9 98       	cbi	0x15, 1	; 21
+	}
+	
+	OCR1A=speed;
+ 2b0:	3b bd       	out	0x2b, r19	; 43
+ 2b2:	2a bd       	out	0x2a, r18	; 42
+			{
+				rightmotor(50,0);
+				leftmotor(255,0);
+			}
+			
+			if(leftsensoron)
+ 2b4:	87 99       	sbic	0x10, 7	; 16
+ 2b6:	02 c0       	rjmp	.+4      	; 0x2bc <main+0x13a>
+				led2on;
+ 2b8:	dd 9a       	sbi	0x1b, 5	; 27
+ 2ba:	01 c0       	rjmp	.+2      	; 0x2be <main+0x13c>
+			else
+				led2off;
+ 2bc:	dd 98       	cbi	0x1b, 5	; 27
+			
+			if(rightsensoron)
+ 2be:	86 99       	sbic	0x10, 6	; 16
+ 2c0:	02 c0       	rjmp	.+4      	; 0x2c6 <main+0x144>
+				led3on;
+ 2c2:	de 9a       	sbi	0x1b, 6	; 27
+ 2c4:	e1 cf       	rjmp	.-62     	; 0x288 <main+0x106>
+			else
+				led3off;
+ 2c6:	de 98       	cbi	0x1b, 6	; 27
+ 2c8:	df cf       	rjmp	.-66     	; 0x288 <main+0x106>
+	{
+		sbi(PORTC,0);
+		cbi(PORTC,1);	
+	}
+	
+	OCR1A=speed;
+ 2ca:	8f ef       	ldi	r24, 0xFF	; 255
+ 2cc:	90 e0       	ldi	r25, 0x00	; 0
+	}
+	else if(mode==3)
+	{
+		for(;1;)
+		{
+			if(leftsensoroff)
+ 2ce:	87 9b       	sbis	0x10, 7	; 16
+ 2d0:	05 c0       	rjmp	.+10     	; 0x2dc <main+0x15a>
+		cbi(PORTC,0);
+		sbi(PORTC,1);
+	}
+	else
+	{
+		sbi(PORTC,0);
+ 2d2:	a8 9a       	sbi	0x15, 0	; 21
+		cbi(PORTC,1);	
+ 2d4:	a9 98       	cbi	0x15, 1	; 21
+	}
+	
+	OCR1A=speed;
+ 2d6:	1b bc       	out	0x2b, r1	; 43
+ 2d8:	1a bc       	out	0x2a, r1	; 42
+ 2da:	04 c0       	rjmp	.+8      	; 0x2e4 <main+0x162>
+		cbi(PORTC,0);
+		sbi(PORTC,1);
+	}
+	else
+	{
+		sbi(PORTC,0);
+ 2dc:	a8 9a       	sbi	0x15, 0	; 21
+		cbi(PORTC,1);	
+ 2de:	a9 98       	cbi	0x15, 1	; 21
+	}
+	
+	OCR1A=speed;
+ 2e0:	9b bd       	out	0x2b, r25	; 43
+ 2e2:	8a bd       	out	0x2a, r24	; 42
+			if(leftsensoroff)
+				leftmotor(0,0);
+			else
+				leftmotor(255,0);
+			
+			if(rightsensoroff)
+ 2e4:	86 9b       	sbis	0x10, 6	; 16
+ 2e6:	05 c0       	rjmp	.+10     	; 0x2f2 <main+0x170>
+		cbi(PORTC,2);
+		sbi(PORTC,3);
+	}
+	else
+	{
+		sbi(PORTC,2);
+ 2e8:	aa 9a       	sbi	0x15, 2	; 21
+		cbi(PORTC,3);	
+ 2ea:	ab 98       	cbi	0x15, 3	; 21
+	}
+	
+	OCR1B=speed;	
+ 2ec:	19 bc       	out	0x29, r1	; 41
+ 2ee:	18 bc       	out	0x28, r1	; 40
+ 2f0:	ee cf       	rjmp	.-36     	; 0x2ce <main+0x14c>
+		cbi(PORTC,2);
+		sbi(PORTC,3);
+	}
+	else
+	{
+		sbi(PORTC,2);
+ 2f2:	aa 9a       	sbi	0x15, 2	; 21
+		cbi(PORTC,3);	
+ 2f4:	ab 98       	cbi	0x15, 3	; 21
+	}
+	
+	OCR1B=speed;	
+ 2f6:	99 bd       	out	0x29, r25	; 41
+ 2f8:	88 bd       	out	0x28, r24	; 40
+ 2fa:	e9 cf       	rjmp	.-46     	; 0x2ce <main+0x14c>
+
+000002fc <_exit>:
+ 2fc:	f8 94       	cli
+
+000002fe <__stop_program>:
+ 2fe:	ff cf       	rjmp	.-2      	; 0x2fe <__stop_program>

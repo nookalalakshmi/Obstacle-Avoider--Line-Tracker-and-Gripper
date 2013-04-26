@@ -1,0 +1,150 @@
+   1               		.file	"robokits.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               		.data
+  19               	.LC0:
+  20 0000 524F 424F 		.string	"ROBOKITS NEOBOT\n"
+  20      4B49 5453 
+  20      204E 454F 
+  20      424F 540A 
+  20      00
+  21               	.LC1:
+  22 0011 5741 4C4C 		.string	"WALL HUGGER BOT"
+  22      2048 5547 
+  22      4745 5220 
+  22      424F 5400 
+  23               		.text
+  24               	.global	main
+  26               	main:
+  27               	.LFB7:
+  28               	.LM1:
+  29               	/* prologue: function */
+  30               	/* frame size = 0 */
+  31               	.LM2:
+  32 0000 81B3      		in r24,49-32
+  33 0002 8066      		ori r24,lo8(96)
+  34 0004 81BB      		out 49-32,r24
+  35               	.LM3:
+  36 0006 91EF      		ldi r25,lo8(-15)
+  37 0008 9FBD      		out 79-32,r25
+  38               	.LM4:
+  39 000a 8AE0      		ldi r24,lo8(10)
+  40 000c 8EBD      		out 78-32,r24
+  41               	.LM5:
+  42 000e 82E3      		ldi r24,lo8(50)
+  43 0010 8ABD      		out 74-32,r24
+  44               	.LM6:
+  45 0012 80EA      		ldi r24,lo8(-96)
+  46 0014 88BD      		out 72-32,r24
+  47               	.LM7:
+  48 0016 80EF      		ldi r24,lo8(-16)
+  49 0018 8ABB      		out 58-32,r24
+  50               	.LM8:
+  51 001a 8BEF      		ldi r24,lo8(-5)
+  52 001c 87BB      		out 55-32,r24
+  53               	.LM9:
+  54 001e 8FEF      		ldi r24,lo8(-1)
+  55 0020 84BB      		out 52-32,r24
+  56               	.LM10:
+  57 0022 91BB      		out 49-32,r25
+  58               	.LM11:
+  59 0024 8CE0      		ldi r24,lo8(12)
+  60 0026 0E94 0000 		call lcd_init
+  61               	.LM12:
+  62 002a 0E94 0000 		call lcd_clrscr
+  63               	.LM13:
+  64 002e 80E0      		ldi r24,lo8(.LC0)
+  65 0030 90E0      		ldi r25,hi8(.LC0)
+  66 0032 0E94 0000 		call lcd_puts
+  67               	.LM14:
+  68 0036 80E0      		ldi r24,lo8(.LC1)
+  69 0038 90E0      		ldi r25,hi8(.LC1)
+  70 003a 0E94 0000 		call lcd_puts
+  71               	.LM15:
+  72 003e C29A      		sbi 56-32,2
+  73               	.LM16:
+  74 0040 919A      		sbi 50-32,1
+  75               	.LM17:
+  76 0042 929A      		sbi 50-32,2
+  77               	.LM18:
+  78 0044 939A      		sbi 50-32,3
+  79               	.LM19:
+  80 0046 58E0      		ldi r21,lo8(8)
+  81               	.LBB12:
+  82               	.LBB13:
+  83               	.LBB14:
+  84               	.LBB15:
+  85               	.LM20:
+  86 0048 28E8      		ldi r18,lo8(5000)
+  87 004a 33E1      		ldi r19,hi8(5000)
+  88               	.LBE15:
+  89               	.LBE14:
+  90               	.LBE13:
+  91               	.LBE12:
+  92               	.LM21:
+  93 004c 4AE0      		ldi r20,lo8(10)
+  94               	.LVL0:
+  95               	.L5:
+  96               	.LM22:
+  97 004e 8199      		sbic 48-32,1
+  98 0050 00C0      		rjmp .L2
+  99               	.LM23:
+ 100 0052 DC98      		cbi 59-32,4
+ 101               	.LM24:
+ 102 0054 DD98      		cbi 59-32,5
+ 103               	.LM25:
+ 104 0056 DE9A      		sbi 59-32,6
+ 105               	.LM26:
+ 106 0058 55BB      		out 53-32,r21
+ 107               	.LBB19:
+ 108               	.LBB18:
+ 109               	.LBB17:
+ 110               	.LBB16:
+ 111               	.LM27:
+ 112 005a C901      		movw r24,r18
+ 113               	/* #APP */
+ 114               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 115 005c 0197      		1: sbiw r24,1
+ 116 005e 01F4      		brne 1b
+ 117               	 ;  0 "" 2
+ 118               	/* #NOAPP */
+ 119 0060 00C0      		rjmp .L5
+ 120               	.L2:
+ 121               	.LBE16:
+ 122               	.LBE17:
+ 123               	.LBE18:
+ 124               	.LBE19:
+ 125               	.LM28:
+ 126 0062 45BB      		out 53-32,r20
+ 127               	.LM29:
+ 128 0064 DC98      		cbi 59-32,4
+ 129               	.LM30:
+ 130 0066 DD98      		cbi 59-32,5
+ 131               	.LM31:
+ 132 0068 DE98      		cbi 59-32,6
+ 133 006a 00C0      		rjmp .L5
+ 134               	.LFE7:
+ 160               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIqQQnh.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIqQQnh.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIqQQnh.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIqQQnh.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIqQQnh.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIqQQnh.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIqQQnh.s:26     .text:00000000 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+lcd_init
+lcd_clrscr
+lcd_puts

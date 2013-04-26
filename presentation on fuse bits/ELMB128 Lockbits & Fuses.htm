@@ -1,0 +1,591 @@
+
+<!-- saved from url=(0123)http://74.125.153.132/search?q=cache:http://www.nikhef.nl/pub/departments/ct/po/html/ELMB128/ELMB128-lockbits-and-fuses.pdf -->
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<META name="CreationDate" content="D:20040524160436"><META name="Producer" content="Acrobat PDFWriter 5.0 for Windows NT"><TITLE>ELMB128 Lockbits &amp; Fuses</TITLE></HEAD><BODY bgcolor="#ffffff" vlink="blue" link="blue"><DIV style="margin:-1px -1px 0;padding:0;border:1px solid #999;background:#fff"><DIV style="margin:12px;padding:8px;border:1px solid #999;background:#ddd;font:13px arial,sans-serif;color:#000;font-weight:normal;text-align:left">This is the html version of the file <A href="http://www.nikhef.nl/pub/departments/ct/po/html/ELMB128/ELMB128-lockbits-and-fuses.pdf" style="text-decoration:underline;color:#00c">http://www.nikhef.nl/pub/departments/ct/po/html/ELMB128/ELMB128-lockbits-and-fuses.pdf</A>.<BR><B>Google</B> automatically generates html versions of documents as we crawl the web.</DIV></DIV><DIV style="position:relative">
+
+
+
+
+
+
+
+<TABLE border="0" width="100&percnt;"><TBODY><TR><TD bgcolor="eeeeee" align="right"><FONT face="arial,sans-serif"><A name="1"><B>Page 1</B></A></FONT></TD></TR></TBODY></TABLE><FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:243;left:108"><NOBR><I>ELMB128 Lockbits and Fuses</I></NOBR></DIV>
+<DIV style="position:absolute;top:243;left:649"><NOBR>v1.0  22-May-2002</NOBR></DIV>
+<DIV style="position:absolute;top:1357;left:448"><NOBR>1</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="5" face="Times"><SPAN style="font-size:39px;font-family:Times">
+<DIV style="position:absolute;top:297;left:164"><NOBR><B>ELMB128 Lockbits &amp; Fuses</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:380;left:108"><NOBR>CONTENTS</NOBR></DIV>
+<DIV style="position:absolute;top:422;left:108"><NOBR><B>1 RECOMMENDED LOCK BITS AND FUSE BITS SETTINGS..............1</B></NOBR></DIV>
+<DIV style="position:absolute;top:464;left:108"><NOBR><B>2 READING AND WRITING LOCK AND FUSE BITS VIA CAN............4</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="4" face="Times"><SPAN style="font-size:21px;font-family:Times">
+<DIV style="position:absolute;top:531;left:108"><NOBR><B>1 Recommended Lock Bits and Fuse Bits settings</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:588;left:119"><NOBR>The lock bits and fuse bits listed in the following tables show the default setting </NOBR></DIV>
+<DIV style="position:absolute;top:612;left:108"><NOBR>of the ATmega128 processor, as well as the recommended (and sometimes re-</NOBR></DIV>
+<DIV style="position:absolute;top:636;left:108"><NOBR>quired)  settings  for  the ELMB128  module  when  the  ELMB128  is  a  single-</NOBR></DIV>
+<DIV style="position:absolute;top:660;left:108"><NOBR>processor module with an ATmega128 working in &#39;128&#39; mode (<I>not </I>&#39;103&#39; mode)</NOBR></DIV>
+<DIV style="position:absolute;top:684;left:108"><NOBR>and containing a Bootloader (for self-programming).</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" color="#ff0000" face="Times"><SPAN style="font-size:19px;font-family:Times;color:#ff0000">
+<DIV style="position:absolute;top:739;left:108"><NOBR><B>ATmega128 LOCK BITS</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:774;left:108"><NOBR><B>Lock Bit</B></NOBR></DIV>
+<DIV style="position:absolute;top:774;left:248"><NOBR><B>Bit No. Description</B></NOBR></DIV>
+<DIV style="position:absolute;top:774;left:531"><NOBR><B>Default</B></NOBR></DIV>
+<DIV style="position:absolute;top:774;left:671"><NOBR><B>ELMB128</B></NOBR></DIV>
+<DIV style="position:absolute;top:803;left:108"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:803;left:275"><NOBR>7</NOBR></DIV>
+<DIV style="position:absolute;top:803;left:329"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:803;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:803;left:671"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:828;left:108"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:828;left:275"><NOBR>6</NOBR></DIV>
+<DIV style="position:absolute;top:828;left:329"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:828;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:828;left:671"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:853;left:108"><NOBR>BLB12</NOBR></DIV>
+<DIV style="position:absolute;top:853;left:275"><NOBR>5</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:852;left:329"><NOBR><B>Boot lock bit </B>(no read </NOBR></DIV>
+<DIV style="position:absolute;top:873;left:329"><NOBR>access to Bootloader)</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:853;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:853;left:671"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:895;left:108"><NOBR>BLB11</NOBR></DIV>
+<DIV style="position:absolute;top:895;left:275"><NOBR>4</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:894;left:329"><NOBR><B>Boot lock bit </B>(no write </NOBR></DIV>
+<DIV style="position:absolute;top:915;left:329"><NOBR>access to Bootloader)</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:895;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:895;left:671"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:937;left:108"><NOBR>BLB02</NOBR></DIV>
+<DIV style="position:absolute;top:937;left:275"><NOBR>3</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:937;left:329"><NOBR><B>Boot lock bit </B>(no read </NOBR></DIV>
+<DIV style="position:absolute;top:957;left:329"><NOBR>access to Application)</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:937;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:937;left:671"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:980;left:108"><NOBR>BLB01</NOBR></DIV>
+<DIV style="position:absolute;top:980;left:275"><NOBR>2</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:979;left:329"><NOBR><B>Boot lock bit </B>(no write </NOBR></DIV>
+<DIV style="position:absolute;top:999;left:329"><NOBR>access to Application)</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:980;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:980;left:671"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:1022;left:108"><NOBR>LB2</NOBR></DIV>
+<DIV style="position:absolute;top:1022;left:275"><NOBR>1</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:1021;left:329"><NOBR><B>Memory lock bit</B></NOBR></DIV>
+<DIV style="position:absolute;top:1042;left:329"><NOBR>(no read access to Flash </NOBR></DIV>
+<DIV style="position:absolute;top:1062;left:329"><NOBR>or EEPROM)</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:1022;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:1022;left:671"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:1084;left:108"><NOBR>LB1</NOBR></DIV>
+<DIV style="position:absolute;top:1084;left:275"><NOBR>0</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:1084;left:329"><NOBR><B>Memory lock bit</B></NOBR></DIV>
+<DIV style="position:absolute;top:1104;left:329"><NOBR>(no write access to Flash </NOBR></DIV>
+<DIV style="position:absolute;top:1125;left:329"><NOBR>or EEPROM)</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:1084;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:1084;left:671"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:1147;left:108"><NOBR>Byte value:</NOBR></DIV>
+<DIV style="position:absolute;top:1147;left:531"><NOBR>0xFF</NOBR></DIV>
+<DIV style="position:absolute;top:1147;left:671"><NOBR>0xEF</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:1181;left:108"><NOBR><B>Table 1. ATmega128 Lock Bits. To write the lock bits to the ELMB128 as shown, send </B></NOBR></DIV>
+<DIV style="position:absolute;top:1202;left:108"><NOBR><B>instruction 0xAC, 0xFF, 0x00, 0xEF (this is compatible with writing to ATmega103 leaving </B></NOBR></DIV>
+<DIV style="position:absolute;top:1222;left:108"><NOBR><B>its 2 memory lockbits <I>unprogrammed</I>) or 0xAC, 0xE0, 0x00, 0xEF.</B></NOBR></DIV>
+<DIV style="position:absolute;top:1243;left:108"><NOBR><B>Read instruction for both 103/128: 0x58, 0x00, 0x00, 0x00; the lock bits are returned in the </B></NOBR></DIV>
+<DIV style="position:absolute;top:1264;left:108"><NOBR><B>last byte of the reply (byte 7). <I>Default</I>: no memory protection.</B></NOBR></DIV>
+<DIV style="position:absolute;top:1284;left:108"><NOBR><I><B>ELMB128</B></I><B>: Bootloader protected against writing to (BLB11 fuse)</B></NOBR></DIV>
+</SPAN></FONT>
+
+<DIV style="position:absolute;top:1438;left:0"><HR><TABLE border="0" width="100&percnt;"><TBODY><TR><TD bgcolor="eeeeee" align="right"><FONT face="arial,sans-serif"><A name="2"><B>Page 2</B></A></FONT></TD></TR></TBODY></TABLE></DIV><FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:1506;left:108"><NOBR><I>ELMB128 Lockbits and Fuses</I></NOBR></DIV>
+<DIV style="position:absolute;top:1506;left:649"><NOBR>v1.0  22-May-2002</NOBR></DIV>
+<DIV style="position:absolute;top:2620;left:448"><NOBR>2</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" color="#ff0000" face="Times"><SPAN style="font-size:19px;font-family:Times;color:#ff0000">
+<DIV style="position:absolute;top:1577;left:108"><NOBR><B>ATmega128 FUSE BITS (low)</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:1612;left:108"><NOBR><B>Lock Bit</B></NOBR></DIV>
+<DIV style="position:absolute;top:1612;left:248"><NOBR><B>Bit No. Description</B></NOBR></DIV>
+<DIV style="position:absolute;top:1612;left:531"><NOBR><B>Default</B></NOBR></DIV>
+<DIV style="position:absolute;top:1612;left:671"><NOBR><B>ELMB128</B></NOBR></DIV>
+<DIV style="position:absolute;top:1641;left:108"><NOBR>BODLEVEL</NOBR></DIV>
+<DIV style="position:absolute;top:1641;left:275"><NOBR>7</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:1640;left:329"><NOBR><B>Brown-out detector </B></NOBR></DIV>
+<DIV style="position:absolute;top:1661;left:329"><NOBR><B>trigger level</B></NOBR></DIV>
+<DIV style="position:absolute;top:1681;left:329"><NOBR>(1=2.7V, 0=4.0V)</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:1641;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:1641;left:671"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:1703;left:108"><NOBR>BODEN</NOBR></DIV>
+<DIV style="position:absolute;top:1703;left:275"><NOBR>6</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:1703;left:329"><NOBR><B>Brown-out detector</B></NOBR></DIV>
+<DIV style="position:absolute;top:1724;left:329"><NOBR><B>enable</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:1703;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:1703;left:671"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:1746;left:108"><NOBR>SUT1</NOBR></DIV>
+<DIV style="position:absolute;top:1746;left:275"><NOBR>5</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:1745;left:329"><NOBR><B>Select start-up time</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:1746;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:1746;left:671"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:1770;left:108"><NOBR>SUT0</NOBR></DIV>
+<DIV style="position:absolute;top:1770;left:275"><NOBR>4</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:1770;left:329"><NOBR><B>Select start-up time</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:1770;left:531"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:1770;left:671"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:1795;left:108"><NOBR>CKSEL3</NOBR></DIV>
+<DIV style="position:absolute;top:1795;left:275"><NOBR>3</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:1795;left:329"><NOBR><B>Select clock source</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:1795;left:531"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:1795;left:671"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:1820;left:108"><NOBR>CKSEL2</NOBR></DIV>
+<DIV style="position:absolute;top:1820;left:275"><NOBR>2</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:1820;left:329"><NOBR><B>Select clock source</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:1820;left:531"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:1820;left:671"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:1845;left:108"><NOBR>CKSEL1</NOBR></DIV>
+<DIV style="position:absolute;top:1845;left:275"><NOBR>1</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:1845;left:329"><NOBR><B>Select clock source</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:1845;left:531"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:1845;left:671"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:1870;left:108"><NOBR>CKSEL0</NOBR></DIV>
+<DIV style="position:absolute;top:1870;left:275"><NOBR>0</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:1870;left:329"><NOBR><B>Select clock source</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:1870;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:1870;left:671"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:1895;left:108"><NOBR>Byte value:</NOBR></DIV>
+<DIV style="position:absolute;top:1895;left:531"><NOBR>0xE1</NOBR></DIV>
+<DIV style="position:absolute;top:1895;left:671"><NOBR>0x90</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:1929;left:108"><NOBR><B>Table 2. ATmega128 Fuse Bits (low byte).</B></NOBR></DIV>
+<DIV style="position:absolute;top:1949;left:108"><NOBR><I><B>Default</B></I><B>: no brown-out detection, 4 ms startup time (SUT0-1 fuses),</B></NOBR></DIV>
+<DIV style="position:absolute;top:1970;left:108"><NOBR><B>internal 1MHz clock (CKSEL0-3 fuses).</B></NOBR></DIV>
+<DIV style="position:absolute;top:1990;left:108"><NOBR><I><B>ELMB128</B></I><B>: brown-out detection enabled, maximum (64 ms) startup time (SUT0-1 fuses),</B></NOBR></DIV>
+<DIV style="position:absolute;top:2011;left:108"><NOBR><B>external clock source (CKSEL0-3 fuses).</B></NOBR></DIV>
+<DIV style="position:absolute;top:2032;left:108"><NOBR><B>To write the fuse bits to the ELMB128 as shown, send instruction 0xAC, 0xA0, 0x00, 0xA0.</B></NOBR></DIV>
+<DIV style="position:absolute;top:2053;left:108"><NOBR><B>Read instruction: 0x50, 0x00, 0x00, 0x00; the fuse bits are returned in the last byte of the </B></NOBR></DIV>
+<DIV style="position:absolute;top:2073;left:108"><NOBR><B>reply (byte 7).</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" color="#ff0000" face="Times"><SPAN style="font-size:19px;font-family:Times;color:#ff0000">
+<DIV style="position:absolute;top:2131;left:108"><NOBR><B>ATmega103 FUSE BITS</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:2166;left:108"><NOBR><B>Lock Bit</B></NOBR></DIV>
+<DIV style="position:absolute;top:2166;left:248"><NOBR><B>Bit No. Description</B></NOBR></DIV>
+<DIV style="position:absolute;top:2166;left:531"><NOBR><B>Default</B></NOBR></DIV>
+<DIV style="position:absolute;top:2166;left:671"><NOBR><B>ELMB</B></NOBR></DIV>
+<DIV style="position:absolute;top:2195;left:108"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:2195;left:275"><NOBR>7</NOBR></DIV>
+<DIV style="position:absolute;top:2195;left:329"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:2195;left:531"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:2195;left:671"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:2220;left:108"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:2220;left:275"><NOBR>6</NOBR></DIV>
+<DIV style="position:absolute;top:2220;left:329"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:2220;left:531"><NOBR>0</NOBR></DIV>
+<DIV style="position:absolute;top:2220;left:671"><NOBR>0</NOBR></DIV>
+<DIV style="position:absolute;top:2245;left:108"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:2245;left:275"><NOBR>5</NOBR></DIV>
+<DIV style="position:absolute;top:2245;left:329"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:2245;left:531"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:2245;left:671"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:2270;left:108"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:2270;left:275"><NOBR>4</NOBR></DIV>
+<DIV style="position:absolute;top:2270;left:329"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:2270;left:531"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:2270;left:671"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:2295;left:108"><NOBR>EESAVE</NOBR></DIV>
+<DIV style="position:absolute;top:2295;left:275"><NOBR>3</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:2294;left:329"><NOBR><B>Preserve EEPROM on </B></NOBR></DIV>
+<DIV style="position:absolute;top:2315;left:329"><NOBR><B>Chip Erase</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:2295;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:2295;left:671"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:2337;left:108"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:2337;left:275"><NOBR>2</NOBR></DIV>
+<DIV style="position:absolute;top:2337;left:329"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:2337;left:531"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:2337;left:671"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:2362;left:108"><NOBR>SUT1</NOBR></DIV>
+<DIV style="position:absolute;top:2362;left:275"><NOBR>1</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:2361;left:329"><NOBR><B>Select start-up time</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:2362;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:2362;left:671"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:2387;left:108"><NOBR>SUT0</NOBR></DIV>
+<DIV style="position:absolute;top:2387;left:275"><NOBR>0</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:2386;left:329"><NOBR><B>Select start-up time</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:2387;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:2387;left:671"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:2412;left:108"><NOBR>Byte value:</NOBR></DIV>
+<DIV style="position:absolute;top:2412;left:531"><NOBR>0xBF</NOBR></DIV>
+<DIV style="position:absolute;top:2412;left:671"><NOBR>0xB7</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:2445;left:108"><NOBR><B>Table 3. ATmega103 Fuse Bits.</B></NOBR></DIV>
+<DIV style="position:absolute;top:2466;left:108"><NOBR><B>Startup time about 16 ms (SUT0-1 fuses as shown).</B></NOBR></DIV>
+<DIV style="position:absolute;top:2486;left:108"><NOBR><B>To write the fuse bits to the ELMB as shown, send instruction 0xAC, 0xB7, 0x00, 0x00.</B></NOBR></DIV>
+<DIV style="position:absolute;top:2507;left:108"><NOBR><B>Read instruction is compatible with ATmega128: 0x50, 0x00, 0x00, 0x00; the fuse bits are </B></NOBR></DIV>
+<DIV style="position:absolute;top:2528;left:108"><NOBR><B>returned in the last byte of the reply (byte 7).</B></NOBR></DIV>
+</SPAN></FONT>
+
+<DIV style="position:absolute;top:2701;left:0"><HR><TABLE border="0" width="100&percnt;"><TBODY><TR><TD bgcolor="eeeeee" align="right"><FONT face="arial,sans-serif"><A name="3"><B>Page 3</B></A></FONT></TD></TR></TBODY></TABLE></DIV><FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:2769;left:108"><NOBR><I>ELMB128 Lockbits and Fuses</I></NOBR></DIV>
+<DIV style="position:absolute;top:2769;left:649"><NOBR>v1.0  22-May-2002</NOBR></DIV>
+<DIV style="position:absolute;top:3883;left:448"><NOBR>3</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" color="#ff0000" face="Times"><SPAN style="font-size:19px;font-family:Times;color:#ff0000">
+<DIV style="position:absolute;top:2840;left:108"><NOBR><B>ATmega128 FUSE BITS (high)</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:2875;left:108"><NOBR><B>Lock Bit</B></NOBR></DIV>
+<DIV style="position:absolute;top:2875;left:248"><NOBR><B>Bit No. Description</B></NOBR></DIV>
+<DIV style="position:absolute;top:2875;left:531"><NOBR><B>Default</B></NOBR></DIV>
+<DIV style="position:absolute;top:2875;left:671"><NOBR><B>ELMB128</B></NOBR></DIV>
+<DIV style="position:absolute;top:2904;left:108"><NOBR>OCDEN</NOBR></DIV>
+<DIV style="position:absolute;top:2904;left:275"><NOBR>7</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:2903;left:329"><NOBR><B>Enable OCD</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:2904;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:2904;left:671"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:2928;left:108"><NOBR>JTAGEN</NOBR></DIV>
+<DIV style="position:absolute;top:2928;left:275"><NOBR>6</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:2928;left:329"><NOBR><B>Enable JTAG</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:2928;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:2928;left:671"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:2953;left:108"><NOBR>SPIEN</NOBR></DIV>
+<DIV style="position:absolute;top:2953;left:275"><NOBR>5</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:2953;left:329"><NOBR><B>Enable serial program </B></NOBR></DIV>
+<DIV style="position:absolute;top:2974;left:329"><NOBR><B>and data downloading</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:2953;left:531"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:2953;left:671"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:2996;left:108"><NOBR>CKOPT</NOBR></DIV>
+<DIV style="position:absolute;top:2996;left:275"><NOBR>4</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:2995;left:329"><NOBR><B>Oscillator options</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:2996;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:2996;left:671"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:3020;left:108"><NOBR>EESAVE</NOBR></DIV>
+<DIV style="position:absolute;top:3020;left:275"><NOBR>3</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:3020;left:329"><NOBR><B>Preserve EEPROM on </B></NOBR></DIV>
+<DIV style="position:absolute;top:3041;left:329"><NOBR><B>Chip Erase</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:3020;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:3020;left:671"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:3063;left:108"><NOBR>BOOTSZ1</NOBR></DIV>
+<DIV style="position:absolute;top:3063;left:275"><NOBR>2</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:3062;left:329"><NOBR><B>Select Bootloader size</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:3063;left:531"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:3063;left:671"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:3087;left:108"><NOBR>BOOTSZ0</NOBR></DIV>
+<DIV style="position:absolute;top:3087;left:275"><NOBR>1</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:3087;left:329"><NOBR><B>Select Bootloader size</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:3087;left:531"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:3087;left:671"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:3112;left:108"><NOBR>BOOTRST</NOBR></DIV>
+<DIV style="position:absolute;top:3112;left:275"><NOBR>0</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:3112;left:329"><NOBR><B>Select Reset Vector</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:3112;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:3112;left:671"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:3137;left:108"><NOBR>Byte value:</NOBR></DIV>
+<DIV style="position:absolute;top:3137;left:531"><NOBR>0xD9</NOBR></DIV>
+<DIV style="position:absolute;top:3137;left:671"><NOBR>0xC0</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:3171;left:108"><NOBR><B>Table 4. ATmega128 Fuse Bits (high byte).</B></NOBR></DIV>
+<DIV style="position:absolute;top:3192;left:108"><NOBR><I><B>Default</B></I><B>: Bootloader size 4 Kwords (8 Kbyte), Application Reset.</B></NOBR></DIV>
+<DIV style="position:absolute;top:3212;left:108"><NOBR><I><B>ELMB128</B></I><B>: Bootloader size 4 Kwords (8 Kbyte), Bootloader Reset, internal 36 pF capacitor </B></NOBR></DIV>
+<DIV style="position:absolute;top:3233;left:108"><NOBR><B>between XTAL1 and GND enabled (CKOPT fuse).</B></NOBR></DIV>
+<DIV style="position:absolute;top:3253;left:108"><NOBR><B>To write the fuse bits to the ELMB128 as shown, send instruction 0xAC, 0xA8, 0x00, 0xD0.</B></NOBR></DIV>
+<DIV style="position:absolute;top:3274;left:108"><NOBR><B>Read instruction: 0x58, 0x08, 0x00, 0x00; the fuse bits are returned in the last byte of the </B></NOBR></DIV>
+<DIV style="position:absolute;top:3295;left:108"><NOBR><B>reply (byte 7).</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" color="#ff0000" face="Times"><SPAN style="font-size:19px;font-family:Times;color:#ff0000">
+<DIV style="position:absolute;top:3353;left:108"><NOBR><B>ATmega128 FUSE BITS (extended)</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:3388;left:108"><NOBR><B>Lock Bit</B></NOBR></DIV>
+<DIV style="position:absolute;top:3388;left:248"><NOBR><B>Bit No. Description</B></NOBR></DIV>
+<DIV style="position:absolute;top:3388;left:531"><NOBR><B>Default</B></NOBR></DIV>
+<DIV style="position:absolute;top:3388;left:671"><NOBR><B>ELMB128</B></NOBR></DIV>
+<DIV style="position:absolute;top:3417;left:108"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:3417;left:275"><NOBR>7</NOBR></DIV>
+<DIV style="position:absolute;top:3417;left:329"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:3417;left:531"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:3417;left:671"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:3442;left:108"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:3442;left:275"><NOBR>6</NOBR></DIV>
+<DIV style="position:absolute;top:3442;left:329"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:3442;left:531"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:3442;left:671"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:3466;left:108"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:3466;left:275"><NOBR>5</NOBR></DIV>
+<DIV style="position:absolute;top:3466;left:329"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:3466;left:531"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:3466;left:671"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:3491;left:108"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:3491;left:275"><NOBR>4</NOBR></DIV>
+<DIV style="position:absolute;top:3491;left:329"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:3491;left:531"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:3491;left:671"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:3516;left:108"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:3516;left:275"><NOBR>3</NOBR></DIV>
+<DIV style="position:absolute;top:3516;left:329"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:3516;left:531"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:3516;left:671"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:3541;left:108"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:3541;left:275"><NOBR>2</NOBR></DIV>
+<DIV style="position:absolute;top:3541;left:329"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:3541;left:531"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:3541;left:671"><NOBR>1</NOBR></DIV>
+<DIV style="position:absolute;top:3566;left:108"><NOBR>M103C</NOBR></DIV>
+<DIV style="position:absolute;top:3566;left:275"><NOBR>1</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:3566;left:329"><NOBR><B>ATmega103</B></NOBR></DIV>
+<DIV style="position:absolute;top:3586;left:329"><NOBR><B>compatibility mode</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:3566;left:531"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:3566;left:671"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:3608;left:108"><NOBR>WDTON</NOBR></DIV>
+<DIV style="position:absolute;top:3608;left:275"><NOBR>0</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:3608;left:329"><NOBR><B>Watchdog Timer</B></NOBR></DIV>
+<DIV style="position:absolute;top:3629;left:329"><NOBR><B>always on</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:3608;left:531"><NOBR>1 (unprogr)</NOBR></DIV>
+<DIV style="position:absolute;top:3608;left:671"><NOBR>0 (progr)</NOBR></DIV>
+<DIV style="position:absolute;top:3650;left:108"><NOBR>Byte value:</NOBR></DIV>
+<DIV style="position:absolute;top:3650;left:531"><NOBR>0xFD</NOBR></DIV>
+<DIV style="position:absolute;top:3650;left:671"><NOBR>0xFE</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:3684;left:108"><NOBR><B>Table 5. ATmega128 Fuse Bits (extended).</B></NOBR></DIV>
+<DIV style="position:absolute;top:3705;left:108"><NOBR><I><B>Default</B></I><B>: ATmega128 in ATmega103 compatibility mode, Watchdog Timer under software </B></NOBR></DIV>
+<DIV style="position:absolute;top:3725;left:108"><NOBR><B>control</B></NOBR></DIV>
+<DIV style="position:absolute;top:3746;left:108"><NOBR><I><B>ELMB128</B></I><B>: native ATmega128 mode, Watchdog Timer always on.</B></NOBR></DIV>
+<DIV style="position:absolute;top:3767;left:108"><NOBR><B>To write the fuse bits to the ELMB128 as shown, send instruction 0xAC, 0xA4, 0x00, 0xFE.</B></NOBR></DIV>
+<DIV style="position:absolute;top:3787;left:108"><NOBR><B>Read instruction: 0x50, 0x08, 0x00, 0x00; the fuse bits are returned in the last byte of the </B></NOBR></DIV>
+<DIV style="position:absolute;top:3808;left:108"><NOBR><B>reply (byte 7).</B></NOBR></DIV>
+</SPAN></FONT>
+
+<DIV style="position:absolute;top:3964;left:0"><HR><TABLE border="0" width="100&percnt;"><TBODY><TR><TD bgcolor="eeeeee" align="right"><FONT face="arial,sans-serif"><A name="4"><B>Page 4</B></A></FONT></TD></TR></TBODY></TABLE></DIV><FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:4032;left:108"><NOBR><I>ELMB128 Lockbits and Fuses</I></NOBR></DIV>
+<DIV style="position:absolute;top:4032;left:649"><NOBR>v1.0  22-May-2002</NOBR></DIV>
+<DIV style="position:absolute;top:5146;left:448"><NOBR>4</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="4" face="Times"><SPAN style="font-size:21px;font-family:Times">
+<DIV style="position:absolute;top:4114;left:108"><NOBR><B>2 Reading and Writing Lock and Fuse Bits via CAN</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:4166;left:108"><NOBR>NB: writing fuse bits via CAN/ATmega128-Bootloader is not possible !</NOBR></DIV>
+<DIV style="position:absolute;top:4191;left:119"><NOBR>Normally the ATmega128 processor of the ELMB128 module has been precon-</NOBR></DIV>
+<DIV style="position:absolute;top:4215;left:108"><NOBR>figured (lock and fuse bits) and preloaded with at least a Bootloader, but a user</NOBR></DIV>
+<DIV style="position:absolute;top:4239;left:108"><NOBR>might want to change particular settings to suit his requirements.</NOBR></DIV>
+<DIV style="position:absolute;top:4287;left:119"><NOBR>Table 6 shows the 4-byte instructions which have to be written to Object 1F50, </NOBR></DIV>
+<DIV style="position:absolute;top:4311;left:108"><NOBR>subindex 1 of the MDT-DCS <I><B>Object Dictionary </B></I>by <I><B>SDO </B></I>message, to read or</NOBR></DIV>
+<DIV style="position:absolute;top:4335;left:108"><NOBR>write ATmega128 (or ATmega103) processor lock bits or fuse bits (NB: values</NOBR></DIV>
+<DIV style="position:absolute;top:4360;left:108"><NOBR>written represent the recommended settings presented in the previous section). </NOBR></DIV>
+<DIV style="position:absolute;top:4384;left:108"><NOBR>The byte containing the bits being set are underlined (note that ATmega128 has</NOBR></DIV>
+<DIV style="position:absolute;top:4408;left:108"><NOBR>these bits in the 4</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:11px;font-family:Times">
+<DIV style="position:absolute;top:4403;left:255"><NOBR>th</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:4408;left:271"><NOBR>byte and ATmega103 in the 2</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:11px;font-family:Times">
+<DIV style="position:absolute;top:4403;left:521"><NOBR>nd</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:4408;left:540"><NOBR>byte of the message).</NOBR></DIV>
+<DIV style="position:absolute;top:4456;left:119"><NOBR>The bytes as shown from left to right must be put in data bytes 4 to 7 of the</NOBR></DIV>
+<DIV style="position:absolute;top:4480;left:108"><NOBR><I><B>SDO</B></I>-client  CAN-message  (the  message  sent  to  the  Slave  processor  or  Boot-</NOBR></DIV>
+<DIV style="position:absolute;top:4504;left:108"><NOBR>loader) In brackets the same bytes are shown as a single 32-bit integer number.</NOBR></DIV>
+<DIV style="position:absolute;top:4529;left:108"><NOBR>If a read operation is performed the bits are returned in the last byte of the <I><B>SDO</B></I>-</NOBR></DIV>
+<DIV style="position:absolute;top:4553;left:108"><NOBR>server reply (byte 7), which is the message sent in reply by the Bootloader (or</NOBR></DIV>
+<DIV style="position:absolute;top:4577;left:108"><NOBR>Slave processor).</NOBR></DIV>
+<DIV style="position:absolute;top:4625;left:119"><NOBR>In case the Slave processor is executing the programming instructions (instead</NOBR></DIV>
+<DIV style="position:absolute;top:4649;left:108"><NOBR>of a Bootloader) it is necessary before sending any of the lockbits/fusebits in-</NOBR></DIV>
+<DIV style="position:absolute;top:4674;left:108"><NOBR>structions to send a <I><B>Programming Enable </B></I>instruction (0xAC, 0x53, 0x00, 0x00) . </NOBR></DIV>
+<DIV style="position:absolute;top:4698;left:108"><NOBR>If the SDO-server reply contains in data byte 6 a copy of the value of byte 5, i.e.</NOBR></DIV>
+<DIV style="position:absolute;top:4722;left:108"><NOBR>0x53, the Programming Enable instruction was successfully completed., and lock </NOBR></DIV>
+<DIV style="position:absolute;top:4746;left:108"><NOBR>bits and fuse bits read/write instructions can now be given.</NOBR></DIV>
+<DIV style="position:absolute;top:4770;left:108"><NOBR>Programming instructions can be composed and sent using any host (PC) pro-</NOBR></DIV>
+<DIV style="position:absolute;top:4794;left:108"><NOBR>gram for generating CAN(open) messages (i.e. SDOs), such as <I><B>CANalyzer </B></I>(from</NOBR></DIV>
+<DIV style="position:absolute;top:4818;left:108"><NOBR>the VECTOR company) or <I><B>OPENhost </B></I>(from NIKHEF).</NOBR></DIV>
+</SPAN></FONT>
+
+<DIV style="position:absolute;top:5227;left:0"><HR><TABLE border="0" width="100&percnt;"><TBODY><TR><TD bgcolor="eeeeee" align="right"><FONT face="arial,sans-serif"><A name="5"><B>Page 5</B></A></FONT></TD></TR></TBODY></TABLE></DIV><FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:5295;left:108"><NOBR><I>ELMB128 Lockbits and Fuses</I></NOBR></DIV>
+<DIV style="position:absolute;top:5295;left:649"><NOBR>v1.0  22-May-2002</NOBR></DIV>
+<DIV style="position:absolute;top:6409;left:448"><NOBR>5</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" color="#ff0000" face="Times"><SPAN style="font-size:19px;font-family:Times;color:#ff0000">
+<DIV style="position:absolute;top:5370;left:336"><NOBR><B>ATmega128</B></NOBR></DIV>
+<DIV style="position:absolute;top:5370;left:607"><NOBR><B>ATmega103</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:5401;left:299"><NOBR><B>Read</B></NOBR></DIV>
+<DIV style="position:absolute;top:5401;left:431"><NOBR><B>Write</B></NOBR></DIV>
+<DIV style="position:absolute;top:5401;left:570"><NOBR><B>Read</B></NOBR></DIV>
+<DIV style="position:absolute;top:5401;left:702"><NOBR><B>Write</B></NOBR></DIV>
+<DIV style="position:absolute;top:5426;left:116"><NOBR><B>Lock Bits</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:5425;left:279"><NOBR>58 00 00 00</NOBR></DIV>
+<DIV style="position:absolute;top:5445;left:280"><NOBR>(00000058)</NOBR></DIV>
+<DIV style="position:absolute;top:5425;left:409"><NOBR>AC FF 00 EF</NOBR></DIV>
+<DIV style="position:absolute;top:5445;left:410"><NOBR>(EF00FFAC)</NOBR></DIV>
+<DIV style="position:absolute;top:5425;left:550"><NOBR>58 00 00 00</NOBR></DIV>
+<DIV style="position:absolute;top:5445;left:551"><NOBR>(00000058)</NOBR></DIV>
+<DIV style="position:absolute;top:5425;left:680"><NOBR>AC FF 00 EF</NOBR></DIV>
+<DIV style="position:absolute;top:5445;left:681"><NOBR>(FF00FFAC)</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:5468;left:116"><NOBR><B>Fuse Bits (lo)</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:5467;left:279"><NOBR>50 00 00 00</NOBR></DIV>
+<DIV style="position:absolute;top:5487;left:280"><NOBR>(00000050)</NOBR></DIV>
+<DIV style="position:absolute;top:5467;left:407"><NOBR>AC A0 00 A0</NOBR></DIV>
+<DIV style="position:absolute;top:5487;left:408"><NOBR>(A000A0AC)</NOBR></DIV>
+<DIV style="position:absolute;top:5467;left:550"><NOBR>50 00 00 00</NOBR></DIV>
+<DIV style="position:absolute;top:5487;left:551"><NOBR>(00000050)</NOBR></DIV>
+<DIV style="position:absolute;top:5467;left:681"><NOBR>AC B7 00 00</NOBR></DIV>
+<DIV style="position:absolute;top:5487;left:682"><NOBR>(0000B7AC)</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:5510;left:116"><NOBR><B>Fuse Bits (hi)</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:5509;left:279"><NOBR>58 08 00 00</NOBR></DIV>
+<DIV style="position:absolute;top:5529;left:280"><NOBR>(00000858)</NOBR></DIV>
+<DIV style="position:absolute;top:5509;left:407"><NOBR>AC A8 00 D0</NOBR></DIV>
+<DIV style="position:absolute;top:5529;left:408"><NOBR>(D000A8AC)</NOBR></DIV>
+<DIV style="position:absolute;top:5509;left:584"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:5509;left:720"><NOBR>&mdash;</NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:19px;font-family:Times">
+<DIV style="position:absolute;top:5552;left:116"><NOBR><B>Fuse Bits (ext)</B></NOBR></DIV>
+</SPAN></FONT>
+<FONT size="3" face="Times"><SPAN style="font-size:16px;font-family:Times">
+<DIV style="position:absolute;top:5551;left:279"><NOBR>50 08 00 00</NOBR></DIV>
+<DIV style="position:absolute;top:5572;left:280"><NOBR>(00000850)</NOBR></DIV>
+<DIV style="position:absolute;top:5551;left:408"><NOBR>AC A4 00 FE</NOBR></DIV>
+<DIV style="position:absolute;top:5572;left:409"><NOBR>(FE00A4AC)</NOBR></DIV>
+<DIV style="position:absolute;top:5551;left:584"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:5551;left:720"><NOBR>&mdash;</NOBR></DIV>
+<DIV style="position:absolute;top:5614;left:108"><NOBR><B>Table 6. List of 4-byte instructions for reading and writing ELMB(128) Lock Bits and </B></NOBR></DIV>
+<DIV style="position:absolute;top:5635;left:108"><NOBR><B>Fuse Bits (numbers in hexadecimal). Underlined bytes are the actual lock or fuse bits be-</B></NOBR></DIV>
+<DIV style="position:absolute;top:5655;left:108"><NOBR><B>ing set (which may differ from shown values depending on the required configuration).</B></NOBR></DIV>
+<DIV style="position:absolute;top:5676;left:108"><NOBR><B>Note that writing fuse bits is not possible via an ATmega128 Bootloader (the instructions </B></NOBR></DIV>
+<DIV style="position:absolute;top:5697;left:108"><NOBR><B>with grey background).</B></NOBR></DIV>
+</SPAN></FONT>
+
+
+</DIV></BODY></HTML>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0031)http://www.recursion.jp/avrcdc/ -->
+<HTML><HEAD><TITLE>AVR-CDC</TITLE>
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId>
+<META content="AVR-USB CDC COM" name=keywords>
+<META content=AVR-CDC name=description>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"></HEAD>
+<BODY bgColor=#ddffee><FONT face="Times New Roman">
+<P style="LINE-HEIGHT: 200%" align=left><SPAN style="LETTER-SPACING: 1pt"><FONT 
+size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A 
+href="http://www.recursion.jp/prose/index.htm">Index</A></FONT></SPAN></P>
+<P style="LINE-HEIGHT: 120%" align=center><B><I><FONT face="Times New Roman" 
+size=5>AVR - CDC</FONT></I></B><BR></P>
+<P style="LINE-HEIGHT: 150%" align=center><SPAN lang=en-us><FONT size=4><IMG 
+height=111 src="AVR-CDC_files/cdctiny45rc.jpg" width=155 
+border=0><BR></FONT><FONT size=2>cdctiny45rc</FONT><FONT size=4><BR><BR><I>Osamu 
+Tamura @ Recursion Co., Ltd.</I></FONT></SPAN></P>
+<BLOCKQUOTE>
+  <P style="LINE-HEIGHT: 180%" align=justify><SPAN lang=EN-US>AVR-CDC is a 
+  USB-RS232C interface using the CDC (Communication Device Class) protocol. 
+  Although the bulk endpoint required for CDC is not allowed within the 
+  low-speed USB standard, it works fine on major platforms.</SPAN></P>
+  <BLOCKQUOTE>
+    <P style="LINE-HEIGHT: 180%" align=justify><SPAN lang=EN-US>1. No dedicated 
+    driver necessary. OS&nbsp; loads a built-in driver ("usbser.sys" on 
+    Windows).<BR>2. Very low cost. With ATtiny45/2313, this is the cheapest 
+    solution for the USB-RS232C interface.</SPAN></P></BLOCKQUOTE>
+  <P style="LINE-HEIGHT: 180%" align=justify><SPAN lang=EN-US>On Windows, an INF 
+  file is required to load the pre-installed driver when the device is connected 
+  for the first time. The virtual COM port appears after the connection 
+  established. No special procedure is required to Macintosh OS X.</SPAN></P>
+  <P style="LINE-HEIGHT: 120%" align=center><IMG height=268 
+  src="AVR-CDC_files/avrcdc45.gif" width=673 border=0><BR><BR>Figure 1:&nbsp; 
+  AVR-CDC circuit for ATtiny45</P>
+  <P style="LINE-HEIGHT: 180%" align=justify><SPAN lang=EN-US>The Vcc should be 
+  lower than 3.6V to meet the USB standard. Use a quartz crystal instead of a 
+  ceramic resonator for stable connection. The internal RC oscillator can 
+  substitute the external crystal to simplify hardware (cdctiny45rc). Program 
+  size is about 3KB on AVR. Since ATtiny45 has no USART, 4800bps may be the 
+  practical speed. ATmega8/48/88 can achieve the higher transfer rate (e.g. 
+  38400bps) using the internal USART.</SPAN></P>
+  <P style="LINE-HEIGHT: 200%" align=center><IMG height=142 
+  src="AVR-CDC_files/avrcdc-2.jpg" width=361 border=0><BR>Figure 2:&nbsp; Tiny 
+  USB interface (cdctiny45)</P>
+  <P style="LINE-HEIGHT: 180%" align=justify><SPAN lang=EN-US>I implemented this 
+  to add a USB interface to an ATmega88 system. The system is for educational 
+  purpose and has a tiny <A 
+  href="http://www.recursion.jp/forcy/index.html">PostScript-like compiler</A> 
+  inside. The power consumption of ATtiny45 is about 8mA (24mW).</SPAN></P>
+  <P style="LINE-HEIGHT: 180%" align=justify><SPAN lang=EN-US>The AVR-CDC is 
+  based on Object Development's <A 
+  href="http://www.obdev.at/products/avrusb/index.html">AVR-USB</A>. The portion 
+  of code that I added is published as free software (GPL2). See the License.txt 
+  together with the Object Development's license agreement.</SPAN></P>
+  <P style="LINE-HEIGHT: 180%" align=justify><SPAN lang=en-us>Download INF files 
+  here for Windows PC.<FONT color=#800000> </FONT><A 
+  href="http://www.recursion.jp/avrcdc/lowbulk.html"><FONT color=#800000>AVR-CDC 
+  is Windows Vista x32 ready.</FONT></A></SPAN></P>
+  <BLOCKQUOTE>
+    <BLOCKQUOTE>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <BLOCKQUOTE><FONT face="Times New Roman" size=2>
+            <P style="LINE-HEIGHT: 180%"><A 
+            href="http://www.recursion.jp/avrcdc/avrcdc_inf.zip">avrcdc_.inf.zip</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(26KB) 
+            </P></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></FONT>
+  <P style="LINE-HEIGHT: 180%" align=justify><SPAN lang=en-us>This code is for 
+  ATtiny45/ATmega8/48/88.</SPAN></P>
+  <BLOCKQUOTE>
+    <BLOCKQUOTE>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <BLOCKQUOTE><FONT face="Times New Roman" size=2>
+            <P style="LINE-HEIGHT: 180%"><A 
+            href="http://www.recursion.jp/avrcdc/AVR-CDC.2008-08-25.tgz">AVR-CDC.2008-08-25.tgz</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(222KB)<BR><A 
+            href="http://www.recursion.jp/avrcdc/AVR-CDC.2008-08-25.zip">AVR-CDC.2008-08-25.zip</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            (266KB)<BR><BR><A 
+            href="http://www.recursion.jp/avrcdc/AVR-CDC.2008-01-27.tgz">AVR-CDC.2008-01-27.tgz</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(129KB)<BR><A 
+            href="http://www.recursion.jp/avrcdc/AVR-CDC.2008-01-27.zip">AVR-CDC.2008-01-27.zip</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            (191KB)<BR><BR></P></FONT></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+  <P style="LINE-HEIGHT: 150%" align=center><B><I><SPAN lang=EN-US><FONT 
+  face="Times New Roman" size=5>CDC - </FONT></SPAN></I></B><SPAN 
+  lang=en-us><B><I><FONT face="Times New Roman" 
+  size=5>2313</FONT></I></B></SPAN></P>
+  <P style="LINE-HEIGHT: 150%" align=left><SPAN lang=EN-US>This is the subset of 
+  AVR-CDC for ATtiny2313. It provides the 9600bps 8N1 settings only. Improve it 
+  by yourself.</SPAN></P>
+  <BLOCKQUOTE>
+    <BLOCKQUOTE>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <BLOCKQUOTE><FONT face="Times New Roman" size=2>
+            <P style="LINE-HEIGHT: 180%"><A 
+            href="http://www.recursion.jp/avrcdc/CDC-2313.2008-08-25.tgz">CDC-2313.2008-08-25.tgz</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(110KB)<BR><A 
+            href="http://www.recursion.jp/avrcdc/CDC-2313.2008-08-25.zip">CDC-2313.2008-08-25.zip</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            (137KB)<BR><BR><A 
+            href="http://www.recursion.jp/avrcdc/CDC-2313.2008-01-27.tgz">CDC-2313.2008-01-27.tgz</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            (90KB)<BR><A 
+            href="http://www.recursion.jp/avrcdc/CDC-2313.2008-01-27.zip">CDC-2313.2008-01-27.zip</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            (117KB)<BR><BR></P></FONT></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+  <P style="LINE-HEIGHT: 150%" align=center><B><I><SPAN lang=EN-US><FONT 
+  face="Times New Roman" size=5>CDC - IO</FONT></SPAN></I></B></P>
+  <P style="LINE-HEIGHT: 180%" align=left><SPAN lang=EN-US>This is another 
+  example of AVR-CDC. CDC-IO provides the 18-bit parallel port interface using 
+  AVR microcontroller (ATmega8/48/88).<BR>You can control port bits by sending 
+  simple text commands via terminal software or from your own program.<BR>The 
+  ATtiny45/461 versions are available. They use the internal RC 
+  oscillator.</SPAN></P>
+  <P style="LINE-HEIGHT: 180%" align=center><SPAN lang=EN-US><IMG height=382 
+  src="AVR-CDC_files/cdcio48.gif" width=671 border=0><BR></SPAN>Figure 3:&nbsp; 
+  CDC-IO circuit for ATmega8/48/88</P>
+  <P style="LINE-HEIGHT: 180%" align=center><SPAN lang=EN-US>CDC-IO 
+  command</SPAN></P>
+  <BLOCKQUOTE>
+    <BLOCKQUOTE>
+      <DIV align=center>
+      <CENTER>
+      <TABLE 
+      style="BORDER-RIGHT: 1px solid; PADDING-RIGHT: 4px; BORDER-TOP: 1px solid; PADDING-LEFT: 4px; PADDING-BOTTOM: 1px; BORDER-LEFT: 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: 1px solid; BORDER-COLLAPSE: collapse" 
+      borderColor=#111111 cellSpacing=0 cellPadding=0 width="53%" border=1>
+        <TBODY>
+        <TR>
+          <TD align=middle width="24%"><SPAN lang=EN-US>function </SPAN></TD>
+          <TD align=middle width="16%"><SPAN lang=EN-US>command </SPAN></TD>
+          <TD align=middle width="35%"><SPAN lang=EN-US>format </SPAN></TD>
+          <TD align=middle width="25%"><SPAN lang=EN-US>response</SPAN></TD></TR>
+        <TR>
+          <TD width="24%"><SPAN lang=EN-US>Who </SPAN></TD>
+          <TD align=middle width="16%"><SPAN lang=EN-US>@</SPAN></TD>
+          <TD width="35%"><SPAN lang=EN-US>@</SPAN></TD>
+          <TD width="25%"><SPAN lang=EN-US>"cdc-io", CR-LF</SPAN></TD></TR>
+        <TR>
+          <TD width="24%"><SPAN lang=EN-US>Get </SPAN></TD>
+          <TD align=middle width="16%"><SPAN lang=EN-US>?</SPAN></TD>
+          <TD width="35%"><SPAN lang=EN-US>address ?</SPAN></TD>
+          <TD width="25%"><SPAN lang=EN-US>data, CR-LF</SPAN></TD></TR>
+        <TR>
+          <TD width="24%"><SPAN lang=EN-US>Set </SPAN></TD>
+          <TD align=middle width="16%"><SPAN lang=EN-US>=</SPAN></TD>
+          <TD width="35%"><SPAN lang=EN-US>data address =</SPAN></TD>
+          <TD width="25%"><SPAN lang=EN-US>CR-LF</SPAN></TD></TR>
+        <TR>
+          <TD width="24%"><SPAN lang=EN-US>AND &amp; Set</SPAN></TD>
+          <TD align=middle width="16%"><SPAN lang=EN-US>&amp;</SPAN></TD>
+          <TD width="35%"><SPAN lang=EN-US>data address &amp;</SPAN></TD>
+          <TD width="25%"><SPAN lang=EN-US>CR-LF</SPAN></TD></TR>
+        <TR>
+          <TD width="24%"><SPAN lang=EN-US>OR &amp; Set</SPAN></TD>
+          <TD align=middle width="16%"><SPAN lang=EN-US>|</SPAN></TD>
+          <TD width="35%"><SPAN lang=EN-US>data address |</SPAN></TD>
+          <TD width="25%"><SPAN lang=EN-US>CR-LF</SPAN></TD></TR>
+        <TR>
+          <TD width="24%"><SPAN lang=EN-US>EX-OR &amp; Set</SPAN></TD>
+          <TD align=middle width="16%"><SPAN lang=EN-US>^</SPAN></TD>
+          <TD width="35%"><SPAN lang=EN-US>data address ^</SPAN></TD>
+          <TD width="25%"><SPAN lang=EN-US>CR-LF</SPAN></TD></TR>
+        <TR>
+          <TD width="24%"><SPAN lang=EN-US>Set Double</SPAN></TD>
+          <TD align=middle width="16%"><SPAN lang=en-us>$</SPAN></TD>
+          <TD width="35%"><SPAN lang=EN-US>data2 data1 address $</SPAN></TD>
+          <TD width="25%"><SPAN 
+      lang=EN-US>CR-LF</SPAN></TD></TR></TBODY></TABLE></CENTER></DIV>
+      <P style="LINE-HEIGHT: 180%" align=justify><SPAN lang=EN-US>address: 
+      memory mapped I/O address in hexadecimal<BR>data: 8 bit data in 
+      hexadecimal<BR>delimiter: Tab, Space, CR, LF<BR>predefined address: 
+      (case-insensitive)<BR>&nbsp;&nbsp;&nbsp; PINB, DDRB, PORTB PINC, DDRC, 
+      PORTC PIND, DDRD, PORTD</SPAN></P>
+      <P style="LINE-HEIGHT: 180%" align=justify><SPAN lang=EN-US>example: ('_' 
+      means delimiter)<BR>&nbsp;&nbsp;&nbsp; 
+      DDRB_?_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      Replies DDRB value with CR-LF.<BR>&nbsp;&nbsp;&nbsp; 
+      12_34_=_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      Writes 0x12 to address: 0x34, replies CR-LF.<BR>&nbsp;&nbsp;&nbsp; 
+      FB_PORTC_&amp;_&nbsp;&nbsp;&nbsp; Writes (PORTC &amp; 0xFB) to PORTC, 
+      replies CR-LF.</SPAN></P></BLOCKQUOTE></BLOCKQUOTE>
+  <P style="LINE-HEIGHT: 180%" align=justify><SPAN lang=EN-US>Previous data and 
+  address can be reused. Just enter command character to repeat.</SPAN></P>
+  <P style="LINE-HEIGHT: 180%" align=justify><SPAN lang=en-us>Use "Set Double" 
+  command to write on EEPROM.</SPAN></P>
+  <P style="LINE-HEIGHT: 180%" align=justify><SPAN lang=EN-US>USB line is 
+  connected to PORTD2,3. Avoid changing these bits. Modify other DDRD bits using 
+  '&amp;', '|' or '^'.<BR>If PORTD is assigned to output, use PIND to toggle 
+  bits.</SPAN></P>
+  <P style="LINE-HEIGHT: 180%" align=justify><SPAN lang=EN-US>USB bus-powered 
+  Vcc is about 3.6V. Be careful of interfacing to the higher voltage circuit. 
+  Usable bus-powered current is about 80mA.</SPAN></P>
+  <P style="LINE-HEIGHT: 180%" align=justify><SPAN lang=EN-US>** Any SFRs 
+  (special function registers) are accessible. See AVR datasheet to use Timers, 
+  ADC, USART, etc.</SPAN></P>
+  <P style="LINE-HEIGHT: 180%" align=center><IMG height=240 
+  src="AVR-CDC_files/cdcio-2.jpg" width=320 border=0><BR>Figure 4:&nbsp; CDC-IO 
+  on ATmega48</P>
+  <BLOCKQUOTE>
+    <BLOCKQUOTE>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <BLOCKQUOTE><FONT face="Times New Roman" size=2>
+            <P style="LINE-HEIGHT: 180%"><A 
+            href="http://www.recursion.jp/avrcdc/CDC-IO.2008-08-25.tgz">CDC-IO.2008-08-25.tgz</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            (182KB)<BR><A 
+            href="http://www.recursion.jp/avrcdc/CDC-IO.2008-08-25.zip">CDC-IO.2008-08-25.zip</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            (218KB)<BR><BR><A 
+            href="http://www.recursion.jp/avrcdc/CDC-IO.2007-07-07.tgz">CDC-IO.2007-07-07.tgz</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            (79KB)<BR><A 
+            href="http://www.recursion.jp/avrcdc/CDC-IO.2007-07-07.zip">CDC-IO.2007-07-07.zip</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            (106KB)<BR><BR></P></FONT></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+  <P style="LINE-HEIGHT: 180%" align=justify>With the 20MHz clock, it sometimes 
+  mistakes the signal timing of EOP for Reset. Compile with the lower 
+  optimization level (e.g. -O1,s), or modify usbdrv.c : usbPoll() as 
+  below.<BR>&nbsp;&nbsp;&nbsp; <FONT size=2>--&nbsp;&nbsp;&nbsp;&nbsp; for(i = 
+  10; i &gt; 0; i--){<BR>&nbsp;&nbsp;&nbsp; ++&nbsp;&nbsp;&nbsp;&nbsp; for(i = 
+  20; i &gt; 0; i--){</P></FONT>
+  <P style="LINE-HEIGHT: 180%" align=justify><FONT color=#800000><SPAN 
+  lang=en-us>AVR-CDC </SPAN><SPAN lang=EN-US>&nbsp;is an experimental project. 
+  If your application needs stable technologies, consider using FTDI's FT232 / 
+  FT245 instead.</SPAN></FONT></P>
+  <P style="LINE-HEIGHT: 180%"><SPAN style="LETTER-SPACING: 1pt"><FONT size=3 
+  ?><A 
+href="http://www.recursion.jp/prose/index.htm">Index</A></FONT></SPAN></P>
+  <P style="LINE-HEIGHT: 180%" align=center><SPAN lang=EN-US>mailto: <NOSCRIPT>A 
+  browser with JavaScript 1.5 or later can see this mail 
+  address.</NOSCRIPT><FONT size=1>
+  <SCRIPT type=text/JavaScript>s=decodeURI("-p1yctw,6%7Cpx%7De~+ep%7CdcpQctrdcbx~%7F?%7Ba6/ep%7Cdcp%EF%BC%B1ctrdcbx~%7F?%7Ba-%3Ep/");k=17;var t=new String();for(i=0;i<s.length;i++){a=s.charCodeAt(i)^k;t=t+String.fromCharCode(a);}document.write(decodeURI(t));</SCRIPT>
+   </FONT>with [AVR-CDC] subject.</SPAN></P>28 Jun. 2006<BR>24 Jan. 2007<BR>07 
+  Apr. 2007<BR>07 Jul. 2007<BR>03 Oct. 2007<BR>27 Jan. 2008<BR>15 Jul. 
+  2008<BR>25 Aug. 2008 
+  <P></P></BLOCKQUOTE><FONT size=3>
+<P align=center><BR>@</P></FONT></FONT></BODY></HTML>

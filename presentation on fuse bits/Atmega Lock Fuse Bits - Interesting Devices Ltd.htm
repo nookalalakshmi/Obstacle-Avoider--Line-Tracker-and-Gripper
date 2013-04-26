@@ -1,0 +1,3464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0055)http://id-discussions.com/forum/showthread.php?p=208784 -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><HEAD><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	
+<META name="generator" content="vBulletin 3.7.5">
+
+<META name="keywords" content=" Atmega Lock/Fuse Bits, forum,bbs,discussion,bulletin board,DSS,Free tv,satellite,bskyb,sky,ps2,xbox,mod chip,alladin,cheapmod,skins,">
+<META name="description" content=" Atmega Lock/Fuse Bits ExVu General Help">
+
+
+<!-- CSS Stylesheet -->
+<STYLE type="text/css" id="vbulletin_css">
+/**
+* vBulletin 3.7.5 CSS
+* Style: 'Tech Two'; Style ID: 33
+*/
+body
+{
+	background: #d0d7e0;
+	color: #484d53;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+}
+a:link, body_alink
+{
+	color: #666D75;
+	text-decoration: none;
+}
+a:visited, body_avisited
+{
+	color: #666D75;
+	text-decoration: none;
+}
+a:hover, a:active, body_ahover
+{
+	color: #CB632F;
+	text-decoration: underline;
+}
+.page
+{
+	background: #CDD2D9;
+	color: #484d53;
+}
+.page a:link, .page_alink
+{
+	text-decoration: none;
+}
+.page a:visited, .page_avisited
+{
+	text-decoration: none;
+}
+.page a:hover, .page a:active, .page_ahover
+{
+	text-decoration: underline;
+}
+td, th, p, li
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tborder
+{
+	background: #666D75;
+	color: #484d53;
+}
+.tcat
+{
+	background: #B2BAC5  url(../forum/images/techtwo/misc/table1.gif) repeat-x top left;
+	color: #666D75;
+	font: bold 10px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tcat a:link, .tcat_alink
+{
+	color: #666D75;
+	text-decoration: none;
+}
+.tcat a:visited, .tcat_avisited
+{
+	color: #666D75;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active, .tcat_ahover
+{
+	color: #666D75;
+	text-decoration: underline;
+}
+.thead
+{
+	background: #B2BAC5  url(../forum/images/techtwo/misc/table1.gif) repeat-x top left;
+	color: #666D75;
+	font: bold 10px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.thead a:link, .thead_alink
+{
+	color: #666D75;
+	text-decoration: none;
+}
+.thead a:visited, .thead_avisited
+{
+	color: #666D75;
+	text-decoration: none;
+}
+.thead a:hover, .thead a:active, .thead_ahover
+{
+	color: #CB632F;
+	text-decoration: underline;
+}
+.tfoot
+{
+	background: #B2BAC5  url(../forum/images/techtwo/misc/table1.gif) repeat-x top left;
+	color: #666D75;
+}
+.tfoot a:link, .tfoot_alink
+{
+	color: #666D75;
+	text-decoration: none;
+}
+.tfoot a:visited, .tfoot_avisited
+{
+	color: #666D75;
+	text-decoration: none;
+}
+.tfoot a:hover, .tfoot a:active, .tfoot_ahover
+{
+	color: #CB632F;
+	text-decoration: underline;
+}
+.alt1, .alt1Active
+{
+	background: #DFE2E6;
+	color: #484d53;
+	font: 12px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	border-top: #FFFFFF 1px solid;
+	border-left: #FFFFFF 1px solid;
+}
+.alt1 a:link, .alt1_alink, .alt1Active a:link, .alt1Active_alink
+{
+	color: #666D75;
+	text-decoration: none;
+}
+.alt1 a:visited, .alt1_avisited, .alt1Active a:visited, .alt1Active_avisited
+{
+	color: #666D75;
+	text-decoration: none;
+}
+.alt1 a:hover, .alt1 a:active, .alt1_ahover, .alt1Active a:hover, .alt1Active a:active, .alt1Active_ahover
+{
+	color: #CB632F;
+	text-decoration: underline;
+}
+.alt2, .alt2Active
+{
+	background: #E4E8ED;
+	color: #484d53;
+	font: 12px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	border-top: #FFFFFF 1px solid;
+	border-left: #FFFFFF 1px solid;
+}
+.alt2 a:link, .alt2_alink, .alt2Active a:link, .alt2Active_alink
+{
+	color: #666D75;
+	text-decoration: none;
+}
+.alt2 a:visited, .alt2_avisited, .alt2Active a:visited, .alt2Active_avisited
+{
+	color: #666D75;
+	text-decoration: none;
+}
+.alt2 a:hover, .alt2 a:active, .alt2_ahover, .alt2Active a:hover, .alt2Active a:active, .alt2Active_ahover
+{
+	color: #CB632F;
+	text-decoration: underline;
+}
+.inlinemod
+{
+	background: #FFFFCC;
+	color: #000000;
+}
+.wysiwyg
+{
+	background: #F5F5FF;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	margin: 5px 10px 10px 10px;
+	padding: 0px;
+}
+.wysiwyg a:link, .wysiwyg_alink
+{
+	color: #22229C;
+}
+.wysiwyg a:visited, .wysiwyg_avisited
+{
+	color: #22229C;
+}
+.wysiwyg a:hover, .wysiwyg a:active, .wysiwyg_ahover
+{
+	color: #FF4400;
+}
+textarea, .bginput
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.bginput option, .bginput optgroup
+{
+	font-size: 10pt;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.button
+{
+	background: #666D75  url(../forum/images/techtwo/misc/t2b.gif) repeat-x top left;
+	color: #F5F5FF;
+	font: bold 10px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 2px;
+}
+select
+{
+	background: #E4E8ED;
+	color: #484d53;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+option, optgroup
+{
+	font-size: 11px;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.smallfont
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.time
+{
+	color: #CB632F;
+}
+.navbar
+{
+	background: #a8b0ba url(../forum/images/techtwo/misc/header_nav_bg.gif) repeat-x top left;
+	color: #484d53;
+	font: bold 10px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.navbar a:link, .navbar_alink
+{
+	color: #484d53;
+	text-decoration: none;
+}
+.navbar a:visited, .navbar_avisited
+{
+	color: #484d53;
+	text-decoration: none;
+}
+.navbar a:hover, .navbar a:active, .navbar_ahover
+{
+	color: #CB632F;
+	text-decoration: none;
+}
+.highlight
+{
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel
+{
+	background: #333333;
+	color: #CCCCCC;
+}
+.fjdpth0
+{
+	background: #F7F7F7;
+	color: #000000;
+}
+.panel
+{
+	background: #dbe1e8;
+	color: #000000;
+	padding: 10px;
+	border: 2px outset;
+}
+.panelsurround
+{
+	background: #DFE2E6;
+	color: #000000;
+	border-top: 1px solid #363636;
+	border-left: 1px solid #363636;
+	border-right: 1px solid #363636;
+	border-bottom: 1px solid #363636;
+}
+legend
+{
+	color: #666D75;
+	font: 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.vbmenu_control
+{
+	background: #B2BAC5  url(../forum/images/techtwo/misc/table1.gif) repeat-x top left;
+	color: #666D75;
+	font: bold 10px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_control a:link, .vbmenu_control_alink
+{
+	color: #666D75;
+	text-decoration: none;
+}
+.vbmenu_control a:visited, .vbmenu_control_avisited
+{
+	color: #666D75;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active, .vbmenu_control_ahover
+{
+	color: #CB632F;
+	text-decoration: underline;
+}
+.vbmenu_popup
+{
+	background: #FFFFFF;
+	color: #484d53;
+	border: #666D75 1px solid;
+}
+.vbmenu_option
+{
+	background: #E4E8ED;
+	color: #484d53;
+	font: 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+	border-left: #E4E8ED 4px solid;
+}
+.vbmenu_option a:link, .vbmenu_option_alink
+{
+	color: #666D75;
+	text-decoration: none;
+}
+.vbmenu_option a:visited, .vbmenu_option_avisited
+{
+	color: #666D75;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active, .vbmenu_option_ahover
+{
+	color: #666D75;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background: #d0d7de;
+	color: #484d53;
+	font: 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+	border-left: #CB632F 4px solid;
+}
+.vbmenu_hilite a:link, .vbmenu_hilite_alink
+{
+	color: #666D75;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited, .vbmenu_hilite_avisited
+{
+	color: #666D75;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active, .vbmenu_hilite_ahover
+{
+	color: #666D75;
+	text-decoration: none;
+}
+/* ***** styling for 'big' usernames on postbit etc. ***** */
+.bigusername { font-size: 14pt; }
+
+/* ***** small padding on 'thead' elements ***** */
+td.thead, th.thead, div.thead { padding: 4px; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; }
+.pagenav td { padding: 2px 4px 2px 4px; }
+
+/* ***** de-emphasized text */
+.shade, a.shade:link, a.shade:visited { color: #777777; text-decoration: none; }
+a.shade:active, a.shade:hover { color: #FF4400; text-decoration: underline; }
+.tcat .shade, .thead .shade, .tfoot .shade { color: #DDDDDD; }
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { margin-bottom: 6px; }
+.fieldset, .fieldset td, .fieldset p, .fieldset li { font-size: 11px; }
+/* Here you can change the look of the post text and links */
+
+.vb_postbit
+{
+	color: #484d53;
+    font: 12px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	text-decoration: none;
+}
+.vb_postbit a:link
+{
+	color: #CB632F;
+    font: 12px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+    text-decoration: none;
+}
+.vb_postbit a:visited
+{
+	color: #CB632F;
+    font: 12px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+    text-decoration: none;
+}
+.vb_postbit a:hover, .vb_postbit a:active
+{
+	color: #CB632F;
+    font: 12px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	text-decoration: underline;
+}
+
+/* ***** user profile info ***** */ 
+.profile_info {
+padding-left: 3px;
+padding-right: 0px;
+padding-top: 3px;
+padding-bottom: 3px;
+background-color: #e4e8ed;
+color: #484d53;
+border-top: 1px solid #666D75;
+border-right: 1px solid #666D75;
+border-left: #CB632F 4px solid;
+border-bottom: 1px solid #666D75;
+margin-bottom: 3px;
+}
+
+/* ***** side borders and forum width ***** */ 
+.side_borders {
+width: 770px; 
+border-left: 1px solid #666D75;
+border-right: 1px solid #666D75;
+border-top: 1px solid #666D75;
+border-bottom: 1px solid #666D75;
+margin-left: auto;
+margin-right: auto;
+}
+
+
+/* ***** Header and Nav  ***** */
+.header_bg {
+background: #a8b0ba url(../forum/images/techtwo/misc/header.gif) ;
+}
+.vb_navigation {
+background: #a8b0ba url(../forum/images/techtwo/misc/header_nav_bg.gif) ;
+}
+
+/* ***** navigation roll-overs element */
+
+.css_nav {
+float: left;
+width: 78px;
+height: 37px;
+color: #484d53;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 10px;
+font-weight: bold;
+text-align: center;
+margin: 0px;
+padding: 0px;
+border: 0px;
+}
+
+.css_nav a:link , .css_nav a:visited {
+display: block;
+background-image: url(../forum/images/techtwo/misc/up.gif);
+color: #484d53;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 10px;
+font-weight: bold;
+line-height: 28px;
+text-align: center;
+text-decoration: none;
+width: 78px;
+height: 37px;
+}
+
+.css_nav a:hover, .css_nav a:active {
+background-image: url(../forum/images/techtwo/misc/down.gif);
+color: #596779;
+text-decoration: none;
+line-height: 31px;
+width: 78px;
+height: 37px;
+}
+
+
+
+/* ***** spacers and paddings ***** */
+
+.cat_spacer {
+padding:5px 0px 5px 0px;
+}
+.spacer {
+padding:5px 0px 5px 0px;
+}
+.spacer_small {
+padding:2px 0px 2px 0px;
+}
+
+
+/* ***** make announcements, stickies moderated, soft deleted posts, search result since last visit and poll  pretty ***** */
+.announcement {
+background-color: #ffc08b;
+border-top: #e4eaf1 1px solid;
+border-left: #e4eaf1 1px solid;
+}
+.sticky {
+background-color: #d0d7de;
+color: #484d53;
+border-top: #e4eaf1 1px solid;
+border-left: #CB632F 4px solid;
+}
+.moderated {
+background-color: #fff7e6;
+border-top: 1px solid #e4eaf1;
+border-left: 4px solid #ffe2a3;
+}
+.subscribed {
+background-color: #bdcce6;
+border-top: 1px solid #e4eaf1;
+border-left: 4px solid #86a2cf;
+}
+.poll {
+background-color: #e0ffdc;
+border-top: 1px solid #e4eaf1;
+border-left: 4px solid #99ff8b;
+}
+
+.deleted {
+background-color: #ffdfd2;
+border-top: 1px solid #e4eaf1;
+border-left: #feb99d 4px solid;
+}
+.last_visit {
+background-color: #CB632F;
+color: #FFFFFF;
+border-top: #e4eaf1 1px solid;
+border-left: #e4eaf1 1px solid;
+}
+
+/* ***** hr ***** */
+div.hr {
+height: 2px;
+background: url(../forum/images/techtwo/misc/hr.gif) repeat scroll center;
+}
+div.hr hr {
+display: none;
+}
+
+/* ***** make dropdown menu pretty ***** */
+
+.vb_menu_control { 
+background: #B2BAC5  url(../forum/images/techtwo/misc/table1.gif) repeat-x top left;
+color:  #666D75;
+font: bold 10px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+padding: 3px 6px 3px 6px;
+white-space: nowrap;
+}
+.vb_menu_control a:link {
+color:  #666D75;
+text-decoration: none;
+}
+.vb_menu_control a:visited {
+color:  #666D75;
+text-decoration: none;
+}
+.vb_menu_control a:hover, .vb_menu_control a:active {
+color:  #CB632F;
+text-decoration: underline;
+}
+
+/* ***** navbar dot border ***** */
+.vb_navbar
+{
+	background: #1f1f1f;
+	color: #848484;
+	border: 1px dotted #363636;
+}
+
+/* ***** Category ***** */
+.vb_cat {
+color: #484d53;
+font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.vb_cat a:link, .vb_cat a:visited
+{
+text-decoration: none;
+color: #484d53;
+font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.vb_cat a:hover, .vb_cat a:active
+{
+text-decoration: underline;
+color: #CB632F;
+font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+
+/* ***** Icon forumhome ***** */
+.icon_border 
+{
+background-color: #cdd2d9;
+color: #000000;
+border: 1px solid #666D75;
+}
+</STYLE>
+<LINK rel="stylesheet" type="text/css" href="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/vbulletin_important.css">
+
+
+<!-- / CSS Stylesheet -->
+
+<SCRIPT type="text/javascript" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/yahoo-dom-event.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/connection-min.js"></SCRIPT>
+<SCRIPT type="text/javascript">
+<!--
+var SESSIONURL = "s=84fd6a743eff3f4f1e87e289379d47e9&";
+var SECURITYTOKEN = "guest";
+var IMGDIR_MISC = "../forum/images/techtwo/misc";
+var vb_disable_ajax = parseInt("0", 10);
+// -->
+</SCRIPT>
+<SCRIPT type="text/javascript" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/vbulletin_global.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/vbulletin_menu.js"></SCRIPT>
+
+
+	<LINK rel="alternate" type="application/rss+xml" title="Interesting Devices Ltd RSS Feed" href="http://id-discussions.com/forum/external.php?type=RSS2">
+	
+		<LINK rel="alternate" type="application/rss+xml" title="Interesting Devices Ltd - ExVu General Help - RSS Feed" href="http://id-discussions.com/forum/external.php?type=RSS2&forumids=57">
+	
+
+	<TITLE> Atmega Lock/Fuse Bits - Interesting Devices Ltd</TITLE>
+	<SCRIPT type="text/javascript" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/vbulletin_post_loader.js"></SCRIPT>
+	<STYLE type="text/css" id="vbulletin_showthread_css">
+	<!--
+	
+	#links div { white-space: nowrap; }
+	#links img { vertical-align: middle; }
+	-->
+	</STYLE>
+<META http-equiv="Pragma" content="no-cache"><META http-equiv="Expires" content="-1"><META http-equiv="Cache-Control" content="no-cache"><META name="generator" content="vBulletin 3.6.0"><TITLE>Random Products</TITLE></HEAD><BODY onload="if (document.body.scrollIntoView &amp;&amp; (window.location.href.indexOf(&#39;#&#39;) == -1 || window.location.href.indexOf(&#39;#post&#39;) &gt; -1)) { fetch_object(&#39;currentPost&#39;).scrollIntoView(true); }">
+<!-- logo -->
+<A name="top"></A>
+<DIV>
+<TABLE border="0" width="100&percnt;" cellpadding="0" cellspacing="0" align="center" class="tborder">
+<TBODY><TR>
+	<TD align="center" valign="top">
+
+<TABLE border="0" width="100&percnt;" cellpadding="0" cellspacing="0" align="center">
+<TBODY><TR class="header_bg">
+	<TD align="left" valign="middle"><A href="http://id-discussions.com/forum/index.php?s=84fd6a743eff3f4f1e87e289379d47e9"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/logo.gif" border="0" alt="Interesting Devices Ltd" title="Interesting Devices Ltd"></A></TD>
+ <TD align="right" id="header_right_cell">
+        
+    </TD>
+</TR>
+<TR>
+<TD height="37" colspan="2" class="vb_navigation">
+
+<!-- nav buttons bar -->
+
+	<TABLE cellpadding="0" cellspacing="0" border="0" align="left" class="vb_navigation">
+	<TBODY><TR align="center">
+		<TD width="78" height="37" class="css_nav"><A href="http://id-discussions.com/?s=84fd6a743eff3f4f1e87e289379d47e9">Home</A></TD>
+		<TD width="78" height="37" class="css_nav"><A href="http://id-discussions.com/forum/index.php?s=84fd6a743eff3f4f1e87e289379d47e9">Forums</A></TD>
+		
+		
+			<TD width="78" height="37" class="css_nav"><A href="http://id-discussions.com/forum/register.php?s=84fd6a743eff3f4f1e87e289379d47e9" rel="nofollow">Register</A></TD>
+		
+
+         
+         
+		<TD width="78" height="37" class="css_nav"><A href="http://id-discussions.com/forum/faq.php?s=84fd6a743eff3f4f1e87e289379d47e9" accesskey="5">FAQ</A></TD>
+		<TD width="78" height="37" class="css_nav"><A href="http://id-discussions.com/forum/calendar.php?s=84fd6a743eff3f4f1e87e289379d47e9">Calendar</A></TD>
+<!-- v3 Arcade -->
+		<TD width="78" height="37" class="css_nav"><A href="http://id-discussions.com/forum/arcade.php?s=84fd6a743eff3f4f1e87e289379d47e9">Arcade</A></TD>
+<!-- /v3 Arcade -->
+				
+			
+			
+		
+
+		
+		<TD width="8" height="37" align="left"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/nav_final.gif" width="8" height="37" alt="" border="0"></TD>
+	</TR>
+	</TBODY></TABLE>
+
+<!-- / nav buttons bar -->
+</TD></TR>
+</TBODY></TABLE>
+<!-- /logo -->
+
+<TABLE border="0" width="100&percnt;" cellpadding="10" cellspacing="0" style="background-color:#a8b0ba;">
+<TBODY><TR>
+  <TD><TABLE width="100&percnt;" border="0" cellpadding="0" cellspacing="0" style="background-color:#cdd2d9;">
+      <TBODY><TR>
+        <TD width="12" align="left" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/top_left_table.gif" width="12" height="8" alt=""></TD>
+        <TD width="100&percnt;" align="left" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/top_pix_table.gif" width="100&percnt;" height="8" alt=""></TD>
+        <TD width="12" align="left" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/top_right_table.gif" width="12" height="8" alt=""></TD>
+      </TR>
+    </TBODY></TABLE>
+    <!-- content table -->
+    <TABLE width="100&percnt;" cellpadding="0" cellspacing="0" border="0" style="background-color:#cdd2d9;">
+    <TBODY><TR>
+      <TD>
+<!-- content table -->
+<!-- open content container -->
+
+<DIV align="center">
+	<DIV class="page" style="width:100&percnt;; text-align:left">
+		<DIV style="padding:0px 0px 0px 0px" align="left">
+
+
+
+
+
+<!-- Left Column Code  -->
+<TABLE border="0" width="100&percnt;" cellpadding="0" cellspacing="5" align="center">
+  <TBODY><TR>
+    <TD width="145" valign="top" align="left"><!-- Main Menu -->
+<!-- Tech Two Column Block Top -->
+  <TABLE border="0" cellpadding="0" cellspacing="0" width="145" align="center" style="background-image: url(../forum/images/techtwo/misc/col_t.gif)">
+    <TBODY><TR>
+      <TD style="text-align: center;" width="100&percnt;" height="25" valign="middle"><SPAN class="smallfont"><B>Main Menu</B></SPAN></TD>
+    </TR>
+  </TBODY></TABLE>
+<!-- /Tech Two Column Block Top -->
+
+<!-- Tech Two Column Block Middle -->
+  <TABLE class="tborder" cellpadding="5" cellspacing="1" border="0" width="145">
+      <TBODY><TR>
+        <TD class="alt1">
+          <DIV align="left">
+          <FONT class="smallfont"><A href="http://id-discussions.com/?s=84fd6a743eff3f4f1e87e289379d47e9">Home</A></FONT><BR>
+          <FONT class="smallfont"><A href="http://id-discussions.com/forum?s=84fd6a743eff3f4f1e87e289379d47e9">Forum</A></FONT><BR>
+          <FONT class="smallfont"><A href="http://id-discussions.com/forum/arcade.php?s=84fd6a743eff3f4f1e87e289379d47e9">Arcade</A></FONT><BR>
+          <FONT class="smallfont"><A href="http://interesting-devices.com/">Interesting Devices</A></FONT><BR>
+          <FONT class="smallfont"><A href="http://id-advertising.com/">Advertising Info</A></FONT><BR>
+        </DIV>
+        </TD>
+      </TR>
+  </TBODY></TABLE>
+<!-- /Tech Two Column Block Middle -->
+
+<!-- Tech Two Column Block Bottom -->
+  <TABLE width="145" border="0" cellpadding="0" cellspacing="0">
+    <TBODY><TR>
+      <TD width="11" align="left" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bleft.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+      <TD width="100&percnt;" style="background-image:url(../forum/images/techtwo/misc/cat_b.gif)"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/clear.gif" width="100&percnt;" height="11" alt=" " border="0" title=" "></TD>
+      <TD width="11" align="right" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bright.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+    </TR>
+
+  </TBODY></TABLE>
+<!-- /Tech Two Column Block Bottom -->
+<!-- End Main Menu -->
+
+<BR>
+
+<!-- Category Menu -->
+<!-- Tech Two Column Block Top -->
+  <TABLE border="0" cellpadding="0" cellspacing="0" width="145" align="center" style="background-image: url(../forum/images/techtwo/misc/col_t.gif)">
+    <TBODY><TR>
+      <TD style="text-align: center;" width="100&percnt;" height="25" valign="middle"><SPAN class="smallfont"><B>Categories</B></SPAN></TD>
+    </TR>
+  </TBODY></TABLE>
+<!-- /Tech Two Column Block Top -->
+
+<!-- Tech Two Column Block Middle -->
+  <TABLE class="tborder" cellpadding="5" cellspacing="1" border="0" width="145">
+      <TBODY><TR>
+        <TD class="alt1">
+          <DIV align="left">
+            <FONT class="smallfont"><A target="_blank" href="http://interesting-devices.com/asp/prodtype.asp?prodtype=78&PT_MasterCategory=y">Programmers &amp; Interfaces</A></FONT><BR>
+            <FONT class="smallfont"><A target="_blank" href="http://interesting-devices.com/asp/prodtype.asp?prodtype=67&PT_MasterCategory=y">Smart Cards</A></FONT><BR>
+            <FONT class="smallfont"><A target="_blank" href="http://interesting-devices.com/asp/prodtype.asp?prodtype=36">CD/MP3</A></FONT><BR>
+            <FONT class="smallfont"><A target="_blank" href="http://interesting-devices.com/asp/prodtype.asp?prodtype=63&PT_MasterCategory=y">Mobile Phone Accessories</A></FONT><BR>
+            <FONT class="smallfont"><A target="_blank" href="http://interesting-devices.com/asp/prodtype.asp?prodtype=56&PT_MasterCategory=y">Playstation</A></FONT><BR>
+            <FONT class="smallfont"><A target="_blank" href="http://interesting-devices.com/asp/prodtype.asp?prodtype=51&PT_MasterCategory=y">Playstation 2</A></FONT><BR>
+            <FONT class="smallfont"><A target="_blank" href="http://interesting-devices.com/asp/prodtype.asp?prodtype=49">XBox</A></FONT><BR>
+            <FONT class="smallfont"><A target="_blank" href="http://interesting-devices.com/asp/prodtype.asp?prodtype=37">Dreamcast</A></FONT><BR>
+            <FONT class="smallfont"><A target="_blank" href="http://interesting-devices.com/asp/prodtype.asp?prodtype=70&PT_MasterCategory=y">Game Boy Advance</A></FONT><BR>
+            <FONT class="smallfont"><A target="_blank" href="http://interesting-devices.com/asp/prodtype.asp?prodtype=44">Game Boy</A></FONT><BR>
+            <FONT class="smallfont"><A target="_blank" href="http://interesting-devices.com/asp/prodtype.asp?prodtype=43">Nintendo Game Cube</A></FONT><BR>
+            <FONT class="smallfont"><A target="_blank" href="http://interesting-devices.com/asp/prodtype.asp?prodtype=42">Nintendo 64</A></FONT><BR>
+            <FONT class="smallfont"><A target="_blank" href="http://interesting-devices.com/asp/prodtype.asp?prodtype=41&PT_MasterCategory=y">DVD Products</A></FONT><BR>
+            <FONT class="smallfont"><A target="_blank" href="http://interesting-devices.com/asp/prodtype.asp?prodtype=75&PT_MasterCategory=y">Electronic Components</A></FONT><BR>
+            <FONT class="smallfont"><A target="_blank" href="http://interesting-devices.com/asp/prodtype.asp?prodtype=46">Miscellaneous</A></FONT><BR>
+            <FONT class="smallfont"><A target="_blank" href="http://interesting-devices.com/asp/prodtype.asp?prodtype=48">Bargain Basement</A></FONT>
+          </DIV>
+        </TD>
+      </TR>
+  </TBODY></TABLE>
+<!-- /Tech Two Column Block Middle -->
+
+<!-- Tech Two Column Block Bottom -->
+  <TABLE width="145" border="0" cellpadding="0" cellspacing="0">
+    <TBODY><TR>
+      <TD width="11" align="left" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bleft.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+      <TD width="100&percnt;" style="background-image:url(../forum/images/techtwo/misc/cat_b.gif)"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/clear.gif" width="100&percnt;" height="11" alt=" " border="0" title=" "></TD>
+      <TD width="11" align="right" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bright.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+    </TR>
+  </TBODY></TABLE>
+<!-- /Tech Two Column Block Bottom -->
+<!-- End Category Menu -->
+
+<BR>
+
+<!-- Random Products -->
+<!-- Tech Two Column Block Top -->
+  <TABLE border="0" cellpadding="0" cellspacing="0" width="145" align="center" style="background-image: url(../forum/images/techtwo/misc/col_t.gif)">
+    <TBODY><TR>
+      <TD style="text-align: center;" width="100&percnt;" height="25" valign="middle"><SPAN class="smallfont"><B>Products</B></SPAN></TD>
+    </TR>
+  </TBODY></TABLE>
+<!-- /Tech Two Column Block Top -->
+
+<!-- Tech Two Column Block Middle -->
+  <TABLE class="tborder" cellpadding="5" cellspacing="1" border="0" width="145">
+      <TBODY><TR>
+        <TD class="alt1">
+          
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+<TABLE width="100&percnt;" align="center" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse">
+  <TBODY><TR>
+    <TD valign="top" align="center">
+ <BR><BR> <TABLE cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse" align="center">     <TBODY><TR><TD><A target="_blank" href="http://interesting-devices.com/asp/product.asp?product=341"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/341.jpg" border="1" width="100" height="79" alt=""></A></TD>   </TR> </TBODY></TABLE><A target="_blank" href="http://interesting-devices.com/asp/product.asp?product=341">DVD Case, Single, Green</A>
+<BR>
+ <BR><BR> <TABLE cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse" align="center">     <TBODY><TR><TD><A target="_blank" href="http://interesting-devices.com/asp/product.asp?product=124"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/124.jpg" border="1" width="100" height="79" alt=""></A></TD>   </TR> </TBODY></TABLE><A target="_blank" href="http://interesting-devices.com/asp/product.asp?product=124">GBA Battery Eliminator For Your Car</A>
+<BR>
+ <BR><BR> <TABLE cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse" align="center">     <TBODY><TR><TD><A target="_blank" href="http://interesting-devices.com/asp/product.asp?product=342"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/342.jpg" border="1" width="100" height="79" alt=""></A></TD>   </TR> </TBODY></TABLE><A target="_blank" href="http://interesting-devices.com/asp/product.asp?product=342">DVD Case, 4 Disc, Black</A>
+<BR>
+ <BR><BR> <TABLE cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse" align="center">     <TBODY><TR><TD><A target="_blank" href="http://interesting-devices.com/asp/product.asp?product=343"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/343.jpg" border="1" width="100" height="79" alt=""></A></TD>   </TR> </TBODY></TABLE><A target="_blank" href="http://interesting-devices.com/asp/product.asp?product=343">Clear Vinyl CD/DVD Protective Sleeve</A>
+<BR>
+ <BR><BR> <TABLE cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse" align="center">     <TBODY><TR><TD><A target="_blank" href="http://interesting-devices.com/asp/product.asp?product=144"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/144.jpg" border="1" width="100" height="79" alt=""></A></TD>   </TR> </TBODY></TABLE><A target="_blank" href="http://interesting-devices.com/asp/product.asp?product=144">Smart Media Adapter for PS2 Memory Adapter</A>
+<BR>
+ <BR><BR> <TABLE cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse" align="center">     <TBODY><TR><TD><A target="_blank" href="http://interesting-devices.com/asp/product.asp?product=308"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/308.jpg" border="1" width="100" height="79" alt=""></A></TD>   </TR> </TBODY></TABLE><A target="_blank" href="http://interesting-devices.com/asp/product.asp?product=308">Electrolytic - Microminiature Capacitors</A>
+<BR>
+
+    </TD>
+  </TR>
+</TBODY></TABLE>
+
+
+
+
+        </TD>
+      </TR>
+  </TBODY></TABLE>
+<!-- /Tech Two Column Block Middle -->
+
+<!-- Tech Two Column Block Bottom -->
+  <TABLE width="145" border="0" cellpadding="0" cellspacing="0">
+    <TBODY><TR>
+      <TD width="11" align="left" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bleft.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+      <TD width="100&percnt;" style="background-image:url(../forum/images/techtwo/misc/cat_b.gif)"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/clear.gif" width="100&percnt;" height="11" alt=" " border="0" title=" "></TD>
+      <TD width="11" align="right" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bright.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+    </TR>
+
+  </TBODY></TABLE>
+<!-- /Tech Two Column Block Bottom -->
+<!-- End Random Products -->
+</TD>
+    <TD valign="top">
+      <TABLE width="100&percnt;" cellpadding="0" cellspacing="0" border="0">
+        <TBODY><TR>
+          <TD valign="top">
+<!-- End Left Column Code -->
+
+<!-- Top Add Block -->
+<!-- Tech Two Categoty Top -->
+<DIV align="center">
+<TABLE border="0" cellpadding="0" cellspacing="0" width="100&percnt;" align="center" style="background-image: url(../forum/images/techtwo/misc/cat_t.gif)">
+  <TBODY><TR>
+    <TD width="57" height="25" align="left" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tleft.gif" width="57" height="25" alt=""></TD>
+    <TD width="100&percnt;" height="25" align="left" valign="middle"><SPAN class="smallfont"><B>Sponsors</B></SPAN></TD>
+    <TD width="57" height="25" align="right" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tright.gif" width="57" height="25" alt=""></TD>
+  </TR>
+</TBODY></TABLE>
+</DIV>
+<!-- /Tech Two Categoty Top -->
+
+<!-- Middle -->
+<TABLE class="tborder" cellpadding="5" cellspacing="1" border="0" width="100&percnt;">
+    <TBODY><TR>
+      <TD class="alt1">
+        <TABLE border="0" width="100&percnt;">
+          <TBODY><TR>
+            <TD align="center" valign="top">
+              <DIV align="center"><!-- BEGIN ad 126277454 --><A href="http://id-discussions.com/ads/www/delivery/ck.php?oaparams=2__bannerid=150__zoneid=2__cb=8e403ad6b2__oadest=http://www.cyberestore.com/?ad=ID486" target="_blank"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cyberstore_468_x_60.gif" width="468" height="60" alt="Cyberstore" title="Cyberstore" border="0"></A><DIV id="beacon_8e403ad6b2" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/lg.php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></DIV><!-- END ad 126277454 --></DIV>
+              <BR>
+              <DIV align="center"><!-- BEGIN ad 51096572 --><A href="http://id-discussions.com/ads/www/delivery/ck.php?oaparams=2__bannerid=66__zoneid=4__cb=5d8cc4f1fa__oadest=http://interesting-devices.com/asp/product.asp?recorprod=&product=317" target="_blank"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/lpclite.gif" width="120" height="60" alt="Cheapmods" title="Cheapmods" border="0"></A><DIV id="beacon_5d8cc4f1fa" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/lg(1).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></DIV><!-- END ad 51096572 --></DIV>
+            </TD>
+          </TR>
+        </TBODY></TABLE>
+      </TD>
+    </TR>
+</TBODY></TABLE>
+<!-- / Middle -->
+
+<!-- Tech Two Categoty Bottom -->
+    <TABLE width="100&percnt;" border="0" cellpadding="0" cellspacing="0">
+      <TBODY><TR>
+        <TD width="11" align="left" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bleft.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="100&percnt;" style="background-image:url(../forum/images/techtwo/misc/cat_b.gif)"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/clear(1).gif" width="100&percnt;" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="11" align="right" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bright.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+      </TR>
+    </TBODY></TABLE>
+<!-- /Tech Two Categoty Bottom -->
+
+<!-- End Top Add Block -->
+<!-- End Top Add Block -->
+
+<!-- Unconfirmed Warning -->
+
+
+<!-- End Unconfirmed Warning -->
+<BR>
+
+<!-- breadcrumb, login, pm info -->
+<!-- Tech Two Category Top -->
+<TABLE border="0" cellpadding="0" cellspacing="0" width="100&percnt;" align="center" style="background-image: url(../forum/images/techtwo/misc/cat_t.gif)">
+  <TBODY><TR>
+    <TD width="57" height="25" align="left" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tleft.gif" width="57" height="25" alt=""></TD>
+    <TD width="100&percnt;" height="25" align="left" valign="middle"><A style="float:right" href="http://id-discussions.com/forum/showthread.php?p=208784#top" onclick="return toggle_collapse(&#39;navbar&#39;)"><IMG id="collapseimg_navbar" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/collapse_tcat.gif" alt="" border="0"></A>&nbsp;&nbsp;</TD>
+    <TD width="57" height="25" align="right" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tright.gif" width="57" height="25" alt=""></TD>
+  </TR>
+</TBODY></TABLE>
+<!-- /Tech Two Category Top -->
+<TABLE class="tborder" cellpadding="6" cellspacing="1" border="0" width="100&percnt;" align="center" id="collapseobj_navbar" style="">
+<TBODY><TR>
+	<TD class="alt1" width="100&percnt;">
+		
+			<TABLE cellpadding="0" cellspacing="0" border="0">
+			<TBODY><TR valign="bottom">
+				<TD><A href="http://id-discussions.com/forum/showthread.php?p=208784#" onclick="history.back(1); return false;"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/navbits_start.gif" alt="Go Back" border="0" title="Go Back"></A></TD>
+				<TD>&nbsp;</TD>
+				<TD width="100&percnt;"><SPAN class="smallfont"><A href="http://id-discussions.com/forum/index.php?s=84fd6a743eff3f4f1e87e289379d47e9" accesskey="1">Interesting Devices Ltd</A></SPAN> 
+	<SPAN class="smallfont">&gt; <A href="http://id-discussions.com/forum/forumdisplay.php?s=84fd6a743eff3f4f1e87e289379d47e9&f=105">Canadian Satellite</A></SPAN>
+
+
+	<SPAN class="smallfont">&gt; <A href="http://id-discussions.com/forum/forumdisplay.php?s=84fd6a743eff3f4f1e87e289379d47e9&f=137">Express Vu</A></SPAN>
+
+
+	<SPAN class="smallfont">&gt; <A href="http://id-discussions.com/forum/forumdisplay.php?s=84fd6a743eff3f4f1e87e289379d47e9&f=57">ExVu General Help</A></SPAN>
+
+</TD>
+			</TR>
+			<TR>
+				<TD class="smallfont" style="font-size:10pt; padding-top:1px" colspan="3"><A href="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/Atmega Lock Fuse Bits - Interesting Devices Ltd.htm"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/navbits_finallink_ltr.gif" alt="Reload this Page" border="0" title="Reload this Page"></A> <STRONG>
+	 Atmega Lock/Fuse Bits
+
+</STRONG></TD>
+			</TR>
+			</TBODY></TABLE>
+		
+	</TD>
+
+	<TD class="alt2" nowrap="nowrap" style="padding:0px">
+		<!-- login form -->
+		<FORM action="http://id-discussions.com/forum/login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+		<SCRIPT type="text/javascript" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/vbulletin_md5.js"></SCRIPT>
+		<TABLE cellpadding="0" cellspacing="3" border="0">
+		<TBODY><TR>
+			<TD class="smallfont" style="white-space: nowrap;"><LABEL for="navbar_username">User Name</LABEL></TD>
+			<TD><INPUT type="text" class="bginput" style="font-size: 11px" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="User Name" onfocus="if (this.value == &#39;User Name&#39;) this.value = &#39;&#39;;"></TD>
+			<TD class="smallfont" nowrap="nowrap"><LABEL for="cb_cookieuser_navbar"><INPUT type="checkbox" name="cookieuser" value="1" tabindex="103" id="cb_cookieuser_navbar" accesskey="c">Remember Me?</LABEL></TD>
+		</TR>
+		<TR>
+			<TD class="smallfont"><LABEL for="navbar_password">Password</LABEL></TD>
+			<TD><INPUT type="password" class="bginput" style="font-size: 11px" name="vb_login_password" id="navbar_password" size="10" tabindex="102"></TD>
+			<TD><INPUT type="submit" class="button" value="Log in" tabindex="104" title="Enter your username and password in the boxes provided to login, or click the &#39;register&#39; button to create a profile for yourself." accesskey="s"></TD>
+		</TR>
+		</TBODY></TABLE>
+		<INPUT type="hidden" name="s" value="84fd6a743eff3f4f1e87e289379d47e9">
+		<INPUT type="hidden" name="securitytoken" value="guest">
+		<INPUT type="hidden" name="do" value="login">
+		<INPUT type="hidden" name="vb_login_md5password">
+		<INPUT type="hidden" name="vb_login_md5password_utf">
+		</FORM>
+		<!-- / login form -->
+	</TD>
+
+</TR>
+</TBODY></TABLE>
+<!-- / breadcrumb, login, pm info -->
+ 	<!-- Tech Two Category Bottom -->
+    <TABLE width="100&percnt;" border="0" cellpadding="0" cellspacing="0">
+      <TBODY><TR>
+        <TD width="11" align="left" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bleft.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="100&percnt;" style="background-image:url(../forum/images/techtwo/misc/cat_b.gif)"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/clear(1).gif" width="100&percnt;" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="11" align="right" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bright.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+      </TR>
+    </TBODY></TABLE>
+<!-- /Tech Two Category Bottom -->
+
+
+<DIV class="spacer"></DIV>
+
+
+
+
+	<TABLE class="tborder" cellpadding="6" cellspacing="1" border="0" width="100&percnt;" align="center">
+	<TBODY><TR>
+		<TD class="alt1" width="100&percnt;"><STRONG>ExVu General Help</STRONG> <SPAN class="smallfont">Need help or are new to the system this is the forum to post in.</SPAN></TD>
+	</TR>
+	</TBODY></TABLE>
+
+	<BR>
+
+
+
+<!-- NAVBAR POPUP MENUS -->
+
+<!-- login form -->
+	<DIV class="vbmenu_popup" id="userlogin_menu" style="display:none">
+		  <FORM action="http://id-discussions.com/forum/login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+		<SCRIPT type="text/javascript" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/vbulletin_md5.js"></SCRIPT>
+		<TABLE cellpadding="4" cellspacing="1" border="0">
+		<TBODY><TR>
+			<TD class="thead" colspan="5">
+
+		</TR>
+		<TR>
+			<TD colspan="3" class="vbmenu_option" title="nohilite"><LABEL for="navbar_username">User Name</LABEL></TD>
+			<TD class="vbmenu_option" title="nohilite"><INPUT type="text" class="bginput" style="font-size: 11px" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="User Name" onfocus="if (this.value == &#39;User Name&#39;) this.value = &#39;&#39;;"></TD>
+			<TD class="vbmenu_option" title="nohilite" colspan="2" nowrap="nowrap"><LABEL for="cb_cookieuser_navbar"><INPUT type="checkbox" name="cookieuser" value="1" tabindex="103" id="cb_cookieuser_navbar" accesskey="c">Remember Me?</LABEL></TD>
+		</TR>
+		<TR>
+			<TD colspan="3" class="vbmenu_option" title="nohilite"><LABEL for="navbar_password">Password</LABEL></TD>
+			<TD class="vbmenu_option" title="nohilite"><INPUT type="password" class="bginput" style="font-size: 11px" name="vb_login_password" id="navbar_password" size="10" tabindex="102"></TD>
+			<TD class="vbmenu_option" title="nohilite"><INPUT type="submit" class="button" value="Log in" tabindex="104" title="Enter your username and password in the boxes provided to login, or click the &#39;register&#39; button to create a profile for yourself." accesskey="s"></TD>
+		</TR>
+		</TBODY></TABLE>
+		<INPUT type="hidden" name="s" value="84fd6a743eff3f4f1e87e289379d47e9">
+	<INPUT type="hidden" name="securitytoken" value="guest">
+		<INPUT type="hidden" name="do" value="login">		
+		<INPUT type="hidden" name="vb_login_md5password">
+		<INPUT type="hidden" name="vb_login_md5password_utf">
+	  </FORM>
+                </DIV>
+		<!-- / login form -->
+	
+	
+
+	
+<!-- / NAVBAR POPUP MENUS -->
+
+<!-- PAGENAV POPUP -->
+	<DIV class="vbmenu_popup" id="pagenav_menu" style="display:none">
+		<TABLE cellpadding="4" cellspacing="1" border="0">
+		<TBODY><TR>
+			<TD class="thead" nowrap="nowrap">Go to Page...</TD>
+		</TR>
+		<TR>
+			<TD class="vbmenu_option" title="nohilite">
+			<FORM action="http://id-discussions.com/forum/index.php" method="get" onsubmit="return this.gotopage()" id="pagenav_form">
+				<INPUT type="text" class="bginput" id="pagenav_itxt" style="font-size:11px" size="4">
+				<INPUT type="button" class="button" id="pagenav_ibtn" value="Go">
+			</FORM>
+			</TD>
+		</TR>
+		</TBODY></TABLE>
+	</DIV>
+<!-- / PAGENAV POPUP -->
+
+
+
+
+
+
+
+
+<A name="poststop" id="poststop"></A>
+
+<!-- controls above postbits -->
+<TABLE cellpadding="0" cellspacing="0" border="0" width="100&percnt;" style="margin-bottom:3px">
+<TBODY><TR valign="bottom">
+	
+		<TD class="smallfont"><A href="http://id-discussions.com/forum/newreply.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=newreply&noquote=1&p=158871" rel="nofollow"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/reply.gif" alt="Reply" border="0" title="Reply"></A></TD>
+	
+	
+</TR>
+</TBODY></TABLE>
+<!-- / controls above postbits -->
+
+<!-- toolbar -->
+<TABLE class="tborder" cellpadding="6" cellspacing="1" border="0" width="100&percnt;" align="center" style="border-bottom-width:0px">
+<TBODY><TR>
+	<TD class="tcat" width="100&percnt;">
+		<DIV class="smallfont">
+		
+		&nbsp;
+		</DIV>
+	</TD>
+	<TD class="vbmenu_control" id="threadtools" nowrap="nowrap" style="cursor: pointer; ">
+		<A href="http://id-discussions.com/forum/showthread.php?p=208784&nojs=1#goto_threadtools">Thread Tools</A>
+		<SCRIPT type="text/javascript"> vbmenu_register("threadtools"); </SCRIPT> <IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/menu_open.gif" border="0" title="" alt="">
+	</TD>
+	
+	
+	
+	<TD class="vbmenu_control" id="displaymodes" nowrap="nowrap" style="cursor: pointer; ">
+		<A href="http://id-discussions.com/forum/showthread.php?p=208784&nojs=1#goto_displaymodes">Display Modes</A>
+		<SCRIPT type="text/javascript"> vbmenu_register("displaymodes"); </SCRIPT> <IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/menu_open.gif" border="0" title="" alt="">
+	</TD>
+	
+
+	
+
+</TR>
+</TBODY></TABLE>
+<!-- / toolbar -->
+
+
+<DIV class="spacer"></DIV>
+<!-- end content table -->
+
+		
+	
+
+
+<!-- / close content container -->
+<!-- / end content table -->
+
+
+
+
+
+<DIV id="posts"><!-- post #158871 -->
+
+	<!-- open content container -->
+
+<DIV align="center">
+	<DIV class="page" style="width:100&percnt;; text-align:left">
+		<DIV style="padding:0px 0px 0px 0px" align="left">
+
+	<DIV id="edit158871" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+
+
+<!-- Tech Two Categoty Top -->
+<TABLE border="0" cellpadding="0" cellspacing="0" width="100&percnt;" align="center" style="background-image: url(../forum/images/techtwo/misc/cat_t.gif)">
+  <TBODY><TR>
+    <TD width="57" height="25" align="left" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tleft.gif" width="57" height="25" alt=""></TD>
+    <TD width="100&percnt;" height="25" align="left" valign="middle"><A href="http://id-discussions.com/forum/showthread.php?p=208784#top" onclick="return toggle_collapse(&#39;postbit_158871&#39;)" style="float:right"><IMG id="collapseimg_postbit_158871" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/collapse_thead.gif" alt="" border="0"></A><DIV class="vb_cat"><STRONG>Atmega Lock/Fuse Bits</STRONG></DIV></TD>
+    <TD width="57" height="25" align="right" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tright.gif" width="57" height="25" alt=""></TD>
+  </TR>
+</TBODY></TABLE>
+<!-- /Tech Two Categoty Top -->
+
+<TABLE class="tborder" id="post158871" cellpadding="6" cellspacing="1" border="0" width="100&percnt;" align="center">
+
+<TBODY id="collapseobj_postbit_158871" style=";">
+<TR>
+	<TD class="thead">
+		
+			<!-- status icon and date -->
+			<DIV class="normal">
+			<A name="post158871"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/post_old.gif" alt="Old" border="0" title="Old"></A>
+			
+		</DIV>
+			<!-- / status icon and date -->				
+		</TD>
+		
+		<TD class="thead" style="font-weight:normal">
+		
+	<DIV class="normal" style="float:right">
+			&nbsp;
+			(#<A href="http://id-discussions.com/forum/showpost.php?s=84fd6a743eff3f4f1e87e289379d47e9&p=158871&postcount=1" target="new" rel="nofollow" id="postcount158871" name="1">1</A>)
+			
+		</DIV>
+		</TD>
+	
+</TR>
+<TR valign="top">
+	<TD class="alt1" width="175" style="background-image:url(../forum/images/techtwo/misc/postbit_fade.gif)">
+			
+			<DIV id="postmenu_158871">
+					
+					Slice
+					
+				</DIV>
+				
+				<DIV class="smallfont">Guest</DIV>
+				
+   
+				
+					
+
+		
+			
+			
+			<DIV class="smallfont">
+				&nbsp;<BR>
+				<DIV class="profile_info"></DIV>
+				<DIV class="profile_info">Posts: n/a</DIV>
+                                
+				
+				
+				
+				
+				
+				
+			</DIV>		
+			<DIV style="padding:5px 0px 5px 0px;"></DIV>
+			<DIV>&nbsp;    &nbsp;</DIV>	
+		
+		<DIV style="padding:5px 0px 5px 0px;"></DIV>
+		
+	</TD>
+	
+	
+
+
+
+	
+	<TD height="100&percnt;" valign="top" class="alt2" id="td_post_158871">
+	
+	
+	
+	<DIV style="float:right">
+
+
+
+  </DIV><DIV class="smallfont">
+		
+
+            <!-- icon and title -->
+            <IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/icon1.gif" alt="Default" border="0" title="Default">
+				<STRONG>Atmega Lock/Fuse Bits - </STRONG>
+            <!-- status icon and date -->
+          
+		
+		
+			<!-- status icon and date -->	
+		
+				18th May 2002, 07:23 PM
+			
+			
+			<!-- / status icon and date -->
+		</DIV>
+		
+<DIV class="spacer"></DIV>	<DIV class="hr" style="width: 100&percnt;;">
+              <HR>
+            </DIV>	
+<DIV class="spacer"></DIV>
+		
+		<!-- message -->
+		<DIV id="post_message_158871" class="vb_postbit">How do I write to the Atmaga128 lock/fuse bits? Since removing the Atmega from the stream I was unable to erase or re-program the Atmega with Jeepers210. I noticed that the check blocks for the &quot;lock bits&quot; have all been cleared. Comparison with another Atmega shows the blocks all checked. I checked the boxes and hit &quot;write&quot;, but blocks come back cleared. Is there a trick to writing the lock/fuse bits? Is it possible that the lock bits were changed in the stream by Boris or by me attempting to program with Jeepers?</DIV>
+		<!-- / message -->
+	
+		
+		
+		
+		 
+		
+	
+	</TD>
+</TR>
+<TR>
+	<TD class="alt1" style="background-image:url(../forum/images/techtwo/misc/postbit_fade.gif)">
+	
+		
+			&nbsp;&nbsp;
+	
+	
+		
+	</TD>
+	
+	<TD class="alt2" align="right">
+	
+		<!-- controls -->
+		
+	
+		
+		<DIV style="float:left">
+			
+			
+			
+				
+			
+			
+			</DIV>
+			
+			
+			
+		
+		
+		
+		
+		
+			<A href="http://id-discussions.com/forum/newreply.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=newreply&p=158871" rel="nofollow"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/quote.gif" alt="Reply With Quote" border="0" title="Reply With Quote"></A>
+		
+		
+		
+		
+		
+		<!-- / controls -->
+	</TD>
+</TR>
+</TBODY>
+</TABLE>
+
+<!-- Tech Two Categoty Bottom -->
+    <TABLE width="100&percnt;" border="0" cellpadding="0" cellspacing="0">
+      <TBODY><TR>
+        <TD width="11" align="left" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bleft.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="100&percnt;" style="background-image:url(../forum/images/techtwo/misc/cat_b.gif)"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/clear(1).gif" width="100&percnt;" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="11" align="right" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bright.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+      </TR>
+    </TBODY></TABLE>
+ <!-- /Tech Two Categoty Bottom -->
+
+<!-- post 158871 popup menu -->
+<DIV class="vbmenu_popup" id="postmenu_158871_menu" style="display:none">
+	<TABLE cellpadding="4" cellspacing="1" border="0">
+	<TBODY><TR>
+		<TD class="thead">Slice</TD>
+	</TR>
+	
+	
+	
+	
+	
+	
+<!-- v3 Arcade -->
+	
+	<TR><TD class="thead">Slice&#39;s Arcade Awards</TD></TR>
+	<TR><TD class="vbmenu_option" valign="middle"><A href="http://id-discussions.com/forum/arcade.php?do=scores&gameid=121"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/type2.gif" style="border-width:1px" align="absmiddle"> Typing Test</A></TD></TR><TR><TD class="vbmenu_option" valign="middle"><A href="http://id-discussions.com/forum/arcade.php?do=scores&gameid=143"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/discgolf2.gif" style="border-width:1px" align="absmiddle"> Disc Golf</A></TD></TR><TR><TD class="vbmenu_option" valign="middle"><A href="http://id-discussions.com/forum/arcade.php?do=scores&gameid=155"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/itcamefromthecrypt2.gif" style="border-width:1px" align="absmiddle"> It Came From the Crypt</A></TD></TR><TR><TD class="vbmenu_option" valign="middle"><A href="http://id-discussions.com/forum/arcade.php?do=scores&gameid=183"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/penguinflight2.gif" style="border-width:1px" align="absmiddle"> Penguin Flight</A></TD></TR><TR><TD class="vbmenu_option" valign="middle"><A href="http://id-discussions.com/forum/arcade.php?do=scores&gameid=218"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/tuertuertuer2.gif" style="border-width:1px" align="absmiddle"> Tuer Tuer Tuer</A></TD></TR>
+	
+	
+<!-- /v3 Arcade -->
+
+	</TBODY></TABLE>
+</DIV>
+<!-- / post 158871 popup menu -->
+
+
+
+	</DIV>
+	
+		</DIV>
+	</DIV>
+</DIV>
+
+<!-- / close content container -->
+
+<!-- / post #158871 --><!-- post #158911 -->
+
+	<!-- open content container -->
+
+<DIV align="center">
+	<DIV class="page" style="width:100&percnt;; text-align:left">
+		<DIV style="padding:0px 0px 0px 0px" align="left">
+
+	<DIV id="edit158911" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+
+
+<!-- Tech Two Categoty Top -->
+<TABLE border="0" cellpadding="0" cellspacing="0" width="100&percnt;" align="center" style="background-image: url(../forum/images/techtwo/misc/cat_t.gif)">
+  <TBODY><TR>
+    <TD width="57" height="25" align="left" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tleft.gif" width="57" height="25" alt=""></TD>
+    <TD width="100&percnt;" height="25" align="left" valign="middle"><A href="http://id-discussions.com/forum/showthread.php?p=208784#top" onclick="return toggle_collapse(&#39;postbit_158911&#39;)" style="float:right"><IMG id="collapseimg_postbit_158911" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/collapse_thead.gif" alt="" border="0"></A><DIV class="vb_cat"></DIV></TD>
+    <TD width="57" height="25" align="right" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tright.gif" width="57" height="25" alt=""></TD>
+  </TR>
+</TBODY></TABLE>
+<!-- /Tech Two Categoty Top -->
+
+<TABLE class="tborder" id="post158911" cellpadding="6" cellspacing="1" border="0" width="100&percnt;" align="center">
+
+<TBODY id="collapseobj_postbit_158911" style=";">
+<TR>
+	<TD class="thead">
+		
+			<!-- status icon and date -->
+			<DIV class="normal">
+			<A name="post158911"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/post_old.gif" alt="Old" border="0" title="Old"></A>
+			
+		</DIV>
+			<!-- / status icon and date -->				
+		</TD>
+		
+		<TD class="thead" style="font-weight:normal">
+		
+	<DIV class="normal" style="float:right">
+			&nbsp;
+			(#<A href="http://id-discussions.com/forum/showpost.php?s=84fd6a743eff3f4f1e87e289379d47e9&p=158911&postcount=2" target="new" rel="nofollow" id="postcount158911" name="2">2</A>)
+			
+		</DIV>
+		</TD>
+	
+</TR>
+<TR valign="top">
+	<TD class="alt1" width="175" style="background-image:url(../forum/images/techtwo/misc/postbit_fade.gif)">
+			
+			<DIV id="postmenu_158911">
+					
+					<A class="bigusername" href="http://id-discussions.com/forum/member.php?s=84fd6a743eff3f4f1e87e289379d47e9&u=5848">avengingangel</A><!-- v3 Arcade --> 
+<!-- /v3 Arcade -->
+					
+					<SCRIPT type="text/javascript"> vbmenu_register("postmenu_158911", true); </SCRIPT>
+					
+				</DIV>
+				
+				<DIV class="smallfont">Serious Poster</DIV>
+				
+   
+				
+					
+<DIV style="padding:2px 0px 2px 0px;"></DIV><DIV><SPAN id="repdisplay_158911_5848"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/reputation_pos.gif" alt="avengingangel is on a distinguished road" border="0" title="avengingangel is on a distinguished road"></SPAN></DIV>
+		
+			
+				<DIV class="smallfont">
+					&nbsp;<BR><A href="http://id-discussions.com/forum/member.php?s=84fd6a743eff3f4f1e87e289379d47e9&u=5848"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/image.php" alt="avengingangel&#39;s Avatar" border="0" title="avengingangel&#39;s Avatar"></A>
+				</DIV>
+			
+			
+			<DIV class="smallfont">
+				&nbsp;<BR>
+				<DIV class="profile_info">Status: <SPAN class="smallfont">Offline</SPAN>
+
+</DIV>
+				<DIV class="profile_info">Posts: 383</DIV>
+                                
+				<DIV class="profile_info">Join Date: Nov 2000</DIV>
+				
+				
+				
+				<DIV class="profile_info"><SPAN id="reppower_158911_5848">Rep Power</SPAN>: 541</DIV>
+				
+			</DIV>		
+			<DIV style="padding:5px 0px 5px 0px;"></DIV>
+			<DIV>&nbsp;    &nbsp;</DIV>	
+		
+		<DIV style="padding:5px 0px 5px 0px;"></DIV>
+		
+	</TD>
+	
+	
+
+
+
+	
+	<TD height="100&percnt;" valign="top" class="alt2" id="td_post_158911">
+	
+	
+	
+	<DIV style="float:right">
+
+
+
+  </DIV><DIV class="smallfont">
+		
+
+            <!-- icon and title -->
+            <IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/icon1.gif" alt="Default" border="0" title="Default">
+				
+            <!-- status icon and date -->
+          
+		
+		
+			<!-- status icon and date -->	
+		
+				18th May 2002, 10:52 PM
+			
+			
+			<!-- / status icon and date -->
+		</DIV>
+		
+<DIV class="spacer"></DIV>	<DIV class="hr" style="width: 100&percnt;;">
+              <HR>
+            </DIV>	
+<DIV class="spacer"></DIV>
+		
+		<!-- message -->
+		<DIV id="post_message_158911" class="vb_postbit">Did you apply a jumper to the atmega ?<BR>
+w/o applying the jumper you can&#39;t program it.</DIV>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<DIV> <BR>
+            <DIV class="hr" style="width: 100px;">
+              <HR>
+            </DIV><DIV class="spacer"></DIV>
+				THE &quot;Avenging Angel&quot; !
+			</DIV>
+		<!-- / sig -->
+		
+		 
+		
+	
+	</TD>
+</TR>
+<TR>
+	<TD class="alt1" style="background-image:url(../forum/images/techtwo/misc/postbit_fade.gif)">
+	
+		
+			&nbsp;&nbsp;
+	
+	
+		
+	</TD>
+	
+	<TD class="alt2" align="right">
+	
+		<!-- controls -->
+		
+	
+		
+		<DIV style="float:left">
+			
+			
+			
+				
+			
+			
+			</DIV>
+			
+			
+			
+		
+		
+		
+		
+		
+			<A href="http://id-discussions.com/forum/newreply.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=newreply&p=158911" rel="nofollow"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/quote.gif" alt="Reply With Quote" border="0" title="Reply With Quote"></A>
+		
+		
+		
+		
+		
+		<!-- / controls -->
+	</TD>
+</TR>
+</TBODY>
+</TABLE>
+
+<!-- Tech Two Categoty Bottom -->
+    <TABLE width="100&percnt;" border="0" cellpadding="0" cellspacing="0">
+      <TBODY><TR>
+        <TD width="11" align="left" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bleft.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="100&percnt;" style="background-image:url(../forum/images/techtwo/misc/cat_b.gif)"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/clear(1).gif" width="100&percnt;" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="11" align="right" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bright.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+      </TR>
+    </TBODY></TABLE>
+ <!-- /Tech Two Categoty Bottom -->
+
+<!-- post 158911 popup menu -->
+<DIV class="vbmenu_popup" id="postmenu_158911_menu" style="display:none">
+	<TABLE cellpadding="4" cellspacing="1" border="0">
+	<TBODY><TR>
+		<TD class="thead">avengingangel</TD>
+	</TR>
+	
+		<TR><TD class="vbmenu_option"><A href="http://id-discussions.com/forum/member.php?s=84fd6a743eff3f4f1e87e289379d47e9&u=5848">View Public Profile</A></TD></TR>
+	
+	
+	
+	
+	
+		 <TR><TD class="vbmenu_option"><A href="http://id-discussions.com/forum/search.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=finduser&u=5848" rel="nofollow">Find all posts by avengingangel</A></TD></TR>
+	
+	
+<!-- v3 Arcade -->
+	
+	
+<!-- /v3 Arcade -->
+
+	</TBODY></TABLE>
+</DIV>
+<!-- / post 158911 popup menu -->
+
+
+
+	</DIV>
+	
+		</DIV>
+	</DIV>
+</DIV>
+
+<!-- / close content container -->
+
+<!-- / post #158911 --><!-- post #158932 -->
+
+	<!-- open content container -->
+
+<DIV align="center">
+	<DIV class="page" style="width:100&percnt;; text-align:left">
+		<DIV style="padding:0px 0px 0px 0px" align="left">
+
+	<DIV id="edit158932" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+
+
+<!-- Tech Two Categoty Top -->
+<TABLE border="0" cellpadding="0" cellspacing="0" width="100&percnt;" align="center" style="background-image: url(../forum/images/techtwo/misc/cat_t.gif)">
+  <TBODY><TR>
+    <TD width="57" height="25" align="left" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tleft.gif" width="57" height="25" alt=""></TD>
+    <TD width="100&percnt;" height="25" align="left" valign="middle"><A href="http://id-discussions.com/forum/showthread.php?p=208784#top" onclick="return toggle_collapse(&#39;postbit_158932&#39;)" style="float:right"><IMG id="collapseimg_postbit_158932" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/collapse_thead.gif" alt="" border="0"></A><DIV class="vb_cat"></DIV></TD>
+    <TD width="57" height="25" align="right" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tright.gif" width="57" height="25" alt=""></TD>
+  </TR>
+</TBODY></TABLE>
+<!-- /Tech Two Categoty Top -->
+
+<TABLE class="tborder" id="post158932" cellpadding="6" cellspacing="1" border="0" width="100&percnt;" align="center">
+
+<TBODY id="collapseobj_postbit_158932" style=";">
+<TR>
+	<TD class="thead">
+		
+			<!-- status icon and date -->
+			<DIV class="normal">
+			<A name="post158932"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/post_old.gif" alt="Old" border="0" title="Old"></A>
+			
+		</DIV>
+			<!-- / status icon and date -->				
+		</TD>
+		
+		<TD class="thead" style="font-weight:normal">
+		
+	<DIV class="normal" style="float:right">
+			&nbsp;
+			(#<A href="http://id-discussions.com/forum/showpost.php?s=84fd6a743eff3f4f1e87e289379d47e9&p=158932&postcount=3" target="new" rel="nofollow" id="postcount158932" name="3">3</A>)
+			
+		</DIV>
+		</TD>
+	
+</TR>
+<TR valign="top">
+	<TD class="alt1" width="175" style="background-image:url(../forum/images/techtwo/misc/postbit_fade.gif)">
+			
+			<DIV id="postmenu_158932">
+					
+					Slice
+					
+				</DIV>
+				
+				<DIV class="smallfont">Guest</DIV>
+				
+   
+				
+					
+
+		
+			
+			
+			<DIV class="smallfont">
+				&nbsp;<BR>
+				<DIV class="profile_info"></DIV>
+				<DIV class="profile_info">Posts: n/a</DIV>
+                                
+				
+				
+				
+				
+				
+				
+			</DIV>		
+			<DIV style="padding:5px 0px 5px 0px;"></DIV>
+			<DIV>&nbsp;    &nbsp;</DIV>	
+		
+		<DIV style="padding:5px 0px 5px 0px;"></DIV>
+		
+	</TD>
+	
+	
+
+
+
+	
+	<TD height="100&percnt;" valign="top" class="alt2" id="td_post_158932">
+	
+	
+	
+	<DIV style="float:right">
+
+
+
+  </DIV><DIV class="smallfont">
+		
+
+            <!-- icon and title -->
+            <IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/icon1.gif" alt="Default" border="0" title="Default">
+				
+            <!-- status icon and date -->
+          
+		
+		
+			<!-- status icon and date -->	
+		
+				19th May 2002, 12:34 AM
+			
+			
+			<!-- / status icon and date -->
+		</DIV>
+		
+<DIV class="spacer"></DIV>	<DIV class="hr" style="width: 100&percnt;;">
+              <HR>
+            </DIV>	
+<DIV class="spacer"></DIV>
+		
+		<!-- message -->
+		<DIV id="post_message_158932" class="vb_postbit">Yes used jumper to program and removed for use.</DIV>
+		<!-- / message -->
+	
+		
+		
+		
+		 
+		
+	
+	</TD>
+</TR>
+<TR>
+	<TD class="alt1" style="background-image:url(../forum/images/techtwo/misc/postbit_fade.gif)">
+	
+		
+			&nbsp;&nbsp;
+	
+	
+		
+	</TD>
+	
+	<TD class="alt2" align="right">
+	
+		<!-- controls -->
+		
+	
+		
+		<DIV style="float:left">
+			
+			
+			
+				
+			
+			
+			</DIV>
+			
+			
+			
+		
+		
+		
+		
+		
+			<A href="http://id-discussions.com/forum/newreply.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=newreply&p=158932" rel="nofollow"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/quote.gif" alt="Reply With Quote" border="0" title="Reply With Quote"></A>
+		
+		
+		
+		
+		
+		<!-- / controls -->
+	</TD>
+</TR>
+</TBODY>
+</TABLE>
+
+<!-- Tech Two Categoty Bottom -->
+    <TABLE width="100&percnt;" border="0" cellpadding="0" cellspacing="0">
+      <TBODY><TR>
+        <TD width="11" align="left" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bleft.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="100&percnt;" style="background-image:url(../forum/images/techtwo/misc/cat_b.gif)"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/clear(1).gif" width="100&percnt;" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="11" align="right" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bright.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+      </TR>
+    </TBODY></TABLE>
+ <!-- /Tech Two Categoty Bottom -->
+
+<!-- post 158932 popup menu -->
+<DIV class="vbmenu_popup" id="postmenu_158932_menu" style="display:none">
+	<TABLE cellpadding="4" cellspacing="1" border="0">
+	<TBODY><TR>
+		<TD class="thead">Slice</TD>
+	</TR>
+	
+	
+	
+	
+	
+	
+<!-- v3 Arcade -->
+	
+	<TR><TD class="thead">Slice&#39;s Arcade Awards</TD></TR>
+	<TR><TD class="vbmenu_option" valign="middle"><A href="http://id-discussions.com/forum/arcade.php?do=scores&gameid=121"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/type2.gif" style="border-width:1px" align="absmiddle"> Typing Test</A></TD></TR><TR><TD class="vbmenu_option" valign="middle"><A href="http://id-discussions.com/forum/arcade.php?do=scores&gameid=143"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/discgolf2.gif" style="border-width:1px" align="absmiddle"> Disc Golf</A></TD></TR><TR><TD class="vbmenu_option" valign="middle"><A href="http://id-discussions.com/forum/arcade.php?do=scores&gameid=155"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/itcamefromthecrypt2.gif" style="border-width:1px" align="absmiddle"> It Came From the Crypt</A></TD></TR><TR><TD class="vbmenu_option" valign="middle"><A href="http://id-discussions.com/forum/arcade.php?do=scores&gameid=183"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/penguinflight2.gif" style="border-width:1px" align="absmiddle"> Penguin Flight</A></TD></TR><TR><TD class="vbmenu_option" valign="middle"><A href="http://id-discussions.com/forum/arcade.php?do=scores&gameid=218"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/tuertuertuer2.gif" style="border-width:1px" align="absmiddle"> Tuer Tuer Tuer</A></TD></TR>
+	
+	
+<!-- /v3 Arcade -->
+
+	</TBODY></TABLE>
+</DIV>
+<!-- / post 158932 popup menu -->
+
+
+
+	</DIV>
+	
+		</DIV>
+	</DIV>
+</DIV>
+
+<!-- / close content container -->
+
+<!-- / post #158932 --><!-- post #208471 -->
+
+	<!-- open content container -->
+
+<DIV align="center">
+	<DIV class="page" style="width:100&percnt;; text-align:left">
+		<DIV style="padding:0px 0px 0px 0px" align="left">
+
+	<DIV id="edit208471" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+
+
+<!-- Tech Two Categoty Top -->
+<TABLE border="0" cellpadding="0" cellspacing="0" width="100&percnt;" align="center" style="background-image: url(../forum/images/techtwo/misc/cat_t.gif)">
+  <TBODY><TR>
+    <TD width="57" height="25" align="left" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tleft.gif" width="57" height="25" alt=""></TD>
+    <TD width="100&percnt;" height="25" align="left" valign="middle"><A href="http://id-discussions.com/forum/showthread.php?p=208784#top" onclick="return toggle_collapse(&#39;postbit_208471&#39;)" style="float:right"><IMG id="collapseimg_postbit_208471" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/collapse_thead.gif" alt="" border="0"></A><DIV class="vb_cat"><STRONG>Locked Atmega</STRONG></DIV></TD>
+    <TD width="57" height="25" align="right" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tright.gif" width="57" height="25" alt=""></TD>
+  </TR>
+</TBODY></TABLE>
+<!-- /Tech Two Categoty Top -->
+
+<TABLE class="tborder" id="post208471" cellpadding="6" cellspacing="1" border="0" width="100&percnt;" align="center">
+
+<TBODY id="collapseobj_postbit_208471" style=";">
+<TR>
+	<TD class="thead">
+		
+			<!-- status icon and date -->
+			<DIV class="normal">
+			<A name="post208471"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/post_old.gif" alt="Old" border="0" title="Old"></A>
+			
+		</DIV>
+			<!-- / status icon and date -->				
+		</TD>
+		
+		<TD class="thead" style="font-weight:normal">
+		
+	<DIV class="normal" style="float:right">
+			&nbsp;
+			(#<A href="http://id-discussions.com/forum/showpost.php?s=84fd6a743eff3f4f1e87e289379d47e9&p=208471&postcount=4" target="new" rel="nofollow" id="postcount208471" name="4">4</A>)
+			
+		</DIV>
+		</TD>
+	
+</TR>
+<TR valign="top">
+	<TD class="alt1" width="175" style="background-image:url(../forum/images/techtwo/misc/postbit_fade.gif)">
+			
+			<DIV id="postmenu_208471">
+					
+					<A class="bigusername" href="http://id-discussions.com/forum/member.php?s=84fd6a743eff3f4f1e87e289379d47e9&u=40149">Ruffian</A><!-- v3 Arcade --> 
+<!-- /v3 Arcade -->
+					
+					<SCRIPT type="text/javascript"> vbmenu_register("postmenu_208471", true); </SCRIPT>
+					
+				</DIV>
+				
+				<DIV class="smallfont">Member</DIV>
+				
+   
+				
+					
+<DIV style="padding:2px 0px 2px 0px;"></DIV><DIV><SPAN id="repdisplay_208471_40149"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/reputation_pos.gif" alt="Ruffian is on a distinguished road" border="0" title="Ruffian is on a distinguished road"></SPAN></DIV>
+		
+			
+			
+			<DIV class="smallfont">
+				&nbsp;<BR>
+				<DIV class="profile_info">Status: <SPAN class="smallfont">Offline</SPAN>
+
+</DIV>
+				<DIV class="profile_info">Posts: 30</DIV>
+                                
+				<DIV class="profile_info">Join Date: Jan 2002</DIV>
+				
+				
+				
+				<DIV class="profile_info"><SPAN id="reppower_208471_40149">Rep Power</SPAN>: 168</DIV>
+				
+			</DIV>		
+			<DIV style="padding:5px 0px 5px 0px;"></DIV>
+			<DIV>&nbsp;    &nbsp;</DIV>	
+		
+		<DIV style="padding:5px 0px 5px 0px;"></DIV>
+		
+	</TD>
+	
+	
+
+
+
+	
+	<TD height="100&percnt;" valign="top" class="alt2" id="td_post_208471">
+	
+	
+	
+	<DIV style="float:right">
+
+
+
+  </DIV><DIV class="smallfont">
+		
+
+            <!-- icon and title -->
+            <IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/icon1.gif" alt="Default" border="0" title="Default">
+				<STRONG>Locked Atmega - </STRONG>
+            <!-- status icon and date -->
+          
+		
+		
+			<!-- status icon and date -->	
+		
+				16th December 2002, 04:42 AM
+			
+			
+			<!-- / status icon and date -->
+		</DIV>
+		
+<DIV class="spacer"></DIV>	<DIV class="hr" style="width: 100&percnt;;">
+              <HR>
+            </DIV>	
+<DIV class="spacer"></DIV>
+		
+		<!-- message -->
+		<DIV id="post_message_208471" class="vb_postbit">There are many fixes for these symptoms, but they are usually for Atmegas with jumpers. My Atmega has 8 pins that plug right into the programmer and there are no additional jumpers. I have tried getting the Atmega flashed in DOS back to its original state but no go, memory errors in the eeprom and flash are displayed. Anyone having the same issue?</DIV>
+		<!-- / message -->
+	
+		
+		
+		
+		 
+		
+	
+	</TD>
+</TR>
+<TR>
+	<TD class="alt1" style="background-image:url(../forum/images/techtwo/misc/postbit_fade.gif)">
+	
+		
+			&nbsp;&nbsp;
+	
+	
+		
+	</TD>
+	
+	<TD class="alt2" align="right">
+	
+		<!-- controls -->
+		
+	
+		
+		<DIV style="float:left">
+			
+			
+			
+				
+			
+			
+			</DIV>
+			
+			
+			
+		
+		
+		
+		
+		
+			<A href="http://id-discussions.com/forum/newreply.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=newreply&p=208471" rel="nofollow"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/quote.gif" alt="Reply With Quote" border="0" title="Reply With Quote"></A>
+		
+		
+		
+		
+		
+		<!-- / controls -->
+	</TD>
+</TR>
+</TBODY>
+</TABLE>
+
+<!-- Tech Two Categoty Bottom -->
+    <TABLE width="100&percnt;" border="0" cellpadding="0" cellspacing="0">
+      <TBODY><TR>
+        <TD width="11" align="left" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bleft.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="100&percnt;" style="background-image:url(../forum/images/techtwo/misc/cat_b.gif)"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/clear(1).gif" width="100&percnt;" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="11" align="right" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bright.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+      </TR>
+    </TBODY></TABLE>
+ <!-- /Tech Two Categoty Bottom -->
+
+<!-- post 208471 popup menu -->
+<DIV class="vbmenu_popup" id="postmenu_208471_menu" style="display:none">
+	<TABLE cellpadding="4" cellspacing="1" border="0">
+	<TBODY><TR>
+		<TD class="thead">Ruffian</TD>
+	</TR>
+	
+		<TR><TD class="vbmenu_option"><A href="http://id-discussions.com/forum/member.php?s=84fd6a743eff3f4f1e87e289379d47e9&u=40149">View Public Profile</A></TD></TR>
+	
+	
+	
+	
+	
+		 <TR><TD class="vbmenu_option"><A href="http://id-discussions.com/forum/search.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=finduser&u=40149" rel="nofollow">Find all posts by Ruffian</A></TD></TR>
+	
+	
+<!-- v3 Arcade -->
+	
+	
+<!-- /v3 Arcade -->
+
+	</TBODY></TABLE>
+</DIV>
+<!-- / post 208471 popup menu -->
+
+
+
+	</DIV>
+	
+		</DIV>
+	</DIV>
+</DIV>
+
+<!-- / close content container -->
+
+<!-- / post #208471 --><!-- post #208729 -->
+
+	<!-- open content container -->
+
+<DIV align="center">
+	<DIV class="page" style="width:100&percnt;; text-align:left">
+		<DIV style="padding:0px 0px 0px 0px" align="left">
+
+	<DIV id="edit208729" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+
+
+<!-- Tech Two Categoty Top -->
+<TABLE border="0" cellpadding="0" cellspacing="0" width="100&percnt;" align="center" style="background-image: url(../forum/images/techtwo/misc/cat_t.gif)">
+  <TBODY><TR>
+    <TD width="57" height="25" align="left" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tleft.gif" width="57" height="25" alt=""></TD>
+    <TD width="100&percnt;" height="25" align="left" valign="middle"><A href="http://id-discussions.com/forum/showthread.php?p=208784#top" onclick="return toggle_collapse(&#39;postbit_208729&#39;)" style="float:right"><IMG id="collapseimg_postbit_208729" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/collapse_thead.gif" alt="" border="0"></A><DIV class="vb_cat"><STRONG>jumperless atmega</STRONG></DIV></TD>
+    <TD width="57" height="25" align="right" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tright.gif" width="57" height="25" alt=""></TD>
+  </TR>
+</TBODY></TABLE>
+<!-- /Tech Two Categoty Top -->
+
+<TABLE class="tborder" id="post208729" cellpadding="6" cellspacing="1" border="0" width="100&percnt;" align="center">
+
+<TBODY id="collapseobj_postbit_208729" style=";">
+<TR>
+	<TD class="thead">
+		
+			<!-- status icon and date -->
+			<DIV class="normal">
+			<A name="post208729"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/post_old.gif" alt="Old" border="0" title="Old"></A>
+			
+		</DIV>
+			<!-- / status icon and date -->				
+		</TD>
+		
+		<TD class="thead" style="font-weight:normal">
+		
+	<DIV class="normal" style="float:right">
+			&nbsp;
+			(#<A href="http://id-discussions.com/forum/showpost.php?s=84fd6a743eff3f4f1e87e289379d47e9&p=208729&postcount=5" target="new" rel="nofollow" id="postcount208729" name="5">5</A>)
+			
+		</DIV>
+		</TD>
+	
+</TR>
+<TR valign="top">
+	<TD class="alt1" width="175" style="background-image:url(../forum/images/techtwo/misc/postbit_fade.gif)">
+			
+			<DIV id="postmenu_208729">
+					
+					sabou
+					
+				</DIV>
+				
+				<DIV class="smallfont">Guest</DIV>
+				
+   
+				
+					
+
+		
+			
+			
+			<DIV class="smallfont">
+				&nbsp;<BR>
+				<DIV class="profile_info"></DIV>
+				<DIV class="profile_info">Posts: n/a</DIV>
+                                
+				
+				
+				
+				
+				
+				
+			</DIV>		
+			<DIV style="padding:5px 0px 5px 0px;"></DIV>
+			<DIV>&nbsp;    &nbsp;</DIV>	
+		
+		<DIV style="padding:5px 0px 5px 0px;"></DIV>
+		
+	</TD>
+	
+	
+
+
+
+	
+	<TD height="100&percnt;" valign="top" class="alt2" id="td_post_208729">
+	
+	
+	
+	<DIV style="float:right">
+
+
+
+  </DIV><DIV class="smallfont">
+		
+
+            <!-- icon and title -->
+            <IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/icon19.gif" alt="" border="0">
+				<STRONG>jumperless atmega - </STRONG>
+            <!-- status icon and date -->
+          
+		
+		
+			<!-- status icon and date -->	
+		
+				17th December 2002, 02:39 AM
+			
+			
+			<!-- / status icon and date -->
+		</DIV>
+		
+<DIV class="spacer"></DIV>	<DIV class="hr" style="width: 100&percnt;;">
+              <HR>
+            </DIV>	
+<DIV class="spacer"></DIV>
+		
+		<!-- message -->
+		<DIV id="post_message_208729" class="vb_postbit">i tried what i know took two seconds  my port is good prog other cards work fine  i tried to load jr robo di d nothing it wont enter program mode at all  tring t check cap  c1 c2  i dont htink my mult meter has the cap setting is thier any other thing i could do to try and fix  I THINK IM SCREWED ANY HELP JUST PM ME</DIV>
+		<!-- / message -->
+	
+		
+		
+		
+		 
+		
+	
+	</TD>
+</TR>
+<TR>
+	<TD class="alt1" style="background-image:url(../forum/images/techtwo/misc/postbit_fade.gif)">
+	
+		
+			&nbsp;&nbsp;
+	
+	
+		
+	</TD>
+	
+	<TD class="alt2" align="right">
+	
+		<!-- controls -->
+		
+	
+		
+		<DIV style="float:left">
+			
+			
+			
+				
+			
+			
+			</DIV>
+			
+			
+			
+		
+		
+		
+		
+		
+			<A href="http://id-discussions.com/forum/newreply.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=newreply&p=208729" rel="nofollow"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/quote.gif" alt="Reply With Quote" border="0" title="Reply With Quote"></A>
+		
+		
+		
+		
+		
+		<!-- / controls -->
+	</TD>
+</TR>
+</TBODY>
+</TABLE>
+
+<!-- Tech Two Categoty Bottom -->
+    <TABLE width="100&percnt;" border="0" cellpadding="0" cellspacing="0">
+      <TBODY><TR>
+        <TD width="11" align="left" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bleft.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="100&percnt;" style="background-image:url(../forum/images/techtwo/misc/cat_b.gif)"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/clear(1).gif" width="100&percnt;" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="11" align="right" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bright.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+      </TR>
+    </TBODY></TABLE>
+ <!-- /Tech Two Categoty Bottom -->
+
+<!-- post 208729 popup menu -->
+<DIV class="vbmenu_popup" id="postmenu_208729_menu" style="display:none">
+	<TABLE cellpadding="4" cellspacing="1" border="0">
+	<TBODY><TR>
+		<TD class="thead">sabou</TD>
+	</TR>
+	
+	
+	
+	
+	
+	
+<!-- v3 Arcade -->
+	
+	<TR><TD class="thead">sabou&#39;s Arcade Awards</TD></TR>
+	<TR><TD class="vbmenu_option" valign="middle"><A href="http://id-discussions.com/forum/arcade.php?do=scores&gameid=121"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/type2.gif" style="border-width:1px" align="absmiddle"> Typing Test</A></TD></TR><TR><TD class="vbmenu_option" valign="middle"><A href="http://id-discussions.com/forum/arcade.php?do=scores&gameid=143"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/discgolf2.gif" style="border-width:1px" align="absmiddle"> Disc Golf</A></TD></TR><TR><TD class="vbmenu_option" valign="middle"><A href="http://id-discussions.com/forum/arcade.php?do=scores&gameid=155"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/itcamefromthecrypt2.gif" style="border-width:1px" align="absmiddle"> It Came From the Crypt</A></TD></TR><TR><TD class="vbmenu_option" valign="middle"><A href="http://id-discussions.com/forum/arcade.php?do=scores&gameid=183"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/penguinflight2.gif" style="border-width:1px" align="absmiddle"> Penguin Flight</A></TD></TR><TR><TD class="vbmenu_option" valign="middle"><A href="http://id-discussions.com/forum/arcade.php?do=scores&gameid=218"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/tuertuertuer2.gif" style="border-width:1px" align="absmiddle"> Tuer Tuer Tuer</A></TD></TR>
+	
+	
+<!-- /v3 Arcade -->
+
+	</TBODY></TABLE>
+</DIV>
+<!-- / post 208729 popup menu -->
+
+
+
+	</DIV>
+	
+		</DIV>
+	</DIV>
+</DIV>
+
+<!-- / close content container -->
+
+<!-- / post #208729 --><!-- post #208745 -->
+
+	<!-- open content container -->
+
+<DIV align="center">
+	<DIV class="page" style="width:100&percnt;; text-align:left">
+		<DIV style="padding:0px 0px 0px 0px" align="left">
+
+	<DIV id="edit208745" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+
+
+<!-- Tech Two Categoty Top -->
+<TABLE border="0" cellpadding="0" cellspacing="0" width="100&percnt;" align="center" style="background-image: url(../forum/images/techtwo/misc/cat_t.gif)">
+  <TBODY><TR>
+    <TD width="57" height="25" align="left" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tleft.gif" width="57" height="25" alt=""></TD>
+    <TD width="100&percnt;" height="25" align="left" valign="middle"><A href="http://id-discussions.com/forum/showthread.php?p=208784#top" onclick="return toggle_collapse(&#39;postbit_208745&#39;)" style="float:right"><IMG id="collapseimg_postbit_208745" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/collapse_thead.gif" alt="" border="0"></A><DIV class="vb_cat"><STRONG>How to unlock</STRONG></DIV></TD>
+    <TD width="57" height="25" align="right" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tright.gif" width="57" height="25" alt=""></TD>
+  </TR>
+</TBODY></TABLE>
+<!-- /Tech Two Categoty Top -->
+
+<TABLE class="tborder" id="post208745" cellpadding="6" cellspacing="1" border="0" width="100&percnt;" align="center">
+
+<TBODY id="collapseobj_postbit_208745" style=";">
+<TR>
+	<TD class="thead">
+		
+			<!-- status icon and date -->
+			<DIV class="normal">
+			<A name="post208745"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/post_old.gif" alt="Old" border="0" title="Old"></A>
+			
+		</DIV>
+			<!-- / status icon and date -->				
+		</TD>
+		
+		<TD class="thead" style="font-weight:normal">
+		
+	<DIV class="normal" style="float:right">
+			&nbsp;
+			(#<A href="http://id-discussions.com/forum/showpost.php?s=84fd6a743eff3f4f1e87e289379d47e9&p=208745&postcount=6" target="new" rel="nofollow" id="postcount208745" name="6">6</A>)
+			
+		</DIV>
+		</TD>
+	
+</TR>
+<TR valign="top">
+	<TD class="alt1" width="175" style="background-image:url(../forum/images/techtwo/misc/postbit_fade.gif)">
+			
+			<DIV id="postmenu_208745">
+					
+					<A class="bigusername" href="http://id-discussions.com/forum/member.php?s=84fd6a743eff3f4f1e87e289379d47e9&u=11595">Spounge</A><!-- v3 Arcade --> 
+<!-- /v3 Arcade -->
+					
+					<SCRIPT type="text/javascript"> vbmenu_register("postmenu_208745", true); </SCRIPT>
+					
+				</DIV>
+				
+				<DIV class="smallfont">Member</DIV>
+				
+   
+				
+					
+<DIV style="padding:2px 0px 2px 0px;"></DIV><DIV><SPAN id="repdisplay_208745_11595"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/reputation_pos.gif" alt="Spounge is on a distinguished road" border="0" title="Spounge is on a distinguished road"></SPAN></DIV>
+		
+			
+				<DIV class="smallfont">
+					&nbsp;<BR><A href="http://id-discussions.com/forum/member.php?s=84fd6a743eff3f4f1e87e289379d47e9&u=11595"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/image(1).php" alt="Spounge&#39;s Avatar" border="0" title="Spounge&#39;s Avatar"></A>
+				</DIV>
+			
+			
+			<DIV class="smallfont">
+				&nbsp;<BR>
+				<DIV class="profile_info">Status: <SPAN class="smallfont">Offline</SPAN>
+
+</DIV>
+				<DIV class="profile_info">Posts: 39</DIV>
+                                
+				<DIV class="profile_info">Join Date: Mar 2001</DIV>
+				<DIV class="profile_info">Location: Canada</DIV>
+				
+				
+				<DIV class="profile_info"><SPAN id="reppower_208745_11595">Rep Power</SPAN>: 192</DIV>
+				
+			</DIV>		
+			<DIV style="padding:5px 0px 5px 0px;"></DIV>
+			<DIV>&nbsp;    &nbsp;</DIV>	
+		
+		<DIV style="padding:5px 0px 5px 0px;"></DIV>
+		
+	</TD>
+	
+	
+
+
+
+	
+	<TD height="100&percnt;" valign="top" class="alt2" id="td_post_208745">
+	
+	
+	
+	<DIV style="float:right">
+
+
+
+  </DIV><DIV class="smallfont">
+		
+
+            <!-- icon and title -->
+            <IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/icon1.gif" alt="Default" border="0" title="Default">
+				<STRONG>How to unlock - </STRONG>
+            <!-- status icon and date -->
+          
+		
+		
+			<!-- status icon and date -->	
+		
+				17th December 2002, 03:59 AM
+			
+			
+			<!-- / status icon and date -->
+		</DIV>
+		
+<DIV class="spacer"></DIV>	<DIV class="hr" style="width: 100&percnt;;">
+              <HR>
+            </DIV>	
+<DIV class="spacer"></DIV>
+		
+		<!-- message -->
+		<DIV id="post_message_208745" class="vb_postbit">This worked for me on many board.<BR>
+1) Tie pin 1 \pen of ATMEGA128 chip to ground,you can use a jumper that you hold or solder. Be sure you make a good connection.<BR>
+2)With jeepers got to menu&quot;ATMEL/ATMEGA128/ERASE FLASH_EEPROM&quot; and select it.<BR>
+3)Whent it is done about 2 seconds, the locks fuses should be reset<BR>
+<BR>
+Spounge</DIV>
+		<!-- / message -->
+	
+		
+		
+		
+		 
+		
+	
+	</TD>
+</TR>
+<TR>
+	<TD class="alt1" style="background-image:url(../forum/images/techtwo/misc/postbit_fade.gif)">
+	
+		
+			&nbsp;&nbsp;
+	
+	
+		
+	</TD>
+	
+	<TD class="alt2" align="right">
+	
+		<!-- controls -->
+		
+	
+		
+		<DIV style="float:left">
+			
+			
+			
+				
+			
+			
+			</DIV>
+			
+			
+			
+		
+		
+		
+		
+		
+			<A href="http://id-discussions.com/forum/newreply.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=newreply&p=208745" rel="nofollow"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/quote.gif" alt="Reply With Quote" border="0" title="Reply With Quote"></A>
+		
+		
+		
+		
+		
+		<!-- / controls -->
+	</TD>
+</TR>
+</TBODY>
+</TABLE>
+
+<!-- Tech Two Categoty Bottom -->
+    <TABLE width="100&percnt;" border="0" cellpadding="0" cellspacing="0">
+      <TBODY><TR>
+        <TD width="11" align="left" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bleft.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="100&percnt;" style="background-image:url(../forum/images/techtwo/misc/cat_b.gif)"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/clear(1).gif" width="100&percnt;" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="11" align="right" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bright.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+      </TR>
+    </TBODY></TABLE>
+ <!-- /Tech Two Categoty Bottom -->
+
+<!-- post 208745 popup menu -->
+<DIV class="vbmenu_popup" id="postmenu_208745_menu" style="display:none">
+	<TABLE cellpadding="4" cellspacing="1" border="0">
+	<TBODY><TR>
+		<TD class="thead">Spounge</TD>
+	</TR>
+	
+		<TR><TD class="vbmenu_option"><A href="http://id-discussions.com/forum/member.php?s=84fd6a743eff3f4f1e87e289379d47e9&u=11595">View Public Profile</A></TD></TR>
+	
+	
+	
+	
+	
+		 <TR><TD class="vbmenu_option"><A href="http://id-discussions.com/forum/search.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=finduser&u=11595" rel="nofollow">Find all posts by Spounge</A></TD></TR>
+	
+	
+<!-- v3 Arcade -->
+	
+	
+<!-- /v3 Arcade -->
+
+	</TBODY></TABLE>
+</DIV>
+<!-- / post 208745 popup menu -->
+
+
+
+	</DIV>
+	
+		</DIV>
+	</DIV>
+</DIV>
+
+<!-- / close content container -->
+
+<!-- / post #208745 --><!-- post #208769 -->
+
+	<!-- open content container -->
+
+<DIV align="center">
+	<DIV class="page" style="width:100&percnt;; text-align:left">
+		<DIV style="padding:0px 0px 0px 0px" align="left">
+
+	<DIV id="edit208769" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+
+
+<!-- Tech Two Categoty Top -->
+<TABLE border="0" cellpadding="0" cellspacing="0" width="100&percnt;" align="center" style="background-image: url(../forum/images/techtwo/misc/cat_t.gif)">
+  <TBODY><TR>
+    <TD width="57" height="25" align="left" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tleft.gif" width="57" height="25" alt=""></TD>
+    <TD width="100&percnt;" height="25" align="left" valign="middle"><A href="http://id-discussions.com/forum/showthread.php?p=208784#top" onclick="return toggle_collapse(&#39;postbit_208769&#39;)" style="float:right"><IMG id="collapseimg_postbit_208769" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/collapse_thead.gif" alt="" border="0"></A><DIV class="vb_cat"></DIV></TD>
+    <TD width="57" height="25" align="right" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tright.gif" width="57" height="25" alt=""></TD>
+  </TR>
+</TBODY></TABLE>
+<!-- /Tech Two Categoty Top -->
+
+<TABLE class="tborder" id="post208769" cellpadding="6" cellspacing="1" border="0" width="100&percnt;" align="center">
+
+<TBODY id="collapseobj_postbit_208769" style=";">
+<TR>
+	<TD class="thead">
+		
+			<!-- status icon and date -->
+			<DIV class="normal">
+			<A name="post208769"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/post_old.gif" alt="Old" border="0" title="Old"></A>
+			
+		</DIV>
+			<!-- / status icon and date -->				
+		</TD>
+		
+		<TD class="thead" style="font-weight:normal">
+		
+	<DIV class="normal" style="float:right">
+			&nbsp;
+			(#<A href="http://id-discussions.com/forum/showpost.php?s=84fd6a743eff3f4f1e87e289379d47e9&p=208769&postcount=7" target="new" rel="nofollow" id="postcount208769" name="7">7</A>)
+			
+		</DIV>
+		</TD>
+	
+</TR>
+<TR valign="top">
+	<TD class="alt1" width="175" style="background-image:url(../forum/images/techtwo/misc/postbit_fade.gif)">
+			
+			<DIV id="postmenu_208769">
+					
+					<A class="bigusername" href="http://id-discussions.com/forum/member.php?s=84fd6a743eff3f4f1e87e289379d47e9&u=75170">seaplane</A><!-- v3 Arcade --> 
+<!-- /v3 Arcade -->
+					
+					<SCRIPT type="text/javascript"> vbmenu_register("postmenu_208769", true); </SCRIPT>
+					
+				</DIV>
+				
+				<DIV class="smallfont">Member</DIV>
+				
+   
+				
+					
+<DIV style="padding:2px 0px 2px 0px;"></DIV><DIV><SPAN id="repdisplay_208769_75170"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/reputation_off.gif" alt="seaplane has disabled reputation" border="0" title="seaplane has disabled reputation"></SPAN></DIV>
+		
+			
+			
+			<DIV class="smallfont">
+				&nbsp;<BR>
+				<DIV class="profile_info">Status: <SPAN class="smallfont">Offline</SPAN>
+
+</DIV>
+				<DIV class="profile_info">Posts: 47</DIV>
+                                
+				<DIV class="profile_info">Join Date: Mar 2002</DIV>
+				<DIV class="profile_info">Location: Superior Shore</DIV>
+				
+				
+				<DIV class="profile_info"><SPAN id="reppower_208769_75170">Rep Power</SPAN>: 183</DIV>
+				
+			</DIV>		
+			<DIV style="padding:5px 0px 5px 0px;"></DIV>
+			<DIV>&nbsp;    &nbsp;</DIV>	
+		
+		<DIV style="padding:5px 0px 5px 0px;"></DIV>
+		
+	</TD>
+	
+	
+
+
+
+	
+	<TD height="100&percnt;" valign="top" class="alt2" id="td_post_208769">
+	
+	
+	
+	<DIV style="float:right">
+
+
+
+  </DIV><DIV class="smallfont">
+		
+
+            <!-- icon and title -->
+            <IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/icon1.gif" alt="Default" border="0" title="Default">
+				
+            <!-- status icon and date -->
+          
+		
+		
+			<!-- status icon and date -->	
+		
+				17th December 2002, 06:05 AM
+			
+			
+			<!-- / status icon and date -->
+		</DIV>
+		
+<DIV class="spacer"></DIV>	<DIV class="hr" style="width: 100&percnt;;">
+              <HR>
+            </DIV>	
+<DIV class="spacer"></DIV>
+		
+		<!-- message -->
+		<DIV id="post_message_208769" class="vb_postbit">here take a look at this,This is what I use.<BR>
+<BR>
+As a matter of fact I just used it to reset seeing as upon removal of my card to re-programm the unit they had once again changed once I reset there was no problem re-programming. Te really weird thing is that one of my cards has been running since Friday, no nags and this one has been taking sporadic hits since last eve. Doesn&#39;t make much sense as they were intitially programmed with the same 1.4 script.<BR>
+<BR>
+CHECK THESE ON!!<BR>
+<BR>
+lock bits<BR>
+<BR>
+bld12<BR>
+blb11<BR>
+blb02<BR>
+blb01<BR>
+lb2<BR>
+lb1<BR>
+<BR>
+Fuse Low<BR>
+bodlevel<BR>
+sut1<BR>
+cksel3<BR>
+cksel2<BR>
+cksel1<BR>
+cksel0<BR>
+<BR>
+Fuse HI<BR>
+OCDEN<BR>
+EESAVE<BR>
+BOOTRST<BR>
+<BR>
+FUSE EXTENDED<BR>
+M103C<BR>
+WDTON<BR>
+<BR>
+FF AF 89 FF (this should be the check sum</DIV>
+		<!-- / message -->
+	
+		
+		
+		
+		 
+		
+	
+	</TD>
+</TR>
+<TR>
+	<TD class="alt1" style="background-image:url(../forum/images/techtwo/misc/postbit_fade.gif)">
+	
+		
+			&nbsp;&nbsp;
+	
+	
+		
+	</TD>
+	
+	<TD class="alt2" align="right">
+	
+		<!-- controls -->
+		
+	
+		
+		<DIV style="float:left">
+			
+			
+			
+				
+			
+			
+			</DIV>
+			
+			
+			
+		
+		
+		
+		
+		
+			<A href="http://id-discussions.com/forum/newreply.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=newreply&p=208769" rel="nofollow"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/quote.gif" alt="Reply With Quote" border="0" title="Reply With Quote"></A>
+		
+		
+		
+		
+		
+		<!-- / controls -->
+	</TD>
+</TR>
+</TBODY>
+</TABLE>
+
+<!-- Tech Two Categoty Bottom -->
+    <TABLE width="100&percnt;" border="0" cellpadding="0" cellspacing="0">
+      <TBODY><TR>
+        <TD width="11" align="left" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bleft.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="100&percnt;" style="background-image:url(../forum/images/techtwo/misc/cat_b.gif)"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/clear(1).gif" width="100&percnt;" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="11" align="right" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bright.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+      </TR>
+    </TBODY></TABLE>
+ <!-- /Tech Two Categoty Bottom -->
+
+<!-- post 208769 popup menu -->
+<DIV class="vbmenu_popup" id="postmenu_208769_menu" style="display:none">
+	<TABLE cellpadding="4" cellspacing="1" border="0">
+	<TBODY><TR>
+		<TD class="thead">seaplane</TD>
+	</TR>
+	
+		<TR><TD class="vbmenu_option"><A href="http://id-discussions.com/forum/member.php?s=84fd6a743eff3f4f1e87e289379d47e9&u=75170">View Public Profile</A></TD></TR>
+	
+	
+	
+	
+	
+		 <TR><TD class="vbmenu_option"><A href="http://id-discussions.com/forum/search.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=finduser&u=75170" rel="nofollow">Find all posts by seaplane</A></TD></TR>
+	
+	
+<!-- v3 Arcade -->
+	
+	
+<!-- /v3 Arcade -->
+
+	</TBODY></TABLE>
+</DIV>
+<!-- / post 208769 popup menu -->
+
+
+
+	</DIV>
+	
+		</DIV>
+	</DIV>
+</DIV>
+
+<!-- / close content container -->
+
+<!-- / post #208769 --><!-- post #208784 -->
+
+	<!-- open content container -->
+
+<DIV align="center">
+	<DIV class="page" style="width:100&percnt;; text-align:left">
+		<DIV style="padding:0px 0px 0px 0px" align="left">
+
+	<DIV id="edit208784" style="padding:0px 0px 6px 0px">
+	
+
+
+
+
+
+<!-- Tech Two Categoty Top -->
+<TABLE border="0" cellpadding="0" cellspacing="0" width="100&percnt;" align="center" style="background-image: url(../forum/images/techtwo/misc/cat_t.gif)">
+  <TBODY><TR>
+    <TD width="57" height="25" align="left" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tleft.gif" width="57" height="25" alt=""></TD>
+    <TD width="100&percnt;" height="25" align="left" valign="middle"><A href="http://id-discussions.com/forum/showthread.php?p=208784#top" onclick="return toggle_collapse(&#39;postbit_208784&#39;)" style="float:right"><IMG id="collapseimg_postbit_208784" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/collapse_thead.gif" alt="" border="0"></A><DIV class="vb_cat"><STRONG>Re: Locked Atmega</STRONG></DIV></TD>
+    <TD width="57" height="25" align="right" valign="top"><IMG border="0" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_tright.gif" width="57" height="25" alt=""></TD>
+  </TR>
+</TBODY></TABLE>
+<!-- /Tech Two Categoty Top -->
+
+<TABLE class="tborder" id="post208784" cellpadding="6" cellspacing="1" border="0" width="100&percnt;" align="center">
+
+<TBODY id="collapseobj_postbit_208784" style=";">
+<TR>
+	<TD class="thead" id="currentPost">
+		
+			<!-- status icon and date -->
+			<DIV class="normal">
+			<A name="post208784"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/post_old.gif" alt="Old" border="0" title="Old"></A>
+			
+		</DIV>
+			<!-- / status icon and date -->				
+		</TD>
+		
+		<TD class="thead" style="font-weight:normal">
+		
+	<DIV class="normal" style="float:right">
+			&nbsp;
+			(#<A href="http://id-discussions.com/forum/showpost.php?s=84fd6a743eff3f4f1e87e289379d47e9&p=208784&postcount=8" target="new" rel="nofollow" id="postcount208784" name="8">8</A>)
+			
+		</DIV>
+		</TD>
+	
+</TR>
+<TR valign="top">
+	<TD class="alt1" width="175" style="background-image:url(../forum/images/techtwo/misc/postbit_fade.gif)">
+			
+			<DIV id="postmenu_208784">
+					
+					<A class="bigusername" href="http://id-discussions.com/forum/member.php?s=84fd6a743eff3f4f1e87e289379d47e9&u=40149">Ruffian</A><!-- v3 Arcade --> 
+<!-- /v3 Arcade -->
+					
+					<SCRIPT type="text/javascript"> vbmenu_register("postmenu_208784", true); </SCRIPT>
+					
+				</DIV>
+				
+				<DIV class="smallfont">Member</DIV>
+				
+   
+				
+					
+<DIV style="padding:2px 0px 2px 0px;"></DIV><DIV><SPAN id="repdisplay_208784_40149"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/reputation_pos.gif" alt="Ruffian is on a distinguished road" border="0" title="Ruffian is on a distinguished road"></SPAN></DIV>
+		
+			
+			
+			<DIV class="smallfont">
+				&nbsp;<BR>
+				<DIV class="profile_info">Status: <SPAN class="smallfont">Offline</SPAN>
+
+</DIV>
+				<DIV class="profile_info">Posts: 30</DIV>
+                                
+				<DIV class="profile_info">Join Date: Jan 2002</DIV>
+				
+				
+				
+				<DIV class="profile_info"><SPAN id="reppower_208784_40149">Rep Power</SPAN>: 168</DIV>
+				
+			</DIV>		
+			<DIV style="padding:5px 0px 5px 0px;"></DIV>
+			<DIV>&nbsp;    &nbsp;</DIV>	
+		
+		<DIV style="padding:5px 0px 5px 0px;"></DIV>
+		
+	</TD>
+	
+	
+
+
+
+	
+	<TD height="100&percnt;" valign="top" class="alt2" id="td_post_208784">
+	
+	
+	
+	<DIV style="float:right">
+
+
+
+  </DIV><DIV class="smallfont">
+		
+
+            <!-- icon and title -->
+            <IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/icon1.gif" alt="Default" border="0" title="Default">
+				<STRONG>Re: Locked Atmega - </STRONG>
+            <!-- status icon and date -->
+          
+		
+		
+			<!-- status icon and date -->	
+		
+				17th December 2002, 07:36 AM
+			
+			
+			<!-- / status icon and date -->
+		</DIV>
+		
+<DIV class="spacer"></DIV>	<DIV class="hr" style="width: 100&percnt;;">
+              <HR>
+            </DIV>	
+<DIV class="spacer"></DIV>
+		
+		<!-- message -->
+		<DIV id="post_message_208784" class="vb_postbit">I got mine to finally program. I tried all the fixes posted but none worked. I started playing around with the programmer and the card, then decided to connect the Atmega the opposite way and it worked. I believe that the jumpers on the Atmega were not making a good connection since there seemed to be enough play allowing the card to rock a little in its spot. Just thought you may want to try that before the other steps posted since it is the only thing that worked for me.</DIV>
+		<!-- / message -->
+	
+		
+		
+		
+		 
+		
+	
+	</TD>
+</TR>
+<TR>
+	<TD class="alt1" style="background-image:url(../forum/images/techtwo/misc/postbit_fade.gif)">
+	
+		
+			&nbsp;&nbsp;
+	
+	
+		
+	</TD>
+	
+	<TD class="alt2" align="right">
+	
+		<!-- controls -->
+		
+	
+		
+		<DIV style="float:left">
+			
+			
+			
+				
+			
+			
+			</DIV>
+			
+			
+			
+		
+		
+		
+		
+		
+			<A href="http://id-discussions.com/forum/newreply.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=newreply&p=208784" rel="nofollow"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/quote.gif" alt="Reply With Quote" border="0" title="Reply With Quote"></A>
+		
+		
+		
+		
+		
+		<!-- / controls -->
+	</TD>
+</TR>
+</TBODY>
+</TABLE>
+
+<!-- Tech Two Categoty Bottom -->
+    <TABLE width="100&percnt;" border="0" cellpadding="0" cellspacing="0">
+      <TBODY><TR>
+        <TD width="11" align="left" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bleft.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="100&percnt;" style="background-image:url(../forum/images/techtwo/misc/cat_b.gif)"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/clear(1).gif" width="100&percnt;" height="11" alt=" " border="0" title=" "></TD>
+        <TD width="11" align="right" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bright.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+      </TR>
+    </TBODY></TABLE>
+ <!-- /Tech Two Categoty Bottom -->
+
+<!-- post 208784 popup menu -->
+<DIV class="vbmenu_popup" id="postmenu_208784_menu" style="display:none">
+	<TABLE cellpadding="4" cellspacing="1" border="0">
+	<TBODY><TR>
+		<TD class="thead">Ruffian</TD>
+	</TR>
+	
+		<TR><TD class="vbmenu_option"><A href="http://id-discussions.com/forum/member.php?s=84fd6a743eff3f4f1e87e289379d47e9&u=40149">View Public Profile</A></TD></TR>
+	
+	
+	
+	
+	
+		 <TR><TD class="vbmenu_option"><A href="http://id-discussions.com/forum/search.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=finduser&u=40149" rel="nofollow">Find all posts by Ruffian</A></TD></TR>
+	
+	
+<!-- v3 Arcade -->
+	
+	
+<!-- /v3 Arcade -->
+
+	</TBODY></TABLE>
+</DIV>
+<!-- / post 208784 popup menu -->
+
+
+
+	</DIV>
+	
+		</DIV>
+	</DIV>
+</DIV>
+
+<!-- / close content container -->
+
+<!-- / post #208784 --><DIV id="lastpost"></DIV></DIV>
+
+<!-- start content table -->
+<!-- open content container -->
+
+<DIV align="center">
+	<DIV class="page" style="width:100&percnt;; text-align:left">
+		<DIV style="padding:0px 0px 0px 0px" align="left">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<TABLE cellpadding="0" cellspacing="0" border="0" width="100&percnt;" style="margin-top:-3px">
+<TBODY><TR valign="top">
+	
+		<TD class="smallfont"><A href="http://id-discussions.com/forum/newreply.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=newreply&noquote=1&p=208784" rel="nofollow"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/reply.gif" alt="Reply" border="0" title="Reply"></A></TD>
+	
+	
+</TR>
+</TBODY></TABLE>
+<!-- / controls below postbits -->
+
+
+
+
+
+
+
+
+
+
+<!-- lightbox scripts -->
+	<SCRIPT type="text/javascript" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/vbulletin_lightbox.js"></SCRIPT>
+	<SCRIPT type="text/javascript">
+	<!--
+	vBulletin.register_control("vB_Lightbox_Container", "posts", 1);
+	//-->
+	</SCRIPT>
+<!-- / lightbox scripts -->
+
+
+
+
+
+
+
+
+
+
+<!-- next / previous links -->
+	<BR>
+	<DIV class="smallfont" align="center">
+		<STRONG>&laquo;</STRONG>
+			<A href="http://id-discussions.com/forum/showthread.php?s=84fd6a743eff3f4f1e87e289379d47e9&t=34414&goto=nextoldest" rel="nofollow">Previous Thread</A>
+			|
+			<A href="http://id-discussions.com/forum/showthread.php?s=84fd6a743eff3f4f1e87e289379d47e9&t=34414&goto=nextnewest" rel="nofollow">Next Thread</A>
+		<STRONG>&raquo;</STRONG>
+	</DIV>
+<!-- / next / previous links -->
+
+
+
+
+
+<!-- popup menu contents -->
+<BR>
+
+<!-- thread tools menu -->
+<DIV class="vbmenu_popup" id="threadtools_menu" style="display:none">
+<FORM action="http://id-discussions.com/forum/postings.php?t=34414&pollid=" method="post" name="threadadminform">
+	<TABLE cellpadding="4" cellspacing="1" border="0">
+	<TBODY><TR>
+		<TD class="thead">Thread Tools<A name="goto_threadtools"></A></TD>
+	</TR>
+	<TR>
+		<TD class="vbmenu_option"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/printer.gif" alt="Show Printable Version" title="Show Printable Version"> <A href="http://id-discussions.com/forum/printthread.php?s=84fd6a743eff3f4f1e87e289379d47e9&t=34414" accesskey="3" rel="nofollow">Show Printable Version</A></TD>
+	</TR>
+	<TR>
+		<TD class="vbmenu_option"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/sendtofriend.gif" alt="Email this Page" title="Email this Page"> <A href="http://id-discussions.com/forum/sendmessage.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=sendtofriend&t=34414" rel="nofollow">Email this Page</A></TD>
+	</TR>
+	
+	
+	
+	</TBODY></TABLE>
+</FORM>
+</DIV>
+<!-- / thread tools menu -->
+
+<!-- **************************************************** -->
+
+<!-- thread display mode menu -->
+<DIV class="vbmenu_popup" id="displaymodes_menu" style="display:none">
+	<TABLE cellpadding="4" cellspacing="1" border="0">
+	<TBODY><TR>
+		<TD class="thead">Display Modes<A name="goto_displaymodes"></A></TD>
+	</TR>
+	<TR>
+	
+		<TD class="vbmenu_option" title="nohilite"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/mode_linear.gif" alt="Linear Mode" title="Linear Mode"> <STRONG>Linear Mode</STRONG></TD>
+	
+	</TR>
+	<TR>
+	
+		<TD class="vbmenu_option"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/mode_hybrid.gif" alt="Hybrid Mode" title="Hybrid Mode"> <A href="http://id-discussions.com/forum/showthread.php?s=84fd6a743eff3f4f1e87e289379d47e9&mode=hybrid&t=34414">Switch to Hybrid Mode</A></TD>
+	
+	</TR>
+	<TR>
+	
+		<TD class="vbmenu_option"><IMG class="inlineimg" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/mode_threaded.gif" alt="Threaded Mode" title="Threaded Mode"> <A href="http://id-discussions.com/forum/showthread.php?s=84fd6a743eff3f4f1e87e289379d47e9&p=158871&mode=threaded#post158871">Switch to Threaded Mode</A></TD>
+	
+	</TR>
+	</TBODY></TABLE>
+</DIV>
+<!-- / thread display mode menu -->
+
+<!-- **************************************************** -->
+
+
+
+<!-- **************************************************** -->
+
+
+
+<!-- / popup menu contents -->
+
+
+<!-- forum rules and admin links -->
+<TABLE cellpadding="0" cellspacing="0" border="0" width="100&percnt;" align="center">
+<TBODY><TR valign="bottom">
+	<TD width="100&percnt;" valign="top">
+		<TABLE class="tborder" cellpadding="6" cellspacing="1" border="0" width="210">
+<THEAD>
+<TR>
+	<TD class="thead">
+		<A style="float:right" href="http://id-discussions.com/forum/showthread.php?p=208784#top" onclick="return toggle_collapse(&#39;forumrules&#39;)"><IMG id="collapseimg_forumrules" src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/collapse_thead.gif" alt="" border="0"></A>
+		Posting Rules
+	</TD>
+</TR>
+</THEAD>
+<TBODY id="collapseobj_forumrules" style="">
+<TR>
+	<TD class="alt1" nowrap="nowrap"><DIV class="smallfont">
+		
+		<DIV>You <STRONG>may not</STRONG> post new threads</DIV>
+		<DIV>You <STRONG>may not</STRONG> post replies</DIV>
+		<DIV>You <STRONG>may not</STRONG> post attachments</DIV>
+		<DIV>You <STRONG>may not</STRONG> edit your posts</DIV>
+		<HR>
+		
+		<DIV><A href="http://id-discussions.com/forum/misc.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=bbcode" target="_blank">BB code</A> is <STRONG>On</STRONG></DIV>
+		<DIV><A href="http://id-discussions.com/forum/misc.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=showsmilies" target="_blank">Smilies</A> are <STRONG>On</STRONG></DIV>
+		<DIV><A href="http://id-discussions.com/forum/misc.php?s=84fd6a743eff3f4f1e87e289379d47e9&do=bbcode#imgcode" target="_blank">[IMG]</A> code is <STRONG>Off</STRONG></DIV>
+		<DIV>HTML code is <STRONG>Off</STRONG></DIV>
+	</DIV></TD>
+</TR>
+</TBODY>
+</TABLE>
+	</TD>
+	<TD class="smallfont" align="right">
+		<TABLE cellpadding="0" cellspacing="0" border="0">
+		
+		<TBODY><TR>
+			<TD>
+			<DIV class="smallfont" style="text-align:left; white-space:nowrap">
+	<FORM action="http://id-discussions.com/forum/forumdisplay.php" method="get">
+	<INPUT type="hidden" name="s" value="84fd6a743eff3f4f1e87e289379d47e9">
+	<INPUT type="hidden" name="daysprune" value="">
+	<STRONG>Forum Jump</STRONG><BR>
+	<SELECT name="f" onchange="this.form.submit();">
+		<OPTGROUP label="Site Areas">
+			<OPTION value="cp">User Control Panel</OPTION>
+			<OPTION value="pm">Private Messages</OPTION>
+			<OPTION value="subs">Subscriptions</OPTION>
+			<OPTION value="wol">Who&#39;s Online</OPTION>
+			<OPTION value="search">Search Forums</OPTION>
+			<OPTION value="home">Forums Home</OPTION>
+		</OPTGROUP>
+		
+		<OPTGROUP label="Forums">
+		<OPTION value="58" class="fjdpth0"> General</OPTION>
+<OPTION value="106" class="fjdpth1">&nbsp; &nbsp;  Introduce Yourself</OPTION>
+<OPTION value="47" class="fjdpth1">&nbsp; &nbsp;  Latest News</OPTION>
+<OPTION value="69" class="fjdpth1">&nbsp; &nbsp;  Legal Issues</OPTION>
+<OPTION value="66" class="fjdpth1">&nbsp; &nbsp;  General Chit Chat</OPTION>
+<OPTION value="173" class="fjdpth1">&nbsp; &nbsp;  Health &amp; Fitness</OPTION>
+<OPTION value="181" class="fjdpth1">&nbsp; &nbsp;  Money Saving, DIY &amp; Eco Friendly</OPTION>
+<OPTION value="60" class="fjdpth1">&nbsp; &nbsp;  Comments, Bugs &amp; Suggestions</OPTION>
+<OPTION value="31" class="fjdpth1">&nbsp; &nbsp;  Test Posts</OPTION>
+<OPTION value="81" class="fjdpth1">&nbsp; &nbsp;  Humour</OPTION>
+<OPTION value="12" class="fjdpth0"> American Satellite</OPTION>
+<OPTION value="136" class="fjdpth1">&nbsp; &nbsp;  Dish Network</OPTION>
+<OPTION value="50" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Dish General Help</OPTION>
+<OPTION value="18" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Dish Advanced</OPTION>
+<OPTION value="141" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Dish Atmega 128</OPTION>
+<OPTION value="142" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Dish Atmega 256</OPTION>
+<OPTION value="143" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Dish Emulation</OPTION>
+<OPTION value="87" class="fjdpth1">&nbsp; &nbsp;  DSS Satellite</OPTION>
+<OPTION value="42" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  DSS FAQ (read only)</OPTION>
+<OPTION value="16" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  DSS Help</OPTION>
+<OPTION value="15" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  DSS Advanced</OPTION>
+<OPTION value="39" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  DSS HU card only</OPTION>
+<OPTION value="17" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  DSS Unloopers Etc</OPTION>
+<OPTION value="37" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  DSS Emulators &amp; Logging</OPTION>
+<OPTION value="43" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  DSS Receivers/Decoders</OPTION>
+<OPTION value="44" class="fjdpth1">&nbsp; &nbsp;  C-Band and Related</OPTION>
+<OPTION value="105" class="fjdpth0"> Canadian Satellite</OPTION>
+<OPTION value="137" class="fjdpth1">&nbsp; &nbsp;  Express Vu</OPTION>
+<OPTION value="57" class="fjsel" selected="selected">&nbsp; &nbsp; &nbsp; &nbsp;  ExVu General Help</OPTION>
+<OPTION value="19" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  ExVu Advanced</OPTION>
+<OPTION value="144" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  ExVu Atmega 128</OPTION>
+<OPTION value="145" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  ExVu Atmega 256</OPTION>
+<OPTION value="146" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  ExVu Emulation</OPTION>
+<OPTION value="71" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  ExVu General Help (FRENCH)</OPTION>
+<OPTION value="82" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  ExVu Advanced (FRENCH)</OPTION>
+<OPTION value="64" class="fjdpth1">&nbsp; &nbsp;  Star Choice</OPTION>
+<OPTION value="110" class="fjdpth0"> Free To Air (FTA)</OPTION>
+<OPTION value="103" class="fjdpth1">&nbsp; &nbsp;  FTA General</OPTION>
+<OPTION value="138" class="fjdpth1">&nbsp; &nbsp;  FTA How-To&#39;s &amp; Guides</OPTION>
+<OPTION value="3" class="fjdpth0"> Other Satellite TV</OPTION>
+<OPTION value="20" class="fjdpth1">&nbsp; &nbsp;  European\UK Satellite</OPTION>
+<OPTION value="88" class="fjdpth1">&nbsp; &nbsp;  Satellite Tuner PCI Cards</OPTION>
+<OPTION value="89" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  DVB Hardware Only</OPTION>
+<OPTION value="90" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  DVB Software Only</OPTION>
+<OPTION value="21" class="fjdpth1">&nbsp; &nbsp;  Asian Satellite</OPTION>
+<OPTION value="22" class="fjdpth1">&nbsp; &nbsp;  Australian Satellite</OPTION>
+<OPTION value="4" class="fjdpth0"> Cable TV</OPTION>
+<OPTION value="23" class="fjdpth1">&nbsp; &nbsp;  American &quot;ANALOG&quot; Cable</OPTION>
+<OPTION value="84" class="fjdpth1">&nbsp; &nbsp;  American &quot;DIGITAL&quot; Cable</OPTION>
+<OPTION value="24" class="fjdpth1">&nbsp; &nbsp;  European\UK Cable</OPTION>
+<OPTION value="11" class="fjdpth0"> Other TV</OPTION>
+<OPTION value="46" class="fjdpth1">&nbsp; &nbsp;  UK Terrestrial Digital TV</OPTION>
+<OPTION value="5" class="fjdpth0"> Video Game Consoles</OPTION>
+<OPTION value="85" class="fjdpth1">&nbsp; &nbsp;  Sony</OPTION>
+<OPTION value="109" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Playstation 3</OPTION>
+<OPTION value="188" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  PSP</OPTION>
+<OPTION value="26" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Playstation 2</OPTION>
+<OPTION value="25" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Playstation 1</OPTION>
+<OPTION value="86" class="fjdpth1">&nbsp; &nbsp;  Nintendo</OPTION>
+<OPTION value="189" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Nintendo DS</OPTION>
+<OPTION value="108" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Nintendo Wii</OPTION>
+<OPTION value="75" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Nintendo Game Cube</OPTION>
+<OPTION value="28" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Nintendo 64</OPTION>
+<OPTION value="29" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Nintendo Gameboy</OPTION>
+<OPTION value="158" class="fjdpth1">&nbsp; &nbsp;  Microsoft</OPTION>
+<OPTION value="159" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Microsoft Xbox 360</OPTION>
+<OPTION value="70" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Microsoft Xbox</OPTION>
+<OPTION value="10" class="fjdpth0"> Computers</OPTION>
+<OPTION value="40" class="fjdpth1">&nbsp; &nbsp;  General PC</OPTION>
+<OPTION value="41" class="fjdpth1">&nbsp; &nbsp;  Networking, Security &amp; Firewalls</OPTION>
+<OPTION value="48" class="fjdpth1">&nbsp; &nbsp;  DSL, Cable and Modems.</OPTION>
+<OPTION value="13" class="fjdpth0"> Programming</OPTION>
+<OPTION value="65" class="fjdpth1">&nbsp; &nbsp;  Gold Mate PC, ID Multi, MKX etc.</OPTION>
+<OPTION value="51" class="fjdpth1">&nbsp; &nbsp;  Micro Processors (EG: PICs, Atmels etc)</OPTION>
+<OPTION value="52" class="fjdpth1">&nbsp; &nbsp;  PC Programming</OPTION>
+<OPTION value="61" class="fjdpth0"> Music &amp; Video</OPTION>
+<OPTION value="45" class="fjdpth1">&nbsp; &nbsp;  MP3/Music</OPTION>
+<OPTION value="30" class="fjdpth1">&nbsp; &nbsp;  DVD/DivX</OPTION>
+<OPTION value="62" class="fjdpth1">&nbsp; &nbsp;  Tivo &amp; Similar Digital Recording</OPTION>
+<OPTION value="7" class="fjdpth0"> Miscellaneous</OPTION>
+<OPTION value="180" class="fjdpth1">&nbsp; &nbsp;  Known Scams</OPTION>
+<OPTION value="32" class="fjdpth1">&nbsp; &nbsp;  Buying</OPTION>
+
+		</OPTGROUP>
+		
+	</SELECT><INPUT type="submit" class="button" value="Go">
+	</FORM>
+</DIV>
+			</TD>
+		</TR>
+		</TBODY></TABLE>
+	</TD>
+</TR>
+</TBODY></TABLE>
+<!-- /forum rules and admin links -->
+
+<BR>
+
+
+
+<!-- Right Column Code  -->
+          </DIV></DIV></DIV></TD>
+        </TR>
+      </TBODY></TABLE>
+    </TD>
+    <TD width="145" valign="top" align="left"><DIV align="center">
+<!-- Tech Two Column Block Top -->
+  <TABLE border="0" cellpadding="0" cellspacing="0" width="145" align="center" style="background-image: url(../forum/images/techtwo/misc/col_t.gif)">
+    <TBODY><TR>
+      <TD style="text-align: center;" width="100&percnt;" height="25" valign="middle"><SPAN class="smallfont"><B>Sponsors</B></SPAN></TD>
+    </TR>
+  </TBODY></TABLE>
+<!-- /Tech Two Column Block Top -->
+
+<!-- Tech Two Column Block Middle -->
+  <TABLE class="tborder" width="145" cellpadding="5" cellspacing="1">
+      <TBODY><TR>
+        <TD class="alt1" align="center">
+          <!-- BEGIN ad 168907416 --><A href="http://id-discussions.com/ads/www/delivery/ck.php?oaparams=2__bannerid=159__zoneid=8__cb=448e0c7143__oadest=http://www.cyberestore.com/?ad=ID125" target="_blank"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cyberestore.130_x_131.gif" width="130" height="130" alt="" title="" border="0"></A><DIV id="beacon_448e0c7143" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/lg(2).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></DIV><!-- END ad 168907416 -->
+          <P><!-- BEGIN ad 168907416 --><A href="http://id-discussions.com/ads/www/delivery/ck.php?oaparams=2__bannerid=181__zoneid=8__cb=2be7332f9f__oadest=http://interesting-devices.com/asp/product.asp?recorprod=1&product=452&cat=34" target="_blank"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/iso7816_2.gif" width="130" height="130" alt="ISO7816 Programmer" title="ISO7816 Programmer" border="0"></A></P><DIV id="beacon_2be7332f9f" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/lg(3).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></DIV><!-- END ad 168907416 --><P>
+          <P><!-- BEGIN ad 168907416 --><A href="http://id-discussions.com/ads/www/delivery/ck.php?oaparams=2__bannerid=133__zoneid=8__cb=2aa2b537a1__oadest=http://interesting-devices.com/asp/product.asp?recorprod=1&product=448&cat=110" target="_blank"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/gc-viper-anim_2.gif" width="130" height="130" alt="GC Viper" title="GC Viper" border="0"></A></P><DIV id="beacon_2aa2b537a1" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/lg(4).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></DIV><!-- END ad 168907416 --><P>
+          <P><!-- BEGIN ad 168907416 --><!-- END ad 168907416 --></P>
+          <P><!-- BEGIN ad 168907416 --><!-- END ad 168907416 --></P>
+          <P><!-- BEGIN ad 168907416 --><!-- END ad 168907416 --></P>
+          <P><!-- BEGIN ad 168907416 --><!-- END ad 168907416 --></P>
+          <P><!-- BEGIN ad 168907416 --><!-- END ad 168907416 --></P>
+          <P><!-- BEGIN ad 168907416 --><!-- END ad 168907416 --></P>
+          <P><!-- BEGIN ad 168907416 --><!-- END ad 168907416 --></P>
+
+<!-- Begin: AdBrite -->
+<SCRIPT type="text/javascript">
+   var AdBrite_Title_Color = '0000FF';
+   var AdBrite_Text_Color = '000000';
+   var AdBrite_Background_Color = 'FFFFFF';
+   var AdBrite_Border_Color = 'FFFFFF';
+</SCRIPT>
+<SCRIPT src="http://ads.adbrite.com/mb/text_group.php?sid=443195&zs=3132305f363030" type="text/javascript"></SCRIPT><IFRAME name="AdBriteFrame_b23e348f_0165_441e_8e4c_543f2ff4a6c8" width="120" height="600" frameborder="0" scrolling="no"></IFRAME><SCRIPT type="text/javascript"><!--
+AdBriteRender_b23e348f_0165_441e_8e4c_543f2ff4a6c8();
+//--></SCRIPT>
+<A target="_top" href="http://www.adbrite.com/mb/commerce/purchase_form.php?opid=443195&afsid=1" style="font-weight:bold;font-family:Arial;font-size:13px;">Your Ad Here</A>
+<!-- End: AdBrite -->
+
+        </TD>
+      </TR>
+  </TBODY></TABLE>
+
+<!-- /Tech Two Column Block Middle -->
+
+<!-- Tech Two Column Block Bottom -->
+  <TABLE width="145" border="0" cellpadding="0" cellspacing="0">
+    <TBODY><TR>
+      <TD width="11" align="left" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bleft.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+      <TD width="100&percnt;" style="background-image:url(../forum/images/techtwo/misc/cat_b.gif)"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/clear.gif" width="100&percnt;" height="11" alt=" " border="0" title=" "></TD>
+      <TD width="11" align="right" valign="top"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/cat_bright.gif" width="11" height="11" alt=" " border="0" title=" "></TD>
+    </TR>
+  </TBODY></TABLE>
+<!-- /Tech Two Column Block Bottom -->
+</DIV>
+</TD>
+  </TR>
+</TBODY></TABLE>
+<!-- End Right Column Code -->
+<BR>
+<DIV align="center"><!-- BEGIN ad 126277454 --><A href="http://id-discussions.com/ads/www/delivery/ck.php?oaparams=2__bannerid=190__zoneid=2__cb=0b1d710365__oadest=http://www.eztekk.com" target="_blank"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/eztekk_468_x_60.gif" width="468" height="60" alt="http://ww.eztekk.com" title="http://ww.eztekk.com" border="0"></A><DIV id="beacon_0b1d710365" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/lg(5).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></DIV><!-- END ad 126277454 --></DIV>
+<BR>
+<DIV align="center"><!-- BEGIN ad 51096572 --><!-- END ad 51096572 --></DIV>
+
+<BR><BR>
+<DIV align="center">
+    <DIV class="smallfont" align="center">
+    <!-- Do not remove this copyright notice -->
+    Powered by vBulletin&reg; Version 3.7.5<BR>Copyright &copy;2000 - 2009, Jelsoft Enterprises Ltd.<BR>
+    vBulletin Skin developed by: <A href="http://www.vbstyles.com/">vBStyles.com</A><BR>
+<DIV class="spacer"></DIV>
+
+    <!-- Do not remove this copyright notice -->
+    </DIV>
+    
+    <DIV class="smallfont" align="center">
+    <!-- Do not remove  or your scheduled tasks will cease to function -->
+    
+    <!-- Do not remove  or your scheduled tasks will cease to function -->
+    
+    Copyright &copy;1995 - 2009, Interesting Devices Ltd
+    </DIV>
+</DIV>
+<BR>
+
+		</DIV>
+	</DIV>
+</DIV>
+
+<!-- / close content container -->
+<!-- /content area table -->
+
+</TD>
+</TR>
+</TBODY></TABLE>
+<TABLE width="100&percnt;" border="0" cellpadding="0" cellspacing="0" bgcolor="#cdd2d9">
+  <TBODY><TR>
+    <TD width="12" align="left"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/bottom_left_table.gif" width="12" height="8" alt=""></TD>
+    <TD width="100&percnt;" align="left"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/top_pix_table.gif" width="100&percnt;" height="8" alt=""></TD>
+    <TD width="12" align="left"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/bottom_right_table.gif" width="12" height="8" alt=""></TD>
+  </TR>
+</TBODY></TABLE>
+</TD>
+  </TR>
+</TBODY></TABLE>
+
+
+
+<FORM action="http://id-discussions.com/forum/index.php" method="get">
+	
+<TABLE width="100&percnt;" border="0" align="center" cellpadding="0" cellspacing="0">
+<TBODY><TR align="left" valign="middle">
+    <TD height="10" colspan="3" style="background-image: url(../forum/images/techtwo/misc/footer_special.gif);"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/clear.gif" width="100&percnt;" height="1" alt=""></TD>
+  </TR>
+
+  <TR align="left" valign="middle"> 
+    <TD width="58" height="52" style="background-color:#A8B0BA;"><A href="javascript:scroll(0,0);"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/footer_left.gif" width="58" height="52" border="0" alt=""></A></TD>
+    <TD width="100&percnt;" height="52" align="center" style="background-image: url(../forum/images/techtwo/misc/footer_pix.gif); background-color:#A8B0BA;">
+<TABLE cellpadding="0" cellspacing="0" border="0" width="100&percnt;" align="center">
+<TBODY><TR align="left"> 
+   
+		<TD class="tfooter">
+			<SELECT name="styleid" onchange="switch_id(this, &#39;style&#39;)">
+				<OPTGROUP label="Quick Style Chooser">
+					<OPTION value="33" class="" selected="selected">-- Tech Two</OPTION>
+<OPTION value="2" class="">-- vBulletin 3</OPTION>
+<OPTION value="34" class="">-- Element</OPTION>
+<OPTION value="35" class="">-- Element Blue</OPTION>
+<OPTION value="36" class="">-- Afterdark</OPTION>
+
+				</OPTGROUP>
+			</SELECT>
+		</TD>
+	
+	
+	<TD class="tfooter" align="right" width="100&percnt;">
+		<DIV class="smallfont">
+			<STRONG>
+				<A href="mailto:support@id-discussions.com" rel="nofollow" accesskey="9">Contact Us</A> -
+				<A href="http://id-discussions.com/">Interesting Devices Ltd</A> -
+				
+				
+				<A href="http://id-discussions.com/forum/archive/index.php">Archive</A> -
+				
+				<A href="http://id-discussions.com/forum/showthread.php?p=208784#top" onclick="self.scrollTo(0, 0); return false;">Top</A>
+			</STRONG>
+		</DIV>
+	</TD>
+
+    
+</TR>
+</TBODY></TABLE>
+
+</TD>
+<TD width="58" height="52" style="background-color:#A8B0BA;"><A href="javascript:scroll(0,0);"><IMG src="./Atmega Lock Fuse Bits - Interesting Devices Ltd_files/footer_right.gif" width="58" height="52" border="0" alt=""></A></TD>
+  </TR>
+ 
+</TBODY></TABLE>
+
+</FORM>
+</TD></TR></TBODY></TABLE></DIV>
+
+
+<CENTER><SPAN class="smallfont">Page generated in <B>0.23388</B> seconds with <B>11</B> queries</SPAN></CENTER><!-- display microstats here -->
+<SCRIPT type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//-->
+</SCRIPT>
+
+<!-- temp -->
+<DIV style="display:none">
+	<!-- thread rate -->
+	
+		
+	
+	<!-- / thread rate -->
+</DIV>
+
+
+</BODY></HTML>

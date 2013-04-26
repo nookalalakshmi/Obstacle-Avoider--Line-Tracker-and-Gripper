@@ -1,0 +1,690 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.captain.at/electronic-atmega-mmc.php -->
+<HTML><HEAD><TITLE>Atmel ATmega (ATmega16 / ATmega32) - MMC (Multi Media Card) Flash Memory Extension</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1"><LINK 
+href="firmware mmc atmega16_files/style.css" type=text/css rel=stylesheet><LINK 
+href="/capicon.gif" type=image/gif rel=icon>
+<SCRIPT language=JavaScript src="firmware mmc atmega16_files/captain.js" 
+type=text/javascript></SCRIPT>
+
+<META 
+content="An interdisciplinary website for science, programming, electronics and more." 
+name=Description>
+<META 
+content="science, programming, electronics, Linux, RTAI, fusion, ADEOS, Java, C, hard real time, microcontroller, Atmel, PIC, MMC, E2PROM, FreeBSD" 
+name=Keywords>
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY text=#000000 vLink=#333333 aLink=#0000ff link=#0037b4 bgColor=#ffffff 
+leftMargin=0 topMargin=0 marginheight="0" marginwidth="0"><A name=top></A>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#000000 height=52>
+      <TABLE height=108 cellSpacing=0 cellPadding=0 width="100%" 
+      background="firmware mmc atmega16_files/ship-back.jpg" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width="50%"><A href="http://www.captain.at/"><IMG 
+            title="Captain's Universe Home" height=80 
+            alt="Captain's Universe Home" 
+            src="firmware mmc atmega16_files/ship-back2.jpg" width=395 
+            border=0><BR><IMG title="Captain's Universe Home" height=29 
+            alt="Captain's Universe Home" 
+            src="firmware mmc atmega16_files/ship-back3.jpg" width=395 
+            border=0></A></TD>
+          <TD align=right width="50%">
+            <TABLE cellSpacing=4 cellPadding=0 width=300>
+              <TBODY>
+              <TR>
+                <TD rowSpan=4><A href="http://www.captain.at/artemia/"><IMG 
+                  title="SeaMonkey Artemia and Browser" 
+                  style="PADDING-RIGHT: 20px" height=64 
+                  alt="SeaMonkey Artemia and Browser" 
+                  src="firmware mmc atmega16_files/seamonkey64.gif" width=64 
+                  border=0></A> </TD>
+                <TD class=topt noWrap align=middle bgColor=#1a5a94><A 
+                  class=nav href="http://www.cosmicrays.org/">Cosmic Ray Muon 
+                  Detector</A></TD>
+                <TD class=topt noWrap align=middle bgColor=#1a5a94><A 
+                  class=nav href="http://www.telegarden.org/tg/">TeleGarden 
+                  Pages</A></TD></TR>
+              <TR bgColor=#1a5a94>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.marsbase.net/">Time on Mars</A></TD>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.bryophyllum.com/">Bryophyllum 
+Plants</A></TD></TR>
+              <TR bgColor=#1a5a94>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.jupiterradio.com/j/articles/prob/">Jupiter 
+                  Radio Astronomy</A></TD>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.ancientcoins.biz/pages/">Ancient 
+              Pages</A></TD></TR>
+              <TR bgColor=#1a5a94>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.telegarden.org/salzburg.php">Salzburg Tourist 
+                  Guide</A></TD>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.magnetometer.org/">Earth 
+              Magnetometer</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD bgColor=#ffffff><IMG height=3 src="firmware mmc atmega16_files/t3.gif" 
+      width=1></TD></TR>
+  <TR>
+    <TD bgColor=#000000 height=23>
+      <TABLE class=capmenu cellSpacing=0 cellPadding=3 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%"><A class=nbv style="DISPLAY: inline" 
+            href="http://www.captain.at/">&nbsp; H O M E &nbsp;</A></TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/ajax.php">&nbsp; AJAX &amp; MORE 
+            &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/linux.php">&nbsp; LINUX &amp; MORE 
+            &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/rtai.php">&nbsp; RTAI &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/xenomai.php">&nbsp; XENOMAI &nbsp;</A> 
+          </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/adeos-ipipe.php">&nbsp; ADEOS IPIPE 
+            &nbsp;</A> </TD>
+          <TD class=nay noWrap>&nbsp; &nbsp; </TD></TR></TBODY></TABLE>
+      <TABLE class=capmenu cellSpacing=0 cellPadding=3 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%">&nbsp;</TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/browsers.php">&nbsp; JAVA &amp; BROWSERS 
+            &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/nix.php">&nbsp; *NIX &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=na 
+            href="http://www.captain.at/electronic-index.php">&nbsp; ELECTRONICS 
+            &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/review-index.php">&nbsp; REVIEWS 
+            &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/artemia/">&nbsp; ARTEMIA &nbsp;</A></TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/fairy-shrimp.php">&nbsp; FAIRY SHRIMP 
+            &nbsp;</A></TD>
+          <TD class=nay noWrap>&nbsp; &nbsp; </TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD bgColor=#ffffff><IMG height=3 src="firmware mmc atmega16_files/t3.gif" 
+      width=1></TD></TR>
+  <TR>
+    <TD vAlign=top bgColor=#ffffff>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top bgColor=#eeeeee>
+            <TABLE cellSpacing=0 cellPadding=7 width=180 border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <UL class=uli>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-index.php"><B>Electronics 
+                    Home</B></A> </LI></UL>
+                  <UL class=uli>
+                    <LI class=mcon><B>Atmel ATmega</B><BR><IMG height=8 
+                    src="firmware mmc atmega16_files/spacer.gif" width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-linux-atmel-avr-simulator-gui-vmlab.php">Linux 
+                    Atmel AVR Simulator with GUI</A><BR><IMG height=6 
+                    src="firmware mmc atmega16_files/spacer.gif" width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-atmega-sd-card.php">Atmel 
+                    ATmega - SD card (Secure Digital Card) Flash Memory 
+                    Extension</A><BR><IMG height=6 
+                    src="firmware mmc atmega16_files/spacer.gif" width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-atmega-dcf77.php">Atmel 
+                    ATmega - DCF77 time signal decoder</A><BR><IMG height=6 
+                    src="firmware mmc atmega16_files/spacer.gif" width=1><BR>
+                    <LI><A class=menu style="FONT-WEIGHT: bold" 
+                    href="http://www.captain.at/electronic-atmega-mmc.php">Atmel 
+                    ATmega - MMC (Multi Media Card) Flash Memory 
+                    Extension</A><BR><IMG height=6 
+                    src="firmware mmc atmega16_files/spacer.gif" width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-atmega-eeprom.php">Atmel 
+                    ATmega I2C EEPROM Example Schematic and C 
+                    program</A><BR><IMG height=6 
+                    src="firmware mmc atmega16_files/spacer.gif" width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-atmega16-serial-port.php">Atmel 
+                    ATmega16 Serial Port Example Schematic and C 
+                    program</A><BR><IMG height=6 
+                    src="firmware mmc atmega16_files/spacer.gif" width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/atmel-programmer/">Atmel 
+                    AVR ATmega16 Programmer Linux</A><BR><IMG height=6 
+                    src="firmware mmc atmega16_files/spacer.gif" 
+                    width=1><BR></LI></UL>
+                  <UL class=uli>
+                    <LI class=mcon><B>Microchip PIC</B><BR><IMG height=8 
+                    src="firmware mmc atmega16_files/spacer.gif" width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/pic-programmer/">Pic 
+                    Programmer Linux</A><BR><IMG height=6 
+                    src="firmware mmc atmega16_files/spacer.gif" width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/pic-mmc/">PIC - MMC 
+                    Flash Memory Extension</A><BR><IMG height=6 
+                    src="firmware mmc atmega16_files/spacer.gif" width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/pic-ram/">PIC - 
+                    32k/64k RAM Extension</A><BR><IMG height=6 
+                    src="firmware mmc atmega16_files/spacer.gif" 
+                    width=1><BR></LI></UL>
+                  <UL class=uli>
+                    <LI class=mcon><B>Misc. stuff</B><BR><IMG height=8 
+                    src="firmware mmc atmega16_files/spacer.gif" width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-astronomy-timer-gadgets.php">Astronomy 
+                    Timer Gadgets</A><BR><IMG height=6 
+                    src="firmware mmc atmega16_files/spacer.gif" width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/decoupling/">Decoupling 
+                    the power supply</A><BR><IMG height=6 
+                    src="firmware mmc atmega16_files/spacer.gif" width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/manhattan-board/">Manhattan 
+                    style PCB board prototyping for high frequency RF and 
+                    critical circuits</A><BR><IMG height=6 
+                    src="firmware mmc atmega16_files/spacer.gif" width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/coils/">Coil 
+                    Calculator - Single-layer and mutil-layer coil calculation 
+                    in javascript</A><BR><IMG height=6 
+                    src="firmware mmc atmega16_files/spacer.gif" width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/active-filter/">Active 
+                    Bandpass Filter Javascript Tool</A><BR><IMG height=6 
+                    src="firmware mmc atmega16_files/spacer.gif" 
+                    width=1><BR></LI></UL></TD></TR></TBODY></TABLE></TD>
+          <TD vAlign=top width="100%"><!-- google_ad_section_start --><BR>
+            <TABLE cellSpacing=0 cellPadding=2 width=678 align=center 
+              border=0><TBODY>
+              <TR>
+                <TD><SPAN class=mcon><BR><BR>
+                  <H1>Atmel ATmega (ATmega16 / ATmega32) - MMC (Multi Media 
+                  Card) Flash Memory Extension</H1><BR><BR><B>UPDATE:</B> Since 
+                  MMC cards become scarce, and in some shops only SD cards 
+                  (Secure Digital Card) are available anymore, I've tried to use 
+                  a SD card. See: <A 
+                  href="http://www.captain.at/electronic-atmega-sd-card.php">Atmel 
+                  ATmega (ATmega16 / ATmega32) - SD (Secure Digital Card) Flash 
+                  Memory Extension</A> <BR><BR><B>UPDATE:</B> Since the Atmega32 
+                  MCU is just an ATmega16 with more Flash, RAM etc. the ATmega16 
+                  can be replaced by the ATmega32. <BR><BR>It is easy to 
+                  interface a MMC (MultiMediaCard) with an Atmel ATmega16 
+                  (ATmega series) via the SPI (Serial Port Interface). This is a 
+                  very handy data logging circuit with lots of memory for data 
+                  storage. I2C RAM's or EEPROM's are hardly available at sizes 
+                  bigger than 256kb, but this solution with a 64MB Flash MMC is 
+                  not to beat in both cost effectiveness and storage 
+                  volume!<BR>Also see: <A 
+                  href="http://www.captain.at/electronics/pic-mmc/">MicroChip 
+                  PIC - MMC Flash Memory Extension</A> <BR><BR>
+                  <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-3524547136592145";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "FFFFFF";
+google_color_link = "000000";
+google_color_bg = "FFFFFF";
+google_color_text = "000000";
+google_color_url = "000000";
+//--></SCRIPT>
+
+                  <SCRIPT src="firmware mmc atmega16_files/show_ads.htm" 
+                  type=text/javascript>
+</SCRIPT>
+                  <BR><BR><B>Schematic of the hardware:</B> (ATmega16 pins for 
+                  the DIP package)<BR>
+                  <TABLE cellSpacing=0 cellPadding=1 align=center>
+                    <TBODY>
+                    <TR>
+                      <TD onmouseover="this.bgColor='#444444';" 
+                      onmouseout="this.bgColor='#ffffff';"><A class=m 
+                        href="http://www.captain.at/electronic-atmega16-mmc-schematic.png" 
+                        target=_blank><IMG title="ATmega - MMC Schematic" 
+                        height=506 alt="ATmega - MMC Schematic" 
+                        src="firmware mmc atmega16_files/electronic-atmega16-mmc-schematic_small.png" 
+                        width=568 border=0></A></TD></TR>
+                    <TR>
+                      <TD class=c align=middle><A class=m 
+                        href="http://www.captain.at/electronic-atmega16-mmc-schematic.png" 
+                        target=_blank>Click on the schematic for a large view 
+                        (opens in a new 
+                  window)</A></TD></TR></TBODY></TABLE><BR><BR>This version 
+                  utilizes an ATmega16, but it's easy to port the schematic and 
+                  software to other ATmega's.<BR>The MMC is connected to the SPI 
+                  pins of the ATmega16 via simple resistor voltage dividers to 
+                  transform the +5V high levels to about 3.3V used by the MMC. 
+                  The supply voltage for the MMC (2.7V - 3.6V) comes from a 
+                  LD1086V33 voltage regulator (3.3V) or equivalent. The data-out 
+                  pin from the MMC goes directly to the ATmega16, because 3.3V 
+                  is high for the ATmega16 anyway.<BR>The MMC Clock can be in 
+                  the range of 0-20MHz. <BR><BR><B>The firmware:</B><BR>Use 
+                  avr-gcc or WinAVR to compile mmc.c (source code below) and the 
+                  <A 
+                  href="http://www.captain.at/electronics/atmel-programmer/">Atmel 
+                  ATmega16 Parallel Port Programmer</A> to program the uC. 
+                  "make" compiles the firmware, "make load" programs the uC with 
+                  "uisp". <BR><BR>Linux software (serterm2) for receiving data 
+                  over the serial port can be found at the <A 
+                  href="http://www.captain.at/electronics/pic-mmc/">PIC - MMC 
+                  (Multi Media Card) Flash Memory Extension</A> page. Also on 
+                  that page, the program "ser". It sends three characters 
+                  ("ABC") via the PC serial port and tries to receive them. 
+                  These three characters are returned by the MCU via the 
+                  interrupt service routine. <BR><BR>
+                  <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-3524547136592145";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "FFFFFF";
+google_color_link = "000000";
+google_color_bg = "FFFFFF";
+google_color_text = "000000";
+google_color_url = "000000";
+//--></SCRIPT>
+
+                  <SCRIPT src="firmware mmc atmega16_files/show_ads.htm" 
+                  type=text/javascript>
+</SCRIPT>
+                  <BR><BR><B>Testing:</B><BR>If your hardware is ready, 
+                  disconnect power to it and start "serterm2". Now connect power 
+                  to your uC-board and you should see the following output on 
+                  your computer via "serterm2":<BR><PRE># ./serterm
+baud=9600
+baud=9600
+listening...
+MCU online
+
+MMC online
+
+Captain was here! Captain was here! Captain was here! Captain was here! Captain was here!
+Captain was here! Captain was here! Captain was here! Captain was here! Captain was here!
+Captain was here! Captain was here! Captain was here! Captain was here! Captain was here!
+Captain was here! Captain was here! Captain was here! Captain was here! Captain was here!
+Captain was here! Captain was here! Captain was here! Captain was here! Captain was here!
+Captain was here! Captain was here! Captain was here! Captain
+
+512 bytes sent
+
+blinking LED now
+</PRE>The firmware writes 512 bytes of data to the internal 
+                  RAM and writes that sector to the MMC. Then those 512 bytes 
+                  are read back from the MMC and sent via the serial port. After 
+                  that the MCU goes into a loop and blinks the LED on pin 19 
+                  (similar to avrledtest.c at the <A 
+                  href="http://www.captain.at/electronics/atmel-programmer/">Atmel 
+                  ATmega16 Parallel Port Programmer</A> page). Furthermore the 
+                  interrupt service routine (ISR) returns any character sent 
+                  over the serial port. <BR><BR>UPDATE:<BR>The while loop in the 
+                  MMC-read function can hang at high transfer speeds <PRE>	while(SPI(0xFF) != (char)0xFE);
+</PRE>so you're probably better of with a solution like this: <PRE>	int i;
+	uint8_t c;
+	for (i = 0; i &lt; 100000; i++) {
+		c = SPI(0xFF);
+		if (c == (char)0xFE) break;
+	}
+	if (c != (char)0xFE) {
+		// ERROR HANDLING HERE		
+	}
+	// proceed with MMC-read
+</PRE>(this code snippet has NOT been tested - it's just an 
+                  idea)<BR>Same goes for the while loop <PRE>	while(SPI(0xFF) != (char)0xFF);
+</PRE>in the write function. <BR><BR>
+                  <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-3524547136592145";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "FFFFFF";
+google_color_link = "000000";
+google_color_bg = "FFFFFF";
+google_color_text = "000000";
+google_color_url = "000000";
+//--></SCRIPT>
+
+                  <SCRIPT src="firmware mmc atmega16_files/show_ads.htm" 
+                  type=text/javascript>
+</SCRIPT>
+                  <BR><BR><B>mmc.c</B>:<BR><PRE>/*********************************************
+* Chip type           : ATmega16
+* Clock frequency     : 2457600Hz
+*********************************************/
+#include &lt;avr/io.h&gt;
+#include &lt;avr/interrupt.h&gt;
+#include &lt;avr/signal.h&gt;
+#include &lt;inttypes.h&gt;
+#include &lt;avr/iom16.h&gt;
+
+#define F_OSC 2457600		           /* oscillator-frequency in Hz */
+#define UART_BAUD_RATE 9600
+#define UART_BAUD_CALC(UART_BAUD_RATE,F_OSC) ((F_OSC)/((UART_BAUD_RATE)*16l)-1)
+
+#define SPIDI	6	// Port B bit 6 (pin7): data in (data from MMC)
+#define SPIDO	5	// Port B bit 5 (pin6): data out (data to MMC)
+#define SPICLK	7	// Port B bit 7 (pin8): clock
+#define SPICS	4	// Port B bit 4 (pin5: chip select for MMC
+
+char sector[512];
+
+void delay_ms(unsigned short ms) {
+	unsigned short outer1, outer2;
+	outer1 = 200; 
+	while (outer1) {
+		outer2 = 1000;
+		while (outer2) {
+			while ( ms ) ms--;
+			outer2--;
+		}
+		outer1--;
+	}
+}
+
+void usart_putc(unsigned char c) {
+   // wait until UDR ready
+	while(!(UCSRA &amp; (1 &lt;&lt; UDRE)));
+	UDR = c;    // send character
+}
+
+void uart_puts (char *s) {
+	//  loop until *s != NULL
+	while (*s) {
+		usart_putc(*s);
+		s++;
+	}
+}
+
+void init(void) {
+	// set baud rate
+	UBRRH = (uint8_t)(UART_BAUD_CALC(UART_BAUD_RATE,F_OSC)&gt;&gt;8);
+	UBRRL = (uint8_t)UART_BAUD_CALC(UART_BAUD_RATE,F_OSC);
+	// Enable receiver and transmitter; enable RX interrupt
+	UCSRB = (1&lt;&lt;RXEN)|(1&lt;&lt;TXEN)|(1&lt;&lt;RXCIE);
+	//asynchronous 8N1
+	UCSRC = (1&lt;&lt;URSEL)|(3&lt;&lt;UCSZ0);
+}
+
+// INTERRUPT can be interrupted
+// SIGNAL can't be interrupted
+SIGNAL (SIG_UART_RECV) { // USART RX interrupt
+	unsigned char c;
+	c = UDR;
+	usart_putc(c);
+}
+
+void serialterminate(void) { // terminate sent string!!!
+	while(!(UCSRA &amp; (1 &lt;&lt; UDRE)));
+	UDR = 0x0d;
+	while(!(UCSRA &amp; (1 &lt;&lt; UDRE)));
+	UDR = 0x0a;	
+}
+
+void SPIinit(void) {
+	DDRB &amp;= ~(1 &lt;&lt; SPIDI);	// set port B SPI data input to input
+	DDRB |= (1 &lt;&lt; SPICLK);	// set port B SPI clock to output
+	DDRB |= (1 &lt;&lt; SPIDO);	// set port B SPI data out to output 
+	DDRB |= (1 &lt;&lt; SPICS);	// set port B SPI chip select to output
+	SPCR = (1 &lt;&lt; SPE) | (1 &lt;&lt; MSTR) | (1 &lt;&lt; SPR1) | (1 &lt;&lt; SPR0);
+	PORTB &amp;= ~(1 &lt;&lt; SPICS);	// set chip select to low (MMC is selected)
+}
+
+char SPI(char d) {  // send character over SPI
+	char received = 0;
+	SPDR = d;
+	while(!(SPSR &amp; (1&lt;&lt;SPIF)));
+	received = SPDR;
+	return (received);
+}
+
+
+char Command(char befF, uint16_t AdrH, uint16_t AdrL, char befH )
+{	// sends a command to the MMC
+	SPI(0xFF);
+	SPI(befF);
+	SPI((uint8_t)(AdrH &gt;&gt; 8));
+	SPI((uint8_t)AdrH);
+	SPI((uint8_t)(AdrL &gt;&gt; 8));
+	SPI((uint8_t)AdrL);
+	SPI(befH);
+	SPI(0xFF);
+	return SPI(0xFF);	// return the last received character
+}
+
+int MMC_Init(void) { // init SPI
+	char i;
+	PORTB |= (1 &lt;&lt; SPICS); // disable MMC
+	// start MMC in SPI mode
+	for(i=0; i &lt; 10; i++) SPI(0xFF); // send 10*8=80 clock pulses
+	PORTB &amp;= ~(1 &lt;&lt; SPICS); // enable MMC
+
+	if (Command(0x40,0,0,0x95) != 1) goto mmcerror; // reset MMC
+
+st: // if there is no MMC, prg. loops here
+	if (Command(0x41,0,0,0xFF) !=0) goto st;
+	return 1;
+mmcerror:
+	return 0;
+}
+
+void fillram(void)	 { // fill RAM sector with ASCII characters
+	int i,c;
+	char mystring[18] = "Captain was here! ";
+	c = 0;
+	for (i=0;i&lt;=512;i++) {
+		sector[i] = mystring[c];
+		c++;
+		if (c &gt; 17) { c = 0; }
+	}
+}
+
+int writeramtommc(void) { // write RAM sector to MMC
+	int i;
+	uint8_t c;
+	// 512 byte-write-mode
+	if (Command(0x58,0,512,0xFF) !=0) {
+		uart_puts("MMC: write error 1 ");
+		return 1;	
+	}
+	SPI(0xFF);
+	SPI(0xFF);
+	SPI(0xFE);
+	// write ram sectors to MMC
+	for (i=0;i&lt;512;i++) {
+		SPI(sector[i]);
+	}
+	// at the end, send 2 dummy bytes
+	SPI(0xFF);
+	SPI(0xFF);
+
+	c = SPI(0xFF);
+	c &amp;= 0x1F; 	// 0x1F = 0b.0001.1111;
+	if (c != 0x05) { // 0x05 = 0b.0000.0101
+		uart_puts("MMC: write error 2 ");
+		return 1;
+	}
+	// wait until MMC is not busy anymore
+	while(SPI(0xFF) != (char)0xFF);
+	return 0;
+}
+
+int sendmmc(void) { // send 512 bytes from the MMC via the serial port
+	int i;
+	// 512 byte-read-mode 
+	if (Command(0x51,0,512,0xFF) != 0) {
+		uart_puts("MMC: read error 1 ");
+		return 1;
+	}
+	// wait for 0xFE - start of any transmission
+	// ATT: typecast (char)0xFE is a must!
+	while(SPI(0xFF) != (char)0xFE);
+
+	for(i=0; i &lt; 512; i++) {
+		while(!(UCSRA &amp; (1 &lt;&lt; UDRE))); // wait for serial port
+		UDR = SPI(0xFF);  // send character
+	}
+	serialterminate();
+	// at the end, send 2 dummy bytes
+	SPI(0xFF); // actually this returns the CRC/checksum byte
+	SPI(0xFF);
+	return 0;
+}
+
+int main(void) {
+	init();
+	SPIinit();
+
+	uart_puts("MCU online");
+	serialterminate();
+
+	MMC_Init();
+
+	uart_puts("MMC online");
+	serialterminate();
+
+	sei(); // enable interrupts
+	
+	fillram();
+	writeramtommc();
+	sendmmc();
+
+	uart_puts("512 bytes sent");
+	serialterminate();
+	uart_puts("blinking LED now");
+	serialterminate();
+
+	// enable  PD5 as output
+	DDRD |= (1&lt;&lt;PD5);
+	while (1) {
+		// PIN5 PORTD clear -&gt; LED off
+		PORTD &amp;= ~(1&lt;&lt;PD5);
+		delay_ms(500);
+		// PIN5 PORTD set -&gt; LED on
+		PORTD |= (1&lt;&lt;PD5);
+		delay_ms(500);	
+	}
+	return 0;
+}
+</PRE><B>Makefile:</B> <PRE>MCU=atmega16
+CC=avr-gcc
+OBJCOPY=avr-objcopy
+# optimize for size:
+CFLAGS=-g -mmcu=$(MCU) -Wall -Wstrict-prototypes -Os -mcall-prologues
+#-------------------
+all: mmc.hex
+#-------------------
+mmc.hex : mmc.out 
+	$(OBJCOPY) -R .eeprom -O ihex mmc.out mmc.hex 
+mmc.out : mmc.o 
+	$(CC) $(CFLAGS) -o mmc.out -Wl,-Map,mmc.map mmc.o 
+mmc.o : mmc.c 
+	$(CC) $(CFLAGS) -Os -c mmc.c
+# you need to erase first before loading the program.
+# load (program) the software into the eeprom:
+load: mmc.hex
+	uisp -dlpt=/dev/parport0 --erase  -dprog=dapa
+	uisp -dlpt=/dev/parport0 --upload if=mmc.hex -dprog=dapa  -v=3 --hash=32
+#-------------------
+clean:
+	rm -f *.o *.map *.out
+#-------------------
+</PRE><BR><BR><BR>Last-Modified: Mon, 18 Jun 2007 17:24:53 
+                  GMT</SPAN>
+                  <P></P></TD></TR></TBODY></TABLE><!-- google_ad_section_end -->
+            <CENTER><!-- SiteSearch Google -->
+            <FORM action=http://www.google.com/custom method=get target=_top>
+            <TABLE bgColor=#ffffff border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top noWrap align=left height=32><A 
+                  href="http://www.google.com/"><IMG alt=Google 
+                  src="firmware mmc atmega16_files/Logo_25wht.gif" 
+                  border=0></IMG></A> </TD>
+                <TD noWrap><INPUT type=hidden value=www.captain.at 
+                  name=domains></INPUT> <INPUT maxLength=255 size=31 
+                  name=q></INPUT> 
+                  <INPUT type=submit value=Search name=sa></INPUT> </TD></TR>
+              <TR>
+                <TD>&nbsp;</TD>
+                <TD noWrap>
+                  <TABLE>
+                    <TBODY>
+                    <TR>
+                      <TD><INPUT type=radio value="" name=sitesearch></INPUT> 
+                        <FONT color=#000000 size=-1>Web</FONT> </TD>
+                      <TD><INPUT type=radio CHECKED value=www.captain.at 
+                        name=sitesearch></INPUT> <FONT color=#000000 
+                        size=-1>www.captain.at</FONT> </TD></TR></TBODY></TABLE><INPUT 
+                  type=hidden value=pub-3524547136592145 name=client></INPUT> 
+                  <INPUT type=hidden value=1 name=forid></INPUT> <INPUT 
+                  type=hidden value=ISO-8859-1 name=ie></INPUT> <INPUT 
+                  type=hidden value=ISO-8859-1 name=oe></INPUT> <INPUT 
+                  type=hidden 
+                  value=GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:FFFFFF;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;LH:80;LW:395;L:http://www.captain.at/home/ship-back2.jpg;S:http://www.captain.at;FORID:1; 
+                  name=cof></INPUT> <INPUT type=hidden value=en name=hl></INPUT> 
+                </TD></TR></TBODY></TABLE></FORM><!-- SiteSearch Google --></CENTER></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD bgColor=#ffffff><IMG height=3 src="firmware mmc atmega16_files/t3.gif" 
+      width=1></TD></TR>
+  <TR>
+    <TD bgColor=#1a5a94>
+      <TABLE cellSpacing=0 cellPadding=2 width="100%">
+        <TBODY>
+        <TR>
+          <TD width=60 bgColor=#1a5a94 height=20>
+            <CENTER><A class=bot 
+            href="http://www.captain.at/electronic-atmega-mmc.php#top">go to 
+            top</A></CENTER></TD>
+          <TD bgColor=#1a5a94 height=20>
+            <TABLE align=center>
+              <TBODY>
+              <TR>
+                <TD class=bot align=right>© 1996-2009 </TD>
+                <TD vAlign=bottom width=103><IMG height=13 
+                  src="firmware mmc atmega16_files/e.gif" width=103></TD>
+                <TD class=bot>. All rights reserved.</B></FONT>
+                  <CENTER></CENTER></TD></TR>
+              <TR>
+                <TD class=bot colSpan=3>No reproduction, distribution, 
+                  publishing or transmission of the copyrighted materials at 
+                  this site is permitted. <A class=ab 
+                  href="http://www.captain.at/policy.php">Policy</A></TD></TR></TBODY></TABLE></TD>
+          <TD width=60 bgColor=#1a5a94 height=20>
+            <CENTER><A class=bot 
+            href="http://www.captain.at/electronic-atmega-mmc.php#top">go to 
+            top</A></CENTER></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD bgColor=#ffffff><IMG height=3 src="firmware mmc atmega16_files/t3.gif" 
+      width=1></TD></TR></TBODY></TABLE>
+<SCRIPT language=JavaScript src="firmware mmc atmega16_files/onw.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="firmware mmc atmega16_files/urchin.htm" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+_uacct = "UA-85090-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

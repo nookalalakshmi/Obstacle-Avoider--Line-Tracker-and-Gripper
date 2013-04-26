@@ -1,0 +1,114 @@
+BODY {
+	FONT-SIZE: 14px; FONT-FAMILY: sans-serif, Helvetica, Verdana, Arial, sans-serif
+}
+DIV.topLinks {
+	TEXT-ALIGN: center
+}
+.topDateNav {
+	BORDER-RIGHT: black thin solid; PADDING-RIGHT: 0.25em; BORDER-TOP: black thin solid; PADDING-LEFT: 0.25em; PADDING-BOTTOM: 0.25em; BORDER-LEFT: black thin solid; PADDING-TOP: 0.25em; BORDER-BOTTOM: black thin solid; BACKGROUND-COLOR: #cceeff
+}
+.mainNav {
+	TEXT-ALIGN: left
+}
+.topThreadNav {
+	FONT-SIZE: 34px; BACKGROUND-COLOR: #ffffff
+}
+A {
+	COLOR: #2b3eae; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #6e80e9; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #2b3eae; TEXT-DECORATION: none
+}
+DIV.items {
+	RIGHT: -1px; POSITION: absolute
+}
+.msgLinks {
+	BACKGROUND-COLOR: #415996
+}
+.tSlice {
+	FONT-SIZE: 14px; COLOR: #dae5e5; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #465994
+}
+.tSlice STRONG {
+	COLOR: #dae5e5; BACKGROUND-COLOR: #465994; TEXT-DECORATION: underline
+}
+.tSlice A {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.tSlice A:hover {
+	BACKGROUND-COLOR: #000; TEXT-DECORATION: underline
+}
+.tSlice A:visited {
+	COLOR: #dae5e5; TEXT-DECORATION: none
+}
+H1 {
+	FONT-SIZE: 14px
+}
+H2 {
+	FONT-SIZE: 14px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.msgSubject {
+	FONT-SIZE: 14px; WIDTH: 100%; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.msgBody {
+	FONT-SIZE: 14px; BORDER-LEFT: #abc9e6 solid; WIDTH: 100%; COLOR: #000
+}
+.msgBody PRE {
+	PADDING-LEFT: 5px; FONT-SIZE: 14px; WIDTH: 40%; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffffff
+}
+.msgHead {
+	BACKGROUND-COLOR: #abc9e6
+}
+.left-nav {
+	BACKGROUND-COLOR: #f7f7f7
+}
+.botLinks {
+	FONT-SIZE: 16px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.botLinks A {
+	BACKGROUND-COLOR: yellow
+}
+.botLinks A:hover {
+	BACKGROUND-COLOR: yellow
+}
+.botLinks A:visited {
+	BACKGROUND-COLOR: yellow
+}
+DIV#nifty {
+	CLEAR: both; BACKGROUND: #fff; WIDTH: 800px
+}
+#content-outter-box {
+	WIDTH: 800px
+}
+.black-line {
+	WIDTH: 100%; HEIGHT: 7px; BACKGROUND-COLOR: #465994
+}
+B.rtop {
+	DISPLAY: block; BACKGROUND: #fff
+}
+B.rbottom {
+	DISPLAY: block; BACKGROUND: #fff
+}
+B.rtop B {
+	CLEAR: both; DISPLAY: block; OVERFLOW: hidden; HEIGHT: 1px; BACKGROUND-COLOR: #6e80e9
+}
+B.rbottom B {
+	CLEAR: both; DISPLAY: block; OVERFLOW: hidden; HEIGHT: 1px; BACKGROUND-COLOR: #6e80e9
+}
+B.r1 {
+	MARGIN: 0px 5px
+}
+B.r2 {
+	MARGIN: 0px 3px
+}
+B.r3 {
+	MARGIN: 0px 2px
+}
+B.rtop B.r4 {
+	MARGIN: 0px 1px; HEIGHT: 2px
+}
+B.rbottom B.r4 {
+	MARGIN: 0px 1px; HEIGHT: 2px
+}

@@ -1,0 +1,210 @@
+   1               		.file	"robokits.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  11               		.text
+  12               	.Ltext0:
+  71               	.global	__vector_8
+  73               	__vector_8:
+   1:robokits.c    **** //			MADE BY ROBOKITS INDIA.
+   2:robokits.c    **** //			VISIT US AT WWW.ROBOKITS.ORG
+   3:robokits.c    **** //			PROGRAM FOR BLINKING LED'S ON TIMER1
+   4:robokits.c    **** //			WRITTEN FOR PRODUCT ID 19
+   5:robokits.c    **** 
+   6:robokits.c    **** /*-------------------------------------------------------------------          
+   7:robokits.c    ****  Description:
+   8:robokits.c    ****  This example shows how to generate delays with timers so that cpu is
+   9:robokits.c    ****  free for processing other things. Here cpu is used for blinking led2.
+  10:robokits.c    **** 
+  11:robokits.c    ****  Note:
+  12:robokits.c    ****  Led2 is blinking with normal delay routine and led3 on timer1 interrupt.
+  13:robokits.c    ****  
+  14:robokits.c    ****  Both leds work at almost 1hz rate.
+  15:robokits.c    ****  
+  16:robokits.c    ****  Since _delay_ms() function will be affected by the interrupt generation 
+  17:robokits.c    ****  and gives more delay. So, after sometime the led timing will be mismached.
+  18:robokits.c    ****  
+  19:robokits.c    ****  Even the timer delay is not perfectly mached to 1s. Use smaller presclar
+  20:robokits.c    ****  for better operation.
+  21:robokits.c    ****  
+  22:robokits.c    ****   _delay_ms() function parameter passed should not exeed
+  23:robokits.c    ****  262.14ms / F_CPU in mhz.
+  24:robokits.c    ****  
+  25:robokits.c    ****  so for 16MHz the maximum paramer should be 16ms.
+  26:robokits.c    ****  
+  27:robokits.c    ****  For 1MHz it can be upto 262ms (250 is used for this example).
+  28:robokits.c    ****   
+  29:robokits.c    ****  Must be changed to get accurate delay at higher MHz.
+  30:robokits.c    ****  
+  31:robokits.c    ****  The timing will differ if the operating frequency is changed.
+  32:robokits.c    **** ---------------------------------------------------------------------*/
+  33:robokits.c    **** 
+  34:robokits.c    **** /*----------------------------------------------------------------
+  35:robokits.c    **** -----------------HEADER FILES-------------------------------------
+  36:robokits.c    **** -----------------------------------------------------------------*/
+  37:robokits.c    **** 
+  38:robokits.c    **** #include <avr/io.h>
+  39:robokits.c    **** #include <avr/interrupt.h>
+  40:robokits.c    **** #include<compat/deprecated.h>		//HEADER FILE FOR FUNCTIONS LIKE SBI AND CBI
+  41:robokits.c    **** #include<util/delay.h>				//HEADER FILE FOR DELAY
+  42:robokits.c    **** 
+  43:robokits.c    **** /*----------------------------------------------------------------
+  44:robokits.c    **** -----------------CONSTANTS----------------------------------------
+  45:robokits.c    **** -----------------------------------------------------------------*/
+  46:robokits.c    **** 
+  47:robokits.c    **** #define TIMER_1_CNT     0x85ED  // 250 msec in 1 MHZ and 31.25 milisec in 8MHZ, use AVRcalc to calc
+  48:robokits.c    ****                                 // ((TCNT1H=0xfc, TCNT1L=0x2e)
+  49:robokits.c    **** 								// DECIMAL VALUE = 34285
+  50:robokits.c    **** 								// MAX VALUE = 65535
+  51:robokits.c    **** 								// TIMER OVERFLOW ON 65535-34285 = 31250 COUNTS
+  52:robokits.c    **** #define CNT             0xfffc
+  53:robokits.c    **** #define TMC16_CK8	(_BV(CS11))	// 16 BIT TIMER1 AT 8 PRESCALAR
+  54:robokits.c    **** 												// GIVES 8*31250 = 250000 CYCLES
+  55:robokits.c    **** 												// AT 1MHZ FREQUENCY DELAY OF 1.000448 SECONDS
+  56:robokits.c    **** 
+  57:robokits.c    **** /*----------------------------------------------------------------
+  58:robokits.c    **** -----------------GLOBAL VARIABLE----------------------------------
+  59:robokits.c    **** -----------------------------------------------------------------*/
+  60:robokits.c    **** 
+  61:robokits.c    **** static volatile uint8_t led; 					// use volatile when variable is accessed from interrupts
+  62:robokits.c    **** 
+  63:robokits.c    **** 
+  64:robokits.c    **** /*----------------------------------------------------------------
+  65:robokits.c    **** -----------------FUNCTIONS----------------------------------------
+  66:robokits.c    **** -----------------------------------------------------------------*/
+  67:robokits.c    **** 
+  68:robokits.c    **** SIGNAL(SIG_OVERFLOW1)            	// signal handler for tcnt1 overflow interrupt
+  69:robokits.c    **** {
+  74               	 r0,__SREG__
+  75               		push r0
+  76               		clr __zero_reg__
+  77 0000 1F92      		push r24
+  78 0002 0F92      		push r25
+  79 0004 0FB6      	/* prologue: Signal */
+  80 0006 0F92      	/* frame size = 0 */
+  82 000a 8F93      	.LM1:
+  83 000c 9F93      		sbic 54-32,5
+  84               		rjmp .L2
+  70:robokits.c    **** 	
+  71:robokits.c    **** 	if (bit_is_clear(PINB, 5))		//BLINK LED3 ON TIMER INTERRUPT
+  86               	1,.LM1-.LFBB1
+  87               	.LM1:
+  88 000e B599      		sbic 54-32,5
+  89 0010 00C0      		rjmp .L2
+  72:robokits.c    **** 		sbi(PORTB,5);				//LED3 ON
+  90               	me size = 0 */
+  92 0012 C59A      	.LM1:
+  93 0014 00C0      		sbic 54-32,5
+  94               		rjmp .L2
+  73:robokits.c    **** 	else					
+  74:robokits.c    **** 		cbi(PORTB,5);				//LED3 OFF	
+  95               	me size = 0 */
+  97 0016 C598      	.LM1:
+  98               		sbic 54-32,5
+  75:robokits.c    **** 	   
+  76:robokits.c    **** 	TCNT1 = TIMER_1_CNT;// reset counter to get this interrupt again
+  99               	l */
+ 100               	/* frame size = 0 */
+ 102 001a 95E8      	.LM1:
+ 103 001c 9DBD      		sbic 54-32,5
+ 104 001e 8CBD      		rjmp .L2
+  77:robokits.c    **** }
+ 106               	1,.LM1-.LFBB1
+ 107               	.LM1:
+ 108 0020 9F91      		sbic 54-32,5
+ 109 0022 8F91      		rjmp .L2
+ 111 0026 0FBE      	.LM2:
+ 112 0028 0F90      		sbi 56-32,5
+ 113 002a 1F90      		rjmp .L3
+ 114 002c 1895      	.L2:
+ 116               	.LM3:
+ 117               		cbi 56-32,5
+ 118               	.L3:
+ 120               	.LM4:
+  78:robokits.c    **** 
+  79:robokits.c    **** /*----------------------------------------------------------------
+  80:robokits.c    **** -----------------MAIN PROGRAM-------------------------------------
+  81:robokits.c    **** -----------------------------------------------------------------*/
+  82:robokits.c    **** 
+  83:robokits.c    **** int main(void)
+  84:robokits.c    **** {
+ 121               	BB1
+ 122               	.LM3:
+ 123               		cbi 56-32,5
+ 124               	.L3:
+  85:robokits.c    ****     
+  86:robokits.c    **** 	DDRB=0x20;						//SET DATA DIRECTION REGISTER
+ 126               	LM3-.LFBB1
+ 127               	.LM3:
+ 128 002e 80E2      		cbi 56-32,5
+ 129 0030 87BB      	.L3:
+  87:robokits.c    **** 									//SET 1 for OUTPUT PORT
+  88:robokits.c    **** 									//SET 0 FOR INPUT PORT
+  89:robokits.c    **** 									//ONLY PORTB.0 IS OUTPUT
+  90:robokits.c    **** 									//CONFIGURE AS PER REQUIREMENT
+  91:robokits.c    **** 									//DEFAULT ALL OTHERS ARE INPUT
+  92:robokits.c    **** 									//CHANGE ACCORDING TO USE
+  93:robokits.c    **** 	
+  94:robokits.c    **** 	DDRD=0x00;						//SET DATA DIRECTION REGISTER
+ 130               	mp .L3
+ 131               	.L2:
+  95:robokits.c    **** 									//SET 1 for OUTPUT PORT
+  96:robokits.c    **** 									//SET 0 FOR INPUT PORT
+  97:robokits.c    **** 									//ONLY PORTD.7 AND PORTD.6 ARE OUTPUT
+  98:robokits.c    **** 									//CONFIGURE AS PER REQUIREMENT
+  99:robokits.c    **** 									//DEFAULT ALL OTHERS ARE INPUT
+ 100:robokits.c    **** 									//CHANGE ACCORDING TO USE
+ 101:robokits.c    **** 	
+ 102:robokits.c    **** //	sbi(PORTB,0);					//LED1 ON (INDICATION FOR READY TO USE)
+ 103:robokits.c    **** 
+ 104:robokits.c    ****     TCCR1A = 0x00;               	// disable PWM and Compare Output Mode
+ 133               	FBB1
+ 134               	.LM2:
+ 135 0034 1FBC      		sbi 56-32,5
+ 105:robokits.c    ****     TCCR1B = TMC16_CK8;       	// use CLK/1024 prescale value
+ 136               	sbic 54-32,5
+ 137               		rjmp .L2
+ 139 0038 8EBD      	.LM2:
+ 106:robokits.c    ****     TCNT1  = CNT;        	// reset TCNT1
+ 140               	.LFBB1
+ 141               	.LM1:
+ 142 003a 8CEF      		sbic 54-32,5
+ 143 003c 9FEF      		rjmp .L2
+ 145 0040 8CBD      	.LM2:
+ 107:robokits.c    ****     
+ 108:robokits.c    ****     TIMSK  = _BV(TOIE1);         	// enable TCNT1 overflow 
+ 146               	.LFBB1
+ 147               	.LM1:
+ 148 0042 84E0      		sbic 54-32,5
+ 149 0044 89BF      		rjmp .L2
+ 109:robokits.c    ****     
+ 110:robokits.c    ****     sei();                       	// enable interrupts 
+ 150               	me size = 0 */
+ 152               	.LM1:
+ 153               		sbic 54-32,5
+ 154 0046 7894      		rjmp .L2
+ 156               	.LM2:
+ 157               		sbi 56-32,5
+ 158 0048 00C0      		rjmp .L3
+ 159               	.L2:
+ 161               	.LM3:
+ 162               		cbi 56-32,5
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\Users\ankit\AppData\Local\Temp/ccEmRB73.s:2      *ABS*:0000003f __SREG__
+C:\Users\ankit\AppData\Local\Temp/ccEmRB73.s:3      *ABS*:0000003e __SP_H__
+C:\Users\ankit\AppData\Local\Temp/ccEmRB73.s:4      *ABS*:0000003d __SP_L__
+C:\Users\ankit\AppData\Local\Temp/ccEmRB73.s:5      *ABS*:00000034 __CCP__
+C:\Users\ankit\AppData\Local\Temp/ccEmRB73.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\ankit\AppData\Local\Temp/ccEmRB73.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\ankit\AppData\Local\Temp/ccEmRB73.s:73     .text:00000000 __vector_8
+C:\Users\ankit\AppData\Local\Temp/ccEmRB73.s:120    .text:0000002e main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

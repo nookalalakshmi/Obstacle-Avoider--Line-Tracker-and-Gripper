@@ -1,0 +1,124 @@
+   1               		.file	"robokits.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.global __do_copy_data
+   8               		.global __do_clear_bss
+  10               		.text
+  11               	.Ltext0:
+  70               	.global	main
+  72               	main:
+   1:robokits.c    **** //			MADE BY ROBOKITS INDIA.
+   2:robokits.c    **** //			VISIT US AT WWW.ROBOKITS.ORG
+   3:robokits.c    **** //			PROGRAM FOR TAKING INPUT FROM A SWITCH
+   4:robokits.c    **** //			WRITTEN FOR PRODUCT ID 19
+   5:robokits.c    **** 
+   6:robokits.c    **** /*-------------------------------------------------------------------          
+   7:robokits.c    ****  Description:
+   8:robokits.c    ****  This example shows how to take input from a switch input.
+   9:robokits.c    **** 
+  10:robokits.c    ****  Note:
+  11:robokits.c    ****  If sw1 is pressed led2 is on.
+  12:robokits.c    ****  
+  13:robokits.c    ****  If sw2 is pressed led3 is on.
+  14:robokits.c    **** ---------------------------------------------------------------------*/
+  15:robokits.c    **** 
+  16:robokits.c    **** /*----------------------------------------------------------------
+  17:robokits.c    **** -----------------HEADER FILES-------------------------------------
+  18:robokits.c    **** -----------------------------------------------------------------*/
+  19:robokits.c    **** 
+  20:robokits.c    **** #include<avr/io.h>					//HEADER FILE FOR AVR INPUT OUTPUT
+  21:robokits.c    **** #include<compat/deprecated.h>		//HEADER FILE FOR FUNCTIONS LIKE SBI AND CBI
+  22:robokits.c    **** 
+  23:robokits.c    **** /*----------------------------------------------------------------
+  24:robokits.c    **** -----------------MAIN PROGRAM-------------------------------------
+  25:robokits.c    **** -----------------------------------------------------------------*/
+  26:robokits.c    **** 
+  27:robokits.c    **** int main(void)
+  28:robokits.c    **** {
+  73               	1)",36,0,0,main
+  74               	.global	main
+  76               	main:
+  29:robokits.c    **** 	DDRB=0x01;						//SET DATA DIRECTION REGISTER
+  79               	main:
+  81 0002 87BB      	.LM0:
+  30:robokits.c    **** 									//SET 1 for OUTPUT PORT
+  31:robokits.c    **** 									//SET 0 FOR INPUT PORT
+  32:robokits.c    **** 									//ONLY PORTB.0 IS OUTPUT
+  33:robokits.c    **** 									//CONFIGURE AS PER REQUIREMENT
+  34:robokits.c    **** 									//DEFAULT ALL OTHERS ARE INPUT
+  35:robokits.c    **** 									//CHANGE ACCORDING TO USE
+  36:robokits.c    **** 	
+  37:robokits.c    **** 	DDRD=0xC0;						//SET DATA DIRECTION REGISTER
+  82               	main, @function
+  83               	main:
+  85 0006 81BB      	.LM0:
+  38:robokits.c    **** 									//SET 1 for OUTPUT PORT
+  39:robokits.c    **** 									//SET 0 FOR INPUT PORT
+  40:robokits.c    **** 									//ONLY PORTD.7 AND PORTD.6 ARE OUTPUT
+  41:robokits.c    **** 									//CONFIGURE AS PER REQUIREMENT
+  42:robokits.c    **** 									//DEFAULT ALL OTHERS ARE INPUT
+  43:robokits.c    **** 									//CHANGE ACCORDING TO USE
+  44:robokits.c    **** 	
+  45:robokits.c    **** 	sbi(PORTB,0);					//LED1 ON (INDICATION FOR READY TO USE)
+  86               	main, @function
+  87               	main:
+  46:robokits.c    **** 	
+  47:robokits.c    **** 	sbi(PORTD,2);					//ENABLE PULL UP FOR SW1
+  90               	main:
+  48:robokits.c    **** 	sbi(PORTD,3);					//ENABLE PULL UP FOR SW2
+  93               	main:
+  95               	.LM0:
+  49:robokits.c    **** 	
+  50:robokits.c    **** 	while(1)						//START INFINITE LOOP TO SCAN INPUT FROM PORT
+  51:robokits.c    **** 	{
+  52:robokits.c    **** 		if (bit_is_clear(PIND, 2))	//IF SW1 IS PRESSED
+  96               	main, @function
+  97               	main:
+  99 0010 00C0      	.LM0:
+  53:robokits.c    **** 			sbi(PORTD,7);			//LED2 ON
+ 100               	main, @function
+ 101               	main:
+ 103 0014 00C0      	.LM0:
+ 104               	.LFBB1:
+  54:robokits.c    **** 		else						//ELSE
+  55:robokits.c    **** 			cbi(PORTD,7);			//LED2 OFF
+ 105               	nction
+ 106               	main:
+ 108               	.LM0:
+  56:robokits.c    **** 
+  57:robokits.c    **** 		if (bit_is_clear(PIND, 3))	//IF SW2 IS PRESSED
+ 109               	main, @function
+ 110               	main:
+ 112 001a 00C0      	.LM0:
+  58:robokits.c    **** 			sbi(PORTD,6);			//LED3 ON
+ 113               	main, @function
+ 114               	main:
+ 116 001e 00C0      	.LM0:
+ 117               	.LFBB1:
+  59:robokits.c    **** 		else						//ELSE
+  60:robokits.c    **** 			cbi(PORTD,6);			//LED3 OFF
+ 118               	nction
+ 119               	main:
+ 121 0022 00C0      	.LM0:
+ 122               	.LFBB1:
+ 123               	/* prologue: frame size=0 */
+ 124               	/* prologue end (size=0) */
+ 126               	.LM1:
+ 127               		ldi r24,lo8(1)
+ 128               		out 55-0x20,r24
+ 130               	.LM2:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccUGDmg5.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccUGDmg5.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccUGDmg5.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccUGDmg5.s:5      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccUGDmg5.s:6      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccUGDmg5.s:72     .text:00000000 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

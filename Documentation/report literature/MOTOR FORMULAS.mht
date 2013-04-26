@@ -1,0 +1,1120 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: MOTOR FORMULAS
+Date: Fri, 10 Apr 2009 17:25:12 +0530
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0052_01C9BA01.4DF400A0"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5579
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://ksele.com/mtrform.htm
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>MOTOR FORMULAS</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252"><!-- Fireworks MX Dreamweaver MX target.  =
+Created Fri May 30 16:55:13 GMT-0700 (Pacific Daylight Time) 2003-->
+<SCRIPT language=3DJavaScript>
+<!--
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=3Ddocument; =
+if((p=3Dn.indexOf("?"))>0&&parent.frames.length) {
+    d=3Dparent.frames[n.substring(p+1)].document; n=3Dn.substring(0,p);}
+  if(!(x=3Dd[n])&&d.all) x=3Dd.all[n]; for =
+(i=3D0;!x&&i<d.forms.length;i++) x=3Dd.forms[i][n];
+  for(i=3D0;!x&&d.layers&&i<d.layers.length;i++) =
+x=3DMM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=3Dd.getElementById(n); return x;
+}
+function MM_swapImage() { //v3.0
+  var i,j=3D0,x,a=3DMM_swapImage.arguments; document.MM_sr=3Dnew Array; =
+for(i=3D0;i<(a.length-2);i+=3D3)
+   if ((x=3DMM_findObj(a[i]))!=3Dnull){document.MM_sr[j++]=3Dx; =
+if(!x.oSrc) x.oSrc=3Dx.src; x.src=3Da[i+2];}
+}
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=3Ddocument.MM_sr; =
+for(i=3D0;a&&i<a.length&&(x=3Da[i])&&x.oSrc;i++) x.src=3Dx.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+ var d=3Ddocument; if(d.images){ if(!d.MM_p) d.MM_p=3Dnew Array();
+   var i,j=3Dd.MM_p.length,a=3DMM_preloadImages.arguments; for(i=3D0; =
+i<a.length; i++)
+   if (a[i].indexOf("#")!=3D0){ d.MM_p[j]=3Dnew Image; =
+d.MM_p[j++].src=3Da[i];}}
+}
+
+//-->
+</SCRIPT>
+
+<META content=3D"MSHTML 6.00.6000.16788" name=3DGENERATOR></HEAD>
+<BODY bgColor=3D#ffffff=20
+onload=3D"MM_preloadImages('images/menu_bar2_r3_c2_f2.gif','images/menu_b=
+ar2_r3_c4_f2.gif','images/menu_bar2_r3_c5_f2.gif','images/menu_bar2_r3_c6=
+_f2.gif','images/menu_bar2_r3_c7_f2.gif','images/menu_bar2_r3_c8_f2.gif',=
+'images/menu_bar2_r3_c9_f2.gif','images/menu_bar2_r3_c10_f2.gif','images/=
+menu_bar2_r3_c11_f2.gif','images/menu_bar2_r3_c12_f2.gif','images/menu_ba=
+r2_r3_c14_f2.gif','images/menu_bar2_r3_c15_f2.gif','images/menu_bar2_r3_c=
+16_f2.gif','images/menu_bar2_r3_c17_f2.gif');">
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D792 align=3Dcenter =
+border=3D0><!-- fwtable fwsrc=3D"index.png" fwbase=3D"index.gif" =
+fwstyle=3D"Dreamweaver" fwdocid =3D "742308039" fwnested=3D"0" -->
+  <TBODY>
+  <TR>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif"=20
+      width=3D121 border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D1=20
+      border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D34=20
+      border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D40=20
+      border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D51=20
+      border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D53=20
+      border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D35=20
+      border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D43=20
+      border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D57=20
+      border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D33=20
+      border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D41=20
+      border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D21=20
+      border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D34=20
+      border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D69=20
+      border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D65=20
+      border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D41=20
+      border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D32=20
+      border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D21=20
+      border=3D0></TD>
+    <TD><IMG height=3D1 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D1=20
+      border=3D0></TD></TR>
+  <TR>
+    <TD rowSpan=3D4><IMG height=3D117 alt=3D""=20
+      src=3D"http://ksele.com/images/menu_bar2_r1_c1.gif" width=3D121 =
+border=3D0=20
+      name=3Dmenu_bar2_r1_c1></TD>
+    <TD colSpan=3D17><IMG height=3D16 alt=3D""=20
+      src=3D"http://ksele.com/images/index_r1_c2.gif" width=3D671 =
+border=3D0=20
+      name=3Dindex_r1_c2></TD>
+    <TD><IMG height=3D16 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D1=20
+      border=3D0></TD></TR>
+  <TR>
+    <TD><IMG height=3D36 alt=3D"" =
+src=3D"http://ksele.com/images/index_r2_c2.gif"=20
+      width=3D1 border=3D0 name=3Dindex_r2_c2></TD>
+    <TD colSpan=3D10><IMG height=3D36 alt=3D""=20
+      src=3D"http://ksele.com/images/menu_bar2_r2_c3.gif" width=3D408 =
+border=3D0=20
+      name=3Dmenu_bar2_r2_c3></TD>
+    <TD colSpan=3D6><IMG height=3D36 alt=3D""=20
+      src=3D"http://ksele.com/images/index_r2_c13.gif" width=3D262 =
+border=3D0=20
+      name=3Dindex_r2_c13></TD>
+    <TD><IMG height=3D36 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D1=20
+      border=3D0></TD></TR>
+  <TR>
+    <TD colSpan=3D2><IMG height=3D40 alt=3D""=20
+      src=3D"http://ksele.com/images/menu_bar2_r3_c2.gif" width=3D35 =
+border=3D0=20
+      name=3Dmenu_bar2_r3_c2></TD>
+    <TD><A=20
+      =
+onmouseover=3D"MM_swapImage('menu_bar2_r3_c2','','images/menu_bar2_r3_c2_=
+f2.gif','menu_bar2_r3_c4','','images/menu_bar2_r3_c4_f2.gif',1);"=20
+      onmouseout=3DMM_swapImgRestore(); =
+href=3D"http://ksele.com/index.htm"><IMG=20
+      height=3D40 alt=3D"" =
+src=3D"http://ksele.com/images/menu_bar2_r3_c4.gif"=20
+      width=3D40 border=3D0 name=3Dmenu_bar2_r3_c4></A></TD>
+    <TD><IMG height=3D40 alt=3D""=20
+      src=3D"http://ksele.com/images/menu_bar2_r3_c5.gif" width=3D51 =
+border=3D0=20
+      name=3Dmenu_bar2_r3_c5></TD>
+    <TD><A=20
+      =
+onmouseover=3D"MM_swapImage('menu_bar2_r3_c5','','images/menu_bar2_r3_c5_=
+f2.gif','menu_bar2_r3_c6','','images/menu_bar2_r3_c6_f2.gif',1);"=20
+      onmouseout=3DMM_swapImgRestore(); =
+href=3D"http://ksele.com/services.htm"><IMG=20
+      height=3D40 alt=3D"" =
+src=3D"http://ksele.com/images/menu_bar2_r3_c6.gif"=20
+      width=3D53 border=3D0 name=3Dmenu_bar2_r3_c6></A></TD>
+    <TD><IMG height=3D40 alt=3D""=20
+      src=3D"http://ksele.com/images/menu_bar2_r3_c7.gif" width=3D35 =
+border=3D0=20
+      name=3Dmenu_bar2_r3_c7></TD>
+    <TD><A=20
+      =
+onmouseover=3D"MM_swapImage('menu_bar2_r3_c7','','images/menu_bar2_r3_c7_=
+f2.gif','menu_bar2_r3_c8','','images/menu_bar2_r3_c8_f2.gif',1);"=20
+      onmouseout=3DMM_swapImgRestore(); =
+href=3D"http://ksele.com/clients.htm"><IMG=20
+      height=3D40 alt=3D"" =
+src=3D"http://ksele.com/images/menu_bar2_r3_c8.gif"=20
+      width=3D43 border=3D0 name=3Dmenu_bar2_r3_c8></A></TD>
+    <TD><IMG height=3D40 alt=3D""=20
+      src=3D"http://ksele.com/images/menu_bar2_r3_c9.gif" width=3D57 =
+border=3D0=20
+      name=3Dmenu_bar2_r3_c9></TD>
+    <TD><A=20
+      =
+onmouseover=3D"MM_swapImage('menu_bar2_r3_c9','','images/menu_bar2_r3_c9_=
+f2.gif','menu_bar2_r3_c10','','images/menu_bar2_r3_c10_f2.gif',1);"=20
+      onmouseout=3DMM_swapImgRestore(); =
+href=3D"http://ksele.com/news.htm"><IMG=20
+      height=3D40 alt=3D"" =
+src=3D"http://ksele.com/images/menu_bar2_r3_c10.gif"=20
+      width=3D33 border=3D0 name=3Dmenu_bar2_r3_c10></A></TD>
+    <TD><IMG height=3D40 alt=3D""=20
+      src=3D"http://ksele.com/images/menu_bar2_r3_c11.gif" width=3D41 =
+border=3D0=20
+      name=3Dmenu_bar2_r3_c11></TD>
+    <TD colSpan=3D2><A=20
+      =
+onmouseover=3D"MM_swapImage('menu_bar2_r3_c11','','images/menu_bar2_r3_c1=
+1_f2.gif','menu_bar2_r3_c12','','images/menu_bar2_r3_c12_f2.gif',1);"=20
+      onmouseout=3DMM_swapImgRestore(); =
+href=3D"http://ksele.com/aboutus.htm"><IMG=20
+      height=3D40 alt=3D"" =
+src=3D"http://ksele.com/images/menu_bar2_r3_c12.gif"=20
+      width=3D55 border=3D0 name=3Dmenu_bar2_r3_c12></A></TD>
+    <TD><IMG height=3D40 alt=3D""=20
+      src=3D"http://ksele.com/images/menu_bar2_r3_c14.gif" width=3D69 =
+border=3D0=20
+      name=3Dmenu_bar2_r3_c14></TD>
+    <TD><A=20
+      =
+onmouseover=3D"MM_swapImage('menu_bar2_r3_c14','','images/menu_bar2_r3_c1=
+4_f2.gif','menu_bar2_r3_c15','','images/menu_bar2_r3_c15_f2.gif',1);"=20
+      onmouseout=3DMM_swapImgRestore(); =
+href=3D"http://ksele.com/contactus.htm"><IMG=20
+      height=3D40 alt=3D"" =
+src=3D"http://ksele.com/images/menu_bar2_r3_c15.gif"=20
+      width=3D65 border=3D0 name=3Dmenu_bar2_r3_c15></A></TD>
+    <TD><IMG height=3D40 alt=3D""=20
+      src=3D"http://ksele.com/images/menu_bar2_r3_c16.gif" width=3D41 =
+border=3D0=20
+      name=3Dmenu_bar2_r3_c16></TD>
+    <TD><A=20
+      =
+onmouseover=3D"MM_swapImage('menu_bar2_r3_c16','','images/menu_bar2_r3_c1=
+6_f2.gif','menu_bar2_r3_c17','','images/menu_bar2_r3_c17_f2.gif',1);"=20
+      onmouseout=3DMM_swapImgRestore(); =
+href=3D"http://ksele.com/links.htm"><IMG=20
+      height=3D40 alt=3D"" =
+src=3D"http://ksele.com/images/menu_bar2_r3_c17.gif"=20
+      width=3D32 border=3D0 name=3Dmenu_bar2_r3_c17></A></TD>
+    <TD><IMG height=3D40 alt=3D""=20
+      src=3D"http://ksele.com/images/menu_bar2_r3_c18.gif" width=3D21 =
+border=3D0=20
+      name=3Dmenu_bar2_r3_c18></TD>
+    <TD><IMG height=3D40 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D1=20
+      border=3D0></TD></TR>
+  <TR>
+    <TD colSpan=3D17><IMG height=3D25 alt=3D""=20
+      src=3D"http://ksele.com/images/index_r4_c2.gif" width=3D671 =
+border=3D0=20
+      name=3Dindex_r4_c2></TD>
+    <TD><IMG height=3D25 alt=3D"" =
+src=3D"http://ksele.com/images/spacer.gif" width=3D1=20
+      border=3D0></TD></TR></TBODY></TABLE>
+<TABLE width=3D740 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD width=3D740 height=3D500>&nbsp;</TD>
+    <P align=3Dleft><STRONG><BIG><BIG><FONT color=3D#000000>Options:=20
+    </FONT></BIG></BIG><BR>- <A =
+href=3D"http://ksele.com/formulas.htm">Back to=20
+    Useful Formulas</A><BR>- <A =
+href=3D"http://ksele.com/xfmrform.htm">Transformer=20
+    Formulas</A> </STRONG>
+    <P></P>
+    <HR>
+
+    <BLOCKQUOTE>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <P align=3Dleft><STRONG><FONT color=3D#000000>Calculating =
+Motor=20
+          Speed:</FONT></STRONG></P>
+          <P align=3Dleft><FONT color=3D#000080>A squirrel cage =
+induction motor is a=20
+          constant speed device. It cannot operate for any length of =
+time at=20
+          speeds below those shown on the nameplate without danger of =
+burning=20
+          out.</FONT></P>
+          <P align=3Dleft><STRONG><FONT color=3D#000000>To Calculate the =
+<EM>speed=20
+          of an induction motor</EM>, apply this =
+formula:</FONT></STRONG></P>
+          <P align=3Dcenter><STRONG><FONT =
+color=3D#ff0000>S<EM>rpm</EM></FONT> =3D=20
+          <U>120 x=20
+          =
+F<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;=20
+          P</STRONG></P></BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <P align=3Dleft><FONT color=3D#ff0000>S<EM>rpm</EM></FONT> =3D =
+synchronous=20
+          revolutions per minute.<BR><FONT color=3D#ff0000>120 =
+</FONT>&nbsp; =3D=20
+          constant<BR><FONT=20
+          color=3D#ff0000>F</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+=3D supply=20
+          frequency (in cycles/sec)<BR><FONT color=3D#ff0000>P&nbsp;=20
+          </FONT>&nbsp;&nbsp;&nbsp;&nbsp; =3D number of motor winding =
+poles</P>
+          <P align=3Dleft><FONT color=3D#000000><STRONG>Example:=20
+          </STRONG></FONT>What is the synchronous of a motor having 4 =
+poles=20
+          connected to a 60 hz power supply?</P>
+          <P align=3Dcenter><STRONG><FONT =
+color=3D#ff0000>S<EM>rpm</EM></FONT> =3D=20
+          <U>120 x=20
+          =
+F<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;=20
+          P<BR><FONT color=3D#ff0000>S<EM>rpm</EM></FONT> =3D <U>120 x=20
+          =
+60<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;=20
+          4<BR><FONT color=3D#ff0000>S<EM>rpm</EM></FONT> =3D=20
+          =
+<U>7200<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;=20
+          4<BR><FONT color=3D#ff0000>S<EM>rpm</EM></FONT> =3D 1800 =
+rpm</STRONG></P>
+          <HR>
+        </BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <P align=3Dleft><STRONG><FONT color=3D#000000>Calculating =
+Braking=20
+          Torque:</FONT></STRONG></P>
+          <P align=3Dleft><FONT color=3D#000080>Full-load motor torque =
+is calculated=20
+          to determine the required braking torque of a=20
+          motor.</FONT><STRONG><FONT color=3D#000000><BR>To Determine =
+<EM>braking=20
+          torque</EM> of a motor, apply this =
+formula:</FONT></STRONG></P>
+          <P align=3Dcenter><STRONG><FONT color=3D#ff0000>T</FONT><FONT=20
+          color=3D#000000> =3D<U> 5252 x =
+HP<BR></U><EM>&nbsp;&nbsp;&nbsp;=20
+          rpm</EM></FONT></STRONG></P>
+          <P align=3Dleft><FONT color=3D#ff0000>T </FONT><FONT=20
+          color=3D#000000>&nbsp;&nbsp;&nbsp;&nbsp; =3D full-load motor =
+torque (in=20
+          lb-ft)<BR></FONT><FONT color=3D#ff0000>5252</FONT><FONT =
+color=3D#000000> =3D=20
+          constant (33,000 divided by 3.14 x 2 =3D 5252)<BR></FONT><FONT =
+
+          color=3D#ff0000>HP </FONT><FONT color=3D#000000>&nbsp;&nbsp; =
+=3D motor=20
+          horsepower<BR></FONT><FONT color=3D#ff0000>rpm</FONT><FONT=20
+          color=3D#000000> =3D speed of motor shaft</FONT></P>
+          <P align=3Dleft><FONT =
+color=3D#000000><STRONG>Example:</STRONG>=20
+          </FONT><FONT color=3D#000080>What is the braking torque of a =
+60 HP, 240V=20
+          motor rotating at 1725 rpm?</FONT></P>
+          <P align=3Dcenter><STRONG><FONT color=3D#ff0000>T</FONT><FONT=20
+          color=3D#000000> =3D<U> 5252 x =
+HP<BR></U><EM>&nbsp;&nbsp;&nbsp;=20
+          rpm</EM></FONT><BR><FONT color=3D#ff0000>T</FONT><FONT =
+color=3D#000000>=20
+          =3D<U> 5252 x 60<BR></U>&nbsp;&nbsp;&nbsp;&nbsp; =
+1725</FONT><BR><FONT=20
+          color=3D#ff0000>T</FONT><FONT color=3D#000000> =3D<U>=20
+          315,120<BR></U><EM>&nbsp;&nbsp;&nbsp;&nbsp; =
+1725</EM></FONT><BR><FONT=20
+          color=3D#ff0000>T</FONT><FONT color=3D#000000> =3D 182.7=20
+          lb-ft</FONT></STRONG></P>
+          <HR>
+
+          <P><FONT color=3D#000000><STRONG>Calculating =
+Work:</STRONG></FONT></P>
+          <P>Work is applying a force over a distance. Force is any =
+cause that=20
+          changes the position, motion, direction, or shape of an =
+object. Work=20
+          is done when a force overcomes a resistance. Resistance is any =
+force=20
+          that tends to hinder the movement of an object.If an applied =
+force=20
+          does not cause motion the no work is produced.</P>
+          <P>To calculate the amount of work produced, apply this =
+formula:</P>
+          <P align=3Dcenter><STRONG><FONT color=3D#ff0000>W</FONT> =3D F =
+x=20
+          D</STRONG></P></BLOCKQUOTE></BLOCKQUOTE>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <P align=3Dleft><FONT color=3D#ff0000>W</FONT> =3D work (in =
+lb-ft)<BR><FONT=20
+          color=3D#ff0000>F</FONT>&nbsp; =3D force (in lb)<BR><FONT=20
+          color=3D#ff0000>D</FONT>&nbsp; =3D distance (in ft)</P>
+          <P align=3Dleft><FONT =
+color=3D#000000><STRONG>Example:</STRONG></FONT> How=20
+          much work is required to carry a 25 lb bag of groceries =
+vertically=20
+          from street level to the 4th floor of a building 30' above =
+street=20
+          level?</P>
+          <P align=3Dcenter><STRONG><FONT color=3D#ff0000>W</FONT> =3D F =
+x=20
+          D</STRONG><BR><STRONG><FONT color=3D#ff0000>W</FONT> =3D 25 x=20
+          30</STRONG><BR><STRONG><FONT color=3D#ff0000>W</FONT> =3D 750=20
+          -lb</STRONG></P>
+          <HR>
+
+          <P align=3Dleft><FONT color=3D#000000><STRONG>Calculating=20
+          Torque:</STRONG></FONT><BR></P></BLOCKQUOTE></BLOCKQUOTE>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <P align=3Dleft><FONT color=3D#000080>Torque is the force that =
+produces=20
+          rotation. It causes an object to rotate. Torque consist of a =
+force=20
+          acting on distance. Torque, like work, is measured is =
+pound-feet=20
+          (lb-ft). However, torque, unlike work, may exist even though =
+no=20
+          movement occurs.</FONT></P>
+          <P align=3Dleft><STRONG><FONT color=3D#000000>To calculate =
+torque, apply=20
+          this formula:</FONT></STRONG></P>
+          <P align=3Dcenter><STRONG><FONT color=3D#ff0000>T </FONT><FONT =
+
+          color=3D#000000>=3D </FONT><FONT color=3D#000080>F x =
+D</FONT></STRONG></P>
+          <P align=3Dleft><STRONG><FONT color=3D#ff0000>T</FONT><FONT =
+color=3D#000000>=20
+          =3D torque (in lb-ft)<BR></FONT><FONT =
+color=3D#ff0000>F</FONT><FONT=20
+          color=3D#000000> =3D force (in lb)<BR></FONT><FONT=20
+          color=3D#ff0000>D</FONT><FONT color=3D#000000> =3D distance =
+(in=20
+          ft)</FONT></STRONG></P>
+          <P align=3Dleft><STRONG><FONT color=3D#000000>Example:=20
+          </FONT></STRONG><FONT color=3D#000080>What is the torque =
+produced by a=20
+          60 lb force pushing on a 3' lever arm?</FONT></P>
+          <P align=3Dcenter><STRONG><FONT color=3D#ff0000>T </FONT><FONT =
+
+          color=3D#000000>=3D </FONT><FONT color=3D#000080>F x =
+D<BR></FONT><FONT=20
+          color=3D#ff0000>T </FONT><FONT color=3D#000000>=3D =
+</FONT><FONT=20
+          color=3D#000080>60 x 3<BR></FONT><FONT color=3D#ff0000>T =
+</FONT><FONT=20
+          color=3D#000000>=3D </FONT><FONT color=3D#000080>180 lb=20
+          ft</FONT></STRONG></P>
+          <HR>
+
+          <P><FONT color=3D#000000><STRONG>Calculating Full-load=20
+          Torque:</STRONG></FONT></P>
+          <P><FONT color=3D#000080>Full-load torque is the torque to =
+produce the=20
+          rated power at full speed of the motor. The amount of torque a =
+motor=20
+          produces at rated power and full speed can be found by using a =
+
+          horsepower-to-torque conversion chart. When using the <A=20
+          href=3D"http://ksele.com/hpconv.gif">conversion chart</A>, =
+place a=20
+          straight edge along the two known quantities and read the =
+unknown=20
+          quantity on the third line.</FONT></P></BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <P align=3Dleft><FONT color=3D#000000><STRONG>To calculate =
+motor full-load=20
+          torque, apply this formula:</STRONG></FONT></P>
+          <P align=3Dcenter><STRONG><FONT color=3D#ff0000>T</FONT><FONT=20
+          color=3D#000000> =3D <U>HP x 5252<BR></U>&nbsp;&nbsp;&nbsp;=20
+          rpm</FONT></STRONG></P></BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <P><STRONG><FONT color=3D#ff0000>T</FONT><FONT =
+color=3D#000000> =3D torque=20
+          (in lb-ft)<BR></FONT><FONT color=3D#ff0000>HP</FONT><FONT =
+color=3D#000000>=20
+          =3D horsepower<BR></FONT><FONT =
+color=3D#ff0000>5252</FONT><FONT=20
+          color=3D#000000> =3D constant<BR></FONT><FONT=20
+          color=3D#ff0000>rpm</FONT><FONT color=3D#000000> =3D =
+revolutions per=20
+          minute</FONT></STRONG></P>
+          <P><STRONG><FONT color=3D#000000>Example: =
+</FONT></STRONG><FONT=20
+          color=3D#000080>What is the FLT (Full-load torque) of a 30HP =
+motor=20
+          operating at 1725 rpm?</FONT></P>
+          <P align=3Dcenter><STRONG><FONT color=3D#ff0000>T</FONT><FONT=20
+          color=3D#000000> =3D <U>HP x 5252<BR></U>&nbsp;&nbsp;&nbsp;=20
+          rpm</FONT><BR><FONT color=3D#ff0000>T</FONT><FONT =
+color=3D#000000> =3D <U>30=20
+          x 5252<BR></U>&nbsp;&nbsp;&nbsp;&nbsp; 1725</FONT><BR><FONT=20
+          color=3D#ff0000>T</FONT><FONT color=3D#000000> =3D=20
+          <U>157,560<BR></U>&nbsp;&nbsp;&nbsp;&nbsp; =
+1725</FONT><BR><FONT=20
+          color=3D#ff0000>T</FONT><FONT color=3D#000000> =3D 91.34=20
+          lb-ft</FONT></STRONG></P>
+          <HR>
+
+          <P align=3Dleft><FONT color=3D#000000><STRONG>Calculating=20
+          Horsepower:</STRONG></FONT></P>
+          <P align=3Dleft><FONT color=3D#000080>Electrical power is =
+rated in=20
+          horsepower or watts. A horsepower is a unit of power equal to =
+746=20
+          watts or 33,0000 lb-ft per minute (550 lb-ft per second). A =
+watt is a=20
+          unit of measure equal to the power produced by a current of 1 =
+amp=20
+          across the potential difference of 1 volt. It is 1/746 of 1=20
+          horsepower. The watt is the base unit of electrical power. =
+Motor power=20
+          is rated in horsepower and watts.<BR>Horsepower is used to =
+measure the=20
+          energy produced by an electric motor while doing work. =
+</FONT></P>
+          <P align=3Dleft><FONT color=3D#000000><STRONG>To calculate the =
+horsepower=20
+          of a motor when current and efficiency, and voltage are known, =
+apply=20
+          this formula:</STRONG></FONT></P>
+          <P align=3Dcenter><STRONG><FONT color=3D#ff0000>HP =
+</FONT><FONT=20
+          color=3D#000080>=3D <U>V x I x=20
+          Eff<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+          746</FONT></STRONG></P>
+          <P align=3Dleft><STRONG><FONT color=3D#ff0000>HP </FONT><FONT=20
+          color=3D#000080>=3D horsepower<BR></FONT><FONT =
+color=3D#ff0000>V=20
+          </FONT><FONT color=3D#000080>&nbsp;&nbsp; =3D =
+voltage<BR></FONT><FONT=20
+          color=3D#ff0000>I </FONT><FONT =
+color=3D#000080>&nbsp;&nbsp;&nbsp; =3D curent=20
+          (amps)<BR></FONT><FONT color=3D#ff0000>Eff.</FONT><FONT =
+color=3D#000080> =3D=20
+          efficiency</FONT></STRONG></P>
+          <P align=3Dleft><STRONG><FONT =
+color=3D#000000>Example:</FONT><FONT=20
+          color=3D#000080> What is the horsepower of a 230v motor =
+pulling 4 amps=20
+          and having 82% efficiency?</FONT></STRONG></P>
+          <P align=3Dcenter><STRONG><FONT color=3D#ff0000>HP =
+</FONT><FONT=20
+          color=3D#000080>=3D <U>V x I x=20
+          Eff<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+          746</FONT><BR><FONT color=3D#ff0000>HP </FONT><FONT =
+color=3D#000080>=3D=20
+          <U>230 x 4 x =
+.82</U><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+          746</FONT><BR><FONT color=3D#ff0000>HP </FONT><FONT =
+color=3D#000080>=3D=20
+          <U>754.4<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+          746</FONT><BR><FONT color=3D#ff0000>HP </FONT><FONT =
+color=3D#000080>=3D 1=20
+          Hp<BR><BR></FONT></STRONG>Eff =3D efficiency / HP =3D =
+horsepower / V =3D=20
+          volts / A =3D amps / PF =3D power factor</P>
+          <DIV align=3Dcenter>
+          =
+<CENTER></DIV></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></P></TR></TBODY></T=
+ABLE>
+<TABLE cellSpacing=3D3 border=3D2>
+  <TBODY>
+  <TR>
+    <TD vAlign=3Dcenter align=3Dmiddle colSpan=3D5><STRONG>Horsepower=20
+      Formulas</STRONG></TD></TR>
+  <TR>
+    <TD vAlign=3Dcenter align=3Dmiddle rowSpan=3D2><FONT =
+color=3D#ff0000>To=20
+    Find</FONT></TD>
+    <TD vAlign=3Dcenter align=3Dmiddle rowSpan=3D2><FONT =
+color=3D#008000>Use=20
+      Formula</FONT></TD>
+    <TD vAlign=3Dcenter align=3Dmiddle colSpan=3D3><FONT=20
+    color=3D#000000>Example</FONT></TD></TR>
+  <TR>
+    <TD vAlign=3Dcenter align=3Dmiddle>Given</TD>
+    <TD vAlign=3Dcenter align=3Dmiddle>Find</TD>
+    <TD vAlign=3Dcenter align=3Dmiddle><STRONG><FONT=20
+      color=3D#000000>Solution</FONT></STRONG></TD></TR>
+  <TR>
+    <TD vAlign=3Dcenter align=3Dmiddle>HP</TD>
+    <TD vAlign=3Dcenter align=3Dmiddle><STRONG><FONT=20
+      color=3D#ff0000>HP</FONT></STRONG> <STRONG><FONT=20
+      color=3D#000000>=3D</FONT></STRONG> <FONT color=3D#008000><U>I X E =
+X=20
+      Eff.</U><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 746</FONT></TD>
+    <TD vAlign=3Dcenter align=3Dmiddle>240V, 20A, 85% Eff.</TD>
+    <TD vAlign=3Dcenter align=3Dmiddle>HP</TD>
+    <TD vAlign=3Dcenter align=3Dmiddle><STRONG><FONT=20
+      color=3D#ff0000>HP</FONT></STRONG> <STRONG><FONT=20
+      color=3D#000000>=3D</FONT></STRONG> <FONT color=3D#008000><U>240V =
+x 20A x=20
+      85%<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+      746</FONT><BR><STRONG><FONT =
+color=3D#000000>HP=3D5.5</FONT></STRONG></TD></TR>
+  <TR>
+    <TD vAlign=3Dcenter align=3Dmiddle>I</TD>
+    <TD vAlign=3Dcenter align=3Dmiddle><STRONG><FONT=20
+      color=3D#ff0000>I</FONT></STRONG> <FONT color=3D#000000>=3D</FONT> =
+<U>HP x=20
+      746<BR></U>&nbsp;&nbsp;&nbsp;&nbsp; E X Eff x PF</TD>
+    <TD vAlign=3Dcenter align=3Dmiddle>10HP, 240V, <BR>90% Eff., 88% =
+PF</TD>
+    <TD vAlign=3Dcenter align=3Dmiddle>I</TD>
+    <TD vAlign=3Dcenter align=3Dmiddle><STRONG><FONT color=3D#ff0000>I =
+</FONT><FONT=20
+      color=3D#000000>=3D</FONT></STRONG> <FONT color=3D#008000><U>10HP =
+x=20
+      746<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 240V x 90% x=20
+      88%</FONT><BR><STRONG><FONT color=3D#000000>I =3D 39=20
+  A</FONT></STRONG></TD></TR></TBODY></TABLE></CENTER>
+<DIV></DIV>
+<P><FONT color=3D#000000><STRONG>To calculate the horsepower of a motor =
+when the=20
+speed and torque are known, apply this formula:</STRONG></FONT></P>
+<P align=3Dcenter><STRONG><FONT color=3D#ff0000>HP</FONT><FONT =
+color=3D#000000> =3D=20
+<U>rpm x =
+T(torque)<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+5252(constant)</FONT></STRONG></P>
+<P align=3Dleft><STRONG><FONT color=3D#000000>Example: What is the =
+horsepower of a=20
+1725 rpm motor with a FLT 3.1 lb-ft?</FONT></STRONG></P>
+<P align=3Dcenter><STRONG><FONT color=3D#ff0000>HP</FONT><FONT =
+color=3D#000000> =3D=20
+<U>rpm x T<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+5252<BR></FONT><FONT color=3D#ff0000>HP</FONT><FONT color=3D#000000> =3D =
+<U>1725 x=20
+3.1<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+5252<BR></FONT><FONT=20
+color=3D#ff0000>HP</FONT><FONT color=3D#000000> =3D=20
+<U>5347.5<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+5252<BR></FONT><FONT color=3D#ff0000>HP</FONT><FONT color=3D#000000> =3D =
+1=20
+hp</FONT></STRONG></P>
+<HR>
+
+<BLOCKQUOTE></BLOCKQUOTE>
+<BLOCKQUOTE>
+  <P align=3Dleft><STRONG><FONT color=3D#000000>Calculating Synchronous=20
+  Speed:</FONT></STRONG></P>
+  <P align=3Dleft><FONT color=3D#000080>AC motors are considered =
+constant speed=20
+  motors. This is because the synchronous speed of an induction motor is =
+based=20
+  on the supply frequency and the number of poles in the motor winding. =
+Motor=20
+  are designed for 60 hz use have synchronous speeds of 3600, 1800, =
+1200, 900,=20
+  720, 600, 514, and 450 rpm. </FONT></P>
+  <P align=3Dleft><FONT color=3D#000000><STRONG>To calculate synchronous =
+speed of an=20
+  induction motor, apply this formula:</STRONG></FONT></P>
+  <P align=3Dcenter><STRONG><FONT=20
+  color=3D#ff0000>rpm<SMALL>syn</SMALL></FONT><SMALL><FONT =
+color=3D#000000> =3D<U>=20
+  </U></FONT></SMALL><FONT color=3D#000000><U>120 x=20
+  =
+f<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;=20
+  Np</FONT></STRONG></P>
+  <P align=3Dleft><STRONG><FONT color=3D#000000>rpm<SMALL>syn</SMALL> =
+=3D synchronous=20
+  speed (in=20
+  rpm)<BR>f&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+=3D supply=20
+  frequency in (cycles/sec)<BR>Np&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+=3D&nbsp;=20
+  number of motor poles</FONT></STRONG></P>
+  <P align=3Dleft><STRONG><FONT color=3D#000000>Example: =
+</FONT></STRONG><FONT=20
+  color=3D#000080>What is the synchronous speed of a four pole motor =
+operating at=20
+  50 hz.?</FONT></P>
+  <P align=3Dcenter><STRONG><FONT=20
+  color=3D#ff0000>rpm<SMALL>syn</SMALL></FONT><SMALL><FONT =
+color=3D#000000> =3D<U>=20
+  </U></FONT></SMALL><FONT color=3D#000000><U>120 x=20
+  =
+f<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;=20
+  Np<BR></FONT><FONT =
+color=3D#ff0000>rpm<SMALL>syn</SMALL></FONT><SMALL><FONT=20
+  color=3D#000000> =3D<U> </U></FONT></SMALL><FONT =
+color=3D#000000><U>120 x=20
+  =
+50<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;=20
+  4<BR></FONT><FONT =
+color=3D#ff0000>rpm<SMALL>syn</SMALL></FONT><SMALL><FONT=20
+  color=3D#000000> =3D<U> </U></FONT></SMALL><FONT=20
+  =
+color=3D#000000><U>6000<BR></U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+  4<BR></FONT><FONT =
+color=3D#ff0000>rpm<SMALL>syn</SMALL></FONT><SMALL><FONT=20
+  color=3D#000000> =3D </FONT></SMALL><FONT color=3D#000000>1500=20
+  rpm</FONT></STRONG></P></BLOCKQUOTE>
+<BLOCKQUOTE></BLOCKQUOTE>
+<BLOCKQUOTE></BLOCKQUOTE></TR></TABLE>
+<HR width=3D785>
+
+<DIV align=3Dcenter><APPLET id=3DClock =
+codeBase=3Dhttp://ksele.com/java-sys height=3D30=20
+width=3D100 align=3DabsMiddle code=3DDgclock.class name=3DClock><PARAM =
+NAME=3D"TimeFormat" VALUE=3D""><PARAM NAME=3D"ShowDate" =
+VALUE=3D"no"><PARAM NAME=3D"ShowFrame" VALUE=3D"yes"><PARAM NAME=3D"fg" =
+VALUE=3D"black"><PARAM NAME=3D"bg" VALUE=3D"white"></APPLET>
+<P></P></DIV>
+<DIV align=3Dcenter><A href=3D"http://ksele.com/index.htm">Home</A> | <A =
+
+href=3D"http://ksele.com/services.htm">Services</A> | <A=20
+href=3D"http://ksele.com/clients.htm">Clients</A> | <A=20
+href=3D"http://ksele.com/news.htm">News</A> | <A=20
+href=3D"http://ksele.com/aboutus.htm">About Us</A> | <A=20
+href=3D"http://ksele.com/contactus.htm">Contact Us</A> | <A=20
+href=3D"http://ksele.com/links.htm">Links</A><BR><FONT size=3D2>=A9 =
+<SMALL>Keystone=20
+Electric 2005</SMALL></FONT></DIV></BODY></HTML>
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/spacer.gif
+
+R0lGODlhAQABAIAAAP///wAAACH5BAEUAAAALAAAAAABAAEAAAICRAEAOw==
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/menu_bar2_r1_c1.gif
+
+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
+2cb70AjOZcdWNsdWSAl8LAiBAAA7
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/index_r1_c2.gif
+
+R0lGODlhnwIQAJEAAAAAAP///////wAAACH5BAUUAAIALAAAAACfAhAAAAJ5lI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsO
+i8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaZlQAAA7
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/index_r2_c2.gif
+
+R0lGODlhAQAkAJEAAAAAAP///////wAAACH5BAUUAAIALAAAAAABACQAAAIFlI+pywUAOw==
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/menu_bar2_r2_c3.gif
+
+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
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/index_r2_c13.gif
+
+R0lGODlhBgEkAJEAAAAAAP///////wAAACH5BAUUAAIALAAAAAAGASQAAAJvlI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsO
+i8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjIiFcAADs=
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/menu_bar2_r3_c2.gif
+
+R0lGODlhIwAoALMAAABUmZmZmf///2ZmZszMzF1rc+Pj46SkpEB/s3+pyyJmnr3Fy/T09H6IkbKy
+snl5eSH5BAQUAP8ALAAAAAAjACgAAASOUMhJq704661NQgogjmRpkhSBnGxbTokruwKzzrgp3Hkv
+xr6gUCQY9opGHDIpWzJbzucpKn1VoVcWNQvYZr1XcFXMLY85G7P6zFm7zZY3Drg2hNYMwh2e53Fr
+BgQNe2GABA4NBYRMEwyBDgcBDQ8PA5aXmJmalhWOBAuQAaKjpKWmoxYMjoEEra6vsLGuEQA7
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/menu_bar2_r3_c4.gif
+
+R0lGODlhKAAoALMAAABUmYCqzGZmZv///9jl72qbw8zMzChvqZmZmZa51QhZnO70+KfE3BJgoAAA
+AAAAACH5BAQUAP8ALAAAAAAoACgAAAT7cMhJq704680l+GAojmRpnmiqrmzrvnAsz3RNDwRwDIFt
+4jqerwTc9YajovCjKBQUoIB0Km2Emk+S8tigWAEZKKA7+Ya2H8bgsGN8BotDYcA4qA/pdTuZM34I
+A285YH1CAWt/gYR8QUeAgpB+h3gAj4siEgQLS5ZAi5KIlYqeZxSOo4Nok4mQmIWnraqhgBODZ6+s
+l7KUgAS+CYx+orG4q8M/uMeeu7lEyZ2pxbOKBMCujbnL0ryowUtzvgMFkYah4IBHt9gfCRLWn+WU
+AO0D70j3+Pn6+/z9/v/+BAgcSLCgwYMICSJYyLChw4cQIzY0QLGixYsYM2q0GAEAOw==
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/menu_bar2_r3_c5.gif
+
+R0lGODlhMwAoALMAAABUmZmZmerx9zB0rI6z0mZmZszMzL/U5Rllo////0B/s93o8Zy911aOu6nF
+3ShvqSH5BAQUAP8ALAAAAAAzACgAAAS6MMlJq7046837BmAojmRpnmiqrmzrvnAsz3Rt33iu73yu
+MAvJgqHooQYHAeEBejAEh4GRNBAwSoindAqqNlANwXZ6IKgYB65CgFglikbGdeWY9xbMVWMxTbQQ
+fm4eFX+Bd3Aqe1MMZityU2srCAKIPWVnaVxVjSYEYlxdVm0kDp+gXUkODQgIDaVRpyM/QQlDlbG4
+ubq7vL2+v78FwsPExcbHyMnGAczNzs/Q0dLT0AbW19jZ2tvc3doRADs=
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/menu_bar2_r3_c6.gif
+
+R0lGODlhNQAoALMAAABUmWqbw+70+D5+ssLW5yhvqWZmZoCqzNjl75mZmZa51RJgoP///8zMzFSM
+u6fE3CH5BAQUAP8ALAAAAAA1ACgAAAT/kMlJq7046827Z0AojmRpnmiqrmzrvnAsz3Rt33iu7zIh
+ObQC43B7MBACxmK2QABtR4CQyINFpyLHYRkaHIiFLWBxKADKWbGI/AyxR9HmM/kDDCaFO/HAGGAB
+dH0hDhMCXYUiUSOEAQUChnyNUkNnDAVYjI6GAAwCBQEMQJ2foSGKInxmCCCpiQgAq5N7lrAgnK9Y
+V5S3JK2xraavsVitWsGyvGdmnEcIDyG+rLQhsbqzy67Ip1kUAZWq0thGnM/E09m5ryfmFN+ooZTm
+2KYURBSbI+YCCPzuIVO05JGQwM/JGH5JqIgQ+A7bAgZGljDMZuIPAgXIgEE7x8zWxGMVfXdZc6fg
+lcaO/yi1KnlMDiyMf0ZG80dNkcBYvNIhq4VEyZhOq0xy5EPlIZGH+xT56AmuJxcAPkoNkkBg4zxQ
+3kIooEKIQVURUduErUK2rNmzaNOqXcu2rdu3KwzInUu3rt27ePPiTcC3r9+/gAMLHiy4geHDiBMr
+Xsy4MeMIADs=
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/menu_bar2_r3_c7.gif
+
+R0lGODlhIwAoALMAAABUmZmZmerx9zB0rMzMzGZmZo2z0WycxL/U5Rhko////1aOu93o8aC/2UB/
+syRspyH5BAQUAP8ALAAAAAAjACgAAATXUMlJq704602B/2AojmRpnmiqrmzrvnAsz7TnODXoNIwk
+NDjaACEwPA6GQUOAGMgGRU9CoEgAEkvnC7r4NA7Iz0GgbSEMnwXC0/SuWw6B9Qq0NUCK4Kpx9xjQ
+Xl0efC0MWkNzHgMMaYwsCh8IgiB/UpCPHgd9IgwPV5crDA4PCJ4jC3cLjnsGXyYIO5sqcQ2JIw5E
+eisIHBKrLFCAJAYCky1QtSNZT0QNCwkJqExlMjs9Cgx1Odvc3d7f4OHiLgXl5ufo6erqAe3u7/Dx
+8vIE9fb3+Pn6+hEAOw==
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/menu_bar2_r3_c8.gif
+
+R0lGODlhKwAoALMAAABUmYCqzGZmZvj6/MzMzFSMuyhvqZmZmdjl75a51afE3BJgoO70+Gqbw8LW
+5////yH5BAQUAP8ALAAAAAArACgAAAT/8MlJq704680x+GAojmRpnmiqrmzrvnAsz3RtxwvzMMs3
+9IZHoPVApB4DxODxeTgAC0SBaDwFh4GHAVCMda1CQHb7DWw/jUYowA70uIPAFFBwh650RK+LX1CA
+FU0SRjoScwB4IXxhClpBCogPCgaNZAwGCwUPDQYMAyCJIItDCExcRnhjpx+qpaBhiqhhrqupWqti
+t3WvQ7GRpKajuWRVqiKhTbLAyb/DuMZ3sKLKAKUT1KpfDRSHyLWzRQgICc3ZVQAJ4hK8IsK07OYj
+73gFet/L0Vi3XyHzYfF4aI0rt69KvR7+9BFrRktYPGfv4CgJZsTPkG3qhthaGIlBqScgQXLsePMl
+Qa8EEsgR3FIAJJ0lLm/InEmzps2bOHPq3MnzhICfQIMKHUq0KNEDSJMqXcq0qdOmBKJKnUq1qtWr
+ViMAADs=
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/menu_bar2_r3_c9.gif
+
+R0lGODlhOQAoALMAAABUmZmZmdzo8WZmZn2oyzh6r7rR4xBfn////6XD21SMu8zMzHSix4+00iNr
+p+zy9yH5BAQUAP8ALAAAAAA5ACgAAATeEMlJq7046827z0AojmRpnmiqrmzrvnAsz3Rt33iu73x5
+9DiG4AecFQwNR1F2aBgUS5niwYjGHImE0uo6EBIKIpelQG7Hq6ahgCZhEQ/CqMwQowgPhDZ3eCQK
+Uw0AWH8sDQIKBQkPdjQJBiIFD4dQLA4PbCEGCTgCmZqQLgShIQoCOAh2CXKinCIOCJ2fAAKsLaNz
+pzdZkQ9nlr4imzh9f4ExDQ+JBow5b3EzeHq/bdXW19jZ2tvc3d7f1QPi4+Tl5ufo6eriAe3u7/Dx
+8vP09e0L+Pn6+/z9/v8A8UUAADs=
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/menu_bar2_r3_c10.gif
+
+R0lGODlhIQAoALMAAABUmYCqzGZmZvj6/Njl71SMu6fE3ChvqZmZmcLW5+70+BJgoD5+smqbw8zM
+zP///yH5BAQUAP8ALAAAAAAhACgAAAT/8MlJq7046w26/2AojmRpnmiqrmzrvnBsPgNwPIH8STau
+e5LDLfcDSAJDTyGw6ByIy06g4GEEGMCHIQlQTKiBxwFAeHQehI5hYjg/FMnCo3FQ1MLj8jlt3K7P
+A2I+eGRmhHpGaUmENHODYoUAh2aJPTlPe1qPeYaQiGiWIGgKZTmTkp6UoFxABAmlqBSonHsACxRt
+iQGBpm8Ev7ORlQAFv4FjaDebH6fDHoxpR8HPqbXMkKDShAZpzaALBGDYabCn3orLoGE5t6TqvhK/
+oEYDBIG1DD7EgQlSGE22vCgAWKSgwYMIEypcyLCggIcQI0qcSFEigosYM2rcyFGjg48gB0OKHElS
+ZAQAOw==
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/menu_bar2_r3_c11.gif
+
+R0lGODlhKQAoALMAAABUmZmZmdzo8WZmZqnF3TN2rYWtzlySvv///w5dn8zMzJu8173T5e70+B9p
+pW6exSH5BAQUAP8ALAAAAAApACgAAATnEMlJq704680p+GAojmRpnmiqrmzrvnAsz3Rt3zjrGMzE
+GI7cJ7FAMA4JQOLQWyRvBQEhOHIQBAVbomF4lgwNr4yxCB0IDMIhhKYVGtSowPDgYT+ORla2KCu5
+ImBPZDN3AA8MYh8CDx8HAjMIID8kPEOSMpgAlCMLDJeFew+QI4yOpDELBEMNTiBEYR8EfjFvcQJS
+BgsNhnl7Y6sgZ2lrIG00W10msIq1Agy/IQUMhlpFDA8FDgWjCK5COz0SP1RC5ufo6err7O3tA/Dx
+8vP09fbzAfn6+/z9/v/8FAgcSLCgwYMIC0YAADs=
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/menu_bar2_r3_c12.gif
+
+R0lGODlhNwAoALMAAABUmYCqzGZmZvj6/Njl71SMu6fE3ChvqZmZmczMzO70+BJgoMLW5z5+smqb
+w////yH5BAQUAP8ALAAAAAA3ACgAAAT/8MlJq7046827r0AojmRpnmiqrmzrvnAsz3Rt33iu73zK
+PINCKPA4yAgP04MAODwCqh9B8VgAiMYYUsl0QlPL5vNaPCZLYa8qPSYaAt9QI9AQFb4BIRJOYn8X
+eWhdbRQKIQYTBiFbAGFIEn2DUA0ThiN+ZA4HVCEPBgeIi2eORVkimAMKBw4PQqeSZEZbalgAjKRc
+YlCYr7qxtkm0ZbdMjJG+YVemjUtUULWzhLKjxWfHasloFM/DwdLAndW52Ezj39Hc0+HggsiV1+fe
+6ey47WoLBFNjvcLq/fTi7O0LoYZfPF/QqLGDF8eXwXnofhFbeAkWAUUF1/2LmHCdsYrIX2A9JKPg
+UacBBAacQZIvzA8TUqhYYSkTpLAJrhZQUWAF2AQrCwac+BFEBFFXPZIqXcq0qdOnUKNKnUo1h4Cr
+WLNq3cq1q9evCMKKHUu2rNmzaNMmWMu2rdu3cOPKnRsBADs=
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/menu_bar2_r3_c14.gif
+
+R0lGODlhRQAoALMAAABUmZmZmePs9GZmZoCqzD9+sszMzL/U5fj6/GCUv6/J3yBpplCKuf///3+p
+zJ+/2SH5BAQUAP8ALAAAAABFACgAAASasMlJq7046827/6AEjGRpnmiqrmzrvnAsz3Rt33iu73zv
+/8CgcEgsGo/IpHLJbDp5oU0hiRgxFLNHYoSYIquAa3YL6AIdh7Q63SCEsTItFyGo2+2LH1gcJ5u/
+VnAxcmVeR1Eahk+LjI2Oj5CRkpOUlZaXmJmPA5ydnp+goaKjpKWdAaipqqusra6vsLGpBrS1tre4
+ubq7vL21EQA7
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/menu_bar2_r3_c15.gif
+
+R0lGODlhQQAoALMAAABUmYCqzGZmZvj6/MzMzFSMuyhvqdjl75mZmafE3O70+BJgoD5+ssLW52qb
+w////yH5BAQUAP8ALAAAAABBACgAAAT/8MlJq7046827/xogjmRpnmiqrmzrvnAsz3Rt33iu73zv
+/7mF4qFYwAIPQ+xxMCGVh4fqMTgMpK/nslnSRlOGRwCgdZVfTGcS8EWFx+VFoDAqBO4OETIxJt/7
+IgwBDCNUcyReWACChCJvAAUHRgUTCiJREwlkE0oUlgAJmSITXHprbaESmgCPJAMKBg4PdFEGYU1I
+DkqstkOjCQaho7BGI4m/wVithU2PbWlnI1+PWmldp1LUa8ujzWJsWNBrgXdXrN8GfdaI2Odj6Y7f
+JGnO4bjjDBXuJevG7dz75nkb8+zerlwGfAHsZwpKNnkjFg4E123TwX8QK15zCGABhVUSuvcVtNiQ
+YsiNFCEdsLItIwB630aWOXaSHUeb+yIZgUnQHkmS01wyBKqopLZOE2WOo/lN58tS/jguOEBHy9Gn
+In3OxAhnzVCmXXdRYSmiAZMhRkbKuqgA06gq5rCW8Nj2QYO3ZEUIIVIMgNkBdFJaO7ALwJAJeocU
+EVHgrokCVxx3VNwXiOXLmDNr3sy5s+fPoEOLFi2gtOnTqFOrXs26dWsEsGPLnk27tu3buHET2M27
+t+/fwIMLHz48AgA7
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/menu_bar2_r3_c16.gif
+
+R0lGODlhKQAoALMAAABUmZmZmerx9zB0rMzMzGZmZo6z0r/U5Rllo////0B/s93o8Zy911aOu6nF
+3ShvqSH5BAQUAP8ALAAAAAApACgAAASxMMlJq704680p+GAojmRpnmiqrmzrvnAsz3Rt3wqzSAuj
+3KLBQWB4fB4MwWEABAwEDBIiybQ9G6eGoEo7GFKMQ00hQKgSvxkjqnKwZQujqrGgJViI+0yvytMW
+aSl0NAxfKms0ZH0CgTJeYGI1T4YlBls3TwxmIw6XQEICDg0ICA2dS00gOTsJPY2psLGys7S1tre4
+uQAFvL2+v8DBwr8BxcbHyMnKy8gEzs/Q0dLT1NERADs=
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/menu_bar2_r3_c17.gif
+
+R0lGODlhIAAoALMAAABUmYCqzGZmZvj6/MLW51SMuyhvqZmZmdjl75a51Wqbw8zMzAhZnKfE3D5+
+sv///yH5BAQUAP8ALAAAAAAgACgAAATr8MlJq7046wy6/2AojmRpnmiqrmzrvnDsGU8APshI2+UO
+IgldzeRLFUnHTqAAYASeAQbA5zR0GAqFNAnATSsMn+LhaFLCw4+X1jA0HgZfAA54xx/ttGc9nN9t
+fgAIDx04XHyAcHJ0g0oFhzmLfwCBjTN6hZF9ig8DgwMdlh2QX4l3ZwAEZ6SSPgl0qQiDCD4GUV2a
+ppI3tJtWiJScpry7wH67CTm4xbnBk5WEy50IA3TGws7Bsg8KNBRWBQSlzj4F3B2vD0Ey7O3u7/Dx
+8vP0KAL3+Pn6+/z5B/8AAwocSDDggoMIEypcyDBhBAA7
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/menu_bar2_r3_c18.gif
+
+R0lGODlhFQAoALMAAABUmczMzGZmZv///5mZmSNnnvHx8Xh4eKampuPj40V5pby8vBdWiTRZdoOD
+g1aEqSH5BAQUAP8ALAAAAAAVACgAAASocMhJq73YgvJQMpkGjICygKFErs+XrmsRGOgFx4Fr3+ST
+Y7wVYrYLlhY6inHEIBAry5EDWVNFD8PqIAo4OLVcwRcaFT8n4bGyrEazz9alGfymy9tx45x8h2/r
+fHp4f312gn5RDHtrRg1eiHJYkEENAlNJeTCKj1qEmgKWVCIwlZZZRUylDkMJQAAMpQJerJ0SoLIH
+DgQICzO1EgTBu7w5vxMByMgJmBkRADs=
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://ksele.com/images/index_r4_c2.gif
+
+R0lGODlhnwIZAJEAAAAAAP///////wAAACH5BAUUAAIALAAAAACfAhkAAAKdlI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsO
+i8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp
++QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq+tXAAA7
+
+------=_NextPart_000_0052_01C9BA01.4DF400A0--

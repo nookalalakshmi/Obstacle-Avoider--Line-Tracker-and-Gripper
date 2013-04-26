@@ -1,0 +1,253 @@
+
+sensor.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000010a  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000003  00800060  0000010a  0000017e  2**0
+                  ALLOC
+  2 .stab         000004c8  00000000  00000000  00000180  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000706  00000000  00000000  00000648  2**0
+                  CONTENTS, READONLY, DEBUGGING
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	52 c0       	rjmp	.+164    	; 0xa8 <__vector_1>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	29 c0       	rjmp	.+82     	; 0x5c <__bad_interrupt>
+   a:	28 c0       	rjmp	.+80     	; 0x5c <__bad_interrupt>
+   c:	27 c0       	rjmp	.+78     	; 0x5c <__bad_interrupt>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	25 c0       	rjmp	.+74     	; 0x5c <__bad_interrupt>
+  12:	25 c0       	rjmp	.+74     	; 0x5e <__vector_9>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	22 c0       	rjmp	.+68     	; 0x5c <__bad_interrupt>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+  1e:	1e c0       	rjmp	.+60     	; 0x5c <__bad_interrupt>
+  20:	1d c0       	rjmp	.+58     	; 0x5c <__bad_interrupt>
+  22:	1c c0       	rjmp	.+56     	; 0x5c <__bad_interrupt>
+  24:	1b c0       	rjmp	.+54     	; 0x5c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	ea e0       	ldi	r30, 0x0A	; 10
+  3a:	f1 e0       	ldi	r31, 0x01	; 1
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <.do_copy_data_start>
+
+0000003e <.do_copy_data_loop>:
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+
+00000042 <.do_copy_data_start>:
+  42:	a0 36       	cpi	r26, 0x60	; 96
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <.do_copy_data_loop>
+
+00000048 <__do_clear_bss>:
+  48:	10 e0       	ldi	r17, 0x00	; 0
+  4a:	a0 e6       	ldi	r26, 0x60	; 96
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+  52:	a3 36       	cpi	r26, 0x63	; 99
+  54:	b1 07       	cpc	r27, r17
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+  58:	32 d0       	rcall	.+100    	; 0xbe <main>
+  5a:	55 c0       	rjmp	.+170    	; 0x106 <_exit>
+
+0000005c <__bad_interrupt>:
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
+
+0000005e <__vector_9>:
+char psensor=0;
+char onpsensor=0;
+char flag=0;
+//************** FUNCTIONS ********************
+SIGNAL(SIG_OVERFLOW0)            	// signal handler for tcnt1 overflow interrupt
+{
+  5e:	1f 92       	push	r1
+  60:	0f 92       	push	r0
+  62:	0f b6       	in	r0, 0x3f	; 63
+  64:	0f 92       	push	r0
+  66:	11 24       	eor	r1, r1
+  68:	8f 93       	push	r24
+  6a:	9f 93       	push	r25
+	psensor++;
+  6c:	90 91 60 00 	lds	r25, 0x0060
+  70:	9f 5f       	subi	r25, 0xFF	; 255
+  72:	90 93 60 00 	sts	0x0060, r25
+	onpsensor++;
+  76:	80 91 61 00 	lds	r24, 0x0061
+  7a:	8f 5f       	subi	r24, 0xFF	; 255
+  7c:	80 93 61 00 	sts	0x0061, r24
+	while(onpsensor<=20)
+  80:	85 31       	cpi	r24, 0x15	; 21
+  82:	48 f4       	brcc	.+18     	; 0x96 <__vector_9+0x38>
+	{
+		if(psensor==2)
+  84:	92 30       	cpi	r25, 0x02	; 2
+  86:	f1 f7       	brne	.-4      	; 0x84 <__vector_9+0x26>
+		{
+			if(bit_is_clear(PINC,5))
+  88:	9d 99       	sbic	0x13, 5	; 19
+  8a:	02 c0       	rjmp	.+4      	; 0x90 <__vector_9+0x32>
+			{
+				sbi(PORTC,5);
+  8c:	ad 9a       	sbi	0x15, 5	; 21
+  8e:	01 c0       	rjmp	.+2      	; 0x92 <__vector_9+0x34>
+				
+			}
+			else
+			{
+				cbi(PORTC,5);
+  90:	ad 98       	cbi	0x15, 5	; 21
+  92:	90 e0       	ldi	r25, 0x00	; 0
+  94:	f7 cf       	rjmp	.-18     	; 0x84 <__vector_9+0x26>
+	if(onpsensor==20)
+	{
+		onpsensor=0;
+		_delay_ms(100);
+	}
+	TCNT0  = TIMER_0_CNT;
+  96:	82 e8       	ldi	r24, 0x82	; 130
+  98:	82 bf       	out	0x32, r24	; 50
+	
+}
+  9a:	9f 91       	pop	r25
+  9c:	8f 91       	pop	r24
+  9e:	0f 90       	pop	r0
+  a0:	0f be       	out	0x3f, r0	; 63
+  a2:	0f 90       	pop	r0
+  a4:	1f 90       	pop	r1
+  a6:	18 95       	reti
+
+000000a8 <__vector_1>:
+
+//************** INTERRUPT0 ********************
+SIGNAL(SIG_INTERRUPT0)     
+{//signal handler for external interrupt int0          
+  a8:	1f 92       	push	r1
+  aa:	0f 92       	push	r0
+  ac:	0f b6       	in	r0, 0x3f	; 63
+  ae:	0f 92       	push	r0
+  b0:	11 24       	eor	r1, r1
+			sbi(PORTB,2);			//LED ON
+  b2:	c2 9a       	sbi	0x18, 2	; 24
+}
+  b4:	0f 90       	pop	r0
+  b6:	0f be       	out	0x3f, r0	; 63
+  b8:	0f 90       	pop	r0
+  ba:	1f 90       	pop	r1
+  bc:	18 95       	reti
+
+000000be <main>:
+int main(void)
+{
+//SET DATA DIRECTION REGISTER	
+//SET 1 for OUTPUT PORT
+//SET 0 FOR INPUT PORT
+	DDRB=0xC7;						//PB
+  be:	87 ec       	ldi	r24, 0xC7	; 199
+  c0:	87 bb       	out	0x17, r24	; 23
+	DDRC=0x00;						//PC
+  c2:	14 ba       	out	0x14, r1	; 20
+	DDRD=0xF1;						//PD
+  c4:	81 ef       	ldi	r24, 0xF1	; 241
+  c6:	81 bb       	out	0x11, r24	; 17
+	
+	TCCR0 = TMC8_CK8;       		// use CLK/1024 prescale value
+  c8:	83 e0       	ldi	r24, 0x03	; 3
+  ca:	83 bf       	out	0x33, r24	; 51
+    TCNT0  = TIMER_0_CNT;        			// reset TCNT1
+  cc:	82 e8       	ldi	r24, 0x82	; 130
+  ce:	82 bf       	out	0x32, r24	; 50
+    
+    TIMSK  = _BV(TOIE0);         	// enable TCNT1 overflow 
+  d0:	81 e0       	ldi	r24, 0x01	; 1
+  d2:	89 bf       	out	0x39, r24	; 57
+    
+    sei();                       	// enable interrupts 
+  d4:	78 94       	sei
+ 
+
+	while(1)						//INFINITE LOOP
+	{
+		if(onpsensor==0 || onpsensor==1 || onpsensor==2)
+  d6:	20 91 61 00 	lds	r18, 0x0061
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+  da:	44 ef       	ldi	r20, 0xF4	; 244
+  dc:	51 e0       	ldi	r21, 0x01	; 1
+  de:	23 30       	cpi	r18, 0x03	; 3
+  e0:	88 f0       	brcs	.+34     	; 0x104 <main+0x46>
+		{
+		}
+		else if(onpsensor==3)
+  e2:	23 30       	cpi	r18, 0x03	; 3
+  e4:	31 f4       	brne	.+12     	; 0xf2 <main+0x34>
+		{
+			if(bit_is_clear(PIND,2))
+  e6:	82 99       	sbic	0x10, 2	; 16
+  e8:	02 c0       	rjmp	.+4      	; 0xee <main+0x30>
+			{
+				sbi(PORTB,2);
+  ea:	c2 9a       	sbi	0x18, 2	; 24
+  ec:	fc cf       	rjmp	.-8      	; 0xe6 <main+0x28>
+			}
+			else
+			{
+				cbi(PORTB,2);
+  ee:	c2 98       	cbi	0x18, 2	; 24
+  f0:	fa cf       	rjmp	.-12     	; 0xe6 <main+0x28>
+  f2:	ca 01       	movw	r24, r20
+  f4:	01 97       	sbiw	r24, 0x01	; 1
+  f6:	f1 f7       	brne	.-4      	; 0xf4 <main+0x36>
+			}
+		}
+		else
+		{
+			_delay_ms(2);
+			if(bit_is_clear(PIND,2))
+  f8:	82 99       	sbic	0x10, 2	; 16
+  fa:	02 c0       	rjmp	.+4      	; 0x100 <main+0x42>
+			{
+				sbi(PORTB,2);
+  fc:	c2 9a       	sbi	0x18, 2	; 24
+  fe:	ef cf       	rjmp	.-34     	; 0xde <main+0x20>
+			}
+			else
+			{
+				cbi(PORTB,2);
+ 100:	c2 98       	cbi	0x18, 2	; 24
+ 102:	ed cf       	rjmp	.-38     	; 0xde <main+0x20>
+ 104:	ff cf       	rjmp	.-2      	; 0x104 <main+0x46>
+
+00000106 <_exit>:
+ 106:	f8 94       	cli
+
+00000108 <__stop_program>:
+ 108:	ff cf       	rjmp	.-2      	; 0x108 <__stop_program>

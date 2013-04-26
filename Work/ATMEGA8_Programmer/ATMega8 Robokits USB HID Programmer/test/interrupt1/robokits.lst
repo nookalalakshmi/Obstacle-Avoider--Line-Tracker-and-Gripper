@@ -1,0 +1,1584 @@
+   1               		.file	"robokits.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  11               		.text
+  12               	.Ltext0:
+  71               	.global	__vector_9
+  73               	__vector_9:
+   1:robokits.c    **** /*  
+   2:robokits.c    ****  Since _delay_ms() function will be affected by the interrupt generation 
+   3:robokits.c    ****  and gives more delay. So, after sometime the led timing will be mismached.
+   4:robokits.c    ****  
+   5:robokits.c    ****  Even the timer delay is not perfectly mached to 1s. Use smaller presclar
+   6:robokits.c    ****  for better operation.
+   7:robokits.c    ****  
+   8:robokits.c    ****   _delay_ms() function parameter passed should not exeed
+   9:robokits.c    ****  262.14ms / F_CPU in mhz.
+  10:robokits.c    ****  
+  11:robokits.c    ****  so for 16MHz the maximum paramer should be 16ms.
+  12:robokits.c    ****  
+  13:robokits.c    ****  For 1MHz it can be upto 262ms (250 is used for this example).
+  14:robokits.c    ****   
+  15:robokits.c    ****  Must be changed to get accurate delay at higher MHz.
+  16:robokits.c    ****  
+  17:robokits.c    ****  The timing will differ if the operating frequency is changed.
+  18:robokits.c    **** ---------------------------------------------------------------------*/
+  19:robokits.c    **** 
+  20:robokits.c    **** /*----------------------------------------------------------------
+  21:robokits.c    **** -----------------HEADER FILES-------------------------------------
+  22:robokits.c    **** -----------------------------------------------------------------*/
+  23:robokits.c    **** #include <avr/io.h>
+  24:robokits.c    **** #include <avr/interrupt.h>
+  25:robokits.c    **** #include <util/delay.h>
+  26:robokits.c    **** #include <compat/deprecated.h>		//HEADER FILE FOR FUNCTIONS LIKE SBI AND CBI
+  27:robokits.c    **** 
+  28:robokits.c    **** /*----------------------------------------------------------------
+  29:robokits.c    **** -----------------GLOBAL VARIABLES-------------------------------------
+  30:robokits.c    **** -----------------------------------------------------------------*/
+  31:robokits.c    **** 
+  32:robokits.c    **** static volatile uint8_t led;     // use volatile when variable is accessed from interrupts
+  33:robokits.c    **** int volatile flag=33,f1=0,c=1,a=0,x=0;
+  34:robokits.c    **** int volatile count=0,check;
+  35:robokits.c    **** int volatile count1=0,count2=0,count3=0,count4;
+  36:robokits.c    **** /*----------------------------------------------------------------
+  37:robokits.c    **** -----------------FUNCTION-----------------------------------------
+  38:robokits.c    **** -----------------------------------------------------------------*/
+  39:robokits.c    **** #define TIMER_1_CNT     0xd48d  // 3 sec, use AVRcalc to calculate these values
+  40:robokits.c    ****                                 // ((TCNT1H=0xf4, TCNT1L=0x8d)
+  41:robokits.c    **** 								// DECIMAL VALUE = 62605
+  42:robokits.c    **** 								// MAX VALUE = 65535
+  43:robokits.c    **** 								// TIMER OVERFLOW ON 65535-62605 = 2930 COUNTS
+  44:robokits.c    **** #define TIMER_0_CNT		0x54	//175 ms
+  45:robokits.c    **** 								//dec value=84
+  46:robokits.c    **** 								//max value=255
+  47:robokits.c    **** 								// timer overflow on 255-84=171 counts
+  48:robokits.c    **** 
+  49:robokits.c    **** #define TIMER_0_CNT2	0x9d	//100ms
+  50:robokits.c    **** 								//dec value=157
+  51:robokits.c    **** 								//timer overflow on 255-157=98 counts
+  52:robokits.c    **** #define CNT				0xfffe
+  53:robokits.c    **** #define TMC16_CK1024	(_BV(CS12)+_BV(CS10))	// 16 BIT TIMER1 AT 1024 PRESCALAR
+  54:robokits.c    **** 												// GIVES 1024*2930 = 3000320 CYCLES
+  55:robokits.c    **** 												// AT 1MHZ FREQUENCY DELAY OF 3.000320 SECONDS
+  56:robokits.c    **** #define TMC8_CK1024		(_BV(CS02)+_BV(CS00))				//8bit Timer 0 at 1024 prescaler
+  57:robokits.c    **** 												//gives 1024*171= 175104 cycles
+  58:robokits.c    **** 												//175.104 milliseconds
+  59:robokits.c    **** #define CNT0			0xf0
+  60:robokits.c    **** 
+  61:robokits.c    **** 
+  62:robokits.c    **** SIGNAL(SIG_OVERFLOW0)
+  63:robokits.c    **** { sbi(PORTB,0);
+  74               	 r0,__SREG__
+  75               		push r0
+  76               		clr __zero_reg__
+  77 0000 1F92      		push r24
+  78 0002 0F92      		push r25
+  79 0004 0FB6      	/* prologue: Signal */
+  80 0006 0F92      	/* frame size = 0 */
+  82 000a 8F93      	.LM1:
+  83 000c 9F93      		sbi 56-32,0
+  85               	.LM2:
+  86               		ldi r24,lo8(1)
+  87               		ldi r25,hi8(1)
+  88 000e C09A      		sts (check)+1,r25
+  64:robokits.c    **** 	check=1;
+  90               	.LM3:
+  91 0010 81E0      		lds r24,count1
+  92 0012 90E0      		lds r25,(count1)+1
+  93 0014 9093 0000 		or r24,r25
+  94 0018 8093 0000 		breq .L2
+  65:robokits.c    **** 	if(count1!=0)
+  95               	n	68,0,67,.LM4-.LFBB1
+  96               	.LM4:
+  97 001c 8091 0000 		lds r24,count1
+  98 0020 9091 0000 		lds r25,(count1)+1
+  99 0024 892B      		sbiw r24,1
+ 100 0026 01F0      		brne .L3
+  66:robokits.c    **** 	{
+  67:robokits.c    **** 		if(count1==1)
+ 101               	n	68,0,69,.LM5-.LFBB1
+ 102               	.LM5:
+ 103 0028 8091 0000 		ldi r24,lo8(84)
+ 104 002c 9091 0000 		rjmp .L21
+ 105 0030 0197      	.L3:
+  68:robokits.c    **** 		{
+  69:robokits.c    **** 			TCNT0=TIMER_0_CNT;
+ 107               		lds r24,count1
+ 108               		lds r25,(count1)+1
+ 109 0034 84E5      		sbiw r24,2
+ 110 0036 00C0      		breq .+2
+ 111               		rjmp .L14
+  70:robokits.c    **** 			if(bit_is_clear(PIND,6))
+  71:robokits.c    **** 				sbi(PORTD,6);
+  72:robokits.c    **** 			else
+  73:robokits.c    **** 				cbi(PORTD,6);
+  74:robokits.c    **** 		}
+  75:robokits.c    **** 		else if(count1==2)
+ 112               	bn	68,0,77,.LM7-.LFBB1
+ 113               	.LM7:
+ 114 0038 8091 0000 		ldi r24,lo8(-99)
+ 115 003c 9091 0000 	.L21:
+ 116 0040 0297      		out 82-32,r24
+ 118 0044 00C0      	.LM8:
+  76:robokits.c    **** 		{
+  77:robokits.c    **** 			TCNT0=TIMER_0_CNT2;
+ 119               	8-32,6
+ 120               		rjmp .L16
+ 121 0046 8DE9      		rjmp .L15
+ 122               	.L2:
+  78:robokits.c    **** 			if(bit_is_clear(PIND,6))
+ 124               	
+ 125               		lds r24,count2
+ 126 004a 8699      		lds r25,(count2)+1
+ 127 004c 00C0      		or r24,r25
+ 128 004e 00C0      		breq .L7
+  79:robokits.c    **** 				sbi(PORTD,6);
+  80:robokits.c    **** 			else
+  81:robokits.c    **** 				cbi(PORTD,6);
+  82:robokits.c    **** 
+  83:robokits.c    **** 		}
+  84:robokits.c    **** 	}
+  85:robokits.c    **** 	else if (count2!=0)
+ 130               	:
+ 131               		lds r24,count2
+ 132 0050 8091 0000 		lds r25,(count2)+1
+ 133 0054 9091 0000 		sbiw r24,1
+ 134 0058 892B      		brne .L8
+  86:robokits.c    **** 	{
+  87:robokits.c    **** 		if(count2==1)
+ 136               	
+ 137               		ldi r24,lo8(84)
+ 138 005c 8091 0000 		rjmp .L19
+ 139 0060 9091 0000 	.L8:
+ 141 0066 01F4      	.LM12:
+  88:robokits.c    **** 		{
+  89:robokits.c    **** 			TCNT0=TIMER_0_CNT;
+ 142               	r24,count2
+ 143               		lds r25,(count2)+1
+ 144 0068 84E5      		sbiw r24,2
+ 145 006a 00C0      		brne .L14
+  90:robokits.c    **** 			if(bit_is_clear(PIND,7))
+  91:robokits.c    **** 				sbi(PORTD,7);
+  92:robokits.c    **** 			else
+  93:robokits.c    **** 				cbi(PORTD,7);
+  94:robokits.c    **** 		}
+  95:robokits.c    **** 		else if(count2==2)
+ 147               	:
+ 148               		ldi r24,lo8(-99)
+ 149 006c 8091 0000 	.L19:
+ 150 0070 9091 0000 		out 82-32,r24
+ 152 0076 01F4      	.LM14:
+  96:robokits.c    **** 		{
+  97:robokits.c    **** 			TCNT0=TIMER_0_CNT2;
+ 153               	48-32,7
+ 154               		rjmp .L10
+ 156               	.LM15:
+ 157 007a 82BF      		sbi 50-32,7
+  98:robokits.c    **** 			if(bit_is_clear(PIND,7))
+ 158               	 .L14
+ 159               	.L10:
+ 161 007e 00C0      	.LM16:
+  99:robokits.c    **** 				sbi(PORTD,7);
+ 162               	 50-32,7
+ 163               		rjmp .L14
+ 164 0080 979A      	.L7:
+ 166               	.LM17:
+ 100:robokits.c    **** 			else
+ 101:robokits.c    **** 				cbi(PORTD,7);
+ 167               	r24,count3
+ 168               		lds r25,(count3)+1
+ 169 0084 9798      		or r24,r25
+ 170 0086 00C0      		breq .L14
+ 102:robokits.c    **** 
+ 103:robokits.c    **** 		}
+ 104:robokits.c    **** 	}
+ 105:robokits.c    **** 	else if (count3!=0)
+ 172               	:
+ 173               		lds r24,count3
+ 174 0088 8091 0000 		lds r25,(count3)+1
+ 175 008c 9091 0000 		sbiw r24,1
+ 176 0090 892B      		brne .L11
+ 106:robokits.c    **** 	{
+ 107:robokits.c    **** 		if(count3==1)
+ 178               	
+ 179               		ldi r24,lo8(84)
+ 180 0094 8091 0000 		rjmp .L24
+ 181 0098 9091 0000 	.L11:
+ 183 009e 01F4      	.LM20:
+ 108:robokits.c    **** 		{
+ 109:robokits.c    **** 			TCNT0=TIMER_0_CNT;
+ 184               	r24,count3
+ 185               		lds r25,(count3)+1
+ 186 00a0 84E5      		sbiw r24,2
+ 187 00a2 00C0      		brne .L14
+ 110:robokits.c    **** 			if(bit_is_clear(PIND,7) && bit_is_clear(PIND,6))
+ 111:robokits.c    **** 				{	
+ 112:robokits.c    **** 					sbi(PORTD,7);
+ 113:robokits.c    **** 					sbi(PORTD,6);
+ 114:robokits.c    **** 				}
+ 115:robokits.c    **** 			else
+ 116:robokits.c    **** 				{
+ 117:robokits.c    **** 					cbi(PORTD,7);
+ 118:robokits.c    **** 					cbi(PORTD,6);
+ 119:robokits.c    **** 				}
+ 120:robokits.c    **** 		}
+ 121:robokits.c    **** 		else if(count3==2)
+ 189               	:
+ 190               		ldi r24,lo8(-99)
+ 191 00a4 8091 0000 	.L24:
+ 192 00a8 9091 0000 		out 82-32,r24
+ 194 00ae 01F4      	.LM22:
+ 122:robokits.c    **** 		{
+ 123:robokits.c    **** 			TCNT0=TIMER_0_CNT2;
+ 195               	48-32,7
+ 196               		rjmp .L13
+ 197 00b0 8DE9      		sbic 48-32,6
+ 198               		rjmp .L13
+ 124:robokits.c    **** 			if(bit_is_clear(PIND,7) && bit_is_clear(PIND,6))
+ 200               	:
+ 201               		sbi 50-32,7
+ 202 00b4 8799      	.L15:
+ 204 00b8 8699      	.LM24:
+ 205 00ba 00C0      		sbi 50-32,6
+ 125:robokits.c    **** 				{
+ 126:robokits.c    **** 					sbi(PORTD,7);
+ 206               	.L14
+ 207               	.L13:
+ 209               	.LM25:
+ 127:robokits.c    **** 					sbi(PORTD,6);
+ 210               	 50-32,7
+ 211               	.L16:
+ 213 00c0 00C0      	.LM26:
+ 214               		cbi 50-32,6
+ 128:robokits.c    **** 				}
+ 129:robokits.c    **** 			else
+ 130:robokits.c    **** 				{
+ 131:robokits.c    **** 					cbi(PORTD,7);
+ 215               	
+ 216               	/* epilogue start */
+ 218               	.LM27:
+ 132:robokits.c    **** 					cbi(PORTD,6);
+ 219               	p r25
+ 220               		pop r24
+ 221 00c4 9698      		pop r0
+ 222               		out __SREG__,r0
+ 223               		pop r0
+ 133:robokits.c    **** 				}
+ 134:robokits.c    **** 
+ 135:robokits.c    **** 		}
+ 136:robokits.c    **** 		
+ 137:robokits.c    **** 	}
+ 138:robokits.c    **** 	
+ 139:robokits.c    **** 	
+ 140:robokits.c    **** }
+ 224               	__zero_reg__
+ 225               		reti
+ 227 00c8 8F91      	.Lscope1:
+ 229 00cc 0FBE      	.global	__vector_8
+ 231 00d0 1F90      	__vector_8:
+ 233               	.LM28:
+ 234               	.LFBB2:
+ 235               		push __zero_reg__
+ 236               		push r0
+ 237               		in r0,__SREG__
+ 238               		push r0
+ 141:robokits.c    **** SIGNAL(SIG_OVERFLOW1)            	// signal handler for tcnt1 overflow interrupt
+ 142:robokits.c    **** {
+ 239               	__
+ 240               		push r18
+ 241               		push r19
+ 242 00d4 1F92      		push r20
+ 243 00d6 0F92      		push r21
+ 244 00d8 0FB6      		push r22
+ 245 00da 0F92      		push r24
+ 246 00dc 1124      		push r25
+ 247 00de 2F93      	/* prologue: Signal */
+ 248 00e0 3F93      	/* frame size = 0 */
+ 250 00e4 5F93      	.LM29:
+ 251 00e6 6F93      		ldi r24,lo8(-11123)
+ 252 00e8 8F93      		ldi r25,hi8(-11123)
+ 253 00ea 9F93      		out (76)+1-32,r25
+ 254               		out 76-32,r24
+ 143:robokits.c    **** 	TCNT1 = TIMER_1_CNT;
+ 256               	,__zero_reg__
+ 257               		sts a,__zero_reg__
+ 258 00ec 8DE8      	.LBB84:
+ 259 00ee 94ED      	.LBB85:
+ 260 00f0 9DBD      	.LBB86:
+ 261 00f2 8CBD      	.LBB87:
+ 144:robokits.c    **** 	a=0;
+ 262               	s	"c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h",132,0,0,.Ltext1
+ 263               	.Ltext1:
+ 265 00f8 1092 0000 	.LM31:
+ 266               		ldi r18,lo8(-3036)
+ 267               		ldi r19,hi8(-3036)
+ 268               	.LBE87:
+ 269               	.LBE86:
+ 270               	.LBE85:
+ 271               	.LBE84:
+   1:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /* Copyright (c) 2002, Marek Michalkiewicz
+   2:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    Copyright (c) 2007 Joerg Wunsch
+   3:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    All rights reserved.
+   4:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+   5:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    Redistribution and use in source and binary forms, with or without
+   6:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    modification, are permitted provided that the following conditions are met:
+   7:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+   8:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    * Redistributions of source code must retain the above copyright
+   9:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      notice, this list of conditions and the following disclaimer.
+  10:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  11:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    * Redistributions in binary form must reproduce the above copyright
+  12:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      notice, this list of conditions and the following disclaimer in
+  13:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      the documentation and/or other materials provided with the
+  14:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      distribution.
+  15:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  16:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    * Neither the name of the copyright holders nor the names of
+  17:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      contributors may be used to endorse or promote products derived
+  18:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      from this software without specific prior written permission.
+  19:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  20:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  21:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  22:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  23:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  24:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  25:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  26:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  27:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  28:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  29:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  30:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   POSSIBILITY OF SUCH DAMAGE. */
+  31:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  32:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /* $Id: delay_basic.h,v 1.1 2007/05/13 21:23:20 joerg_wunsch Exp $ */
+  33:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  34:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #ifndef _UTIL_DELAY_BASIC_H_
+  35:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #define _UTIL_DELAY_BASIC_H_ 1
+  36:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  37:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #include <inttypes.h>
+  38:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  39:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /** \file */
+  40:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /** \defgroup util_delay_basic <util/delay_basic.h>: Basic busy-wait delay loops
+  41:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     \code
+  42:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     #include <util/delay_basic.h>
+  43:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     \endcode
+  44:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  45:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     The functions in this header file implement simple delay loops
+  46:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     that perform a busy-waiting.  They are typically used to
+  47:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     facilitate short delays in the program execution.  They are
+  48:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     implemented as count-down loops with a well-known CPU cycle
+  49:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     count per loop iteration.  As such, no other processing can
+  50:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     occur simultaneously.  It should be kept in mind that the
+  51:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     functions described here do not disable interrupts.
+  52:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  53:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     In general, for long delays, the use of hardware timers is
+  54:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     much preferrable, as they free the CPU, and allow for
+  55:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     concurrent processing of other events while the timer is
+  56:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     running.  However, in particular for very short delays, the
+  57:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     overhead of setting up a hardware timer is too much compared
+  58:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     to the overall delay time.
+  59:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  60:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Two inline functions are provided for the actual delay algorithms.
+  61:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  62:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** */
+  63:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  64:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #if !defined(__DOXYGEN__)
+  65:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** static inline void _delay_loop_1(uint8_t __count) __attribute__((always_inline));
+  66:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** static inline void _delay_loop_2(uint16_t __count) __attribute__((always_inline));
+  67:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #endif
+  68:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  69:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /** \ingroup util_delay_basic
+  70:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  71:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Delay loop using an 8-bit counter \c __count, so up to 256
+  72:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     iterations are possible.  (The value 256 would have to be passed
+  73:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     as 0.)  The loop executes three CPU cycles per iteration, not
+  74:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     including the overhead the compiler needs to setup the counter
+  75:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     register.
+  76:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  77:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Thus, at a CPU speed of 1 MHz, delays of up to 768 microseconds
+  78:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     can be achieved.
+  79:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** */
+  80:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** void
+  81:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** _delay_loop_1(uint8_t __count)
+  82:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** {
+  83:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 	__asm__ volatile (
+  84:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 		"1: dec %0" "\n\t"
+  85:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 		"brne 1b"
+  86:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 		: "=r" (__count)
+  87:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 		: "0" (__count)
+  88:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 	);
+  89:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** }
+  90:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  91:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /** \ingroup util_delay_basic
+  92:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  93:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Delay loop using a 16-bit counter \c __count, so up to 65536
+  94:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     iterations are possible.  (The value 65536 would have to be
+  95:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     passed as 0.)  The loop executes four CPU cycles per iteration,
+  96:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     not including the overhead the compiler requires to setup the
+  97:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     counter register pair.
+  98:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  99:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Thus, at a CPU speed of 1 MHz, delays of up to about 262.1
+ 100:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     milliseconds can be achieved.
+ 101:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****  */
+ 102:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** void
+ 103:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** _delay_loop_2(uint16_t __count)
+ 104:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** {
+ 105:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 	__asm__ volatile (
+ 272               	obokits.c",132,0,0,.Ltext2
+ 273               	.Ltext2:
+ 275 00fe 34EF      	.LM32:
+ 276               		ldi r20,lo8(1)
+ 277               		ldi r21,hi8(1)
+ 278               		rjmp .L26
+ 279               	.L29:
+ 281               	.LM33:
+ 145:robokits.c    **** 	while(a<=2930)
+ 146:robokits.c    **** 	{
+ 147:robokits.c    **** 	if(bit_is_clear(PIND,3))
+ 148:robokits.c    **** 	{
+ 149:robokits.c    **** 				sbi(PORTD,6);
+ 150:robokits.c    **** 				sbi(PORTD,7);
+ 151:robokits.c    **** 				_delay_ms(250);
+ 152:robokits.c    **** 				cbi(PORTD,6);
+ 153:robokits.c    **** 				cbi(PORTD,7);
+ 154:robokits.c    **** 				_delay_ms(250);
+ 155:robokits.c    **** 				
+ 156:robokits.c    **** 		
+ 157:robokits.c    **** 				f1=1;
+ 282               	2,3
+ 283               		rjmp .L27
+ 285 0102 50E0      	.LM34:
+ 286 0104 00C0      		sbi 50-32,6
+ 288               	.LM35:
+ 289               		sbi 50-32,7
+ 290 0106 8399      	.LBB91:
+ 291 0108 00C0      	.LBB92:
+ 292               	.LBB93:
+ 293               	.LBB94:
+ 295               	.Ltext3:
+ 297 010c 979A      	.LM36:
+ 298               		movw r24,r18
+ 299               	/* #APP */
+ 300               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 301               		1: sbiw r24,1
+ 302               		brne 1b
+ 303               	 ;  0 "" 2
+ 304               	/* #NOAPP */
+ 305               	.LBE94:
+ 306 010e C901      	.LBE93:
+ 307               	.LBE92:
+ 308               	.LBE91:
+ 310 0112 01F4      	.Ltext4:
+ 312               	.LM37:
+ 313               		cbi 50-32,6
+ 315               	.LM38:
+ 316               		cbi 50-32,7
+ 317               	.LBB95:
+ 318               	.LBB96:
+ 319               	.LBB97:
+ 320               	.LBB98:
+ 322               	.Ltext5:
+ 324 0116 9798      	.LM39:
+ 325               		movw r24,r18
+ 326               	/* #APP */
+ 327               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 328               		1: sbiw r24,1
+ 329               		brne 1b
+ 330               	 ;  0 "" 2
+ 331               	/* #NOAPP */
+ 332               	.LBE98:
+ 333 0118 C901      	.LBE97:
+ 334               	.LBE96:
+ 335               	.LBE95:
+ 337 011c 01F4      	.Ltext6:
+ 339               	.LM40:
+ 340               		sts (f1)+1,r21
+ 341               		sts f1,r20
+ 342               		rjmp .L28
+ 343               	.L27:
+ 345               	.LM41:
+ 346               		sbi 50-32,6
+ 348 011e 5093 0000 	.LM42:
+ 349 0122 4093 0000 		sbi 50-32,7
+ 350 0126 00C0      	.LBB99:
+ 351               	.LBB90:
+ 158:robokits.c    **** 				
+ 159:robokits.c    **** 		
+ 160:robokits.c    **** 	}
+ 161:robokits.c    **** 	
+ 162:robokits.c    **** 
+ 163:robokits.c    **** 	else
+ 164:robokits.c    **** 	{
+ 165:robokits.c    **** 				sbi(PORTD,6);
+ 352               	util/delay_basic.h",132,0,0,.Ltext7
+ 353               	.Ltext7:
+ 166:robokits.c    **** 				sbi(PORTD,7);
+ 355               	43:
+ 356               		movw r24,r18
+ 357 012a 979A      	/* #APP */
+ 358               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 359               		1: sbiw r24,1
+ 360               		brne 1b
+ 361               	 ;  0 "" 2
+ 362               	/* #NOAPP */
+ 363               	.LBE88:
+ 364               	.LBE89:
+ 365               	.LBE90:
+ 366 012c C901      	.LBE99:
+ 368               	.Ltext8:
+ 370 0130 01F4      	.LM44:
+ 371               		cbi 50-32,6
+ 373               	.LM45:
+ 374               		cbi 50-32,7
+ 375               	.LBB100:
+ 376               	.LBB101:
+ 377               	.LBB102:
+ 378               	.LBB103:
+ 167:robokits.c    **** 				_delay_ms(250);
+ 168:robokits.c    **** 				cbi(PORTD,6);
+ 379               	610/lib/gcc/../../avr/include/util/delay_basic.h",132,0,0,.Ltext9
+ 380               	.Ltext9:
+ 169:robokits.c    **** 				cbi(PORTD,7);
+ 382               	46:
+ 383               		movw r24,r18
+ 384 0134 9798      	/* #APP */
+ 385               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 386               		1: sbiw r24,1
+ 387               		brne 1b
+ 388               	 ;  0 "" 2
+ 389               	/* #NOAPP */
+ 390               	.LBE103:
+ 391               	.LBE102:
+ 392               	.LBE101:
+ 393 0136 C901      	.LBE100:
+ 395               	.Ltext10:
+ 397 013a 01F4      	.LM47:
+ 398               		sts (f1)+1,__zero_reg__
+ 399               		sts f1,__zero_reg__
+ 401               	.LM48:
+ 402               		sts (c)+1,__zero_reg__
+ 403               		sts c,__zero_reg__
+ 404               	.L28:
+ 170:robokits.c    **** 				_delay_ms(250);
+ 171:robokits.c    **** 		f1=0;
+ 406               	25,(a)+1
+ 407               		subi r24,lo8(-(504))
+ 408 013c 1092 0000 		sbci r25,hi8(-(504))
+ 409 0140 1092 0000 		sts (a)+1,r25
+ 172:robokits.c    **** 		c=0;
+ 410               	 a,r24
+ 411               	.L26:
+ 413 0148 1092 0000 	.LM50:
+ 414               		lds r24,a
+ 173:robokits.c    **** 	}
+ 174:robokits.c    **** 	a=a+504;
+ 415               	r25,(a)+1
+ 416               		subi r24,lo8(2931)
+ 417 014c 8091 0000 		sbci r25,hi8(2931)
+ 418 0150 9091 0000 		brlt .L29
+ 420 0156 9E4F      	.LM51:
+ 421 0158 9093 0000 		in r24,89-32
+ 422 015c 8093 0000 		andi r24,lo8(-5)
+ 423               		out 89-32,r24
+ 424               	/* epilogue start */
+ 426 0160 8091 0000 	.LM52:
+ 427 0164 9091 0000 		pop r25
+ 428 0168 8357      		pop r24
+ 429 016a 9B40      		pop r22
+ 430 016c 04F0      		pop r21
+ 175:robokits.c    **** 	}
+ 176:robokits.c    **** 	//TCNT1  = CNT;
+ 177:robokits.c    ****     cbi(TIMSK,2);
+ 431               	9
+ 432               		pop r18
+ 433 016e 89B7      		pop r0
+ 434 0170 8B7F      		out __SREG__,r0
+ 435 0172 89BF      		pop r0
+ 436               		pop __zero_reg__
+ 178:robokits.c    **** }
+ 438               	.Lscope2:
+ 440 0176 8F91      	.global	__vector_1
+ 442 017a 5F91      	__vector_1:
+ 444 017e 3F91      	.LM53:
+ 445 0180 2F91      	.LFBB3:
+ 446 0182 0F90      		push __zero_reg__
+ 447 0184 0FBE      		push r0
+ 448 0186 0F90      		in r0,__SREG__
+ 449 0188 1F90      		push r0
+ 450 018a 1895      		clr __zero_reg__
+ 451               		push r24
+ 452               		push r25
+ 453               		push r30
+ 454               		push r31
+ 455               	/* prologue: Signal */
+ 456               	/* frame size = 0 */
+ 179:robokits.c    **** 
+ 180:robokits.c    **** SIGNAL(SIG_INTERRUPT0)     
+ 181:robokits.c    **** /* signal handler for external interrupt int0 */
+ 182:robokits.c    **** {
+ 457               	54-.LFBB3
+ 458               	.LM54:
+ 459               		lds r24,count
+ 460 018c 1F92      		lds r25,(count)+1
+ 461 018e 0F92      		adiw r24,1
+ 462 0190 0FB6      		sts (count)+1,r25
+ 463 0192 0F92      		sts count,r24
+ 465 0196 8F93      	.LM55:
+ 466 0198 9F93      		lds r24,count
+ 467 019a EF93      		lds r25,(count)+1
+ 468 019c FF93      		sbiw r24,4
+ 469               		brne .L32
+ 183:robokits.c    **** 
+ 184:robokits.c    **** 	count++;
+ 471               	ount)+1,__zero_reg__
+ 472               		sts count,__zero_reg__
+ 473 019e 8091 0000 	.L32:
+ 474 01a2 9091 0000 	.LBB104:
+ 475 01a6 0196      	.LBB105:
+ 476 01a8 9093 0000 	.LBB106:
+ 477 01ac 8093 0000 	.LBB107:
+ 185:robokits.c    **** 	if(count==4)
+ 478               		"c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h",132,0,0,.Ltext11
+ 479               	.Ltext11:
+ 481 01b4 9091 0000 	.LM57:
+ 482 01b8 0497      		ldi r24,lo8(-3036)
+ 483 01ba 01F4      		ldi r25,hi8(-3036)
+ 186:robokits.c    **** 	{
+ 187:robokits.c    **** 		count=0;
+ 484               	r30,r24
+ 485               	/* #APP */
+ 486 01bc 1092 0000 	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 487 01c0 1092 0000 		1: sbiw r30,1
+ 488               		brne 1b
+ 489               	 ;  0 "" 2
+ 490               	/* #NOAPP */
+ 491               	.LBE107:
+ 492               	.LBE106:
+ 493               	.LBE105:
+ 494               	.LBE104:
+ 495               	.LBB108:
+ 496               	.LBB109:
+ 497 01c4 84E2      	.LBB110:
+ 498 01c6 94EF      	.LBB111:
+ 499 01c8 FC01      	/* #APP */
+ 500               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 501               		1: sbiw r24,1
+ 502 01ca 3197      		brne 1b
+ 503 01cc 01F4      	 ;  0 "" 2
+ 504               	/* epilogue start */
+ 505               	/* #NOAPP */
+ 506               	.LBE111:
+ 507               	.LBE110:
+ 508               	.LBE109:
+ 509               	.LBE108:
+ 511               	.Ltext12:
+ 513               	.LM58:
+ 514               		pop r31
+ 515               		pop r30
+ 516 01ce 0197      		pop r25
+ 517 01d0 01F4      		pop r24
+ 518               		pop r0
+ 519               		out __SREG__,r0
+ 520               		pop r0
+ 521               		pop __zero_reg__
+ 522               		reti
+ 524               	.Lscope3:
+ 188:robokits.c    **** 	}
+ 189:robokits.c    **** 	_delay_ms(250);
+ 190:robokits.c    **** 	_delay_ms(250);
+ 191:robokits.c    **** 
+ 192:robokits.c    **** }
+ 527               	lagcal:
+ 529 01d2 FF91      	.LM59:
+ 530 01d4 EF91      	.LFBB4:
+ 531 01d6 9F91      	/* prologue: function */
+ 532 01d8 8F91      	/* frame size = 0 */
+ 533 01da 0F90      		movw r18,r24
+ 535 01de 0F90      	.LM60:
+ 536 01e0 1F90      		cbi 56-32,0
+ 538               	.LM61:
+ 539               		out 89-32,__zero_reg__
+ 541               	.LM62:
+ 542               		ldi r24,lo8(1)
+ 543               		out 89-32,r24
+ 193:robokits.c    **** void flagcal(int f)
+ 194:robokits.c    **** {
+ 545               	8(5)
+ 546               		out 83-32,r24
+ 548               	.LM64:
+ 549               		ldi r24,lo8(-16)
+ 550 01e4 9C01      		out 82-32,r24
+ 195:robokits.c    **** 	cbi(PORTB,0);
+ 551               	2:
+ 552               	.LBB113:
+ 553 01e6 C098      	.LBB114:
+ 196:robokits.c    **** 	TIMSK=0x00;
+ 554               	B115:
+ 556 01e8 19BE      	.Ltext13:
+ 197:robokits.c    **** 	TIMSK  = _BV(TOIE0);
+ 557               	tabn	68,0,105,.LM65-.LFBB4
+ 558               	.LM65:
+ 559 01ea 81E0      		ldi r24,lo8(12500)
+ 560 01ec 89BF      		ldi r25,hi8(12500)
+ 198:robokits.c    **** 	TCCR0 = TMC8_CK1024;       	// use CLK/1024 prescale value
+ 561               	APP */
+ 562               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 563 01ee 85E0      		1: sbiw r24,1
+ 564 01f0 83BF      		brne 1b
+ 199:robokits.c    **** 	TCNT0  = CNT0;
+ 565               	0 "" 2
+ 566               	/* #NOAPP */
+ 567 01f2 80EF      	.LBE115:
+ 568 01f4 82BF      	.LBE114:
+ 569               	.LBE113:
+ 570               	.LBE112:
+ 572               	.Ltext14:
+ 574               	.LM66:
+ 575               		lds r24,flag
+ 576               		lds r25,(flag)+1
+ 577 01f6 84ED      		sbiw r24,11
+ 578 01f8 90E3      		brne .L46
+ 579               		rjmp .L50
+ 580               	.L37:
+ 582 01fc 01F4      	.LM67:
+ 583               		sbi 50-32,7
+ 584               	.LBB116:
+ 585               	.LBB117:
+ 586               	.LBB118:
+ 587               	.LBB119:
+ 589               	.Ltext15:
+ 200:robokits.c    **** 	/*TIMSK  = _BV(TOIE1);
+ 201:robokits.c    **** 		TCCR1A = 0x00;               	// disable PWM and Compare Output Mode
+ 202:robokits.c    **** 		TCCR1B = TMC16_CK1024;       	// use CLK/1024 prescale value
+ 203:robokits.c    **** 		TCNT1  = CNT;        	// reset TCNT1*/
+ 204:robokits.c    **** 	
+ 205:robokits.c    **** 		_delay_ms(50);
+ 206:robokits.c    **** 		
+ 207:robokits.c    **** 	
+ 208:robokits.c    **** 	
+ 209:robokits.c    **** 	if(flag==11)
+ 591               	PP */
+ 592               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 593 01fe 8091 0000 		1: sbiw r30,1
+ 594 0202 9091 0000 		brne 1b
+ 595 0206 0B97      	 ;  0 "" 2
+ 596 0208 01F4      	/* #NOAPP */
+ 597 020a 00C0      	.LBE119:
+ 598               	.LBE118:
+ 210:robokits.c    **** 	{
+ 211:robokits.c    **** 		while(f==1 || f==2)
+ 212:robokits.c    **** 		{
+ 213:robokits.c    **** 			//sbi(PORTB,0);
+ 214:robokits.c    **** 			sbi(PORTD,7);
+ 599               	
+ 600               	.LBE116:
+ 602               	.Ltext16:
+ 604               	.LM69:
+ 605               		cbi 50-32,7
+ 606               		rjmp .L47
+ 607               	.L50:
+ 609               	.LM70:
+ 610 020e F901      		movw r24,r18
+ 611               		sbiw r24,1
+ 612               	.LBB123:
+ 613 0210 3197      	.LBB122:
+ 614 0212 01F4      	.LBB121:
+ 615               	.LBB120:
+ 617               	.Ltext17:
+ 619               	.LM71:
+ 620               		ldi r18,lo8(12500)
+ 621               		ldi r19,hi8(12500)
+ 622               	.L47:
+ 215:robokits.c    **** 				_delay_ms(50);
+ 216:robokits.c    **** 			cbi(PORTD,7);
+ 623               	22:
+ 624               	.LBE123:
+ 626 0216 00C0      	.Ltext18:
+ 628               	.LM72:
+ 629               		cpi r24,2
+ 630 0218 C901      		cpc r25,__zero_reg__
+ 631 021a 0197      		brlo .L37
+ 632               		ret
+ 633               	.L46:
+ 635               	.LM73:
+ 636               		lds r24,flag
+ 637               		lds r25,(flag)+1
+ 638               		sbiw r24,12
+ 639               		brne .L48
+ 640 021c 24ED      		rjmp .L51
+ 641 021e 30E3      	.L41:
+ 643               	.LM74:
+ 644               		sbi 50-32,6
+ 645               	.LBB124:
+ 646               	.LBB125:
+ 647               	.LBB126:
+ 648               	.LBB127:
+ 650               	.Ltext19:
+ 652 0222 9105      	.LM75:
+ 653 0224 00F0      		movw r30,r18
+ 654 0226 0895      	/* #APP */
+ 655               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 217:robokits.c    **** 		}
+ 218:robokits.c    **** 	}
+ 219:robokits.c    **** 	else if(flag==12)
+ 656               	2
+ 657               	/* #NOAPP */
+ 658 0228 8091 0000 	.LBE127:
+ 659 022c 9091 0000 	.LBE126:
+ 660 0230 0C97      	.LBE125:
+ 661 0232 01F4      	.LBE124:
+ 663               	.Ltext20:
+ 220:robokits.c    **** 	{
+ 221:robokits.c    **** 		while(f==1 || f==2)
+ 222:robokits.c    **** 		{
+ 223:robokits.c    **** 			//sbi(PORTB,0);
+ 224:robokits.c    **** 			sbi(PORTD,6);
+ 664               	68,0,226,.LM76-.LFBB4
+ 665               	.LM76:
+ 666 0236 969A      		cbi 50-32,6
+ 667               		rjmp .L49
+ 668               	.L51:
+ 670               	.LM77:
+ 671               		movw r24,r18
+ 672               		sbiw r24,1
+ 673               	.LBB131:
+ 674               	.LBB130:
+ 675 0238 F901      	.LBB129:
+ 676               	.LBB128:
+ 678 023a 3197      	.Ltext21:
+ 680               	.LM78:
+ 681               		ldi r18,lo8(12500)
+ 682               		ldi r19,hi8(12500)
+ 683               	.L49:
+ 684               	.LBE128:
+ 685               	.LBE129:
+ 686               	.LBE130:
+ 687               	.LBE131:
+ 225:robokits.c    **** 				_delay_ms(50);
+ 226:robokits.c    **** 			cbi(PORTD,6);
+ 688               	,0,0,.Ltext22
+ 689               	.Ltext22:
+ 691 0240 00C0      	.LM79:
+ 692               		cpi r24,2
+ 693               		cpc r25,__zero_reg__
+ 694               		brlo .L41
+ 695 0242 C901      		ret
+ 696 0244 0197      	.L48:
+ 698               	.LM80:
+ 699               		lds r24,flag
+ 700               		lds r25,(flag)+1
+ 701               		sbiw r24,13
+ 702               		brne .L43
+ 704               	.LM81:
+ 705 0246 24ED      		movw r24,r18
+ 706 0248 30E3      		sbiw r24,1
+ 707               	.L44:
+ 708               		cpi r24,2
+ 709               		cpc r25,__zero_reg__
+ 710               		brlo .L44
+ 711               	.L43:
+ 712               		ret
+ 714               	.Lscope4:
+ 716 024a 8230      	.global	__vector_2
+ 718 024e 00F0      	__vector_2:
+ 720               	.LM82:
+ 227:robokits.c    **** 			//cbi(PORTB,0);
+ 228:robokits.c    **** 		}
+ 229:robokits.c    **** 	}
+ 230:robokits.c    **** 	else if(flag==13)
+ 721               	r0
+ 722               		in r0,__SREG__
+ 723 0252 8091 0000 		push r0
+ 724 0256 9091 0000 		clr __zero_reg__
+ 725 025a 0D97      		push r18
+ 726 025c 01F4      		push r19
+ 231:robokits.c    **** 	{
+ 232:robokits.c    **** 		while(f==1 || f==2)
+ 727               	r20
+ 728               		push r21
+ 729 025e C901      		push r22
+ 730 0260 0197      		push r23
+ 731               		push r24
+ 732 0262 8230      		push r25
+ 733 0264 9105      		push r26
+ 734 0266 00F0      		push r27
+ 735               		push r30
+ 736 0268 0895      		push r31
+ 737               	/* prologue: Signal */
+ 738               	/* frame size = 0 */
+ 740               	.LM83:
+ 741               		sbi 56-32,0
+ 233:robokits.c    **** 		{
+ 234:robokits.c    **** 		}
+ 235:robokits.c    **** 	}
+ 236:robokits.c    **** 		
+ 237:robokits.c    **** }
+ 238:robokits.c    **** 
+ 239:robokits.c    **** SIGNAL(SIG_INTERRUPT1)     
+ 240:robokits.c    **** /* signal handler for external interrupt int0 */
+ 241:robokits.c    **** {
+ 743               	32,3
+ 744               		rjmp .L53
+ 746 026a 1F92      	.LM85:
+ 747 026c 0F92      		ldi r24,lo8(4)
+ 748 026e 0FB6      		out 89-32,r24
+ 750 0272 1124      	.LM86:
+ 751 0274 2F93      		out 79-32,__zero_reg__
+ 753 0278 4F93      	.LM87:
+ 754 027a 5F93      		ldi r24,lo8(5)
+ 755 027c 6F93      		out 78-32,r24
+ 757 0280 8F93      	.LM88:
+ 758 0282 9F93      		ldi r24,lo8(-2)
+ 759 0284 AF93      		ldi r25,hi8(-2)
+ 760 0286 BF93      		out (76)+1-32,r25
+ 761 0288 EF93      		out 76-32,r24
+ 762 028a FF93      	.LBB132:
+ 763               	.LBB133:
+ 764               	.LBB134:
+ 242:robokits.c    **** 	sbi(PORTB,0);
+ 765               	inavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h",132,0,0,.Ltext23
+ 766               	.Ltext23:
+ 243:robokits.c    **** 	if(bit_is_clear(PIND,3))
+ 768               	89:
+ 769               		ldi r24,lo8(12500)
+ 770 028e 8399      		ldi r25,hi8(12500)
+ 771 0290 00C0      	/* #APP */
+ 244:robokits.c    **** 	{
+ 245:robokits.c    **** 		TIMSK  = _BV(TOIE1);
+ 772               	105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 773               		1: sbiw r24,1
+ 774 0292 84E0      		brne 1b
+ 775 0294 89BF      	 ;  0 "" 2
+ 246:robokits.c    **** 		TCCR1A = 0x00;               	// disable PWM and Compare Output Mode
+ 776               	NOAPP */
+ 777               		rjmp .L61
+ 778 0296 1FBC      	.L53:
+ 247:robokits.c    **** 		TCCR1B = TMC16_CK1024;       	// use CLK/1024 prescale value
+ 779               	E135:
+ 780               	.LBE134:
+ 781 0298 85E0      	.LBE133:
+ 782 029a 8EBD      	.LBE132:
+ 248:robokits.c    **** 		TCNT1  = CNT;        	// reset TCNT1
+ 783               	abs	"robokits.c",132,0,0,.Ltext24
+ 784               	.Ltext24:
+ 786 029e 9FEF      	.LM90:
+ 787 02a0 9DBD      		lds r24,flag
+ 788 02a2 8CBD      		lds r25,(flag)+1
+ 789               		sbiw r24,11
+ 790               		breq .L55
+ 791               		lds r24,flag
+ 792               		lds r25,(flag)+1
+ 793               		sbiw r24,12
+ 794               		breq .L55
+ 795               		lds r24,flag
+ 796               		lds r25,(flag)+1
+ 797 02a4 84ED      		sbiw r24,13
+ 798 02a6 90E3      		breq .+2
+ 799               		rjmp .L61
+ 800               	.L55:
+ 802 02aa 01F4      	.LM91:
+ 803               		lds r24,flag
+ 804               		lds r25,(flag)+1
+ 805 02ac 00C0      		sbiw r24,11
+ 806               		brne .L56
+ 808               	.LM92:
+ 809               		lds r24,count1
+ 810               		lds r25,(count1)+1
+ 811               		adiw r24,1
+ 812               		sts (count1)+1,r25
+ 249:robokits.c    **** 	
+ 250:robokits.c    **** 		_delay_ms(50);
+ 251:robokits.c    **** 	}
+ 252:robokits.c    **** 	else
+ 253:robokits.c    **** 	{
+ 254:robokits.c    **** 	if(flag==11 || flag==12 || flag==13)
+ 813               	60,.LM93-.LFBB5
+ 814               	.LM93:
+ 815 02ae 8091 0000 		sts (count2)+1,__zero_reg__
+ 816 02b2 9091 0000 		sts count2,__zero_reg__
+ 818 02b8 01F0      	.LM94:
+ 819 02ba 8091 0000 		sts (count3)+1,__zero_reg__
+ 820 02be 9091 0000 		sts count3,__zero_reg__
+ 822 02c4 01F0      	.LM95:
+ 823 02c6 8091 0000 		lds r24,count1
+ 824 02ca 9091 0000 		lds r25,(count1)+1
+ 825 02ce 0D97      		sbiw r24,3
+ 826 02d0 01F0      		brne .L57
+ 828               	.LM96:
+ 255:robokits.c    **** 	{
+ 256:robokits.c    **** 		
+ 257:robokits.c    **** 		if(flag==11)
+ 829               		ldi r25,hi8(1)
+ 830               		sts (count1)+1,r25
+ 831 02d4 8091 0000 		sts count1,r24
+ 832 02d8 9091 0000 	.L57:
+ 834 02de 01F4      	.LM97:
+ 258:robokits.c    **** 		{
+ 259:robokits.c    **** 			count1++;
+ 835               	24,count1
+ 836               		lds r25,(count1)+1
+ 837 02e0 8091 0000 		rjmp .L62
+ 838 02e4 9091 0000 	.L56:
+ 840 02ea 9093 0000 	.LM98:
+ 841 02ee 8093 0000 		lds r24,flag
+ 260:robokits.c    **** 			count2=0;
+ 842               	5,(flag)+1
+ 843               		sbiw r24,12
+ 844 02f2 1092 0000 		brne .L58
+ 261:robokits.c    **** 			count3=0;
+ 846               	9:
+ 847               		sts (count1)+1,__zero_reg__
+ 848 02fa 1092 0000 		sts count1,__zero_reg__
+ 262:robokits.c    **** 			if(count1==3)
+ 850               	00:
+ 851               		lds r24,count2
+ 852 0302 8091 0000 		lds r25,(count2)+1
+ 853 0306 9091 0000 		adiw r24,1
+ 854 030a 0397      		sts (count2)+1,r25
+ 855 030c 01F4      		sts count2,r24
+ 263:robokits.c    **** 			{
+ 264:robokits.c    **** 				count1=1;
+ 856               	n	68,0,272,.LM101-.LFBB5
+ 857               	.LM101:
+ 858 030e 81E0      		sts (count3)+1,__zero_reg__
+ 859 0310 90E0      		sts count3,__zero_reg__
+ 861 0316 8093 0000 	.LM102:
+ 862               		lds r24,count2
+ 265:robokits.c    **** 			}
+ 266:robokits.c    **** 			flagcal(count1);
+ 863               	5,(count2)+1
+ 864               		sbiw r24,3
+ 865 031a 8091 0000 		brne .L59
+ 867 0322 00C0      	.LM103:
+ 868               		ldi r24,lo8(1)
+ 267:robokits.c    **** 		}
+ 268:robokits.c    **** 		else if(flag==12)
+ 869               	25,hi8(1)
+ 870               		sts (count2)+1,r25
+ 871 0324 8091 0000 		sts count2,r24
+ 872 0328 9091 0000 	.L59:
+ 874 032e 01F4      	.LM104:
+ 269:robokits.c    **** 		{
+ 270:robokits.c    **** 			count1=0;
+ 875               	24,count2
+ 876               		lds r25,(count2)+1
+ 877 0330 1092 0000 		rjmp .L62
+ 878 0334 1092 0000 	.L58:
+ 271:robokits.c    **** 			count2++;
+ 879               	abn	68,0,279,.LM105-.LFBB5
+ 880               	.LM105:
+ 881 0338 8091 0000 		lds r24,flag
+ 882 033c 9091 0000 		lds r25,(flag)+1
+ 883 0340 0196      		sbiw r24,13
+ 884 0342 9093 0000 		brne .L61
+ 272:robokits.c    **** 			count3=0;
+ 886               	
+ 887               		sts (count1)+1,__zero_reg__
+ 888 034a 1092 0000 		sts count1,__zero_reg__
+ 273:robokits.c    **** 			if(count2==3)
+ 890               	107:
+ 891               		sts (count2)+1,__zero_reg__
+ 892 0352 8091 0000 		sts count2,__zero_reg__
+ 894 035a 0397      	.LM108:
+ 895 035c 01F4      		lds r24,count3
+ 274:robokits.c    **** 			{
+ 275:robokits.c    **** 				count2=1;
+ 896               	25,(count3)+1
+ 897               		adiw r24,1
+ 898 035e 81E0      		sts (count3)+1,r25
+ 899 0360 90E0      		sts count3,r24
+ 901 0366 8093 0000 	.LM109:
+ 902               		lds r24,count3
+ 276:robokits.c    **** 			}
+ 277:robokits.c    **** 			flagcal(count2);
+ 903               	5,(count3)+1
+ 904               		sbiw r24,3
+ 905 036a 8091 0000 		brne .L60
+ 907 0372 00C0      	.LM110:
+ 908               		ldi r24,lo8(1)
+ 278:robokits.c    **** 		}
+ 279:robokits.c    **** 		else if(flag==13)
+ 909               	25,hi8(1)
+ 910               		sts (count3)+1,r25
+ 911 0374 8091 0000 		sts count3,r24
+ 912 0378 9091 0000 	.L60:
+ 914 037e 01F4      	.LM111:
+ 280:robokits.c    **** 		{
+ 281:robokits.c    **** 			count1=0;
+ 915               	24,count3
+ 916               		lds r25,(count3)+1
+ 917 0380 1092 0000 	.L62:
+ 918 0384 1092 0000 		rcall flagcal
+ 282:robokits.c    **** 			count2=0;
+ 919               	:
+ 920               	/* epilogue start */
+ 922 038c 1092 0000 	.LM112:
+ 283:robokits.c    **** 			count3++;
+ 923               	 r31
+ 924               		pop r30
+ 925 0390 8091 0000 		pop r27
+ 926 0394 9091 0000 		pop r26
+ 927 0398 0196      		pop r25
+ 928 039a 9093 0000 		pop r24
+ 929 039e 8093 0000 		pop r23
+ 284:robokits.c    **** 			if(count3==3)
+ 930               	2
+ 931               		pop r21
+ 932 03a2 8091 0000 		pop r20
+ 933 03a6 9091 0000 		pop r19
+ 934 03aa 0397      		pop r18
+ 935 03ac 01F4      		pop r0
+ 285:robokits.c    **** 			{
+ 286:robokits.c    **** 				count3=1;
+ 936               	_SREG__,r0
+ 937               		pop r0
+ 938 03ae 81E0      		pop __zero_reg__
+ 939 03b0 90E0      		reti
+ 941 03b6 8093 0000 	.Lscope5:
+ 287:robokits.c    **** 			}
+ 288:robokits.c    **** 			flagcal(count3);
+ 943               		main
+ 945 03ba 8091 0000 	main:
+ 947               	.LM113:
+ 948 03c2 00D0      	.LFBB6:
+ 949               		push r12
+ 950               		push r13
+ 289:robokits.c    **** 		}
+ 290:robokits.c    **** 		
+ 291:robokits.c    **** 	}
+ 292:robokits.c    **** 	}
+ 293:robokits.c    **** 	
+ 294:robokits.c    **** 
+ 295:robokits.c    **** 		
+ 296:robokits.c    **** 
+ 297:robokits.c    **** }
+ 951               	4
+ 952               		push r15
+ 953 03c4 FF91      		push r16
+ 954 03c6 EF91      		push r17
+ 955 03c8 BF91      		push r28
+ 956 03ca AF91      		push r29
+ 957 03cc 9F91      	/* prologue: function */
+ 958 03ce 8F91      	/* frame size = 0 */
+ 960 03d2 6F91      	.LM114:
+ 961 03d4 5F91      		ldi r24,lo8(1)
+ 962 03d6 4F91      		out 55-32,r24
+ 964 03da 2F91      	.LM115:
+ 965 03dc 0F90      		ldi r24,lo8(-64)
+ 966 03de 0FBE      		out 49-32,r24
+ 968 03e2 1F90      	.LM116:
+ 969 03e4 1895      		sbi 56-32,0
+ 971               	.LM117:
+ 972               		sbi 50-32,2
+ 974               	.LM118:
+ 975               		sbi 50-32,3
+ 298:robokits.c    **** 	
+ 299:robokits.c    **** 
+ 300:robokits.c    **** 
+ 301:robokits.c    **** 
+ 302:robokits.c    **** /*-----------------MAIN PROGRAM-------------------------------------
+ 303:robokits.c    **** ----------------------------------------------------------------
+ 304:robokits.c    **** -----------------------------------------------------------------*/
+ 305:robokits.c    **** 
+ 306:robokits.c    **** int main(void)
+ 307:robokits.c    **** {    
+ 976               	LFBB6
+ 977               	.LM119:
+ 978               		ldi r24,lo8(-128)
+ 979 03e6 CF92      		out 91-32,r24
+ 981 03ea EF92      	.LM120:
+ 982 03ec FF92      		ldi r24,lo8(8)
+ 983 03ee 0F93      		out 85-32,r24
+ 985 03f2 CF93      	.LM121:
+ 986 03f4 DF93      	/* #APP */
+ 987               	 ;  334 "robokits.c" 1
+ 988               		sei
+ 308:robokits.c    **** 	DDRB=0x01;						//SET DATA DIRECTION REGISTER
+ 989               	 #NOAPP */
+ 990               	.LBB136:
+ 991 03f6 81E0      	.LBB137:
+ 992 03f8 87BB      	.LBB138:
+ 309:robokits.c    **** 									//SET 1 for OUTPUT PORT
+ 310:robokits.c    **** 									//SET 0 FOR INPUT PORT
+ 311:robokits.c    **** 									//ONLY PORTB.0 IS OUTPUT
+ 312:robokits.c    **** 									//CONFIGURE AS PER REQUIREMENT
+ 313:robokits.c    **** 									//DEFAULT ALL OTHERS ARE INPUT
+ 314:robokits.c    **** 									//CHANGE ACCORDING TO USE
+ 315:robokits.c    **** 	
+ 316:robokits.c    **** 	DDRD=0xC0;						//SET DATA DIRECTION REGISTER
+ 993               	139:
+ 995 03fa 80EC      	.Ltext25:
+ 317:robokits.c    **** 									//SET 1 for OUTPUT PORT
+ 318:robokits.c    **** 									//SET 0 FOR INPUT PORT
+ 319:robokits.c    **** 									//ONLY PORTD.7 AND PORTD.6 ARE OUTPUT
+ 320:robokits.c    **** 									//CONFIGURE AS PER REQUIREMENT
+ 321:robokits.c    **** 									//DEFAULT ALL OTHERS ARE INPUT
+ 322:robokits.c    **** 									//CHANGE ACCORDING TO USE
+ 323:robokits.c    **** 	
+ 324:robokits.c    **** 	sbi(PORTB,0);					//LED1 ON (INDICATION FOR READY TO USE)
+ 997               	22:
+ 998               		ldi r18,lo8(-3036)
+ 999 03fe C09A      		ldi r19,hi8(-3036)
+ 325:robokits.c    **** 	
+ 326:robokits.c    **** 	sbi(PORTD,2);					//ENABLE PULL UP FOR SW1
+ 1000               	E139:
+ 1001               	.LBE138:
+ 1002 0400 929A      	.LBE137:
+ 327:robokits.c    **** 	sbi(PORTD,3);					//ENABLE PULL UP FOR SW2
+ 1003               	E136:
+ 1005 0402 939A      	.Ltext26:
+ 328:robokits.c    ****     
+ 329:robokits.c    ****     GIMSK = _BV(INT1);
+ 1006               	tabn	68,0,351,.LM123-.LFBB6
+ 1007               	.LM123:
+ 1008 0404 80E8      		ldi r21,lo8(64)
+ 1009 0406 8BBF      		mov r12,r21
+ 330:robokits.c    ****     MCUCR = _BV(ISC11);
+ 1010               	abn	68,0,352,.LM124-.LFBB6
+ 1011               	.LM124:
+ 1012 0408 88E0      		ldi r20,lo8(2)
+ 1013 040a 85BF      		mov r13,r20
+ 331:robokits.c    ****   // MCUCR=0x00;
+ 332:robokits.c    **** 	
+ 333:robokits.c    ****     
+ 334:robokits.c    **** 	sei();                       	// enable interrupts 
+ 1014               	abn	68,0,380,.LM125-.LFBB6
+ 1015               	.LM125:
+ 1016               		ldi r16,lo8(10)
+ 1017               		ldi r17,hi8(10)
+ 1019               	.LM126:
+ 1020               		ldi r28,lo8(13)
+ 1021               		ldi r29,hi8(13)
+ 1023               	.LM127:
+ 1024               		ldi r26,lo8(12)
+ 1025               		ldi r27,hi8(12)
+ 1027               	.LM128:
+ 1028               		ldi r30,lo8(11)
+ 1029 040e 24E2      		ldi r31,hi8(11)
+ 1030 0410 34EF      	.LBB143:
+ 1031               	.LBB144:
+ 1032               	.LBB145:
+ 1033               	.LBB146:
+ 1035               	.Ltext27:
+ 335:robokits.c    ****     
+ 336:robokits.c    **** 	
+ 337:robokits.c    ****     for (;;) 					 	//BLINK LED2
+ 338:robokits.c    **** 	{	
+ 339:robokits.c    **** 		sbi(PORTD,6);
+ 340:robokits.c    **** 		sbi(PORTD,7);
+ 341:robokits.c    **** 		_delay_ms(250);
+ 342:robokits.c    **** 		cbi(PORTD,6);
+ 343:robokits.c    **** 		cbi(PORTD,7);
+ 344:robokits.c    **** 		_delay_ms(250);
+ 345:robokits.c    **** 		if(f1==1 && c!=0)
+ 346:robokits.c    **** 		{
+ 347:robokits.c    **** 			cbi(PORTD,6);
+ 348:robokits.c    **** 			cbi(PORTD,7);
+ 349:robokits.c    **** 			while(bit_is_clear(PIND,3))
+ 350:robokits.c    **** 			{
+ 351:robokits.c    **** 				GIMSK = _BV(INT0);
+ 1037               	8036)
+ 1038               		ldi r23,hi8(-28036)
+ 1039 0412 50E4      	.LBE146:
+ 1040 0414 C52E      	.LBE145:
+ 352:robokits.c    **** 				MCUCR = 0x02;
+ 1041               	144:
+ 1042               	.LBE143:
+ 1044 0418 D42E      	.Ltext28:
+ 353:robokits.c    **** 				
+ 354:robokits.c    **** 
+ 355:robokits.c    **** 				if(count==1)
+ 356:robokits.c    **** 				{
+ 357:robokits.c    **** 					flag=11;
+ 358:robokits.c    **** 					sbi(PORTD,6);
+ 359:robokits.c    **** 					cbi(PORTD,7);
+ 360:robokits.c    **** 					f1=0;
+ 361:robokits.c    **** 				}
+ 362:robokits.c    **** 				
+ 363:robokits.c    **** 				else if(count==2)
+ 364:robokits.c    **** 				{
+ 365:robokits.c    **** 					flag=12;
+ 366:robokits.c    **** 					sbi(PORTD,7);
+ 367:robokits.c    **** 					cbi(PORTD,6);
+ 368:robokits.c    **** 					f1=0;
+ 369:robokits.c    **** 				}
+ 370:robokits.c    **** 				else if(count==3)
+ 371:robokits.c    **** 				{
+ 372:robokits.c    **** 					flag=13;
+ 373:robokits.c    **** 					sbi(PORTD,6);
+ 374:robokits.c    **** 					sbi(PORTD,7);
+ 375:robokits.c    **** 					f1=0;
+ 376:robokits.c    **** 				}
+ 377:robokits.c    **** 				
+ 378:robokits.c    **** 				  else
+ 379:robokits.c    **** 				{
+ 380:robokits.c    **** 					flag=10;
+ 1045               	abn	68,0,390,.LM130-.LFBB6
+ 1046               	.LM130:
+ 1047 041a 0AE0      		ldi r20,lo8(1)
+ 1048 041c 10E0      		ldi r21,hi8(1)
+ 1050               	.LM131:
+ 1051 041e CDE0      		ldi r25,lo8(-128)
+ 1052 0420 D0E0      		mov r14,r25
+ 1054               	.LM132:
+ 1055 0422 ACE0      		ldi r24,lo8(8)
+ 1056 0424 B0E0      		mov r15,r24
+ 1057               	.L70:
+ 1059 0426 EBE0      	.LM133:
+ 1060 0428 F0E0      		sbi 50-32,6
+ 1062               	.LM134:
+ 1063               		sbi 50-32,7
+ 1064               	.LBB150:
+ 1065               	.LBB142:
+ 1066               	.LBB141:
+ 1067               	.LBB140:
+ 1069 042a 6CE7      	.Ltext29:
+ 1071               	.LM135:
+ 1072               		movw r24,r18
+ 1073               	/* #APP */
+ 1074               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 1075               		1: sbiw r24,1
+ 1076               		brne 1b
+ 381:robokits.c    **** 					cbi(PORTD,6);
+ 382:robokits.c    **** 					cbi(PORTD,7);
+ 383:robokits.c    **** 					f1=0;
+ 384:robokits.c    **** 					
+ 385:robokits.c    **** 				}
+ 386:robokits.c    **** 
+ 387:robokits.c    **** 			}
+ 388:robokits.c    **** 			_delay_ms(150);
+ 389:robokits.c    **** 		}
+ 390:robokits.c    **** 		c=1;
+ 1077               	
+ 1078               	.LBE141:
+ 1079 042e 41E0      	.LBE142:
+ 1080 0430 50E0      	.LBE150:
+ 391:robokits.c    **** 		
+ 392:robokits.c    **** 	GIMSK = _BV(INT1);
+ 1081               	.Ltext29:
+ 1083 0432 90E8      	.LM135:
+ 1084 0434 E92E      		movw r24,r18
+ 393:robokits.c    **** 	MCUCR = _BV(ISC11);
+ 1085               	6
+ 1087 0436 88E0      	.LM134:
+ 1088 0438 F82E      		sbi 50-32,7
+ 1089               	.LBB150:
+ 1090               	.LBB142:
+ 1091               	.LBB141:
+ 1092 043a 969A      	.LBB140:
+ 1094               	.Ltext29:
+ 1096               	.LM135:
+ 1097               		movw r24,r18
+ 1098               	/* #APP */
+ 1099               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 1100               		1: sbiw r24,1
+ 1101               		brne 1b
+ 1102               	 ;  0 "" 2
+ 1103               	/* #NOAPP */
+ 1104 043e C901      	.LBE140:
+ 1105               	.LBE141:
+ 1106               	.LBE142:
+ 1107 0440 0197      	.LBE150:
+ 1109               	.Ltext30:
+ 1111               	.LM136:
+ 1112               		cbi 50-32,6
+ 1114               	.LM137:
+ 1115               		cbi 50-32,7
+ 1116               	.LBB151:
+ 1117               	.LBB152:
+ 1118               	.LBB153:
+ 1119 0444 9698      	.LBB154:
+ 1121               	.Ltext31:
+ 1123               	.LM138:
+ 1124               		movw r24,r18
+ 1125               	/* #APP */
+ 1126               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 1127               		1: sbiw r24,1
+ 1128               		brne 1b
+ 1129               	 ;  0 "" 2
+ 1130               	/* #NOAPP */
+ 1131 0448 C901      	.LBE154:
+ 1132               	.LBE153:
+ 1133               	.LBE152:
+ 1134 044a 0197      	.LBE151:
+ 1136               	.Ltext32:
+ 1138               	.LM139:
+ 1139               		lds r24,f1
+ 1140               		lds r25,(f1)+1
+ 1141               		sbiw r24,1
+ 1142               		breq .+2
+ 1143               		rjmp .L64
+ 1144               		lds r24,c
+ 1145               		lds r25,(c)+1
+ 1146 044e 8091 0000 		or r24,r25
+ 1147 0452 9091 0000 		brne .+2
+ 1148 0456 0197      		rjmp .L64
+ 1150 045a 00C0      	.LM140:
+ 1151 045c 8091 0000 		cbi 50-32,6
+ 1153 0464 892B      	.LM141:
+ 1154 0466 01F4      		cbi 50-32,7
+ 1155 0468 00C0      		rjmp .L72
+ 1156               	.L69:
+ 1158 046a 9698      	.LM142:
+ 1159               		out 91-32,r12
+ 1161 046c 9798      	.LM143:
+ 1162 046e 00C0      		out 85-32,r13
+ 1164               	.LM144:
+ 1165               		lds r24,count
+ 1166 0470 CBBE      		lds r25,(count)+1
+ 1167               		sbiw r24,1
+ 1168               		brne .L66
+ 1170               	.LM145:
+ 1171               		sts (flag)+1,r31
+ 1172 0474 8091 0000 		sts flag,r30
+ 1174 047c 0197      	.LM146:
+ 1175 047e 01F4      		sbi 50-32,6
+ 1176               		rjmp .L74
+ 1177               	.L66:
+ 1179 0484 E093 0000 	.LM147:
+ 1180               		lds r24,count
+ 1181               		lds r25,(count)+1
+ 1182 0488 969A      		sbiw r24,2
+ 1183 048a 00C0      		brne .L67
+ 1185               	.LM148:
+ 1186               		sts (flag)+1,r27
+ 1187 048c 8091 0000 		sts flag,r26
+ 1189 0494 0297      	.LM149:
+ 1190 0496 01F4      		sbi 50-32,7
+ 1192               	.LM150:
+ 1193 0498 B093 0000 		cbi 50-32,6
+ 1194 049c A093 0000 		rjmp .L73
+ 1195               	.L67:
+ 1197 04a0 979A      	.LM151:
+ 1198               		lds r24,count
+ 1199               		lds r25,(count)+1
+ 1200 04a2 9698      		sbiw r24,3
+ 1201 04a4 00C0      		brne .L68
+ 1203               	.LM152:
+ 1204               		sts (flag)+1,r29
+ 1205 04a6 8091 0000 		sts flag,r28
+ 1207 04ae 0397      	.LM153:
+ 1208 04b0 01F4      		sbi 50-32,6
+ 1210               	.LM154:
+ 1211 04b2 D093 0000 		sbi 50-32,7
+ 1212 04b6 C093 0000 		rjmp .L73
+ 1213               	.L68:
+ 1215 04ba 969A      	.LM155:
+ 1216               		sts (flag)+1,r17
+ 1217               		sts flag,r16
+ 1219 04be 00C0      	.LM156:
+ 1220               		cbi 50-32,6
+ 1221               	.L74:
+ 1223 04c0 1093 0000 	.LM157:
+ 1224 04c4 0093 0000 		cbi 50-32,7
+ 1225               	.L73:
+ 1227 04c8 9698      	.LM158:
+ 1228               		sts (f1)+1,__zero_reg__
+ 1229               		sts f1,__zero_reg__
+ 1230               	.L72:
+ 1232               	.LM159:
+ 1233               		sbis 48-32,3
+ 1234               		rjmp .L69
+ 1235 04cc 1092 0000 	.LBB155:
+ 1236 04d0 1092 0000 	.LBB149:
+ 1237               	.LBB148:
+ 1238               	.LBB147:
+ 1240 04d4 839B      	.Ltext33:
+ 1242               	.LM160:
+ 1243               		movw r24,r22
+ 1244               	/* #APP */
+ 1245               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 1246               		1: sbiw r24,1
+ 1247               		brne 1b
+ 1248               	 ;  0 "" 2
+ 1249               	/* #NOAPP */
+ 1250 04d8 CB01      	.L64:
+ 1251               	.LBE147:
+ 1252               	.LBE148:
+ 1253 04da 0197      	.LBE149:
+ 1254 04dc 01F4      	.LBE155:
+ 1256               	.Ltext34:
+ 1258               	.LM161:
+ 1259               		sts (c)+1,r21
+ 1260               		sts c,r20
+ 1262               	.LM162:
+ 1263               		out 91-32,r14
+ 1265               	.LM163:
+ 1266 04de 5093 0000 		out 85-32,r15
+ 1267 04e2 4093 0000 		rjmp .L70
+ 1269               	.Lscope6:
+ 1270 04e6 EBBE      	.global	flag
+ 1271               		.data
+ 1274 04ea 00C0      	flag:
+ 1275               		.word	33
+ 1276               	.global	f1
+ 1277               	.global	f1
+ 1278               		.section .bss
+ 1281               	f1:
+ 1282 0000 2100      		.skip 2,0
+ 1283               	.global	c
+ 1284               		.data
+ 1287               	c:
+ 1288               		.word	1
+ 1289 0000 0000      	.global	a
+ 1290               	.global	a
+ 1291               		.section .bss
+ 1294               	a:
+ 1295 0002 0100      		.skip 2,0
+ 1296               	.global	x
+ 1297               	.global	x
+ 1300               	x:
+ 1301               		.skip 2,0
+ 1302 0002 0000      	.global	count
+ 1303               	.global	count
+ 1306               	count:
+ 1307               		.skip 2,0
+ 1308 0004 0000      	.global	count1
+ 1309               	.global	count1
+ 1312               	count1:
+ 1313               		.skip 2,0
+ 1314 0006 0000      	.global	count2
+ 1315               	.global	count2
+ 1318               	count2:
+ 1319               		.skip 2,0
+ 1320 0008 0000      	.global	count3
+ 1321               	.global	count3
+ 1324               	count3:
+ 1325               		.skip 2,0
+ 1326 000a 0000      		.comm check,2,1
+ 1327               		.comm count4,2,1
+ 1339               		.text
+ 1341               	.Letext0:
+ 1342               	...
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:2      *ABS*:0000003f __SREG__
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:3      *ABS*:0000003e __SP_H__
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:4      *ABS*:0000003d __SP_L__
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:5      *ABS*:00000034 __CCP__
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:73     .text:00000000 __vector_9
+                            *COM*:00000002 check
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:1319   .bss:00000008 count1
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:1325   .bss:0000000a count2
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:1331   .bss:0000000c count3
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:238    .text:000000d4 __vector_8
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:1301   .bss:00000002 a
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:1288   .bss:00000000 f1
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:1294   .data:00000002 c
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:456    .text:0000018c __vector_1
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:1313   .bss:00000006 count
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:544    .text:000001e4 flagcal
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:1281   .data:00000000 flag
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:742    .text:0000026a __vector_2
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:975    .text:000003e6 main
+C:\Users\ankit\AppData\Local\Temp/cc5RNy93.s:1307   .bss:00000004 x
+                            *COM*:00000002 count4
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

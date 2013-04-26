@@ -1,0 +1,864 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: Basics of integrated circuits (ICs)
+Date: Fri, 10 Apr 2009 13:20:58 +0530
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0052_01C9B9DF.2FACA920"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5579
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0052_01C9B9DF.2FACA920
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.solarbotics.net/bftgu/starting_elect_ic.html
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Basics of integrated circuits (ICs)</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dutf-8"><!--This file created 7/9/03 11:11 AM by Claris Home =
+Page version 3.0-->
+<META content=3D"MSHTML 6.00.6000.16788" =
+name=3DGENERATOR><X-CLARIS-WINDOW=20
+RIGHT=3D"626" LEFT=3D"96" BOTTOM=3D"854" TOP=3D"69"><X-CLARIS-TAGVIEW =
+MODE=3D"minimal">
+<SCRIPT language=3DJavaScript=20
+src=3D"http://www.solarbotics.net/bftgu/scripts/js_error.js"></SCRIPT>
+
+<META content=3D"BEAM robotics parts description" =
+name=3Dkeywords></HEAD>
+<BODY link=3D#000099 bgColor=3D#aa80ff=20
+background=3Dhttp://www.solarbotics.net/bftgu/pix/background.gif>
+<P>
+<TABLE width=3D"100%" border=3D0>
+  <TBODY>
+  <TR>
+    <TD vAlign=3Dtop width=3D180>
+      <P>
+      <TABLE width=3D"100%" bgColor=3D#330066 border=3D1>
+        <TBODY>
+        <TR>
+          <TD noWrap align=3Dmiddle bgColor=3D#bb99ff height=3D35>
+            <P><A =
+href=3D"http://www.solarbotics.net/bftgu/default.htm"><IMG=20
+            height=3D60 alt=3D"BFTGU Logo"=20
+            src=3D"http://www.solarbotics.net/bftgu/pix/small_logo.gif" =
+width=3D170=20
+            align=3Dmiddle border=3D0></A></P></TD></TR>
+        <TR>
+          <TD align=3Dmiddle bgColor=3D#bb99ff>
+            <P align=3Dleft><FONT size=3D-1><IMG height=3D9 alt=3D">"=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/pix/bullet_right.gif" width=3D5=20
+            align=3Dbottom>&nbsp;</FONT> <A=20
+            href=3D"http://www.solarbotics.net/bftgu/default.htm"><FONT=20
+            size=3D-1>Home</FONT></A></P></TD></TR>
+        <TR>
+          <TD align=3Dmiddle bgColor=3D#bb99ff>
+            <P align=3Dleft><FONT size=3D-1><IMG height=3D9 alt=3D">"=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/pix/bullet_right.gif" width=3D5=20
+            align=3Dbottom></FONT> <A=20
+            href=3D"http://www.solarbotics.net/bftgu/beam.html"><FONT =
+size=3D-1>BEAM=20
+            background</FONT></A></P></TD></TR>
+        <TR>
+          <TD align=3Dmiddle bgColor=3D#bb99ff>
+            <P align=3Dleft><FONT size=3D-1><IMG height=3D9 alt=3DV=20
+            src=3D"http://www.solarbotics.net/bftgu/pix/bullet_down.gif" =
+width=3D5=20
+            align=3Dbottom>&nbsp;</FONT> <A=20
+            =
+href=3D"http://www.solarbotics.net/bftgu/starting.html"><FONT=20
+            size=3D-1>Getting started</FONT></A></P></TD></TR>
+        <TR>
+          <TD bgColor=3D#bb99ff>
+            <P><FONT size=3D-1><IMG height=3D9 alt=3D&nbsp;=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/pix/bullet_blank.gif" width=3D8=20
+            align=3Dbottom><IMG height=3D9 alt=3D">"=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/pix/bullet_right.gif" width=3D5=20
+            align=3Dbottom></FONT> <A=20
+            =
+href=3D"http://www.solarbotics.net/bftgu/starting_electbasics.html"=20
+            target=3D""><FONT size=3D-1>Electronic =
+basics</FONT></A></P></TD></TR>
+        <TR>
+          <TD bgColor=3D#bb99ff>
+            <P><FONT size=3D-1><IMG height=3D9 alt=3D&nbsp;=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/pix/bullet_blank.gif" width=3D8=20
+            align=3Dbottom><IMG height=3D9 alt=3D">"=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/pix/bullet_right.gif" width=3D5=20
+            align=3Dbottom></FONT> <A=20
+            =
+href=3D"http://www.solarbotics.net/bftgu/starting_elect_passive.html"=20
+            target=3D""><FONT size=3D-1>Passive =
+components</FONT></A></P></TD></TR>
+        <TR>
+          <TD bgColor=3D#bb99ff>
+            <P><FONT size=3D-1><IMG height=3D9 alt=3D&nbsp;=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/pix/bullet_blank.gif" width=3D8=20
+            align=3Dbottom><IMG height=3D9 alt=3D">"=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/pix/bullet_right.gif" width=3D5=20
+            align=3Dbottom></FONT> <A=20
+            =
+href=3D"http://www.solarbotics.net/bftgu/starting_elect_semic.html"=20
+            target=3D""><FONT size=3D-1>Semiconductor=20
+components</FONT></A></P></TD></TR>
+        <TR>
+          <TD bgColor=3D#bb99ff>
+            <P><FONT size=3D-1><IMG height=3D9 alt=3D&nbsp;=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/pix/bullet_blank.gif" width=3D8=20
+            align=3Dbottom><IMG height=3D9 alt=3D">"=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/pix/bullet_right.gif" width=3D5=20
+            align=3Dbottom> Integrated Circuits</FONT></P></TD></TR>
+        <TR>
+          <TD bgColor=3D#bb99ff>
+            <P><FONT size=3D-1><IMG height=3D9 alt=3D&nbsp;=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/pix/bullet_blank.gif" width=3D8=20
+            align=3Dbottom><IMG height=3D9 alt=3D">"=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/pix/bullet_right.gif" width=3D5=20
+            align=3Dbottom></FONT> <A=20
+            =
+href=3D"http://www.solarbotics.net/bftgu/starting_nvnet.html"><FONT=20
+            size=3D-1>Nv neurons and Nv nets</FONT></A></P></TD></TR>
+        <TR>
+          <TD bgColor=3D#bb99ff>
+            <P><FONT size=3D-1><IMG height=3D9 alt=3D&nbsp;=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/pix/bullet_blank.gif" width=3D8=20
+            align=3Dbottom><IMG height=3D9 alt=3D">"=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/pix/bullet_right.gif" width=3D5=20
+            align=3Dbottom></FONT> <A=20
+            =
+href=3D"http://www.solarbotics.net/bftgu/starting_nu.html"><FONT=20
+            size=3D-1>Nu neurons</FONT></A></P></TD></TR>
+        <TR>
+          <TD align=3Dmiddle bgColor=3D#bb99ff>
+            <P align=3Dleft><FONT size=3D-1><IMG height=3D9 alt=3D">"=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/pix/bullet_right.gif" width=3D5=20
+            align=3Dbottom></FONT> <A=20
+            =
+href=3D"http://www.solarbotics.net/bftgu/tutorials.html"><FONT=20
+            =
+size=3D-1>Tutorials</FONT></A></P></TD></TR></TBODY></TABLE>&nbsp;</P>
+      <P><FONT size=3D-1>BEAM From the Ground Up is a </FONT><A=20
+      href=3D"http://www.solarbotics.net/library.html" =
+target=3D_blank><FONT=20
+      size=3D-1>BEAM Reference Library</FONT></A> <FONT=20
+size=3D-1>site.</FONT></P></TD>
+    <TD width=3D20>
+      <P></P></TD>
+    <TD vAlign=3Dtop width=3D"100%">
+      <P><FONT size=3D+2><B>The basics of integrated =
+circuits<BR></B></FONT><FONT=20
+      size=3D-1>Integration is a good thing</FONT><BR>
+      <HR>
+      <BR>Integrated circuits (<A=20
+      href=3D"http://encyclobeamia.solarbotics.net/articles/ic.html"=20
+      target=3D_blank>IC</A>s) are, much as their name would suggest, =
+small <A=20
+      =
+href=3D"http://encyclobeamia.solarbotics.net/articles/circuit.html"=20
+      target=3D_blank>circuit</A>s integrated into a plastic "chip." =
+They provide=20
+      a handy source of rich functionality in a tiny package. The <A=20
+      href=3D"http://encyclobeamia.solarbotics.net/articles/ic.html"=20
+      target=3D_blank>IC</A>s used in <A=20
+      href=3D"http://encyclobeamia.solarbotics.net/articles/beam.html"=20
+      target=3D_blank>BEAM</A>bots are really fairly simple -- often =
+just=20
+      consisting of multiple copies of a simple 2- or 3-element <A=20
+      =
+href=3D"http://encyclobeamia.solarbotics.net/articles/circuit.html"=20
+      target=3D_blank>circuit</A>, in a small, handy, package. This =
+means that=20
+      they are simple, easy to learn "<A=20
+      =
+href=3D"http://encyclobeamia.solarbotics.net/articles/circuit.html"=20
+      target=3D_blank>circuit</A> blocks," rather than very complex =
+"black boxes".
+      <P></P>
+      <P>Think of them as just a natural progression from <A=20
+      =
+href=3D"http://encyclobeamia.solarbotics.net/articles/circuit.html"=20
+      target=3D_blank>circuit</A>s built from discrete components.</P>
+      <P><A =
+href=3D"http://encyclobeamia.solarbotics.net/articles/ic.html"=20
+      target=3D_blank>IC</A>s come in a variety of packages (2 are =
+predominant for=20
+      our uses), and are based on a number of different core =
+technologies (also=20
+      known as logic families, we'll again be concerned with just =
+2).</P>
+      <P>&nbsp;</P>
+      <P><B>Logic Families<BR></B>For the purposes of <A=20
+      href=3D"http://encyclobeamia.solarbotics.net/articles/beam.html"=20
+      target=3D_blank>BEAM</A>bots, we'll just be concerned with two =
+logic=20
+      families (<A =
+href=3D"http://encyclobeamia.solarbotics.net/articles/ic.html"=20
+      target=3D_blank>IC</A> implementation approaches); note that both =
+have=20
+      multiple numbering schemes for their "members."
+      <TABLE border=3D1>
+        <TBODY>
+        <TR>
+          <TD width=3D107>
+            <P><B><A name=3DTTL></A>TTL</B> -- Transistor / Transistor=20
+Logic</P></TD>
+          <TD>
+            <P>TTL chips require a fairly narrow range of supply voltage =
+-- 5=20
+            volts, +/- 0.5V.</P>
+            <P>For TTL <A=20
+            =
+href=3D"http://encyclobeamia.solarbotics.net/articles/circuit.html"=20
+            target=3D_blank>circuit</A>s, a logic "1" is usually defined =
+as a=20
+            signal of about 2.4 V, while logic "0" is about 0.5 V above =
+ground;=20
+            any signal between those values is undefined. Also, note =
+that all=20
+            unused inputs should be tied to ground.</P>
+            <P>Bipolar TTL logic comes in many flavors (usually numbered =
+in the=20
+            "74XX" format, occasionally in "54XX" format) including =
+74LS/ALS=20
+            types. These all require 1000s of times more power than=20
+            TTL-compatible CMOS logic (like the 74HCT type, see below). =
+Note=20
+            that the 74HCT* <A=20
+            =
+href=3D"http://encyclobeamia.solarbotics.net/articles/ic.html"=20
+            target=3D_blank>IC</A>s have the same logic thresholds as =
+other TTL=20
+            chips, allowing them used in a mixed <A=20
+            =
+href=3D"http://encyclobeamia.solarbotics.net/articles/circuit.html"=20
+            target=3D_blank>circuit</A>s of TTL and HCT logic.</P>
+            <P>While we won't use TTL logic in <A=20
+            =
+href=3D"http://encyclobeamia.solarbotics.net/articles/beam.html"=20
+            target=3D_blank>BEAM</A> projects (as a general rule, it's =
+too=20
+            power-hungry), for completeness, here are some TTL=20
+"subfamilies":</P>
+            <BLOCKQUOTE><U>74LXX</U> -- low-power TTL (1/10 the speed, =
+1/10=20
+              the power of "regular" TTL)=20
+              <P><U>74HXX</U> -- high-speed TTL (twice as fast, twice as =
+much=20
+              power)</P>
+              <P><U>74SXX</U> -- Schottky TTL (for high-frequency =
+uses)</P>
+              <P><U>74LSXX</U> -- combination of low-power &amp; =
+Schottky, same=20
+              speed as regular TTL, but at 1/5 the power=20
+            consumption</P></BLOCKQUOTE></TD></TR>
+        <TR>
+          <TD width=3D107>
+            <P><B><A name=3DCMOS></A>CMOS</B> -- Complimentary Metal =
+Oxide=20
+            Silicon</P></TD>
+          <TD>
+            <P>CMOS <A=20
+            =
+href=3D"http://encyclobeamia.solarbotics.net/articles/ic.html"=20
+            target=3D_blank>IC</A>s use much less power than TTL, plus =
+they are=20
+            fairly forgiving of "slop" in input voltage -- they're happy =
+with=20
+            anything between 3 (some, like 1381s, go lower) and 12 =
+volts. CMOS,=20
+            though, is much more susceptible to damage from static =
+electricity=20
+            (so get that grounding strap out!).</P>
+            <P>CMOS comes in two flavors, with corresponding numbering =
+schemes:=20
+            "CD40XX" metal gate CMOS, and "74CXX" silicon gate CMOS =
+(note that=20
+            this second subfamily borrows its numbering scheme from TTL =
+<A=20
+            =
+href=3D"http://encyclobeamia.solarbotics.net/articles/ic.html"=20
+            target=3D_blank>IC</A>s).</P>
+            <P><B>Metal gate CMOS</B> (CD40XX)has a rated working =
+voltage of 3 -=20
+            15 V but can be used down to 2V.</P>
+            <P><B>Silicon gate CMOS</B> (74CXX) logic has a working =
+voltage=20
+            range of 2 -6V but can be used to less than 1V. For =
+microwatt power=20
+            applications you want to use the lowest possible=20
+        voltage.</P></TD></TR></TBODY></TABLE></P>
+      <P>&nbsp;</P>
+      <P><B>Numbering systems and IC "sub-families"<BR></B>Something =
+I've=20
+      learned to put up with is the mess that is <A=20
+      href=3D"http://encyclobeamia.solarbotics.net/articles/ic.html"=20
+      target=3D_blank>IC</A> numbering systems. One of the more common =
+numbering=20
+      systems used for <A=20
+      =
+href=3D"http://www.solarbotics.net/bftgu/starting_elect_ic.html#CMOS">CMO=
+S</A>=20
+      <A href=3D"http://encyclobeamia.solarbotics.net/articles/ic.html"=20
+      target=3D_blank>IC</A>s (most often used in <A=20
+      href=3D"http://encyclobeamia.solarbotics.net/articles/beam.html"=20
+      target=3D_blank>BEAM</A>bots) is borrowed from <A=20
+      =
+href=3D"http://www.solarbotics.net/bftgu/starting_elect_ic.html#TTL">TTL<=
+/A>=20
+      -- that of 74xxxnnn -- here, "xxx" is AC, ACT, HC, or HCT =
+(subfamily); and=20
+      "nnn" is the specific chip ID.</P>
+      <P>So, basically, any given chip will come in a whole mess of =
+variations=20
+      (one per subfamily); if it's any consolation, we only need to be =
+concerned=20
+      with 4. For any given chip, you'll need to consider the plusses =
+and=20
+      minuses of two comparisons -- AC vs HC subfamilies, and AC / HC vs =
+ACT /=20
+      HCT (essentially, <A=20
+      =
+href=3D"http://www.solarbotics.net/bftgu/starting_elect_ic.html#CMOS">CMO=
+S</A>=20
+      vs. <A=20
+      =
+href=3D"http://www.solarbotics.net/bftgu/starting_elect_ic.html#TTL">TTL<=
+/A>=20
+      input levels).</P>
+      <P>&nbsp;</P>
+      <P><B>AC vs HC</B><BR>AC / ACT stands for Advanced <A=20
+      =
+href=3D"http://www.solarbotics.net/bftgu/starting_elect_ic.html#CMOS">CMO=
+S</A>=20
+      Logic (ACL for short). HC / HCT stands for High-speed <A=20
+      =
+href=3D"http://www.solarbotics.net/bftgu/starting_elect_ic.html#CMOS">CMO=
+S</A>=20
+      Logic (HCL).</P>
+      <P>The AC and ACT subfamilies are faster than the HC and HCT =
+subfamilies,=20
+      and draw some more power in some <A=20
+      =
+href=3D"http://encyclobeamia.solarbotics.net/articles/circuit.html"=20
+      target=3D_blank>circuit</A>s. All chips in the AC* subfamily have =
+lower=20
+      output resistance than HC* and can sink and source 24 mA at logic =
+levels=20
+      and up 70 mA (typ) per gate for motor loads. As a result AC* gates =
+can=20
+      handle more than twice the <A=20
+      =
+href=3D"http://encyclobeamia.solarbotics.net/articles/current.html"=20
+      target=3D_blank>current</A> of HC* gates (50 - 70 mA vs. 24 mA). =
+Note,=20
+      though, that while most HC* <B>chips</B> have a 25 mA limit, the =
+HC*=20
+      driver chips such as the 74HC240 and the 74HC245 (i.e., buffers) =
+can=20
+      handle 35 mA <B>per device</B>, and a maximum of 75 mA <B>per=20
+chip</B>.</P>
+      <P>The AC &amp; ACT families also draw about twice as much <A=20
+      =
+href=3D"http://encyclobeamia.solarbotics.net/articles/current.html"=20
+      target=3D_blank>current</A> as the HC &amp; HCT chips (but we =
+speaking here=20
+      of microamps, so it's usually not a huge deal).</P>
+      <P>It is occasionally possible to find (high quality) motors that =
+you can=20
+      drive directly from an HC chip. For intermittent operation, such =
+as you=20
+      get with a <A=20
+      =
+href=3D"http://encyclobeamia.solarbotics.net/articles/quadcore.html"=20
+      target=3D_blank>quadcore</A>, you COULD drive very efficient =
+(i.e., very=20
+      low-<A =
+href=3D"http://encyclobeamia.solarbotics.net/articles/current.html"=20
+      target=3D_blank>current</A>) motors directly. You would definitely =
+need a <A=20
+      =
+href=3D"http://encyclobeamia.solarbotics.net/articles/capacitor.html"=20
+      target=3D_blank>capacitor</A> (say 0.47 uF) across each motor to =
+keep the=20
+      noise under control.</P>
+      <P>&nbsp;</P>
+      <P><B>CMOS vs. TTL inputs</B><BR>The main difference between AC- =
+and=20
+      HC-chips vs. ACT- and HCT-chips is that AC / HC chips work with <A =
+
+      =
+href=3D"http://www.solarbotics.net/bftgu/starting_elect_ic.html#CMOS">CMO=
+S</A>-level=20
+      inputs, while ACT / HCT chips work from <A=20
+      =
+href=3D"http://www.solarbotics.net/bftgu/starting_elect_ic.html#TTL">TTL<=
+/A>-level=20
+      inputs and outputs. AC / HC chips allow a relatively-wide =
+supply-voltage=20
+      range (2 - 6 V), and works with <A=20
+      =
+href=3D"http://www.solarbotics.net/bftgu/starting_elect_ic.html#CMOS">CMO=
+S</A>=20
+      levels on input and output (i.e., doesn't like inputs or outputs =
+to be=20
+      ill-defined, prefers close to 0V for low and Vdd for high). ACT / =
+HCT=20
+      works only with a supply voltage of 5V +/- 10%, and works with <A=20
+      =
+href=3D"http://www.solarbotics.net/bftgu/starting_elect_ic.html#TTL">TTL<=
+/A>=20
+      levels on input and output (a valid input is close to 0V for low, =
+and ~2.4=20
+      - 5.0 V for high).</P>
+      <P>
+      <TABLE cellSpacing=3D1 width=3D"100%" bgColor=3D#660099 =
+border=3D1>
+        <TBODY>
+        <TR>
+          <TD bgColor=3D#9933ff>
+            <CENTER>For more information...</CENTER></TD></TR>
+        <TR>
+          <TD bgColor=3D#bb99ff>
+            <P><BR>Craig Maynard has a nice tutorial on logic families =
+<A=20
+            href=3D"http://learnat.sait.ab.ca/ict/cmph200/logic1.htm"=20
+            =
+target=3D_blank>here</A>.<BR></P></TD></TR></TBODY></TABLE></P></TD></TR>=
+
+  <TR>
+    <TD colSpan=3D3>
+      <CENTER><FONT face=3D"helvetica, arial, sans-serif" size=3D-2>
+      <TABLE width=3D"100%" border=3D0>
+        <TBODY>
+        <TR>
+          <TD colSpan=3D3>
+            <CENTER><FONT face=3D"helvetica, arial, sans-serif" =
+size=3D-2>
+            <HR>
+            </FONT></CENTER></TD></TR>
+        <TR>
+          <TD>
+            <CENTER><A=20
+            href=3D"http://www.solarbotics.net/bftgu/sitemap.html"><FONT =
+
+            face=3D"helvetica, arial, sans-serif" =
+size=3D-2>Sitemap</FONT></A> <FONT=20
+            face=3D"helvetica, arial, sans-serif" size=3D-2>&nbsp;<IMG =
+height=3D15=20
+            alt=3DImage =
+src=3D"http://www.solarbotics.net/bftgu/pix/separator.gif"=20
+            width=3D33 align=3Dbottom>&nbsp;</FONT> <A=20
+            href=3D"http://www.solarbotics.net/bftgu/search.html"><FONT=20
+            face=3D"helvetica, arial, sans-serif" =
+size=3D-2>Search</FONT></A> <FONT=20
+            face=3D"helvetica, arial, sans-serif" size=3D-2>&nbsp;<IMG =
+height=3D15=20
+            alt=3DImage =
+src=3D"http://www.solarbotics.net/bftgu/pix/separator.gif"=20
+            width=3D33 align=3Dbottom>&nbsp;</FONT> <A=20
+            href=3D"http://www.solarbotics.net/bftgu/legal.html"><FONT=20
+            face=3D"helvetica, arial, sans-serif" =
+size=3D-2>Legalities</FONT></A>=20
+            <FONT face=3D"helvetica, arial, sans-serif" =
+size=3D-2>&nbsp;<IMG=20
+            height=3D15 alt=3DImage=20
+            src=3D"http://www.solarbotics.net/bftgu/pix/separator.gif" =
+width=3D33=20
+            align=3Dbottom>&nbsp;
+            <SCRIPT language=3DJavaScript=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/scripts/hidden_mailto.js"></SCRIP=
+T>
+            </FONT></CENTER></TD>
+          <TD>
+            <CENTER><FONT face=3D"helvetica, arial, sans-serif" =
+size=3D-2>Page=20
+            author:
+            <SCRIPT language=3DJavaScript=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/scripts/hidden_mailto_conan.js"><=
+/SCRIPT>
+             <BR>This page was last updated on
+            <SCRIPT language=3DJavaScript=20
+            =
+src=3D"http://www.solarbotics.net/bftgu/scripts/rev_date.js"></SCRIPT>
+             </FONT></CENTER></TD>
+          <TD>
+            <P align=3Dright><A=20
+            href=3D"http://creativecommons.org/licenses/by-nc-sa/1.0/"=20
+            target=3D_blank><FONT face=3D"helvetica, arial, sans-serif" =
+size=3D-2><IMG=20
+            height=3D31 alt=3D"Creative Commons License"=20
+            src=3D"http://www.solarbotics.net/bftgu/pix/somerights.gif" =
+width=3D88=20
+            align=3Dbottom border=3D0 X-CLARIS-USEIMAGEHEIGHT=20
+            X-CLARIS-USEIMAGEWIDTH></FONT></A><FONT=20
+            face=3D"helvetica, arial, sans-serif" size=3D-2><BR>This =
+work is=20
+            licensed under a </FONT><A=20
+            href=3D"http://creativecommons.org/licenses/by-nc-sa/1.0/"=20
+            target=3D_blank><FONT face=3D"helvetica, arial, sans-serif"=20
+            size=3D-2>Creative Commons License</FONT></A><FONT=20
+            face=3D"helvetica, arial, sans-serif"=20
+        =
+size=3D-2>.</FONT></P></TD></TR></TBODY></TABLE></FONT></CENTER></TD></TR=
+></TBODY></TABLE></P></BODY></HTML>
+
+------=_NextPart_000_0052_01C9B9DF.2FACA920
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.solarbotics.net/bftgu/pix/small_logo.gif
+
+R0lGODlhqgA8APcAMf/////nY//eKf/WGP+cCP+EWv9zMf9rEP8xAP8YGPf3//fv7/fv1vfnY/fe
+a/feWvfOrffOY/fOOffOCPeMjPdzWvdra/djIfdaWvdSIfdCOfcxMfcAAO/39+/nve/nlO/e3u/e
+e+/Wzu/Wve/WlO/WQu/OGO/Gve+9jO+tre+tjO+cnO+cSu+UlO+Ua+97e+97Su9rMe9aMe85Iefn
+1ufetefW1ufOMefGKee9peechOdrQudjY+djWt7n797GWt7GGN69rd6Ea95SUt5SId45Od4hId4I
+ANbW79bW59bW3tbWztbOvda9vdatrdatnNacnNaUhNaEhNZSMc69Oc6llM5rQs5SIcbO58bOe8bG
+c8a1vca1OcallMaEa8Z7WsZrUr3We73G572tOb2UjL1ra71KIb1CIb0pQrXGhLW91rW1vbWtQrWl
+vbWlrbWlnLWMjLVze7VzY7VrObVaY7VaObVCUq2tY62lva1SQq05Ma0IOaXG56W9hKW1zqW1lKWt
+paWl3qWlOaWUpaVza6Vaa6VaUpy9a5yllJyElJxKUpSl1pSltZSMpZSEWpRzhJRjhJRaUpRCUpQ5
+SpQxOYy11oy1Y4yta4yctYyclIyUQoxza4xSa4xSY4w5KYwpKYSl1oSle4Slc4ScUoSMvYSMlISE
+1oQAUnutWnulWnt7nHt7hHtzxntjhHNzc3NKa2ul1mucUmuUSmuMOWt7hGtrzmtrxmtrnGtje2Oc
+vWOMvWN7lGNjGFqcQlp7tVp7rVprpVprjFpavVKczlKUzlKMSlKMOVJapVJac1IAc0pSpUpKvUKM
+xkKEMUJ7rUJ7nEJCpTmEITlrjDk5tTGEvTFznDFrrTExnDEAhCmErSl7ISlrISlaISlKISkxrSFj
+nCFjjCFjECFSGCE5ECEhQhhKYxhCEBghGBgYtRgYrRgYaxgAnBAxEBAhCBAQpRAQjBAQcxAQYxAQ
+UhAQORAQIQgQCAAArQAAnAAAhAAAcwAAYwAASgAAOQAAIQAAAAAAACwAAAAAqgA8AEAI/wDtCRxI
+sKDBgwgTKlzIsKHDhxAdZolGsaLFixYjahxoCoDHjx7FINT3byC+fvzuDSRJMJ++gi/tsSy4z16/
+kgRr/osZ8Zi9LEAxCh1KtGi0jRo7glwqEqnTp/a8Tcsiy6jVq1gpQn2IZIQXTo1y/XLmAgC6rVBv
+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
+fWrhUOEDIfDACEMQa1lvNCAAOw==
+
+------=_NextPart_000_0052_01C9B9DF.2FACA920
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.solarbotics.net/bftgu/pix/bullet_right.gif
+
+R0lGODlhBQAJAPEAMf///2QAZMDAwAAAACH5BAEAAAIALAAAAAAFAAkAQAIKlI8Sa4GeDmswFQA7
+
+------=_NextPart_000_0052_01C9B9DF.2FACA920
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.solarbotics.net/bftgu/pix/bullet_down.gif
+
+R0lGODlhBQAJAPEAMf///2QAZMDAwAAAACH5BAEAAAIALAAAAAAFAAkAQAIJlI+hihcNzYIFADs=
+
+------=_NextPart_000_0052_01C9B9DF.2FACA920
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.solarbotics.net/bftgu/pix/bullet_blank.gif
+
+R0lGODlhCAAJAPEAMf///5aWlsDAwAAAACH5BAEAAAIALAAAAAAIAAkAQAIHlI+py+2vCgA7
+
+------=_NextPart_000_0052_01C9B9DF.2FACA920
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.solarbotics.net/bftgu/pix/separator.gif
+
+R0lGODlhIQAPAJEAAP///7+/v39/fwAAACH5BAECAAAALAAAAAAhAA8AQAI3hI+pyzw2ohHvtQss
+oAH7E3XfCA0i+VXSVKGJxrny/NLeE9uKxp5ytFqBMkISb2PSQZA+ZcZWAAA7
+
+------=_NextPart_000_0052_01C9B9DF.2FACA920
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.solarbotics.net/bftgu/pix/somerights.gif
+
+R0lGODlhWAAfAMQAAGl6afT29HOEc+rs6n6Nft/j356qnr/Gv7S9tE5fTsnQyZSglG6CbqmzqdTZ
+1EdVR4mXif///wAAAF5xXgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAA
+AAAALAAAAABYAB8AAAX/oCSOZGmeaKqubOu+cCybUR1J9p3beC3muJ7vFuQBhbqhUTn8CZ/OEVEX
+pUqd1qqWNA1Gv93w1QsUk6G8Yg9ZTbuZybjW+MXaz8Q5fjs2c717altldHg+e2WDblhwT2GHS3kz
+k5SVlpeYlDubnJ2en6ChopwME6anqKmqq6ytrq+wrAmlsbW2rg0Nt7azu76xEDWmwr+vva4CuQ0G
+AqsCBg0EEwAQBADSANDSps8NEKbBEeAQAuTjAAAL3r/HqwQONQUDNQ7NpwY5CMEBAQ4EATYOTAhX
+IEKBBTnC4XMwgUCEAALm0fPVLhWEAAMMnMo2IMA2ATW8FThA0MA8CADg/xFo4GDBBHjqaqCsAUBY
+gwgHFERoAOBABI23Kp76dwCAKgAFPE5YiCpYgYYRBuSCp2ulA4AQwg0TpxNC15ANfDIMSitVgQJG
+VwEYwPDmWHARGO5zQNdBAwRRD5zUOkEYvgYY+8ati2CX0AkIvzW0V84UQgIIB4wLxhBkAKMra0Yw
+WjArMWE15xUG2KynPV5lTyGQjLQjAnzymgXQVZAtRoRjdRZAAHABwAM+I8yM61DcBJ0RpN2UOk8X
+WVV0l24WICBA4W0OBPYEqEDAu8LTVsd1CaGgAgQtJwBOHh2xAwWnGswrAPR5qug3T+1E9d4UNXPc
+ZGVPVv8ZJeBAKBGI4P9pWSlWYFanlIPSKocdUFkACigAXAGANSPVUgCFNAFeNuhSQ4hnnQiSQfEU
+9JB3LkZFQDghtpWDc6gchk8zK/EEQC7fgLRAdTuV5wBsC/gmXA0HKKmAkjdFgICTUMJD0nLh5FID
+SANkdcA2OabmH4auKBCAdE9N89JPptxE4jfwwLkTTWvKSeIpzX0WwYocKpbKYeqxuQo+LrnFn3Bt
+RoCcnHJGaUqca8Jj3JqOCraURFKqAugEPiGQln86gReZKTP65JypMtVJKTGQUkUnAADhY5ww32RD
+TJitrGcXSw/VN0FBu/ETTk4vptrqnMYde1dU8inKl0zMiqWpmKkkU5c9XZ+CWoMC0pS3rTR0SYOe
+uEe2N+6IR6o3z2zXtBedAS4WNW0x9NZrbwIJPKDvvvz26++/AAcs8MAEA5xACAA7
+
+------=_NextPart_000_0052_01C9B9DF.2FACA920
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.solarbotics.net/bftgu/pix/background.gif
+
+R0lGODlh3QAbAeb/AP///7upurupubuouruoubqnurqnubmmu7mmurmmubikurekubajurWiu7Wi
+ubSiuLShurShubShuLOhubOgubKguLKfuLGfubGfuLGeu7GeubGeuLCeubCdubCduK+dua+duK+c
+ua+cuK6cua6cuK6bua6buK2bua2buK2auayauqyauayauKuZuquZuaqYuqqYuaqXuqqXuamXuqmX
+uaiXuaiWuqiWuaeWuaeVuqeVuaeUuqaUuqaUuaWTuqWTuaSTuqSTuaSSu6SSuqSSuaSSuKOSuaOS
+uKKRuaGQuaCPuZ+OuZ+OuJ6MuZ2MuZ2MuJuLuZuKuZmJuZmIuZeHuZeGuQAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwA
+AAAA3QAbAUAH/4AfgoOEhYaEFomJAYyNjo2DiYeTlJWWl5iZmpucnZ6HMTGDoh8xC4wLODikrKOC
+oa+usq2lpaELH0qqtbyitL6xtb+9scPGwcDEx8rIxMLNy63Rwc7CwKQBqaukvM/WsK/Jybay3dKC
+C0tLOObg3O6jtOTt1PDh9fL28+/5/fj/9AJ+44dtgRJxzvRNK5ZQnC9jBqmsYsis4jmLFC9qzMjR
+20aPHRGC/BUKYYwAFiYaezfPWsKWw4qJFJlSojt+MB/Gy8kTHDmfsIDqvCe0J86iSHE2K9Qv27Z7
+RB+SDGryZ0ylVsnVnCjzZ1adQb+KpeoyLFmw18COVXt27c5uvf+4ef0QIFfVuRuvzjoqVakpJVTW
+hSQa1+M1wqwOe01suLFDx4Uf32X8z57PQQFwKOFZzV+9t4w3plxikxpnqDdRU069b7Vr1bBbQ42F
+6gMOiabzQUPG0hVZQQUWDG04i6HalxaEk17yMi/vrFF3JpXOl7r16IQLaLeNK8Zmyim/D11pC+hs
+kM96u7u9hFSiBfAXvE8VmHRgVSoB7nsLczD6mc3thtF/wZxSlyoxJBdKfiWp50s6gqG1lGdyvdQV
+gAQGJE1JeJXFoXkkKWPSiCKWuKGJBQRQgHeEwKKNXqGd94EFH9h0okL9QRedbpbpOFyF8MjDTIwC
+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
+
+------=_NextPart_000_0052_01C9B9DF.2FACA920
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.solarbotics.net/bftgu/scripts/js_error.js
+
+function reportError(msg,url,line) {=0Dvar str =3D "JavaScript Error: " =
++ msg + " on line: " =0D+ line + "\n\nURL: " + url  + "\n\nWeb: " =0D+ =
+navigator.appName + " " + navigator.appName =0D+ " " + =
+navigator.appVersion;=0Dwindow.alert(str);=0Dreturn =
+true;=0D}=0Dwindow.onerror =3D reportError;
+------=_NextPart_000_0052_01C9B9DF.2FACA920
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.solarbotics.net/bftgu/scripts/hidden_mailto.js
+
+<!-- Begin=0Duser =3D "conan.librarian";=0Dsite =3D =
+"mindspring.com";=0Ddocument.write('<a href=3D\"mailto:' + user + '@' + =
+site + '\?subject=3DBFTGU' + location.pathname + =
+'">');=0Ddocument.write('Feedback</FONT></A>');=0D// End -->
+------=_NextPart_000_0052_01C9B9DF.2FACA920
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.solarbotics.net/bftgu/scripts/hidden_mailto_conan.js
+
+<!-- Begin=0Duser =3D "conan.librarian";=0Dsite =3D =
+"mindspring.com";=0Ddocument.write('<a href=3D\"mailto:' + user + '@' + =
+site + '\?subject=3DBFTGU' + location.pathname + =
+'">');=0Ddocument.write('Conan the Librarian</FONT></A>');=0D// End -->
+------=_NextPart_000_0052_01C9B9DF.2FACA920
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.solarbotics.net/bftgu/scripts/rev_date.js
+
+<!-- Begin=0Dvar months =3D new Array(13);=0Dmonths[1] =3D =
+"January";=0Dmonths[2] =3D "February";=0Dmonths[3] =3D =
+"March";=0Dmonths[4] =3D "April";=0Dmonths[5] =3D "May";=0Dmonths[6] =3D =
+"June";=0Dmonths[7] =3D "July";=0Dmonths[8] =3D "August";=0Dmonths[9] =
+=3D "September";=0Dmonths[10] =3D "October";=0Dmonths[11] =3D =
+"November";=0Dmonths[12] =3D "December"; =0Dvar dateObj =3D new =
+Date(document.lastModified)=0Dvar lmonth =3D months[dateObj.getMonth() + =
+1]=0Dvar date =3D dateObj.getDate()=0Dvar fyear =3D =
+dateObj.getYear()=0Dif (fyear < 2000) =0Dfyear =3D fyear + =
+1900=0Ddocument.write(lmonth + " " + date + ", " + fyear)=0D// End -->
+------=_NextPart_000_0052_01C9B9DF.2FACA920--

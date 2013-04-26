@@ -1,0 +1,449 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: D.C. Motor Torque/Speed Curve Tutorial:::Understanding Motor Characteristics
+Date: Sat, 11 Apr 2009 15:27:47 +0530
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://lancet.mit.edu/motors/motors3.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5579
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>D.C. Motor Torque/Speed Curve =
+Tutorial:::Understanding Motor Characteristics</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.6000.16788" name=3DGENERATOR></HEAD>
+<BODY><A name=3Dtop></A><!--Section 3:  Understanding Motor =
+Characteristics-->
+<CENTER><IMG src=3D"">=20
+<H1>Understanding D.C. Motor Characteristics</H1><IMG src=3D""> =
+<BR><FONT=20
+size=3D+1><A href=3D"http://lancet.mit.edu/motors/index.html">Home</A> =
+<A=20
+href=3D"http://lancet.mit.edu/motors/motors1.html">Intro</A> <A=20
+href=3D"http://lancet.mit.edu/motors/motors2.html">How They Work</A> =
+<FONT=20
+color=3Dfirebrick>CHARACTERISTICS</FONT> <A=20
+href=3D"http://lancet.mit.edu/motors/motors4.html">Examples</A><BR></FONT=
+><IMG=20
+src=3D""><BR><FONT size=3D+1>This page has been requested <FONT =
+color=3Dred><!--#exec cgi=3D"/bin/counter"--></FONT>times.</FONT>=20
+</CENTER><BR><BR><BR>
+<H2>Contents:</H2><FONT size=3D+1>
+<OL start=3D0>
+  <LI>Preface=20
+  <LI>Background From Physics=20
+  <MENU type=3DNONE>
+    <LI>2.1 <A=20
+    href=3D"http://lancet.mit.edu/motors/motors3.html#torque">Torque</A> =
+
+    <LI>2.2 <A =
+href=3D"http://lancet.mit.edu/motors/motors3.html#speed">Speed</A>=20
+    <LI>2.3 <A =
+href=3D"http://lancet.mit.edu/motors/motors3.html#power">Power</A>=20
+    </LI></MENU>
+  <LI>Motor Characteristics=20
+  <MENU type=3DNONE>
+    <LI>3.1 <A=20
+    =
+href=3D"http://lancet.mit.edu/motors/motors3.html#tscurve">Torque/Speed=20
+    Curves</A>=20
+    <LI>3.2 <A =
+href=3D"http://lancet.mit.edu/motors/motors3.html#powercurve">Power=20
+    Curves</A> </LI></MENU></LI></OL><BR><BR><BR>*NOTE: Key terms are =
+highlited=20
+in<FONT color=3Dfirebrick> dark red</FONT>.=20
+<HR>
+<BR>
+<P><BR></P><BR>
+<H2 align=3Dcenter>1. Preface</H2>
+<HR>
+
+<P>This site deals with Direct Current permanent magnet motors operated =
+at a=20
+constant voltage. Motor characteristics vary considerably from type to =
+type, and=20
+their performance characteristics can be altered by the way electrical =
+power is=20
+supplied. can be quite different than those covered here. </P><A=20
+name=3Dtorque></A>
+<HR>
+<BR>
+<P><BR></P><BR>
+<H2 align=3Dcenter>2. Background From Physics</H2>
+<P>
+<H3>Section 2.1: TORQUE</H3>
+<HR>
+<FONT color=3Dfirebrick>Torque </FONT>, as defined in =A9 1998 =
+Merriam-Webster,=20
+Incorporated<BR><BR><CITE>Main Entry: torque<BR>Function: =
+noun<BR>Etymology:=20
+Latin torquEre to twist<BR>1 : a force that produces or tends to produce =
+
+rotation or torsion (an automobile engine delivers torque to the drive=20
+shaft);<BR>also : a measure of the effectiveness of such a force that =
+consists=20
+of the product of the force and the perpendicular distance from the line =
+of=20
+action of the force to the axis of rotation<BR>2 : a turning or twisting =
+force=20
+</CITE><BR><BR>
+<HR align=3Dleft width=3D"50%">
+<FONT color=3Dfirebrick>Torque </FONT>, as defined in <U>University =
+Physics, 8th=20
+ed. 1992,</U> by Hugh D. Young:<BR><BR><CITE>The quantitative measure of =
+the=20
+tendency of a force to cause or change rotational motion is called =
+torque.=20
+</CITE>
+<P></P>
+<P>
+<HR align=3Dleft width=3D"50%">
+<FONT color=3Dfirebrick>Torque</FONT> (also called a <FONT=20
+color=3Dfirebrick>moment</FONT>) is the term we use when we talk about =
+forces that=20
+act in a rotational manner. You apply a torque or moment when you turn a =
+dial,=20
+flip a lightshwitch, drill a hole or tighten a screw or bolt.<BR><BR>As =
+shown in=20
+the picture of a ratchet, a torque is created by a vertical force =
+applied at the=20
+end of the handle. The <FONT color=3Dfirebrick>force, F</FONT>, applied =
+to the=20
+ratchet as shown causes a tendency to rotate about point O. The force =
+can be=20
+broken down into two components: a <FONT color=3Dfirebrick>radial =
+component,=20
+F<SUB>rad</SUB></FONT>, parallel to the ratchet handle that does not =
+contribute=20
+to the torque, and a <FONT color=3Dfirebrick>tangential component,=20
+F<SUB>tan</SUB></FONT>, perpendicular to the handle that does contribute =
+to the=20
+torque. The distance from point O to the point of action of F is =
+described by=20
+the <FONT color=3Dfirebrick>direction vector, r</FONT>. The <FONT=20
+color=3Dfirebrick>moment arm, l</FONT> is the perpendicular distance =
+between point=20
+O and the line of action of F.<BR><BR>If we were to shorten the moment =
+arm by=20
+applying the force closer to the head of the ratchet,the magnitude of =
+the torque=20
+would decrease, even if the force remained the same. Thus, if we change =
+the=20
+effective length of the handle, we change the torque (see equation 1). =
+<BR>
+<P></P>
+<CENTER>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD><IMG alt=3D"[ratchet illustration of torque]" src=3D""><BR>
+      <P><BR></P></TD>
+    <TD><IMG alt=3D"[ 1) Torque, T =3D F*r*sin(included angle) ]" =
+src=3D""><BR>
+      <P><BR></P></TD></TR>
+  <TR>
+    <TD><IMG alt=3D"[wheel illustration of torque from the 2.007 page]"=20
+      src=3D""><BR><BR></TD>
+    <TD><A name=3Dtorqueunits></A>
+      <TABLE border=3D1>
+        <CAPTION><FONT color=3Dfirebrick size=3D+1>UNITS of =
+TORQUE</FONT></CAPTION>
+        <TBODY>
+        <TR>
+          <TH vAlign=3Dcenter align=3Dmiddle><FONT =
+color=3Dfirebrick>SI</FONT> </TH>
+          <TH vAlign=3Dcenter align=3Dmiddle><FONT =
+color=3Dfirebrick>English</FONT>=20
+          </TH></TR>
+        <TR>
+          <TD vAlign=3Dtop>newton-meters {N=B7m} </TD>
+          <TD>inch-pounds {in=B7lb}<BR>foot-pounds =
+{ft=B7lb}<BR>inch-ounces=20
+            {in=B7oz}<BR></TD>
+        <TR>
+          <TD vAlign=3Dtop>1 N=B7m =3D 0.738 ft=B7lb<BR>1 N=B7m =3D =
+0.113 in=B7lb <BR>1 N=B7m=20
+            =3D 141.61 in=B7oz <BR></TD>
+          <TD>1 in=B7lb =3D 0.113 N=B7m<BR>1 ft=B7lb =3D 1.356 =
+N=B7m<BR>1 in=B7oz =3D=20
+            7.062E-03 N=B7m<BR></TD></TR></TBODY></TABLE><BR>
+      <P><BR></P></TD></TR></TBODY></TABLE></CENTER><A=20
+href=3D"http://lancet.mit.edu/motors/motors3.html#top">Up to =
+Contents</A> <A=20
+name=3Dspeed></A>
+<HR>
+<BR>
+<P><BR></P><BR>
+<H3>Section 2.2: SPEED</H3>
+<P>
+<HR>
+<FONT color=3Dfirebrick>Speed (Angular Velocity) </FONT>, as defined in =
+=A9 1998=20
+Merriam-Webster, Incorporated<BR><BR><CITE>Main Entry: angular=20
+velocity<BR>Function: noun<BR>he rate of rotation around an axis usually =
+
+expressed in radians or revolutions per second or per minute<BR></CITE>
+<HR align=3Dleft width=3D"50%">
+Motors are devices that convert electrical energy into mechanical =
+energy. The=20
+D.C. motors that we have been dealing with here convert electrical =
+energy into=20
+rotational energy. That rotational energy is then used to lift things, =
+propel=20
+things, turn things, etc... When we supply the specified voltage to a =
+motor, it=20
+rotates the output shaft at some speed. This <FONT =
+color=3Dfirebrick>rotational=20
+speed</FONT> or <FONT color=3Dfirebrick>angular velocity, <IMG alt=3DW =
+src=3D""=20
+align=3DTEXTBOTTOM></FONT> is typically measured in =
+<STRONG>radians/second=20
+{rad/s}, revolutions/second {rps}, or revolutions/minute {rpm}. =
+</STRONG>
+<UL type=3Dcircle>
+  <LI>When performing calculations, be sure to use consistent units. In =
+the=20
+  English system, calculations should be done in degrees/second, and =
+radians/sec=20
+  for SI calculations.<BR></LI></UL>
+<TABLE align=3Dcenter border=3D1>
+  <CAPTION><STRONG><FONT color=3Dfirebrick>NOTE:</FONT></STRONG> =
+</CAPTION>
+  <TBODY>
+  <TR>
+    <TD>1 revolution =3D 360=B0<BR>1 revolution =3D (2*<FONT =
+face=3DSymbol>p</FONT>)=20
+      radians<BR>1 radian =3D (180/<FONT =
+face=3DSymbol>p</FONT>)=B0<BR>1=B0 =3D (<FONT=20
+      face=3DSymbol>p</FONT>/180) radians =
+</TD></TR></TBODY></TABLE><BR><IMG=20
+alt=3D"Angular Velocity diagram" src=3D"" align=3Dright> From the =
+angular velocity,=20
+<IMG alt=3DW src=3D"">, we can find the tangential velocity of a point =
+anywhere on=20
+the rotating body through the equation <FONT =
+color=3Dfirebrick>tangential=20
+velocity, v =3D r*</FONT> <IMG alt=3DW src=3D"">, where r is the =
+distance from the=20
+axis of rotation. This relation can be used to compute the =
+<STRONG>steady=20
+state</STRONG> (constant speed - no acceleration) speed of a vehicle if =
+the=20
+radius and angular velocity of a wheel is known, or the linear speed of =
+a rope=20
+as it is wound up by a winch.<BR>
+<P></P><A href=3D"http://lancet.mit.edu/motors/motors3.html#top">Up to=20
+Contents</A> <A name=3Dpower></A>
+<HR>
+<BR>
+<P><BR></P><BR>
+<H3>Section 2.3: POWER</H3>
+<P>
+<HR>
+<FONT color=3Dfirebrick>Motive Power </FONT>, as defined in =A9 1998=20
+Merriam-Webster, Incorporated<BR><BR><CITE>Main Entry: =
+1pow=B7er<BR>Pronunciation:=20
+'pau(-&amp;)r<BR>Function: noun<BR>Usage: often =
+attributive<BR>Etymology: Middle=20
+English, from Old French poeir, from poeir to be able, from (assumed) =
+Vulgar=20
+Latin potEre, alteration of Latin posse<BR>Date: 13th =
+century<BR><STRONG>1 a=20
+:</STRONG> (1) : ability to act or produce an effect<BR><STRONG>6 a =
+:</STRONG> a=20
+source or means of supplying energy; especially : =
+ELECTRICITY<BR><STRONG>6 b=20
+:</STRONG> <FONT color=3Dfirebrick size=3D+1>MOTIVE POWER</FONT> c : the =
+time rate=20
+at which work is done or energy emitted or =
+transferred<BR></CITE><BR><BR>
+<HR align=3Dleft width=3D"50%">
+<FONT color=3Dfirebrick>Power in Rotational Motion </FONT>, as described =
+in=20
+<U>University Physics, 8th ed., 1992</U> by Hugh D. =
+Young):<BR><BR><CITE>When=20
+you pedal a bicycle, you apply forces to a rotating body and do work on =
+it.=20
+Similar things happen in real-life situations, such as a rotating motor =
+shaft=20
+driving a power tool or a car engine propelling the vehicle. We can =
+express this=20
+work in terms of torque and an angular displacement...<BR>What about the =
+power=20
+associated with work done by a torque acting on a rotating body? =
+<BR><BR>dW/dt=20
+is the rate of doing work, or <FONT color=3Dfirebrick>power P</FONT>. =
+When a=20
+torque T (with respect to the axis of rotation) acts on a body that =
+rotates with=20
+angular velocity W, its power (rate of doing work) is the product of the =
+torque=20
+and angular velocity. This is the analog of the relation P =3D =
+<B>F=B7v</B> for=20
+particle motion. </CITE><BR>
+<HR align=3Dleft width=3D"50%">
+Power in rotational motion can be written as:<BR><BR><IMG=20
+alt=3D"Power Equation for rotational motion: P=3DTW" src=3D""><BR><BR>
+<TABLE align=3Dcenter border=3D1>
+  <CAPTION><STRONG><FONT color=3Dfirebrick>UNITS of =
+POWER</FONT></STRONG>=20
+  </CAPTION>
+  <TBODY>
+  <TR>
+    <TD align=3Dmiddle><STRONG><FONT =
+color=3Dfirebrick>SI</FONT></STRONG> </TD>
+    <TD align=3Dmiddle><STRONG><FONT =
+color=3Dfirebrick>English</FONT></STRONG>=20
+  </TD></TR>
+  <TR>
+    <TD>Watts {W}<BR>newton-meters per second {N=B7m/s}<BR><BR>1 W =3D 1 =
+
+      N=B7m/s<BR>1 W =3D 0.738 ft=B7lb/s<BR>1 W =3D 1.341E-03 hp </TD>
+    <TD vAlign=3Dtop>foot-pounds per second {ft=B7lb/s}<BR>horsepower=20
+      {hp}<BR><BR>1 ft=B7lb/s =3D 1.818E-03 hp<BR>1 ft=B7lb/s =3D 1.356 =
+W=20
+</TD></TR></TBODY></TABLE><BR>
+<P></P><A href=3D"http://lancet.mit.edu/motors/motors3.html#top">Up to=20
+Contents</A><BR><A name=3Dtscurve></A>
+<HR>
+<BR>
+<P><BR></P><BR>
+<H2 align=3Dcenter>2. Motor Characteristics</H2><BR>
+<P>
+<H3>Section 3.1: TORQUE/SPEED CURVES</H3>
+<HR>
+In order to effectively design with D.C. motors, it is necessary to =
+understand=20
+their characteristic curves. For every motor, there is a specific =
+Torque/Speed=20
+curve and Power curve.<BR>
+<P><BR></P>
+<CENTER><IMG alt=3D"[Characteristic Torque/Speed Curve for a D.C. =
+Motor]"=20
+src=3D""><BR></CENTER><BR><BR>The graph above shows a torque/speed curve =
+of a=20
+typical D.C. motor. Note that torque is inversely proportioal to the =
+speed of=20
+the output shaft. In other words, there is a <EM><FONT=20
+color=3Dfirebrick>tradeoff</FONT></EM> between how much torque a motor =
+delivers,=20
+and how fast the output shaft spins. Motor characteristics are =
+frequently given=20
+as two points on this graph:<BR>
+<UL>
+  <LI>The <FONT color=3Dfirebrick>stall torque,</FONT><IMG alt=3D[Ts] =
+src=3D"">,=20
+  represents the point on the graph at which the torque is a maximum, =
+but the=20
+  shaft is not rotating.=20
+  <LI>The <FONT color=3Dfirebrick>no load speed,</FONT><IMG alt=3D[Wn] =
+src=3D"">, is=20
+  the maximum output speed of the motor (when no torque is applied to =
+the output=20
+  shaft). </LI></UL><A name=3Dsect3.1></A>The curve is then approximated =
+by=20
+connecting these two points with a line, whose equation can be written =
+in terms=20
+of torque or angular velocity as equations 3) and 4):<BR><BR><IMG=20
+alt=3D"[3) T=3DTs-W*Ts/Wn; 4) W=3D(Ts-T)*Wn/Ts]" src=3D""><BR><BR>
+<TABLE border=3D0>
+  <TBODY>
+  <TR>
+    <TD><FONT size=3D+1>The linear model of a D.C. motor torque/speed =
+curve is a=20
+      very good approximation. The torque/speed curves shown below are =
+actual=20
+      curves for the green maxon motor (pictured at right) used by =
+students in=20
+      2.007. One is a plot of empirical data, and the other was plotted=20
+      mechanically using a device developed at MIT. Note that the =
+characteristic=20
+      torque/speed curve for this motor is quite linear. <BR><BR>This is =
+
+      generally true as long as the curve represents the direct output =
+of the=20
+      motor, or a simple gear reduced output. If the specifications are =
+given as=20
+      two points, it is safe to assume a linear =
+curve.<BR><BR></FONT></TD>
+    <TD vAlign=3Dtop align=3Dmiddle><IMG alt=3D"[green maxon motor used =
+in 2.007]"=20
+      src=3D""><BR></TD></TR>
+  <TR>
+    <TD align=3Dmiddle colSpan=3D2><IMG alt=3D"[empirical torque/speed =
+curve]"=20
+      src=3D""> <IMG alt=3D"[mechanically drawn torque/speed curve]" =
+src=3D"">=20
+  </TD></TR></TBODY></TABLE><BR><BR>Recall that earlier we defined power =
+as the=20
+product of torque and angular velocity. This corresponds to the <FONT=20
+color=3Dfirebrick>area</FONT> of a rectangle under the torque/speed =
+curve with one=20
+cornerat the origin and another corner at a point on the curve (see =
+figures=20
+below). Due to the linear inverse relationship between torque and speed, =
+the=20
+maximum power occurs at the point where <IMG alt=3DW src=3D""><FONT=20
+color=3Dfirebrick><STRONG> =3D =BD</STRONG></FONT> <IMG alt=3DWn =
+src=3D"">, and <IMG alt=3DT=20
+src=3D""><FONT color=3Dfirebrick><STRONG> =3D =BD</STRONG></FONT> <IMG =
+alt=3DTs=20
+src=3D"">.<BR><BR>
+<CENTER><IMG alt=3D"[power represented as area under torque/speed =
+curve]" src=3D"">=20
+<IMG alt=3D"[power represented as area under torque/speed curve]" =
+src=3D""> <IMG=20
+alt=3D"[power represented as area under torque/speed curve]" src=3D""> =
+</CENTER>
+<P></P><A href=3D"http://lancet.mit.edu/motors/motors3.html#top">Up to=20
+Contents</A><BR><A name=3Dpowercurve></A>
+<HR>
+<BR><BR>
+<P><BR>
+<H3>Section 3.2: POWER/TORQUE and POWER/SPEED CURVES</H3>
+<HR>
+<BR>
+<P><BR></P>By substituting equations 3. and 4. (torque and speed, <A=20
+href=3D"http://lancet.mit.edu/motors/motors3.html#sect2.1">section =
+2.1</A>) into=20
+equation 2. (power, <A=20
+href=3D"http://lancet.mit.edu/motors/motors3.html#sect1.3">section =
+1.3</A>), we=20
+see that the power curves for a D.C. motor with respect to both speed =
+and torque=20
+are quadratics, as shown in equations 5. and 6.<BR><BR><IMG=20
+alt=3D"[5) P(W)=3D-(Ts/Wn)*W^2+Ts*W]; 6) P(T)=3D-(Wn.Ts)*T^2+Wn*T]"=20
+src=3D""><BR><BR>From these equations, we again find that maximum output =
+power=20
+occurs at <IMG alt=3D[T] src=3D""><FONT color=3Dfirebrick><STRONG> =3D=20
+=BD</STRONG></FONT><IMG alt=3DTs src=3D"">, and <IMG alt=3D[W] =
+src=3D""><FONT=20
+color=3Dfirebrick><STRONG> =3D =BD</STRONG></FONT><IMG alt=3DWn =
+src=3D""> repectively.=20
+<BR><BR>
+<CENTER><IMG alt=3D"[D.C. motor power vs. torque curve]" src=3D""> =
+</CENTER>
+<P></P><A href=3D"http://lancet.mit.edu/motors/motors3.html#top">Up to=20
+Contents</A><BR>
+<CENTER>
+<HR>
+<A href=3D"http://lancet.mit.edu/motors/index.html">Home</A> <A=20
+href=3D"http://lancet.mit.edu/motors/motors1.html">Intro</A> <A=20
+href=3D"http://lancet.mit.edu/motors/motors2.html">How They Work</A> <A=20
+href=3D"http://lancet.mit.edu/motors/motors3.html#top"><FONT=20
+color=3Dfirebrick>CHARACTERISTICS</FONT></A> <A=20
+href=3D"http://lancet.mit.edu/motors/motors4.html">Examples</A> </FONT>
+<HR width=3D"50%">
+<FONT size=3D-1>
+<ADDRESS><!--#exec cgi=3D"/bin/lastmod"--><BR>Webmaster: Matt Page <A=20
+href=3D"mailto:%20mpage1@mit.edu">mailto:%20mpage1@mit.edu</A><BR>=A9 =
+copyright 1999=20
+Center for Innovation in Product Development<BR></ADDRESS><STRONG><A=20
+href=3D"http://web.mit.edu/">MIT</A> <A=20
+href=3D"http://pergatory.mit.edu/2.007/">2.007</A> <A=20
+href=3D"http://me.mit.edu/">Mechanical Engineering</A> <A=20
+href=3D"http://me.mit.edu/groups/cipd/">CIPD</A> <A=20
+href=3D"http://www.usfirst.org/">FIRST</A>=20
+</STRONG></FONT></CENTER></FONT></BODY></HTML>

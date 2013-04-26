@@ -1,0 +1,21 @@
+.TopGroup {
+	Z-INDEX: 99; POSITION: relative
+}
+.DefaultTab {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; BACKGROUND-IMAGE: url(/skins/Skin_3/images/rc_tabs/tab_bg.gif); CURSOR: default; COLOR: black; FONT-FAMILY: Verdana, Geneva, Arial, helvetica, sans-serif
+}
+.DefaultTabHover {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; BACKGROUND-IMAGE: url(/skins/Skin_3/images/rc_tabs/hover_tab_bg.gif); CURSOR: pointer; FONT-FAMILY: Verdana, Geneva, Arial, helvetica, sans-serif
+}
+.SelectedTab {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; BACKGROUND-IMAGE: url(/skins/Skin_3/images/rc_tabs/selected_tab_bg.gif); BORDER-BOTTOM-COLOR: #ffffff; CURSOR: pointer; COLOR: #888888; FONT-FAMILY: Verdana, Geneva, Arial, helvetica, sans-serif
+}
+.MultiPage {
+	BORDER-RIGHT: #919b9c 0px solid; BORDER-TOP: #919b9c 0px solid; Z-INDEX: 98; LEFT: 1px; BORDER-LEFT: #919b9c 0px solid; WIDTH: 300px; BORDER-BOTTOM: #919b9c 0px solid; POSITION: relative; TOP: -2px; HEIGHT: 250px; BACKGROUND-COLOR: white
+}
+.PageContent {
+	BORDER-RIGHT: #696969 1px solid; BORDER-TOP: #696969 1px solid; FONT-SIZE: 11px; BORDER-LEFT: #696969 1px solid; BORDER-BOTTOM: #696969 1px solid; FONT-FAMILY: Verdana, Geneva, Arial, helvetica, sans-serif; BACKGROUND-COLOR: white
+}
+.PageHeader {
+	MARGIN-TOP: 0px; FONT-WEIGHT: bold; FONT-SIZE: 12px; MARGIN-BOTTOM: 0px; COLOR: #3f3f3f; FONT-FAMILY: Verdana, Geneva, Arial, helvetica, sans-serif; LETTER-SPACING: -0.2mm
+}

@@ -1,0 +1,144 @@
+   1               		.file	"robokits.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	main
+  20               	main:
+  21               	.LFB7:
+  22               	.LM1:
+  23               	/* prologue: function */
+  24               	/* frame size = 0 */
+  25               	.LM2:
+  26 0000 80E2      		ldi r24,lo8(32)
+  27 0002 87BB      		out 55-32,r24
+  28               	.LM3:
+  29 0004 11BA      		out 49-32,__zero_reg__
+  30               	.LBB42:
+  31               	.LBB43:
+  32               	.LBB44:
+  33               	.LBB45:
+  34               	.LM4:
+  35 0006 24E2      		ldi r18,lo8(-3036)
+  36 0008 34EF      		ldi r19,hi8(-3036)
+  37               	.LVL0:
+  38               	.L3:
+  39 000a C901      		movw r24,r18
+  40               	.LVL1:
+  41               	/* #APP */
+  42               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  43 000c 0197      		1: sbiw r24,1
+  44 000e 01F4      		brne 1b
+  45               	 ;  0 "" 2
+  46               	/* #NOAPP */
+  47               	.LBE45:
+  48               	.LBE44:
+  49               	.LBE43:
+  50               	.LBE42:
+  51               	.LBB46:
+  52               	.LBB47:
+  53               	.LBB48:
+  54               	.LBB49:
+  55 0010 C901      		movw r24,r18
+  56               	.LVL2:
+  57               	/* #APP */
+  58               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  59 0012 0197      		1: sbiw r24,1
+  60 0014 01F4      		brne 1b
+  61               	 ;  0 "" 2
+  62               	/* #NOAPP */
+  63               	.LBE49:
+  64               	.LBE48:
+  65               	.LBE47:
+  66               	.LBE46:
+  67               	.LBB50:
+  68               	.LBB51:
+  69               	.LBB52:
+  70               	.LBB53:
+  71 0016 C901      		movw r24,r18
+  72               	.LVL3:
+  73               	/* #APP */
+  74               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  75 0018 0197      		1: sbiw r24,1
+  76 001a 01F4      		brne 1b
+  77               	 ;  0 "" 2
+  78               	/* #NOAPP */
+  79               	.LBE53:
+  80               	.LBE52:
+  81               	.LBE51:
+  82               	.LBE50:
+  83               	.LBB54:
+  84               	.LBB55:
+  85               	.LBB56:
+  86               	.LBB57:
+  87 001c C901      		movw r24,r18
+  88               	.LVL4:
+  89               	/* #APP */
+  90               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  91 001e 0197      		1: sbiw r24,1
+  92 0020 01F4      		brne 1b
+  93               	 ;  0 "" 2
+  94               	/* #NOAPP */
+  95               	.LBE57:
+  96               	.LBE56:
+  97               	.LBE55:
+  98               	.LBE54:
+  99               	.LM5:
+ 100 0022 8399      		sbic 48-32,3
+ 101               	.LM6:
+ 102 0024 C59A      		sbi 56-32,5
+ 103               	.L2:
+ 104               	.LBB58:
+ 105               	.LBB59:
+ 106               	.LBB60:
+ 107               	.LBB61:
+ 108               	.LM7:
+ 109 0026 C901      		movw r24,r18
+ 110               	.LVL5:
+ 111               	/* #APP */
+ 112               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 113 0028 0197      		1: sbiw r24,1
+ 114 002a 01F4      		brne 1b
+ 115               	 ;  0 "" 2
+ 116               	/* #NOAPP */
+ 117               	.LBE61:
+ 118               	.LBE60:
+ 119               	.LBE59:
+ 120               	.LBE58:
+ 121               	.LBB62:
+ 122               	.LBB63:
+ 123               	.LBB64:
+ 124               	.LBB65:
+ 125 002c C901      		movw r24,r18
+ 126               	.LVL6:
+ 127               	/* #APP */
+ 128               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 129 002e 0197      		1: sbiw r24,1
+ 130 0030 01F4      		brne 1b
+ 131               	 ;  0 "" 2
+ 132               	/* #NOAPP */
+ 133 0032 00C0      		rjmp .L3
+ 134               	.LBE65:
+ 135               	.LBE64:
+ 136               	.LBE63:
+ 137               	.LBE62:
+ 138               	.LFE7:
+ 164               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\Users\ankit\AppData\Local\Temp/ccAPetGE.s:2      *ABS*:0000003f __SREG__
+C:\Users\ankit\AppData\Local\Temp/ccAPetGE.s:3      *ABS*:0000003e __SP_H__
+C:\Users\ankit\AppData\Local\Temp/ccAPetGE.s:4      *ABS*:0000003d __SP_L__
+C:\Users\ankit\AppData\Local\Temp/ccAPetGE.s:5      *ABS*:00000034 __CCP__
+C:\Users\ankit\AppData\Local\Temp/ccAPetGE.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\ankit\AppData\Local\Temp/ccAPetGE.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\ankit\AppData\Local\Temp/ccAPetGE.s:20     .text:00000000 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

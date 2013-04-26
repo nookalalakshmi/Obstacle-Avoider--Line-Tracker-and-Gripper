@@ -1,0 +1,21 @@
+H1 {
+	COLOR: #ff6000
+}
+H2 {
+	COLOR: #ffa000
+}
+H3 {
+	COLOR: #f0f000
+}
+H4 {
+	COLOR: #e0c060
+}
+SMALL {
+	COLOR: #c0c0c0
+}
+H1.ctr {
+	TEXT-ALIGN: center
+}
+H2.ctr {
+	TEXT-ALIGN: center
+}

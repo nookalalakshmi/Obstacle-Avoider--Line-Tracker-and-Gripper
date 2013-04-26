@@ -1,0 +1,21 @@
+A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:unknown {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #707070; TEXT-DECORATION: none
+}
+TD {
+	FONT-SIZE: 13px; FONT-FAMILY: helvetica,arial,sans-serif
+}
+BIG {
+	FONT-WEIGHT: bold; FONT-SIZE: 20px
+}

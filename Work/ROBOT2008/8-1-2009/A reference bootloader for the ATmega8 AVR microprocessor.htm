@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.dl5neg.de/bootloader/bootloader.html -->
+<HTML><HEAD><TITLE>A reference bootloader for the ATmega8 AVR microprocessor</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META http-equiv=Content-Language content=en-us>
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId></HEAD>
+<BODY text=#000000 vLink=#551a8b aLink=#ff0000 link=#0000ee>
+<TABLE width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width="50%"><A href="http://www.dl5neg.de/"><IMG height=64 
+      src="A reference bootloader for the ATmega8 AVR microprocessor_files/LOGO_tn.jpg" 
+      width=242 border=0></A></TD>
+    <TD vAlign=bottom width="50%">
+      <P align=right><B><FONT face=Arial size=2>This page was last changed on 
+      21.04.2005</FONT></B> </P></TD></TR></TBODY></TABLE>
+<HR color=#0000ff SIZE=5>
+
+<P align=center> </P>
+<P align=center><B><FONT face=Arial color=#0000ff size=6>A bootloader for the 
+ATmega8 AVR microprocessor</FONT></B> </P>
+<P align=center><FONT face=Arial color=#0000ff><B>Version 2.1 is now available 
+for download</B></FONT> 
+<P> 
+<P><FONT face=Arial color=#0000ff size=3><B>What is a bootloader?</B></FONT>
+<P><FONT face=Arial color=#0000ff size=3>A bootloader is a piece of software 
+that is located in a special part of a microprocessors flash memory. It is able 
+to communicate with the outside world via the pins of the micro (e.g. via RS232, 
+SPI, I2C etc.). And it is able to change the content of the main part of the 
+flash content.</FONT>
+<P><FONT face=Arial color=#0000ff size=3><B>What is it good for?</B></FONT>
+<P><FONT face=Arial color=#0000ff size=3>Normally a special device is needed to 
+put new software into a microprocessor. A so called "programmer" is connected to 
+the micro on one side, and to a PC on the other side. It transfers the new 
+software from the PC to the micro. On the PC side there is an Windows 
+application that sends the information to the programmer. A bootloader makes it 
+possible to connect the micro to the PC application directly (e.g. via RS232), 
+read the new software from the PC and put it into the main part of the flash, 
+the so called application section.</FONT>
+<P><FONT face=Arial color=#0000ff size=3><B>What is the main benefit of a boot 
+loader?</B></FONT>
+<P><FONT face=Arial color=#0000ff size=3>Since the bootloader can be written in 
+many different ways, it can be adapted to the needs of the specific application 
+it is used in. The bootloader can even contain a decryption algorithm, so the 
+software can be given to the end-user for individual software upgrades, without 
+the risk of reverse engineering or hacked firmware.</FONT>
+<P><FONT face=Arial color=#0000ff size=3><B>Who does need a 
+bootloader?</B></FONT>
+<P><FONT face=Arial color=#0000ff size=3>A very common field of usage for a 
+bootloader is portable consumer electronics like cell phones, personal digital 
+organizers (PDAs), handheld GPS receivers, etc. New software updates are usually 
+distributed via the internet. It is in the manufacturers interest that the user 
+can upload the software easily to the device without needing a special 
+programmer hardware. But the user should not be able to disassemble or 
+manipulate the software.</FONT>
+<P><FONT face=Arial color=#0000ff size=3>The procedure would be like this: The 
+user downloads an encrypted software for his mobile phone from the internet. He 
+connects the phone to his PC via his standard RS232 cable. The bootloader in the 
+telephone establishes a connection to the PC, reads the software, does the 
+decryption and puts the software in application section of the phones flash 
+memory.</FONT>
+<P><FONT face=Arial color=#0000ff size=3><B>What was the motivation for creating 
+the bootloader that is published here?</B></FONT>
+<P><FONT face=Arial color=#0000ff size=3>This bootloader will be used at the 
+amateur radio relay station in Nennslingen, Germany. It is part of the receiver, 
+which does all the controlling within the relay station. Since there is a PC 
+available with remote access at that location, there will be a permanent RS232 
+connection between the receiver and the PC. If the need for an software 
+adaptation arises (e.g. due to interference problems), it can be done remotely, 
+without the need to be on side for uploading the software. The used processor is 
+the Atmel ATmega8, which supports the bootloader functionality.</FONT>
+<P><FONT face=Arial color=#0000ff size=3><B>What is the history behind this 
+piece of software?</B></FONT>
+<P><FONT face=Arial color=#0000ff size=3>Atmel has published a bootloader 
+written in C language in their application note AVR109. It is written using the 
+IAR C compiler which is not free, so it is not available to everyone. The 
+application note itself is well written and worth reading. It can be found at <A 
+href="http://www.atmel.com/">http://www.atmel.com/</A>. </FONT>
+<P><FONT face=Arial color=#0000ff size=3>On <A 
+href="http://www.avrfreaks.net/">http://www.avrfreaks.net/</A> there is design 
+note (#32) which describes a bootloader written in assembly for the ATmega163. 
+It even has an counter implemented in the devices EEPROM to count the number of 
+flash erases. However this software is not directly applicable to the most 
+widely used AVR processor, the ATmega8. This software was used as a basis for 
+the bootloader that is published here. The main advances are:</FONT> 
+<UL>
+  <LI><FONT face=Arial color=#0000ff size=3>check implemented to access the 
+  flash only after the last task was completed</FONT> 
+  <LI><FONT face=Arial color=#0000ff size=3>re-enabling the application section 
+  after it was reprogrammed by the bootloader</FONT> 
+  <LI><FONT face=Arial color=#0000ff size=3>interface sync-losses between 
+  AVRProg1.37 and the bootloader solved by implementing required commands that 
+  were missing </FONT>
+  <LI><FONT face=Arial color=#0000ff size=3>startup code section that waits for 
+  8 seconds for bootloader commands and starts the application if no commands 
+  are received (this makes it possible to use solely RXD and TXD lines on the 
+  RS232 for software upload, no further lines are required)</FONT> 
+  <LI><FONT face=Arial color=#0000ff size=3>Usage of "universal command" by 
+  AVRProg1.37 with regard to fuse/lock bit reading conquered to make things 
+  work</FONT> 
+  <LI><FONT face=Arial color=#0000ff size=3>code is well documented now, every 
+  block and every line is exactly explained (this simplifies adaptations to 
+  individual requirements)</FONT> </LI></UL>
+<P><FONT face=Arial color=#0000ff size=3><B>What do I have to know about he 
+hardware configuration?</B></FONT></P>
+<P><FONT face=Arial color=#0000ff size=3>Well, not a lot. All you have to have 
+is a RS232 level shifter (like a MAX232 or similar) that connects the UART input 
+(RXD) and output (TXD) to your PC. You might want to connect a LED to I/O pin 
+PB1 (active low, i.e. between Vcc and PB1). This LED shows you the state of the 
+bootloader, as described below.</FONT></P>
+<P><FONT face=Arial color=#0000ff size=3>The AVRProg1.37 uses a fixed Baud rate 
+of 19.2kB/s, this is achieved by using a 7.3728MHz crystal. Other crystals can 
+be used but the UBR parameter has to be adapted then.</FONT></P>
+<P><FONT face=Arial color=#0000ff size=3><B>How can the bootloader be 
+used?</B></FONT></P>
+<P><FONT face=Arial color=#0000ff size=3>Very simple. Use your traditional 
+programmer to set the fuse bits for a 512 words (=1kByte) bootloader section 
+size. Load the bootloader into the mega8 with a traditional programmer. It will 
+automatically be place within the last 1kByte of the flash. Set the BOOTRESET 
+fuse bit using your programmer. This will cause the processor to start with the 
+bootloader section from now on, rather than hitting the ground at address 0x00 
+after power-on. </FONT></P>
+<P><FONT face=Arial color=#0000ff size=3>From now on, you don't need a 
+programmer any more. After power-on, the bootloader will wait for an ESC (=ASCII 
+27) via the RS232 interface [the LED flashes]. If that ESC does come (e.g. sent 
+from a terminal program running on the PC), the bootloader code will be 
+activated [the LED stays on permanently] and the PC will be able to communicate 
+to the processor as if there was a programmer connected. So simply start 
+AVRProg1.37 and download your application software. Then close the AVRProg, 
+start a terminal again, press 'E' and the bootloader software will terminate 
+itself [LED will turn off] and start the application software.</FONT></P>
+<P><FONT face=Arial color=#0000ff size=3>If no ESC is received within 8 seconds 
+after power on, the application program will start automatically. If there is no 
+application software loaded, the bootloader will wait forever for an 
+ESC.</FONT></P>
+<P><FONT face=Arial color=#0000ff size=3><B>Are there any open 
+issues?</B></FONT></P>
+<P><FONT face=Arial color=#0000ff size=3>There are no known issues at this point 
+in time. It should be noted that the write fuse bit button in the advanced 
+window will not have any effect. AVRProg1.37 uses the '.' command for setting 
+the fuse bits. This is intentially ignored to avoid the risk of locking oneself 
+out. Also the regular commands for setting lock/fuse bits are intentionally 
+ignored.</FONT></P>
+<P><FONT face=Arial color=#0000ff size=3><B>Download the bootloader version 2.1 
+here.&nbsp;</B></FONT></P>
+<BLOCKQUOTE>
+  <P><FONT face=Arial color=#0000ff size=3><A 
+  href="http://www.dl5neg.de/bootloader/bootloader_download.html">Click here to 
+  proceed to the download page</A></FONT></P></BLOCKQUOTE>
+<P><FONT face=Arial color=#0000ff size=3>&nbsp;&nbsp;&nbsp;</FONT></P>
+<P><FONT face=Arial color=#0000ff size=3><B>How does is look like when I use the 
+bootloader?</B></FONT></P>
+<P><FONT face=Arial color=#0000ff size=3>Well, it looks just like if you were 
+using an external programmer. The only difference is that the ATmega8 is the 
+only device type that is offered to the user by AVRProg.</FONT></P>
+<P align=center><FONT color=#0000ff><IMG 
+src="A reference bootloader for the ATmega8 AVR microprocessor_files/AVRProg.jpg" 
+border=0>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</FONT> </P>
+<P><FONT face=Arial color=#0000ff size=3>When you press the advance button, 
+AVRProg shows you the state of the lock and fuse bits, the device signature, the 
+identifier of the bootloader and the bootloader software revision. The 
+calibration byte will always read 0x00, its readout is not supported by the 
+bootloader.</FONT></P>
+<P align=center><FONT color=#0000ff><IMG 
+src="A reference bootloader for the ATmega8 AVR microprocessor_files/AVRPROG_.jpg" 
+border=0></FONT></P>
+<P>&nbsp;
+<P><FONT face=Arial size=3><B><A href="http://www.dl5neg.de/"><FONT 
+color=#0000ff>For more stuff visit my main page...</FONT></A></B></FONT>
+<P> 
+<P> 
+<DIV><A href="http://www.wiredminds.de/" target=_blank><IMG 
+alt="WiredMinds eMetrics tracking with Click Track" src="" 
+border=0></A></DIV></BODY></HTML>

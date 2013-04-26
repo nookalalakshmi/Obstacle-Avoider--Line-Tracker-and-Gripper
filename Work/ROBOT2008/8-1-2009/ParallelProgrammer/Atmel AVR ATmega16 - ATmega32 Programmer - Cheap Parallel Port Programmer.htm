@@ -1,0 +1,556 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://www.captain.at/electronics/atmel-programmer/ -->
+<HTML><HEAD><TITLE>Atmel AVR ATmega16 / ATmega32 Programmer - Cheap Parallel Port Programmer</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1"><LINK 
+href="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/style.css" 
+type=text/css rel=stylesheet><LINK href="/capicon.gif" type=image/gif rel=icon>
+<SCRIPT language=JavaScript 
+src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/captain.js" 
+type=text/javascript></SCRIPT>
+
+<META 
+content="An interdisciplinary website for science, programming, electronics and more." 
+name=Description>
+<META 
+content="science, programming, electronics, Linux, RTAI, fusion, ADEOS, Java, C, hard real time, microcontroller, Atmel, PIC, MMC, E2PROM, FreeBSD" 
+name=Keywords>
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY text=#000000 vLink=#333333 aLink=#0000ff link=#0037b4 bgColor=#ffffff 
+leftMargin=0 topMargin=0 marginheight="0" marginwidth="0"><A name=top></A>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#000000 height=52>
+      <TABLE height=108 cellSpacing=0 cellPadding=0 width="100%" 
+      background="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/ship-back.jpg" 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width="50%"><A href="http://www.captain.at/"><IMG 
+            title="Captain's Universe Home" height=80 
+            alt="Captain's Universe Home" 
+            src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/ship-back2.jpg" 
+            width=395 border=0><BR><IMG title="Captain's Universe Home" 
+            height=29 alt="Captain's Universe Home" 
+            src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/ship-back3.jpg" 
+            width=395 border=0></A></TD>
+          <TD align=right width="50%">
+            <TABLE cellSpacing=4 cellPadding=0 width=300>
+              <TBODY>
+              <TR>
+                <TD rowSpan=4><A href="http://www.captain.at/artemia/"><IMG 
+                  title="SeaMonkey Artemia and Browser" 
+                  style="PADDING-RIGHT: 20px" height=64 
+                  alt="SeaMonkey Artemia and Browser" 
+                  src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/seamonkey64.gif" 
+                  width=64 border=0></A> </TD>
+                <TD class=topt noWrap align=middle bgColor=#1a5a94><A 
+                  class=nav href="http://www.cosmicrays.org/">Cosmic Ray Muon 
+                  Detector</A></TD>
+                <TD class=topt noWrap align=middle bgColor=#1a5a94><A 
+                  class=nav href="http://www.telegarden.org/tg/">TeleGarden 
+                  Pages</A></TD></TR>
+              <TR bgColor=#1a5a94>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.marsbase.net/">Time on Mars</A></TD>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.bryophyllum.com/">Bryophyllum 
+Plants</A></TD></TR>
+              <TR bgColor=#1a5a94>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.jupiterradio.com/j/articles/prob/">Jupiter 
+                  Radio Astronomy</A></TD>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.ancientcoins.biz/pages/">Ancient 
+              Pages</A></TD></TR>
+              <TR bgColor=#1a5a94>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.telegarden.org/salzburg.php">Salzburg Tourist 
+                  Guide</A></TD>
+                <TD class=topt noWrap align=middle><A class=nav 
+                  href="http://www.magnetometer.org/">Earth 
+              Magnetometer</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD bgColor=#ffffff><IMG height=3 
+      src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/t3.gif" 
+      width=1></TD></TR>
+  <TR>
+    <TD bgColor=#000000 height=23>
+      <TABLE class=capmenu cellSpacing=0 cellPadding=3 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%"><A class=nbv style="DISPLAY: inline" 
+            href="http://www.captain.at/">&nbsp; H O M E &nbsp;</A></TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/ajax.php">&nbsp; AJAX &amp; MORE 
+            &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/linux.php">&nbsp; LINUX &amp; MORE 
+            &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/rtai.php">&nbsp; RTAI &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/xenomai.php">&nbsp; XENOMAI &nbsp;</A> 
+          </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/adeos-ipipe.php">&nbsp; ADEOS IPIPE 
+            &nbsp;</A> </TD>
+          <TD class=nay noWrap>&nbsp; &nbsp; </TD></TR></TBODY></TABLE>
+      <TABLE class=capmenu cellSpacing=0 cellPadding=3 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%">&nbsp;</TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/browsers.php">&nbsp; JAVA &amp; BROWSERS 
+            &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/nix.php">&nbsp; *NIX &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=na 
+            href="http://www.captain.at/electronic-index.php">&nbsp; ELECTRONICS 
+            &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/review-index.php">&nbsp; REVIEWS 
+            &nbsp;</A> </TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/artemia/">&nbsp; ARTEMIA &nbsp;</A></TD>
+          <TD class=nax noWrap><A class=nbv 
+            href="http://www.captain.at/fairy-shrimp.php">&nbsp; FAIRY SHRIMP 
+            &nbsp;</A></TD>
+          <TD class=nay noWrap>&nbsp; &nbsp; </TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD bgColor=#ffffff><IMG height=3 
+      src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/t3.gif" 
+      width=1></TD></TR>
+  <TR>
+    <TD vAlign=top bgColor=#ffffff>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top bgColor=#eeeeee>
+            <TABLE cellSpacing=0 cellPadding=7 width=180 border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <UL class=uli>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-index.php"><B>Electronics 
+                    Home</B></A> </LI></UL>
+                  <UL class=uli>
+                    <LI class=mcon><B>Atmel ATmega</B><BR><IMG height=8 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-linux-atmel-avr-simulator-gui-vmlab.php">Linux 
+                    Atmel AVR Simulator with GUI</A><BR><IMG height=6 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-atmega-sd-card.php">Atmel 
+                    ATmega - SD card (Secure Digital Card) Flash Memory 
+                    Extension</A><BR><IMG height=6 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-atmega-dcf77.php">Atmel 
+                    ATmega - DCF77 time signal decoder</A><BR><IMG height=6 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-atmega-mmc.php">Atmel 
+                    ATmega - MMC (Multi Media Card) Flash Memory 
+                    Extension</A><BR><IMG height=6 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-atmega-eeprom.php">Atmel 
+                    ATmega I2C EEPROM Example Schematic and C 
+                    program</A><BR><IMG height=6 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-atmega16-serial-port.php">Atmel 
+                    ATmega16 Serial Port Example Schematic and C 
+                    program</A><BR><IMG height=6 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu style="FONT-WEIGHT: bold" 
+                    href="http://www.captain.at/electronics/atmel-programmer/">Atmel 
+                    AVR ATmega16 Programmer Linux</A><BR><IMG height=6 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR></LI></UL>
+                  <UL class=uli>
+                    <LI class=mcon><B>Microchip PIC</B><BR><IMG height=8 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/pic-programmer/">Pic 
+                    Programmer Linux</A><BR><IMG height=6 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/pic-mmc/">PIC - MMC 
+                    Flash Memory Extension</A><BR><IMG height=6 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/pic-ram/">PIC - 
+                    32k/64k RAM Extension</A><BR><IMG height=6 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR></LI></UL>
+                  <UL class=uli>
+                    <LI class=mcon><B>Misc. stuff</B><BR><IMG height=8 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronic-astronomy-timer-gadgets.php">Astronomy 
+                    Timer Gadgets</A><BR><IMG height=6 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/decoupling/">Decoupling 
+                    the power supply</A><BR><IMG height=6 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/manhattan-board/">Manhattan 
+                    style PCB board prototyping for high frequency RF and 
+                    critical circuits</A><BR><IMG height=6 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/coils/">Coil 
+                    Calculator - Single-layer and mutil-layer coil calculation 
+                    in javascript</A><BR><IMG height=6 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR>
+                    <LI><A class=menu 
+                    href="http://www.captain.at/electronics/active-filter/">Active 
+                    Bandpass Filter Javascript Tool</A><BR><IMG height=6 
+                    src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/spacer.gif" 
+                    width=1><BR></LI></UL></TD></TR></TBODY></TABLE></TD>
+          <TD vAlign=top width="100%"><!-- google_ad_section_start --><BR>
+            <TABLE cellSpacing=0 cellPadding=2 width=678 align=center 
+              border=0><TBODY>
+              <TR>
+                <TD><SPAN class=mcon><BR><BR>
+                  <H1>Atmel AVR ATmega16 / ATmega32 Programmer - Cheap Parallel 
+                  Port Programmer</H1><B>UPDATE:</B> Since the Atmega32 MCU is 
+                  just an ATmega16 with more Flash, RAM etc. the ATmega16 can be 
+                  replaced by the ATmega32. 
+                  <H1>UPDATE 27-FEB-2007<BR>Due to different computer hardware 
+                  the programmer didn't work with all parallel ports. The 
+                  problem was R3 (1k resistor from par-port pin 11 (BUSY - 
+                  input) to pin 7 of the ATmega). R3 has now been removed - this 
+                  is safe since the BUSY line on the parallel port is input only 
+                  anyway</H1><B>If it still doesn't work for you:</B> 
+                  <UL>
+                    <LI>check your connections once again 
+                    <LI>use a diode-tester or some "beeper" to verify if the 
+                    connections are good (without connection to your linux box 
+                    and without the Atmel) 
+                    <LI>use <A 
+                    href="http://www.captain.at/programming/rtai/parportintlxrt.php" 
+                    target=_blank>set.c and reset.c from this page (at the 
+                    bottom)</A> to measure if your parallel port is actually 
+                    working 
+                    <LI>try another Atmel </LI></UL><BR>This is one of the 
+                  simplest low cost programmers for the Atmel ATmega 
+                  series.<BR><BR>If a Flash program memory PIC like the 
+                  PIC16F876 is not enough (RAM size, I/O port pins etc.), the 
+                  Atmel ATmega microcontrollers are really handy - especially 
+                  the ATmega16 with 40pins (I2C, SPI, USART, A/D, 2 external 
+                  interrupts, PWM etc.). The hardware is pretty straightforward. 
+                  It is based on the "DAPA - Direct AVR Parallel Access" idea - 
+                  you can use any programmer software as long as DAPA is 
+                  supported. <BR>
+                  <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-3524547136592145";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "FFFFFF";
+google_color_link = "000000";
+google_color_bg = "FFFFFF";
+google_color_text = "000000";
+google_color_url = "000000";
+//--></SCRIPT>
+
+                  <SCRIPT 
+                  src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/show_ads.js" 
+                  type=text/javascript>
+</SCRIPT>
+                  <BR>It's tested with the ATmega16 and "uisp" on Linux, but it 
+                  should work with any Atmel uC which supports SPI based 
+                  in-circuit software programming and any programmer software 
+                  which supports the DAPA interface. This programmer should work 
+                  with the pin-compatible ATmega32 without any modifications, 
+                  but I have not tested that. <BR><BR><B>Hardware:</B><BR>
+                  <TABLE cellSpacing=0 cellPadding=1 align=center>
+                    <TBODY>
+                    <TR>
+                      <TD onmouseover="this.bgColor='#444444';" 
+                      onmouseout="this.bgColor='#ffffff';"><A class=m 
+                        href="http://www.captain.at/electronics/atmel-programmer/atmega16-programmer.png" 
+                        target=_blank><IMG height=476 alt="Pic Programmer" 
+                        src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/th_atmega16-programmer.png" 
+                        width=529 border=0></A></TD></TR>
+                    <TR>
+                      <TD class=c align=middle><A class=m 
+                        href="http://www.captain.at/electronics/atmel-programmer/atmega16-programmer.png" 
+                        target=_blank>Click on the schematic for a large view 
+                        (opens in a new 
+                  window)</A></TD></TR></TBODY></TABLE><BR><BR>Keep the parallel 
+                  port cable as short as 
+                  possible.<BR><BR><B>Software:</B><BR>Software development can 
+                  be done in either assembly language or with a C compiler. I 
+                  prefer C, even for microcontrollers, and the excellent news is 
+                  that there is support for the AVR devices in <A 
+                  href="http://gcc.gnu.org/" target=_blank><B>GCC</B></A>. There 
+                  are packages for most linux distros, just look for 
+                  <B>avr-gcc</B>. It is also available for windows, see below. 
+                  <BR><BR>The software for programming the ATmega16 with this 
+                  programmer on Linux is <A href="http://www.nongnu.org/uisp/" 
+                  target=_blank><B>"uisp"</B></A> (packages available for most 
+                  linux distros) - there is also a windows version of "uisp". It 
+                  is included in the <A href="http://www.avrfreaks.net/AVRGCC/" 
+                  target=_blank>"windows version of avr-gcc"</A>. <BR><BR>As 
+                  soon as you've connected your programmer to the parallel port 
+                  and switched on power, you can test the hardware with: <PRE># uisp -dprog=dapa
+Atmel AVR ATmega16 is found.
+</PRE><BR>Make sure you have a current version of uisp. If the 
+                  output is like "Atmel AVR similar to the ATmega161 is found." 
+                  or it doesn't recognize the device at all, install a new 
+                  version of uisp. "testing" for Debian is just fine. See <A 
+                  href="http://www.captain.at/electronics/atmel-programmer/#troubleshooting">troubleshooting</A> 
+                  for more error messages. <BR><BR>
+                  <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-3524547136592145";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "FFFFFF";
+google_color_link = "000000";
+google_color_bg = "FFFFFF";
+google_color_text = "000000";
+google_color_url = "000000";
+//--></SCRIPT>
+
+                  <SCRIPT 
+                  src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/show_ads.js" 
+                  type=text/javascript>
+</SCRIPT>
+                  <BR><BR>As you recognized, there is also a LED in the 
+                  programmer schematic. It is only used for testing the 
+                  programmer with this simple program - avrledtest.c (compile 
+                  with avr-gcc 3.4):<BR><BR><PRE>#include &lt;avr/io.h&gt;
+
+void delay_ms(unsigned short ms)
+/* delay for a minimum of &lt;ms&gt; */
+/* with a 4Mhz crystal, the resolution is 1 ms */
+{
+	unsigned short outer1, outer2;
+     	outer1 = 200; 
+
+    	while (outer1) {
+		outer2 = 1000;
+		while (outer2) {
+			while ( ms ) ms--;
+			outer2--;
+		}
+		outer1--;
+	}
+}
+
+int main(void)
+{
+	/* enable  PD5 as output */
+	sbi(DDRD,PD5);
+	while (1) {
+		/* led on, pin=0 */
+		cbi(PORTD,PD5);
+		delay_ms(500);
+		/* set output to 5V, LED off */
+		sbi(PORTD,PD5);
+		delay_ms(500);
+	}
+	return 0;
+}
+</PRE>Compile it with avr-gcc with this makefile: <PRE>MCU=atmega16
+CC=avr-gcc
+OBJCOPY=avr-objcopy
+# optimize for size:
+CFLAGS=-g -mmcu=$(MCU) -Wall -Wstrict-prototypes -Os -mcall-prologues
+
+all: avrledtest.hex
+avrledtest.hex : avrledtest.out 
+	$(OBJCOPY) -R .eeprom -O ihex avrledtest.out avrledtest.hex 
+avrledtest.out : avrledtest.o 
+	$(CC) $(CFLAGS) -o avrledtest.out -Wl,-Map,avrledtest.map avrledtest.o 
+avrledtest.o : avrledtest.c 
+	$(CC) $(CFLAGS) -Os -c avrledtest.c
+
+# erase the AVR before it is programmed
+load: avrledtest.hex
+	uisp -dlpt=/dev/parport0 --erase  -dprog=dapa
+	uisp -dlpt=/dev/parport0 --upload if=avrledtest.hex -dprog=dapa  -v=3 --hash=32
+
+clean:
+	rm -f *.o *.map *.out
+</PRE>Issue "make" to compile and "make load" to program the 
+                  uC with uisp.<BR>avrledtest.c and Makefile based on avrledtest 
+                  by <A 
+                  href="http://www.linuxfocus.org/English/March2002/article231.shtml" 
+                  target=_blank>Guido Socher - Programming the AVR 
+                  Microcontroller with GCC</A>. 
+                  <BR><BR><B>TROUBLESHOOTING:</B><BR>If /dev/parport0 is not 
+                  found <PRE># uisp -dlpt=/dev/parport0 -dprog=dapa -dpart=ATmega16 --rd_fuses
+/dev/parport0: No such file or directory
+Failed to open ppdev.
+</PRE>you need to load the kernel module "parport" <PRE># modprobe parport
+</PRE>and create a device node with <PRE># mknod /dev/parport0 c 99 0
+</PRE><BR>If the example above does not compile due the 
+                  deprecated cbi and sbi funtions, use these: <PRE>REGISTER |= (1 &lt;&lt; BIT);    /* sets BIT in REGISTER */
+REGISTER &amp;= ~(1 &lt;&lt; BIT);   /* clears BIT in REGISTER */
+</PRE><BR><BR>As soon as the programming cycle is finished the 
+                  LED starts to flash! <BR><BR>
+                  <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-3524547136592145";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "FFFFFF";
+google_color_link = "000000";
+google_color_bg = "FFFFFF";
+google_color_text = "000000";
+google_color_url = "000000";
+//--></SCRIPT>
+
+                  <SCRIPT 
+                  src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/show_ads.js" 
+                  type=text/javascript>
+</SCRIPT>
+                  <BR><BR><B>ATmega16 fuse byte programming:</B> <BR>The Atmel 
+                  microcontrollers are shipped with the internal RC oscillator 
+                  enabled, so in order to use an external resonator or crystal 
+                  oscillator, you have to change the internal fuse bits. Note 
+                  that the fuses are read as logical zero, 0 , if they are 
+                  programmed. For further details see the ATmega16 datasheet @ 
+                  atmel.com. <PRE>Fuse Low Byte   Bit No.  Description                  Default Value 
+BODLEVEL        7        Brown-out Det. trig. level   1 (unprogrammed) 
+BODEN           6        Brown-out Detector enable    1 (unprogrammed, BOD disabled) 
+SUT1            5        Select start-up time         1 (unprogrammed)(1) 
+SUT0            4        Select start-up time         0 (programmed)(1) 
+CKSEL3          3        Select Clock source          0 (programmed)(2) 
+CKSEL2          2        Select Clock source          0 (programmed)(2) 
+CKSEL1          1        Select Clock source          0 (programmed)(2) 
+CKSEL0          0        Select Clock source          1 (unprogrammed)(2)
+</PRE>My choice: 1 1 1 1 1 1 1 1 = 0xFF <PRE>Fuse High Byte  Bit No.  Description                  Default Value 
+OCDEN           7        Enable OCD                   1 (unprogrammed, OCD disabled) 
+JTAGEN          6        Enable JTAG                  0 (programmed, JTAG enabled) 
+SPIEN           5        Enable SPI Downloading       0 (programmed, SPI prog. enabled) 
+CKOPT           4        Oscillator options           1 (unprogrammed) 
+EESAVE          3        EEPROM memory is preserved   1 (unprogrammed, EEPROM not preserved) 
+BOOTSZ1         2        Select Boot Size             0 (programmed)(3) 
+BOOTSZ0         1        Select Boot Size             0 (programmed)(3) 
+BOOTRST         0        Select reset vector          1 (unprogrammed)
+</PRE>My choice: 1 1 0 0 1 0 0 1 = 0xC9 <BR><BR>Programming 
+                  the fuse bytes with "uisp":<BR><BR>read fuses (test if 
+                  communication works): <PRE>uisp -dlpt=/dev/parport0 -dprog=dapa -dpart=ATmega16 --rd_fuses</PRE>write 
+                  fuses (external oscillator; disable JTAG port) <PRE>uisp -dlpt=/dev/parport0 -dprog=dapa -dpart=ATmega16 --wr_fuse_l=0xff
+uisp -dlpt=/dev/parport0 -dprog=dapa -dpart=ATmega16 --wr_fuse_h=0xc9 </PRE><BR><A 
+                  name=troubleshooting></A><B>Troubleshooting uisp:</B><BR>If 
+                  you get 
+                  <UL>
+                    <LI>Unknown device specified: ATmega16 
+                    <LI>Atmel AVR similar to the ATmega161 is found. 
+                    <LI>Invalid parameter: --rd_fuses </LI></UL>update your uisp 
+                  to a current version. <BR><BR>Last-Modified: Tue, 27 Feb 2007 
+                  20:53:29 GMT</SPAN>
+                  <P></P></TD></TR></TBODY></TABLE><!-- google_ad_section_end -->
+            <CENTER><!-- SiteSearch Google -->
+            <FORM action=http://www.google.com/custom method=get target=_top>
+            <TABLE bgColor=#ffffff border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top noWrap align=left height=32><A 
+                  href="http://www.google.com/"><IMG alt=Google 
+                  src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/Logo_25wht.gif" 
+                  border=0></IMG></A> </TD>
+                <TD noWrap><INPUT type=hidden value=www.captain.at 
+                  name=domains></INPUT> <INPUT maxLength=255 size=31 
+                  name=q></INPUT> 
+                  <INPUT type=submit value=Search name=sa></INPUT> </TD></TR>
+              <TR>
+                <TD>&nbsp;</TD>
+                <TD noWrap>
+                  <TABLE>
+                    <TBODY>
+                    <TR>
+                      <TD><INPUT type=radio value="" name=sitesearch></INPUT> 
+                        <FONT color=#000000 size=-1>Web</FONT> </TD>
+                      <TD><INPUT type=radio CHECKED value=www.captain.at 
+                        name=sitesearch></INPUT> <FONT color=#000000 
+                        size=-1>www.captain.at</FONT> </TD></TR></TBODY></TABLE><INPUT 
+                  type=hidden value=pub-3524547136592145 name=client></INPUT> 
+                  <INPUT type=hidden value=1 name=forid></INPUT> <INPUT 
+                  type=hidden value=ISO-8859-1 name=ie></INPUT> <INPUT 
+                  type=hidden value=ISO-8859-1 name=oe></INPUT> <INPUT 
+                  type=hidden 
+                  value=GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:FFFFFF;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;LH:80;LW:395;L:http://www.captain.at/home/ship-back2.jpg;S:http://www.captain.at;FORID:1; 
+                  name=cof></INPUT> <INPUT type=hidden value=en name=hl></INPUT> 
+                </TD></TR></TBODY></TABLE></FORM><!-- SiteSearch Google --></CENTER></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD bgColor=#ffffff><IMG height=3 
+      src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/t3.gif" 
+      width=1></TD></TR>
+  <TR>
+    <TD bgColor=#1a5a94>
+      <TABLE cellSpacing=0 cellPadding=2 width="100%">
+        <TBODY>
+        <TR>
+          <TD width=60 bgColor=#1a5a94 height=20>
+            <CENTER><A class=bot 
+            href="http://www.captain.at/electronics/atmel-programmer/#top">go to 
+            top</A></CENTER></TD>
+          <TD bgColor=#1a5a94 height=20>
+            <TABLE align=center>
+              <TBODY>
+              <TR>
+                <TD class=bot align=right>© 1996-2009 </TD>
+                <TD vAlign=bottom width=103><IMG height=13 
+                  src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/e.gif" 
+                  width=103></TD>
+                <TD class=bot>. All rights reserved.</B></FONT>
+                  <CENTER></CENTER></TD></TR>
+              <TR>
+                <TD class=bot colSpan=3>No reproduction, distribution, 
+                  publishing or transmission of the copyrighted materials at 
+                  this site is permitted. <A class=ab 
+                  href="http://www.captain.at/policy.php">Policy</A></TD></TR></TBODY></TABLE></TD>
+          <TD width=60 bgColor=#1a5a94 height=20>
+            <CENTER><A class=bot 
+            href="http://www.captain.at/electronics/atmel-programmer/#top">go to 
+            top</A></CENTER></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD bgColor=#ffffff><IMG height=3 
+      src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/t3.gif" 
+      width=1></TD></TR></TBODY></TABLE>
+<SCRIPT language=JavaScript 
+src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/onw.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="Atmel AVR ATmega16 - ATmega32 Programmer - Cheap Parallel Port Programmer_files/urchin.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+_uacct = "UA-85090-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

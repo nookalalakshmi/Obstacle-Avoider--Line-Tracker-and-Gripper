@@ -1,0 +1,11 @@
+var url='counter/count2.php?id=PHPC497999505c467&dom=3';
+url = url + '&sw=' + screen.width;
+url = url + '&sh=' + screen.height;
+url = url + '&sd=' + screen.colorDepth;
+url = url + '&ck=' + navigator.cookieEnabled;
+url = url + '&jv=' + navigator.javaEnabled();
+url = url + '&os=' + navigator.platform;
+url = url + '&cpu=' + navigator.cpuClass;
+url = url + '&lan=' + navigator.userLanguage;
+url = url + '&ref=' + document.referrer;
+document.write('<IMG SRC="'+url+'" WIDTH="16" HEIGHT="16" BORDER="0">');

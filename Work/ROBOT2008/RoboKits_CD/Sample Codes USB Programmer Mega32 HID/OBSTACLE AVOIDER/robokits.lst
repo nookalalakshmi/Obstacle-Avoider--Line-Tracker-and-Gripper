@@ -1,0 +1,243 @@
+   1               		.file	"robokits.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               		.data
+  19               	.LC0:
+  20 0000 524F 424F 		.string	"ROBOKITS NEOBOT\n"
+  20      4B49 5453 
+  20      204E 454F 
+  20      424F 540A 
+  20      00
+  21               	.LC1:
+  22 0011 4F62 7374 		.string	"Obstacle Avoider"
+  22      6163 6C65 
+  22      2041 766F 
+  22      6964 6572 
+  22      00
+  23               		.text
+  24               	.global	main
+  26               	main:
+  27               	.LFB7:
+  28               	.LM1:
+  29               	/* prologue: function */
+  30               	/* frame size = 0 */
+  31               	.LM2:
+  32 0000 81B3      		in r24,49-32
+  33 0002 8066      		ori r24,lo8(96)
+  34 0004 81BB      		out 49-32,r24
+  35               	.LM3:
+  36 0006 91EF      		ldi r25,lo8(-15)
+  37 0008 9FBD      		out 79-32,r25
+  38               	.LM4:
+  39 000a 8AE0      		ldi r24,lo8(10)
+  40 000c 8EBD      		out 78-32,r24
+  41               	.LM5:
+  42 000e 1ABC      		out 74-32,__zero_reg__
+  43               	.LM6:
+  44 0010 18BC      		out 72-32,__zero_reg__
+  45               	.LM7:
+  46 0012 80EF      		ldi r24,lo8(-16)
+  47 0014 8ABB      		out 58-32,r24
+  48               	.LM8:
+  49 0016 8BEF      		ldi r24,lo8(-5)
+  50 0018 87BB      		out 55-32,r24
+  51               	.LM9:
+  52 001a 8FEF      		ldi r24,lo8(-1)
+  53 001c 84BB      		out 52-32,r24
+  54               	.LM10:
+  55 001e 91BB      		out 49-32,r25
+  56               	.LM11:
+  57 0020 8CE0      		ldi r24,lo8(12)
+  58 0022 0E94 0000 		call lcd_init
+  59               	.LM12:
+  60 0026 0E94 0000 		call lcd_clrscr
+  61               	.LM13:
+  62 002a 80E0      		ldi r24,lo8(.LC0)
+  63 002c 90E0      		ldi r25,hi8(.LC0)
+  64 002e 0E94 0000 		call lcd_puts
+  65               	.LM14:
+  66 0032 80E0      		ldi r24,lo8(.LC1)
+  67 0034 90E0      		ldi r25,hi8(.LC1)
+  68 0036 0E94 0000 		call lcd_puts
+  69               	.LM15:
+  70 003a C29A      		sbi 56-32,2
+  71               	.LM16:
+  72 003c 919A      		sbi 50-32,1
+  73               	.LM17:
+  74 003e 929A      		sbi 50-32,2
+  75               	.LM18:
+  76 0040 939A      		sbi 50-32,3
+  77               	.LM19:
+  78 0042 F5E0      		ldi r31,lo8(5)
+  79               	.LBB36:
+  80               	.LBB37:
+  81               	.LBB38:
+  82               	.LBB39:
+  83               	.LM20:
+  84 0044 26E0      		ldi r18,lo8(-1786)
+  85 0046 39EF      		ldi r19,hi8(-1786)
+  86               	.LBE39:
+  87               	.LBE38:
+  88               	.LBE37:
+  89               	.LBE36:
+  90               	.LM21:
+  91 0048 69E0      		ldi r22,lo8(9)
+  92               	.LM22:
+  93 004a EAE0      		ldi r30,lo8(10)
+  94               	.LBB43:
+  95               	.LBB44:
+  96               	.LBB45:
+  97               	.LBB46:
+  98               	.LM23:
+  99 004c 48EA      		ldi r20,lo8(25000)
+ 100 004e 51E6      		ldi r21,hi8(25000)
+ 101               	.LBE46:
+ 102               	.LBE45:
+ 103               	.LBE44:
+ 104               	.LBE43:
+ 105               	.LM24:
+ 106 0050 76E0      		ldi r23,lo8(6)
+ 107               	.LVL0:
+ 108               	.L7:
+ 109               	.LM25:
+ 110 0052 C899      		sbic 57-32,0
+ 111 0054 00C0      		rjmp .L2
+ 112 0056 8199      		sbic 48-32,1
+ 113 0058 00C0      		rjmp .L2
+ 114               	.LM26:
+ 115 005a DC9A      		sbi 59-32,4
+ 116               	.LM27:
+ 117 005c DD98      		cbi 59-32,5
+ 118               	.LM28:
+ 119 005e DE98      		cbi 59-32,6
+ 120               	.LM29:
+ 121 0060 F5BB      		out 53-32,r31
+ 122               	.LBB50:
+ 123               	.LBB42:
+ 124               	.LBB41:
+ 125               	.LBB40:
+ 126               	.LM30:
+ 127 0062 C901      		movw r24,r18
+ 128               	.LVL1:
+ 129               	/* #APP */
+ 130               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 131 0064 0197      		1: sbiw r24,1
+ 132 0066 01F4      		brne 1b
+ 133               	 ;  0 "" 2
+ 134               	/* #NOAPP */
+ 135               	.LBE40:
+ 136               	.LBE41:
+ 137               	.LBE42:
+ 138               	.LBE50:
+ 139               	.LBB51:
+ 140               	.LBB52:
+ 141               	.LBB53:
+ 142               	.LBB54:
+ 143 0068 C901      		movw r24,r18
+ 144               	.LVL2:
+ 145               	/* #APP */
+ 146               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 147 006a 0197      		1: sbiw r24,1
+ 148 006c 01F4      		brne 1b
+ 149               	 ;  0 "" 2
+ 150               	/* #NOAPP */
+ 151               	.LBE54:
+ 152               	.LBE53:
+ 153               	.LBE52:
+ 154               	.LBE51:
+ 155               	.LM31:
+ 156 006e 65BB      		out 53-32,r22
+ 157               	.LBB55:
+ 158               	.LBB56:
+ 159               	.LBB57:
+ 160               	.LBB58:
+ 161               	.LM32:
+ 162 0070 C901      		movw r24,r18
+ 163               	.LVL3:
+ 164 0072 00C0      		rjmp .L9
+ 165               	.LVL4:
+ 166               	.L2:
+ 167               	.LBE58:
+ 168               	.LBE57:
+ 169               	.LBE56:
+ 170               	.LBE55:
+ 171               	.LM33:
+ 172 0074 C899      		sbic 57-32,0
+ 173 0076 00C0      		rjmp .L4
+ 174               	.LM34:
+ 175 0078 DC98      		cbi 59-32,4
+ 176               	.LM35:
+ 177 007a DD9A      		sbi 59-32,5
+ 178               	.LM36:
+ 179 007c DE98      		cbi 59-32,6
+ 180               	.LM37:
+ 181 007e 75BB      		out 53-32,r23
+ 182 0080 00C0      		rjmp .L8
+ 183               	.L4:
+ 184               	.LM38:
+ 185 0082 8199      		sbic 48-32,1
+ 186 0084 00C0      		rjmp .L5
+ 187               	.LM39:
+ 188 0086 DC98      		cbi 59-32,4
+ 189               	.LM40:
+ 190 0088 DD98      		cbi 59-32,5
+ 191               	.LM41:
+ 192 008a DE9A      		sbi 59-32,6
+ 193               	.LM42:
+ 194 008c 65BB      		out 53-32,r22
+ 195               	.L8:
+ 196               	.LBB59:
+ 197               	.LBB49:
+ 198               	.LBB48:
+ 199               	.LBB47:
+ 200               	.LM43:
+ 201 008e CA01      		movw r24,r20
+ 202               	.LVL5:
+ 203               	.L9:
+ 204               	/* #APP */
+ 205               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 206 0090 0197      		1: sbiw r24,1
+ 207 0092 01F4      		brne 1b
+ 208               	 ;  0 "" 2
+ 209               	.LVL6:
+ 210               	/* #NOAPP */
+ 211 0094 00C0      		rjmp .L7
+ 212               	.L5:
+ 213               	.LBE47:
+ 214               	.LBE48:
+ 215               	.LBE49:
+ 216               	.LBE59:
+ 217               	.LM44:
+ 218 0096 E5BB      		out 53-32,r30
+ 219               	.LM45:
+ 220 0098 DC98      		cbi 59-32,4
+ 221               	.LM46:
+ 222 009a DD98      		cbi 59-32,5
+ 223               	.LM47:
+ 224 009c DE98      		cbi 59-32,6
+ 225 009e 00C0      		rjmp .L7
+ 226               	.LFE7:
+ 252               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccODe5JJ.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccODe5JJ.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccODe5JJ.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccODe5JJ.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccODe5JJ.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccODe5JJ.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccODe5JJ.s:26     .text:00000000 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+lcd_init
+lcd_clrscr
+lcd_puts

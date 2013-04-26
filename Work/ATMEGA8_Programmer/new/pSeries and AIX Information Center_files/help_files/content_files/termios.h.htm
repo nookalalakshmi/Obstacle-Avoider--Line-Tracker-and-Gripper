@@ -1,0 +1,837 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0104)http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/termios.h.htm -->
+<?xml version="1.0" encoding="utf-8"?><HTML lang=en-US xml:lang="en-us" 
+xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>termios.h File</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META scheme=rfc1766 content=en-us name=dc.language><!-- Licensed Materials Property of IBM                      --><!-- US Government Users Restricted Rights                   --><!-- Use, duplication or disclosure restricted by            --><!-- GSA ADP Schedule Contract with IBM Corp.                -->
+<META scheme=iso8601 content=2008-09-11 name=dc.date>
+<META content="© Copyright IBM Corporation 1997, 2008" name=copyright>
+<META content=public name=security>
+<META content=index,follow name=Robots>
+<META http-equiv=PICS-Label 
+content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'>
+<META content=pserinfo@us.ibm.com name=owner>
+<META 
+content="termios.h file, termios.h, header files, POSIX (termios.h file), line disciplines, modem control operations" 
+name=keywords><LINK href="termios.h_files/ibmidwb.css" type=text/css 
+rel=stylesheet><LINK href="termios.h_files/infocenter.css" type=text/css 
+rel=stylesheet>
+<SCRIPT language=JavaScript src="termios.h_files/icscript.js"></SCRIPT>
+
+<SCRIPT>if( self == top ){ window.location.replace( "../../../../?topic=/com.ibm.aix.files/doc/aixfiles/termios.h.htm");}</SCRIPT>
+
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY><A id=Top_Of_Page name=Top_Of_Page></A>
+<P>
+<CENTER><B>[ <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/termios.h.htm#Bot_Of_Page">Bottom 
+of Page</A> | <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/termio.h.htm">Previous 
+Page</A> | <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/termiox.h.htm">Next 
+Page</A> | <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/aixfiles02.htm#wq2319">Index</A> 
+| <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/feedback.htm?noframes=true" 
+target=_blank>Feedback</A> ]</B> </CENTER>
+<CENTER>
+<H1>Files Reference</H1></CENTER><A name=a2839b1d></A>
+<H2 id=a2839b1d>termios.h File</H2><A id=idx1075 name=idx1075></A><A id=idx1076 
+name=idx1076></A><A id=idx1077 name=idx1077></A><A name=a2839b20></A>
+<H3 id=a2839b20>Purpose</H3>
+<P>Defines the structure of the <STRONG>termios</STRONG> file, which provides 
+the terminal interface for POSIX compatibility.</P><A name=a2839b22></A>
+<H3 id=a2839b22>Description</H3>
+<P>The <STRONG>/usr/include/termios.h</STRONG> file contains information used by 
+subroutines that apply to terminal files. The definitions, values, and 
+structures in this file are required for compatibility with the POSIX standard. 
+The <STRONG>termios.h</STRONG> file also supports ioctl <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/termios.h.htm#a28693be">modem-control 
+operations</A>.</P>
+<P>The general terminal interface information is contained in the 
+<STRONG>termio.h</STRONG> file. The <STRONG>termio</STRONG> structure in the 
+<STRONG>termio.h</STRONG> file defines the basic input, output, control, and 
+line discipline modes. If a calling program is identified as requiring POSIX 
+compatibility, the <STRONG>termios</STRONG> structure and additional POSIX 
+control-packet information in the <STRONG>termios.h</STRONG> file is 
+implemented. Window and terminal size operations use the 
+<STRONG>winsize</STRONG> structure, which is defined in the 
+<STRONG>ioctl.h</STRONG> file. The <STRONG>termios</STRONG> structure in the 
+<STRONG>termios.h</STRONG> file contains the following fields:</P>
+<UL>
+  <LI><TT>c_iflag</TT> 
+  <LI><TT>c_oflag</TT> 
+  <LI><TT>c_cflag</TT> 
+  <LI><TT>c_lflag</TT> 
+  <LI><TT>c_cc</TT></LI></UL>
+<P>The <STRONG>termios.h</STRONG> file also <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/termios.h.htm#adc2260dhen">defines 
+the values</A> for the following parameters of the <STRONG>tcsetattr</STRONG> 
+subroutine:</P>
+<UL>
+  <LI><EM>OptionalActions</EM> 
+  <LI><EM>QueueSelector</EM> 
+  <LI><EM>Action</EM></LI></UL>
+<P>The <STRONG>termios.h</STRONG> file also supports ioctl <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/termios.h.htm#a28693be">modem-control 
+operations</A>.</P>
+<DL>
+  <DT class=bold>Field Descriptions 
+  <DD> 
+  <DT class=bold><TT>c_iflag</TT> 
+  <DD>Describes the basic terminal input control. The initial input-control 
+  value is all bits clear. The possible input modes are: 
+  <DL>
+    <DT class=bold>IGNBRK 
+    <DD>Ignores the break condition. In the context of asynchronous serial data 
+    transmission, a <EM>break condition</EM> is defined as a sequence of 
+    zero-valued bits that continues for more than the time required to send one 
+    byte. The entire sequence of zero-valued bits is interpreted as a single 
+    break condition, even if it continues for an amount of time equivalent to 
+    more than one byte. If the <STRONG>IGNBRK</STRONG> flag is set, a break 
+    condition detected on input is ignored, which means that it is not put on 
+    the input queue and therefore not read by any process. 
+    <DT class=bold>BRKINT 
+    <DD>Signal interrupt on the break condition. If the <STRONG>IGNBRK</STRONG> 
+    flag is not set and the <STRONG>BRKINT</STRONG> flag is set, the break 
+    condition flushes the input and output queues. If the terminal is the 
+    controlling terminal of a foreground process group, the break condition 
+    generates a <STRONG>SIGINT</STRONG> signal to that foreground process group. 
+    If neither the <STRONG>IGNBRK</STRONG> nor the <STRONG>BRKINT</STRONG> flag 
+    is set, a break condition is read as a single \0, or if the 
+    <STRONG>PARMRK</STRONG> flag is set, as \377, \0, \0. 
+    <DT class=bold>IGNPAR 
+    <DD>Ignores characters with parity errors. If this flag is set, a byte with 
+    a framing or parity error (other than break) is ignored. 
+    <DT class=bold>PARMRK 
+    <DD>Marks parity errors. If the <STRONG>PARMRK</STRONG> flag is set, and the 
+    <STRONG>IGNPAR</STRONG> flag is not set, a byte with a framing or parity 
+    error (other than break) is given to the application as the three-character 
+    sequence \377, \0, <EM>x</EM>, where \377, \0 is a two-character flag 
+    preceding each sequence and <EM>x</EM> is the data of the character received 
+    in error. To avoid ambiguity in this case, if the <STRONG>ISTRIP</STRONG> 
+    flag is not set, a valid character of \377 is given to the application as 
+    \377, \377. If neither the <STRONG>IGNPAR</STRONG> nor the 
+    <STRONG>PARMRK</STRONG> flag is set, a framing or parity error (other than 
+    break) is given to the application as a single character \0. 
+    <DT class=bold>INPCK 
+    <DD>Enables input parity checking. If this flag is set, input parity 
+    checking is enabled. If not set, input parity checking is disabled. This 
+    allows for output parity generation without input parity errors. 
+    <DT class=bold>ISTRIP 
+    <DD>Strips characters. If this flag is set, valid input characters are first 
+    stripped to 7 bits. Otherwise, all 8 bits are processed. 
+    <DT class=bold>INLCR 
+    <DD>Maps a new-line character (NL) to a carriage return (CR) on input. If 
+    this flag is set, a received NL character is translated into a CR character. 
+
+    <DT class=bold>IGNCR 
+    <DD>Ignores CR character. If this flag is set, a received CR character is 
+    ignored and not read. 
+    <DT class=bold>ICRNL 
+    <DD>Maps a CR character to the NL character on input. If the 
+    <STRONG>ICRNL</STRONG> flag is set and the <STRONG>IGNCR</STRONG> flag is 
+    not set, a received CR character is translated into a NL character. 
+    <DT class=bold>IUCLC 
+    <DD>Maps uppercase to lowercase on input. If this flag is set, a received 
+    uppercase, alphabetic character is translated into the corresponding 
+    lowercase character. 
+    <DT class=bold>IXON 
+    <DD>Enables start and stop output control. If this flag is set, a received 
+    STOP character suspends output and a received START character restarts 
+    output. When the <STRONG>IXON</STRONG> flag is set, START and STOP 
+    characters are not read, but merely perform flow-control functions. When the 
+    <STRONG>IXON</STRONG> flag is not set, the START and STOP characters are 
+    read. 
+    <DT class=bold>IXANY 
+    <DD>Enables any character to restart output. If this flag is set, any input 
+    character restarts output that was suspended. 
+    <DT class=bold>IXOFF 
+    <DD>Enables start-and-stop input control. If this flag is set, the system 
+    transmits a STOP character when the input queue is nearly full and a START 
+    character when enough input has been read that the queue is nearly empty 
+    again. 
+    <DT class=bold>IMAXBEL 
+    <DD>Echoes the ASCII BEL character if the input stream overflows. Further 
+    input is not stored, but input already present in the input stream is not 
+    lost. If this flag is not set, no BEL character is echoed; the input in the 
+    input queue is discarded if the input stream overflows. This function also 
+    requires the <STRONG>IEXTEN</STRONG> bit to be set. </DD></DL>
+  <DT class=bold><TT>c_oflag</TT> 
+  <DD>Specifies how the system treats output. The initial output-control value 
+  is "all bits clear." The possible output modes are: 
+  <DL>
+    <DT class=bold>OPOST 
+    <DD>Post-processes output. If this flag is set, output characters are 
+    post-processed as indicated by the remaining flags. Otherwise, characters 
+    are transmitted without change. 
+    <DT class=bold>OLCUC 
+    <DD>Maps lowercase to uppercase on output. If this flag is set, a lowercase 
+    alphabetic character is transmitted as the corresponding uppercase 
+    character. This flag is often used in conjunction with the 
+    <STRONG>IUCLC</STRONG> input mode. 
+    <DT class=bold>ONLCR 
+    <DD>Maps NL to CR-NL on output. If this flag is set, the NL character is 
+    transmitted as the CR-NL character pair. 
+    <DT class=bold>OCRNL 
+    <DD>Maps CR to NL on output. If this flag is set, the CR character is 
+    transmitted as the NL character. 
+    <DT class=bold>ONOCR 
+    <DD>Indicates no CR output at column 0. If this flag is set, no CR character 
+    is transmitted when at column 0 (first position). 
+    <DT class=bold>ONLRET 
+    <DD>NL performs CR function. If this flag is set, the NL character is 
+    assumed to do the carriage-return function. The column pointer is set to 0, 
+    and the delay specified for carriage return is used. If neither the 
+    <STRONG>ONLCR</STRONG>, <STRONG>OCRNL</STRONG>, <STRONG>ONOCR</STRONG>, nor 
+    <STRONG>ONLRET</STRONG> flag is set, the NL character is assumed to do the 
+    line-feed function only. The column pointer remains unchanged. The column 
+    pointer is set to 0 if the CR character is actually transmitted. </DD></DL>
+  <P>The delay bits specify how long a transmission stops to allow for 
+  mechanical or other movement when certain characters are sent to the terminal. 
+  The actual delays depend on line speed and system load.</P>
+  <DT class=bold>OFILL 
+  <DD>Uses fill characters for delay. If this flag is set, fill characters are 
+  transmitted for a delay instead of a timed delay. This is useful for high baud 
+  rate terminals that need only a minimal delay. 
+  <DT class=bold>OFDEL 
+  <DD>If this flag is set, the fill character is DEL. If this flag is not set, 
+  the fill character is NULL. 
+  <DT class=bold>NLDLY 
+  <DD>Selects the new-line character delays. This is the mask to use before 
+  comparing to NL0 and NL1: 
+  <DL>
+    <DT class=bold>NL0 
+    <DD>Specifies no delay. 
+    <DT class=bold>NL1 
+    <DD>Specifies a delay of approximately 0.10 seconds. If the 
+    <STRONG>ONLRET</STRONG> flag is set, the carriage-return delays are used 
+    instead of the new-line delays. If the <STRONG>OFILL</STRONG> flag is set, 
+    two fill characters are transmitted. </DD></DL>
+  <DT class=bold>CRDLY 
+  <DD>Selects the carriage-return delays. This is the mask to use before 
+  comparing to CR0, CR1, CR2, and CR3: 
+  <DL>
+    <DT class=bold>CR0 
+    <DD>Specifies no delay. 
+    <DT class=bold>CR1 
+    <DD>Specifies that the delay is dependent on the current column position. If 
+    the <STRONG>OFILL</STRONG> flag is set, this delay transmits two fill 
+    characters. 
+    <DT class=bold>CR2 
+    <DD>Specifies a delay of approximately 0.10 seconds. If the 
+    <STRONG>OFILL</STRONG> flag is set, this delay transmits four fill 
+    characters. 
+    <DT class=bold>CR3 
+    <DD>Specifies a delay of approximately 0.15 seconds. </DD></DL>
+  <DT class=bold>TABDLY 
+  <DD>Selects the horizontal-tab delays. This is the mask to use before 
+  comparing to TAB0, TAB1, TAB2, and TAB3. If the <STRONG>OFILL</STRONG> flag is 
+  set, any of these delays (except TAB3) transmit two fill characters. 
+  <DL>
+    <DT class=bold>TAB0 
+    <DD>Specifies no delay. 
+    <DT class=bold>TAB1 
+    <DD>Specifies that the delay is dependent on the current column position. If 
+    the <STRONG>OFILL</STRONG> flag is set, two fill characters are transmitted. 
+
+    <DT class=bold>TAB2 
+    <DD>Specifies a delay of approximately 0.10 seconds. 
+    <DT class=bold>TAB3 
+    <DD>Specifies that tabs are to be expanded into spaces. </DD></DL>
+  <DT class=bold>BSDLY 
+  <DD>Selects the backspace delays. This is the mask to use before comparing to 
+  BS0 and BS1: 
+  <DL>
+    <DT class=bold>BS0 
+    <DD>Specifies no delay. 
+    <DT class=bold>BS1 
+    <DD>Specifies a delay of approximately 0.05 seconds. If the 
+    <STRONG>OFILL</STRONG> flag is set, this delay transmits one fill character. 
+    </DD></DL>
+  <DT class=bold>VTDLY 
+  <DD>Selects the vertical-tab delays. This is the mask to use before comparing 
+  to VT0 and VT1: 
+  <DL>
+    <DT class=bold>VT0 
+    <DD>Specifies no delay. 
+    <DT class=bold>VT1 
+    <DD>Specifies a delay of approximately 2 seconds. </DD></DL>
+  <DT class=bold>FFDLY 
+  <DD>Selects the form-feed delays. This is the mask to use before comparing to 
+  FF0 and FF1: 
+  <DL>
+    <DT class=bold>FF0 
+    <DD>Specifies no delay. 
+    <DT class=bold>FF1 
+    <DD>Specifies a delay of approximately 2 seconds. </DD></DL>
+  <DT class=bold><TT>c_cflag</TT> 
+  <DD>Describes the hardware control of the terminal. In addition to the basic 
+  control modes, this field uses the following control characters: 
+  <DL>
+    <DT class=bold>CBAUD 
+    <DD>Specifies baud rate. These bits specify the baud rate for a connection. 
+    For any particular hardware, impossible speed changes are ignored. 
+    <DL>
+      <DT class=bold>B50 
+      <DD>50 baud. 
+      <DT class=bold>B75 
+      <DD>75 baud. 
+      <DT class=bold>B110 
+      <DD>110 baud. 
+      <DT class=bold>B134 
+      <DD>134.5 baud. 
+      <DT class=bold>B150 
+      <DD>150 baud. 
+      <DT class=bold>B200 
+      <DD>200 baud. 
+      <DT class=bold>B300 
+      <DD>300 baud. 
+      <DT class=bold>B600 
+      <DD>600 baud. 
+      <DT class=bold>B1200 
+      <DD>1200 baud. 
+      <DT class=bold>B1800 
+      <DD>1800 baud. 
+      <DT class=bold>B2400 
+      <DD>2400 baud. 
+      <DT class=bold>B4800 
+      <DD>4800 baud. 
+      <DT class=bold>B9600 
+      <DD>9600 baud. 
+      <DT class=bold>B19200 
+      <DD>19200 baud. 
+      <DT class=bold>B38400 
+      <DD>38400 baud. 
+      <DT class=bold>EXTA 
+      <DD>External A. 
+      <DT class=bold>EXTB 
+      <DD>External B. </DD></DL>
+    <DT class=bold>CSIZE 
+    <DD>Specifies the character size. These bits specify the character size, in 
+    bits, for both transmit and receive operations. The character size does not 
+    include the parity bit, if one is used: 
+    <DL>
+      <DT class=bold>CS5 
+      <DD>5 bits 
+      <DT class=bold>CS6 
+      <DD>6 bits 
+      <DT class=bold>CS7 
+      <DD>7 bits 
+      <DT class=bold>CS8 
+      <DD>8 bits. </DD></DL>
+    <DT class=bold>CSTOPB 
+    <DD>Specifies number of stop bits. If this flag is set, 2 stop bits are 
+    sent; otherwise, only 1 stop bit is sent. 
+    <DT class=bold>CREAD 
+    <DD>Enables receiver. If this flag is set, the receiver is enabled. 
+    Otherwise, characters are not received. 
+    <DT class=bold>PARENB 
+    <DD>Enables parity. If this flag is set, parity generation and detection is 
+    enabled and a parity bit is added to each character. 
+    <DT class=bold>PARODD 
+    <DD>Specifies odd parity. If parity is enabled, the <STRONG>PARODD</STRONG> 
+    flag specifies odd parity if set. If parity is enabled and the 
+    <STRONG>PARODD</STRONG> flag is not set, even parity is used. 
+    <DT class=bold>HUPCL 
+    <DD>Hangs up on last close. If this flag is set, the line is disconnected 
+    when the last process closes the line or when the process terminates (when 
+    the `data terminal ready' signal drops). 
+    <DT class=bold>CLOCAL 
+    <DD>Specifies a local line. If this flag is set, the line is assumed to have 
+    a local, direct connection with no modem control. If not set, modem control 
+    (dial-up) is assumed. 
+    <DT class=bold>CIBAUD 
+    <DD>Specifies the input baud rate if different from the output rate. 
+    <DT class=bold>PAREXT 
+    <DD>Specifies extended parity for mark and space parity. </DD></DL>
+  <DT class=bold><TT>c_lflag</TT> 
+  <DD>Controls various terminal functions. The initial value after an open is 
+  "all bits clear." In addition to the basic modes, this field uses the 
+  following mask name symbols: 
+  <DL>
+    <DT class=bold>ISIG 
+    <DD>Enables signals. If this flag is set, each input character is checked 
+    against the INTR, QUIT, SUSP, and DSUSP special control characters. If an 
+    input character matches one of these control characters, the function 
+    associated with that character is performed. If the <STRONG>ISIG</STRONG> 
+    flag is not set, checking is not done. 
+    <DT class=bold>ICANON 
+    <DD>Enables canonical input. If this flag is set, it turns on canonical 
+    processing, which enables the erase and kill edit functions as well as the 
+    assembly of input characters into lines delimited by NL, EOF, and EOL 
+    characters. If the <STRONG>ICANON</STRONG> flag is not set, read requests 
+    are satisfied directly from the input queue. In this case, a read request is 
+    not satisfied until one of the following conditions is met: 
+    <UL>
+      <LI>The minimum number of characters specified by <STRONG>MIN</STRONG> are 
+      received. 
+      <LI>The time-out value specified by <STRONG>TIME</STRONG> has expired 
+      since the last character was received. This allows bursts of input to be 
+      read, while still allowing single-character input.</LI></UL>
+    <P>The <STRONG>MIN</STRONG> and <STRONG>TIME</STRONG> values are stored in 
+    the positions for the EOF and EOL characters, respectively. The character 
+    values of <STRONG>MIN</STRONG> and <STRONG>TIME</STRONG> are converted to 
+    their ascii equivalents to get the numeric value. The time value represents 
+    tenths of seconds.</P>
+    <DT class=bold>XCASE 
+    <DD>Enables canonical uppercase and lowercase presentation. If this flag is 
+    set along with the <STRONG>ICANON</STRONG> flag, an uppercase letter (or the 
+    uppercase letter translated to lowercase by the <STRONG>IUCLC</STRONG> input 
+    mode) is accepted on input by preceding it with a \ (backslash) character. 
+    The output is then also preceded by a backslash character. In this mode, the 
+    output generates and the input accepts the following escape sequences: 
+    <DL>
+      <DT class=bold>For 
+      <DD>Use 
+      <DT class=bold>` (grave) 
+      <DD>\ ` 
+      <DT class=bold>| 
+      <DD>\ ! 
+      <DT class=bold>~ 
+      <DD>\ ^ 
+      <DT class=bold>{ 
+      <DD>\ ( 
+      <DT class=bold>} 
+      <DD>\ ) 
+      <DT class=bold>\ 
+      <DD>\ \ </DD></DL>
+    <P>For example, A is input as <TT>\a</TT>, \n as <TT>\\n</TT>, and \N as 
+    <TT>\\\n</TT>.</P>
+    <DT class=bold>NOFLSH 
+    <DD>Disables queue flushing. If this flag is set, the normal flushing of the 
+    input and output queues associated with the INTR, QUIT, and SUSP characters 
+    is not done. 
+    <DT class=bold>FLUSHO 
+    <DD>Flushes the output. When this bit is set by typing the FLUSH character, 
+    data written to the terminal is discarded. A terminal can cancel the effect 
+    of typing the FLUSH character by clearing this bit. 
+    <DT class=bold>PENDIN 
+    <DD>Reprints pending input. If this flag is set, any input that is pending 
+    after a switch from raw to canonical mode is re-input the next time a read 
+    operation becomes pending or the next time input arrives. The 
+    <STRONG>PENDIN</STRONG> flag is an internal-state bit. 
+    <DT class=bold>IEXTEN 
+    <DD>Enables extended (implementation-defined) functions to be recognized 
+    from the input data. If this flag is not set, implementation-defined 
+    functions are not recognized, and the corresponding input characters are 
+    processed as described for the <STRONG>ICANON</STRONG>, 
+    <STRONG>ISIG</STRONG>, <STRONG>IXON</STRONG>, and <STRONG>IXOFF</STRONG> 
+    flags. Recognition of the following special control characters requires the 
+    <STRONG>IEXTEN</STRONG> flag to be set: 
+    <UL>
+      <LI><STRONG>VEOL2</STRONG> 
+      <LI><STRONG>VDSUSP</STRONG> 
+      <LI><STRONG>VREPRINT</STRONG> 
+      <LI><STRONG>VDISCRD</STRONG> 
+      <LI><STRONG>VWERSE</STRONG> 
+      <LI><STRONG>VLNEXT</STRONG></LI></UL>
+    <P>The functions associated with the following bits also require the 
+    <STRONG>IEXTEN</STRONG> flag to be set:</P>
+    <UL>
+      <LI><STRONG>IMAXBEL</STRONG> 
+      <LI><STRONG>ECHOKE</STRONG> 
+      <LI><STRONG>ECHOPRT</STRONG> 
+      <LI><STRONG>ECHOCTL</STRONG></LI></UL>
+    <DT class=bold>TOSTOP 
+    <DD>Sends a <STRONG>SIGTTOU</STRONG> signal when a process in a background 
+    process group tries to write to its controlling terminal. The 
+    <STRONG>SIGTTOU</STRONG> signal stops the members of the process group. 
+    <DT class=bold>ECHO 
+    <DD>Enables echo. If this flag is set, characters are echoed as they are 
+    received. </DD></DL>
+  <P>When the <STRONG>ICANON</STRONG> is set, the following echo functions are 
+  also possible:</P>
+  <DL>
+    <DT class=bold>ECHOE 
+    <DD>Echoes the erase character as Backspace-Space-Backspace. If the 
+    <STRONG>ECHO</STRONG> and <STRONG>ECHOE</STRONG> flags are both set and the 
+    <STRONG>ECHOPRT</STRONG> flag is not set, the ERASE and WERASE characters 
+    are echoed as one or more ASCII Backspace-Space-Backspace sequences, which 
+    clears the last characters from the screen. 
+    <DT class=bold>ECHOPRT 
+    <DD>If the <STRONG>ECHO</STRONG> and <STRONG>ECHOPRT</STRONG> flags are both 
+    set, the first ERASE and WERASE character in a sequence are echoed as a \ 
+    (backslash), followed by the characters being erased. Subsequent ERASE and 
+    WERASE characters echo the characters being erased, in reverse order. The 
+    next non-erase character causes a / (slash) to be typed before the nonerase 
+    character is echoed. This function also requires the <STRONG>IEXTEN</STRONG> 
+    bit to be set. 
+    <DT class=bold>ECHOKE 
+    <DD>Backspace-Space-Backspace entire line on line kill. If this flag is set, 
+    the kill character is echoed by erasing the entire line from the screen 
+    (using the mechanism selected by the <STRONG>ECHOE</STRONG> and 
+    <STRONG>ECHOPRT</STRONG> flags). This function also requires the 
+    <STRONG>IEXTEN</STRONG> flag to be set. 
+    <DT class=bold>ECHOK 
+    <DD>Echoes the NL character after kill. If the <STRONG>ECHOK</STRONG> flag 
+    is set and the <STRONG>ECHOKE</STRONG> flag is not set, the NL character is 
+    echoed after the kill character is received. This emphasizes that the line 
+    is deleted. 
+    <DT class=bold>ECHONL 
+    <DD>Echoes the NL character. If the <STRONG>ECHONL</STRONG> flag is set, the 
+    NL character is echoed even if the <STRONG>ECHO</STRONG> flag is not set. 
+    This is useful for terminals that are set to "local echo" (also referred to 
+    as "half-duplex"). 
+    <DT class=bold>ECHOCTL 
+    <DD>Echoes control characters (with codes between 0 and 37 octal) as 
+    ^<EM>X</EM>, where <EM>X</EM> is the character that results from adding 100 
+    octal to the code of the control character. (For example, the character with 
+    octal code 1 is echoed as <TT>^A</TT>). The ASCII DEL character (code 177 
+    octal) is echoed as <TT>^?</TT>. The ASCII TAB, NL, and START characters are 
+    not echoed. Unless escaped (preceded by a backslash), the EOF character is 
+    not echoed. As a result, because EOT is the default EOF character, terminals 
+    that respond to EOT are prevented from hanging up. This function also 
+    requires the <STRONG>IEXTEN</STRONG> flag to be set. </DD></DL>
+  <DT class=bold><TT>c_cc</TT> 
+  <DD>Specifies an array that defines the special control characters. The 
+  relative positions and initial values for each function are: 
+  <DL>
+    <DT class=bold>VINTR 
+    <DD>Indexes the INTR special character (Ctrl-c), which is recognized on 
+    input if the <STRONG>ISIG</STRONG> flag is set. The INTR character generates 
+    a <STRONG>SIGINT</STRONG> signal, which is sent to all processes in the 
+    foreground process group for which the terminal is the controlling terminal. 
+    If the <STRONG>ISIG</STRONG> flag is set, the INTR character is discarded 
+    when processed. 
+    <DT class=bold>VQUIT 
+    <DD>Indexes the QUIT special character (Ctrl-\), which is recognized on 
+    input if the <STRONG>ISIG</STRONG> flag is set. The QUIT character generates 
+    a <STRONG>SIGQUIT</STRONG> signal, which is sent to all processes in the 
+    foreground process group for which the terminal is the controlling terminal, 
+    and writes a <STRONG>core</STRONG> image file into the current working 
+    directory. If the <STRONG>ISIG</STRONG> flag is set, the QUIT character is 
+    discarded when processed. 
+    <DT class=bold>VERASE 
+    <DD>Indexes the ERASE special character (Backspace), which is recognized on 
+    input if the <STRONG>ICANON</STRONG> flag is set. The ERASE character does 
+    not erase beyond the beginning of the line as delimited by a NL, EOL, EOF, 
+    or EOL2 character. If the <STRONG>ICANON</STRONG> flag is set, the ERASE 
+    character is discarded when processed. 
+    <DT class=bold>VKILL 
+    <DD>Indexes the KILL special character (Ctrl-u), which is recognized on 
+    input if the <STRONG>ICANON</STRONG> flag is set. The KILL character deletes 
+    the entire line, as delimited by a NL, EOL, EOF, or EOL2 character. If the 
+    <STRONG>ICANON</STRONG> flag is set, the KILL character is discarded when 
+    processed. 
+    <DT class=bold>VEOF 
+    <DD>Indexes the EOF special character (Ctrl-d), which is recognized on input 
+    if the <STRONG>ICANON</STRONG> flag is set. When EOF is received, all the 
+    characters waiting to be read are immediately passed to the process, without 
+    waiting for a new line, and the EOF is discarded. If the EOF is received at 
+    the beginning of a line (no characters are waiting), a character count of 
+    zero is returned from the read, indicating an end-of-file. If the 
+    <STRONG>ICANON</STRONG> flag is set, the EOF character is discarded when 
+    processed. 
+    <DT class=bold>VEOL 
+    <DD>Indexes the EOL special character (Ctrl-@ or ASCII NULL), which is 
+    recognized on input if the <STRONG>ICANON</STRONG> flag is set. EOL is an 
+    additional line delimiter, like NL, and is not normally used. 
+    <DT class=bold>VEOL2 
+    <DD>Indexes the EOL2 special character (Ctrl-@ or ASCII NULL), which is 
+    recognized on input if the <STRONG>ICANON</STRONG> and 
+    <STRONG>IEXTEN</STRONG> flags are set. EOL2 is an additional line delimiter, 
+    like NL, and is not normally used. 
+    <DT class=bold>VSTART 
+    <DD>Indexes the START special character (Ctrl-q), which is recognized on 
+    input if the <STRONG>IXON</STRONG> flag is set, and generated on output if 
+    the <STRONG>IXOFF</STRONG> flag is set. The START character can be used to 
+    resume output that has been suspended by a STOP character. If the 
+    <STRONG>IXON</STRONG> flag is set, the START character is discarded when 
+    processed. While output is not suspended, START characters are ignored and 
+    not read. <STRONG>VSTRT</STRONG> is an alias for <STRONG>VSTART</STRONG>. 
+    <DT class=bold>VSTOP 
+    <DD>Indexes the STOP special character (Ctrl-s), which is recognized on 
+    input if the <STRONG>IXON</STRONG> flag is set, and generated on output if 
+    the <STRONG>IXOFF</STRONG> flag is set. The STOP character can be used to 
+    with terminals to prevent output from disappearing before it can be read. If 
+    the <STRONG>IXON</STRONG> flag is set, the STOP character is discarded when 
+    processed. While output is suspended, STOP characters are ignored and not 
+    read. 
+    <DT class=bold>VSUSP 
+    <DD>Indexes the SUSP special character (Ctrl-z), which is recognized on 
+    input if the <STRONG>ISIG</STRONG> flag is set. The SUSP character generates 
+    a <STRONG>SIGTSTP</STRONG> signal, which is sent to all processes in the 
+    foreground process group for which the terminal is the controlling terminal. 
+    If the <STRONG>ISIG</STRONG> flag is set, the SUSP character is discarded 
+    when processed. 
+    <DT class=bold>VDSUSP 
+    <DD>Indexes the DSUSP special character (Ctrl-y), which is recognized on 
+    input if the <STRONG>ISIG</STRONG> and <STRONG>IEXTEN</STRONG> flags are 
+    set. The DSUSP character generates a <STRONG>SIGTSTP</STRONG> signal as the 
+    SUSP character does, but the signal is sent when a process in the foreground 
+    process group attempts to read the DSUSP character, rather than when DSUSP 
+    is typed. If the <STRONG>ISIG</STRONG> and <STRONG>IEXTEN</STRONG> flags are 
+    set, the DSUSP character is discarded when processed. 
+    <DT class=bold>VREPRINT 
+    <DD>Indexes the REPRINT special character (Ctrl-r), which is recognized on 
+    input if the <STRONG>ICANON</STRONG> and <STRONG>IEXTEN</STRONG> flags are 
+    set. The REPRINT character reprints all characters, preceded by a new line, 
+    that have not been read. If the <STRONG>ICANON</STRONG> and 
+    <STRONG>IEXTEN</STRONG> flags are set, the REPRINT character is discarded 
+    when processed. 
+    <DT class=bold>VDISCRD 
+    <DD>Indexes the DISCARD special character (Ctrl-o), which is recognized on 
+    input if the <STRONG>ICANON</STRONG> and <STRONG>IEXTEN</STRONG> flags are 
+    set. The DISCARD character causes subsequent output to be discarded until 
+    another DISCARD character is typed, more input arrives, or the condition is 
+    cleared by a program. If the <STRONG>ICANON</STRONG> and 
+    <STRONG>IEXTEN</STRONG> flags are set, the DISCARD character is discarded 
+    when processed. 
+    <DT class=bold>VWERSE 
+    <DD>Indexes the WERASE special character (Ctrl-w), which is recognized on 
+    input if the <STRONG>ICANON</STRONG> and <STRONG>IEXTEN</STRONG> flags are 
+    set. The WERASE character causes the preceding word to be erased. The WERASE 
+    character does not erase beyond the beginning of the line as delimited by a 
+    NL, EOL, EOF, or EOL2 character. If the <STRONG>ICANON</STRONG> and 
+    <STRONG>IEXTEN</STRONG> flags are set, the WERASE character is discarded 
+    when processed. 
+    <DT class=bold>VLNEXT 
+    <DD>Indexes the LNEXT (literal next) special character (Ctrl-v), which is 
+    recognized on input if the <STRONG>ICANON</STRONG> and 
+    <STRONG>IEXTEN</STRONG> flags are set. The LNEXT character causes the 
+    special meaning of the next character to be ignored so that characters can 
+    be input without being interpreted by the system. If the 
+    <STRONG>ICANON</STRONG>, <STRONG>ECHO</STRONG>, and <STRONG>IEXTEN</STRONG> 
+    flags are set, the LNEXT character is replaced by a ^-Backspace sequence 
+    when processed. 
+    <DT class=bold>VMIN 
+    <DD>Indexes the <STRONG>MIN</STRONG> value, which is not a special 
+    character. The use of the <STRONG>MIN</STRONG> value is described in the 
+    discussion of noncanonical mode input processing in "ldterm Line Discipline" 
+    in <EM>AIX 5L Version 5.3 General Programming Concepts: Writing and 
+    Debugging Programs</EM>. 
+    <DT class=bold>VTIME 
+    <DD>Indexes the <STRONG>TIME</STRONG> value, which is not a special 
+    character. The use of the <STRONG>TIME</STRONG> value is described in the 
+    discussion of noncanonical mode input processing in "ldterm Line Discipline" 
+    in <EM>AIX 5L Version 5.3 General Programming Concepts: Writing and 
+    Debugging Programs</EM>. </DD></DL>
+  <P>The character values for the following control characters can be 
+  changed:</P><A name=wq2205></A>
+  <TABLE id=wq2205 rules=none width="100%" summary="" border=0 frame=void>
+    <TBODY vAlign=top>
+    <TR>
+      <TD width="20%">INTR</TD>
+      <TD width="20%">EOF</TD>
+      <TD width="29%">STOP</TD>
+      <TD width="29%">DISCARD</TD></TR>
+    <TR>
+      <TD>QUIT</TD>
+      <TD>EOL</TD>
+      <TD>SUSP</TD>
+      <TD>WERASE</TD></TR>
+    <TR>
+      <TD>ERASE</TD>
+      <TD>EOL2</TD>
+      <TD>DSUSP</TD>
+      <TD>LNEXT</TD></TR>
+    <TR>
+      <TD>KILL</TD>
+      <TD>START</TD>
+      <TD colSpan=2>REPRINT</TD></TR></TBODY></TABLE>
+  <P>The ERASE, KILL, and EOF characters can also be escaped (preceded by a 
+  backslash) so that no special processing is done.</P></DD></DL><A 
+name=adc2260dhen></A>
+<H4 id=adc2260dhen>Parameter Value Definitions</H4>
+<P>The following values for the <EM>OptionalActions</EM> parameter of the 
+<STRONG>tcsetattr</STRONG> subroutine are also defined in the 
+<STRONG>termios.h</STRONG> file:</P><A name=wq2206></A>
+<TABLE id=wq2206 rules=none width="100%" summary="" border=0 frame=void>
+  <TBODY vAlign=top>
+  <TR>
+    <TD width="15%"><STRONG>TCSANOW</STRONG></TD>
+    <TD width="85%">Immediately sets the parameters associated with the 
+      terminal from the referenced <STRONG>termios</STRONG> structure.</TD></TR>
+  <TR>
+    <TD><STRONG>TCSADRAIN</STRONG></TD>
+    <TD>Waits until all output written to the object file has been transmitted 
+      before setting the terminal parameters from the <STRONG>termios</STRONG> 
+      structure.</TD></TR>
+  <TR>
+    <TD><STRONG>TCSAFLUSH</STRONG></TD>
+    <TD>Waits until all output written to the object file has been transmitted 
+      and until all input received but not read has been discarded before 
+      setting the terminal parameters from the <STRONG>termios</STRONG> 
+      structure.</TD></TR></TBODY></TABLE>
+<P>The following values for the <EM>QueueSelector</EM> parameter of the 
+<STRONG>tcflush</STRONG> subroutine are also defined in this header file:</P><A 
+name=wq2207></A>
+<TABLE id=wq2207 rules=none width="100%" summary="" border=0 frame=void>
+  <TBODY vAlign=top>
+  <TR>
+    <TD width="15%"><STRONG>TCIFLUSH</STRONG></TD>
+    <TD width="85%">Flushes data that is received but not read.</TD></TR>
+  <TR>
+    <TD><STRONG>TCOFLUSH</STRONG></TD>
+    <TD>Flushes data that is written but not transmitted.</TD></TR>
+  <TR>
+    <TD><STRONG>TCIOFLUSH</STRONG></TD>
+    <TD>Flushes data that is received but not read as well as data that is 
+      written but not transmitted.</TD></TR></TBODY></TABLE>
+<P>The following values for the <EM>Action</EM> parameter of the 
+<STRONG>tcflow</STRONG> subroutine are also defined in the 
+<STRONG>termios.h</STRONG> file:</P><A name=wq2208></A>
+<TABLE id=wq2208 rules=none width="100%" summary="" border=0 frame=void>
+  <TBODY vAlign=top>
+  <TR>
+    <TD width="10%"><STRONG>TCOOFF</STRONG></TD>
+    <TD width="90%">Suspends the output of data by the object file named in 
+      the <STRONG>tcflow</STRONG> subroutine.</TD></TR>
+  <TR>
+    <TD><STRONG>TCOON</STRONG></TD>
+    <TD>Restarts data output that was suspended by the <STRONG>TCOOFF</STRONG> 
+      action.</TD></TR>
+  <TR>
+    <TD><STRONG>TCIOFF</STRONG></TD>
+    <TD>Transmits a stop character to stop data transmission by the terminal 
+      device.</TD></TR>
+  <TR>
+    <TD><STRONG>TCION</STRONG></TD>
+    <TD>Transmits a start character to start or restart data transmission by 
+      the terminal device.</TD></TR></TBODY></TABLE><A id=idx1078 name=idx1078></A><A 
+name=a28693be></A>
+<H4 id=a28693be>Modem Control Operations</H4>
+<P>The following ioctl operations, used for modem control, are an extension to 
+the POSIX line discipline interface. To use these operations in a program, the 
+program must contain an <STRONG>#include</STRONG> statement for the 
+<STRONG>ioctl.h</STRONG> file.</P><A name=wq2209></A>
+<TABLE id=wq2209 rules=none width="100%" summary="" border=0 frame=void>
+  <TBODY vAlign=top>
+  <TR>
+    <TD width="13%"><STRONG>TIOCMBIS</STRONG></TD>
+    <TD width="86%">The argument to this command is a pointer to an integer 
+      that turns on the control lines specified by the integer mask value. No 
+      other control lines are affected.</TD></TR>
+  <TR>
+    <TD><STRONG>TIOCMBIC</STRONG></TD>
+    <TD>The argument to this command is a pointer to an integer that turns off 
+      the control lines specified by the integer mask value. No other control 
+      lines are affected.</TD></TR>
+  <TR>
+    <TD><STRONG>TIOCMGET</STRONG></TD>
+    <TD>Gets all modem bits. The argument to this command is a pointer to an 
+      integer where the current state of the modem status lines is stored. Which 
+      modem status and modem control lines are supported depends on the 
+      capabilities of the hardware and the hardware's device driver.</TD></TR>
+  <TR>
+    <TD><STRONG>TIOCMSET</STRONG></TD>
+    <TD>Sets all modem bits. The argument to this command is a pointer to an 
+      integer containing a new set of modem bits. The modem control bits use 
+      these bits to turn the modem control lines on or off, depending on whether 
+      the bit for that line is set or clear. Any modem status bits are ignored. 
+      The actual modem control lines which are supported depend on the 
+      capabilities of the hardware and the hardware's device driver. 
+      <P>The integer specifies one of the following modem control or status 
+      lines on which the modem control <STRONG>ioctl</STRONG> command 
+      operates:</P>
+      <DL>
+        <DT class=bold>TIOCM_LE 
+        <DD>Line enable 
+        <DT class=bold>TIOCM_DTR 
+        <DD>Data terminal ready 
+        <DT class=bold>TIOCM_RTS 
+        <DD>Request to send 
+        <DT class=bold>TIOCM_ST 
+        <DD>Secondary transmit 
+        <DT class=bold>TIOCM_SR 
+        <DD>Secondary receive 
+        <DT class=bold>TIOCM_CTS 
+        <DD>Clear to send 
+        <DT class=bold>TIOCM_CAR 
+        <DD>Carrier detect 
+        <DT class=bold>TIOCM_CD 
+        <DD>TIOCM_CAR 
+        <DT class=bold>TIOCM_RNG 
+        <DD>Ring 
+        <DT class=bold>TIOCM_RI 
+        <DD>TIOCM_RNG 
+        <DT class=bold>TIOCM_DSR 
+        <DD>Data set ready. </DD></DL></TD></TR>
+  <TR>
+    <TD><STRONG>TIOCMIWAIT</STRONG></TD>
+    <TD>Wait for modem status line to change status. 
+      <P>The argument is a pointer to an integer mask value specifying the modem 
+      status line(s) on which to wait for a status change, and can consist of 
+      one or more of the following values:</P>
+      <DL>
+        <DT class=bold>TIOCM_CTS 
+        <DD>Clear to send 
+        <DT class=bold>TIOCM_CAR 
+        <DD>Carrier detect 
+        <DT class=bold>TIOCM_CD 
+        <DD>TIOCM_CAR 
+        <DT class=bold>TIOCM_RNG 
+        <DD>Ring 
+        <DT class=bold>TIOCM_RI 
+        <DD>TIOCM_RNG 
+        <DT class=bold>TIOCM_DSR 
+        <DD>Data set ready. </DD></DL>
+      <P class=indatacontent>The request blocks until one of the specified lines 
+      changes status, then returns to the caller. Note that this 
+      <STRONG>ioctl</STRONG> blocks even if <STRONG>O_NDELAY</STRONG> or 
+      <STRONG>O_NONBLOCK</STRONG> is set.</P>
+      <P>If none of the specified lines changes status, the 
+      <STRONG>ioctl</STRONG> can block indefinitely, so it should be used in 
+      conjunction with an <STRONG>alarm()</STRONG> timer.</P>
+      <P>If <STRONG>TIOCM_RNG</STRONG> or <STRONG>TIOCM_RI</STRONG> is 
+      specified, the transition is reported only when the status line 
+      transitions from <TT class=xph>on</TT> to <TT class=xph>off</TT> due to 
+      hardware restrictions. </P><A name=wq2210></A>
+      <DIV class=notetitle id=wq2210>Note:</DIV>
+      <DIV class=notebody>Correct operation of this <STRONG>ioctl</STRONG> 
+      depends on correct cabling.</DIV></TD></TR></TBODY></TABLE><A name=a2839b44></A>
+<H3 id=a2839b44>Related Information</H3>
+<P>The <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/termiox.h.htm#o4kpi28cmanu"><STRONG>termiox.h</STRONG></A> 
+file, <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/types.h.htm#tfj3a0clm"><STRONG>types.h</STRONG></A> 
+file.</P>
+<P>The <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.cmds/doc/aixcmds1/csh.htm"><STRONG>csh</STRONG></A> 
+command, <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.cmds/doc/aixcmds2/getty.htm"><STRONG>getty</STRONG></A> 
+command, <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.cmds/doc/aixcmds3/ksh.htm"><STRONG>ksh</STRONG></A> 
+command, <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.cmds/doc/aixcmds5/stty.htm"><STRONG>stty</STRONG></A> 
+command, <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.cmds/doc/aixcmds5/tset.htm#a278a945c"><STRONG>tset</STRONG></A> 
+command.</P>
+<P>The <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.basetechref/doc/basetrf1/cfgetospeed.htm#a17f016d"><STRONG>cfgetispeed</STRONG>, 
+<STRONG>cfgetospeed</STRONG>, <STRONG>cfsetispeed</STRONG>, 
+<STRONG>cfsetospeed</STRONG></A> subroutine, <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.basetechref/doc/basetrf1/ioctl32.htm"><STRONG>ioctl</STRONG></A> 
+subroutine, <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.basetechref/doc/basetrf2/sigaction.htm#a5f01cb"><STRONG>sigvec</STRONG></A> 
+subroutine, <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.basetechref/doc/basetrf2/tcdrain.htm#lel3e0gaco"><STRONG>tcdrain</STRONG></A> 
+subroutine, <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.basetechref/doc/basetrf2/tcflow.htm#vel3380gaco"><STRONG>tcflow</STRONG></A> 
+subroutine, <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.basetechref/doc/basetrf2/tcflush.htm#azkl380gaco"><STRONG>tcflush</STRONG></A> 
+subroutine, <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.basetechref/doc/basetrf2/tcgetattr.htm#vdd32a0gaco"><STRONG>tcgetattr</STRONG></A> 
+subroutine, <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.basetechref/doc/basetrf2/tcsendbreak.htm#a2019c70"><STRONG>tcsendbreak</STRONG></A> 
+subroutine, <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.basetechref/doc/basetrf2/tcsetattr.htm#scd32a0gaco"><STRONG>tcsetattr</STRONG></A> 
+subroutine.</P>
+<P><A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.genprogc/doc/genprogc/ttysys.htm#a337f9470">tty 
+Subsystem Overview</A> in <EM>AIX 5L Version 5.3 General Programming Concepts: 
+Writing and Debugging Programs</EM>.</P><FONT color=#a62a2a></FONT>
+<P></P>
+<CENTER><B>[ <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/termios.h.htm#Top_Of_Page">Top 
+of Page</A> | <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/termio.h.htm">Previous 
+Page</A> | <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/termiox.h.htm">Next 
+Page</A> | <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.files/doc/aixfiles/aixfiles02.htm#wq2319">Index</A> 
+| <A 
+href="http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.doc/doc/base/feedback.htm?noframes=true" 
+target=_blank>Feedback</A> ]</B> </CENTER><A id=Bot_Of_Page 
+name=Bot_Of_Page></A></BODY></HTML>

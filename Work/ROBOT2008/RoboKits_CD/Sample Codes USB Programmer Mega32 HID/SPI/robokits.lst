@@ -1,0 +1,79 @@
+   1               		.file	"robokits.c"
+   2               		.arch atmega32
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	main
+  20               	main:
+  21               	.LFB7:
+  22               	.LM1:
+  23               	/* prologue: frame size=0 */
+  24               	/* prologue end (size=0) */
+  25               	.LM2:
+  26 0000 80EB      		ldi r24,lo8(-80)
+  27 0002 87BB      		out 55-0x20,r24
+  28               	.LM3:
+  29 0004 80E1      		ldi r24,lo8(16)
+  30 0006 8ABB      		out 58-0x20,r24
+  31               	.LM4:
+  32 0008 DC9A      		sbi 59-0x20,4
+  33               	.LM5:
+  34 000a 8CE5      		ldi r24,lo8(92)
+  35 000c 8DB9      		out 45-0x20,r24
+  36 000e 22E0      		ldi r18,lo8(2)
+  37               	.LVL0:
+  38 0010 32E0      		ldi r19,lo8(2)
+  39 0012 E8EA      		ldi r30,lo8(25000)
+  40 0014 F1E6      		ldi r31,hi8(25000)
+  41               	.LVL1:
+  42               	.L2:
+  43               	.LM6:
+  44 0016 C498      		cbi 56-0x20,4
+  45               	.LM7:
+  46 0018 2FB9      		out 47-0x20,r18
+  47               	.L3:
+  48               	.LM8:
+  49 001a 779B      		sbis 46-0x20,7
+  50 001c 00C0      		rjmp .L3
+  51               	.LM9:
+  52 001e C49A      		sbi 56-0x20,4
+  53               	.LM10:
+  54 0020 2327      		eor r18,r19
+  55               	.LBB8:
+  56               	.LBB9:
+  57               	.LBB10:
+  58               	.LBB11:
+  59               	.LM11:
+  60 0022 CF01      		movw r24,r30
+  61               	/* #APP */
+  62 0024 0197      		1: sbiw r24,1
+  63 0026 01F4      		brne 1b
+  64               	/* #NOAPP */
+  65 0028 00C0      		rjmp .L2
+  66               	.LBE11:
+  67               	.LBE10:
+  68               	.LBE9:
+  69               	.LBE8:
+  70               	/* epilogue: frame size=0 */
+  71               	/* epilogue: noreturn */
+  72               	/* epilogue end (size=0) */
+  73               	/* function main size 23 (23) */
+  74               	.LFE7:
+ 100               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccwXUQ8s.s:3      *ABS*:0000003f __SREG__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccwXUQ8s.s:4      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccwXUQ8s.s:5      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccwXUQ8s.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccwXUQ8s.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccwXUQ8s.s:20     .text:00000000 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

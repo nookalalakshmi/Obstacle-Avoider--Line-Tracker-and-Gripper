@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0068)http://pinokio3000.narod.ru/my_designs/AVR910_USB_Programmer_eng.htm -->
+<! DOCTYPE HTML PUBLIC " - // W3C // DTD HTML 4.0 Transitional // EN "><HTML><HEAD><TITLE>AVR910 USB programmer</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=prottoss name=author>
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR>
+<META content=" AVR910 USB Programmer " name=description>
+<META 
+content=" programmer, AVR910, AVR, ATmega, mega, АТМЕГА, MEGA, programming, the microcontroller, LCD, SPI, USB, 90S, 89S, ATMEL, embedded " 
+name=keywords>
+<META content=dynamic name=document-state>
+<META content=all name=robots>
+<META content=DOCUMENT name=resource-type>
+<META content=" 04.08.2006 3:22:44 " name=updated>
+<META content=public name=cache-control></HEAD>
+<BODY text=#000000 vLink=#800080 aLink=#ff0000 link=#0000ff bgColor=#ffffff>
+<P>
+<DIV align=center><B><FONT style="FONT-WEIGHT: bold" size=+ 1>AVR / 89S 
+Microcontrollers programmer compatible with AVR910 </FONT></B></DIV>
+<P></P>
+<P>Programmer it is executed on the basis of the driver from <A 
+href="http://pinokio3000.narod.ru/my_designs/%20//%20www.obdev.at/products/avrusb/index.html" 
+name="">Objective Development </A>and it is completely compatible on commands 
+with original programmer AVR910 from ATMEL. The description of the original 
+circuit programmer can be taken in <A 
+href="http://www.atmel.com/dyn/resources/prod_documents/DOC0943.PDF" 
+name="">Application Note AVR910: In-System Programming </A>, and the list of 
+supported commands can be seen in <A 
+href="http://www.atmel.com/dyn/resources/prod_documents/DOC2559.PDF" 
+name="">Application Note AVR109: Self Programming </A></P>
+<P>
+<HR>
+<B><I><U>the Design: </B></I></U>
+<P></P>
+<P>The circuit programmer is resulted in figure below. Safety fuse F1 serves for 
+protection of lines of port USB against casual short circuit on circuits of 
+programmer. Diodes VD1, VD2 - with a direct power failure ~0,6 … 0,7В, are 
+intended for downturn of a power of microcontroller DD1 up to 3,6 V. 
+Light-emitting diodes VL1, VL2 signal about the current actions programmer, and, 
+accordingly, designate modes of reading and recording. Light-emitting diode VL3 
+serves for the signal system of submission of a power on programmer. </P>
+<P>
+<DIV align=center><IMG alt=" the programmer shematic " 
+src="AVR910 USB programmer_files/shematic.png" align=center> </DIV>
+<P></P>
+<P>The jumper <B>J1-J2 </B>serves as for initial programming the microcontroller 
+(close J1 - <B>MOD</B>ify), and for use as a socket programmer (close J2 - 
+<B>NORM</B>al). Resistors R10 - R14 are intended for the coordination of levels 
+of signals of the controller programmer and the programmed controller. </P>
+<P>Speed for port SPI it is equal 187,5 kHz. It allows to program controllers 
+with clock frequency approximately from 570 kHz for tiny/mega, 750 kHz for 90S 
+and 7,5 MHz for 89S. Controllers are programmed from 10 till 30 seconds together 
+with verification depending on volume FLASH of memory and clock frequency. On 
+conclusion LED of socket ISP the meander with frequency of 1 MHz for "revival" 
+uCU at which have been wrongly programmed fuse bits, responsible for clocking is 
+removed. The signal is generated constantly and does not depend on an operating 
+mode of programmer</P>
+<P>Programmer it was tested with programs AVRProg v.1.4 (enters into a package 
+<A 
+href="http://pinokio3000.narod.ru/my_designs/%20//%20www.atmel.com/dyn/products/tools_card.asp? tool_id=2725" 
+name="">AVRStudio </A>), <A 
+href="http://www.hpinfotech.ro/html/cbavr_download.htm" name="">ChipBlasterAVR 
+v.1.07 Evaluation </A>, <A 
+href="http://www.atmel.com/dyn/resources/prod_documents/doc2568.pdf" 
+name="">AVROSP (ATMEL AVR Open Source Programmer) </A>, <A 
+href="http://pinokio3000.narod.ru/my_designs/%20//%20www.hpinfotech.ro/html/download.htm" 
+name="">CodeVisionAVR </A>. Besides programmer it was tested with the program <A 
+href="http://pinokio3000.narod.ru/my_designs/%20//%20savannah.gnu.org/projects/avrdude%20/" 
+name="">AVRDUDE </A>, however, the program with given programmer is not 
+compatible, as not all commands of the report <A 
+href="http://www.atmel.com/dyn/resources/prod_documents/DOC0943.PDF" 
+name="">AVR910 </A>fulfils correctly. Programmer allows to program all 
+controllers AVR supporting ISP (In System Programming - Programming In System), 
+and as uCU series 89S - 89S53 and 89S8252. At present with the set forth above 
+programs programming controllers <B>89S53, 89S8252, 90S2313, 90S8515, ATtiny26, 
+ATtiny45, ATtiny2313, ATmega48, ATmega8, ATmega8515, ATmega8535, ATmega16, 
+ATmega32, ATmega64 ATmega128, AT90CAN128 </B>is tested</P>
+<P>I strongly recommend to repeat the circuit one-in-one, to throw out 
+"superfluous" details from the circuit can result or in wrong functioning 
+programmer, or to possible failure USB of port on РС, for what, naturally, I do 
+not carry what responsibility. </P>
+<P>
+<HR>
+<B><I><U>Insertion FUSE BITS: </U></I></B>
+<P></P>
+<P>For normal functioning the controller in the circuit it is necessary, that 
+were programmed (bats SPIEN, CKOPT and SUT0 are established in "0"). Usually 
+uCU, going from a factory, i.e. new, have already programmed bats SPIEN. As it 
+is desirable (but it is not necessary) to program (to establish in "0") bats 
+BODEN that will resolve job built - in uCU broun-out the detector. At not 
+programmed to bat BODLEVEL level operations broun-out the detector there will be 
+at a level of 2,4...2,9 Volt... Other bats should be not programmed (are 
+established in "1")</P>
+<P>
+<HR>
+<B><I><U>Installation: </U></I></B>
+<P></P>
+<P>
+<P><FONT color=blue><B><U>Windows XP </U></B></FONT></P>
+<P>To stitch the controller. To connect newly-baked programmer to РС through 
+free socket USB. OS will find the new device - <B>AVR910 USB Programmer </B>, at 
+the offer automatically to find the driver, to refuse, and to specify a way to a 
+file <B>prottoss.avr910.usb.inf </B>. At the prevention{warning}, that the 
+driver has no digital signature, to send OS in erotic travel. Small problems at 
+me have arisen, when, after installation, program AVRProg v. 1.4 could not find 
+programmer as OS has appropriated to him number COM9. After monitoring ports 
+appeared, that AVRProg searches for the device only on ports COM1 - COM4. To 
+change number of port it is possible if to go in the manager of devices in: 
+<B>AVR910 USB Programmer-&gt; Properties&gt; Parameters of port-&gt; In 
+addition-&gt; Number of COM-port</B></P>
+<P><FONT color=blue><B><U>Windows 2000 </U></B></FONT></P>
+<P>Basically, installation does not differ from described above for Windows XP, 
+but there is one BUT - delays in the driver <B>usbser.sys </B>spoil a chain of 
+commands from on PC up to Soft programmer and, circuit of answers back from 
+programmer up Soft to on PC... I yet have not established the Problem, but there 
+is a decision... Certainly not the most beautiful, but works reliably:-) It is 
+necessary to replace a file <B>usbser.sys </B>in system folders Windows 2000 on 
+similar from Windows XP. These are folders <B>...\winnt\system32\drivers \ 
+</B>and <B>...\winnt\system32\dllcashe \ </B>. The file <B>usbser.sys </B>from 
+Windows XP SP1 can be taken <A 
+href="http://pinokio3000.narod.ru/my_designs/AVR910_USB_Programmer.files/usbser.sys" 
+name="">here </A>. It is natural, that the driver should be substituted having 
+loaded under other OS (for example from a loading disk). As nucleus of these two 
+OS are very similar, the driver from XP fine feels itself under 2000:--) At 
+least, I have tested some more devices, pretending to be USB CDC Class, and all 
+of them worked as usually... Attempts install the driver from XP through an 
+adjusting file, unfortunately, in anything have not resulted. If who that knows, 
+how it can be made, I shall be grateful. </P><B><I><U>Files: </U></I></B>
+<P></P>
+<P>All archives contain a file of an insertion, an adjusting inf-file and the 
+circuit in format Adobe pdf. Except for it old versions contain the description 
+as old html pages.</P>
+<P>
+<DIV style="TEXT-ALIGN: left"><A 
+href="http://pinokio3000.narod.ru/my_designs/AVR910_USB_Programmer.files/avr910_usb_programmer.files.ver.1.01.rar" 
+name="">avr910_usb_programmer.files.ver.1.01.rar </A>the Version from 
+<B>25.08.2006. </B>Frequency trim SPI, that adds speed of programming a little, 
+however, it, there are problems with job on some computers because of timeout 
+expectations ON programmer </DIV>
+<P></P>
+<P>
+<DIV style="TEXT-ALIGN: left"><A 
+href="http://pinokio3000.narod.ru/my_designs/AVR910_USB_Programmer.files/avr910_usb_programmer.files.ver.1.02.rar" 
+name="">avr910_usb_programmer.files.ver.1.02.rar </A>the Version from 
+<B>21.09.2006. </B>No frequency trim, but for that generation of a meander on 
+conclusion LED of a ISP-socket has appeared. There is a mistake in an insertion, 
+connected with an establishment on conclusion RESET of a ISP-socket a broad 
+gully. "0" at the first inclusion programmer. The conclusion remains in such 
+status before the first programming or an input in the menu of installation fuse 
+bits... 
+<P></P>
+<P>
+<DIV style="TEXT-ALIGN: left"><A 
+href="http://pinokio3000.narod.ru/my_designs/AVR910_USB_Programmer.files/avr910_usb_programmer.files.ver.1.03.rar" 
+name="">avr910_usb_programmer.files.ver.1.03.rar </A>the Version from 
+<B>31.10.2006. </B>Is corrected a mistake of version 1.02. </DIV>
+<P></P>
+<DIV style="TEXT-ALIGN: left"><A 
+href="http://pinokio3000.narod.ru/my_designs/AVR910_USB_Programmer.files/avr910_usb_programmer.files.ver.1.04.rar" 
+name="">avr910_usb_programmer.files.ver.1.04.rar </A>the Version from 
+<B>16.12.2006. </B>internal <B>pull-up </B>the resistor connection Is added to 
+an input <B>MISO </B>uCU programmers during programming target uCU. Probably, it 
+will be useful at reading payments with the lowered voltage power, and in 
+general, I think, will positively have an effect on reliability of reading 
+programmed uCU... <B><U>At the moment the freshest version of an insertion 
+</U></B></DIV>
+<P></P>
+<HR>
+<B>You can freely use materials of the given publication in educational and 
+non-commercial objectives. The reprint, the publication in the Internet, 
+magazines, use in commercial applications - is possible only after the 
+coordination with the author </B>
+<P></P><A 
+href="http://pinokio3000.narod.ru/my_designs/AVR910_USB_Programmer.htm" 
+name="">Russian version</A><BR><A 
+href="http://pinokio3000.narod.ru/my_designs/..%20/" name="">On main </A><BR><A 
+href="mailto:pinokio3000@yandex.ru" name="">To write to me </A>
+<P></P>
+<P>
+<HR>
+Ryzhkov Andrey aka <B>PROTTOSS </B><BR>Last updating: 26.12.2006 <BR>
+<CENTER><IMG src="AVR910 USB programmer_files/counter.gif"></CENTER><BR><!-- ><!-- "><!-- '><!-- --></TEXTAREA></FORM></TITLE></COMMENT></A></DIV></SPAN></ILAYER></LAYER></IFRAME></NOFRAMES></STYLE></NOSCRIPT></TABLE></SCRIPT></APPLET></FONT>
+<STYLE>#bn {
+	DISPLAY: block
+}
+#bt {
+	DISPLAY: block
+}
+</STYLE>
+
+<DIV 
+style="BACKGROUND: url(http://www.tns-counter.ru/V13a****yandex_ru/ru/CP1251/tmsec=narod_total/)"></DIV>
+<SCRIPT language=JavaScript src="AVR910 USB programmer_files/163.htm"></SCRIPT>
+<!-- mailto:spm111@yandex.ru --></BODY></HTML>

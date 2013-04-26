@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0036)http://www.peetwo.dk/ucsoftware.html -->
+<?xml version="1.0" encoding="ISO-8859-1"?><HTML><HEAD><TITLE>Andreas R. Fugl's Home Page - Microcontroller software</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><LINK 
+href="Andreas R_ Fugl's Home Page - Microcontroller software_files/sitestyle.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY>
+<DIV id=Header>
+<TABLE cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD width="80%">
+      <H2>Andreas R. Fugl's Home Page</H2></TD></TR></TBODY></TABLE></DIV>
+<DIV id=Menu>
+<HR>
+<A title=Home href="http://www.peetwo.dk/index.html">Home</A><BR><A title=Blog 
+href="http://afugl.blogspot.com/">Blog</A><BR>
+<HR>
+<A title="Game development" 
+href="http://www.peetwo.dk/gamedev.html">Games</A><BR><A 
+title="Microcontroller software" href="http://www.peetwo.dk/ucsoftware.html">uC 
+software</A><BR><A title="Computer Science" 
+href="http://www.peetwo.dk/cscience.html">Computer Science</A><BR><A 
+title=Projects href="http://www.peetwo.dk/projects.html">Projects</A><BR>
+<HR>
+</DIV>
+<DIV id=Content>
+<H2>Microcontroller software</H2>This page contains assembly-, C and other 
+useful code that I have made for various microcontrollers. Those include AM186ER 
+(80186 architecture), Motorola MC68HC11 and the ATMega series from Atmel. 
+<BR>Note that a small part of the sourcecode, especially the MC68HC11 assembler 
+has Danish comments but every variable, label and function should be in 
+English.<BR><BR><IMG 
+src="Andreas R_ Fugl's Home Page - Microcontroller software_files/iotkit_small.jpg"> 
+
+<HR>
+
+<H3>Low-level drivers in C</H3><A name=drivers></A>
+<H5>MAX3100 SPI/Microwire UART driver</H5>A driver for the MAX3100, which I used 
+in a network communication project using a custom RTOS for AM186ER.<BR>Note: You 
+will not get this to compile as you'll be missing the includes from the RTOS. 
+Looking over the code, you should still be able to figure out the buffer 
+handling, interrupt control and so on.<BR><BR><A 
+href="http://www.peetwo.dk/uni/prc/max3100.h" name=max3100.h>max3100.h</A><BR><A 
+href="http://www.peetwo.dk/uni/prc/max3100.c" name=max3100.c>max3100.c</A> 
+<H5>Field Programmable Analog Array (FPAA) support routines</H5>This contains 
+robust functions to load primary configuration data onto a FPAA (AN221E04 from 
+Anadigm) using ATMega microcontrollers (fpaa_loadConfig() is the most important 
+function to consider). A flowchart of the process can be seen <A 
+href="http://www.peetwo.dk/uni/bachelor/fpaa_primary_config.png">here</A>.<BR>Note: 
+There are alot of dependencies here which I cannot include (you will not get it 
+to compile), but you will get a good idea on how to program the FPAA.<BR>Note: 
+This is dependant on <A 
+href="http://hubbard.engr.scu.edu/avr/avrlib/docs/html/index.html">Procyon 
+AVRLib</A> for low-level routines.<BR><BR><A 
+href="http://www.peetwo.dk/uni/bachelor/fpaa.h">fpaa.h</A><BR><A 
+href="http://www.peetwo.dk/uni/bachelor/fpaa.c">fpaa.c</A> 
+<H5>DS1305 Serial Alarm Real-Time Clock driver</H5>This is a basic driver for 
+the DS1305 SPI RTC, allowing one to read and write registers.<BR>Note: This is 
+dependant on <A 
+href="http://hubbard.engr.scu.edu/avr/avrlib/docs/html/index.html">Procyon 
+AVRLib</A> for low-level routines. <BR><BR><A 
+href="http://www.peetwo.dk/uni/bachelor/ds1305.h">ds1305.h</A><BR><A 
+href="http://www.peetwo.dk/uni/bachelor/ds1305.c">ds1305.c</A> 
+<H5>Simple Dynamic Memory Allocator (malloc) for microcontrollers</H5><IMG 
+src="Andreas R_ Fugl's Home Page - Microcontroller software_files/free-list.png"><BR><BR>A 
+POSIX-compliant memory allocator using a first-fit strategy and singly 
+linked-lists for allocating unused space on the heap. Space reserved by malloc() 
+can later be released with free(). The design is optimized for allocation search 
+time and is thus incompatible with reallocation (ie realloc()).<BR>Note: Part of 
+this code is strongly connected with a specific RTOS, but you should still be 
+able to reuse the algorithm and link-structure.<BR><BR><A 
+href="http://www.peetwo.dk/uni/prc/malloc.h" name=malloc.h>malloc.h</A><BR><A 
+href="http://www.peetwo.dk/uni/prc/malloc.c" name=malloc.c>malloc.c</A> 
+<H5>Embedded FAT16/FAT32 filesystem with read/write support</H5>My modified 
+version of the <A 
+href="http://www.larwe.com/zws/products/dosfs/index.html">DOSFS Embedded 
+FAT-Compatible Filesystem</A> written by Lewin A.R.W Edwards. A fairly 
+lightweight (see above URL) FAT16/32 filesystem with read/write support, to 
+which I had to make some modifications for reliable functionality on ATMega with 
+GCC.<BR>See the URL above for technical documentation on how to integrate with 
+your own project.<BR>Note: A few sections of the code where 32-bit 
+multiplication/division/modulus is done, there are some critical sections where 
+I have disabled all interrupts. This was due to a bug in GCC, where R1 would not 
+be reset to 0 (RISC programs assume this) after an arithmetic operation. This is 
+solved in newer versions so you may remove the critical sections.<BR>Note 2: 
+When formatting a card on Windows, you cannot be sure that it creates a 
+partition table. This gives a problem when trying to mount a volume, as the code 
+will have to guess where it starts. The procedure mountFatVolume() in storage.c 
+has ways to circumvent this but it is dangerous to rely on.<BR><BR><A 
+href="http://www.peetwo.dk/uni/bachelor/dosfs.h">dosfs.h</A><BR><A 
+href="http://www.peetwo.dk/uni/bachelor/dosfs.c">dosfs.c</A><BR><BR>High-level 
+routines:<BR><A 
+href="http://www.peetwo.dk/uni/bachelor/storage.h">storage.h</A><BR><A 
+href="http://www.peetwo.dk/uni/bachelor/storage.c">storage.c</A> 
+<H5>MultiMedia and SD Flash Card SPI Interfacing</H5>This is an almost complete 
+rewrite of the MMC/SD SPI interface routines of <A 
+href="http://hubbard.engr.scu.edu/avr/avrlib/docs/html/index.html">Procyon 
+AVRLib</A>, which I found to be unstable in initializing certain card 
+types.<BR>This implementation follows Sandisks MMC/SD specification closely and 
+is rather conservative in regards to waitstates and repetitions (a flowchart of 
+the initialization can be seen <A 
+href="http://www.peetwo.dk/uni/bachelor/mmc_init.png">here</A>)<BR>During tests 
+with a 16MHz ATMega128 microcontroller, it takes around 5 milliseconds to write 
+512 bytes. This is not a hard limit though, as the card might not always be able 
+to keep up and delay a write of up to 10 milliseconds. <BR><BR><A 
+href="http://www.peetwo.dk/uni/bachelor/mmc.h">mmc.h</A><BR><A 
+href="http://www.peetwo.dk/uni/bachelor/mmc.c">mmc.c</A> 
+<H5>Using the PCF8574 I2C I/O extender</H5>This piece of code is for a 
+user-interface board built around a PCF8574 8-bit I2C I/O extender.<BR>An image 
+of the UI Board connected to the FPAA-based datalogger can be seen <A 
+href="http://www.peetwo.dk/uni/bachelor/systemet.jpg">here</A>.<BR><BR><A 
+href="http://www.peetwo.dk/uni/bachelor/uiboard.h">uiboard.h</A><BR><A 
+href="http://www.peetwo.dk/uni/bachelor/uiboard.c">uiboard.c</A> 
+<HR>
+
+<H3>ATMega specific</H3><A name=atmega></A>
+<H5>Initialization of the A/D converter on ATMega8</H5>Code showing how to 
+initialize the A/D converter on an ATMega8.<BR>Note: Contains leftovers from 
+some CPLD interfacing, just comment it. <BR><BR><A 
+href="http://www.peetwo.dk/uni/eca00/adc.h">adc.h</A><BR><A 
+href="http://www.peetwo.dk/uni/eca00/adc.c">adc.c</A> 
+<H5>PWM on ATMega8</H5>Routines for starting the PWM output and setting the 
+dutycycle on the ATMega8.<BR><BR><A 
+href="http://www.peetwo.dk/uni/eca00/pwm.h">pwm.h</A><BR><A 
+href="http://www.peetwo.dk/uni/eca00/pwm.c">pwm.c</A> 
+<H5>SPI on ATMega</H5>This code contains initialization and transfer routines 
+for SPI on ATMega microcontrollers<BR><BR><A 
+href="http://www.peetwo.dk/uni/prd/spi.h">spi.h</A><BR><A 
+href="http://www.peetwo.dk/uni/prd/spi.c">spi.c</A> 
+<HR>
+
+<H3>Useful C functions</H3><A name=useful-c></A>
+<H5>Curveform generation</H5><IMG 
+src="Andreas R_ Fugl's Home Page - Microcontroller software_files/half-sinus.png"><BR><BR>Code 
+to generate square, sawtooth, triangular and sinus waveforms. The sinus is 
+stored as lookup, with only half of the waveform in memory (using horizontal 
+symmetry only, could be improved to using only 1/4th of the waveform). <BR>Note: 
+The frequency control is ATMega-specific.<BR><BR><A 
+href="http://www.peetwo.dk/uni/eca00/curve.h">curve.h</A><BR><A 
+href="http://www.peetwo.dk/uni/eca00/curve.c">curve.c</A> 
+<H5>Example of commandline interpreter in C</H5>This program for an ATMega8 
+gives an example of a simple commandline interpreter with single-character 
+commands.<BR><BR><A href="http://www.peetwo.dk/uni/eca00/main.c">main.c</A> 
+<H5>Advanced Statemachine Control of a H-bridge</H5><IMG 
+src="Andreas R_ Fugl's Home Page - Microcontroller software_files/MCUState_small.png"><BR><BR>This 
+code implements a Moore-type <A 
+href="http://www.peetwo.dk/uni/prd/MCUstate.png">statemachine</A> controlling a 
+H-bridge. It manages the startup, braking and reversing of a connected DC-motor 
+using RPM-feedback.<BR>The statemachine uses a state transition table and can 
+thus easily be used and debugged in other purposes.<BR><BR><A 
+href="http://www.peetwo.dk/uni/prd/h-bridge.h">h-bridge.h</A><BR><A 
+href="http://www.peetwo.dk/uni/prd/h-bridge.c">h-bridge.c</A> 
+<H5>Linear Algebra support routines</H5>This code contains basic linear algebra 
+functions to support matrix addition, multiplication and substraction on ATMega 
+microcontrollers (should be easily portable though).<BR>It is based upon a 
+matrix datastructure from <A 
+href="http://www.icsi.berkeley.edu/~sather/performance/benchmarks/data/matrix.c">this</A> 
+link.<BR>Note: Don't expect blazing performance, this is really only meant for 
+initial testing of algorithms. <BR><BR><A 
+href="http://www.peetwo.dk/uni/prd/matrix.h">matrix.h</A><BR><A 
+href="http://www.peetwo.dk/uni/prd/matrix.c">matrix.c</A> 
+<HR>
+
+<H3>Control Systems</H3><A name=control></A>
+<H5>State-feedback Controller with State estimation</H5><IMG 
+src="Andreas R_ Fugl's Home Page - Microcontroller software_files/statecontrolestimator_small.png"><BR><BR>This 
+is an implementation of a State-feedback controller with estimation of all 
+states.<BR>Though this controller is tailor-fit to a specific project, you 
+should be able to figure the program flow of the controller.<BR><BR><A 
+href="http://www.peetwo.dk/uni/prd/statecontrol.h">statecontrol.h</A><BR><A 
+href="http://www.peetwo.dk/uni/prd/statecontrol.c">statecontrol.c</A> 
+<HR>
+
+<H3>MC68HC11 Assembly</H3><A name=hc11-asm></A>
+<H5>MC68HC11 Assembler for interfacing HD44780A-compatible LCD's</H5>Code for 
+writing lines to a 2-line HD44780A-compatible LCD controller in 8-bit mode. 
+Based from code by Ib Refer and Rasmus Maagaard. <BR>It assumes that port B of 
+the HC11 is used as output with B0-7 mapping to the respective data pins on the 
+LCD. 3 pins on port A is uesd for control with A3 mapping to E (LCD-Enable), A4 
+to R/W (Read/Write) and A5 to RS (RegisterSelect).<BR><BR><A 
+href="http://www.peetwo.dk/uni/pra/LCD2LIN.ASM" name=LCD2LIN.ASM>LCD2LIN.ASM</A> 
+
+<H5>MC68HC11 Keyboard Debouncing in Software</H5>Simple debounce of keys, using 
+busy-wait.<BR><BR><A href="http://www.peetwo.dk/uni/pra/KEYBOARD.ASM" 
+name=KEYBOARD:ASM>KEYBOARD.ASM</A> 
+<H5>MC68HC11 SPI bit-banging</H5>This code contains an implementation of SPI 
+using bit-banging.<BR><BR><A 
+href="http://www.peetwo.dk/uni/prx/IPS_ISR.ASM">IPS_ISR.ASM</A> 
+<HR>
+
+<H3>PC software tests</H3><A name=pc-software-tests></A>
+<H5>Keyboard/Mouse activity monitor on Linux</H5><IMG 
+src="Andreas R_ Fugl's Home Page - Microcontroller software_files/plot2.png"><BR><BR>This 
+is a Python script using the Linux kernel event interface to monitor the 
+activity on input interfaces, mainly a mouse. It uses the evdev.py interface by 
+Micah Dowty. It was a step on the way for my Bachelor project, involving 
+analysis of arm injueries following computer usage.<BR>It is invoked as 
+"./monitor.py /dev/input/eventX", and outputs to stdout in newline separated 
+text, compatible with tools such as Matlab/OpenOffice Calc.<BR><BR><A 
+href="http://www.peetwo.dk/monitor.py">monitor.py</A><BR><A 
+href="http://www.peetwo.dk/evdev.py">evdev.py</A><BR><A 
+href="http://www.peetwo.dk/evdev.pyc">evdev.pyc</A><BR>
+<H5>MAC-address blocking using IPTables</H5>Python script that parses an input 
+file for MAC-addresses and calls iptables to block them.<BR><BR><A 
+href="http://www.peetwo.dk/misc/macparser.py">macparser.py</A><BR><A 
+href="http://www.peetwo.dk/misc/input.txt">input.txt</A> - Sample input file 
+</DIV></BODY></HTML>

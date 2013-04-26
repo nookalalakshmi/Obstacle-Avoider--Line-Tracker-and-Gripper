@@ -1,0 +1,238 @@
+
+
+
+
+
+
+<!--
+	var siteseal_dn = "www.roboticsconnection.com";
+	var siteseal_o = "www.roboticsconnection.com";
+	var siteseal_baseURL = "https://seal.godaddy.com:443";
+	var siteseal_sealVersion = "0";
+	var siteseal_resellerId = "1";
+	var siteseal_width = "100";
+	var siteseal_height = "60";
+	var siteseal_sealType = "dv";
+	var siteseal_flashInstalled = 0;
+	var siteseal_flashVersion = 0;
+	var siteseal_EV = "false";
+	var siteseal_msDetect = "false";
+	
+	var BrowserDetect = {
+		init: function () {
+			this.browser = this.searchString(this.dataBrowser) || "An unknown browser";
+			this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "an unknown version";
+			this.OS = this.searchString(this.dataOS) || "an unknown OS";
+		},
+		searchString: function (data) {
+			for (var ivar2 = 0; ivar2 < data.length; ivar2++)	{
+				var dataString = data[ivar2].string;
+				var dataProp = data[ivar2].prop;
+				this.versionSearchString = data[ivar2].versionSearch || data[ivar2].identity;
+				if (dataString) {
+					if (dataString.indexOf(data[ivar2].subString) != -1)
+						return data[ivar2].identity;
+				}
+				else if (dataProp)
+					return data[ivar2].identity;
+			}
+		},
+		searchVersion: function (dataString) {
+			var index = dataString.indexOf(this.versionSearchString);
+			if (index == -1) return;
+			return parseFloat(dataString.substring(index+this.versionSearchString.length + 1));
+		},
+		dataBrowser: [
+			{ 	string: navigator.userAgent,
+				subString: "OmniWeb",
+				versionSearch: "OmniWeb/",
+				identity: "OmniWeb"
+			},
+			{
+				string: navigator.vendor,
+				subString: "Apple",
+				identity: "Safari"
+			},
+			{
+				prop: window.opera,
+				identity: "Opera"
+			},
+			{
+				string: navigator.vendor,
+				subString: "iCab",
+				identity: "iCab"
+			},
+			{
+				string: navigator.vendor,
+				subString: "KDE",
+				identity: "Konqueror"
+			},
+			{
+				string: navigator.userAgent,
+				subString: "Firefox",
+				identity: "Firefox"
+			},
+			{
+				string: navigator.vendor,
+				subString: "Camino",
+				identity: "Camino"
+			},
+			{		// for newer Netscapes (6+)
+				string: navigator.userAgent,
+				subString: "Netscape",
+				identity: "Netscape"
+			},
+			{
+				string: navigator.userAgent,
+				subString: "MSIE",
+				identity: "Explorer",
+				versionSearch: "MSIE"
+			},
+			{
+				string: navigator.userAgent,
+				subString: "Gecko",
+				identity: "Mozilla",
+				versionSearch: "rv"
+			},
+			{ 		// for older Netscapes (4-)
+				string: navigator.userAgent,
+				subString: "Mozilla",
+				identity: "Netscape",
+				versionSearch: "Mozilla"
+			}
+		],
+		dataOS : [
+			{
+				string: navigator.platform,
+				subString: "Win",
+				identity: "Windows"
+			},
+			{
+				string: navigator.platform,
+				subString: "Mac",
+				identity: "Mac"
+			},
+			{
+				string: navigator.platform,
+				subString: "Linux",
+				identity: "Linux"
+			}
+		]
+	
+	};
+	BrowserDetect.init();
+	
+	if (navigator.plugins && navigator.plugins.length)
+	{
+		x = navigator.plugins["Shockwave Flash"];
+		if (x)
+		{
+			siteseal_flashInstalled = 2;
+			if (x.description)
+			{
+				y = x.description;			
+				var name = "Shockwave Flash ";
+				siteseal_flashVersion = y.substring(name.length, y.indexOf('.'));
+			}
+		}
+		else
+			siteseal_flashInstalled = 1;
+		if (navigator.plugins["Shockwave Flash 2.0"])
+		{
+			siteseal_flashInstalled = 2;
+			siteseal_flashVersion = 2;
+		}
+	}
+	else if (navigator.mimeTypes && navigator.mimeTypes.length)
+	{
+		x = navigator.mimeTypes['application/x-shockwave-flash'];
+		if (x && x.enabledPlugin)
+			siteseal_flashInstalled = 2;
+		else
+			siteseal_flashInstalled = 1;
+	}
+	else
+		siteseal_msDetect = "true";
+
+	document.write('<SCR' + 'IPT LANGUAGE="VBScript"> \n');
+	document.write('on error resume next \n');
+	document.write('If siteseal_msDetect = "true" Then \n');
+	document.write('For ivar = 2 to 6 \n');
+	document.write('If Not(IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash." & ivar))) Then \n');
+	document.write('Else \n');
+	document.write('siteseal_flashInstalled = 2 \n');
+	document.write('siteseal_flashVersion = ivar \n');
+	document.write('End If \n');
+	document.write('Next \n');
+	document.write('End If \n');
+	document.write('If siteseal_flashInstalled = 0 Then \n');
+	document.write('siteseal_flashInstalled = 1 \n');
+	document.write('End If \n');	
+	document.write('</SCR' + 'IPT> \n');
+
+	if ((siteseal_flashInstalled == 2) && (siteseal_flashVersion >= 5) && (siteseal_resellerId == "1" || siteseal_sealVersion == "0") && (self == top))
+	{
+		document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="https://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="' + siteseal_width + '" height="' + siteseal_height + '" id="siteseal_gd_dv_small" align="middle">');
+		document.write('<param name="movie" value="' + siteseal_baseURL + '/flash/' + siteseal_sealVersion + '/siteseal_gd_dv_small.swf');
+		
+		if (siteseal_sealVersion == "0" && siteseal_sealType == "dv")
+			document.write('?domainName=' + siteseal_dn + '&color=000000');
+		else if (siteseal_sealVersion == "0" && (siteseal_sealType == "iv" || siteseal_sealType == "ev"))
+			document.write('?companyName=' + siteseal_dn + ' - ' + siteseal_o);
+			
+		document.write('" />');
+		document.write('<param name="quality" value="high" />');
+		document.write('<param name="AllowScriptAccess" value="always" />');
+		
+		if (siteseal_sealVersion == "0" && (siteseal_sealType == "iv" || siteseal_sealType == "ev"))
+			document.write('<param name="bgcolor" value="#333333" />');
+		else
+			document.write('<param name="wmode" value="transparent" />');
+			
+		document.write('<embed src="' + siteseal_baseURL + '/flash/' + siteseal_sealVersion + '/siteseal_gd_dv_small.swf');
+		
+		if (siteseal_sealVersion == "0" && (siteseal_sealType == "iv" || siteseal_sealType == "ev"))
+			document.write('?companyName=' + siteseal_dn + ' - ' + siteseal_o + '" bgcolor="#333333"');
+		else {
+			if (siteseal_sealVersion == "0" && siteseal_sealType == "dv")
+				document.write('?domainName=' + siteseal_dn + '&color=000000');
+			document.write('" wmode="transparent"');
+		}
+		
+		document.write(' quality="high" width="' + siteseal_width + '" height="' + siteseal_height + '" name="siteseal_gd_dv_small" align="middle" type="application/x-shockwave-flash" pluginspage="https://www.macromedia.com/go/getflashplayer" AllowScriptAccess="always" />');
+		document.write('</object>');
+	}
+	else
+	{
+		var version = parseFloat(BrowserDetect.version);
+		var imageFilename = "siteseal_gd_dv_small.gif";
+		if (BrowserDetect.browser == "Explorer" 
+			&& version >= 5.5 
+			&& version <= 6 
+			&& imageFilename.substring(imageFilename.length-3, imageFilename.length).toLowerCase() == "png"
+			&& document.body
+			&& document.body.filters)
+			document.write('<span style="display:inline-block;cursor:pointer;cursor:hand;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\'' + siteseal_baseURL + '/images/' + siteseal_sealVersion + '/siteseal_gd_dv_small.gif\', sizingMethod=\'crop\');width:' + siteseal_width + 'px;height:' + siteseal_height + 'px;" onclick="verifySeal();"></span>');
+		else
+			document.write('<img style="cursor:pointer;cursor:hand" width="' + siteseal_width + '" height="' + siteseal_height + '" src="' + siteseal_baseURL + '/images/' + siteseal_sealVersion + '/siteseal_gd_dv_small.gif" onclick="verifySeal();"/>');
+	}
+	
+	function verifySeal()
+	{
+		var url = siteseal_baseURL + '/verifySeal?sealID=18539082720103c125812710d8f454bb91773b04150926940068804622';		
+		window.open(url,'SealVerfication','location=yes,status=yes,resizable=yes,scrollbars=yes,width=650,height=550');
+	}
+
+	if (siteseal_EV == "true") {
+		if (BrowserDetect.browser == 'Explorer' && BrowserDetect.version >= '7') {
+		
+			// use the following line to get the new root certificate for Godaddy
+			document.write('<img src="https:\\\\evbeacon.godaddy.com\\images\\spacer.gif"/>');
+		
+			// use the following line to get the new root certificate for Starfield
+			document.write('<img src="https:\\\\evbeacon.starfieldtech.com\\images\\spacer.gif"/>');
+		}	
+	}
+	
+// -->
+

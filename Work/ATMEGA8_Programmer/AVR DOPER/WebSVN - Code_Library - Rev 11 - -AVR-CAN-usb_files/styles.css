@@ -1,0 +1,48 @@
+BODY {
+	COLOR: black; FONT-FAMILY: verdana, sans-serif; BACKGROUND-COLOR: white
+}
+HR {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: 0px; HEIGHT: 1px; BACKGROUND-COLOR: #808080
+}
+A {
+	TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+.HdrClmn {
+	BORDER-RIGHT: black 1px solid; FONT-WEIGHT: bold; COLOR: white; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #809cc8
+}
+.HdrClmnEnd {
+	FONT-WEIGHT: bold; COLOR: white; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #809cc8
+}
+.row0 {
+	BACKGROUND-COLOR: #f0f0f0
+}
+.row1 {
+	BACKGROUND-COLOR: #e0e0e0
+}
+.CatClmn1 {
+	BORDER-RIGHT: black 1px solid; BACKGROUND-COLOR: #d0d0ee
+}
+.CatClmn0 {
+	BORDER-RIGHT: black 1px solid; BACKGROUND-COLOR: #e0e0ff
+}
+TD.diffdeleted {
+	FONT-SIZE: 11px; BACKGROUND-COLOR: red
+}
+TD.diffchanged {
+	FONT-SIZE: 11px; BACKGROUND-COLOR: yellow
+}
+TD.diffadded {
+	FONT-SIZE: 11px; BACKGROUND-COLOR: green
+}
+TD.diff {
+	FONT-SIZE: 11px; BACKGROUND-COLOR: #f0f0f0
+}
+DIV.newpath {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px; BACKGROUND-COLOR: #d0d0ee
+}
+DIV.difflines {
+	
+}

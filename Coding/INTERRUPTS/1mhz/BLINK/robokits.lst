@@ -1,0 +1,42 @@
+   1               		.file	"robokits.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	main
+  20               	main:
+  21               	.LFB7:
+  22               	.LM1:
+  23               	/* prologue: function */
+  24               	/* frame size = 0 */
+  25               	.LM2:
+  26 0000 17BA      		out 55-32,__zero_reg__
+  27               	.LM3:
+  28 0002 80EC      		ldi r24,lo8(-64)
+  29 0004 81BB      		out 49-32,r24
+  30               	.L2:
+  31               	.LM4:
+  32 0006 969A      		sbi 50-32,6
+  33               	.LM5:
+  34 0008 9698      		cbi 50-32,6
+  35 000a 00C0      		rjmp .L2
+  36               	.LFE7:
+  62               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\Users\ankit\AppData\Local\Temp/cc9HBe2o.s:2      *ABS*:0000003f __SREG__
+C:\Users\ankit\AppData\Local\Temp/cc9HBe2o.s:3      *ABS*:0000003e __SP_H__
+C:\Users\ankit\AppData\Local\Temp/cc9HBe2o.s:4      *ABS*:0000003d __SP_L__
+C:\Users\ankit\AppData\Local\Temp/cc9HBe2o.s:5      *ABS*:00000034 __CCP__
+C:\Users\ankit\AppData\Local\Temp/cc9HBe2o.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\ankit\AppData\Local\Temp/cc9HBe2o.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\ankit\AppData\Local\Temp/cc9HBe2o.s:20     .text:00000000 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

@@ -1,0 +1,32 @@
+﻿ul.SimpleContextMenu {
+	display: none;
+	position: absolute;
+	margin: 0px;
+	padding: 0px;
+	font-family: verdana;
+	font-size: 10px;
+	list-style-type: none;
+	border-top: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-right: 1px solid #000000;
+	font-size: 6pt;
+}
+
+ul.SimpleContextMenu li {
+	border-bottom: 1px solid #000000;
+}
+
+ul.SimpleContextMenu li a {
+	display: block;
+	width: 130px;
+	padding: 1px 9px 2px 9px;
+	text-decoration: none;
+	color: Black;
+	background: #eeeeee;
+}
+
+ul.SimpleContextMenu li a:hover {
+	text-decoration: none;
+	color: #ffffff;
+	background: #004F70;
+}

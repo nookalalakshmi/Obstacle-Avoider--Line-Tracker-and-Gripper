@@ -1,0 +1,9 @@
+MIDlet-1: roombactrl, /icon.png, roombactrl
+MIDlet-Icon: /icon.png
+MIDlet-Name: roombactrl
+MIDlet-Version: 1.0.0
+MIDlet-Vendor: Mobile Processing ALPHA - 0004
+MicroEdition-Profile: MIDP-1.0
+MicroEdition-Configuration: CLDC-1.0
+MIDlet-Jar-URL: roombactrl-1.0.jar
+MIDlet-Jar-Size: 40863

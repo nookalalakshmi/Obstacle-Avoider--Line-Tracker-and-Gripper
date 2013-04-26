@@ -1,0 +1,752 @@
+
+motortest.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000370  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000003  00800060  00000370  000003e4  2**0
+                  ALLOC
+  2 .stab         00000ba0  00000000  00000000  000003e4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      000007d2  00000000  00000000  00000f84  2**0
+                  CONTENTS, READONLY, DEBUGGING
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	07 c1       	rjmp	.+526    	; 0x212 <__vector_1>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	29 c0       	rjmp	.+82     	; 0x5c <__bad_interrupt>
+   a:	28 c0       	rjmp	.+80     	; 0x5c <__bad_interrupt>
+   c:	27 c0       	rjmp	.+78     	; 0x5c <__bad_interrupt>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	23 c1       	rjmp	.+582    	; 0x258 <__vector_8>
+  12:	24 c0       	rjmp	.+72     	; 0x5c <__bad_interrupt>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	22 c0       	rjmp	.+68     	; 0x5c <__bad_interrupt>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+  1e:	1e c0       	rjmp	.+60     	; 0x5c <__bad_interrupt>
+  20:	1d c0       	rjmp	.+58     	; 0x5c <__bad_interrupt>
+  22:	1c c0       	rjmp	.+56     	; 0x5c <__bad_interrupt>
+  24:	1b c0       	rjmp	.+54     	; 0x5c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	e0 e7       	ldi	r30, 0x70	; 112
+  3a:	f3 e0       	ldi	r31, 0x03	; 3
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <.do_copy_data_start>
+
+0000003e <.do_copy_data_loop>:
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+
+00000042 <.do_copy_data_start>:
+  42:	a0 36       	cpi	r26, 0x60	; 96
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <.do_copy_data_loop>
+
+00000048 <__do_clear_bss>:
+  48:	10 e0       	ldi	r17, 0x00	; 0
+  4a:	a0 e6       	ldi	r26, 0x60	; 96
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+  52:	a3 36       	cpi	r26, 0x63	; 99
+  54:	b1 07       	cpc	r27, r17
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+  58:	43 d1       	rcall	.+646    	; 0x2e0 <main>
+  5a:	88 c1       	rjmp	.+784    	; 0x36c <_exit>
+
+0000005c <__bad_interrupt>:
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
+
+0000005e <motormove>:
+												//AT 1MHZ FREQUENCY DELAY OF 20 seconds
+//************** FUNCTIONS ********************
+void motormove(char motor, char state)
+{
+	int n1=0,n2=0;
+	if(motor=='1')
+  5e:	81 33       	cpi	r24, 0x31	; 49
+  60:	29 f4       	brne	.+10     	; 0x6c <motormove+0xe>
+  62:	a7 e0       	ldi	r26, 0x07	; 7
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e6 e0       	ldi	r30, 0x06	; 6
+  68:	f0 e0       	ldi	r31, 0x00	; 0
+  6a:	0b c0       	rjmp	.+22     	; 0x82 <motormove+0x24>
+	{
+		n1=7;
+		n2=6;
+	}
+	if(motor=='2')
+  6c:	82 33       	cpi	r24, 0x32	; 50
+  6e:	29 f4       	brne	.+10     	; 0x7a <motormove+0x1c>
+  70:	a0 e0       	ldi	r26, 0x00	; 0
+  72:	b0 e0       	ldi	r27, 0x00	; 0
+  74:	e1 e0       	ldi	r30, 0x01	; 1
+  76:	f0 e0       	ldi	r31, 0x00	; 0
+  78:	04 c0       	rjmp	.+8      	; 0x82 <motormove+0x24>
+  7a:	a0 e0       	ldi	r26, 0x00	; 0
+  7c:	b0 e0       	ldi	r27, 0x00	; 0
+  7e:	e0 e0       	ldi	r30, 0x00	; 0
+  80:	f0 e0       	ldi	r31, 0x00	; 0
+	{
+		n1=0;
+		n2=1;
+	}
+	switch (state)
+  82:	66 34       	cpi	r22, 0x46	; 70
+  84:	61 f0       	breq	.+24     	; 0x9e <motormove+0x40>
+  86:	67 34       	cpi	r22, 0x47	; 71
+  88:	20 f4       	brcc	.+8      	; 0x92 <motormove+0x34>
+  8a:	62 34       	cpi	r22, 0x42	; 66
+  8c:	09 f0       	breq	.+2      	; 0x90 <motormove+0x32>
+  8e:	59 c0       	rjmp	.+178    	; 0x142 <motormove+0xe4>
+  90:	18 c0       	rjmp	.+48     	; 0xc2 <motormove+0x64>
+  92:	63 35       	cpi	r22, 0x53	; 83
+  94:	59 f1       	breq	.+86     	; 0xec <motormove+0x8e>
+  96:	63 37       	cpi	r22, 0x73	; 115
+  98:	09 f0       	breq	.+2      	; 0x9c <motormove+0x3e>
+  9a:	53 c0       	rjmp	.+166    	; 0x142 <motormove+0xe4>
+  9c:	3d c0       	rjmp	.+122    	; 0x118 <motormove+0xba>
+	{
+	 case 'F':
+			sbi(PORTB,n1);
+  9e:	48 b3       	in	r20, 0x18	; 24
+  a0:	81 e0       	ldi	r24, 0x01	; 1
+  a2:	90 e0       	ldi	r25, 0x00	; 0
+  a4:	9c 01       	movw	r18, r24
+  a6:	02 c0       	rjmp	.+4      	; 0xac <motormove+0x4e>
+  a8:	22 0f       	add	r18, r18
+  aa:	33 1f       	adc	r19, r19
+  ac:	aa 95       	dec	r26
+  ae:	e2 f7       	brpl	.-8      	; 0xa8 <motormove+0x4a>
+  b0:	42 2b       	or	r20, r18
+  b2:	48 bb       	out	0x18, r20	; 24
+			cbi(PORTB,n2);
+  b4:	28 b3       	in	r18, 0x18	; 24
+  b6:	02 c0       	rjmp	.+4      	; 0xbc <motormove+0x5e>
+  b8:	88 0f       	add	r24, r24
+  ba:	99 1f       	adc	r25, r25
+  bc:	ea 95       	dec	r30
+  be:	e2 f7       	brpl	.-8      	; 0xb8 <motormove+0x5a>
+  c0:	11 c0       	rjmp	.+34     	; 0xe4 <motormove+0x86>
+			break;
+
+	case 'B':
+			sbi(PORTB,n2);
+  c2:	48 b3       	in	r20, 0x18	; 24
+  c4:	81 e0       	ldi	r24, 0x01	; 1
+  c6:	90 e0       	ldi	r25, 0x00	; 0
+  c8:	9c 01       	movw	r18, r24
+  ca:	02 c0       	rjmp	.+4      	; 0xd0 <motormove+0x72>
+  cc:	22 0f       	add	r18, r18
+  ce:	33 1f       	adc	r19, r19
+  d0:	ea 95       	dec	r30
+  d2:	e2 f7       	brpl	.-8      	; 0xcc <motormove+0x6e>
+  d4:	42 2b       	or	r20, r18
+  d6:	48 bb       	out	0x18, r20	; 24
+			cbi(PORTB,n1);
+  d8:	28 b3       	in	r18, 0x18	; 24
+  da:	02 c0       	rjmp	.+4      	; 0xe0 <motormove+0x82>
+  dc:	88 0f       	add	r24, r24
+  de:	99 1f       	adc	r25, r25
+  e0:	aa 95       	dec	r26
+  e2:	e2 f7       	brpl	.-8      	; 0xdc <motormove+0x7e>
+  e4:	80 95       	com	r24
+  e6:	82 23       	and	r24, r18
+  e8:	88 bb       	out	0x18, r24	; 24
+  ea:	08 95       	ret
+			break;
+
+	
+	case 'S':
+			cbi(PORTB,n2);
+  ec:	48 b3       	in	r20, 0x18	; 24
+  ee:	21 e0       	ldi	r18, 0x01	; 1
+  f0:	30 e0       	ldi	r19, 0x00	; 0
+  f2:	c9 01       	movw	r24, r18
+  f4:	02 c0       	rjmp	.+4      	; 0xfa <motormove+0x9c>
+  f6:	88 0f       	add	r24, r24
+  f8:	99 1f       	adc	r25, r25
+  fa:	ea 95       	dec	r30
+  fc:	e2 f7       	brpl	.-8      	; 0xf6 <motormove+0x98>
+  fe:	80 95       	com	r24
+ 100:	84 23       	and	r24, r20
+ 102:	88 bb       	out	0x18, r24	; 24
+			cbi(PORTB,n1);
+ 104:	88 b3       	in	r24, 0x18	; 24
+ 106:	02 c0       	rjmp	.+4      	; 0x10c <motormove+0xae>
+ 108:	22 0f       	add	r18, r18
+ 10a:	33 1f       	adc	r19, r19
+ 10c:	aa 95       	dec	r26
+ 10e:	e2 f7       	brpl	.-8      	; 0x108 <motormove+0xaa>
+ 110:	20 95       	com	r18
+ 112:	28 23       	and	r18, r24
+ 114:	28 bb       	out	0x18, r18	; 24
+ 116:	08 95       	ret
+			break;
+
+	case 's':
+			cbi(PORTB,n1);
+ 118:	48 b3       	in	r20, 0x18	; 24
+ 11a:	21 e0       	ldi	r18, 0x01	; 1
+ 11c:	30 e0       	ldi	r19, 0x00	; 0
+ 11e:	c9 01       	movw	r24, r18
+ 120:	02 c0       	rjmp	.+4      	; 0x126 <motormove+0xc8>
+ 122:	88 0f       	add	r24, r24
+ 124:	99 1f       	adc	r25, r25
+ 126:	aa 95       	dec	r26
+ 128:	e2 f7       	brpl	.-8      	; 0x122 <motormove+0xc4>
+ 12a:	80 95       	com	r24
+ 12c:	84 23       	and	r24, r20
+ 12e:	88 bb       	out	0x18, r24	; 24
+			cbi(PORTB,n2);
+ 130:	88 b3       	in	r24, 0x18	; 24
+ 132:	02 c0       	rjmp	.+4      	; 0x138 <motormove+0xda>
+ 134:	22 0f       	add	r18, r18
+ 136:	33 1f       	adc	r19, r19
+ 138:	ea 95       	dec	r30
+ 13a:	e2 f7       	brpl	.-8      	; 0x134 <motormove+0xd6>
+ 13c:	20 95       	com	r18
+ 13e:	28 23       	and	r18, r24
+ 140:	28 bb       	out	0x18, r18	; 24
+ 142:	08 95       	ret
+
+00000144 <robotmove>:
+}
+//***************************************
+void robotmove(char mode)
+{
+
+	switch(mode)
+ 144:	82 35       	cpi	r24, 0x52	; 82
+ 146:	c9 f0       	breq	.+50     	; 0x17a <robotmove+0x36>
+ 148:	83 35       	cpi	r24, 0x53	; 83
+ 14a:	38 f4       	brcc	.+14     	; 0x15a <robotmove+0x16>
+ 14c:	86 34       	cpi	r24, 0x46	; 70
+ 14e:	89 f0       	breq	.+34     	; 0x172 <robotmove+0x2e>
+ 150:	8c 34       	cpi	r24, 0x4C	; 76
+ 152:	a9 f0       	breq	.+42     	; 0x17e <robotmove+0x3a>
+ 154:	82 34       	cpi	r24, 0x42	; 66
+ 156:	61 f5       	brne	.+88     	; 0x1b0 <robotmove+0x6c>
+ 158:	0e c0       	rjmp	.+28     	; 0x176 <robotmove+0x32>
+ 15a:	8c 36       	cpi	r24, 0x6C	; 108
+ 15c:	b9 f0       	breq	.+46     	; 0x18c <robotmove+0x48>
+ 15e:	8d 36       	cpi	r24, 0x6D	; 109
+ 160:	18 f4       	brcc	.+6      	; 0x168 <robotmove+0x24>
+ 162:	83 35       	cpi	r24, 0x53	; 83
+ 164:	29 f5       	brne	.+74     	; 0x1b0 <robotmove+0x6c>
+ 166:	1e c0       	rjmp	.+60     	; 0x1a4 <robotmove+0x60>
+ 168:	82 37       	cpi	r24, 0x72	; 114
+ 16a:	59 f0       	breq	.+22     	; 0x182 <robotmove+0x3e>
+ 16c:	83 37       	cpi	r24, 0x73	; 115
+ 16e:	01 f5       	brne	.+64     	; 0x1b0 <robotmove+0x6c>
+ 170:	12 c0       	rjmp	.+36     	; 0x196 <robotmove+0x52>
+	{
+		case 'F':
+		 motormove('1','F');
+ 172:	66 e4       	ldi	r22, 0x46	; 70
+ 174:	07 c0       	rjmp	.+14     	; 0x184 <robotmove+0x40>
+		 motormove('2','F');
+		break;
+		
+		case 'B':
+		 motormove('1','B');
+ 176:	62 e4       	ldi	r22, 0x42	; 66
+ 178:	0a c0       	rjmp	.+20     	; 0x18e <robotmove+0x4a>
+		 motormove('2','B');
+		break;
+		
+		case 'R':
+		 motormove('1','B');
+ 17a:	62 e4       	ldi	r22, 0x42	; 66
+ 17c:	0d c0       	rjmp	.+26     	; 0x198 <robotmove+0x54>
+		 motormove('2','s');
+		break;
+		
+		case 'L':
+		 motormove('1','s');
+ 17e:	63 e7       	ldi	r22, 0x73	; 115
+ 180:	06 c0       	rjmp	.+12     	; 0x18e <robotmove+0x4a>
+		 motormove('2','B');
+		break;
+		
+		case 'r':
+		 motormove('1','B');
+ 182:	62 e4       	ldi	r22, 0x42	; 66
+ 184:	81 e3       	ldi	r24, 0x31	; 49
+ 186:	6b df       	rcall	.-298    	; 0x5e <motormove>
+		 motormove('2','F');
+ 188:	66 e4       	ldi	r22, 0x46	; 70
+ 18a:	09 c0       	rjmp	.+18     	; 0x19e <robotmove+0x5a>
+		break;
+		
+		case 'l':
+		 motormove('1','F');
+ 18c:	66 e4       	ldi	r22, 0x46	; 70
+ 18e:	81 e3       	ldi	r24, 0x31	; 49
+ 190:	66 df       	rcall	.-308    	; 0x5e <motormove>
+		 motormove('2','B');
+ 192:	62 e4       	ldi	r22, 0x42	; 66
+ 194:	04 c0       	rjmp	.+8      	; 0x19e <robotmove+0x5a>
+		break;
+		
+		case 's':
+		 motormove('1','s');
+ 196:	63 e7       	ldi	r22, 0x73	; 115
+ 198:	81 e3       	ldi	r24, 0x31	; 49
+ 19a:	61 df       	rcall	.-318    	; 0x5e <motormove>
+		 motormove('2','s');
+ 19c:	63 e7       	ldi	r22, 0x73	; 115
+ 19e:	82 e3       	ldi	r24, 0x32	; 50
+ 1a0:	5e df       	rcall	.-324    	; 0x5e <motormove>
+ 1a2:	08 95       	ret
+		break;
+		
+		case 'S':
+		 motormove('1','S');
+ 1a4:	63 e5       	ldi	r22, 0x53	; 83
+ 1a6:	81 e3       	ldi	r24, 0x31	; 49
+ 1a8:	5a df       	rcall	.-332    	; 0x5e <motormove>
+		 motormove('2','S');
+ 1aa:	63 e5       	ldi	r22, 0x53	; 83
+ 1ac:	82 e3       	ldi	r24, 0x32	; 50
+ 1ae:	57 df       	rcall	.-338    	; 0x5e <motormove>
+ 1b0:	08 95       	ret
+
+000001b2 <obstacleL>:
+}
+
+//***************************************
+void obstacleL(void)
+{
+	sbi(PORTB,2);
+ 1b2:	c2 9a       	sbi	0x18, 2	; 24
+	robotmove('B');
+ 1b4:	82 e4       	ldi	r24, 0x42	; 66
+ 1b6:	c6 df       	rcall	.-116    	; 0x144 <robotmove>
+ 1b8:	88 eb       	ldi	r24, 0xB8	; 184
+ 1ba:	9b e0       	ldi	r25, 0x0B	; 11
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 1bc:	29 e1       	ldi	r18, 0x19	; 25
+ 1be:	30 e0       	ldi	r19, 0x00	; 0
+ 1c0:	f9 01       	movw	r30, r18
+ 1c2:	31 97       	sbiw	r30, 0x01	; 1
+ 1c4:	f1 f7       	brne	.-4      	; 0x1c2 <obstacleL+0x10>
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 1c6:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 1c8:	d9 f7       	brne	.-10     	; 0x1c0 <obstacleL+0xe>
+	_delay_ms(300);
+	robotmove('r');
+ 1ca:	82 e7       	ldi	r24, 0x72	; 114
+ 1cc:	bb df       	rcall	.-138    	; 0x144 <robotmove>
+ 1ce:	88 e8       	ldi	r24, 0x88	; 136
+ 1d0:	93 e1       	ldi	r25, 0x13	; 19
+ 1d2:	29 e1       	ldi	r18, 0x19	; 25
+ 1d4:	30 e0       	ldi	r19, 0x00	; 0
+ 1d6:	f9 01       	movw	r30, r18
+ 1d8:	31 97       	sbiw	r30, 0x01	; 1
+ 1da:	f1 f7       	brne	.-4      	; 0x1d8 <obstacleL+0x26>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 1dc:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 1de:	d9 f7       	brne	.-10     	; 0x1d6 <obstacleL+0x24>
+	_delay_ms(500);
+
+}
+ 1e0:	08 95       	ret
+
+000001e2 <obstacle>:
+void obstacle(void)
+{
+            robotmove('S');
+ 1e2:	83 e5       	ldi	r24, 0x53	; 83
+ 1e4:	af df       	rcall	.-162    	; 0x144 <robotmove>
+ 1e6:	88 ea       	ldi	r24, 0xA8	; 168
+ 1e8:	91 e6       	ldi	r25, 0x61	; 97
+ 1ea:	01 97       	sbiw	r24, 0x01	; 1
+ 1ec:	f1 f7       	brne	.-4      	; 0x1ea <obstacle+0x8>
+			_delay_ms(100);
+			sbi(PORTB,2);			//LED ON
+ 1ee:	c2 9a       	sbi	0x18, 2	; 24
+			robotmove('B');
+ 1f0:	82 e4       	ldi	r24, 0x42	; 66
+ 1f2:	a8 df       	rcall	.-176    	; 0x144 <robotmove>
+ 1f4:	88 e8       	ldi	r24, 0x88	; 136
+ 1f6:	93 e1       	ldi	r25, 0x13	; 19
+ 1f8:	29 e1       	ldi	r18, 0x19	; 25
+ 1fa:	30 e0       	ldi	r19, 0x00	; 0
+ 1fc:	f9 01       	movw	r30, r18
+ 1fe:	31 97       	sbiw	r30, 0x01	; 1
+ 200:	f1 f7       	brne	.-4      	; 0x1fe <obstacle+0x1c>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 202:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 204:	d9 f7       	brne	.-10     	; 0x1fc <obstacle+0x1a>
+			_delay_ms(500);
+			if(bit_is_clear(PINC,0))
+ 206:	98 9b       	sbis	0x13, 0	; 19
+			{
+				obstacleL();
+ 208:	d4 df       	rcall	.-88     	; 0x1b2 <obstacleL>
+			}
+			navflag='O';
+ 20a:	8f e4       	ldi	r24, 0x4F	; 79
+ 20c:	80 93 62 00 	sts	0x0062, r24
+}
+ 210:	08 95       	ret
+
+00000212 <__vector_1>:
+
+
+//************** INTERRUPT0 ********************
+SIGNAL(SIG_INTERRUPT0)     
+{//signal handler for external interrupt int0           
+ 212:	1f 92       	push	r1
+ 214:	0f 92       	push	r0
+ 216:	0f b6       	in	r0, 0x3f	; 63
+ 218:	0f 92       	push	r0
+ 21a:	11 24       	eor	r1, r1
+ 21c:	2f 93       	push	r18
+ 21e:	3f 93       	push	r19
+ 220:	4f 93       	push	r20
+ 222:	5f 93       	push	r21
+ 224:	6f 93       	push	r22
+ 226:	7f 93       	push	r23
+ 228:	8f 93       	push	r24
+ 22a:	9f 93       	push	r25
+ 22c:	af 93       	push	r26
+ 22e:	bf 93       	push	r27
+ 230:	ef 93       	push	r30
+ 232:	ff 93       	push	r31
+            obstacle();
+ 234:	d6 df       	rcall	.-84     	; 0x1e2 <obstacle>
+			
+
+}
+ 236:	ff 91       	pop	r31
+ 238:	ef 91       	pop	r30
+ 23a:	bf 91       	pop	r27
+ 23c:	af 91       	pop	r26
+ 23e:	9f 91       	pop	r25
+ 240:	8f 91       	pop	r24
+ 242:	7f 91       	pop	r23
+ 244:	6f 91       	pop	r22
+ 246:	5f 91       	pop	r21
+ 248:	4f 91       	pop	r20
+ 24a:	3f 91       	pop	r19
+ 24c:	2f 91       	pop	r18
+ 24e:	0f 90       	pop	r0
+ 250:	0f be       	out	0x3f, r0	; 63
+ 252:	0f 90       	pop	r0
+ 254:	1f 90       	pop	r1
+ 256:	18 95       	reti
+
+00000258 <__vector_8>:
+
+//************** TIMER0 INTERRUPT ********************
+SIGNAL(SIG_OVERFLOW1)            	// signal handler for tcnt1 overflow interrupt
+{//re-enter every 204 mSec here
+ 258:	1f 92       	push	r1
+ 25a:	0f 92       	push	r0
+ 25c:	0f b6       	in	r0, 0x3f	; 63
+ 25e:	0f 92       	push	r0
+ 260:	11 24       	eor	r1, r1
+ 262:	2f 93       	push	r18
+ 264:	3f 93       	push	r19
+ 266:	4f 93       	push	r20
+ 268:	5f 93       	push	r21
+ 26a:	6f 93       	push	r22
+ 26c:	7f 93       	push	r23
+ 26e:	8f 93       	push	r24
+ 270:	9f 93       	push	r25
+ 272:	af 93       	push	r26
+ 274:	bf 93       	push	r27
+ 276:	ef 93       	push	r30
+ 278:	ff 93       	push	r31
+	//TCNT0 = TIMER_0_CNT; //reload this counter
+	robotmove('S');
+ 27a:	83 e5       	ldi	r24, 0x53	; 83
+ 27c:	63 df       	rcall	.-314    	; 0x144 <robotmove>
+ 27e:	80 e5       	ldi	r24, 0x50	; 80
+ 280:	93 ec       	ldi	r25, 0xC3	; 195
+ 282:	01 97       	sbiw	r24, 0x01	; 1
+ 284:	f1 f7       	brne	.-4      	; 0x282 <__vector_8+0x2a>
+	_delay_ms(200);
+	robotmove('B');
+ 286:	82 e4       	ldi	r24, 0x42	; 66
+ 288:	5d df       	rcall	.-326    	; 0x144 <robotmove>
+ 28a:	80 e1       	ldi	r24, 0x10	; 16
+ 28c:	97 e2       	ldi	r25, 0x27	; 39
+ 28e:	29 e1       	ldi	r18, 0x19	; 25
+ 290:	30 e0       	ldi	r19, 0x00	; 0
+ 292:	f9 01       	movw	r30, r18
+ 294:	31 97       	sbiw	r30, 0x01	; 1
+ 296:	f1 f7       	brne	.-4      	; 0x294 <__vector_8+0x3c>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 298:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 29a:	d9 f7       	brne	.-10     	; 0x292 <__vector_8+0x3a>
+	_delay_ms(1000);
+	robotmove('L');
+ 29c:	8c e4       	ldi	r24, 0x4C	; 76
+ 29e:	52 df       	rcall	.-348    	; 0x144 <robotmove>
+ 2a0:	88 eb       	ldi	r24, 0xB8	; 184
+ 2a2:	9b e0       	ldi	r25, 0x0B	; 11
+ 2a4:	29 e1       	ldi	r18, 0x19	; 25
+ 2a6:	30 e0       	ldi	r19, 0x00	; 0
+ 2a8:	f9 01       	movw	r30, r18
+ 2aa:	31 97       	sbiw	r30, 0x01	; 1
+ 2ac:	f1 f7       	brne	.-4      	; 0x2aa <__vector_8+0x52>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 2ae:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 2b0:	d9 f7       	brne	.-10     	; 0x2a8 <__vector_8+0x50>
+	_delay_ms(300);
+	robotmove('F');
+ 2b2:	86 e4       	ldi	r24, 0x46	; 70
+ 2b4:	47 df       	rcall	.-370    	; 0x144 <robotmove>
+	TCNT1 = TIMER_1_CNT;	
+ 2b6:	89 ed       	ldi	r24, 0xD9	; 217
+ 2b8:	99 ed       	ldi	r25, 0xD9	; 217
+ 2ba:	9d bd       	out	0x2d, r25	; 45
+ 2bc:	8c bd       	out	0x2c, r24	; 44
+}
+ 2be:	ff 91       	pop	r31
+ 2c0:	ef 91       	pop	r30
+ 2c2:	bf 91       	pop	r27
+ 2c4:	af 91       	pop	r26
+ 2c6:	9f 91       	pop	r25
+ 2c8:	8f 91       	pop	r24
+ 2ca:	7f 91       	pop	r23
+ 2cc:	6f 91       	pop	r22
+ 2ce:	5f 91       	pop	r21
+ 2d0:	4f 91       	pop	r20
+ 2d2:	3f 91       	pop	r19
+ 2d4:	2f 91       	pop	r18
+ 2d6:	0f 90       	pop	r0
+ 2d8:	0f be       	out	0x3f, r0	; 63
+ 2da:	0f 90       	pop	r0
+ 2dc:	1f 90       	pop	r1
+ 2de:	18 95       	reti
+
+000002e0 <main>:
+//************** MAIN PROGRAM ********************
+int main(void)
+{
+ 2e0:	0f 93       	push	r16
+ 2e2:	1f 93       	push	r17
+ 2e4:	cf 93       	push	r28
+ 2e6:	df 93       	push	r29
+	//char tbl[8]={'s','F','S','B','s','L','S','R'};
+//	int m=0;
+	
+	DDRB=0xC7;						//SET DATA DIRECTION REGISTER
+ 2e8:	87 ec       	ldi	r24, 0xC7	; 199
+ 2ea:	87 bb       	out	0x17, r24	; 23
+	DDRD=0xF1;						//SET DATA DIRECTION REGISTER
+ 2ec:	81 ef       	ldi	r24, 0xF1	; 241
+ 2ee:	81 bb       	out	0x11, r24	; 17
+	
+	sbi(PORTD,2);					//ENABLE PULL UP FOR SWITCH INT0
+ 2f0:	92 9a       	sbi	0x12, 2	; 18
+	//sbi(PORTD,3);					//ENABLE PULL UP FOR SWITCH INT1
+    GICR = _BV(INT0);           	// enable external int0
+ 2f2:	80 e4       	ldi	r24, 0x40	; 64
+ 2f4:	8b bf       	out	0x3b, r24	; 59
+    MCUCR = _BV(ISC01);          	// falling egde: int0*/
+ 2f6:	82 e0       	ldi	r24, 0x02	; 2
+ 2f8:	85 bf       	out	0x35, r24	; 53
+    sei();                       	// enable interrupts 
+ 2fa:	78 94       	sei
+									
+    TCCR1B = TMC16_CK1024;       		// use CLK/1024 prescale value
+ 2fc:	85 e0       	ldi	r24, 0x05	; 5
+ 2fe:	8e bd       	out	0x2e, r24	; 46
+    //TCNT0  = 0x00;        			// reset TCNT0
+    TIMSK  = _BV(TOIE1);        	// enable TCNT0 overflow 
+ 300:	84 e0       	ldi	r24, 0x04	; 4
+ 302:	89 bf       	out	0x39, r24	; 57
+ 
+	navflag = 'S';
+ 304:	83 e5       	ldi	r24, 0x53	; 83
+ 306:	80 93 62 00 	sts	0x0062, r24
+ 30a:	80 e1       	ldi	r24, 0x10	; 16
+ 30c:	97 e2       	ldi	r25, 0x27	; 39
+ 30e:	29 e1       	ldi	r18, 0x19	; 25
+ 310:	30 e0       	ldi	r19, 0x00	; 0
+ 312:	f9 01       	movw	r30, r18
+ 314:	31 97       	sbiw	r30, 0x01	; 1
+ 316:	f1 f7       	brne	.-4      	; 0x314 <main+0x34>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 318:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 31a:	d9 f7       	brne	.-10     	; 0x312 <main+0x32>
+	_delay_ms(1000);				//DELAY IN MILLISECONDS 
+	robotmove('F');
+ 31c:	86 e4       	ldi	r24, 0x46	; 70
+ 31e:	12 df       	rcall	.-476    	; 0x144 <robotmove>
+	TCNT1=TIMER_1_CNT;
+ 320:	89 ed       	ldi	r24, 0xD9	; 217
+ 322:	99 ed       	ldi	r25, 0xD9	; 217
+ 324:	9d bd       	out	0x2d, r25	; 45
+ 326:	8c bd       	out	0x2c, r24	; 44
+ 328:	09 e1       	ldi	r16, 0x19	; 25
+ 32a:	10 e0       	ldi	r17, 0x00	; 0
+				_delay_ms(500);
+				sei();                       	// enable interrupts 
+				        			
+				//count = 0;
+				//navflag='S';
+				TCNT1 = TIMER_1_CNT;			// reset TCNT0
+ 32c:	c9 ed       	ldi	r28, 0xD9	; 217
+ 32e:	d9 ed       	ldi	r29, 0xD9	; 217
+	_delay_ms(1000);				//DELAY IN MILLISECONDS 
+	robotmove('F');
+	TCNT1=TIMER_1_CNT;
+	while(1)						//INFINITE LOOP
+	{
+		if(navflag=='O')
+ 330:	80 91 62 00 	lds	r24, 0x0062
+ 334:	8f 34       	cpi	r24, 0x4F	; 79
+ 336:	c9 f4       	brne	.+50     	; 0x36a <main+0x8a>
+		{
+			if (bit_is_clear(PIND,2))	//IF Sensor1 senses obstacle
+ 338:	82 99       	sbic	0x10, 2	; 16
+ 33a:	0e c0       	rjmp	.+28     	; 0x358 <main+0x78>
+			{
+				robotmove('l');
+ 33c:	8c e6       	ldi	r24, 0x6C	; 108
+ 33e:	02 df       	rcall	.-508    	; 0x144 <robotmove>
+				cli();                       	// disable interrupts 
+ 340:	f8 94       	cli
+ 342:	88 e8       	ldi	r24, 0x88	; 136
+ 344:	93 e1       	ldi	r25, 0x13	; 19
+ 346:	f8 01       	movw	r30, r16
+ 348:	31 97       	sbiw	r30, 0x01	; 1
+ 34a:	f1 f7       	brne	.-4      	; 0x348 <main+0x68>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 34c:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 34e:	d9 f7       	brne	.-10     	; 0x346 <main+0x66>
+				_delay_ms(500);
+				sei();                       	// enable interrupts 
+ 350:	78 94       	sei
+				        			
+				//count = 0;
+				//navflag='S';
+				TCNT1 = TIMER_1_CNT;			// reset TCNT0
+ 352:	dd bd       	out	0x2d, r29	; 45
+ 354:	cc bd       	out	0x2c, r28	; 44
+ 356:	ec cf       	rjmp	.-40     	; 0x330 <main+0x50>
+			}
+			else if(bit_is_clear(PINC,0))
+ 358:	98 99       	sbic	0x13, 0	; 19
+ 35a:	03 c0       	rjmp	.+6      	; 0x362 <main+0x82>
+			{
+				obstacleL();
+ 35c:	2a df       	rcall	.-428    	; 0x1b2 <obstacleL>
+				cbi(PORTB,2);
+ 35e:	c2 98       	cbi	0x18, 2	; 24
+ 360:	e7 cf       	rjmp	.-50     	; 0x330 <main+0x50>
+			}
+			else 
+			{
+				//if(move=='F')
+				
+					cbi(PORTB,2);
+ 362:	c2 98       	cbi	0x18, 2	; 24
+					robotmove('F');
+ 364:	86 e4       	ldi	r24, 0x46	; 70
+ 366:	ee de       	rcall	.-548    	; 0x144 <robotmove>
+ 368:	e3 cf       	rjmp	.-58     	; 0x330 <main+0x50>
+ 36a:	ff cf       	rjmp	.-2      	; 0x36a <main+0x8a>
+
+0000036c <_exit>:
+ 36c:	f8 94       	cli
+
+0000036e <__stop_program>:
+ 36e:	ff cf       	rjmp	.-2      	; 0x36e <__stop_program>

@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0040)http://www.recursion.jp/forcy/index.html -->
+<HTML><HEAD><TITLE>Simplified Language for Embedded Compilation</TITLE>
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId>
+<META content="Lightweight Language FORTH Embedded Compile Interpret Stack" 
+name=keywords>
+<META content="Lightweight Compiler" name=description>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"></HEAD>
+<BODY bgColor=#ffffee>
+<P style="LINE-HEIGHT: 150%"><SPAN style="LETTER-SPACING: 1pt"><FONT 
+size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A 
+href="http://www.recursion.jp/prose/index.htm">Index</A></FONT></SPAN>
+<P style="LINE-HEIGHT: 100%" align=center><B><I><SPAN lang=EN-US><FONT 
+face="Times New Roman" size=5>&nbsp;&nbsp;&nbsp; </FONT></SPAN></I></B></P>
+<P style="LINE-HEIGHT: 150%" align=center><B><I><SPAN lang=EN-US><FONT 
+face="Times New Roman" size=5>Simplified Language for Embedded 
+Compilation</FONT></SPAN></I></B></P>
+<P style="LINE-HEIGHT: 150%" align=center><SPAN lang=en-us><FONT 
+size=4><BR></FONT></SPAN><B><I><SPAN lang=EN-US><FONT face="Times New Roman" 
+size=5><IMG height=153 
+src="Simplified Language for Embedded Compilation_files/avr2006.gif" width=117 
+border=0></FONT></SPAN></I></B></P>
+<BLOCKQUOTE>
+  <P style="LINE-HEIGHT: 150%"><B><SPAN lang=EN-US>1. 
+Introduction</SPAN></B></P>
+  <P style="LINE-HEIGHT: 150%" align=justify><SPAN lang=EN-US>In the development 
+  of embedded systems, there is a need to understand multiple CPU architectures 
+  and to be able to use dedicated development environments. This situation gives 
+  rise to concerns that long term maintenance, including maintenance of the 
+  development environment itself, could become very difficult as the environment 
+  evolves over time. In fact, such maintenance problems have already been 
+  observed. For example, finding compatible CPUfs for ten year old FA systems 
+  is very difficult. Reconstruction of the environment to generate the same 
+  object code has become almost impossible. In cross development, it is foreseen 
+  that reconstruction of older development environments will become increasingly 
+  more difficult because manufacturers continually update integrated 
+  environments and operating systems as improvements are made in them. In 
+  addressing these concerns, I have developed a technique to embed compilers 
+  into systems equipped with microprocessors. This will provide for minimum 
+  maintenance in the long term when effecting repairs or functional 
+  enhancements.</SPAN></P>
+  <P style="LINE-HEIGHT: 150%" align=center><IMG height=300 
+  src="Simplified Language for Embedded Compilation_files/forcy-usb.gif" 
+  width=400 border=0><BR>Photo 1:&nbsp; Example Implementation of the ForCy</P>
+  <P style="LINE-HEIGHT: 150%"><B><SPAN lang=EN-US>2. Virtualization of CPU 
+  Architectures</SPAN></B></P>
+  <P style="LINE-HEIGHT: 150%" align=justify><SPAN lang=EN-US>CPUfs implemented 
+  with intermediate code interpreters can be operated as virtual stack machines. 
+  One CPU can easily be replaced by another CPU equipped with the same 
+  interpreter. With the increased processing power of recent low-end 
+  microcontrollers, some decrease in processing efficiency may be acceptable for 
+  many applications.</SPAN></P>
+  <P style="LINE-HEIGHT: 150%" align=center><IMG height=195 
+  src="Simplified Language for Embedded Compilation_files/built-in.gif" 
+  width=449 border=0><BR>Figure 1:&nbsp; Built-in Compiler and Virtual Stack 
+  Machine</P>
+  <P style="LINE-HEIGHT: 150%"><B><SPAN lang=EN-US>3. Embedded Language 
+  Processors</SPAN></B></P>
+  <P style="LINE-HEIGHT: 150%" align=justify><SPAN lang=EN-US>Microcomputers 
+  embedded with source programs and language processors require only text 
+  editors and a user interface in order to repair or replace code. Source code 
+  is internally encoded into intermediate code during the transfer from the host 
+  PC. Alternately, the source code can be embedded into the compiling device 
+  before compilation. The intermediate code is stored in programmable flash 
+  memory or EEPROMfs.</SPAN></P>
+  <P style="LINE-HEIGHT: 150%" align=right><SPAN lang=en-us><A 
+  href="http://www.recursion.jp/forcy/abstract.pdf">Abstract of the ForCy system 
+  (pdf 191KB)</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></P>
+  <P style="LINE-HEIGHT: 150%"><B><SPAN lang=EN-US>4. Reducing the Overall Bulk 
+  of Compilers</SPAN></B></P>
+  <P style="LINE-HEIGHT: 150%" align=justify><SPAN lang=EN-US>The language 
+  specification has been written to reduce the code bulk of the compiler. It is 
+  reduced to be compatible with the limited amount of memory (in the range of 
+  several kilobytes) available to low-end microcomputers. In addition, the 
+  language offers low implementation cost and high scalability through 
+  modifications and simplification allowing improved program flow. ForCy is a 
+  programming language in a postfix notation similar to the C language with 
+  PostScript syntax. It generates intermediate code for virtual stack machines. 
+  This compiler can handle three data types, such as 16-bit unsigned integers, 
+  arrays and strings. Pointer operations are prohibited, and tail callings are 
+  optimized to reduce stack consumption. The main process of code generation is 
+  identification of words and assignment of byte codes in virtually one-to-one 
+  correspondence. A parser counts the length of { } blocks and generates code to 
+  be disregarded. Due to the small RAM capacity, the one-pass processing is 
+  designed to compile into self-programmable flash memory while receiving source 
+  text through a serial communications interface.</SPAN></P>
+  <P style="LINE-HEIGHT: 150%" align=right><SPAN lang=en-us><A 
+  href="http://www.recursion.jp/forcy/grammar.pdf">ForCy Grammar (pdf 
+  48KB)</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></P>
+  <BLOCKQUOTE>
+    <DIV style="BACKGROUND-COLOR: #eeeeff"><PRE>@</PRE><PRE>		"\n\tHello, World.\n" %s		//@show string
+	:hello
+
+		10 0				//  repeat 10 times
+		{
+			hello
+			++
+		} for ..
+	:hello_10
+
+		;i [10]a [10]b [10]c		//@array
+
+		10 0
+		{
+			dup =i
+			i a  i b  *  i =c		//  c[i] = a[i] * b[i];
+			++
+		} for ..
+	:c=ab
+
+		;x ;y				//@multiply table
+
+		1 =y
+		{
+			y 9 &lt;= while		//@repeat from 1 to 9
+			1 =x
+			{
+				x 9 &lt;= while	//@repeat from 1 to 9
+				x y * %3d		//@show x * y
+				++ =x
+			} do .
+			e\rf %c e\nf %c	//@CR-LF
+			++ =y
+		} do .
+	:multiply
+
+		1 &gt; { dup -- self * } if
+	:factorial
+
+</PRE></DIV></BLOCKQUOTE>
+  <P style="LINE-HEIGHT: 150%" align=center>List 1:&nbsp; Example of ForCy 
+  Program Code</P>
+  <P style="LINE-HEIGHT: 150%" align=justify><SPAN lang=EN-US>The interpreter 
+  sequentially calls processes depending on intermediate codes to operate the 
+  data stack and the return stack. The compiler itself is also encoded into 
+  intermediate codes and operates on the interpreter. The entire language 
+  processors including compilers and interpreters can be implemented in 4 to 6 
+  kilobytes of code.</SPAN></P>
+  <P style="LINE-HEIGHT: 150%" align=center><IMG height=263 
+  src="Simplified Language for Embedded Compilation_files/picmemory.gif" 
+  width=436 border=0><BR>Figure 2:&nbsp; Memory usage of PIC16F88</P>
+  <P style="LINE-HEIGHT: 150%"><B><SPAN lang=EN-US>5. 
+  Implementation</SPAN></B></P>
+  <P style="LINE-HEIGHT: 150%" align=justify><SPAN lang=EN-US>This simplified 
+  language was implemented using a Microchip PIC16F88 (4K word ROM and 368 byte 
+  RAM). It sequentially compiles program text transmitted through a RS-232C 
+  interface. It then writes the results into a flash memory area and interprets 
+  it. Although the PIC architecture is not adequate for a stack machine, it can 
+  calculate the first 100 digits of the value of Pi in 8 seconds using a 20 MHZ 
+  clock. This language is also implemented with a PIC12F683, R8C/Tiny and 
+  ATmega88. An interrupt mechanism is available in R8C/Tiny and ATmega88. Thus 
+  it can easily activate tasks at regular intervals and process multiple tasks 
+  in quasi-parallel fashion.</SPAN></P>
+  <P style="LINE-HEIGHT: 150%" align=right><SPAN lang=en-us><A 
+  href="http://www.recursion.jp/forcy/schematic.pdf">ForCy-USB Schematic (pdf 
+  15KB)</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></P>
+  <P style="LINE-HEIGHT: 150%"><B><SPAN lang=EN-US>6. Summary</SPAN></B></P>
+  <P style="LINE-HEIGHT: 150%" align=justify><SPAN lang=EN-US>This method was 
+  invented and is being developed mainly to reduce development loads of embedded 
+  systems and to ensure ease of long-term system maintenance. The following 
+  applications are expected to be available:</SPAN></P>
+  <BLOCKQUOTE>
+    <P style="LINE-HEIGHT: 150%"><SPAN lang=EN-US>(1) Control of microcomputers 
+    in FA systems for a long-term maintenance.<BR>(2) Customization of behavior 
+    for experimental equipment and sequencers.<BR>(3) Integrated management of 
+    multiple processors in standalone systems (e.g. robots).<BR>(4) Educational 
+    material for microcomputer applications (programmable with only text editors 
+    and user interface software).</SPAN></P></BLOCKQUOTE>
+  <P style="LINE-HEIGHT: 150%"><SPAN lang=en-us><B>7</B></SPAN><B><SPAN 
+  lang=EN-US>. Download</SPAN></B></P>
+  <P style="LINE-HEIGHT: 150%" align=justify><SPAN lang=EN-US>I publish the 
+  ForCy code as free software (LGPL). See the License.txt.<BR>All the 
+  documentation, and the source code for Atmel ATmega88 are included:</SPAN></P>
+  <BLOCKQUOTE>
+    <BLOCKQUOTE>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <BLOCKQUOTE><FONT size=2>
+            <P style="LINE-HEIGHT: 180%"><A 
+            href="http://www.recursion.jp/forcy/ForCy.2007-01-27.tgz">ForCy.2007-01-27.tgz</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(497KB)<BR><A 
+            href="http://www.recursion.jp/forcy/ForCy.2007-01-27.zip">ForCy.2007-01-27.zip</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(531KB)</P></FONT></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+  <P style="LINE-HEIGHT: 150%"><SPAN lang=EN-US><BR></SPAN><SPAN 
+  style="LETTER-SPACING: 1pt"><FONT size=3><A 
+  href="http://www.recursion.jp/prose/index.htm">Index</A></FONT></SPAN></P>
+  <P style="LINE-HEIGHT: 150%"><SPAN lang=EN-US>mailto: <A 
+  href="mailto:tamura@recursion.jp?subject=[ForCy]">Osamu 
+  Tamura</A></SPAN><BR>27 Jan. 2006<BR>27 Jan. 2007 : ATmega88 fuse bits 
+  corrected.<BR>17 Jun. 2008 : linked to ForCy-Arduino.</P></BLOCKQUOTE><FONT 
+size=3>
+<P align=center><A href="http://www.recursion.jp/avrcdc/index.html">related 
+pages ( AVR-CDC )</A></P>
+<P align=center><A 
+href="http://www.recursion.jp/mitou17/user2/arduino-e.html">related pages ( 
+ForCy-Arduino )</A><BR><BR>@</P></FONT></BODY></HTML>

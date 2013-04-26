@@ -1,0 +1,158 @@
+   1               		.file	"robokits.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	__vector_9
+  20               	__vector_9:
+  21               	.LFB7:
+  22               	.LM1:
+  23 0000 1F92      		push __zero_reg__
+  24 0002 0F92      		push r0
+  25 0004 0FB6      		in r0,__SREG__
+  26 0006 0F92      		push r0
+  27 0008 1124      		clr __zero_reg__
+  28 000a 8F93      		push r24
+  29               	/* prologue: Signal */
+  30               	/* frame size = 0 */
+  31               	.LM2:
+  32 000c 969A      		sbi 50-32,6
+  33               	.LM3:
+  34 000e 969A      		sbi 50-32,6
+  35               	.LM4:
+  36 0010 969A      		sbi 50-32,6
+  37               	.LM5:
+  38 0012 969A      		sbi 50-32,6
+  39               	.LM6:
+  40 0014 969A      		sbi 50-32,6
+  41               	.LM7:
+  42 0016 969A      		sbi 50-32,6
+  43               	.LM8:
+  44 0018 969A      		sbi 50-32,6
+  45               	.LM9:
+  46 001a 969A      		sbi 50-32,6
+  47               	.LM10:
+  48 001c 969A      		sbi 50-32,6
+  49               	.LM11:
+  50 001e 969A      		sbi 50-32,6
+  51               	.LM12:
+  52 0020 969A      		sbi 50-32,6
+  53               	.LM13:
+  54 0022 969A      		sbi 50-32,6
+  55               	.LM14:
+  56 0024 969A      		sbi 50-32,6
+  57               	.LM15:
+  58 0026 969A      		sbi 50-32,6
+  59               	.LM16:
+  60 0028 969A      		sbi 50-32,6
+  61               	.LM17:
+  62 002a 969A      		sbi 50-32,6
+  63               	.LM18:
+  64 002c 969A      		sbi 50-32,6
+  65               	.LM19:
+  66 002e 969A      		sbi 50-32,6
+  67               	.LM20:
+  68 0030 969A      		sbi 50-32,6
+  69               	.LM21:
+  70 0032 969A      		sbi 50-32,6
+  71               	.LM22:
+  72 0034 969A      		sbi 50-32,6
+  73               	.LM23:
+  74 0036 969A      		sbi 50-32,6
+  75               	.LM24:
+  76 0038 969A      		sbi 50-32,6
+  77               	.LM25:
+  78 003a 969A      		sbi 50-32,6
+  79               	.LM26:
+  80 003c 969A      		sbi 50-32,6
+  81               	.LM27:
+  82 003e 969A      		sbi 50-32,6
+  83               	.LM28:
+  84 0040 969A      		sbi 50-32,6
+  85               	.LM29:
+  86 0042 969A      		sbi 50-32,6
+  87               	.LM30:
+  88 0044 969A      		sbi 50-32,6
+  89               	.LM31:
+  90 0046 969A      		sbi 50-32,6
+  91               	.LM32:
+  92 0048 969A      		sbi 50-32,6
+  93               	.LM33:
+  94 004a 969A      		sbi 50-32,6
+  95               	.LM34:
+  96 004c 969A      		sbi 50-32,6
+  97               	.LM35:
+  98 004e 969A      		sbi 50-32,6
+  99               	.LM36:
+ 100 0050 969A      		sbi 50-32,6
+ 101               	.LM37:
+ 102 0052 969A      		sbi 50-32,6
+ 103               	.LM38:
+ 104 0054 969A      		sbi 50-32,6
+ 105               	.LM39:
+ 106 0056 969A      		sbi 50-32,6
+ 107               	.LM40:
+ 108 0058 969A      		sbi 50-32,6
+ 109               	.LM41:
+ 110 005a 969A      		sbi 50-32,6
+ 111               	.LM42:
+ 112 005c 82E8      		ldi r24,lo8(-126)
+ 113 005e 82BF      		out 82-32,r24
+ 114               	/* epilogue start */
+ 115               	.LM43:
+ 116 0060 8F91      		pop r24
+ 117 0062 0F90      		pop r0
+ 118 0064 0FBE      		out __SREG__,r0
+ 119 0066 0F90      		pop r0
+ 120 0068 1F90      		pop __zero_reg__
+ 121 006a 1895      		reti
+ 122               	.LFE7:
+ 124               	.global	main
+ 126               	main:
+ 127               	.LFB8:
+ 128               	.LM44:
+ 129               	/* prologue: function */
+ 130               	/* frame size = 0 */
+ 131               	.LM45:
+ 132 006c 80EC      		ldi r24,lo8(-64)
+ 133 006e 81BB      		out 49-32,r24
+ 134               	.LM46:
+ 135 0070 83E0      		ldi r24,lo8(3)
+ 136 0072 83BF      		out 83-32,r24
+ 137               	.LM47:
+ 138 0074 82E8      		ldi r24,lo8(-126)
+ 139 0076 82BF      		out 82-32,r24
+ 140               	.LM48:
+ 141 0078 81E0      		ldi r24,lo8(1)
+ 142 007a 89BF      		out 89-32,r24
+ 143               	.LM49:
+ 144               	/* #APP */
+ 145               	 ;  134 "robokits.c" 1
+ 146 007c 7894      		sei
+ 147               	 ;  0 "" 2
+ 148               	/* #NOAPP */
+ 149               	.L4:
+ 150               	.LM50:
+ 151 007e 9698      		cbi 50-32,6
+ 152 0080 00C0      		rjmp .L4
+ 153               	.LFE8:
+ 187               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\Users\ankit\AppData\Local\Temp/cc9Z9UoY.s:2      *ABS*:0000003f __SREG__
+C:\Users\ankit\AppData\Local\Temp/cc9Z9UoY.s:3      *ABS*:0000003e __SP_H__
+C:\Users\ankit\AppData\Local\Temp/cc9Z9UoY.s:4      *ABS*:0000003d __SP_L__
+C:\Users\ankit\AppData\Local\Temp/cc9Z9UoY.s:5      *ABS*:00000034 __CCP__
+C:\Users\ankit\AppData\Local\Temp/cc9Z9UoY.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\ankit\AppData\Local\Temp/cc9Z9UoY.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\ankit\AppData\Local\Temp/cc9Z9UoY.s:20     .text:00000000 __vector_9
+C:\Users\ankit\AppData\Local\Temp/cc9Z9UoY.s:126    .text:0000006c main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

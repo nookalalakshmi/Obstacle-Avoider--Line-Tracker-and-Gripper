@@ -1,0 +1,212 @@
+
+robokits.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000ca  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .stab         00000438  00000000  00000000  00000120  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  2 .stabstr      000006d2  00000000  00000000  00000558  2**0
+                  CONTENTS, READONLY, DEBUGGING
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	2c c0       	rjmp	.+88     	; 0x5c <__bad_interrupt>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	29 c0       	rjmp	.+82     	; 0x5c <__bad_interrupt>
+   a:	28 c0       	rjmp	.+80     	; 0x5c <__bad_interrupt>
+   c:	28 c0       	rjmp	.+80     	; 0x5e <__vector_6>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	25 c0       	rjmp	.+74     	; 0x5c <__bad_interrupt>
+  12:	24 c0       	rjmp	.+72     	; 0x5c <__bad_interrupt>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	22 c0       	rjmp	.+68     	; 0x5c <__bad_interrupt>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+  1e:	1e c0       	rjmp	.+60     	; 0x5c <__bad_interrupt>
+  20:	1d c0       	rjmp	.+58     	; 0x5c <__bad_interrupt>
+  22:	1c c0       	rjmp	.+56     	; 0x5c <__bad_interrupt>
+  24:	1b c0       	rjmp	.+54     	; 0x5c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	ea ec       	ldi	r30, 0xCA	; 202
+  3a:	f0 e0       	ldi	r31, 0x00	; 0
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <.do_copy_data_start>
+
+0000003e <.do_copy_data_loop>:
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+
+00000042 <.do_copy_data_start>:
+  42:	a0 36       	cpi	r26, 0x60	; 96
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <.do_copy_data_loop>
+
+00000048 <__do_clear_bss>:
+  48:	10 e0       	ldi	r17, 0x00	; 0
+  4a:	a0 e6       	ldi	r26, 0x60	; 96
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+  52:	a0 36       	cpi	r26, 0x60	; 96
+  54:	b1 07       	cpc	r27, r17
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+  58:	18 d0       	rcall	.+48     	; 0x8a <main>
+  5a:	35 c0       	rjmp	.+106    	; 0xc6 <_exit>
+
+0000005c <__bad_interrupt>:
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
+
+0000005e <__vector_6>:
+
+#define XTAL		  1000000L    // Crystal frequency in Hz
+#define OC1B_PIN PB2              // OC1A pin
+#define OC1B_DDR DDRB             // OC1A DDR
+SIGNAL(SIG_OUTPUT_COMPARE1A)
+{
+  5e:	1f 92       	push	r1
+  60:	0f 92       	push	r0
+  62:	0f b6       	in	r0, 0x3f	; 63
+  64:	0f 92       	push	r0
+  66:	11 24       	eor	r1, r1
+  68:	8f 93       	push	r24
+  6a:	9f 93       	push	r25
+	if(TCNT1==0xFF)
+  6c:	8c b5       	in	r24, 0x2c	; 44
+  6e:	9d b5       	in	r25, 0x2d	; 45
+  70:	8f 3f       	cpi	r24, 0xFF	; 255
+  72:	91 05       	cpc	r25, r1
+  74:	11 f4       	brne	.+4      	; 0x7a <__vector_6+0x1c>
+	{sbi(PORTB,0);}
+  76:	c0 9a       	sbi	0x18, 0	; 24
+  78:	01 c0       	rjmp	.+2      	; 0x7c <__vector_6+0x1e>
+	else {cbi(PORTB,0);}
+  7a:	c0 98       	cbi	0x18, 0	; 24
+}
+  7c:	9f 91       	pop	r25
+  7e:	8f 91       	pop	r24
+  80:	0f 90       	pop	r0
+  82:	0f be       	out	0x3f, r0	; 63
+  84:	0f 90       	pop	r0
+  86:	1f 90       	pop	r1
+  88:	18 95       	reti
+
+0000008a <main>:
+
+int main(void)
+{
+
+	DDRB=0x01;						//SET DATA DIRECTION REGISTER
+  8a:	81 e0       	ldi	r24, 0x01	; 1
+  8c:	87 bb       	out	0x17, r24	; 23
+									//ONLY PORTB.0 IS OUTPUT
+									//CONFIGURE AS PER REQUIREMENT
+									//DEFAULT ALL OTHERS ARE INPUT
+									//CHANGE ACCORDING TO USE
+	
+	DDRD=0xC0;						//SET DATA DIRECTION REGISTER
+  8e:	80 ec       	ldi	r24, 0xC0	; 192
+  90:	81 bb       	out	0x11, r24	; 17
+	//TCNT1=0xAF;								
+	
+	//sbi(PORTB,0);					//LED1 ON (INDICATION FOR READY TO USE)
+	
+    uint8_t i = 0;
+	 TIMSK  = _BV(OCIE1A);
+  92:	80 e1       	ldi	r24, 0x10	; 16
+  94:	89 bf       	out	0x39, r24	; 57
+	 sei();
+  96:	78 94       	sei
+
+    OC1B_DDR |= _BV(OC1B_PIN);    							// set OC1A pin as output, required for output toggling 
+  98:	ba 9a       	sbi	0x17, 2	; 23
+
+    TCCR1A =  _BV(WGM10) | _BV(COM1A1) | _BV(COM1A0);    	// enable 8 bit PWM, select inverted PWM
+  9a:	81 ec       	ldi	r24, 0xC1	; 193
+  9c:	8f bd       	out	0x2f, r24	; 47
+		
+    // timer1 running on 1/8 MCU clock with clear timer/counter1 on Compare Match
+    // PWM frequency will be MCU clock / 8 / 512, e.g. with 1Mhz Crystal 244 Hz.
+    TCCR1B = _BV(CS11) | _BV(WGM12);
+  9e:	8a e0       	ldi	r24, 0x0A	; 10
+  a0:	8e bd       	out	0x2e, r24	; 46
+  a2:	20 e0       	ldi	r18, 0x00	; 0
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+  a4:	42 ee       	ldi	r20, 0xE2	; 226
+  a6:	54 e0       	ldi	r21, 0x04	; 4
+  a8:	06 c0       	rjmp	.+12     	; 0xb6 <main+0x2c>
+ 
+    for (;;)
+    {   
+        for (i=0; i<100; i++)								/* dimm LED on */
+        {
+            OCR1AL = i;
+  aa:	2a bd       	out	0x2a, r18	; 42
+			//OCR1BH = i+1;
+			
+			sbi(PORTD, 6);
+  ac:	96 9a       	sbi	0x12, 6	; 18
+  ae:	ca 01       	movw	r24, r20
+  b0:	01 97       	sbiw	r24, 0x01	; 1
+  b2:	f1 f7       	brne	.-4      	; 0xb0 <main+0x26>
+    // PWM frequency will be MCU clock / 8 / 512, e.g. with 1Mhz Crystal 244 Hz.
+    TCCR1B = _BV(CS11) | _BV(WGM12);
+ 
+    for (;;)
+    {   
+        for (i=0; i<100; i++)								/* dimm LED on */
+  b4:	2f 5f       	subi	r18, 0xFF	; 255
+  b6:	24 36       	cpi	r18, 0x64	; 100
+  b8:	c0 f3       	brcs	.-16     	; 0xaa <main+0x20>
+			//OCR1BH = i+1;
+			
+			sbi(PORTD, 6);
+            _delay_ms(5);									// delay 10 ms
+        }
+		cbi(PORTD,6);
+  ba:	96 98       	cbi	0x12, 6	; 18
+  bc:	2f ef       	ldi	r18, 0xFF	; 255
+        
+        for( i=255; i>0; i--)								/* dimm LED off */
+        {
+           OCR1AL = i; 
+  be:	2a bd       	out	0x2a, r18	; 42
+			sbi(PORTD, 6);
+            _delay_ms(5);									// delay 10 ms
+        }
+		cbi(PORTD,6);
+        
+        for( i=255; i>0; i--)								/* dimm LED off */
+  c0:	21 50       	subi	r18, 0x01	; 1
+  c2:	e9 f7       	brne	.-6      	; 0xbe <main+0x34>
+  c4:	f8 cf       	rjmp	.-16     	; 0xb6 <main+0x2c>
+
+000000c6 <_exit>:
+  c6:	f8 94       	cli
+
+000000c8 <__stop_program>:
+  c8:	ff cf       	rjmp	.-2      	; 0xc8 <__stop_program>

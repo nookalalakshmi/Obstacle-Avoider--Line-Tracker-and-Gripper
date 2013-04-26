@@ -1,0 +1,92 @@
+   1               		.file	"robokits.c"
+   2               		.arch atmega32
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	main
+  20               	main:
+  21               	.LFB3:
+  22               	.LM1:
+  23               	/* prologue: frame size=0 */
+  24               	/* prologue end (size=0) */
+  25               	.LM2:
+  26 0000 80EF      		ldi r24,lo8(-16)
+  27 0002 8ABB      		out 58-0x20,r24
+  28               	.LM3:
+  29 0004 8BEF      		ldi r24,lo8(-5)
+  30 0006 87BB      		out 55-0x20,r24
+  31               	.LM4:
+  32 0008 81EF      		ldi r24,lo8(-15)
+  33 000a 81BB      		out 49-0x20,r24
+  34               	.LM5:
+  35 000c C29A      		sbi 56-0x20,2
+  36               	.LM6:
+  37 000e 919A      		sbi 50-0x20,1
+  38               	.LM7:
+  39 0010 929A      		sbi 50-0x20,2
+  40               	.LM8:
+  41 0012 939A      		sbi 50-0x20,3
+  42               	.L20:
+  43               	.LM9:
+  44 0014 B299      		sbic 54-0x20,2
+  45 0016 00C0      		rjmp .L3
+  46               	.LM10:
+  47 0018 DC9A      		sbi 59-0x20,4
+  48 001a 00C0      		rjmp .L5
+  49               	.L3:
+  50               	.LM11:
+  51 001c DC98      		cbi 59-0x20,4
+  52               	.L5:
+  53               	.LM12:
+  54 001e 8199      		sbic 48-0x20,1
+  55 0020 00C0      		rjmp .L6
+  56               	.LM13:
+  57 0022 DD9A      		sbi 59-0x20,5
+  58 0024 00C0      		rjmp .L8
+  59               	.L6:
+  60               	.LM14:
+  61 0026 DD98      		cbi 59-0x20,5
+  62               	.L8:
+  63               	.LM15:
+  64 0028 8299      		sbic 48-0x20,2
+  65 002a 00C0      		rjmp .L9
+  66               	.LM16:
+  67 002c DE9A      		sbi 59-0x20,6
+  68 002e 00C0      		rjmp .L11
+  69               	.L9:
+  70               	.LM17:
+  71 0030 DE98      		cbi 59-0x20,6
+  72               	.L11:
+  73               	.LM18:
+  74 0032 8399      		sbic 48-0x20,3
+  75 0034 00C0      		rjmp .L12
+  76               	.LM19:
+  77 0036 DF9A      		sbi 59-0x20,7
+  78 0038 00C0      		rjmp .L20
+  79               	.L12:
+  80               	.LM20:
+  81 003a DF98      		cbi 59-0x20,7
+  82 003c 00C0      		rjmp .L20
+  83               	/* epilogue: frame size=0 */
+  84               	/* epilogue: noreturn */
+  85               	/* epilogue end (size=0) */
+  86               	/* function main size 31 (31) */
+  87               	.LFE3:
+ 113               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cc8YNSqc.s:3      *ABS*:0000003f __SREG__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cc8YNSqc.s:4      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cc8YNSqc.s:5      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cc8YNSqc.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cc8YNSqc.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cc8YNSqc.s:20     .text:00000000 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

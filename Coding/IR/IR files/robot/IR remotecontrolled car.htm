@@ -1,0 +1,613 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0049)http://docs.google.com/Doc?id=ddmkwx3z_24dh6npfg2 -->
+<HTML><HEAD><TITLE>IR remotecontrolled car</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<STYLE type=text/css>TABLE {
+	FONT-SIZE: 1em
+}
+TR {
+	TEXT-ALIGN: left
+}
+DIV {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px
+}
+ADDRESS {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px
+}
+OL {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px
+}
+UL {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px
+}
+LI {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px
+}
+OPTION {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px
+}
+SELECT {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px
+}
+P {
+	MARGIN: 0px
+}
+PRE {
+	MARGIN: 0px; FONT-FAMILY: Courier New
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 10pt; PADDING-BOTTOM: 0px; MARGIN: 6px; PADDING-TOP: 0px; FONT-FAMILY: Verdana, sans-serif; BACKGROUND-COLOR: #ffffff
+}
+IMG {
+	moz-force-broken-image-icon: 1
+}
+
+@media Screen    
+{
+HTML.pageview {
+	BACKGROUND-COLOR: #f3f3f3! important
+}
+BODY {
+	MIN-HEIGHT: 1100px; counter-reset: __goog_page__
+}
+ HTML BODY {
+	HEIGHT: 1100px
+}
+.pageview BODY {
+	BORDER-RIGHT: #bbb 2px solid; PADDING-RIGHT: 50px; BORDER-TOP: #ccc 1px solid; PADDING-LEFT: 50px; PADDING-BOTTOM: 40px; MARGIN: 15px auto 25px; BORDER-LEFT: #ccc 1px solid; WIDTH: 648px! important; PADDING-TOP: 40px; BORDER-BOTTOM: #bbb 2px solid
+}
+ HTML {
+	OVERFLOW-Y: scroll
+}
+ HTML.pageview BODY {
+	OVERFLOW-X: auto
+}
+HTML #wys_frame:unknown {
+	LEFT: 0px; OVERFLOW: hidden; WIDTH: 0px; POSITION: fixed; TOP: 0px; HEIGHT: 0px; content:  
+}
+.writely-callout-data {
+	DISPLAY: inline-block; OVERFLOW: hidden; WIDTH: 0px; HEIGHT: 0px
+}
+.writely-footnote-marker {
+	BACKGROUND-IMAGE: url(images/footnote_doc_icon.gif); VERTICAL-ALIGN: top; OVERFLOW: hidden; WIDTH: 7px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 16px; BACKGROUND-COLOR: transparent; moz-user-select: none
+}
+.editor .writely-footnote-marker {
+	CURSOR: move
+}
+.writely-footnote-marker-highlight {
+	BACKGROUND-POSITION: -15px 0px; moz-user-select: text
+}
+UNKNOWN {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.writely-footnote-hide-selection :unknown {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.writely-footnote-hide-selection:unknown {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.writely-footnote-hide-selection {
+	CURSOR: move
+}
+.editor .writely-comment-yellow {
+	BACKGROUND-POSITION: -240px 0px; BACKGROUND-COLOR: #ff9
+}
+.editor .writely-comment-yellow-hover {
+	BACKGROUND-POSITION: -224px 0px; BACKGROUND-COLOR: #ff0
+}
+.editor .writely-comment-blue {
+	BACKGROUND-POSITION: -16px 0px; BACKGROUND-COLOR: #c0d3ff
+}
+.editor .writely-comment-blue-hover {
+	BACKGROUND-POSITION: 0px 0px; BACKGROUND-COLOR: #6292fe
+}
+.editor .writely-comment-orange {
+	BACKGROUND-POSITION: -80px 0px; BACKGROUND-COLOR: #ffdead
+}
+.editor .writely-comment-orange-hover {
+	BACKGROUND-POSITION: -64px 0px; BACKGROUND-COLOR: #f90
+}
+.editor .writely-comment-green {
+	BACKGROUND-POSITION: -48px 0px; BACKGROUND-COLOR: #99fbb3
+}
+.editor .writely-comment-green-hover {
+	BACKGROUND-POSITION: -32px 0px; BACKGROUND-COLOR: #00f442
+}
+.editor .writely-comment-cyan {
+	BACKGROUND-POSITION: -208px 0px; BACKGROUND-COLOR: #cff
+}
+.editor .writely-comment-cyan-hover {
+	BACKGROUND-POSITION: -192px 0px; BACKGROUND-COLOR: #0ff
+}
+.editor .writely-comment-purple {
+	BACKGROUND-POSITION: -144px 0px; BACKGROUND-COLOR: #ebccff
+}
+.editor .writely-comment-purple-hover {
+	BACKGROUND-POSITION: -128px 0px; BACKGROUND-COLOR: #90f
+}
+.editor .writely-comment-magenta {
+	BACKGROUND-POSITION: -112px 0px; BACKGROUND-COLOR: #fcf
+}
+.editor .writely-comment-magenta-hover {
+	BACKGROUND-POSITION: -96px 0px; BACKGROUND-COLOR: #f0f
+}
+.editor .writely-comment-red {
+	BACKGROUND-POSITION: -176px 0px; BACKGROUND-COLOR: #ffcaca
+}
+.editor .writely-comment-red-hover {
+	BACKGROUND-POSITION: -160px 0px; BACKGROUND-COLOR: #ff7a7a
+}
+.editor .writely-comment-marker {
+	PADDING-RIGHT: 11px; BACKGROUND-IMAGE: url(images/markericons_horiz.gif); WIDTH: 16px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 16px; BACKGROUND-COLOR: transparent; moz-user-select: none
+}
+.editor .writely-comment-hidden {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.editor .writely-comment-marker-hidden {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0px; WIDTH: 0px; PADDING-TOP: 0px
+}
+.editor .writely-comment-none {
+	FILTER: progid:DXImageTransform.Microsoft.Alpha(opacity=20); opacity: .2; moz-opacity: .2
+}
+.editor .writely-comment-none-hover {
+	FILTER: progid:DXImageTransform.Microsoft.Alpha(opacity=20); opacity: .2; moz-opacity: .2
+}
+UNKNOWN {
+	LEFT: -1ex; POSITION: relative
+}
+UNKNOWN {
+	POSITION: static! important
+}
+    }
+H6 {
+	FONT-SIZE: 8pt
+}
+H5 {
+	FONT-SIZE: 8pt
+}
+H4 {
+	FONT-SIZE: 10pt
+}
+H3 {
+	FONT-SIZE: 12pt
+}
+H2 {
+	FONT-SIZE: 14pt
+}
+H1 {
+	FONT-SIZE: 18pt
+}
+BLOCKQUOTE {
+	BORDER-RIGHT: #ddd 1px dashed; PADDING-RIGHT: 10px; BORDER-TOP: #ddd 1px dashed; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; BORDER-LEFT: #ddd 1px dashed; PADDING-TOP: 10px; BORDER-BOTTOM: #ddd 1px dashed
+}
+A IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.pb {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PAGE-BREAK-AFTER: always; WIDTH: 100%! important; HEIGHT: 1px! important; BORDER-RIGHT-WIDTH: 0px
+}
+.editor .pb {
+	BORDER-TOP: #c0c0c0 1px dashed; BORDER-BOTTOM: #c0c0c0 1px dashed
+}
+DIV.google_header {
+	MARGIN-TOP: 1em; MARGIN-BOTTOM: 1em; POSITION: relative
+}
+DIV.google_footer {
+	MARGIN-TOP: 1em; MARGIN-BOTTOM: 1em; POSITION: relative
+}
+.editor DIV.writely-toc {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BORDER-BOTTOM: #ccc 1px solid; BACKGROUND-COLOR: #f3f3f3
+}
+UNKNOWN {
+	PADDING-LEFT: 3em; FONT-WEIGHT: bold
+}
+OL.writely-toc-subheading {
+	PADDING-LEFT: 1em; FONT-WEIGHT: normal
+}
+ HTML writely-toc OL {
+	LIST-STYLE-POSITION: inside
+}
+.writely-toc-none {
+	LIST-STYLE-TYPE: none
+}
+.writely-toc-decimal {
+	LIST-STYLE-TYPE: decimal
+}
+.writely-toc-upper-alpha {
+	LIST-STYLE-TYPE: upper-alpha
+}
+.writely-toc-lower-alpha {
+	LIST-STYLE-TYPE: lower-alpha
+}
+.writely-toc-upper-roman {
+	LIST-STYLE-TYPE: upper-roman
+}
+.writely-toc-lower-roman {
+	LIST-STYLE-TYPE: lower-roman
+}
+.writely-toc-disc {
+	LIST-STYLE-TYPE: disc
+}
+UNKNOWN {
+	LIST-STYLE-TYPE: disc
+}
+UNKNOWN {
+	LIST-STYLE-TYPE: decimal
+}
+BODY {
+	FONT-SIZE: 12pt; LINE-HEIGHT: normal; FONT-FAMILY: Times New Roman; BACKGROUND-COLOR: #ffffff
+}
+.editor A:visited {
+	COLOR: #551a8b
+}
+.editor TABLE.zeroBorder {
+	BORDER-RIGHT: gray 1px dotted; BORDER-TOP: gray 1px dotted; BORDER-LEFT: gray 1px dotted; BORDER-BOTTOM: gray 1px dotted
+}
+.editor TABLE.zeroBorder TD {
+	BORDER-RIGHT: gray 1px dotted; BORDER-TOP: gray 1px dotted; BORDER-LEFT: gray 1px dotted; BORDER-BOTTOM: gray 1px dotted
+}
+.editor TABLE.zeroBorder TH {
+	BORDER-RIGHT: gray 1px dotted; BORDER-TOP: gray 1px dotted; BORDER-LEFT: gray 1px dotted; BORDER-BOTTOM: gray 1px dotted
+}
+.editor DIV.google_header {
+	BORDER-RIGHT: #dddddd 2px dashed; BORDER-TOP: #dddddd 2px dashed; MIN-HEIGHT: 2em; BORDER-LEFT: #dddddd 2px dashed; WIDTH: 100%; BORDER-BOTTOM: #dddddd 2px dashed; POSITION: static
+}
+.editor DIV.google_footer {
+	BORDER-RIGHT: #dddddd 2px dashed; BORDER-TOP: #dddddd 2px dashed; MIN-HEIGHT: 2em; BORDER-LEFT: #dddddd 2px dashed; WIDTH: 100%; BORDER-BOTTOM: #dddddd 2px dashed; POSITION: static
+}
+.editor .misspell {
+	BACKGROUND-COLOR: yellow
+}
+.editor .writely-comment {
+	BORDER-RIGHT: #c0c0c0 1px dashed; PADDING-RIGHT: 1px; BORDER-TOP: #c0c0c0 1px dashed; PADDING-LEFT: 1px; FONT-SIZE: 9pt; PADDING-BOTTOM: 1px; BORDER-LEFT: #c0c0c0 1px dashed; LINE-HEIGHT: 1.4; PADDING-TOP: 1px; BORDER-BOTTOM: #c0c0c0 1px dashed
+}
+</STYLE>
+
+<STYLE>BODY {
+	MARGIN: 0px
+}
+#doc-contents {
+	MARGIN: 6px
+}
+#google-view-footer {
+	CLEAR: both; BORDER-TOP: thin solid; PADDING-BOTTOM: 0.3em; PADDING-TOP: 0.3em
+}
+A.google-small-link:link {
+	FONT-SIZE: 11px! important; COLOR: #112abb; FONT-FAMILY: Arial,Sans-serif
+}
+A.google-small-link:visited {
+	FONT-SIZE: 11px! important; COLOR: #112abb; FONT-FAMILY: Arial,Sans-serif
+}
+BODY {
+	DIRECTION: inherit
+}
+P {
+	DIRECTION: inherit
+}
+DIV {
+	DIRECTION: inherit
+}
+TD {
+	DIRECTION: inherit
+}
+
+@media Print    
+{
+#google-view-footer {
+	DISPLAY: none
+}
+
+}
+</STYLE>
+
+<SCRIPT>
+function viewOnLoad() {
+if (document.location.href.indexOf('spi=1') != -1) {
+if (navigator.userAgent.toLowerCase().indexOf('msie') != -1) {
+window.print();
+} else {
+window.setTimeout(window.print, 10);
+}
+}
+if (document.location.href.indexOf('hgd=1') != -1) {
+var footer = document.getElementById("google-view-footer");
+if (footer) {
+footer.style.display = 'none';
+}
+}
+}
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY>
+<DIV id=doc-contents>
+<P class=western style="MARGIN-BOTTOM: 0in"><FONT color=#1f497d><FONT 
+size=4><B><BR></B></FONT></FONT></P>
+<P class=western style="MARGIN-BOTTOM: 0in"><FONT color=#1f497d><FONT 
+size=4><B>IR Remote Controlled Car (PWM motor control using MOSFET 
+H-bridge)</B></FONT></FONT></P>
+<P class=western style="MARGIN-BOTTOM: 0in"><FONT color=#1f497d><FONT 
+size=4><B><BR></B></FONT></FONT></P>
+<P class=western style="MARGIN-BOTTOM: 0in; FONT-FAMILY: Arial"><FONT size=3>By 
+<B>CC Dharmani </B></FONT></P>
+<P class=western style="MARGIN-BOTTOM: 0in; FONT-FAMILY: Arial"><B><FONT 
+color=#0000ff size=2><U><A 
+href="http://www.dharmanitech.com/">http://www.dharmanitech.com/</A></U></FONT></B></P>
+<P class=western style="MARGIN-BOTTOM: 0.14in"><BR></P>
+<P class=western style="MARGIN-BOTTOM: 0.14in"><FONT color=#008000><FONT 
+face="Courier New, monospace"><FONT size=2>(for schematic &amp; more details 
+visit my blog post: <A id=yfvh title="IR Remote Controlled Car" 
+href="http://www.dharmanitech.com/2009/01/ir-remote-controlled-car-pwm-motor.html" 
+target=_blank>IR Remote Controlled Car</A>)</FONT></FONT></FONT></P>
+<P class=western style="MARGIN-BOTTOM: 0.14in"><FONT size=2><FONT 
+face="Courier New, monospace"><FONT 
+color=#008000>//********************************************************</FONT><BR><FONT 
+color=#008000>// *********** PWM DC MOTOR CONTROL with IR 
+*************</FONT><BR><FONT 
+color=#008000>//********************************************************</FONT><BR><FONT 
+color=#008000>//Controller: ATmega8 (1MHz internal Crystal)</FONT><BR><FONT 
+color=#008000>//Compiler:&nbsp;&nbsp; ICCAVR</FONT><BR><FONT 
+color=#008000>//Author:&nbsp;&nbsp;&nbsp;&nbsp; CC Dharmani, 
+Chennai(India)</FONT><BR><FONT 
+color=#008000>//Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dec 
+2008</FONT><BR><FONT 
+color=#008000>//********************************************************</FONT><BR><FONT 
+color=#008000>//this program uses two of the three PWM channels (OC1A &amp; 
+OC1B)</FONT><BR><FONT color=#008000>//of the ATmega8, for controlling speed 
+&amp; direction of DC motor</FONT><BR><FONT color=#008000>//The remote of Sony 
+TV was used for sending IR codes</FONT><BR></FONT></FONT><BR></P>
+<P class=western style="MARGIN-BOTTOM: 0.14in"><FONT size=2><FONT 
+face="Courier New, monospace"><FONT 
+color=#008000>//***********************************************************************</FONT><BR><FONT 
+color=#008000>// ************** HEADER FILE PWM_main.h 
+*****************</FONT><BR><FONT 
+color=#008000>//***********************************************************************</FONT><FONT 
+color=#000000><BR><BR>#define DIRECTION_FORWARD !(PIND &amp; 0x20)<BR>#define 
+DIRECTION_REVERSE (PIND &amp; 0x20)<BR>#define STOP_MOTOR TCCR1B = 0x00; TCCR1A 
+= 0x00<BR>#define START_MOTOR TCCR1B = 0x09<BR>#define set_FORWARD TCCR1A = 
+0x81<BR>#define set_REVERSE TCCR1A = 0x21<BR>#define ENABLE_INT0 GICR |= 
+0x40<BR>#define DISABLE_INT0 GICR &amp;= ~0x40<BR><BR></FONT><FONT 
+color=#008000>//defining macros for setting minimum and maximum PWM counter 
+values</FONT><BR><FONT color=#008000>//and step-size for controlling the voltage 
+applied to MOSFETs base</FONT><FONT color=#000000><BR>#define 
+COUNTER_LOWER_LIMIT 0x0070<BR>#define COUNTER_UPPER_LIMIT 0x00f8<BR>#define 
+STEP_SIZE 0x0008<BR><BR><BR><B>void</B> port_init(<B>void</B>);<BR><B>void</B> 
+timer0_init(<B>void</B>);<BR><B>void</B> 
+timer1_init(<B>void</B>);<BR><B>unsigned</B> <B>int</B> read_IR 
+(<B>void</B>);<BR><B>void</B> motorControl (<B>unsigned</B> <B>char</B> code, 
+<B>unsigned</B> <B>char</B> address);<BR><B>void</B> 
+init_devices(<B>void</B>);<BR><B>void</B> delay_ms(<B>int</B> 
+miliSec);<BR>#include &lt;iom8v.h&gt;<BR>#include &lt;macros.h&gt;<BR>#include 
+"PWM_main.h"<BR></FONT><FONT 
+color=#008000>//***********************************************************************</FONT><BR><FONT 
+color=#008000>// ************** SOURCE FILE PWM_main.c 
+*****************</FONT><BR><FONT 
+color=#008000>//***********************************************************************</FONT><BR></FONT></FONT></P>
+<P class=western style="MARGIN-BOTTOM: 0.14in"><FONT size=2><FONT 
+face="Courier New, monospace"><FONT 
+color=#008000>//*********************************************************************</FONT><BR><FONT 
+color=#008000>// Initializing functions for ports, timer0 &amp; 
+timer1</FONT><BR><FONT 
+color=#008000>//********************************************************************* 
+</FONT><FONT color=#000000><BR><B>void</B> port_init(<B>void</B>)<BR>{<BR>PORTB 
+= 0x00; <BR>DDRB = 0x06; </FONT><FONT color=#008000>//PWM pins OC1A &amp; OC1B 
+defined as outputs</FONT><FONT color=#000000><BR>PORTC = 0x00; <BR>DDRC = 0x20; 
+</FONT><FONT color=#008000>//LED for IR detection indication</FONT><FONT 
+color=#000000><BR>PORTD = 0x00; <BR>DDRD = 0x01; </FONT><FONT 
+color=#008000>//LED, for testing purpose</FONT><FONT 
+color=#000000><BR>}<BR><BR></FONT><FONT color=#008000>//timer0 init</FONT><FONT 
+color=#000000><BR><B>void</B> timer0_init(<B>void</B>)<BR>{<BR></FONT><FONT 
+color=#008000>//8-bit timer for measuring delay between IR pulses</FONT><FONT 
+color=#000000><BR>TCCR0 = 0x03; </FONT><FONT color=#008000>//CLK / 
+64</FONT><FONT color=#000000><BR>TCNT0 = 0; </FONT><FONT color=#008000>//reset 
+the timer</FONT><FONT color=#000000><BR>}<BR><BR></FONT><FONT 
+color=#008000>//TIMER1 initialize - prescale:1</FONT><BR><FONT 
+color=#008000>//PWM Frequency: 1KHz</FONT><FONT color=#000000><BR><B>void</B> 
+timer1_init(<B>void</B>)<BR>{<BR>TCCR1B = 0x00; </FONT><FONT 
+color=#008000>//stop</FONT><FONT color=#000000><BR>TCNT1H = 0xFC; </FONT><FONT 
+color=#008000>//setup</FONT><FONT color=#000000><BR>TCNT1L = 0x18;<BR>OCR1A = 
+COUNTER_LOWER_LIMIT;<BR>OCR1B = COUNTER_LOWER_LIMIT;<BR>ICR1H = 0x03;<BR>ICR1L = 
+0xE8;<BR>}<BR><BR></FONT><FONT 
+color=#008000>/**************************************************************************<BR>* 
+Interrupt Service Routine for INT0<BR>* Executed whenever a remote code is 
+detected<BR>**************************************************************************/</FONT><FONT 
+color=#000000><BR>#pragma interrupt_handler int0_isr:2<BR><B>void</B> 
+int0_isr(<B>void</B>)<BR>{ <BR><B>unsigned</B> <B>char</B> count, code, 
+address;<BR><B>unsigned</B> <B>int</B> IR_input;<BR><BR>TCNT0 = 
+0;<BR><B>while</B>(!(PIND &amp; 0x04));<BR>count = TCNT0;<BR><BR><B>if</B>(count 
+&lt; 30) </FONT><FONT color=#008000>//to verify start pulse (2.4 ms 
+long)</FONT><FONT color=#000000><BR>{<BR>delay_ms(20); 
+<BR>ENABLE_INT0;<BR><B>return</B>;<BR>}<BR><BR>PORTC |= 0x20;<BR><BR>IR_input = 
+read_IR ();<BR><BR>code = (<B>unsigned</B> <B>char</B>) ((IR_input &amp; 0xff00) 
+&gt;&gt; 8);<BR>address = (<B>unsigned</B> <B>char</B>) (IR_input &amp; 
+0x00ff);<BR><BR>motorControl ( code, address );<BR><BR>PORTC &amp;= 
+~0x20;<BR>delay_ms(250);<BR><BR>}<BR><BR></FONT><FONT 
+color=#008000>//*********************************************************************</FONT><BR><FONT 
+color=#008000>//Function to read IR message from the detector</FONT><BR><FONT 
+color=#008000>//Return value contains code in upper byte and address in lower 
+byte</FONT><BR><FONT 
+color=#008000>//********************************************************************* 
+</FONT><FONT color=#000000><BR><B>unsigned</B> <B>int</B> read_IR 
+(<B>void</B>)<BR>{<BR><B>unsigned</B> <B>char</B> pulseCount=0, code = 0, 
+address = 0, timerCount;<BR><B>unsigned</B> <B>int</B> 
+IR_input;<BR><BR><B>while</B>(pulseCount &lt; 7)<BR>{<BR><B>while</B>(PIND &amp; 
+0x04);<BR>TCNT0 = 0;<BR><BR><B>while</B>(!(PIND &amp; 
+0x04));<BR>pulseCount++;<BR><BR>timerCount = TCNT0;<BR><BR><B>if</B>(timerCount 
+&gt; 14)<BR>code = code | (1 &lt;&lt; (pulseCount-1));<BR><B>else</B><BR>code = 
+code &amp; ~(1 &lt;&lt; (pulseCount-1)); <BR>}<BR><BR>pulseCount = 
+0;<BR><B>while</B>(pulseCount &lt; 5)<BR>{<BR><B>while</B>(PIND &amp; 
+0x04);<BR>TCNT0 = 0;<BR><BR><B>while</B>(!(PIND &amp; 
+0x04));<BR>pulseCount++;<BR><BR>timerCount = TCNT0;<BR><BR><B>if</B>(timerCount 
+&gt; 14)<BR>address = address | (1 &lt;&lt; 
+(pulseCount-1));<BR><B>else</B><BR>address = address &amp; ~(1 &lt;&lt; 
+(pulseCount-1)); <BR>}<BR><BR>IR_input = (((<B>unsigned</B> <B>int</B>)code) 
+&lt;&lt; 8) | address;<BR><BR><B>return</B>(IR_input);<BR>}<BR><BR></FONT><FONT 
+color=#008000>//****************************************************************************</FONT><BR><FONT 
+color=#008000>//Function to control motor speed &amp; direction depending onthe 
+IR code rceived</FONT><BR><FONT color=#008000>//Argumets are the code and 
+address values received from IR detector</FONT><BR><FONT 
+color=#008000>//**************************************************************************** 
+</FONT><FONT color=#000000><BR><B>void</B> motorControl (<B>unsigned</B> 
+<B>char</B> code, <B>unsigned</B> <B>char</B> address)<BR>{<BR><B>static</B> 
+<B>unsigned</B> <B>char</B> counter, dir, dir1;<BR><BR><B>if</B> (address != 1) 
+</FONT><FONT color=#008000>//detect only TV remote, other signals 
+rejected</FONT><FONT color=#000000><BR><B>return</B>;<BR><BR><B>if</B>((code == 
+16) || (code == 17)) </FONT><FONT color=#008000>//Channel+ or Channel- button is 
+pressed</FONT><FONT color=#000000><BR>{ <BR><B>if</B>(code == 16) </FONT><FONT 
+color=#008000>//Channel+</FONT><FONT color=#000000><BR>dir = 0;<BR><B>else</B> 
+</FONT><FONT color=#008000>//Channel-</FONT><FONT color=#000000><BR>dir = 
+1;<BR><BR><B>if</B>(dir != dir1) </FONT><FONT color=#008000>//change 
+direction</FONT><FONT 
+color=#000000><BR>{<BR>STOP_MOTOR;<BR>delay_ms(500);<BR><BR><B>if</B>(dir == 
+0)<BR>set_FORWARD;<BR><B>else</B><BR>set_REVERSE;<BR><BR>START_MOTOR;<BR>dir1 = 
+dir;<BR>} <BR>} <BR><BR><B>if</B>(code == 18) </FONT><FONT 
+color=#008000>//Volume- button pressed</FONT><FONT 
+color=#000000><BR>{<BR><B>if</B>(counter &gt;= COUNTER_UPPER_LIMIT) </FONT><FONT 
+color=#008000>//if speed is already maximum, don't do anything</FONT><FONT 
+color=#000000><BR>counter = COUNTER_UPPER_LIMIT;<BR><B>else</B> <BR>counter += 
+STEP_SIZE; </FONT><FONT color=#008000>//increase speed by a fixed 
+step</FONT><FONT color=#000000><BR><BR>OCR1A = counter;<BR>OCR1B = 
+counter;<BR>}<BR><BR><B>if</B>(code == 19) </FONT><FONT color=#008000>//Volume+ 
+button pressed</FONT><FONT color=#000000><BR>{<BR><B>if</B>(counter &lt;= 
+COUNTER_LOWER_LIMIT) </FONT><FONT color=#008000>//if speed is already minimum, 
+don't do anything</FONT><FONT color=#000000><BR>counter = 
+COUNTER_LOWER_LIMIT;<BR><B>else</B> <BR>counter -= STEP_SIZE; </FONT><FONT 
+color=#008000>//reduce speed by a fixed step</FONT><FONT 
+color=#000000><BR><BR>OCR1A = counter;<BR>OCR1B = 
+counter;<BR>}<BR><BR><B>if</B>(code == 9) </FONT><FONT color=#008000>//'0' 
+button pressed</FONT><FONT color=#000000><BR>{<BR>OCR1A = 
+COUNTER_LOWER_LIMIT;<BR>OCR1B = COUNTER_LOWER_LIMIT;<BR>STOP_MOTOR; 
+<BR>}<BR><BR><B>if</B>(code == 0) </FONT><FONT color=#008000>//'1' button 
+pressed</FONT><FONT color=#000000><BR>{<BR>OCR1A = COUNTER_LOWER_LIMIT;<BR>OCR1B 
+= COUNTER_LOWER_LIMIT;<BR><BR>TCCR1A = 0x81;<BR>START_MOTOR; 
+<BR>}<BR>}<BR><BR></FONT><FONT 
+color=#008000>//************************************************************</FONT><BR><FONT 
+color=#008000>//*** call this routine to initialize all 
+peripherals</FONT><BR><FONT 
+color=#008000>//************************************************************</FONT><FONT 
+color=#000000><BR><B>void</B> init_devices(<B>void</B>)<BR>{<BR></FONT><FONT 
+color=#008000>//stop errant interrupts until set up</FONT><FONT 
+color=#000000><BR>CLI(); </FONT><FONT color=#008000>//disable all 
+interrupts</FONT><FONT 
+color=#000000><BR>port_init();<BR>timer0_init();<BR>timer1_init();<BR><BR>MCUCR 
+= 0x02;<BR>GICR = 0x40;<BR>TIMSK = 0x00; </FONT><FONT color=#008000>//timer 
+interrupt sources</FONT><FONT color=#000000><BR>SEI(); </FONT><FONT 
+color=#008000>//re-enable interrupts</FONT><BR><FONT color=#008000>//all 
+peripherals are now initialized</FONT><FONT 
+color=#000000><BR>}<BR><BR></FONT><FONT 
+color=#008000>//************************************************************</FONT><BR><FONT 
+color=#008000>//***** FUNCTION FOR SOFTWARE DELAY OF 1 mSEC (appx.) ******* 
+</FONT><BR><FONT 
+color=#008000>//************************************************************</FONT><FONT 
+color=#000000><BR><B>void</B> delay_ms(<B>int</B> miliSec) </FONT><FONT 
+color=#008000>//for 1 Mhz crystal</FONT><FONT color=#000000><BR>{<BR><B>int</B> 
+i,j;<BR><BR><B>for</B>(i=0;i&lt;miliSec;i++)<BR><B>for</B>(j=0;j&lt;100;j++)<BR>{<BR>asm(<I>"nop"</I>);<BR>asm(<I>"nop"</I>);<BR>}<BR>}<BR><BR></FONT><FONT 
+color=#008000>//*******************************************************</FONT><BR><FONT 
+color=#008000>// ************ MAIN FUNCTION *************</FONT><BR><FONT 
+color=#008000>//******************************************************* 
+</FONT><FONT color=#000000><BR><B>void</B> 
+main(<B>void</B>)<BR>{<BR>init_devices();<BR><BR><B>while</B>(1); </FONT><FONT 
+color=#008000>//infinite loop, waiting for interrups from IR 
+detector</FONT><FONT color=#000000><BR><BR>}<BR><BR></FONT><FONT 
+color=#008000>//****************************** END 
+**************************************</FONT><BR><FONT 
+color=#008000>//*****&nbsp;&nbsp;&nbsp; CC Dharmani &nbsp; &nbsp; ******* &nbsp; 
+</FONT></FONT></FONT><FONT color=#0000ff><U><A 
+href="http://www.dharmanitech.com/"><FONT size=2><FONT 
+face="Courier New, monospace">www.dharmanitech.com</FONT></FONT></A></U></FONT><FONT 
+size=2><FONT face="Courier New, monospace"><FONT color=#008000> &nbsp; 
+******</FONT></FONT></FONT></P>
+<P class=western style="MARGIN-BOTTOM: 0.14in"><FONT size=2><FONT 
+face="Courier New, monospace"><FONT 
+color=#008000><BR></FONT></FONT></FONT></P><BR><BR clear=all></DIV>
+<DIV id=google-view-footer>
+<DIV id=maybecanedit style="FLOAT: right"><A class=google-small-link 
+id=editpermissionlink title="Edit this page" 
+href="http://docs.google.com/Edit?tab=edit&amp;dr=true&amp;docid=ddmkwx3z_24dh6npfg2">Edit 
+this page (if you have permission)</A> <SPAN style="COLOR: #676767">|</SPAN> <INPUT id=report-abuse-button onclick=reportAbuse(); type=button value="Report abuse"> 
+</DIV>
+<DIV style="FLOAT: left"><A class=google-small-link 
+title="Learn more about Google Docs" href="http://docs.google.com/">Google Docs 
+-- Web word processing, presentations and spreadsheets.</A> </DIV>
+<P> </P></DIV>
+<SCRIPT><!--
+    viewOnLoad();
+    
+    
+    var urchinPage = "/View";
+
+    
+    function getXHR() {
+      if (typeof XMLHttpRequest != "undefined") {
+        return new XMLHttpRequest();
+      }
+      try { return new ActiveXObject("Msxml2.XMLHTTP.6.0") } catch(e) {}
+      try { return new ActiveXObject("Msxml2.XMLHTTP.3.0") } catch(e) {}
+      try { return new ActiveXObject("Msxml2.XMLHTTP") } catch(e) {}
+      try { return new ActiveXObject("Microsoft.XMLHTTP") } catch(e) {}
+      return null;
+    }
+
+    function reportAbuse() {
+      var req = getXHR();
+      if (req) {
+        
+          var docid = 'ddmkwx3z_24dh6npfg2';
+          var posttoken = '';
+        
+        req.onreadystatechange = function() {
+          try {
+            if (req.readyState == 4 && req.status == 200) {
+              var button = document.getElementById("report-abuse-button");
+              button.value = 'Thank you!';
+              button.disabled = true;
+            }
+          } catch (ex) {
+            
+          }
+        }
+        try {
+          req.open('POST', 'MiscCommands', true);
+          req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+          req.send('command=report_abuse&abuseDoc=' + encodeURIComponent(docid) +
+                   '&POST_TOKEN=' + encodeURIComponent(posttoken));
+        } catch (ex) {
+          
+        }
+      }
+    }
+  --></SCRIPT>
+
+<SCRIPT type=text/javascript>
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+var page = typeof urchinPage != 'undefined' ? urchinPage : window.location.href;
+var account = 'UA-18065-1';
+if (typeof _gat != 'undefined') {
+var pageTracker = _gat._getTracker(account);
+pageTracker._setAllowAnchor(true);
+pageTracker._trackPageview(page);
+}
+</SCRIPT>
+
+<SCRIPT><!--
+      if (typeof _gat != 'undefined') {
+        
+          var docid = 'ddmkwx3z_24dh6npfg2';
+          var doctitle = 'IR remotecontrolled car';
+          var useranalyticsid = 'UA-5703816-1';
+        
+        if (useranalyticsid) {
+          doctitle = doctitle.replace(/\s+/g, '_');
+          var userPageTracker = _gat._getTracker(useranalyticsid);
+          userPageTracker._setAllowAnchor(true);
+          // Use the analytics id as a unique cookie path for this user.
+          userPageTracker._setCookiePath('/u/' + useranalyticsid);
+          userPageTracker._trackPageview(doctitle);
+        }
+      }
+    --></SCRIPT>
+</BODY></HTML>

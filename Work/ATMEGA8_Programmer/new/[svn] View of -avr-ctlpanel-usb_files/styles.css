@@ -1,0 +1,177 @@
+HTML {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+BODY {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+A:link {
+	COLOR: #0000ff
+}
+A:visited {
+	COLOR: #880088
+}
+A:active {
+	COLOR: #0000ff
+}
+IMG {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+TABLE {
+	MARGIN: 0px; WIDTH: 100%; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+TABLE.auto {
+	WIDTH: auto
+}
+TR {
+	VERTICAL-ALIGN: top
+}
+TD {
+	VERTICAL-ALIGN: top
+}
+TH {
+	VERTICAL-ALIGN: top
+}
+FORM {
+	MARGIN: 0px
+}
+.vc_navheader {
+	BACKGROUND-COLOR: #cccccc
+}
+.vc_header {
+	VERTICAL-ALIGN: top; BACKGROUND-COLOR: #cccccc; TEXT-ALIGN: left
+}
+.vc_header_sort {
+	BACKGROUND-COLOR: #88ff88; TEXT-ALIGN: left
+}
+.vc_row_even {
+	BACKGROUND-COLOR: #ffffff
+}
+.vc_row_odd {
+	BACKGROUND-COLOR: #ccccee
+}
+.vc_log {
+	WORD-WRAP: break-word
+}
+.vc_summary {
+	BACKGROUND-COLOR: #eeeeee
+}
+#vc_markup .num {
+	COLOR: #000000
+}
+#vc_markup .esc {
+	COLOR: #bd8d8b
+}
+#vc_markup .str {
+	COLOR: #bd8d8b
+}
+#vc_markup .dstr {
+	COLOR: #bd8d8b
+}
+#vc_markup .slc {
+	COLOR: #ac2020; FONT-STYLE: italic
+}
+#vc_markup .com {
+	COLOR: #ac2020; FONT-STYLE: italic
+}
+#vc_markup .dir {
+	COLOR: #000000
+}
+#vc_markup .sym {
+	COLOR: #000000
+}
+#vc_markup .line {
+	COLOR: #555555
+}
+#vc_markup .kwa {
+	FONT-WEIGHT: bold; COLOR: #9c20ee
+}
+#vc_markup .kwb {
+	COLOR: #208920
+}
+#vc_markup .kwc {
+	COLOR: #0000ff
+}
+#vc_markup .kwd {
+	COLOR: #404040
+}
+#vc_markup .PY_STRING {
+	COLOR: #bd8d8b
+}
+#vc_markup .PY_COMMENT {
+	COLOR: #ac2020; FONT-STYLE: italic
+}
+#vc_markup .PY_KEYWORD {
+	FONT-WEIGHT: bold; COLOR: #9c20ee
+}
+#vc_markup .PY_IDENTIFIER {
+	COLOR: #404040
+}
+.line {
+	BORDER-RIGHT: #505050 1px solid; PADDING-RIGHT: 1px; PADDING-LEFT: 1px; FONT-WEIGHT: normal; PADDING-BOTTOM: 1px; COLOR: #505050; PADDING-TOP: 1px; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none
+}
+.vc_diff_header {
+	BACKGROUND-COLOR: #ffffff
+}
+.vc_diff_chunk_header {
+	BACKGROUND-COLOR: #99cccc
+}
+.vc_diff_chunk_extra {
+	FONT-SIZE: smaller
+}
+.vc_diff_empty {
+	FONT-SIZE: smaller; FONT-FAMILY: sans-serif; BACKGROUND-COLOR: #cccccc
+}
+.vc_diff_add {
+	FONT-SIZE: smaller; FONT-FAMILY: sans-serif; BACKGROUND-COLOR: #aaffaa
+}
+.vc_diff_remove {
+	FONT-SIZE: smaller; FONT-FAMILY: sans-serif; BACKGROUND-COLOR: #ffaaaa
+}
+.vc_diff_change {
+	FONT-SIZE: smaller; FONT-FAMILY: sans-serif; BACKGROUND-COLOR: #ffff77
+}
+.vc_diff_change_empty {
+	FONT-SIZE: smaller; FONT-FAMILY: sans-serif; BACKGROUND-COLOR: #eeee77
+}
+.vc_diff_nochange {
+	FONT-SIZE: smaller; FONT-FAMILY: sans-serif
+}
+.vc_raw_diff {
+	FONT-SIZE: smaller; BACKGROUND-COLOR: #cccccc
+}
+.vc_idiff_add {
+	BACKGROUND-COLOR: #aaffaa
+}
+.vc_idiff_change {
+	BACKGROUND-COLOR: #ffff77
+}
+.vc_idiff_remove {
+	BACKGROUND-COLOR: #ffaaaa
+}
+.vc_idiff_empty {
+	BACKGROUND-COLOR: #e0e0e0
+}
+TABLE.vc_idiff COL.content {
+	WIDTH: 50%
+}
+TABLE.vc_idiff TBODY {
+	FONT-FAMILY: monospace; WORD-WRAP: break-word
+}
+TABLE.vc_idiff TBODY TH {
+	BACKGROUND-COLOR: #e0e0e0; TEXT-ALIGN: right
+}
+.vc_blame_line {
+	PADDING-RIGHT: 1em; FONT-SIZE: smaller; FONT-FAMILY: monospace; WHITE-SPACE: nowrap; TEXT-ALIGN: right
+}
+.vc_blame_author {
+	PADDING-RIGHT: 1em; FONT-SIZE: smaller; FONT-FAMILY: monospace; WHITE-SPACE: nowrap; TEXT-ALIGN: right
+}
+.vc_blame_rev {
+	PADDING-RIGHT: 1em; FONT-SIZE: smaller; FONT-FAMILY: monospace; WHITE-SPACE: nowrap; TEXT-ALIGN: right
+}
+.vc_blame_text {
+	FONT-SIZE: smaller; WIDTH: 100%; FONT-FAMILY: monospace; WHITE-SPACE: pre; TEXT-ALIGN: left
+}
+.vc_query_form {
+	BACKGROUND-COLOR: #e6e6e6
+}

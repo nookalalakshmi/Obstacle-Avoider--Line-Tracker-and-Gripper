@@ -1,0 +1,621 @@
+
+<!-- saved from url=(0112)http://74.125.153.132/search?q=cache:http://electrons.psychogenic.com/modules/arms/art/14/AVRFusesHOWTOGuide.php -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- <BASE href="http://electrons.psychogenic.com/modules/arms/art/14/AVRFusesHOWTOGuide.php"> --><BASE href="."><META http-equiv="content-language" content="en"><META name="robots" content="index,follow"><META name="keywords" content="news, technology, electronics, schematics, AVR, programming, linux, microcontroller, tutorial, guide, howto"><META name="description" content=""><META name="rating" content="general"><META name="author" content="Psychogenic staff"><META name="copyright" content="Copyright &copy; 2003-2005 Pat Deegan, Psychogenic Inc. All Rights Reserved."><META name="generator" content="XOOPS"><TITLE>Electrons - AVR Fuses HOWTO Guide</TITLE><LINK href="http://electrons.psychogenic.com/favicon.ico" rel="SHORTCUT ICON"><LINK rel="stylesheet" type="text/css" media="all" href="http://electrons.psychogenic.com/xoops.css"><LINK rel="stylesheet" type="text/css" media="all" href="http://electrons.psychogenic.com/themes/simple_line/styleNN.css"></HEAD><BODY><DIV style="margin:-1px -1px 0;padding:0;border:1px solid #999;background:#fff"><DIV style="margin:12px;padding:8px;border:1px solid #999;background:#ddd;font:13px arial,sans-serif;color:#000;font-weight:normal;text-align:left">This is Google&#39;s cache of <A href="http://electrons.psychogenic.com/modules/arms/art/14/AVRFusesHOWTOGuide.php" style="text-decoration:underline;color:#00c">http://electrons.psychogenic.com/modules/arms/art/14/AVRFusesHOWTOGuide.php</A>. It is a snapshot of the page as it appeared on 21 May 2009 02:47:18 GMT. The <A href="http://electrons.psychogenic.com/modules/arms/art/14/AVRFusesHOWTOGuide.php" style="text-decoration:underline;color:#00c">current page</A> could have changed in the meantime. <A href="http://www.google.com/intl/en/help/features_list.html#cached" style="text-decoration:underline;color:#00c">Learn more</A><BR><BR><DIV style="float:right"><A href="http://74.125.153.132/search?q=cache:http://electrons.psychogenic.com/modules/arms/art/14/AVRFusesHOWTOGuide.php&hl=en&strip=1" style="text-decoration:underline;color:#00c">Text-only version</A></DIV>
+<DIV>&nbsp;</DIV></DIV></DIV><DIV style="position:relative">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- RMV: added module header -->
+
+<SCRIPT type="text/javascript">
+<!--
+//--></SCRIPT><SCRIPT type="text/javascript" src="http://electrons.psychogenic.com/include/xoops.js"></SCRIPT><SCRIPT type="text/javascript"><!--
+//-->
+</SCRIPT>
+
+
+  <TABLE cellspacing="0">
+    <TBODY><TR id="header">
+	  <TD id="headerleft">&nbsp;</TD>
+      <TD id="headerlogo"><A href="http://electrons.psychogenic.com/"><IMG src="http://electrons.psychogenic.com/themes/simple_line/logo.gif"></A></TD>
+      <TD id="headerbanner">&nbsp;<SCRIPT type="text/javascript"><!--
+google_ad_client = "pub-9045707674557710";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "text_image";
+google_ad_channel = "";
+//--></SCRIPT>
+<SCRIPT type="text/javascript" src="./Electrons - AVR Fuses HOWTO Guide_files/show_ads.js">
+</SCRIPT><SCRIPT src="./Electrons - AVR Fuses HOWTO Guide_files/expansion_embed.js"></SCRIPT><SCRIPT src="./Electrons - AVR Fuses HOWTO Guide_files/test_domain.js"></SCRIPT><SCRIPT>window.google_render_ad();</SCRIPT><INS style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px"><INS style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px"><IFRAME allowtransparency="true" frameborder="0" height="60" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" scrolling="no" src="./Electrons - AVR Fuses HOWTO Guide_files/ads.htm" style="left:0;position:absolute;top:0" vspace="0" width="468"></IFRAME></INS></INS></TD>
+      <TD>&nbsp;</TD>
+    </TR>
+    <TR>
+      <TD id="headerbar1">&nbsp;</TD>
+      <TD id="headerbar1">ELECTRONS.PSYCHOGENIC.COM</TD>
+      <TD id="headerbar1">
+<IMG src="http://electrons.psychogenic.com/themes/simple_line/icon1.gif"><A href="http://electrons.psychogenic.com/modules/altern8news/">NEWS</A>&nbsp;&nbsp;
+<IMG src="http://electrons.psychogenic.com/themes/simple_line/icon1.gif"><A href="http://electrons.psychogenic.com/modules/wordpress/">RAVES &amp; RANTS</A>&nbsp;&nbsp;
+<IMG src="http://electrons.psychogenic.com/themes/simple_line/icon1.gif"><A href="http://electrons.psychogenic.com/modules/fungames/">GAMES</A>&nbsp;&nbsp;
+<IMG src="http://electrons.psychogenic.com/themes/simple_line/icon1.gif"><A href="http://www.psychogenic.com/en/contact/">CONTACT US</A>&nbsp;&nbsp;
+      </TD><TD id="headerbar1">&nbsp;</TD>
+	</TR>
+    <TR>
+      <TD id="headerbar2"><IMG src="http://electrons.psychogenic.com/themes/simple_line/icon2.gif"><A href="http://electrons.psychogenic.com/">HOME</A></TD>
+      <TD id="headerbar2"><IMG src="http://electrons.psychogenic.com/themes/simple_line/icon2.gif"><A href="http://electrons.psychogenic.com/user.php">ACCOUNT</A></TD>
+      <TD id="headerbar3"><IMG src="http://electrons.psychogenic.com/themes/simple_line/icon2.gif"><A href="http://electrons.psychogenic.com/viewpmsg.php">PRIVATE MESSAGE</A></TD>
+      <TD id="headerbar4">&nbsp;</TD>
+  </TR>
+  </TBODY></TABLE>
+
+  <TABLE cellspacing="0">
+    <TBODY><TR>
+	<TD width="65" align="right"><IMG src="http://electrons.psychogenic.com/themes/simple_line/side.gif"></TD>
+      <TD id="leftcolumn">
+        <!-- Start left blocks loop -->
+                  <DIV class="blockTitle"><IMG src="http://electrons.psychogenic.com/themes/simple_line/icon1.gif"> Main Menu</DIV>
+<DIV class="blockContent"><TABLE cellspacing="0">
+  <TBODY><TR>
+    <TD id="mainmenu">
+      <A class="menuTop" href="http://electrons.psychogenic.com/">Home</A>
+      <!-- start module menu loop -->
+            <A class="menuMain" href="http://electrons.psychogenic.com/modules/altern8news/">Latest News</A>
+                    <A class="menuMain" href="http://electrons.psychogenic.com/modules/wordpress/">Raves &amp; Rants</A>
+                    <A class="menuMain" href="http://electrons.psychogenic.com/modules/arms/">Articles</A>
+                  <A class="menuSub" href="http://electrons.psychogenic.com/modules/arms/forms.php?w=addart">Add Article</A>
+                  <A class="menuSub" href="http://electrons.psychogenic.com/modules/arms/view.php?w=myart">My Articles</A>
+                  <A class="menuSub" href="http://electrons.psychogenic.com/modules/arms/filter.php?w=newest">Newest</A>
+                  <A class="menuSub" href="http://electrons.psychogenic.com/modules/arms/filter.php?w=toprated">Top Rated</A>
+                  <A class="menuSub" href="http://electrons.psychogenic.com/modules/arms/filter.php?w=popular">Most Popular</A>
+                    <A class="menuMain" href="http://electrons.psychogenic.com/modules/frozen_bubble/">Frozen Bubble</A>
+                    <A class="menuMain" href="http://electrons.psychogenic.com/modules/fungames/">Flash Games</A>
+                    <!-- end module menu loop -->
+    </TD>
+  </TR>
+</TBODY></TABLE></DIV><BR>
+                  <DIV class="blockTitle"><IMG src="http://electrons.psychogenic.com/themes/simple_line/icon1.gif"> Login</DIV>
+<DIV class="blockContent"><FORM style="margin-top: 0px;" action="http://electrons.psychogenic.com/user.php" method="post">
+    Username: <BR>
+    <INPUT type="text" name="uname" size="12" value="" maxlength="25"><BR>
+    Password: <BR>
+    <INPUT type="password" name="pass" size="12" maxlength="32"><BR>
+    <!-- <input type="checkbox" name="rememberme" value="On" class ="formButton" /><br /> //-->
+    <INPUT type="hidden" name="xoops_redirect" value="/modules/arms/art/14/AVRFusesHOWTOGuide.php">
+    <INPUT type="hidden" name="op" value="login">
+    <INPUT type="submit" value="User Login"><BR>
+    <A href="javascript:openWithSelfMain('https://electrons.psychogenic.com/extras/login.php', 'ssllogin', 300, 200);">Secure Login</A>
+</FORM>
+<A href="http://electrons.psychogenic.com/user.php#lost">Lost Password?</A>
+<BR><BR>
+<A href="http://electrons.psychogenic.com/register.php">Register now!</A></DIV><BR>
+                <!-- End left blocks loop -->
+
+      </TD>
+
+      <TD id="centercolumn">
+
+        <!-- Display center blocks if any -->
+                <!-- End display center blocks -->
+
+        <DIV id="content">
+          <TABLE width="100&percnt;">
+  <FORM name="jump_to" method="post" action="http://electrons.psychogenic.com/modules/arms/art/14/posting.php?w=jumptosec&on=art&page=1&idx="></FORM>
+    <TBODY><TR>
+      <TD width="65&percnt;" style="vertical-align: middle">
+        <B><A href="http://electrons.psychogenic.com/">Electrons</A> :: <A href="http://electrons.psychogenic.com/modules/arms">Articles</A> :: <A href="http://electrons.psychogenic.com/modules/arms/sec/1/AVR/">AVR</A> :: AVR Fuses HOWTO Guide</B>
+      </TD>
+      <TD width="35&percnt;" align="right">
+        <SELECT name="jump_to_sec">
+                  <OPTION>AVR</OPTION>
+                  <OPTION>SysAdmin</OPTION>
+                  <OPTION>Projects</OPTION>
+                  <OPTION>Linux iPAQ</OPTION>
+                </SELECT>
+        <INPUT name="btn_submit" type="submit" id="btn_submit" value="Go">
+      </TD>
+    </TR>
+  
+</TBODY></TABLE>
+<TABLE width="100&percnt;" class="item" cellspacing="0" cellpadding="0">
+  <TBODY><TR>
+    <TH colspan="2" align="center">AVR Fuses HOWTO Guide</TH>
+  </TR>
+  <TR>
+    <TD colspan="2" class="even">
+      <B>Description: </B>Details the nature and function of AVR fuses and describes how to determine and program new values for a chip.
+    </TD>
+  </TR>
+  <TR>
+    <TD colspan="2" class="even">
+      <BR>
+      <UL style="list-style-image:url(http://electrons.psychogenic.com/modules/arms/images/page.gif);">
+                      <LI>1. <B>AVR Fuses HOWTO Guide</B></LI>
+                    </UL>
+    </TD>
+  </TR>
+<!-- Page -->
+  <TR>
+    <TH colspan="2" align="center">AVR Fuses HOWTO Guide
+  </TH></TR>
+  
+  <TR>
+    <TD colspan="2" style=" padding: 10px; border: 1px #E8E8E8 solid; "><P>
+For an <A href="http://electrons.psychogenic.com/modules/arms/art/1/IntroToAVRMicrocontrollers.php">AVR microcontroller</A>, the closest thing to a config file is its set of <B>fuses</B>.  Fuses are used to configure important system parameters. 
+</P>
+<P>
+While you may completely ignore a number of the more esoteric options most of the time, you will undoubtedly need access to a few of these settings (such as the clock source fuse bits, which allow you to specify the source and/or speed of the chip clock) in the course of hacking AVRs.
+</P>
+<P>
+You will need to know how to program these fuse bytes in order to get the most out of your microcontroller (or get it working at all!) and this simple tutorial will get you started right.
+</P>
+
+<H2>Fuse Bits and Bytes</H2>
+<P>
+As a quick reminder (or a crash course, if all this is new to you): numbers are usually represented in decimal notation (e.g. &quot;13&quot; is thirteen) but others representations are possible, such as in binary where thirteen is &quot;1101&quot; or hexadecimal where the same value is represented as 0x0D.  Any number below 256 can be represented using only 8 binary digits (this is where &quot;bits&quot; come from, they are just <B>bi</B>nary digi<B>ts</B>), for instance &quot;1111 1111&quot; is equal to 255 (in regular decimal notation).  Each such group of 8 bits is called a <I>byte</I>.
+</P>
+
+<P>
+Members of the AVR family can have one or more fuse bytes.  How many, and what they tell the chip to do, depends on the specific microcontroller (e.g. a ATMega8 has both high and low fuse bytes, for a total of 16 configuration bits, while an ATtiny12 has only eight fuse bits).
+</P>
+
+
+<P>As a quick reference, here are a few PDFs which provide the list of <A href="http://www.psychogenic.com/resources/avr/fuses/fuse-low.pdf">low</A>, <A href="http://www.psychogenic.com/resources/avr/fuses/fuse-high.pdf">high</A> and <A href="http://www.psychogenic.com/resources/avr/fuses/fuse-ext.pdf">extended</A> fuse bytes for AVR microcontrollers.  Though some of the bits are common to multiple MCUs, the specific functions and settings to use for each should be verified in the relevant datasheet.</P>
+
+
+
+<H2>How to read the datasheet</H2>
+
+<P>
+The datasheet for each microcontroller contains (excruciatingly?) detailed information on the fuse bits available and their function, but often leaves a bit to be desired in terms of an overview of the actual process of setting these fuses.  Matters are made worse by the fact that, for AVR micros, having a &quot;<B>1</B>&quot; in a bit means it is <I>unprogrammed</I> while having a &quot;<B>0</B>&quot; is considered to be <I>programmed</I> and that the documentation will often use language such as &quot;... clear bit 7 to enable blah blah&quot; which can leave you wondering whether this means you should set it to 0 or not.
+</P>
+<P>
+To find the available fuses for your microcontroller, do a search in the relevant datasheet for &quot;Memory Programming&quot;, &quot;LockBits&quot; &quot;Fuse low byte&quot; or something similar.
+</P>
+<H2>Programming Fuse Bits</H2>
+The process of programming fuse bits involves:
+<OL>	
+	<LI>Reading the datasheet to discover the location and settings for the bits of interest,</LI>
+	<LI>Determining the byte value for the affected fuse byte(s),</LI>
+	<LI>Actually programming the fuses on the chip.</LI>
+</OL>
+
+We&#39;ll go through an example of the process and covers each step.
+
+<H3>Bits of Interest</H3>
+
+
+<P align="center">
+<SCRIPT type="text/javascript"><!--
+google_ad_client = "pub-9045707674557710";
+//468x60, electrons
+google_ad_slot = "6250695114";
+google_ad_width = 468;
+google_ad_height = 60;
+//--></SCRIPT>
+<SCRIPT type="text/javascript" src="./Electrons - AVR Fuses HOWTO Guide_files/show_ads.js">
+</SCRIPT><SCRIPT>window.google_render_ad();</SCRIPT><INS style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px"><INS style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px"><IFRAME allowtransparency="true" frameborder="0" height="60" hspace="0" id="google_ads_frame2" marginheight="0" marginwidth="0" name="google_ads_frame" scrolling="no" src="./Electrons - AVR Fuses HOWTO Guide_files/ads(1).htm" style="left:0;position:absolute;top:0" vspace="0" width="468"></IFRAME></INS></INS>
+</P>
+
+
+<P>
+The ATmega8 ships with safe default settings for its clock source and startup time, which specify that an internal 1 MHz RC oscillator is to be used.  This ensures that you can get the chip working with minimal setup but lets assume you want to take advantage of a faster/more stable/more useful clock through the use of an external crystal.
+</P>
+<P>
+By checking the <I>Clock Sources</I> section of the datasheet, you can see that the clocking options are set using 4 <I>CKSEL</I> bits that specify the type of clock source the chip will use, and the <I>CKOPT</I> bit (which tells the chip to pay attention to our CKSEL bits and influences startup time).  
+</P>
+<P>
+The actual bits you use depend on the hardware you&#39;ve got.  Here we&#39;ll say we&#39;re using a 2MHz crystal.  In this case, we determine that we should set CKSEL3..0 (this notation, used in the datasheets, indicates CKSEL bits 3 to 0, starting at 3) to 1100 and we should also ensure the CKOPT bit is 1.
+</P>
+<P>
+Now that we know which bits we wish to set we need to know where they fit in, in the grand fuse byte scheme of things.  To do this, have a look at the following tables, which indicate the position and function of each bit in the low and high fuse bytes (for the ATmega8).
+</P>
+<TABLE align="center" border="1">
+<TBODY><TR>	<TH colspan="4">Fuse Low Byte</TH></TR><TR>	
+<TH>Bit Number</TH><TH>Name</TH><TH>Description</TH><TH>Default</TH></TR>
+
+<TR>	
+<TD>7</TD>	
+<TD>BODLEVEL</TD>	
+<TD>Brown out detector trigger level</TD>	
+<TD>1 (unprogrammed)</TD></TR>
+
+<TR>	
+<TD>6</TD>	
+<TD>BODEN</TD>	
+<TD>Brown out detector enable</TD>	
+<TD>1 (unprogrammed, no BOD)</TD></TR>
+
+<TR>	
+<TD>5</TD>	
+<TD>SUT1</TD>	
+<TD>Select start-up time</TD>	
+<TD>1 (unprogrammed)</TD></TR>
+
+<TR>	
+<TD>4</TD>	
+<TD>SUT0</TD>	
+<TD>Select start-up time</TD>	
+<TD>0 (programmed)</TD></TR>
+
+<TR>	
+<TD>3</TD>	
+<TD>CKSEL3</TD>	
+<TD>Select Clock source</TD>	
+<TD>0 (programmed)</TD></TR>
+
+<TR>	
+<TD>2</TD>	
+<TD>CKSEL2</TD>	
+<TD>Select Clock source</TD>	
+<TD>0 (programmed)</TD></TR>
+
+<TR>	
+<TD>1</TD>	
+<TD>CKSEL1</TD>	
+<TD>Select Clock source</TD>	
+<TD>0 (programmed)</TD></TR>
+
+<TR>	
+<TD>0</TD>	
+<TD>CKSEL0</TD>	
+<TD>Select Clock source</TD>	
+<TD>1 (unprogrammed)</TD></TR>
+
+<TR>	<TD colspan="4"><P>&nbsp;</P></TD></TR>
+
+<TR>	<TH colspan="4">Fuse High Byte</TH></TR><TR>	<TH>Bit Number</TH><TH>Name</TH><TH>Description</TH><TH>Default</TH></TR>
+
+<TR>	
+<TD>7</TD>	
+<TD>RSTDISBL</TD>	
+<TD>Select if PC6 is I/O pin or RESET pin</TD>	
+<TD>1 (unprogrammed PC6 is RESET-pin)</TD></TR>
+
+<TR>	
+<TD>6</TD>	
+<TD>WDTON</TD>	
+<TD>WDT always on</TD>	
+<TD>1 (unprogrammed, WDT enabled by WDTCR)</TD></TR>
+
+<TR>	
+<TD>5</TD>	
+<TD>SPIEN</TD>	
+<TD>Enable Serial Program and Data Downloading</TD>	
+<TD>0 (programmed, SPI programming enabled)</TD></TR>
+
+<TR>	
+<TD>4</TD>	
+<TD>CKOPT</TD>	
+<TD>Oscillator options</TD>	
+<TD>1 (unprogrammed)</TD></TR>
+
+<TR>	
+<TD>3</TD>	
+<TD>EESAVE</TD>	
+<TD>EEPROM memory is preserved through the Chip Erase</TD>	
+<TD>1 (unprogrammed, EEPROM not preserved)</TD></TR>
+
+<TR>	
+<TD>2</TD>	
+<TD>BOOTSZ1</TD>	
+<TD>Select Boot Size</TD>	
+<TD>0 (programmed)</TD></TR>
+
+<TR>	
+<TD>1</TD>	
+<TD>BOOTSZ0</TD>	
+<TD>Select Boot Size</TD>	
+<TD>0 (programmed)</TD></TR>
+
+<TR>	
+<TD>0</TD>	
+<TD>BOOTRST</TD>	
+<TD>Select Reset Vector</TD>	
+<TD>1 (unprogrammed)</TD></TR></TBODY></TABLE>
+
+
+<P>
+As you can see, our CKSEL settings are to be set in bits 0 to 3 of the low fuse byte, while CKOPT is bit 4 of the high fuse byte.  Even though we only wish to affect the CKSEL and CKOPT bits, we must program the <B>entire</B> low and high fuse bytes.  We want to set:
+</P>
+
+<PRE>Low fuse bits: XXXX 1100
+High fuse bits:XXX1 XXXX
+</PRE>
+without disturbing the bits in the &quot;X&quot; positions.	
+
+<H3>Byte Values</H3>
+<P>
+Determining the byte values required for the low and high fuses first involves discovering the current values for the &quot;X&quot; bits above.  Your <A href="http://electrons.psychogenic.com/modules/arms/art/7/AVRChipProgrammingwithLinux.php">hardware programmer</A> can allow you to do this.  
+</P>
+
+If you are using uisp you&#39;d use something like:
+
+<PRE>$ uisp -dprog=stk500 -dserial=/dev/ttyS0 -dspeed=115200 -dpart=atmega8 --rd_fuses
+
+Fuse Low Byte = 0xE1
+Fuse High Byte = 0x91
+Calibration Byte = 0x00 -- Read Only
+Lock Bits = 0xff
+</PRE>
+
+<P>
+You can convert these hex values to binary (for use below) using any decent calculator program.
+
+</P>
+<P>
+If you&#39;ve been using avrdude, you can extract the high and low fuse bytes like so (adjusting the programmer, device and port options to match your hardware and setup):
+</P>
+
+<PRE>$ avrdude -c stk500 -p m8 -P /dev/ttyS0 -U hfuse:r:high.txt -U lfuse:r:low.txt
+
+  avrdude: Device signature = 0x003d04
+  
+  avrdude: reading hfuse memory:
+  Reading | ################################################## | 100&percnt; 0.01s
+  avrdude: writing output file &quot;high.txt&quot;
+
+  avrdude: reading lfuse memory:
+  Reading | ################################################## | 100&percnt; 0.00s
+  avrdude: writing output file &quot;low.txt&quot;
+
+  avrdude done.  Thank you.
+</PRE>
+
+<P>
+Avrdude doesn&#39;t make getting to the fuse info as simple... the bytes are actually saved raw in the high.txt and low.txt files.  You can use a hex editor to look at the value of the byte in each file.  If you are lucky enough to use a Unix workstation, like Linux, then you can just run this one-liner for each file to view the binary representation of the bytes:
+</P>
+<PRE>
+$ od -d high.txt  | head -1 | sed -e &#39;s/0000000 *//&#39; | \
+  xargs -i perl -e &#39;$str= unpack(&quot;B32&quot;, pack(&quot;N&quot;,{})); $str =~ s/.*([01]{4})([01]{4})$/$1 $2/; \
+  print &quot;$str\n&quot;;&#39;
+  
+1101 1001
+
+
+
+$ od -d low.txt  | head -1 | sed -e &#39;s/0000000 *//&#39; | \
+  xargs -i perl -e &#39;$str= unpack(&quot;B32&quot;, pack(&quot;N&quot;,{})); $str =~ s/.*([01]{4})([01]{4})$/$1 $2/; \
+  print &quot;$str\n&quot;;&#39;
+
+1110 0001
+</PRE>
+
+Note that the Atmel documentation names the bits in order of significance, so from bit 7 to 0:
+
+<PRE>low fuse bits: 1110 0001
+low fuse pos.: 7654 3210</PRE>
+
+<P>
+So in our example, CKSEL3..0 is 0001 (a setting for the calibrated internal RC oscillator, according to the data sheet).
+To determine the byte values we wish to have, we apply the bit &quot;mask&quot; developed above and overwrite relevant bits of each fuse byte.
+</P>
+
+<PRE>Low original bits:   1110 0001
+Low fuse mask:       XXXX 1100
+Low new bits:        1110 1100
+
+High original bits:  1101 1001
+High fuse mask:      XXX1 XXXX
+High new bits:       1101 1001
+</PRE>
+
+<P>
+Once that is done, we can convert the new bytes back to hexadecimal for use with the hardware programmer.
+</P>
+<P>
+Note that, as the CKOPT bit was already unprogrammed (1) in this example, the high fuse byte has not changed and doesn&#39;t need to be reprogrammed.  The low fuse has changed, though, to a hex value of 0xECand must therefore be written to the microcontroller memory.
+</P>
+
+<H3>Lighting Fuses</H3>
+<P>
+Now that we have determined the new value for the low fuse byte, our work is done.  Simply performing the inverse operation using the programmer will write the new byte to the chip:
+</P>
+<PRE>$ avrdude -c stk500 -p m8 -P /dev/ttyS0 -U lfuse:w:0xEC:m </PRE>
+
+<P>
+As you can see, programming the chip is easy.  The majority of the work involves determining which options you want to set, how to set them and where the new bits actually go.  And that means getting to know the relevant Atmel datasheet.
+</P>
+<H2>Final things To Remember</H2>
+
+<P>
+The fuses aren&#39;t erased when the AVR memory is erased, so reprogramming the fuses everytime the device is reprogrammed is <B>not</B> required.  Since the fuses are not cleared by a memory erase, it can cause problems if incorrect settings are selected.
+</P>
+<P>
+It may be possible to disabled In-System Programming (through the SPIEN fuse) while performing in-system programming.  If you do this, you will no longer be able to program the chip in this manner (you need to use parallel programming to change this setting, which may mean removing the chip from the circuit and using another hardware programmer, such as the STK500).
+
+</P>
+
+<P>
+It may also be possible to disable the RESET pin (RSTDISBL fuse).  If this happens, the RESET pin must be pulled very high (12V) to program the chip and the circuit must tolerate this.
+
+</P>
+<P>
+
+Some fuses just can&#39;t be changed through ISP Programming. If fuses cannot be changed through ISP Programming, Parallel Programming is required to alter the fuses.
+
+</P>
+<P>
+
+The lock bits are fuses that can be used to lock down the chip, but this can lock you out as well!
+
+
+</P>
+<P>
+
+You can use the <TT>-v</TT> switch to avrdude while reading the fuse bytes.  The verbose output includes lots of neat info concerning the chip and current settings.  Here is the output for an ATmega162, which shows that this chip has extended fuse (efuse) and lock byte, in addition to the low and high fuse bytes:
+
+</P>
+
+<PRE>$ avrdude -v -c stk500 -p m162 -P /dev/ttyS1 -U hfuse:r:high.txt:r -U lfuse:r:low.txt:r
+avrdude Version 4.4.0
+
+  Using Port            : /dev/ttyS1
+  Using Programmer      : stk500
+  AVR Part              : ATMEGA162
+  Chip Erase delay      : 9000 us
+  PAGEL                 : P00
+  BS2                   : P00
+  RESET disposition     : dedicated
+  RETRY pulse           : SCK
+  serial program mode   : yes
+  parallel program mode : yes
+  Memory Detail         :
+
+                              Page                       Polled
+    Memory Type Paged  Size   Size #Pages MinW  MaxW   ReadBack
+    ----------- ------ ------ ---- ------ ----- ----- ---------
+    flash       yes     16384  128   128  4500  4500 0xff 0xff
+    eeprom      no        512    0     0  9000  9000 0xff 0xff
+    lfuse       no          1    0     0 16000 16000 0x00 0x00
+    hfuse       no          1    0     0 16000 16000 0x00 0x00
+    efuse       no          1    0     0 16000 16000 0x00 0x00
+    lock        no          1    0     0 16000 16000 0x00 0x00
+    signature   no          3    0     0     0     0 0x00 0x00
+    calibration no          1    0     0     0     0 0x00 0x00
+
+  Programmer Type : STK500
+  Description     : Atmel STK500
+  Hardware Version: 2
+  Firmware Version: 1.14
+  Vtarget         : 5.1 V
+  Varef           : 5.1 V
+  Oscillator      : 3.686 MHz
+  SCK period      : 1.1 us
+
+</PRE>
+
+
+<P>
+You are now ready to play with your AVR&#39;s fuses, just remember to double-check those values before performing the write!
+</P>
+
+
+<P>
+Enjoy.
+</P></TD>
+  </TR>
+  <TR>
+    <TD width="25&percnt;" class="even">Level:</TD>
+    <TD width="75&percnt;" class="odd">
+      <A href="http://electrons.psychogenic.com/modules/arms/view.php?w=level&idx=1">Article</A>
+    </TD>
+  </TR>
+  <TR height="20" style="vertical-align: middle;">
+    <TD colspan="2" align="center">
+        </TD>
+  </TR>
+<!-- Additional artical data -->
+  <TR>
+    <TH colspan="2" align="center">Additional Article Data
+  </TH></TR>
+        <TR>
+    <TD width="25&percnt;" class="even">Level:</TD>
+    <TD width="75&percnt;" class="odd">
+      <A href="http://electrons.psychogenic.com/modules/arms/view.php?w=level&idx=1">Article</A>
+    </TD>
+  </TR>
+</TBODY></TABLE>
+<BR>
+<TABLE width="100&percnt;" class="item" cellspacing="0" cellpadding="0">
+  <TBODY><TR>
+    <TH align="center">Comments</TH>
+  </TR>
+  <TR>
+    <TD class="odd">
+      <DIV style="margin: 3px; padding: 3px;">
+                          </DIV>
+    </TD>
+  </TR>
+  <TR>
+    <TD class="odd">
+      <DIV style="text-align: center; padding: 3px; margin: 3px;">
+        
+<FORM method="get" action="http://electrons.psychogenic.com/modules/arms/art/14/view.php">
+<TABLE width="95&percnt;" class="outer" cellspacing="1">
+  <TBODY><TR>
+    <TD class="even" align="center"><SELECT name="com_mode"><OPTION value="flat">Flat</OPTION><OPTION value="thread">Threaded</OPTION><OPTION value="nest" selected="selected">Nested</OPTION></SELECT> <SELECT name="com_order"><OPTION value="0" selected="selected">Oldest First</OPTION><OPTION value="1">Newest First</OPTION></SELECT><INPUT type="hidden" name="idx" value="14"> <INPUT type="submit" value="Refresh" class="formButton">
+    </TD>
+  </TR>
+</TBODY></TABLE>
+</FORM>
+        The comments are owned by the poster. We aren&#39;t responsible for their content.
+      </DIV>
+    </TD>
+  </TR>
+</TBODY></TABLE>
+<BR>
+<TABLE width="100&percnt;" class="item" cellspacing="0" cellpadding="0">
+  <TBODY><TR>
+    <TH align="center">Jump to section</TH>
+  </TR>
+<FORM name="jump_to" method="post" action="http://electrons.psychogenic.com/modules/arms/art/14/posting.php?w=jumptosec&on=art&page=1&idx="></FORM>
+  <TR>
+    <TD class="odd" align="center">
+      <SELECT name="jump_to_sec">
+              <OPTION>AVR</OPTION>
+              <OPTION>SysAdmin</OPTION>
+              <OPTION>Projects</OPTION>
+              <OPTION>Linux iPAQ</OPTION>
+            </SELECT>
+      <INPUT name="btn_submit" type="submit" id="btn_submit" value="Go">
+    </TD>
+  </TR>
+
+</TBODY></TABLE>
+
+
+<!-- AVR sec -->
+<SCRIPT type="text/javascript" src="http://ss.webring.com/navbar?f=j;y=psychogenic;u=10139292">
+</SCRIPT><NOSCRIPT></NOSCRIPT>
+
+        </DIV>
+      </TD>
+
+      
+      <TD id="rightcolumn">
+        <!-- Start right blocks loop -->
+                  <DIV class="blockTitle"><IMG src="http://electrons.psychogenic.com/themes/simple_line/icon1.gif"> News</DIV>
+<DIV class="blockContent"><UL>
+      <LI><A href="http://electrons.psychogenic.com/modules/altern8news/article.php?storyid=71">Invasion of the robot spyders</A> (2008/5/5) <BR>British defence giant BAE Systems is creating a series o...</LI>
+      <LI><A href="http://electrons.psychogenic.com/modules/altern8news/article.php?storyid=70">Exercise Plus Coffee May Ward Off ...</A> (2007/7/30) <BR>A coffee habit, coupled with regular exercise, may help ...</LI>
+      <LI><A href="http://electrons.psychogenic.com/modules/altern8news/article.php?storyid=69">HIV vaccine ready for clinical tri...</A> (2007/7/24) <BR>A vaccine that is capable of delivering a double whammy ...</LI>
+      <LI><A href="http://electrons.psychogenic.com/modules/altern8news/article.php?storyid=68">Russia tries to ban human DNA expo...</A> (2007/5/30) <BR>Russia has banned the shipment of medical specimens abro...</LI>
+      <LI><A href="http://electrons.psychogenic.com/modules/altern8news/article.php?storyid=67">Cookies In Your Head</A> (2007/2/7) <BR>Current iris scanning systems require a person to stand ...</LI>
+      <LI><A href="http://electrons.psychogenic.com/modules/altern8news/article.php?storyid=66">Trans Goes Straight To Tummy</A> (2007/2/7) <BR>Eating a diet consisting largely of fast food could caus...</LI>
+      <LI><A href="http://electrons.psychogenic.com/modules/altern8news/article.php?storyid=65">Folic Acid as Cancer Prevention</A> (2006/6/12) <BR>Folic acid supplements may prevent cancer progression an...</LI>
+      <LI><A href="http://electrons.psychogenic.com/modules/altern8news/article.php?storyid=64">Don&#39;t Bother Touching That Dial</A> (2006/4/18) <BR>Philips would like to take advantage of Multimedia Home ...</LI>
+      <LI><A href="http://electrons.psychogenic.com/modules/altern8news/article.php?storyid=63">Human Lab-Grown Organ Success</A> (2006/4/4) <BR>The first human recipients of laboratory-grown organs we...</LI>
+      <LI><A href="http://electrons.psychogenic.com/modules/altern8news/article.php?storyid=62">Dogs beat CATs at detecting cancer</A> (2006/1/7) <BR>Dogs with three weeks of training can best the latest CA...</LI>
+  </UL></DIV><BR>
+                <!-- End right blocks loop -->
+      </TD>
+
+      
+    </TR>
+  </TBODY></TABLE>
+
+  <TABLE cellspacing="0">
+    <TBODY><TR id="footerbar">
+      <TD>All contents are Copyright (C) 2004-2005 <A href="http://www.psychogenic.com/">Psychogenic Inc</A> -- All rights reserved</TD>
+    </TR>
+  </TBODY></TABLE>
+
+</DIV></BODY></HTML>

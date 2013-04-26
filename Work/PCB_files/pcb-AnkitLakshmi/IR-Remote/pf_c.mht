@@ -1,0 +1,158 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: 
+Date: Fri, 13 Feb 2009 08:05:03 +0530
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: 7bit
+Content-Location: http://www.tau.ac.il/~stoledo/lego/AVR-ir/pf.c
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5579
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.6000.16788" name=GENERATOR></HEAD>
+<BODY><PRE>/**
+ * Simple lego power function remote control
+ *
+ * Inspired by the work of Sivan Toledo
+ *  http://www.tau.ac.il/~stoledo/lego/AVR-ir/
+ *  
+ *  2007, Pat Hanrahan, hanrahan@cs.stanford.edu
+ *
+ */
+
+#include &lt;avr/io.h&gt;
+#include &lt;avr/delay.h&gt;
+
+/*
+ attiny13 pinout for remote control
+
+               +--------------+
+         reset |  1 pb5 vcc 8 |
+          back |  2 pb3 pb2 7 | forw
+         right |  3 pb4 pb1 6 | left
+               |  4 gnd pb0 5 | oc0a -&gt; irled
+               +--------------+
+*/
+
+#define PININ (_BV(1)|_BV(2)|_BV(3)|_BV(4))
+#define LEFT  _BV(1)
+#define FORW  _BV(2)
+#define BACK  _BV(3)
+#define RIGHT _BV(4)
+
+/*
+ *
+ */
+void setup(void)
+{
+    // PB0 is outout
+    DDRB = _BV(0);	
+    // Pull-up input pins
+    PORTB = PININ;
+ 
+    // 9600000/8 Hz / (2 * 16) = 37500 Hz
+    OCR0A = 16;
+
+    // toggle output compare A (=PB0)
+    TCCR0A = (1 &lt;&lt; COM0A0)|(1&lt;&lt;WGM01);
+}
+
+void on(void)
+{
+    // start timer; divide by 8
+    TCCR0B = (1 &lt;&lt; CS01);
+}
+
+void off(void)
+{
+    // stop timer
+    TCCR0B = 0;
+
+    // clear PB0
+    PORTB = PININ;
+}
+
+void xmit( uint16_t ontime, uint16_t offtime ) {  
+    on();
+    _delay_loop_2(ontime); // 4 * ontime clocks
+    off();
+    _delay_loop_2(offtime);
+}
+
+/*
+ * Computed these from the numbers on Sivan's web site
+ *
+ *  counts * 64 * 9600000/14745000
+ *
+ * He measured the intervals using a 14745600 crystal
+ * divided by 64. We are running at 9600000.
+ *
+ * signal    60
+ * start    215
+ * lo        40
+ * hi        60
+ * end    15000
+ *
+ * Finally, divide by 4 so we can call _delay_loop_2
+ * which executes 4 cycles per value.
+ */
+#define ONTIME  (2500/4)
+#define HITIME  (4583/4)
+#define LOTIME  (1666/4)
+#define BTIME   (9200/4)
+#define ETIME   (625000/4)
+
+void xmitcode(uint16_t code) {
+    xmit(ONTIME,BTIME);
+
+    for( int i = 0; i &lt; 16; i++ ) {
+       xmit(ONTIME, (code &amp; 0x8000) ? HITIME : LOTIME );
+       code = code &lt;&lt; 1;
+    }
+
+    xmit(ONTIME,0);
+    // calling _delay_loop_2 with ETIME causes an overflow
+    for( int i = 0; i &lt; 256; i++ )
+       _delay_loop_2(ETIME/256);
+}
+
+
+
+#define CH1RFORBFOR 0x015b
+#define CH1RFORBREV 0x0197
+#define CH1RREVBFOR 0x0168
+#define CH1RREVBREV 0x01a4
+
+#define CH1RFOR   0x8117
+#define CH1RREV   0x8124
+#define CH1BFOR   0x8142
+#define CH1BREV   0x818e
+
+#define CH1NONE   0x010e
+
+/*
+ *
+ */
+int main(void)
+{
+    setup();
+
+    for(;;) {
+        uint8_t pin = ~(PINB &amp; PININ);
+
+	if( pin &amp; FORW )
+	    xmitcode(CH1RFORBREV);
+	else if( pin &amp; BACK )
+	    xmitcode(CH1RREVBFOR);
+	else if( pin &amp; LEFT )
+	    xmitcode(CH1RREVBREV);
+	else if( pin &amp; RIGHT )
+	    xmitcode(CH1RFORBFOR);
+	else
+	    xmitcode(CH1NONE);
+    }
+}
+
+</PRE></BODY></HTML>

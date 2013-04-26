@@ -1,0 +1,378 @@
+
+IR-Remote.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000206  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000006  00800060  00000206  0000027a  2**0
+                  ALLOC
+  2 .debug_aranges 00000020  00000000  00000000  0000027a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_pubnames 0000004d  00000000  00000000  0000029a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   0000016b  00000000  00000000  000002e7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 000000c7  00000000  00000000  00000452  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   000001b0  00000000  00000000  00000519  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  00000050  00000000  00000000  000006cc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    000000ac  00000000  00000000  0000071c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_loc    00000029  00000000  00000000  000007c8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 00000018  00000000  00000000  000007f1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 49 00 	jmp	0x92	; 0x92 <__vector_5>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e6 e0       	ldi	r30, 0x06	; 6
+  68:	f2 e0       	ldi	r31, 0x02	; 2
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <.do_copy_data_start>
+
+0000006c <.do_copy_data_loop>:
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+
+00000070 <.do_copy_data_start>:
+  70:	a0 36       	cpi	r26, 0x60	; 96
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <.do_copy_data_loop>
+
+00000076 <__do_clear_bss>:
+  76:	10 e0       	ldi	r17, 0x00	; 0
+  78:	a0 e6       	ldi	r26, 0x60	; 96
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	a6 36       	cpi	r26, 0x66	; 102
+  82:	b1 07       	cpc	r27, r17
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 eb 00 	call	0x1d6	; 0x1d6 <main>
+  8a:	0c 94 01 01 	jmp	0x202	; 0x202 <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <__vector_5>:
+/*----------------------------------------------------------------
+-----------------FUNCTIONS----------------------------------------
+-----------------------------------------------------------------*/
+
+SIGNAL(SIG_OVERFLOW2)            	// signal handler for tcnt2 overflow interrupt
+{//every 72.463usec here
+  92:	1f 92       	push	r1
+  94:	0f 92       	push	r0
+  96:	0f b6       	in	r0, 0x3f	; 63
+  98:	0f 92       	push	r0
+  9a:	11 24       	eor	r1, r1
+  9c:	8f 93       	push	r24
+  9e:	9f 93       	push	r25
+	c3p5++;
+  a0:	80 91 60 00 	lds	r24, 0x0060
+  a4:	90 91 61 00 	lds	r25, 0x0061
+  a8:	01 96       	adiw	r24, 0x01	; 1
+  aa:	90 93 61 00 	sts	0x0061, r25
+  ae:	80 93 60 00 	sts	0x0060, r24
+	c131++;
+  b2:	80 91 62 00 	lds	r24, 0x0062
+  b6:	90 91 63 00 	lds	r25, 0x0063
+  ba:	01 96       	adiw	r24, 0x01	; 1
+  bc:	90 93 63 00 	sts	0x0063, r25
+  c0:	80 93 62 00 	sts	0x0062, r24
+	
+    TCNT2 = TIMER_2_CNT;         	// reset counter to get this interrupt again
+  c4:	8f eb       	ldi	r24, 0xBF	; 191
+  c6:	84 bd       	out	0x24, r24	; 36
+	
+}
+  c8:	9f 91       	pop	r25
+  ca:	8f 91       	pop	r24
+  cc:	0f 90       	pop	r0
+  ce:	0f be       	out	0x3f, r0	; 63
+  d0:	0f 90       	pop	r0
+  d2:	1f 90       	pop	r1
+  d4:	18 95       	reti
+
+000000d6 <GetFrameStart>:
+	}
+*/
+
+//---------------------------------------------
+char GetFrameStart(void)
+{
+  d6:	10 92 61 00 	sts	0x0061, r1
+  da:	10 92 60 00 	sts	0x0060, r1
+	c3p5=0;
+	c131=0;
+  de:	10 92 63 00 	sts	0x0063, r1
+  e2:	10 92 62 00 	sts	0x0062, r1
+	char b=0;
+	for(;;)
+	{
+		c131++;
+  e6:	80 91 62 00 	lds	r24, 0x0062
+  ea:	90 91 63 00 	lds	r25, 0x0063
+  ee:	01 96       	adiw	r24, 0x01	; 1
+  f0:	90 93 63 00 	sts	0x0063, r25
+  f4:	80 93 62 00 	sts	0x0062, r24
+		if(!bit_is_clear(PINA,0))
+  f8:	c8 9b       	sbis	0x19, 0	; 25
+  fa:	04 c0       	rjmp	.+8      	; 0x104 <GetFrameStart+0x2e>
+		{
+			c3p5=0;
+  fc:	10 92 61 00 	sts	0x0061, r1
+ 100:	10 92 60 00 	sts	0x0060, r1
+		}
+		c3p5++;
+ 104:	80 91 60 00 	lds	r24, 0x0060
+ 108:	90 91 61 00 	lds	r25, 0x0061
+ 10c:	01 96       	adiw	r24, 0x01	; 1
+ 10e:	90 93 61 00 	sts	0x0061, r25
+ 112:	80 93 60 00 	sts	0x0060, r24
+		if(c3p5>48)//3.478mSec
+ 116:	80 91 60 00 	lds	r24, 0x0060
+ 11a:	90 91 61 00 	lds	r25, 0x0061
+ 11e:	c1 97       	sbiw	r24, 0x31	; 49
+ 120:	4c f4       	brge	.+18     	; 0x134 <GetFrameStart+0x5e>
+		{
+			b=1;
+			break;
+		}
+		if(c131>1808)//131.01mSec
+ 122:	80 91 62 00 	lds	r24, 0x0062
+ 126:	90 91 63 00 	lds	r25, 0x0063
+ 12a:	81 51       	subi	r24, 0x11	; 17
+ 12c:	97 40       	sbci	r25, 0x07	; 7
+ 12e:	dc f2       	brlt	.-74     	; 0xe6 <GetFrameStart+0x10>
+ 130:	82 e0       	ldi	r24, 0x02	; 2
+ 132:	08 95       	ret
+		}
+	}
+	if(b==2)
+		return b;
+	b=0;	
+	c131=0;
+ 134:	10 92 63 00 	sts	0x0063, r1
+ 138:	10 92 62 00 	sts	0x0062, r1
+	for(;;)
+	{
+		c131++;
+ 13c:	80 91 62 00 	lds	r24, 0x0062
+ 140:	90 91 63 00 	lds	r25, 0x0063
+ 144:	01 96       	adiw	r24, 0x01	; 1
+ 146:	90 93 63 00 	sts	0x0063, r25
+ 14a:	80 93 62 00 	sts	0x0062, r24
+		if(!bit_is_clear(PINA,0))
+ 14e:	c8 9b       	sbis	0x19, 0	; 25
+ 150:	02 c0       	rjmp	.+4      	; 0x156 <GetFrameStart+0x80>
+ 152:	80 e0       	ldi	r24, 0x00	; 0
+ 154:	08 95       	ret
+		{
+			b=0;
+			break;
+		}
+		if(c131>1808)//131.01mSec
+ 156:	80 91 62 00 	lds	r24, 0x0062
+ 15a:	90 91 63 00 	lds	r25, 0x0063
+ 15e:	81 51       	subi	r24, 0x11	; 17
+ 160:	97 40       	sbci	r25, 0x07	; 7
+ 162:	64 f3       	brlt	.-40     	; 0x13c <GetFrameStart+0x66>
+ 164:	82 e0       	ldi	r24, 0x02	; 2
+			b=2;
+			break;
+		}
+	}
+	return b;
+}
+ 166:	08 95       	ret
+
+00000168 <GetFrameData>:
+//---------------------------------------------
+int GetFrameData(void)
+{
+ 168:	10 92 61 00 	sts	0x0061, r1
+ 16c:	10 92 60 00 	sts	0x0060, r1
+static int data;
+int i =0;
+c3p5=0;
+c131=0;
+ 170:	10 92 63 00 	sts	0x0063, r1
+ 174:	10 92 62 00 	sts	0x0062, r1
+ 178:	60 e0       	ldi	r22, 0x00	; 0
+ 17a:	70 e0       	ldi	r23, 0x00	; 0
+ 17c:	40 e0       	ldi	r20, 0x00	; 0
+ 17e:	50 e0       	ldi	r21, 0x00	; 0
+		{
+		c = bit_is_clear(PINA,0);
+		data=data << 1;
+		char d = !c;
+		d = d & 1;
+		data = data + c; 
+ 180:	e1 e0       	ldi	r30, 0x01	; 1
+ 182:	f0 e0       	ldi	r31, 0x00	; 0
+data=0;
+for(;;)
+{
+	for(;;)
+	{
+		if(c3p5>=18)//was 18 after 1.304 mSec
+ 184:	80 91 60 00 	lds	r24, 0x0060
+ 188:	90 91 61 00 	lds	r25, 0x0061
+ 18c:	42 97       	sbiw	r24, 0x12	; 18
+ 18e:	d4 f3       	brlt	.-12     	; 0x184 <GetFrameData+0x1c>
+		{
+		c = bit_is_clear(PINA,0);
+ 190:	89 b3       	in	r24, 0x19	; 25
+		data=data << 1;
+ 192:	44 0f       	add	r20, r20
+ 194:	55 1f       	adc	r21, r21
+		char d = !c;
+		d = d & 1;
+		data = data + c; 
+ 196:	28 2f       	mov	r18, r24
+ 198:	30 e0       	ldi	r19, 0x00	; 0
+ 19a:	2e 27       	eor	r18, r30
+ 19c:	3f 27       	eor	r19, r31
+ 19e:	21 70       	andi	r18, 0x01	; 1
+ 1a0:	30 70       	andi	r19, 0x00	; 0
+ 1a2:	42 0f       	add	r20, r18
+ 1a4:	53 1f       	adc	r21, r19
+		i++;
+ 1a6:	6f 5f       	subi	r22, 0xFF	; 255
+ 1a8:	7f 4f       	sbci	r23, 0xFF	; 255
+		c3p5=0;
+ 1aa:	10 92 61 00 	sts	0x0061, r1
+ 1ae:	10 92 60 00 	sts	0x0060, r1
+		break;
+		}
+	}
+	for(;;)
+	{
+		if(c!=bit_is_clear(PINA,0))
+ 1b2:	89 b3       	in	r24, 0x19	; 25
+ 1b4:	90 e0       	ldi	r25, 0x00	; 0
+ 1b6:	8e 27       	eor	r24, r30
+ 1b8:	9f 27       	eor	r25, r31
+ 1ba:	81 70       	andi	r24, 0x01	; 1
+ 1bc:	90 70       	andi	r25, 0x00	; 0
+ 1be:	28 17       	cp	r18, r24
+ 1c0:	39 07       	cpc	r19, r25
+ 1c2:	b9 f3       	breq	.-18     	; 0x1b2 <GetFrameData+0x4a>
+			break;
+			c3p5=0;
+		}
+		
+	}
+	if(i==14)
+ 1c4:	6e 30       	cpi	r22, 0x0E	; 14
+ 1c6:	71 05       	cpc	r23, r1
+ 1c8:	e9 f6       	brne	.-70     	; 0x184 <GetFrameData+0x1c>
+ 1ca:	50 93 65 00 	sts	0x0065, r21
+ 1ce:	40 93 64 00 	sts	0x0064, r20
+	{
+		break;
+	}
+}
+	return data;	
+}
+ 1d2:	ca 01       	movw	r24, r20
+ 1d4:	08 95       	ret
+
+000001d6 <main>:
+/*----------------------------------------------------------------
+-----------------MAIN-------------------------------------
+-----------------------------------------------------------------*/
+
+int main(void)
+{
+ 1d6:	1a ba       	out	0x1a, r1	; 26
+    int data;
+	DDRA=0x00;				//set port A as input port all bits.
+	DDRC=0xFF;				//Set Port C as output port all bits.
+ 1d8:	8f ef       	ldi	r24, 0xFF	; 255
+ 1da:	84 bb       	out	0x14, r24	; 20
+	TCCR2 = TMC8_CK8;               	
+ 1dc:	82 e0       	ldi	r24, 0x02	; 2
+ 1de:	85 bd       	out	0x25, r24	; 37
+    TCNT2  = TIMER_2_CNT;        	// reset TCNT1
+ 1e0:	8f eb       	ldi	r24, 0xBF	; 191
+ 1e2:	84 bd       	out	0x24, r24	; 36
+     TIMSK  = _BV(TOIE2);         	// enable TCNT1 overflow 
+ 1e4:	80 e4       	ldi	r24, 0x40	; 64
+ 1e6:	89 bf       	out	0x39, r24	; 57
+    
+    sei();                       	// enable interrupts
+ 1e8:	78 94       	sei
+	
+	for(;;)
+	{
+		char r = GetFrameStart();
+ 1ea:	0e 94 6b 00 	call	0xd6	; 0xd6 <GetFrameStart>
+		if(r==0)
+ 1ee:	88 23       	and	r24, r24
+ 1f0:	31 f4       	brne	.+12     	; 0x1fe <main+0x28>
+		{
+		 //sbi(PORTC,0);
+		 
+		 data = GetFrameData();
+ 1f2:	0e 94 b4 00 	call	0x168	; 0x168 <GetFrameData>
+		 data = data & 0x3f;
+		 
+			PORTC=(char)data;
+ 1f6:	8f 73       	andi	r24, 0x3F	; 63
+ 1f8:	90 70       	andi	r25, 0x00	; 0
+ 1fa:	85 bb       	out	0x15, r24	; 21
+ 1fc:	f6 cf       	rjmp	.-20     	; 0x1ea <main+0x14>
+		}
+		else
+		{
+			PORTC=0x00;
+ 1fe:	15 ba       	out	0x15, r1	; 21
+ 200:	f4 cf       	rjmp	.-24     	; 0x1ea <main+0x14>
+
+00000202 <_exit>:
+ 202:	f8 94       	cli
+
+00000204 <__stop_program>:
+ 204:	ff cf       	rjmp	.-2      	; 0x204 <__stop_program>

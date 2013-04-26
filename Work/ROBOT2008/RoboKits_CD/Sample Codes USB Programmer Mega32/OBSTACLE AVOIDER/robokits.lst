@@ -1,0 +1,222 @@
+   1               		.file	"robokits.c"
+   2               		.arch atmega32
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               		.data
+  19               	.LC0:
+  20 0000 524F 424F 		.string	"ROBOKITS NEOBOT\n"
+  20      4B49 5453 
+  20      204E 454F 
+  20      424F 540A 
+  20      00
+  21               	.LC1:
+  22 0011 4F62 7374 		.string	"Obstacle Avoider"
+  22      6163 6C65 
+  22      2041 766F 
+  22      6964 6572 
+  22      00
+  23               		.text
+  24               	.global	main
+  26               	main:
+  27               	.LFB7:
+  28               	.LM1:
+  29               	/* prologue: frame size=0 */
+  30               	/* prologue end (size=0) */
+  31               	.LM2:
+  32 0000 81B3      		in r24,49-0x20
+  33 0002 8066      		ori r24,lo8(96)
+  34 0004 81BB      		out 49-0x20,r24
+  35               	.LM3:
+  36 0006 91EF      		ldi r25,lo8(-15)
+  37 0008 9FBD      		out 79-0x20,r25
+  38               	.LM4:
+  39 000a 8AE0      		ldi r24,lo8(10)
+  40 000c 8EBD      		out 78-0x20,r24
+  41               	.LM5:
+  42 000e 1ABC      		out 74-0x20,__zero_reg__
+  43               	.LM6:
+  44 0010 18BC      		out 72-0x20,__zero_reg__
+  45               	.LM7:
+  46 0012 80EF      		ldi r24,lo8(-16)
+  47 0014 8ABB      		out 58-0x20,r24
+  48               	.LM8:
+  49 0016 8BEF      		ldi r24,lo8(-5)
+  50 0018 87BB      		out 55-0x20,r24
+  51               	.LM9:
+  52 001a 8FEF      		ldi r24,lo8(-1)
+  53 001c 84BB      		out 52-0x20,r24
+  54               	.LM10:
+  55 001e 91BB      		out 49-0x20,r25
+  56               	.LM11:
+  57 0020 8CE0      		ldi r24,lo8(12)
+  58 0022 0E94 0000 		call lcd_init
+  59               	.LM12:
+  60 0026 0E94 0000 		call lcd_clrscr
+  61               	.LM13:
+  62 002a 80E0      		ldi r24,lo8(.LC0)
+  63 002c 90E0      		ldi r25,hi8(.LC0)
+  64 002e 0E94 0000 		call lcd_puts
+  65               	.LM14:
+  66 0032 80E0      		ldi r24,lo8(.LC1)
+  67 0034 90E0      		ldi r25,hi8(.LC1)
+  68 0036 0E94 0000 		call lcd_puts
+  69               	.LM15:
+  70 003a C29A      		sbi 56-0x20,2
+  71               	.LM16:
+  72 003c 919A      		sbi 50-0x20,1
+  73               	.LM17:
+  74 003e 929A      		sbi 50-0x20,2
+  75               	.LM18:
+  76 0040 939A      		sbi 50-0x20,3
+  77 0042 E6E0      		ldi r30,lo8(-1786)
+  78 0044 F9EF      		ldi r31,hi8(-1786)
+  79 0046 29E0      		ldi r18,lo8(9)
+  80 0048 A8EA      		ldi r26,lo8(25000)
+  81 004a B1E6      		ldi r27,hi8(25000)
+  82               	.LVL0:
+  83               	.L18:
+  84               	.LM19:
+  85 004c C899      		sbic 57-0x20,0
+  86 004e 00C0      		rjmp .L3
+  87 0050 8199      		sbic 48-0x20,1
+  88 0052 00C0      		rjmp .L3
+  89               	.LM20:
+  90 0054 DC9A      		sbi 59-0x20,4
+  91               	.LM21:
+  92 0056 DD98      		cbi 59-0x20,5
+  93               	.LM22:
+  94 0058 DE98      		cbi 59-0x20,6
+  95               	.LM23:
+  96 005a 85E0      		ldi r24,lo8(5)
+  97               	.LVL1:
+  98 005c 85BB      		out 53-0x20,r24
+  99               	.LBB24:
+ 100               	.LBB25:
+ 101               	.LBB26:
+ 102               	.LBB27:
+ 103               	.LM24:
+ 104 005e CF01      		movw r24,r30
+ 105               	.LVL2:
+ 106               	/* #APP */
+ 107 0060 0197      		1: sbiw r24,1
+ 108 0062 01F4      		brne 1b
+ 109               	/* #NOAPP */
+ 110               	.LBE27:
+ 111               	.LBE26:
+ 112               	.LBE25:
+ 113               	.LBE24:
+ 114               	.LBB28:
+ 115               	.LBB29:
+ 116               	.LBB30:
+ 117               	.LBB31:
+ 118 0064 CF01      		movw r24,r30
+ 119               	.LVL3:
+ 120               	/* #APP */
+ 121 0066 0197      		1: sbiw r24,1
+ 122 0068 01F4      		brne 1b
+ 123               	/* #NOAPP */
+ 124               	.LBE31:
+ 125               	.LBE30:
+ 126               	.LBE29:
+ 127               	.LBE28:
+ 128               	.LM25:
+ 129 006a 25BB      		out 53-0x20,r18
+ 130               	.LBB32:
+ 131               	.LBB33:
+ 132               	.LBB34:
+ 133               	.LBB35:
+ 134               	.LM26:
+ 135 006c CF01      		movw r24,r30
+ 136               	.LVL4:
+ 137 006e 00C0      		rjmp .L16
+ 138               	.LVL5:
+ 139               	.L3:
+ 140               	.LBE35:
+ 141               	.LBE34:
+ 142               	.LBE33:
+ 143               	.LBE32:
+ 144               	.LM27:
+ 145 0070 C899      		sbic 57-0x20,0
+ 146 0072 00C0      		rjmp .L6
+ 147               	.LM28:
+ 148 0074 DC98      		cbi 59-0x20,4
+ 149               	.LM29:
+ 150 0076 DD9A      		sbi 59-0x20,5
+ 151               	.LM30:
+ 152 0078 DE98      		cbi 59-0x20,6
+ 153               	.LM31:
+ 154 007a 86E0      		ldi r24,lo8(6)
+ 155               	.LVL6:
+ 156 007c 85BB      		out 53-0x20,r24
+ 157               	.LVL7:
+ 158               	.L17:
+ 159               	.LBB36:
+ 160               	.LBB37:
+ 161               	.LBB38:
+ 162               	.LBB39:
+ 163               	.LM32:
+ 164 007e CD01      		movw r24,r26
+ 165               	.LVL8:
+ 166               	.L16:
+ 167               	.LVL9:
+ 168               	/* #APP */
+ 169 0080 0197      		1: sbiw r24,1
+ 170 0082 01F4      		brne 1b
+ 171               	/* #NOAPP */
+ 172 0084 00C0      		rjmp .L18
+ 173               	.L6:
+ 174               	.LBE39:
+ 175               	.LBE38:
+ 176               	.LBE37:
+ 177               	.LBE36:
+ 178               	.LM33:
+ 179 0086 8199      		sbic 48-0x20,1
+ 180 0088 00C0      		rjmp .L8
+ 181               	.LM34:
+ 182 008a DC98      		cbi 59-0x20,4
+ 183               	.LM35:
+ 184 008c DD98      		cbi 59-0x20,5
+ 185               	.LM36:
+ 186 008e DE9A      		sbi 59-0x20,6
+ 187               	.LM37:
+ 188 0090 25BB      		out 53-0x20,r18
+ 189 0092 00C0      		rjmp .L17
+ 190               	.L8:
+ 191               	.LM38:
+ 192 0094 8AE0      		ldi r24,lo8(10)
+ 193               	.LVL10:
+ 194 0096 85BB      		out 53-0x20,r24
+ 195               	.LM39:
+ 196 0098 DC98      		cbi 59-0x20,4
+ 197               	.LM40:
+ 198 009a DD98      		cbi 59-0x20,5
+ 199               	.LM41:
+ 200 009c DE98      		cbi 59-0x20,6
+ 201 009e 00C0      		rjmp .L18
+ 202               	/* epilogue: frame size=0 */
+ 203               	/* epilogue: noreturn */
+ 204               	/* epilogue end (size=0) */
+ 205               	/* function main size 86 (86) */
+ 206               	.LFE7:
+ 232               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccRbHL34.s:3      *ABS*:0000003f __SREG__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccRbHL34.s:4      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccRbHL34.s:5      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccRbHL34.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccRbHL34.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccRbHL34.s:26     .text:00000000 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+lcd_init
+lcd_clrscr
+lcd_puts

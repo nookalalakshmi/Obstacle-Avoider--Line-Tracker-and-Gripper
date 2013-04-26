@@ -1,0 +1,152 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0076)http://arduino.cc/en/Hacking/ParallelProgrammer?from=Main.ParallelProgrammer -->
+<HTML><HEAD><TITLE>Arduino - ParallelProgrammer</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8"><LINK 
+href="Arduino - ParallelProgrammer_files/arduino.css" type=text/css 
+rel=stylesheet>
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY>
+<DIV id=page><!--PageHeaderFmt-->
+<DIV id=pageheader>
+<DIV class=title><A href="http://arduino.cc/">Arduino</A></DIV>
+<DIV class=search><!-- SiteSearch Google -->
+<FORM action=http://www.google.com/search method=get><INPUT type=hidden 
+value=UTF-8 name=ie> <INPUT type=hidden value=UTF-8 name=oe> <INPUT 
+maxLength=255 size=25 name=q> <INPUT type=submit value=search name=btnG> <INPUT 
+type=hidden value=http://www.arduino.cc/ name=domains> <INPUT type=hidden 
+value=http://www.arduino.cc/ name=sitesearch> 
+</FORM><!-- SiteSearch Google --></DIV></DIV><!--/PageHeaderFmt--><!--PageLeftFmt-->
+<DIV id=pagenav style="TEXT-ALIGN: right">
+<DIV style="FLOAT: left">
+<P><A class=wikilink href="http://arduino.cc/en/Main/Buy">Buy</A> | <A 
+class=wikilink href="http://arduino.cc/en/Main/Software">Download</A> | <A 
+class=wikilink href="http://arduino.cc/en/Guide/HomePage">Getting Started</A> | 
+<A class=wikilink href="http://arduino.cc/en/Tutorial/HomePage">Learning</A> | 
+<A class=wikilink href="http://arduino.cc/en/Reference/HomePage">Reference</A> | 
+<A class=wikilink href="http://arduino.cc/en/Main/Hardware">Hardware</A> | <A 
+class=wikilink href="http://arduino.cc/en/Main/FAQ">FAQ</A> </P>
+<P class=vspace></P></DIV><A class=urllink href="http://www.arduino.cc/blog/" 
+rel=nofollow>Blog »</A> | <A class=urllink 
+href="http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl" rel=nofollow>Forum »</A> | <A 
+class=urllink href="http://www.arduino.cc/playground/" rel=nofollow>Playground 
+»</A> </DIV><!--/PageLeftFmt-->
+<DIV id=pagetext><!--PageText-->
+<DIV id=wikitext>
+<P><I>(redirected from <A 
+href="http://arduino.cc/en/Main/ParallelProgrammer?action=edit" 
+rel=nofollow>Main.ParallelProgrammer</A>)</I></P>
+<P class=vspace></P>
+<P><STRONG>Learning</STRONG> &nbsp; <A class=wikilink 
+href="http://arduino.cc/en/Tutorial/HomePage">Examples</A> | <A class=wikilink 
+href="http://arduino.cc/en/Tutorial/Foundations">Foundations</A> | <A 
+class=wikilink href="http://arduino.cc/en/Hacking/HomePage">Hacking</A> | <A 
+class=wikilink href="http://arduino.cc/en/Tutorial/Links">Links</A> </P>
+<P class=vspace></P>
+<H2>Parallel Port Programmer</H2>
+<P>Instructions for building a parallel port programmer for the Arduino board 
+(or any other Atmega8 chip). Allows you to program the board on Windows without 
+any additional equipment. Cheap and fun. (Please note, however, that this 
+doesn't allow for communication between the computer and programs running on the 
+board. You'll need a serial cable for that.) </P>
+<P class=vspace></P>
+<DIV><IMG title="" alt="" 
+src="Arduino - ParallelProgrammer_files/programmer_schematic.jpg"></DIV>
+<P class=vspace></P>
+<P><EM>Rear view of connector.</EM> </P>
+<P class=vspace></P>
+<H3>Equipment</H3>
+<P>Tools: </P>
+<UL>
+  <LI>Soldering iron 
+  <LI>Hot glue gun (optional) </LI></UL>
+<P class=vspace></P>
+<P>You'll need (parts): </P>
+<UL>
+  <LI>(2x) 470 ohm resistor (yellow-purple-brown) 
+  <LI>(1x) 220 ohm resistor (red-red-brown) 
+  <LI>(1x) parallel port cable or parallel-to-serial adapter 
+  <LI>(2x) three wire cables with female connectors on one end, unattached wires 
+  on the other </LI></UL>
+<P class=vspace></P>
+<DIV><IMG title="" alt="" 
+src="Arduino - ParallelProgrammer_files/programmer_parts.jpg"></DIV>
+<P class=vspace></P>
+<H3>Instructions</H3>
+<P>Remove any existing wires from the parallel connector. </P>
+<P class=vspace></P>
+<P>Solder 470 ohm resistors to pins 1 and 2 of the parallel connector. </P>
+<P class=vspace></P>
+<DIV><IMG title="" alt="" 
+src="Arduino - ParallelProgrammer_files/programmer_one_resistor.jpg"></DIV>
+<P class=vspace></P>
+<P><EM>Parallel connector with a 470 ohm resistor soldered to pin 1.</EM> </P>
+<P class=vspace></P>
+<P>Solder a 220 ohm resistor to pin 11 of the connector. </P>
+<P class=vspace></P>
+<P>Solder, in order, the three wires of one of the cables to the resistor on pin 
+11 (which goes to pin 18 on the Atmega8), to the resistor on pin 1 (which goes 
+to pin 19 on the Atmega8), and directly to pin 16 (which goes to the reset, pin 
+1). </P>
+<P class=vspace></P>
+<DIV><IMG title="" alt="" 
+src="Arduino - ParallelProgrammer_files/programmer_with_cable.jpg"></DIV>
+<P class=vspace></P>
+<P><EM>Parallel connector with two of the three wires of a cable soldered to 
+pins 11 and 1, respectively.</EM> </P>
+<P class=vspace></P>
+<P>Solder the middle wire of the second cable to the resistor on pin 2 (which 
+goes to pin 17 on the Atmega8), and one of the other wires to pin 18 (which goes 
+to ground). (The third wire is not used and may be cut short). </P>
+<P class=vspace></P>
+<DIV><IMG title="" alt="" 
+src="Arduino - ParallelProgrammer_files/programmer_with_cables.jpg"></DIV>
+<P class=vspace></P>
+<P><EM>Parallel connector with both cables soldered in place.</EM> </P>
+<P class=vspace></P>
+<P>Connect the ends of the two cables so that, when viewed from the connector 
+end, the unused wire is to the upper left and the wire to pin 11 is to the upper 
+right (this is considered pin 1 of the connector and should be matched with the 
+pin 1 indicated on the Arduino board). </P>
+<P class=vspace></P>
+<P>Hot glue the wires inside the case of the parallel-to-serial adapater, making 
+sure that any uninsulated wires are kept apart. Or, if not using an adapter, 
+wrap the exposed wires with electrical tape to keep them from touching. </P>
+<P class=vspace></P>
+<DIV><IMG title="" alt="" 
+src="Arduino - ParallelProgrammer_files/programmer_in_adapter.jpg"></DIV>
+<P class=vspace></P>
+<P>Once the glue dries, reclose the case of the parallel-to-serial adapter. </P>
+<P class=vspace></P>
+<DIV><IMG title="" alt="" 
+src="Arduino - ParallelProgrammer_files/parallel_programmer.jpg"></DIV>
+<P class=vspace></P>
+<H3>Software</H3>
+<P>You'll need to download <A class=urllink 
+href="http://web.mit.edu/6.115/www/miscfiles/giveio.zip" rel=nofollow>giveio</A> 
+from <A class=urllink href="http://web.mit.edu/6.115/www/pic.shtml" 
+rel=nofollow>MIT's Microcomputer Project Laboratory</A> (thanks Jim!) and run 
+the enclosed ginstall.bat file. </P>
+<P class=vspace></P>
+<P>See the <A class=wikilink 
+href="http://arduino.cc/en/Hacking/Bootloader">bootloader page</A> for details 
+on using your new parallel port programmer to burn the bootloader onto the 
+Arduino board. </P>
+<P class=vspace></P>
+<P>Or, if you're programming using uisp directly, you can use a command line 
+like: </P>
+<P class=vspace></P>
+<P>uisp -dprog=dapa -dpart=<SPAN class=wikiword>ATmega8</SPAN> if=prog.hex 
+-dlpt=0x378 --erase --upload </P>
+<P class=vspace></P>
+<P>@author: <EM>David A. Mellis</EM> IDII (with thanks to Erez Kikin-Gil for 
+building one too and to Massimo Banzi for the request and the instructions) </P>
+<P class=vspace></P>
+<P>@revised by: <EM>Marcos Yarza</EM> K3 </P></DIV></DIV><!--PageFooterFmt-->
+<DIV id=pagefooter><A 
+href="http://arduino.cc/en/Hacking/ParallelProgrammer?action=edit">Edit Page</A> 
+| <A href="http://arduino.cc/en/Hacking/ParallelProgrammer?action=diff">Page 
+History</A> | <A 
+href="http://arduino.cc/en/Hacking/ParallelProgrammer?action=print" 
+target=_blank>Printable View</A> | <A 
+href="http://arduino.cc/en/Site/AllRecentChanges">All Recent Site Changes</A> 
+</DIV><!--/PageFooterFmt--></DIV></BODY></HTML>

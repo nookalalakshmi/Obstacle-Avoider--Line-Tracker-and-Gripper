@@ -1,0 +1,588 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0046)http://en.wikipedia.org/wiki/Nonlinear_control -->
+<HTML lang=en dir=ltr xml:lang="en" 
+xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>Nonlinear control - Wikipedia, the free encyclopedia</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META http-equiv=Content-Style-Type content=text/css>
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR>
+<META 
+content="Nonlinear control,Aleksandr Lyapunov,Backstepping,Bifurcation,Bode plot,Center manifold theorem,Chaos,Circle criterion,Control engineering,Control system,Control theory" 
+name=keywords><LINK title="Edit this page" 
+href="http://en.wikipedia.org/w/index.php?title=Nonlinear_control&amp;action=edit" 
+type=application/x-wiki rel=alternate><LINK title="Edit this page" 
+href="http://en.wikipedia.org/w/index.php?title=Nonlinear_control&amp;action=edit" 
+rel=edit><LINK href="http://en.wikipedia.org/apple-touch-icon.png" 
+rel=apple-touch-icon><LINK href="/favicon.ico" rel="shortcut icon"><LINK 
+title="Wikipedia (en)" href="/w/opensearch_desc.php" 
+type=application/opensearchdescription+xml rel=search><LINK 
+href="http://www.gnu.org/copyleft/fdl.html" rel=copyright><LINK 
+title="Wikipedia RSS Feed" 
+href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=rss" 
+type=application/rss+xml rel=alternate><LINK title="Wikipedia Atom Feed" 
+href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom" 
+type=application/atom+xml rel=alternate><LINK media=screen 
+href="Nonlinear control - Wikipedia, the free encyclopedia_files/shared.css" 
+type=text/css rel=stylesheet><LINK media=print 
+href="Nonlinear control - Wikipedia, the free encyclopedia_files/commonPrint.css" 
+type=text/css rel=stylesheet><LINK media=screen 
+href="Nonlinear control - Wikipedia, the free encyclopedia_files/main.css" 
+type=text/css rel=stylesheet><LINK media=handheld 
+href="C:\Documents and Settings\user\Desktop\report\Nonlinear control - Wikipedia, the free encyclopedia_files\main(1).css" 
+type=text/css rel=stylesheet><!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE50Fixes.css?206xx" type="text/css" media="screen" /><![endif]--><!--[if IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE55Fixes.css?206xx" type="text/css" media="screen" /><![endif]--><!--[if IE 6]><LINK 
+media=screen 
+href="Nonlinear control - Wikipedia, the free encyclopedia_files/IE60Fixes.css" 
+type=text/css rel=stylesheet><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins-1.5/monobook/IE70Fixes.css?206xx" type="text/css" media="screen" /><![endif]--><LINK 
+href="Nonlinear control - Wikipedia, the free encyclopedia_files/index.css" 
+type=text/css rel=stylesheet><LINK media=print 
+href="C:\Documents and Settings\user\Desktop\report\Nonlinear control - Wikipedia, the free encyclopedia_files\index(1).css" 
+type=text/css rel=stylesheet><LINK media=handheld 
+href="C:\Documents and Settings\user\Desktop\report\Nonlinear control - Wikipedia, the free encyclopedia_files\index(2).css" 
+type=text/css rel=stylesheet><LINK 
+href="C:\Documents and Settings\user\Desktop\report\Nonlinear control - Wikipedia, the free encyclopedia_files\index(3).css" 
+type=text/css rel=stylesheet><LINK 
+href="C:\Documents and Settings\user\Desktop\report\Nonlinear control - Wikipedia, the free encyclopedia_files\index(4).css" 
+type=text/css rel=stylesheet><!--[if lt IE 7]>
+<SCRIPT 
+src="Nonlinear control - Wikipedia, the free encyclopedia_files/IEFixes.js" 
+type=text/javascript></SCRIPT>
+
+<META http-equiv=imagetoolbar content=no><![endif]-->
+<SCRIPT type=text/javascript>/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/skins-1.5";
+		var wgArticlePath = "/wiki/$1";
+		var wgScriptPath = "/w";
+		var wgScript = "/w/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://en.wikipedia.org";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Nonlinear_control";
+		var wgTitle = "Nonlinear control";
+		var wgAction = "view";
+		var wgArticleId = "3359147";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = "271365361";
+		var wgVersion = "1.15alpha";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgMWSuggestTemplate = "http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest";
+		var wgDBname = "enwiki";
+		var wgSearchNamespaces = [0];
+		var wgMWSuggestMessages = ["with suggestions", "no suggestions"];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</SCRIPT>
+
+<SCRIPT 
+src="Nonlinear control - Wikipedia, the free encyclopedia_files/wikibits.js" 
+type=text/javascript><!-- wikibits js --></SCRIPT>
+<!-- Head Scripts -->
+<SCRIPT src="Nonlinear control - Wikipedia, the free encyclopedia_files/ajax.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="Nonlinear control - Wikipedia, the free encyclopedia_files/mwsuggest.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>/*<![CDATA[*/
+var wgNotice='';var wgNoticeLocal='';
+/*]]>*/</SCRIPT>
+
+<SCRIPT 
+src="Nonlinear control - Wikipedia, the free encyclopedia_files/centralnotice.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="Nonlinear control - Wikipedia, the free encyclopedia_files/index.php" 
+type=text/javascript><!-- site js --></SCRIPT>
+</HEAD>
+<BODY 
+class="mediawiki ltr ns-0 ns-subject page-Nonlinear_control skin-monobook">
+<DIV id=globalWrapper>
+<DIV id=column-content>
+<DIV id=content><A id=top name=top></A>
+<DIV id=siteNotice>
+<SCRIPT 
+type=text/javascript>if (wgNotice != '') document.writeln(wgNotice);</SCRIPT>
+</DIV>
+<H1 class=firstHeading id=firstHeading>Nonlinear control</H1>
+<DIV id=bodyContent>
+<H3 id=siteSub>From Wikipedia, the free encyclopedia</H3>
+<DIV id=contentSub></DIV>
+<DIV id=jump-to-nav>Jump to: <A 
+href="http://en.wikipedia.org/wiki/Nonlinear_control#column-one">navigation</A>, 
+<A 
+href="http://en.wikipedia.org/wiki/Nonlinear_control#searchInput">search</A></DIV><!-- start content -->
+<P><B>Nonlinear control</B> is the area of <A title="Control engineering" 
+href="http://en.wikipedia.org/wiki/Control_engineering">control engineering</A> 
+specifically involved with systems that are <A title="Nonlinear system" 
+href="http://en.wikipedia.org/wiki/Nonlinear_system">nonlinear</A>, <A 
+title="Time-variant system" 
+href="http://en.wikipedia.org/wiki/Time-variant_system">time-variant</A>, or 
+both. Many well-established analysis and design techniques exist for <A 
+class=mw-redirect title="LTI system" 
+href="http://en.wikipedia.org/wiki/LTI_system">LTI systems</A> (e.g., <A 
+class=mw-redirect title=Root-locus 
+href="http://en.wikipedia.org/wiki/Root-locus">root-locus</A>, <A 
+title="Bode plot" href="http://en.wikipedia.org/wiki/Bode_plot">Bode plot</A>, 
+<A class=mw-redirect title="Nyquist criterion" 
+href="http://en.wikipedia.org/wiki/Nyquist_criterion">Nyquist criterion</A>, <A 
+title="Control theory" 
+href="http://en.wikipedia.org/wiki/Control_theory">state-feedback</A>, <A 
+title="Control theory" href="http://en.wikipedia.org/wiki/Control_theory">pole 
+placement</A>); however, one or both of the controller and the system under 
+control in a general <A title="Control system" 
+href="http://en.wikipedia.org/wiki/Control_system">control system</A> may not be 
+an LTI system, and so these methods cannot necessarily be applied directly. 
+Nonlinear control theory studies how to apply existing linear methods to these 
+more general control systems. Additionally, it provides novel control methods 
+that cannot be analyzed using LTI system theory. Even when LTI system theory can 
+be used for the analysis and design of a controller, a nonlinear controller can 
+have attractive characteristics (e.g., simplier implementation, increased speed, 
+or decreased control energy); however, nonlinear control theory usually requires 
+more rigorous <A title="Mathematical analysis" 
+href="http://en.wikipedia.org/wiki/Mathematical_analysis">mathematical 
+analysis</A> to justify its conclusions.</P>
+<TABLE class=toc id=toc summary=Contents>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV id=toctitle>
+      <H2>Contents</H2></DIV>
+      <UL>
+        <LI class=toclevel-1><A 
+        href="http://en.wikipedia.org/wiki/Nonlinear_control#Properties_of_nonlinear_systems"><SPAN 
+        class=tocnumber>1</SPAN> <SPAN class=toctext>Properties of nonlinear 
+        systems</SPAN></A> 
+        <LI class=toclevel-1><A 
+        href="http://en.wikipedia.org/wiki/Nonlinear_control#Analysis_and_control_of_nonlinear_systems"><SPAN 
+        class=tocnumber>2</SPAN> <SPAN class=toctext>Analysis and control of 
+        nonlinear systems</SPAN></A> 
+        <LI class=toclevel-1><A 
+        href="http://en.wikipedia.org/wiki/Nonlinear_control#Nonlinear_feedback_analysis_.E2.80.94_The_Lur.27e_problem"><SPAN 
+        class=tocnumber>3</SPAN> <SPAN class=toctext>Nonlinear feedback analysis 
+        — The Lur'e problem</SPAN></A> 
+        <UL>
+          <LI class=toclevel-2><A 
+          href="http://en.wikipedia.org/wiki/Nonlinear_control#Absolute_stability_problem"><SPAN 
+          class=tocnumber>3.1</SPAN> <SPAN class=toctext>Absolute stability 
+          problem</SPAN></A> 
+          <UL>
+            <LI class=toclevel-3><A 
+            href="http://en.wikipedia.org/wiki/Nonlinear_control#Popov_criterion"><SPAN 
+            class=tocnumber>3.1.1</SPAN> <SPAN class=toctext>Popov 
+            criterion</SPAN></A> </LI></UL></LI></UL>
+        <LI class=toclevel-1><A 
+        href="http://en.wikipedia.org/wiki/Nonlinear_control#Theoretical_Results_in_Nonlinear_Control"><SPAN 
+        class=tocnumber>4</SPAN> <SPAN class=toctext>Theoretical Results in 
+        Nonlinear Control</SPAN></A> 
+        <UL>
+          <LI class=toclevel-2><A 
+          href="http://en.wikipedia.org/wiki/Nonlinear_control#Frobenius_Theorem"><SPAN 
+          class=tocnumber>4.1</SPAN> <SPAN class=toctext>Frobenius 
+          Theorem</SPAN></A> </LI></UL>
+        <LI class=toclevel-1><A 
+        href="http://en.wikipedia.org/wiki/Nonlinear_control#Further_reading"><SPAN 
+        class=tocnumber>5</SPAN> <SPAN class=toctext>Further reading</SPAN></A> 
+        <LI class=toclevel-1><A 
+        href="http://en.wikipedia.org/wiki/Nonlinear_control#See_also"><SPAN 
+        class=tocnumber>6</SPAN> <SPAN class=toctext>See also</SPAN></A> 
+    </LI></UL></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</SCRIPT>
+
+<P><A id=Properties_of_nonlinear_systems 
+name=Properties_of_nonlinear_systems></A></P>
+<H2><SPAN class=editsection>[<A 
+title="Edit section: Properties of nonlinear systems" 
+href="http://en.wikipedia.org/w/index.php?title=Nonlinear_control&amp;action=edit&amp;section=1">edit</A>]</SPAN> 
+<SPAN class=mw-headline>Properties of nonlinear systems</SPAN></H2>
+<P>Some properties of nonlinear dynamic systems are</P>
+<UL>
+  <LI>They do not follow the principle of <A title=Superposition 
+  href="http://en.wikipedia.org/wiki/Superposition">superposition</A> (linearity 
+  and homogeneity). 
+  <LI>They may have multiple isolated equilibrium points. 
+  <LI>They may exhibit properties such as <A title=Limit-cycle 
+  href="http://en.wikipedia.org/wiki/Limit-cycle">limit-cycle</A>, <A 
+  title=Bifurcation 
+  href="http://en.wikipedia.org/wiki/Bifurcation">bifurcation</A>, <A 
+  title=Chaos href="http://en.wikipedia.org/wiki/Chaos">chaos</A>. 
+  <LI>Finite escape time: Solutions of nonlinear systems may not exist for all 
+  times. </LI></UL>
+<P><A id=Analysis_and_control_of_nonlinear_systems 
+name=Analysis_and_control_of_nonlinear_systems></A></P>
+<H2><SPAN class=editsection>[<A 
+title="Edit section: Analysis and control of nonlinear systems" 
+href="http://en.wikipedia.org/w/index.php?title=Nonlinear_control&amp;action=edit&amp;section=2">edit</A>]</SPAN> 
+<SPAN class=mw-headline>Analysis and control of nonlinear systems</SPAN></H2>
+<P>There are several well-developed techniques for analyzing nonlinear feedback 
+systems:</P>
+<UL>
+  <LI><A title="Describing function" 
+  href="http://en.wikipedia.org/wiki/Describing_function">Describing 
+  function</A> method 
+  <LI><A title="Phase plane method" 
+  href="http://en.wikipedia.org/wiki/Phase_plane_method">Phase plane</A> method 
+  <LI><A title="Lyapunov stability" 
+  href="http://en.wikipedia.org/wiki/Lyapunov_stability">Lyapunov stability</A> 
+  analysis 
+  <LI><A title="Singular perturbation" 
+  href="http://en.wikipedia.org/wiki/Singular_perturbation">Singular 
+  perturbation</A> method 
+  <LI><A title="Vasile M. Popov" 
+  href="http://en.wikipedia.org/wiki/Vasile_M._Popov">Popov</A> criterion 
+  (described in <I>The Lur'e Problem</I> below) 
+  <LI><A class=mw-redirect title="Center manifold theorem" 
+  href="http://en.wikipedia.org/wiki/Center_manifold_theorem">Center manifold 
+  theorem</A> 
+  <LI><A title="Small-gain theorem" 
+  href="http://en.wikipedia.org/wiki/Small-gain_theorem">Small-gain theorem</A> 
+  <LI><A class=new title="Passivity analysis (page does not exist)" 
+  href="http://en.wikipedia.org/w/index.php?title=Passivity_analysis&amp;action=edit&amp;redlink=1">Passivity 
+  analysis</A> </LI></UL>
+<P>Control design techniques for nonlinear systems also exist. These can be 
+subdivided into techniques which attempt to treat the system as a linear system 
+in a limited range of operation and use (well-known) linear design techniques 
+for each region:</P>
+<UL>
+  <LI><A title="Gain scheduling" 
+  href="http://en.wikipedia.org/wiki/Gain_scheduling">Gain scheduling</A> 
+</LI></UL>
+<P>Those that attempt to introduce auxiliary nonlinear feedback in such a way 
+that the system can be treated as linear for purposes of control design:</P>
+<UL>
+  <LI><A title="Feedback linearization" 
+  href="http://en.wikipedia.org/wiki/Feedback_linearization">Feedback 
+  linearization</A> </LI></UL>
+<P>And <A title="Aleksandr Lyapunov" 
+href="http://en.wikipedia.org/wiki/Aleksandr_Lyapunov">Lyapunov</A> based 
+methods:</P>
+<UL>
+  <LI><A title="Lyapunov redesign" 
+  href="http://en.wikipedia.org/wiki/Lyapunov_redesign">Lyapunov redesign</A> 
+  <LI><A class=new title="Nonlinear damping (page does not exist)" 
+  href="http://en.wikipedia.org/w/index.php?title=Nonlinear_damping&amp;action=edit&amp;redlink=1">Nonlinear 
+  damping</A> 
+  <LI><A title=Backstepping 
+  href="http://en.wikipedia.org/wiki/Backstepping">Backstepping</A> 
+  <LI><A title="Sliding mode control" 
+  href="http://en.wikipedia.org/wiki/Sliding_mode_control">Sliding mode 
+  control</A> </LI></UL>
+<P><A id=Nonlinear_feedback_analysis_.E2.80.94_The_Lur.27e_problem 
+name=Nonlinear_feedback_analysis_.E2.80.94_The_Lur.27e_problem></A></P>
+<H2><SPAN class=editsection>[<A 
+title="Edit section: Nonlinear feedback analysis &amp;mdash; The Lur'e problem" 
+href="http://en.wikipedia.org/w/index.php?title=Nonlinear_control&amp;action=edit&amp;section=3">edit</A>]</SPAN> 
+<SPAN class=mw-headline>Nonlinear feedback analysis — The Lur'e 
+problem</SPAN></H2>
+<P>An early nonlinear feedback system analysis problem was formulated by <A 
+class=new title="A. I. Lur'e (page does not exist)" 
+href="http://en.wikipedia.org/w/index.php?title=A._I._Lur%27e&amp;action=edit&amp;redlink=1">A. 
+I. Lur'e</A>. Control systems described by the Lur'e problem have a forward path 
+that is linear and time-invariant, and a feedback path that contains a 
+memory-less, possibly time-varying, static nonlinearity.</P>
+<DL>
+  <DD><A class=image title="Lur'e Problem Block Diagram" 
+  href="http://en.wikipedia.org/wiki/File:Lure.png"><IMG height=177 
+  alt="Lur'e Problem Block Diagram" 
+  src="Nonlinear control - Wikipedia, the free encyclopedia_files/Lure.png" 
+  width=416 border=0></A> </DD></DL>
+<P>The linear part can be characterized by four matrices (A,B,C,D), while the 
+nonlinear part is Φ(y) with <IMG class=tex 
+alt="\frac{\Phi(y)}{y} \in [a,b],\quad a<b \quad \forall y " 
+src="Nonlinear control - Wikipedia, the free encyclopedia_files/23793364ddb9c9880c2cf64a4ad7cf4f.png"> 
+(a sector nonlinearity).</P>
+<P><A id=Absolute_stability_problem name=Absolute_stability_problem></A></P>
+<H3><SPAN class=editsection>[<A title="Edit section: Absolute stability problem" 
+href="http://en.wikipedia.org/w/index.php?title=Nonlinear_control&amp;action=edit&amp;section=4">edit</A>]</SPAN> 
+<SPAN class=mw-headline>Absolute stability problem</SPAN></H3>
+<P>Consider:</P>
+<OL>
+  <LI>(A,B) is controllable and (C,A) is observable 
+  <LI>two real numbers a, b with a&lt;b, defining a sector for function Φ 
+</LI></OL>
+<P>The problem is to derive conditions involving only the transfer matrix H(s) 
+and {a,b} such that x=0 is a globally uniformly asymptotically stable 
+equilibrium of the system. This is known as the Lur'e problem.</P>
+<P>There are two main theorems concerning the problem:</P>
+<UL>
+  <LI>The <A title="Circle criterion" 
+  href="http://en.wikipedia.org/wiki/Circle_criterion">Circle criterion</A> 
+  <LI>The <A class=mw-redirect title="Vasile M Popov" 
+  href="http://en.wikipedia.org/wiki/Vasile_M_Popov">Popov</A> criterion. 
+</LI></UL>
+<P><A id=Popov_criterion name=Popov_criterion></A></P>
+<H4><SPAN class=editsection>[<A title="Edit section: Popov criterion" 
+href="http://en.wikipedia.org/w/index.php?title=Nonlinear_control&amp;action=edit&amp;section=5">edit</A>]</SPAN> 
+<SPAN class=mw-headline>Popov criterion</SPAN></H4>
+<P>The sub-class of Lur'e systems studied by <A class=mw-redirect 
+title="Vasile M Popov" 
+href="http://en.wikipedia.org/wiki/Vasile_M_Popov">Popov</A> is described 
+by:</P>
+<P><IMG class=tex 
+alt="&#10;\begin{matrix}&#10;\dot{x}&amp;=&amp;Ax+bu \\&#10;\dot{\xi}&amp;=&amp;u  \\&#10;y&amp;=&amp;cx+d\xi \quad (1) &#10;\end{matrix} " 
+src="Nonlinear control - Wikipedia, the free encyclopedia_files/cd694e4354e4fe6e923a7da342acec67.png"></P>
+<P><IMG class=tex alt=" \begin{matrix} u = -\phi (y) \quad (2) \end{matrix} " 
+src="Nonlinear control - Wikipedia, the free encyclopedia_files/4558302a1c6ab803d8e6016b01bb2a6f.png"></P>
+<P>where x ∈ R<SUP>n</SUP>, ξ,u,y are scalars and A,b,c,d have commensurate 
+dimensions. The nonlinear element Φ: R → R is a time-invariant nonlinearity 
+belonging to <I>open sector</I> (0, ∞). This means that</P>
+<DL>
+  <DD>Φ(0) = 0, y Φ(y) &gt; 0, ∀ y ≠ 0; </DD></DL>
+<P>The transfer function from u to y is given by<BR></P>
+<DL>
+  <DD><IMG class=tex alt=" H(s) = \frac{d}{s} + c(sI-A)^{-1}b \quad \quad" 
+  src="Nonlinear control - Wikipedia, the free encyclopedia_files/b8818085a09ba5c8a3c2cad2002b1c20.png"> 
+  </DD></DL>
+<P><BR><B>Theorem:</B> Consider the system (1)-(2) and suppose</P>
+<OL>
+  <LI>A is <A class=mw-redirect title="Routh Hurwitz stability criterion" 
+  href="http://en.wikipedia.org/wiki/Routh_Hurwitz_stability_criterion">Hurwitz</A> 
+
+  <LI>(A,b) is controllable 
+  <LI>(A,c) is observable 
+  <LI>d&gt;0 and 
+  <LI>Φ ∈ (0,∞) </LI></OL>
+<P>then the system is <A class=new 
+title="Globally asymptotically stable (page does not exist)" 
+href="http://en.wikipedia.org/w/index.php?title=Globally_asymptotically_stable&amp;action=edit&amp;redlink=1">globally 
+asymptotically stable</A> if there exists a number r&gt;0 such that<BR>inf<SUB>ω 
+∈ R</SUB> Re[(1+jωr)h(jω)] &gt; 0 .</P>
+<P><BR>Things to be noted:</P>
+<UL>
+  <LI>The Popov criterion is applicable only to autonomous systems 
+  <LI>The system studied by Popov has a pole at the origin and there is no 
+  direct pass-through from input to output 
+  <LI>The nonlinearity Φ must satisfy an open sector condition </LI></UL>
+<P><A id=Theoretical_Results_in_Nonlinear_Control 
+name=Theoretical_Results_in_Nonlinear_Control></A></P>
+<H2><SPAN class=editsection>[<A 
+title="Edit section: Theoretical Results in Nonlinear Control" 
+href="http://en.wikipedia.org/w/index.php?title=Nonlinear_control&amp;action=edit&amp;section=6">edit</A>]</SPAN> 
+<SPAN class=mw-headline>Theoretical Results in Nonlinear Control</SPAN></H2>
+<P><A id=Frobenius_Theorem name=Frobenius_Theorem></A></P>
+<H3><SPAN class=editsection>[<A title="Edit section: Frobenius Theorem" 
+href="http://en.wikipedia.org/w/index.php?title=Nonlinear_control&amp;action=edit&amp;section=7">edit</A>]</SPAN> 
+<SPAN class=mw-headline>Frobenius Theorem</SPAN></H3>
+<P>The <A title="Frobenius theorem (differential topology)" 
+href="http://en.wikipedia.org/wiki/Frobenius_theorem_(differential_topology)">Frobenius 
+theorem</A> is a deep result in Differential Geometry. When applied to Nonlinear 
+Control, it says the following: Given a system of the form</P>
+<P><IMG class=tex alt=" \dot x = \sum_{i=1}^n f_i(x) u_i(t) \, " 
+src="Nonlinear control - Wikipedia, the free encyclopedia_files/38aeca5cb70922a8d4614e41a4243a2a.png"></P>
+<P>where <SPAN class=texhtml><I>f</I><SUB><I>i</I></SUB></SPAN> are vector 
+fields belonging to a distribution <SPAN class=texhtml>Δ</SPAN> and <SPAN 
+class=texhtml><I>u</I>(<I>t</I>)</SPAN> are control functions, the integral 
+curves of <SPAN class=texhtml><I>x</I></SPAN> are restricted to a manifold of 
+dimension <SPAN class=texhtml><I>m</I></SPAN> if span(<SPAN class=texhtml>Δ) = 
+<I>m</I></SPAN> and <SPAN class=texhtml>Δ</SPAN> is an <A class=mw-redirect 
+title=Involutive href="http://en.wikipedia.org/wiki/Involutive">involutive</A> 
+distribution.</P>
+<P><A id=Further_reading name=Further_reading></A></P>
+<H2><SPAN class=editsection>[<A title="Edit section: Further reading" 
+href="http://en.wikipedia.org/w/index.php?title=Nonlinear_control&amp;action=edit&amp;section=8">edit</A>]</SPAN> 
+<SPAN class=mw-headline>Further reading</SPAN></H2>
+<DIV class=references-small style="MARGIN-LEFT: 1.5em">
+<UL>
+  <LI>A. I. Lur'e and V. N. Postnikov, "On the theory of stability of control 
+  systems," <I>Applied mathematics and mechanics</I>, 8(3), 1944, (in Russian). 
+  <LI>M. Vidyasagar, <I>Nonlinear Systems Analysis</I>, 2<SUP>nd</SUP> edition, 
+  Prentice Hall, Englewood Cliffs, New Jersey 07632. 
+  <LI>A. Isidori, <I>Nonlinear Control Systems,</I> 3<SUP>rd</SUP> edition, 
+  Springer Verlag, London, 1995. 
+  <LI>H. K. Khalil, <I>Nonlinear Systems,</I> 3<SUP>rd</SUP> edition, Prentice 
+  Hall, Upper Saddle River, New Jersey, 2002. <A class=internal 
+  href="http://en.wikipedia.org/wiki/Special:BookSources/0130673897">ISBN 
+  0130673897</A> 
+  <LI>B. Brogliato, R. Lozano, B. Maschke, O. Egeland, "Dissipative Systems 
+  Analysis and Control", Springer Verlag, London, 2<SUP>nd</SUP> editon, 2007. 
+  </LI></UL></DIV>
+<P><A id=See_also name=See_also></A></P>
+<H2><SPAN class=editsection>[<A title="Edit section: See also" 
+href="http://en.wikipedia.org/w/index.php?title=Nonlinear_control&amp;action=edit&amp;section=9">edit</A>]</SPAN> 
+<SPAN class=mw-headline>See also</SPAN></H2>
+<UL>
+  <LI><A title="Phase-locked loop" 
+  href="http://en.wikipedia.org/wiki/Phase-locked_loop">Phase-locked loop</A> 
+  <LI><A class="external free" 
+  title=http://www.mne.ksu.edu/research/laboratories/nonlinear-controls-lab 
+  href="http://www.mne.ksu.edu/research/laboratories/nonlinear-controls-lab" 
+  rel=nofollow>http://www.mne.ksu.edu/research/laboratories/nonlinear-controls-lab</A> 
+  </LI></UL><!-- 
+NewPP limit report
+Preprocessor node count: 70/1000000
+Post-expand include size: 63/2048000 bytes
+Template argument size: 0/2048000 bytes
+Expensive parser function count: 0/500
+--><!-- Saved in parser cache with key enwiki:pcache:idhash:3359147-0!1!0!default!!en!2 and timestamp 20090321191722 -->
+<DIV class=printfooter>Retrieved from "<A 
+href="http://en.wikipedia.org/wiki/Nonlinear_control">http://en.wikipedia.org/wiki/Nonlinear_control</A>"</DIV>
+<DIV class=catlinks id=catlinks>
+<DIV id=mw-normal-catlinks><A title=Special:Categories 
+href="http://en.wikipedia.org/wiki/Special:Categories">Categories</A>: <SPAN 
+dir=ltr><A title="Category:Nonlinear control" 
+href="http://en.wikipedia.org/wiki/Category:Nonlinear_control">Nonlinear 
+control</A></SPAN></DIV></DIV><!-- end content -->
+<DIV class=visualClear></DIV></DIV></DIV></DIV>
+<DIV id=column-one>
+<DIV class=portlet id=p-cactions>
+<H5>Views</H5>
+<DIV class=pBody>
+<UL>
+  <LI class=selected id=ca-nstab-main><A title="View the content page [c]" 
+  accessKey=c href="http://en.wikipedia.org/wiki/Nonlinear_control">Article</A> 
+  <LI id=ca-talk><A title="Discussion about the content page [t]" accessKey=t 
+  href="http://en.wikipedia.org/wiki/Talk:Nonlinear_control">Discussion</A> 
+  <LI id=ca-edit><A 
+  title="You can edit this page. &#10;Please use the preview button before saving. [e]" 
+  accessKey=e 
+  href="http://en.wikipedia.org/w/index.php?title=Nonlinear_control&amp;action=edit">Edit 
+  this page</A> 
+  <LI id=ca-history><A title="Past versions of this page [h]" accessKey=h 
+  href="http://en.wikipedia.org/w/index.php?title=Nonlinear_control&amp;action=history">History</A> 
+  </LI></UL></DIV></DIV>
+<DIV class=portlet id=p-personal>
+<H5>Personal tools</H5>
+<DIV class=pBody>
+<UL>
+  <LI id=pt-login><A 
+  title="You are encouraged to log in; however, it is not mandatory. [o]" 
+  accessKey=o 
+  href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Nonlinear_control">Log 
+  in / create account</A> </LI></UL></DIV></DIV>
+<DIV class=portlet id=p-logo><A title="Visit the main page [z]" 
+style="BACKGROUND-IMAGE: url(http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png)" 
+accessKey=z href="http://en.wikipedia.org/wiki/Main_Page"></A></DIV>
+<SCRIPT type=text/javascript> if (window.isMSIE55) fixalpha(); </SCRIPT>
+
+<DIV class="generated-sidebar portlet" id=p-navigation>
+<H5>Navigation</H5>
+<DIV class=pBody>
+<UL>
+  <LI id=n-mainpage-description><A title="Visit the main page [z]" accessKey=z 
+  href="http://en.wikipedia.org/wiki/Main_Page">Main page</A> 
+  <LI id=n-contents><A title="Guides to browsing Wikipedia" 
+  href="http://en.wikipedia.org/wiki/Portal:Contents">Contents</A> 
+  <LI id=n-featuredcontent><A title="Featured content — the best of Wikipedia" 
+  href="http://en.wikipedia.org/wiki/Portal:Featured_content">Featured 
+  content</A> 
+  <LI id=n-currentevents><A 
+  title="Find background information on current events" 
+  href="http://en.wikipedia.org/wiki/Portal:Current_events">Current events</A> 
+  <LI id=n-randompage><A title="Load a random article [x]" accessKey=x 
+  href="http://en.wikipedia.org/wiki/Special:Random">Random article</A> 
+</LI></UL></DIV></DIV>
+<DIV class=portlet id=p-search>
+<H5><LABEL for=searchInput>Search</LABEL></H5>
+<DIV class=pBody id=searchBody>
+<FORM id=searchform action=/wiki/Special:Search>
+<DIV><INPUT id=searchInput title="Search Wikipedia [f]" accessKey=f name=search> 
+<INPUT class=searchButton id=searchGoButton title="Go to a page with this exact name if one exists" type=submit value=Go name=go>&nbsp; 
+<INPUT class=searchButton id=mw-searchButton title="Search Wikipedia for this text" type=submit value=Search name=fulltext> 
+</DIV></FORM></DIV></DIV>
+<DIV class="generated-sidebar portlet" id=p-interaction>
+<H5>Interaction</H5>
+<DIV class=pBody>
+<UL>
+  <LI id=n-aboutsite><A title="Find out about Wikipedia" 
+  href="http://en.wikipedia.org/wiki/Wikipedia:About">About Wikipedia</A> 
+  <LI id=n-portal><A 
+  title="About the project, what you can do, where to find things" 
+  href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal">Community 
+  portal</A> 
+  <LI id=n-recentchanges><A title="The list of recent changes in the wiki [r]" 
+  accessKey=r href="http://en.wikipedia.org/wiki/Special:RecentChanges">Recent 
+  changes</A> 
+  <LI id=n-contact><A title="How to contact Wikipedia" 
+  href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</A> 
+
+  <LI id=n-sitesupport><A title="Support us" 
+  href="http://wikimediafoundation.org/wiki/Donate">Donate to Wikipedia</A> 
+  <LI id=n-help><A title="Guidance on how to use and edit Wikipedia" 
+  href="http://en.wikipedia.org/wiki/Help:Contents">Help</A> 
+</LI></UL></DIV></DIV>
+<DIV class=portlet id=p-tb>
+<H5>Toolbox</H5>
+<DIV class=pBody>
+<UL>
+  <LI id=t-whatlinkshere><A 
+  title="List of all English Wikipedia pages containing links to this page [j]" 
+  accessKey=j 
+  href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Nonlinear_control">What 
+  links here</A> 
+  <LI id=t-recentchangeslinked><A 
+  title="Recent changes in pages linked from this page [k]" accessKey=k 
+  href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Nonlinear_control">Related 
+  changes</A> 
+  <LI id=t-upload><A title="Upload files [u]" accessKey=u 
+  href="http://en.wikipedia.org/wiki/Wikipedia:Upload">Upload file</A> 
+  <LI id=t-specialpages><A title="List of all special pages [q]" accessKey=q 
+  href="http://en.wikipedia.org/wiki/Special:SpecialPages">Special pages</A> 
+  <LI id=t-print><A title="Printable version of this page [p]" accessKey=p 
+  href="http://en.wikipedia.org/w/index.php?title=Nonlinear_control&amp;printable=yes" 
+  rel=alternate>Printable version</A> 
+  <LI id=t-permalink><A title="Permanent link to this version of the page" 
+  href="http://en.wikipedia.org/w/index.php?title=Nonlinear_control&amp;oldid=271365361">Permanent 
+  link</A>
+  <LI id=t-cite><A 
+  href="http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Nonlinear_control&amp;id=271365361">Cite 
+  this page</A> </LI></UL></DIV></DIV>
+<DIV class=portlet id=p-lang>
+<H5>Languages</H5>
+<DIV class=pBody>
+<UL>
+  <LI class=interwiki-ru><A 
+  href="http://ru.wikipedia.org/wiki/ÐÐµÐ»Ð¸Ð½ÐµÐ¹Ð½Ð¾Ðµ_ÑÐ¿ÑÐ°Ð²Ð»ÐµÐ½Ð¸Ðµ">Русский</A> 
+
+  <LI class=interwiki-es><A 
+  href="http://es.wikipedia.org/wiki/Control_no_lineal">Español</A> 
+</LI></UL></DIV></DIV></DIV><!-- end of the left (by default at least) column -->
+<DIV class=visualClear></DIV>
+<DIV id=footer>
+<DIV id=f-poweredbyico><A href="http://www.mediawiki.org/"><IMG 
+alt="Powered by MediaWiki" 
+src="Nonlinear control - Wikipedia, the free encyclopedia_files/poweredby_mediawiki_88x31.png"></A></DIV>
+<DIV id=f-copyrightico><A href="http://wikimediafoundation.org/"><IMG 
+alt="Wikimedia Foundation" 
+src="Nonlinear control - Wikipedia, the free encyclopedia_files/wikimedia-button.png" 
+border=0></A></DIV>
+<UL id=f-list>
+  <LI id=lastmod>This page was last modified on 17 February 2009, at 16:35. 
+  <LI id=copyright>All text is available under the terms of the <A 
+  class=internal title="Wikipedia:Text of the GNU Free Documentation License" 
+  href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License">GNU 
+  Free Documentation License</A>. (See <B><A class=internal 
+  title=Wikipedia:Copyrights 
+  href="http://en.wikipedia.org/wiki/Wikipedia:Copyrights">Copyrights</A></B> 
+  for details.) <BR>Wikipedia® is a registered trademark of the <A 
+  href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</A>, a 
+  U.S. registered <A class=internal title=501(c)(3) 
+  href="http://en.wikipedia.org/wiki/501(c)#501.28c.29.283.29">501(c)(3)</A> <A 
+  href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</A> 
+  <A class=internal title="Non-profit organization" 
+  href="http://en.wikipedia.org/wiki/Non-profit_organization">nonprofit</A> <A 
+  title="Charitable organization" 
+  href="http://en.wikipedia.org/wiki/Charitable_organization">charity</A>.<BR>
+  <LI id=privacy><A title="wikimedia:Privacy policy" 
+  href="http://wikimediafoundation.org/wiki/Privacy_policy">Privacy policy</A> 
+  <LI id=about><A title=Wikipedia:About 
+  href="http://en.wikipedia.org/wiki/Wikipedia:About">About Wikipedia</A> 
+  <LI id=disclaimer><A title="Wikipedia:General disclaimer" 
+  href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer">Disclaimers</A> 
+  </LI></UL></DIV></DIV>
+<SCRIPT type=text/javascript>if (window.runOnloadHook) runOnloadHook();</SCRIPT>
+<!-- Served by srv138 in 0.057 secs. --></BODY></HTML>

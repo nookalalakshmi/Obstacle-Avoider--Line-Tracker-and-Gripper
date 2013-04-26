@@ -1,0 +1,688 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0072)http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD id=pageHead><TITLE>Koders Code Search: usb.h - C</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=noarchive,index,follow name=robots>
+<META content=noarchive,index,follow name=GOOGLEBOT><LINK title="Koders search" 
+href="http://www.koders.com/search/KodersDescriptionOS1_1.xml" 
+type=application/opensearchdescription+xml rel=search><LINK 
+title="Koders Projects search" 
+href="http://www.koders.com/search/KodersDescriptionOS1_1Proj.xml" 
+type=application/opensearchdescription+xml rel=search><LINK 
+href="Koders Code Search usb_h - C_files/styles.css" type=text/css 
+rel=stylesheet><!--[if IE]><LINK 
+href="Koders Code Search usb_h - C_files/iestyles.css" type=text/css 
+rel=stylesheet><![endif]--><LINK 
+href="Koders Code Search usb_h - C_files/koders.com.css" type=text/css 
+rel=stylesheet>
+<META content=NOARCHIVE name=ROBOTS><LINK 
+href="Koders Code Search usb_h - C_files/home-page.css" type=text/css 
+rel=stylesheet>
+<SCRIPT language=javascript type=text/javascript>
+//Copyright (c) 2005-2007 Koders.com,
+//All Rights Reserved.
+var anchors;
+var symbolSegment = 0;
+var max = 0;
+	
+function assignInitial() {
+	var codeDiv = document.getElementById("CodeDiv");
+	if(codeDiv != null) {
+		anchors = codeDiv.getElementsByTagName("a");
+		assignR(300);
+	}
+}
+
+function assignR(max) {
+	if(symbolSegment + max >= anchors.length) {
+		max = anchors.length - symbolSegment; 
+	}
+	for(var i = 0; i < max; i++) {
+		var temp = "";
+		var index = symbolSegment +  i;
+		var anchor = anchors[index];
+
+		for(var k = 0; k < anchor.childNodes.length; k++) {
+			if(anchor.childNodes[k].data == undefined) {
+				temp = temp + anchor.childNodes[k].childNodes[0].data;
+			}
+			else {
+				temp = temp + anchor.childNodes[k].data;
+			}
+		}
+		
+		anchors[index].setAttribute("href", "javascript:searchRef('" + temp + "')");
+		anchors[index].setAttribute("title", "Search for references of '" + temp + "'");
+	}
+	
+	if(symbolSegment + max < anchors.length) { 
+		symbolSegment += max;
+		this.setTimeout("assignR(50)", 200);		
+	}
+	
+}
+
+function searchRef(symbol) {
+	location = homeUrl + "?s=" + symbol + "&scope=" + projectID + "&la=" + sourceLanguage;
+}
+
+function Hide(element) {
+	if(element) {
+		element.style.visibility = "hidden";
+		element.style.display = "none";
+	} 
+}
+
+function HideBanner() {
+	var eleArray = document.getElementsByTagName('div');
+	for(var i = 0; i < eleArray.length; i++) {
+		if(!eleArray[i] || !eleArray[i].id) {
+			continue;
+		}
+
+		var id = eleArray[i].id;
+		if(id && id.indexOf("RightBanner") != -1){
+			Hide(eleArray[i]);
+								
+			// hide all the iframes nested in the Banner
+			var arrIframe = eleArray[i].getElementsByTagName('iframe');
+			if(!arrIframe)
+				return;
+			
+			for(var j = 0; j < arrIframe.length; j++) {
+				Hide(arrIframe[j]);
+			}
+		}
+	}
+}
+
+var dojo;
+if(dojo) dojo.addOnLoad(assignInitial);
+else window.onload = assignInitial;
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=FRM name=FRM 
+action=kv.aspx?fid=80B14E8AFB325AE75EDBD5DA480E1E48C740555A method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT id=__VIEWSTATE 
+type=hidden 
+value=/wEPDwUJMTYzMDIzMzAwD2QWBgIBD2QWAgIGDw8WBB4GRmlsZUlEAuGpsQYeCVByb2plY3RJRAK43QFkZAIFD2QWBAIDD2QWAmYPZBYIAgEPDxYCHgtOYXZpZ2F0ZVVybAUBL2QWAmYPDxYCHghJbWFnZVVybAVBaHR0cDovL21lZGlhLmJsYWNrZHVja3NvZnR3YXJlLmNvbS9rb2RlcnMvYmRzL2xvZ29fbWVkX3RhZ19iZC5naWZkZAIHDxAPFgIeC18hRGF0YUJvdW5kZ2QQFSINQWxsIExhbmd1YWdlcwxBY3Rpb25TY3JpcHQDQWRhA0FTUAdBU1AuTkVUCUFzc2VtYmxlcgFDAkMjA0MrKwVDb2JvbApDb2xkRnVzaW9uBkRlbHBoaQZFaWZmZWwGRXJsYW5nB0ZvcnRyYW4ESmF2YQpKYXZhU2NyaXB0A0pTUARMaXNwA0x1YQtNYXRoZW1hdGljYQZNYXRsYWIKT2JqZWN0aXZlQwRQZXJsA1BIUAZQcm9sb2cGUHl0aG9uBFJ1YnkGU2NoZW1lCVNtYWxsdGFsawNTUUwDVGNsAlZCBlZCLk5FVBUiASoMQWN0aW9uU2NyaXB0A0FkYQNBU1AHQVNQLk5FVAlBc3NlbWJsZXIBQwJDIwNDcHAFQ29ib2wKQ29sZEZ1c2lvbgZEZWxwaGkGRWlmZmVsBkVybGFuZwdGb3J0cmFuBEphdmEKSmF2YVNjcmlwdANKU1AETGlzcANMdWELTWF0aGVtYXRpY2EGTWF0bGFiCk9iamVjdGl2ZUMEUGVybANQSFAGUHJvbG9nBlB5dGhvbgRSdWJ5BlNjaGVtZQlTbWFsbHRhbGsDU1FMA1RjbAJWQgZWQi5ORVQUKwMiZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2RkAgkPEA8WAh8EZ2QQFR0MQWxsIExpY2Vuc2VzA0FGTARBTDIwA0FTTARBUFNMA0JTRANDUEwFRVBMMTAER1RQTANHUEwETEdQTAVJQk1QTARJT1NMBE1TQ0wETVNQTARNU1JMB01TVlNTREsETUlURAVNUEwxMAVNUEwxMQVOUEwxMAVOUEwxMQNPU0wEUFNGTAJTTANTUEwDVzNDA1pMTANaUEwVHQEqA0FGTARBTDIwA0FTTARBUFNMA0JTRANDUEwFRVBMMTAER1RQTANHUEwETEdQTAVJQk1QTARJT1NMBE1TQ0wETVNQTARNU1JMB01TVlNTREsETUlURAVNUEwxMAVNUEwxMQVOUEwxMAVOUEwxMQNPU0wEUFNGTAJTTANTUEwDVzNDA1pMTANaUEwUKwMdZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dkZAILDw8WAh8CBTBodHRwOi8vd3d3LmtvZGVycy5jb20vY29ycC9zdXBwb3J0L2xpY2Vuc2UtaW5mby9kFgJmDxYCHgNzcmMFEy9pbWFnZXMvaW5mb18xNi5naWZkAgkPDxYCHgdWaXNpYmxlZ2QWCmYPDxYEHwMFFC9pbWFnZXMvZG93bmxvYWQuZ2lmHgdUb29sVGlwBQ5Eb3dubG9hZCB1c2IuaGRkAgIPFgIeC18hSXRlbUNvdW50AgEWAmYPZBYCZg8VBQV1c2IuaAFDAAAITE9DOiAxNTJkAgMPFgIfCAIBFgJmD2QWBmYPFQKgAmhwaW5nMiBpcyBhbiBpbnRlcmFjdGl2ZSBwYWNrZXQgY29zdHJ1Y3RvciBhbmQgcmVzcG9uc2VzIGFuYWx5emVyIHRoYXQgdXNlcyB0aGUgc2FtZSBDTEkgb2YgdGhlIHBpbmcgcHJvZ3JhbSAoYnV0IHdpdGggYSBsb3Qgb2YgZXh0ZW5zaW9ucykuIEl0IGNhbiBiZSB1c2VkIHRvIHBlcmZvcm1zIGEgbG90IG9mIHRhc2tzLCBsaWtlIHRlc3Rpbmcgb2YgZmlyZXdhbGwgcnVsZXMsIChzcG9vZmVkKSBwb3J0IHNjYW5uaW5nLCBldCBjZXRlcmEuICAgICAgICAgICBEb25hdGUgdG8gaHBpbmcyICAgICANCiANCjcvaW5mby5hc3B4P2M9UHJvamVjdEluZm8mcGlkPUExRUtOQk40RUg1NkRTS0EyS1lIRjVQM1hFZAIBD2QWAmYPFQEGaHBpbmcyZAICDxUCC1NvdXJjZUZvcmdlA2N2c2QCBQ9kFgJmD2QWBgIBDw8WAh8CBTcvaW5mby5hc3B4P2M9UHJvamVjdEluZm8mcGlkPUExRUtOQk40RUg1NkRTS0EyS1lIRjVQM1hFZBYCZg8PFgQfAwUSL2ltYWdlcy9mb2xkZXIuZ2lmHwcFMFNvdXJjZUZvcmdlXGhcaHBpbmcyXGhwaW5nMlxzMTBzaFxsaWJ1c2ItMC4xLjNiXGRkAgMPDxYEHgRUZXh0BSQuLi5ocGluZzJcczEwc2hcbGlidXNiJiM4MjA5OzAuMS4zYlwfBwUwU291cmNlRm9yZ2VcaFxocGluZzJcaHBpbmcyXHMxMHNoXGxpYnVzYi0wLjEuM2JcZGQCBQ8WAh8IAhZkAgcPFgIfBmhkAgcPFgIfCQWjAzxzY3JpcHQgdHlwZT0idGV4dC9qYXZhc2NyaXB0Ij4NCnZhciBnYUpzSG9zdCA9ICgoImh0dHBzOiIgPT0gZG9jdW1lbnQubG9jYXRpb24ucHJvdG9jb2wpID8gImh0dHBzOi8vc3NsLiIgOiAiaHR0cDovL3d3dy4iKTsNCmRvY3VtZW50LndyaXRlKHVuZXNjYXBlKCIlM0NzY3JpcHQgc3JjPSciICsgZ2FKc0hvc3QgKyAiZ29vZ2xlLWFuYWx5dGljcy5jb20vZ2EuanMnIHR5cGU9J3RleHQvamF2YXNjcmlwdCclM0UlM0Mvc2NyaXB0JTNFIikpOw0KPC9zY3JpcHQ+DQo8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+DQp2YXIgcGFnZVRyYWNrZXIgPSBfZ2F0Ll9nZXRUcmFja2VyKCJVQS0xNDUwNDgwLTMiKTsNCnBhZ2VUcmFja2VyLl9pbml0RGF0YSgpOw0KcGFnZVRyYWNrZXIuX3RyYWNrUGFnZXZpZXcoKTsNCjwvc2NyaXB0Pg0KZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAQUaS29kZXZpZXdlcjEkRG93bmxvYWRCdXR0b24= 
+name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['FRM'];
+if (!theForm) {
+    theForm = document.FRM;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<SCRIPT src="Koders Code Search usb_h - C_files/WebResource.axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="Koders Code Search usb_h - C_files/ScriptResource.axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="C:\ATMEGA8_Programmer\new\Koders Code Search usb_h - C_files\ScriptResource(1).axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="Koders Code Search usb_h - C_files/js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl05$scriptManager', document.getElementById('FRM'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);
+//]]>
+</SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD 
+    style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 2px; WIDTH: 425px; PADDING-TOP: 8px" 
+    align=left>
+      <TABLE id=t1 cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD style="WHITE-SPACE: nowrap" noWrap><A id=ctl03_Home 
+            href="http://www.koders.com/"><IMG id=ctl03_imgLogo 
+            style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-LEFT-COLOR: #000000; BORDER-BOTTOM-WIDTH: 0px; BORDER-BOTTOM-COLOR: #000000; WIDTH: 141px; BORDER-TOP-COLOR: #000000; HEIGHT: 32px; BORDER-RIGHT-WIDTH: 0px; BORDER-RIGHT-COLOR: #000000" 
+            hspace=0 
+            src="Koders Code Search usb_h - C_files/logo_med_tag_bd.gif" 
+            vspace=6></A> </TD>
+          <TD style="WHITE-SPACE: nowrap" noWrap><INPUT class=tbSearchSmall 
+            id=ctl03_ctl00_s style="WIDTH: 200px" maxLength=128 value=usb.h 
+            name=ctl03$ctl00$s> <INPUT class=btnSearch id=ctl03_btnSearch type=submit value=Search name=ctl03$btnSearch><INPUT 
+            style="DISPLAY: none"><BR>Filter: <SELECT id=ctl03_Languages 
+            name=ctl03$Languages> <OPTION value=* selected>All 
+              Languages</OPTION> <OPTION 
+              value=ActionScript>ActionScript</OPTION> <OPTION 
+              value=Ada>Ada</OPTION> <OPTION value=ASP>ASP</OPTION> <OPTION 
+              value=ASP.NET>ASP.NET</OPTION> <OPTION 
+              value=Assembler>Assembler</OPTION> <OPTION value=C>C</OPTION> 
+              <OPTION value=C#>C#</OPTION> <OPTION value=Cpp>C++</OPTION> 
+              <OPTION value=Cobol>Cobol</OPTION> <OPTION 
+              value=ColdFusion>ColdFusion</OPTION> <OPTION 
+              value=Delphi>Delphi</OPTION> <OPTION value=Eiffel>Eiffel</OPTION> 
+              <OPTION value=Erlang>Erlang</OPTION> <OPTION 
+              value=Fortran>Fortran</OPTION> <OPTION value=Java>Java</OPTION> 
+              <OPTION value=JavaScript>JavaScript</OPTION> <OPTION 
+              value=JSP>JSP</OPTION> <OPTION value=Lisp>Lisp</OPTION> <OPTION 
+              value=Lua>Lua</OPTION> <OPTION 
+              value=Mathematica>Mathematica</OPTION> <OPTION 
+              value=Matlab>Matlab</OPTION> <OPTION 
+              value=ObjectiveC>ObjectiveC</OPTION> <OPTION 
+              value=Perl>Perl</OPTION> <OPTION value=PHP>PHP</OPTION> <OPTION 
+              value=Prolog>Prolog</OPTION> <OPTION value=Python>Python</OPTION> 
+              <OPTION value=Ruby>Ruby</OPTION> <OPTION 
+              value=Scheme>Scheme</OPTION> <OPTION 
+              value=Smalltalk>Smalltalk</OPTION> <OPTION value=SQL>SQL</OPTION> 
+              <OPTION value=Tcl>Tcl</OPTION> <OPTION value=VB>VB</OPTION> 
+              <OPTION value=VB.NET>VB.NET</OPTION></SELECT>&nbsp;<SELECT 
+            id=ctl03_Licenses name=ctl03$Licenses> <OPTION value=* 
+              selected>All Licenses</OPTION> <OPTION value=AFL>AFL</OPTION> 
+              <OPTION value=AL20>AL20</OPTION> <OPTION value=ASL>ASL</OPTION> 
+              <OPTION value=APSL>APSL</OPTION> <OPTION value=BSD>BSD</OPTION> 
+              <OPTION value=CPL>CPL</OPTION> <OPTION value=EPL10>EPL10</OPTION> 
+              <OPTION value=GTPL>GTPL</OPTION> <OPTION value=GPL>GPL</OPTION> 
+              <OPTION value=LGPL>LGPL</OPTION> <OPTION 
+              value=IBMPL>IBMPL</OPTION> <OPTION value=IOSL>IOSL</OPTION> 
+              <OPTION value=MSCL>MSCL</OPTION> <OPTION value=MSPL>MSPL</OPTION> 
+              <OPTION value=MSRL>MSRL</OPTION> <OPTION 
+              value=MSVSSDK>MSVSSDK</OPTION> <OPTION value=MITD>MITD</OPTION> 
+              <OPTION value=MPL10>MPL10</OPTION> <OPTION 
+              value=MPL11>MPL11</OPTION> <OPTION value=NPL10>NPL10</OPTION> 
+              <OPTION value=NPL11>NPL11</OPTION> <OPTION value=OSL>OSL</OPTION> 
+              <OPTION value=PSFL>PSFL</OPTION> <OPTION value=SL>SL</OPTION> 
+              <OPTION value=SPL>SPL</OPTION> <OPTION value=W3C>W3C</OPTION> 
+              <OPTION value=ZLL>ZLL</OPTION> <OPTION 
+            value=ZPL>ZPL</OPTION></SELECT>&nbsp;<A id=ctl03_LicenseInfoLink 
+            href="http://www.koders.com/corp/support/license-info/"><IMG 
+            id=ctl03_InfoImg height=16 alt=InfoImg 
+            src="Koders Code Search usb_h - C_files/info_16.gif" width=16 
+            border=0></A> </TD>
+          <TD vAlign=center align=middle width=0px></TD></TR></TBODY></TABLE></TD>
+    <TD align=right>
+      <DIV class=kvHeaderLimiter>
+      <SCRIPT src="Koders Code Search usb_h - C_files/toolbar.js" 
+      type=text/javascript></SCRIPT>
+      <LINK href="Koders Code Search usb_h - C_files/toptoolbar.css" 
+      type=text/css rel=stylesheet><!-- {Begin Toolbar} -->
+      <DIV id=topToolbars>
+      <DIV class="topToolbar ttb_wider" 
+      onmouseover="Toolbar._onmouseover(event); " 
+      style="RIGHT: 0px; WIDTH: 463px; TOP: 0px" 
+      onmouseout="Toolbar._onmouseout(event); ">
+      <DIV class=topToolbarCorner></DIV>
+      <DIV class=topToolbarInner>
+      <DIV class=topToolbarButton style="WIDTH: 84px; CURSOR: hand" 
+      onclick="window.location='http://www.koders.com/corp/about/'">Company 
+      <SPAN class=topToolbarDownArrow>▼</SPAN> 
+      <DIV class=topToolbarPopup style="WIDTH: 110px"><A 
+      href="http://corp.koders.com/corp/about/">About Koders</A> <A 
+      href="http://corp.koders.com/corp/about#Contact">Contact Us</A> 
+      </DIV></DIV>
+      <DIV class=topToolbarButton style="WIDTH: 72px; CURSOR: hand" 
+      onclick="window.location='http://www.koders.com/info.aspx?c=tools'">Plugins 
+      <SPAN class=topToolbarDownArrow>▼</SPAN> 
+      <DIV class=topToolbarPopup style="WIDTH: 110px"><A 
+      href="http://www.koders.com/info.aspx?c=tools#IDEs"><IMG alt=e 
+      src="Koders Code Search usb_h - C_files/toolbar-eclipse_icon.gif"> 
+      Eclipse</A> <A href="http://www.koders.com/info.aspx?c=tools#IDEs"><IMG 
+      alt=v src="Koders Code Search usb_h - C_files/toolbar-visual_icon.gif"> 
+      Visual Studio</A> <A 
+      href="http://www.koders.com/info.aspx?c=tools#Firefox">Browser</A> <A 
+      href="http://www.koders.com/info.aspx?c=tools#AddSearch">Widget APIs</A> <!--<a href="http://www.koders.com/blog/?p=36">Koders APIs</a>--></DIV></DIV>
+      <DIV class=topToolbarButton style="WIDTH: 76px; CURSOR: hand" 
+      onclick="window.location='http://corp.koders.com/corp/support'">Support 
+      <SPAN class=topToolbarDownArrow>▼</SPAN> 
+      <DIV class=topToolbarPopup style="WIDTH: 160px"><A 
+      href="http://corp.koders.com/corp/support/">Support Overview</A> <A 
+      href="http://corp.koders.com/corp/support/code-search/getting-started/">Getting 
+      Started Guide</A> <A 
+      href="http://www.koders.com/info.aspx?c=feedback&amp;product=kdc&amp;type=bug">Feedback</A> 
+      <A href="http://corp.koders.com/corp/support/license-info/">License 
+      Info</A> </DIV></DIV>
+      <DIV class=topToolbarButton style="WIDTH: 98px; CURSOR: hand" 
+      onclick="window.location='http://corp.koders.com/corp/community/'">Community 
+      <SPAN class=topToolbarDownArrow>▼</SPAN> 
+      <DIV class=topToolbarPopup style="WIDTH: 150px"><A 
+      href="http://corp.koders.com/corp/community/">Community Overview</A> <A 
+      href="http://www.koders.com/info.aspx?c=forms/SubmitProject">Add 
+      Projects</A> <!--<a href="http://www.koders.com/blog/">Blog</a>--><A 
+      href="http://forums.koders.com/">Forums</A> <A 
+      href="http://corp.koders.com/zeitgeist/">Top Searches</A> </DIV></DIV>
+      <DIV class=topToolbarButton style="WIDTH: 102px; CURSOR: hand" 
+      onclick="window.location='http://www.koders.com/info.aspx?page=MyAccount'">My 
+      Account <SPAN class=topToolbarDownArrow>▼</SPAN> 
+      <DIV class=topToolbarPopup style="WIDTH: 98px"><A 
+      id=Sitetoolbar1_ctl00_toggleAccount 
+      href="http://www.koders.com/info.aspx?page=MyAccount">Join Now!</A> <A 
+      id=Sitetoolbar1_ctl00_toggleLogin 
+      href="http://www.koders.com/info.aspx?page=MyAccount&amp;action=Login">Login</A> 
+      </DIV></DIV></DIV></DIV><BR class=clear></DIV><!-- {End Toolbar} -->&nbsp; 
+      </DIV></TD></TR></TBODY></TABLE>
+<DIV id=leaderboard>
+<CENTER><!-- Media Server Begin: 728x90 --><!-- Media Server End: 728x90 --></CENTER></DIV>
+<DIV class=kodeViewerContDiv><!-- <div class="SidePadding" align="left"> -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE id=Table2 cellSpacing=5 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=info_panel vAlign=top>
+            <TABLE id=Table3 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=center align=middle width=60><INPUT 
+                  id=Kodeviewer1_DownloadButton title="Download usb.h" 
+                  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+                  type=image 
+                  src="Koders Code Search usb_h - C_files/download.gif" 
+                  name=Kodeviewer1$DownloadButton> <A id=Kodeviewer1_LinkButton1 
+                  href="javascript:__doPostBack('Kodeviewer1$LinkButton1','')">download</A> 
+                </TD>
+                <TD><B>usb.h </B><BR>Language: <B>C </B><BR>LOC: 152 
+              <BR></TD></TR></TBODY></TABLE></TD>
+          <TD class=kodeviewer_info_panel vAlign=top width=200><B>Project 
+            Info</B><BR><A 
+            title="hping2 is an interactive packet costructor and responses analyzer that uses the same CLI of the ping program (but with a lot of extensions). It can be used to performs a lot of tasks, like testing of firewall rules, (spoofed) port scanning, et cetera.           Donate to hping2     &#13;&#10; &#13;&#10;" 
+            href="http://www.koders.com/info.aspx?c=ProjectInfo&amp;pid=A1EKNBN4EH56DSKA2KYHF5P3XE"><B><SPAN 
+            id=Kodeviewer1_ProjectView_ctl00_Label2>hping2</SPAN></B></A> 
+            <BR>Server: SourceForge <BR>Type: cvs 
+  </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<STYLE type=text/css>.RightBanner {
+	Z-INDEX: 2; RIGHT: 25px; FLOAT: right; WIDTH: 160px; POSITION: absolute; HEIGHT: 600px
+}
+</STYLE>
+
+<DIV class=RightBanner id=Kodeviewer1_RightBanner>
+<DIV style="MARGIN-BOTTOM: 2px" align=center>[<A style="FONT-SIZE: smaller" 
+href="javascript:HideBanner();">Show Code</A>] </DIV>
+<DIV><!-- Media Server Begin: 160x600 --><!-- Media Server End: 160x600 --><BR><BR><BR><!-- Media Server Begin: 160x602 --><!-- Media Server End: 160x602 --><BR><BR><BR><!-- Media Server Begin: 160x603 --><!-- Media Server End: 160x603 --></DIV>
+<DIV style="MARGIN-TOP: 2px" align=center>[<A style="FONT-SIZE: smaller" 
+href="javascript:HideBanner();">Show Code</A>] </DIV></DIV>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height="100%">
+      <TABLE id=Table9 style="HEIGHT: 100%" cellSpacing=8 cellPadding=0 
+border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top>
+            <TABLE id=Table1 
+            style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; BORDER-LEFT: gray 1px solid; BORDER-BOTTOM: gray 1px solid; BORDER-COLLAPSE: collapse" 
+            cellSpacing=0 cellPadding=3 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TH class=exp_header align=left><A 
+                  id=Kodeviewer1_ctl00_hyFicon 
+                  href="http://www.koders.com/info.aspx?c=ProjectInfo&amp;pid=A1EKNBN4EH56DSKA2KYHF5P3XE"><IMG 
+                  id=Kodeviewer1_ctl00_ficon 
+                  title=SourceForge\h\hping2\hping2\s10sh\libusb-0.1.3b\ 
+                  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+                  src="Koders Code Search usb_h - C_files/folder.gif" 
+                  align=left></A> <B><SPAN id=Kodeviewer1_ctl00_Label1 
+                  title=SourceForge\h\hping2\hping2\s10sh\libusb-0.1.3b\>...hping2\s10sh\libusb‑0.1.3b\</SPAN> 
+                  </B><BR></TH></TR>
+              <TR>
+                <TD class=exp_items>&nbsp;&nbsp; <A title=acconfig.h 
+                  href="http://www.koders.com/c/fid32B92D0BC1461D48FAFF79FEC4B782845812FE3A.aspx">acconfig.h<BR></A>&nbsp;&nbsp; 
+                  <A title=aclocal.m4 
+                  href="http://www.koders.com/noncode/fid39795DFF54C9712919D6D22329650C250616A77A.aspx">aclocal.m4<BR></A>&nbsp;&nbsp; 
+                  <A title=config.guess 
+                  href="http://www.koders.com/noncode/fidB7852951F7B6EFEFF9F5F013260A867651975C7C.aspx">config.guess<BR></A>&nbsp;&nbsp; 
+                  <A title=config.h.in 
+                  href="http://www.koders.com/noncode/fid8526055B41124020EA2E92678945C463B14750B3.aspx">config.h.in<BR></A>&nbsp;&nbsp; 
+                  <A title=config.sub 
+                  href="http://www.koders.com/noncode/fid947251A85EC86A8F8AD926B04CA526641429202F.aspx">config.sub<BR></A>&nbsp;&nbsp; 
+                  <A title=configure.in 
+                  href="http://www.koders.com/noncode/fid05AC65399B80859326749728E79B34C6C37F8C50.aspx">configure.in<BR></A>&nbsp;&nbsp; 
+                  <A title=error.c 
+                  href="http://www.koders.com/c/fidF8D5A5F0ACC63C0A12B4DDD04BA4D0E849E149B1.aspx">error.c<BR></A>&nbsp;&nbsp; 
+                  <A title=error.h 
+                  href="http://www.koders.com/c/fidCAD443146920F94C27C4E520D667C72B04821A69.aspx">error.h<BR></A>&nbsp;&nbsp; 
+                  <A title=freebsd.c 
+                  href="http://www.koders.com/c/fidBBA4DA69CBFCDA7BEFAF0BFE0616A92EAE77C3A3.aspx">freebsd.c<BR></A>&nbsp;&nbsp; 
+                  <A title=INSTALL.libusb.in 
+                  href="http://www.koders.com/noncode/fid8E06AD0B805087AA798D4C4C9C624583B3DD7724.aspx">INSTALL.libusb.in<BR></A>&nbsp;&nbsp; 
+                  <A title=libusb-config.in 
+                  href="http://www.koders.com/noncode/fid200EF8D4B0C4DEAB8632B6E55ECB62EC3EE28E2B.aspx">libusb-config.in<BR></A>&nbsp;&nbsp; 
+                  <A title=libusb.spec.in 
+                  href="http://www.koders.com/noncode/fid2CE90309B06A7395966673023CCC9809CD022614.aspx">libusb.spec.in<BR></A>&nbsp;&nbsp; 
+                  <A title=linux.c 
+                  href="http://www.koders.com/c/fidDD373D171BB70109343323F32C8F23575631A529.aspx">linux.c<BR></A>&nbsp;&nbsp; 
+                  <A title=linux.h 
+                  href="http://www.koders.com/c/fid935C43D852EB7DF4B0C8FFBBB77BE893850CC0A1.aspx">linux.h<BR></A>&nbsp;&nbsp; 
+                  <A title=ltmain.sh 
+                  href="http://www.koders.com/noncode/fid4704D76E72BD82F2094ECD3B18CA9FB539D4087C.aspx">ltmain.sh<BR></A>&nbsp;&nbsp; 
+                  <A title=Makefile.am 
+                  href="http://www.koders.com/noncode/fidA7809205502C4C7AFB500FDD01D8C1EB5FAC86C0.aspx">Makefile.am<BR></A>&nbsp;&nbsp; 
+                  <A title=Makefile.in 
+                  href="http://www.koders.com/noncode/fid773BF8D9FFA8DB84929E65512E8E68A79C717400.aspx">Makefile.in<BR></A>&nbsp;&nbsp; 
+                  <A title=README.in 
+                  href="http://www.koders.com/noncode/fid4B072A5728B26CB0F1BDC72528777ADB7DD70719.aspx">README.in<BR></A>&nbsp;&nbsp; 
+                  <A title=stamp-h.in 
+                  href="http://www.koders.com/noncode/fidAB1E562E67006D1320D30AFE3EEAC47833F208B1.aspx">stamp-h.in<BR></A>&nbsp;&nbsp; 
+                  <A title=usb.c 
+                  href="http://www.koders.com/c/fidC13FC7A49A635F122CA973A49D5F0576C1F1B733.aspx">usb.c<BR></A>&nbsp;&nbsp; 
+                  <A title=usb.h 
+                  href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx">usb.h<BR></A>&nbsp;&nbsp; 
+                  <A title=usbi.h 
+                  href="http://www.koders.com/c/fid8D664EF2A0110FD9914F913DB5EA7E82C8E65A10.aspx">usbi.h<BR></A></TD></TR></TBODY></TABLE><BR></TD>
+          <TD vAlign=top>
+            <DIV><PRE id=kodeViewerLineNumbers><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L1" name=L1>1</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L2" name=L2>2</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L3" name=L3>3</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L4" name=L4>4</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L5" name=L5>5</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L6" name=L6>6</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L7" name=L7>7</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L8" name=L8>8</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L9" name=L9>9</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L10" name=L10>10</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L11" name=L11>11</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L12" name=L12>12</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L13" name=L13>13</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L14" name=L14>14</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L15" name=L15>15</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L16" name=L16>16</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L17" name=L17>17</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L18" name=L18>18</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L19" name=L19>19</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L20" name=L20>20</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L21" name=L21>21</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L22" name=L22>22</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L23" name=L23>23</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L24" name=L24>24</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L25" name=L25>25</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L26" name=L26>26</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L27" name=L27>27</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L28" name=L28>28</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L29" name=L29>29</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L30" name=L30>30</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L31" name=L31>31</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L32" name=L32>32</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L33" name=L33>33</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L34" name=L34>34</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L35" name=L35>35</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L36" name=L36>36</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L37" name=L37>37</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L38" name=L38>38</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L39" name=L39>39</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L40" name=L40>40</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L41" name=L41>41</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L42" name=L42>42</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L43" name=L43>43</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L44" name=L44>44</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L45" name=L45>45</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L46" name=L46>46</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L47" name=L47>47</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L48" name=L48>48</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L49" name=L49>49</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L50" name=L50>50</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L51" name=L51>51</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L52" name=L52>52</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L53" name=L53>53</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L54" name=L54>54</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L55" name=L55>55</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L56" name=L56>56</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L57" name=L57>57</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L58" name=L58>58</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L59" name=L59>59</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L60" name=L60>60</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L61" name=L61>61</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L62" name=L62>62</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L63" name=L63>63</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L64" name=L64>64</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L65" name=L65>65</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L66" name=L66>66</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L67" name=L67>67</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L68" name=L68>68</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L69" name=L69>69</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L70" name=L70>70</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L71" name=L71>71</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L72" name=L72>72</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L73" name=L73>73</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L74" name=L74>74</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L75" name=L75>75</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L76" name=L76>76</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L77" name=L77>77</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L78" name=L78>78</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L79" name=L79>79</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L80" name=L80>80</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L81" name=L81>81</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L82" name=L82>82</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L83" name=L83>83</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L84" name=L84>84</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L85" name=L85>85</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L86" name=L86>86</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L87" name=L87>87</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L88" name=L88>88</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L89" name=L89>89</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L90" name=L90>90</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L91" name=L91>91</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L92" name=L92>92</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L93" name=L93>93</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L94" name=L94>94</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L95" name=L95>95</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L96" name=L96>96</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L97" name=L97>97</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L98" name=L98>98</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L99" name=L99>99</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L100" name=L100>100</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L101" name=L101>101</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L102" name=L102>102</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L103" name=L103>103</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L104" name=L104>104</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L105" name=L105>105</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L106" name=L106>106</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L107" name=L107>107</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L108" name=L108>108</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L109" name=L109>109</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L110" name=L110>110</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L111" name=L111>111</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L112" name=L112>112</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L113" name=L113>113</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L114" name=L114>114</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L115" name=L115>115</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L116" name=L116>116</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L117" name=L117>117</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L118" name=L118>118</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L119" name=L119>119</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L120" name=L120>120</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L121" name=L121>121</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L122" name=L122>122</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L123" name=L123>123</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L124" name=L124>124</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L125" name=L125>125</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L126" name=L126>126</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L127" name=L127>127</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L128" name=L128>128</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L129" name=L129>129</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L130" name=L130>130</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L131" name=L131>131</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L132" name=L132>132</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L133" name=L133>133</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L134" name=L134>134</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L135" name=L135>135</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L136" name=L136>136</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L137" name=L137>137</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L138" name=L138>138</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L139" name=L139>139</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L140" name=L140>140</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L141" name=L141>141</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L142" name=L142>142</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L143" name=L143>143</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L144" name=L144>144</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L145" name=L145>145</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L146" name=L146>146</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L147" name=L147>147</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L148" name=L148>148</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L149" name=L149>149</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L150" name=L150>150</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L151" name=L151>151</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L152" name=L152>152</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L153" name=L153>153</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L154" name=L154>154</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L155" name=L155>155</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L156" name=L156>156</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L157" name=L157>157</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L158" name=L158>158</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L159" name=L159>159</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L160" name=L160>160</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L161" name=L161>161</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L162" name=L162>162</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L163" name=L163>163</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L164" name=L164>164</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L165" name=L165>165</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L166" name=L166>166</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L167" name=L167>167</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L168" name=L168>168</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L169" name=L169>169</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L170" name=L170>170</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L171" name=L171>171</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L172" name=L172>172</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L173" name=L173>173</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L174" name=L174>174</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L175" name=L175>175</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L176" name=L176>176</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L177" name=L177>177</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L178" name=L178>178</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L179" name=L179>179</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L180" name=L180>180</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L181" name=L181>181</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L182" name=L182>182</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L183" name=L183>183</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L184" name=L184>184</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L185" name=L185>185</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L186" name=L186>186</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L187" name=L187>187</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L188" name=L188>188</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L189" name=L189>189</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L190" name=L190>190</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L191" name=L191>191</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L192" name=L192>192</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L193" name=L193>193</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L194" name=L194>194</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L195" name=L195>195</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L196" name=L196>196</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L197" name=L197>197</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L198" name=L198>198</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L199" name=L199>199</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L200" name=L200>200</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L201" name=L201>201</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L202" name=L202>202</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L203" name=L203>203</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L204" name=L204>204</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L205" name=L205>205</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L206" name=L206>206</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L207" name=L207>207</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L208" name=L208>208</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L209" name=L209>209</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L210" name=L210>210</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L211" name=L211>211</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L212" name=L212>212</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L213" name=L213>213</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L214" name=L214>214</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L215" name=L215>215</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L216" name=L216>216</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L217" name=L217>217</A><BR><A href="http://www.koders.com/c/fid80B14E8AFB325AE75EDBD5DA480E1E48C740555A.aspx#L218" name=L218>218</A><BR></PRE></DIV></TD>
+          <TD onmouseup=javascript:LogReuse(); vAlign=top>
+            <DIV id=CodeDiv><PRE>#<A class=r>ifndef</A> <A class=r>__USB_H__</A>
+#<A class=r>define</A> <A class=r>__USB_H__</A>
+
+#<A class=r>include</A> &lt;<A class=r>unistd</A>.<A class=r>h</A>&gt;
+#<A class=r>include</A> &lt;<A class=r>stdlib</A>.<A class=r>h</A>&gt;
+#<A class=r>include</A> &lt;<A class=r>limits</A>.<A class=r>h</A>&gt;
+
+#<A class=r>include</A> &lt;<A class=r>dirent</A>.<A class=r>h</A>&gt;
+
+<SPAN class=c>/*
+ * USB spec information
+ *
+ * This is all stuff grabbed from various USB specs and is pretty much
+ * not subject to change
+ */</SPAN>
+
+<SPAN class=c>/*
+ * Device and/or Interface Class codes
+ */</SPAN>
+#<A class=r>define</A> <A class=r>USB_CLASS_PER_INTERFACE</A>		0	<SPAN class=c>/* for DeviceClass */</SPAN>
+#<A class=r>define</A> <A class=r>USB_CLASS_AUDIO</A>			1
+#<A class=r>define</A> <A class=r>USB_CLASS_COMM</A>			2
+#<A class=r>define</A> <A class=r>USB_CLASS_HID</A>			3
+#<A class=r>define</A> <A class=r>USB_CLASS_PRINTER</A>		7
+#<A class=r>define</A> <A class=r>USB_CLASS_MASS_STORAGE</A>		8
+#<A class=r>define</A> <A class=r>USB_CLASS_HUB</A>			9
+#<A class=r>define</A> <A class=r>USB_CLASS_DATA</A>			10
+#<A class=r>define</A> <A class=r>USB_CLASS_VENDOR_SPEC</A>		0xff
+
+<SPAN class=c>/*
+ * Descriptor types
+ */</SPAN>
+#<A class=r>define</A> <A class=r>USB_DT_DEVICE</A>			0x01
+#<A class=r>define</A> <A class=r>USB_DT_CONFIG</A>			0x02
+#<A class=r>define</A> <A class=r>USB_DT_STRING</A>			0x03
+#<A class=r>define</A> <A class=r>USB_DT_INTERFACE</A>		0x04
+#<A class=r>define</A> <A class=r>USB_DT_ENDPOINT</A>			0x05
+
+#<A class=r>define</A> <A class=r>USB_DT_HID</A>			0x21
+#<A class=r>define</A> <A class=r>USB_DT_REPORT</A>			0x22
+#<A class=r>define</A> <A class=r>USB_DT_PHYSICAL</A>			0x23
+#<A class=r>define</A> <A class=r>USB_DT_HUB</A>			0x29
+
+<SPAN class=c>/*
+ * Descriptor sizes per descriptor type
+ */</SPAN>
+#<A class=r>define</A> <A class=r>USB_DT_DEVICE_SIZE</A>		18
+#<A class=r>define</A> <A class=r>USB_DT_CONFIG_SIZE</A>		9
+#<A class=r>define</A> <A class=r>USB_DT_INTERFACE_SIZE</A>		9
+#<A class=r>define</A> <A class=r>USB_DT_ENDPOINT_SIZE</A>		7
+#<A class=r>define</A> <A class=r>USB_DT_ENDPOINT_AUDIO_SIZE</A>	9	<SPAN class=c>/* Audio extension */</SPAN>
+#<A class=r>define</A> <A class=r>USB_DT_HUB_NONVAR_SIZE</A>		7
+
+<SPAN class=c>/* All standard descriptors have these 2 fields in common */</SPAN>
+<SPAN class=k>struct</SPAN> <A class=r>usb_descriptor_header</A> {
+	<A class=r>u_int8_t</A>  <A class=r>bLength</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bDescriptorType</A>;
+} <A class=r>__attribute__</A> ((<A class=r>packed</A>));
+
+<SPAN class=c>/* Device descriptor */</SPAN>
+<SPAN class=k>struct</SPAN> <A class=r>usb_device_descriptor</A> {
+	<A class=r>u_int8_t</A>  <A class=r>bLength</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bDescriptorType</A>;
+	<A class=r>u_int16_t</A> <A class=r>bcdUSB</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bDeviceClass</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bDeviceSubClass</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bDeviceProtocol</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bMaxPacketSize0</A>;
+	<A class=r>u_int16_t</A> <A class=r>idVendor</A>;
+	<A class=r>u_int16_t</A> <A class=r>idProduct</A>;
+	<A class=r>u_int16_t</A> <A class=r>bcdDevice</A>;
+	<A class=r>u_int8_t</A>  <A class=r>iManufacturer</A>;
+	<A class=r>u_int8_t</A>  <A class=r>iProduct</A>;
+	<A class=r>u_int8_t</A>  <A class=r>iSerialNumber</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bNumConfigurations</A>;
+} <A class=r>__attribute__</A> ((<A class=r>packed</A>));
+
+<SPAN class=c>/* Endpoint descriptor */</SPAN>
+<SPAN class=k>struct</SPAN> <A class=r>usb_endpoint_descriptor</A> {
+	<A class=r>u_int8_t</A>  <A class=r>bLength</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bDescriptorType</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bEndpointAddress</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bmAttributes</A>;
+	<A class=r>u_int16_t</A> <A class=r>wMaxPacketSize</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bInterval</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bRefresh</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bSynchAddress</A>;
+} <A class=r>__attribute__</A> ((<A class=r>packed</A>));
+
+<SPAN class=k>struct</SPAN> <A class=r>usb_hid_descriptor</A> {
+	<A class=r>u_int8_t</A>  <A class=r>bLength</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bDescriptorType</A>;
+	<A class=r>u_int16_t</A> <A class=r>bcdHID</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bCountryCode</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bNumDescriptors</A>;
+} <A class=r>__attribute__</A> ((<A class=r>packed</A>));
+
+<SPAN class=c>/* Interface descriptor */</SPAN>
+<SPAN class=k>struct</SPAN> <A class=r>usb_interface_descriptor</A> {
+	<A class=r>u_int8_t</A>  <A class=r>bLength</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bDescriptorType</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bInterfaceNumber</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bAlternateSetting</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bNumEndpoints</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bInterfaceClass</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bInterfaceSubClass</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bInterfaceProtocol</A>;
+	<A class=r>u_int8_t</A>  <A class=r>iInterface</A>;
+} <A class=r>__attribute__</A> ((<A class=r>packed</A>));
+
+<SPAN class=c>/* Configuration descriptor information.. */</SPAN>
+<SPAN class=k>struct</SPAN> <A class=r>usb_config_descriptor</A> {
+	<A class=r>u_int8_t</A>  <A class=r>bLength</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bDescriptorType</A>;
+	<A class=r>u_int16_t</A> <A class=r>wTotalLength</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bNumInterfaces</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bConfigurationValue</A>;
+	<A class=r>u_int8_t</A>  <A class=r>iConfiguration</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bmAttributes</A>;
+	<A class=r>u_int8_t</A>  <A class=r>MaxPower</A>;
+} <A class=r>__attribute__</A> ((<A class=r>packed</A>));
+
+<SPAN class=c>/* String descriptor */</SPAN>
+<SPAN class=k>struct</SPAN> <A class=r>usb_string_descriptor</A> {
+	<A class=r>u_int8_t</A>  <A class=r>bLength</A>;
+	<A class=r>u_int8_t</A>  <A class=r>bDescriptorType</A>;
+	<A class=r>u_int16_t</A> <A class=r>wData</A>[1];
+} <A class=r>__attribute__</A> ((<A class=r>packed</A>));
+
+<SPAN class=c>/*
+ * Standard requests
+ */</SPAN>
+#<A class=r>define</A> <A class=r>USB_REQ_GET_STATUS</A>		0x00
+#<A class=r>define</A> <A class=r>USB_REQ_CLEAR_FEATURE</A>		0x01
+<SPAN class=c>/* 0x02 is reserved */</SPAN>
+#<A class=r>define</A> <A class=r>USB_REQ_SET_FEATURE</A>		0x03
+<SPAN class=c>/* 0x04 is reserved */</SPAN>
+#<A class=r>define</A> <A class=r>USB_REQ_SET_ADDRESS</A>		0x05
+#<A class=r>define</A> <A class=r>USB_REQ_GET_DESCRIPTOR</A>		0x06
+#<A class=r>define</A> <A class=r>USB_REQ_SET_DESCRIPTOR</A>		0x07
+#<A class=r>define</A> <A class=r>USB_REQ_GET_CONFIGURATION</A>	0x08
+#<A class=r>define</A> <A class=r>USB_REQ_SET_CONFIGURATION</A>	0x09
+#<A class=r>define</A> <A class=r>USB_REQ_GET_INTERFACE</A>		0x0A
+#<A class=r>define</A> <A class=r>USB_REQ_SET_INTERFACE</A>		0x0B
+#<A class=r>define</A> <A class=r>USB_REQ_SYNCH_FRAME</A>		0x0C
+
+#<A class=r>define</A> <A class=r>USB_TYPE_STANDARD</A>		(0x00 &lt;&lt; 5)
+#<A class=r>define</A> <A class=r>USB_TYPE_CLASS</A>			(0x01 &lt;&lt; 5)
+#<A class=r>define</A> <A class=r>USB_TYPE_VENDOR</A>			(0x02 &lt;&lt; 5)
+#<A class=r>define</A> <A class=r>USB_TYPE_RESERVED</A>		(0x03 &lt;&lt; 5)
+
+#<A class=r>define</A> <A class=r>USB_RECIP_DEVICE</A>		0x00
+#<A class=r>define</A> <A class=r>USB_RECIP_INTERFACE</A>		0x01
+#<A class=r>define</A> <A class=r>USB_RECIP_ENDPOINT</A>		0x02
+#<A class=r>define</A> <A class=r>USB_RECIP_OTHER</A>			0x03
+
+<SPAN class=c>/*
+ * Various libusb API related stuff
+ */</SPAN>
+
+<SPAN class=c>/* Error codes */</SPAN>
+#<A class=r>define</A> <A class=r>USB_ERROR_BEGIN</A>			500000
+
+<SPAN class=c>/* Data types */</SPAN>
+<SPAN class=k>struct</SPAN> <A class=r>usb_device</A>;
+<SPAN class=k>struct</SPAN> <A class=r>usb_bus</A>;
+
+<SPAN class=k>struct</SPAN> <A class=r>usb_device</A> {
+  <SPAN class=k>struct</SPAN> <A class=r>usb_device</A> *<A class=r>next</A>, *<A class=r>prev</A>;
+
+  <SPAN class=k>char</SPAN> <A class=r>filename</A>[<A class=r>PATH_MAX</A> + 1];
+
+  <SPAN class=k>struct</SPAN> <A class=r>usb_bus</A> *<A class=r>bus</A>;
+
+  <SPAN class=k>struct</SPAN> <A class=r>usb_device_descriptor</A> <A class=r>descriptor</A>;
+  <SPAN class=k>struct</SPAN> <A class=r>usb_config_descriptor</A> *<A class=r>config</A>;
+};
+
+<SPAN class=k>struct</SPAN> <A class=r>usb_bus</A> {
+  <SPAN class=k>struct</SPAN> <A class=r>usb_bus</A> *<A class=r>next</A>, *<A class=r>prev</A>;
+
+  <SPAN class=k>char</SPAN> <A class=r>dirname</A>[<A class=r>PATH_MAX</A> + 1];
+
+  <SPAN class=k>struct</SPAN> <A class=r>usb_device</A> *<A class=r>devices</A>;
+};
+
+<SPAN class=k>struct</SPAN> <A class=r>usb_dev_handle</A>;
+<SPAN class=k>typedef</SPAN> <SPAN class=k>struct</SPAN> <A class=r>usb_dev_handle</A> <A class=r>usb_dev_handle</A>;
+
+<SPAN class=c>/* Variables */</SPAN>
+<SPAN class=k>extern</SPAN> <SPAN class=k>struct</SPAN> <A class=r>usb_bus</A> *<A class=r>usb_busses</A>;
+
+<SPAN class=c>/* Function prototypes */</SPAN>
+<A class=r>usb_dev_handle</A> *<A class=r>usb_open</A>(<SPAN class=k>struct</SPAN> <A class=r>usb_device</A> *<A class=r>dev</A>);
+<SPAN class=k>int</SPAN> <A class=r>usb_close</A>(<A class=r>usb_dev_handle</A> *<A class=r>dev</A>);
+<SPAN class=k>int</SPAN> <A class=r>usb_bulk_write</A>(<A class=r>usb_dev_handle</A> *<A class=r>dev</A>, <SPAN class=k>int</SPAN> <A class=r>ep</A>, <SPAN class=k>char</SPAN> *<A class=r>bytes</A>, <SPAN class=k>int</SPAN> <A class=r>size</A>,
+	<SPAN class=k>int</SPAN> <A class=r>timeout</A>);
+<SPAN class=k>int</SPAN> <A class=r>usb_bulk_read</A>(<A class=r>usb_dev_handle</A> *<A class=r>dev</A>, <SPAN class=k>int</SPAN> <A class=r>ep</A>, <SPAN class=k>char</SPAN> *<A class=r>bytes</A>, <SPAN class=k>int</SPAN> <A class=r>size</A>,
+	<SPAN class=k>int</SPAN> <A class=r>timeout</A>);
+<SPAN class=k>int</SPAN> <A class=r>usb_control_msg</A>(<A class=r>usb_dev_handle</A> *<A class=r>dev</A>, <SPAN class=k>int</SPAN> <A class=r>requesttype</A>, <SPAN class=k>int</SPAN> <A class=r>request</A>,
+	<SPAN class=k>int</SPAN> <A class=r>value</A>, <SPAN class=k>int</SPAN> <A class=r>index</A>, <SPAN class=k>char</SPAN> *<A class=r>bytes</A>, <SPAN class=k>int</SPAN> <A class=r>size</A>, <SPAN class=k>int</SPAN> <A class=r>timeout</A>);
+<SPAN class=k>int</SPAN> <A class=r>usb_set_configuration</A>(<A class=r>usb_dev_handle</A> *<A class=r>dev</A>, <SPAN class=k>int</SPAN> <A class=r>configuration</A>);
+<SPAN class=k>int</SPAN> <A class=r>usb_claim_interface</A>(<A class=r>usb_dev_handle</A> *<A class=r>dev</A>, <SPAN class=k>int</SPAN> <A class=r>interface</A>);
+<SPAN class=k>int</SPAN> <A class=r>usb_release_interface</A>(<A class=r>usb_dev_handle</A> *<A class=r>dev</A>, <SPAN class=k>int</SPAN> <A class=r>interface</A>);
+<SPAN class=k>int</SPAN> <A class=r>usb_set_altinterface</A>(<A class=r>usb_dev_handle</A> *<A class=r>dev</A>, <SPAN class=k>int</SPAN> <A class=r>alternate</A>);
+<SPAN class=k>int</SPAN> <A class=r>usb_resetep</A>(<A class=r>usb_dev_handle</A> *<A class=r>dev</A>, <SPAN class=k>unsigned</SPAN> <SPAN class=k>int</SPAN> <A class=r>ep</A>);
+<SPAN class=k>int</SPAN> <A class=r>usb_clear_halt</A>(<A class=r>usb_dev_handle</A> *<A class=r>dev</A>, <SPAN class=k>unsigned</SPAN> <SPAN class=k>int</SPAN> <A class=r>ep</A>);
+<SPAN class=k>int</SPAN> <A class=r>usb_reset</A>(<A class=r>usb_dev_handle</A> *<A class=r>dev</A>);
+
+<SPAN class=k>char</SPAN> *<A class=r>usb_strerror</A>(<SPAN class=k>void</SPAN>);
+
+<SPAN class=k>void</SPAN> <A class=r>usb_init</A>(<SPAN class=k>void</SPAN>);
+<SPAN class=k>void</SPAN> <A class=r>usb_set_debug</A>(<SPAN class=k>int</SPAN> <A class=r>level</A>);
+<SPAN class=k>int</SPAN> <A class=r>usb_find_busses</A>(<SPAN class=k>void</SPAN>);
+<SPAN class=k>int</SPAN> <A class=r>usb_find_devices</A>(<SPAN class=k>void</SPAN>);
+<SPAN class=k>struct</SPAN> <A class=r>usb_device</A> *<A class=r>usb_device</A>(<A class=r>usb_dev_handle</A> *<A class=r>dev</A>);
+
+#<A class=r>endif</A> <A class=r>__USB_H__</A>
+
+</PRE></DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+var jumpLine = "-1";
+if(jumpLine && jumpLine != "-1" && !document.location.hash){
+	if(document.attachEvent){
+		document.attachEvent("onreadystatechange", function(){
+			if(document.readyState != "complete") return;
+			var numbers = document.all["kodeViewerLineNumbers"];
+			var targetA = numbers.children.tags("a")[jumpLine - 1];
+			targetA.scrollIntoView();
+			document.body.scrollLeft = 0;
+		});
+	} else if(window.addEventListener){
+		window.addEventListener("load", function(){
+			document.location.replace(document.location + "#L" + jumpLine);
+		}, false);
+	}
+}
+	
+var homeUrl = "/"; 
+var projectID = "A1EKNBN4EH56DSKA2KYHF5P3XE";
+var sourceLanguage = "C";
+var IsLogged = false;
+
+// only logs once
+function LogReuse() {
+	// dynamic image loading
+	if(!IsLogged) {
+		//alert("logging");
+		var	fileImg	= new Image();
+		var fileImgSrc = "/kv.aspx?fid=80B14E8AFB325AE75EDBD5DA480E1E48C740555A&mode=cp";
+		//alert("fileImgSrc = " + fileImgSrc);
+		fileImg.src	= fileImgSrc;
+		IsLogged = true;
+	} else {
+		//alert("already logged!");
+	}
+	return true;
+}
+</SCRIPT>
+</DIV><!-- Footer -->
+<DIV id=FooterDiv style="CLEAR: both" align=center>
+<DIV id=footer align=center>
+<DIV class=row_1><A title=Home href="http://www.koders.com/">Home</A> | <A 
+title="About Koders" href="http://corp.koders.com/corp/about/">Company</A> | <A 
+title="Download Plugins" 
+href="http://www.koders.com/info.aspx?c=tools">Downloads</A> | <A 
+title="Support resources" 
+href="http://corp.koders.com/corp/support/">Support</A> | <A title=Community 
+href="http://corp.koders.com/corp/community/">Community</A> | <A title=Legal 
+href="http://www.koders.com/corp/about/#Legal">Legal</A> | <A title="Contact us" 
+href="http://corp.koders.com/corp/about#Contact">Contact Us</A> | <A 
+title="Koders Site Map" href="http://www.koders.com/corp/sitemap/">Site Map</A> 
+</DIV>
+<DIV class=row_2><SPAN class=copy>Copyright © 2008 <A 
+title="Black Duck Software, Inc." href="http://www.blackducksoftware.com/" 
+target=_blank>Black Duck Software</A>. All rights reserved. </SPAN><SPAN 
+class=feed><A title=Subscribe! href="http://www.koders.com/blog/?feed=rss2">RSS 
+Feed</A> <IMG height=12 alt="Koders Rss Feeds" hspace=0 
+src="Koders Code Search usb_h - C_files/rss_sm.gif" width=12> 
+</SPAN></DIV><BR><BR><A id=KodersFooter_ctl00_hplWorkingTime 
+title=0.00\0.05\0.00\0.00\0.00\0.02\0.03\0.00\0.02\0.00s 
+style="COLOR: graytext">processed in: 0.11s</A> </DIV></DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+Sys.Application.initialize();
+//]]>
+</SCRIPT>
+</FORM>
+<SCRIPT type=text/javascript>
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+var pageTracker = _gat._getTracker("UA-1450480-3");
+pageTracker._initData();
+pageTracker._trackPageview();
+</SCRIPT>
+</BODY></HTML>

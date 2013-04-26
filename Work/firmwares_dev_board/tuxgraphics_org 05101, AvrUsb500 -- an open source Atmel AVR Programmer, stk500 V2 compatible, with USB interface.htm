@@ -1,0 +1,383 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0064)http://www.tuxgraphics.org/electronics/200510/article05101.shtml -->
+<HTML><HEAD><TITLE>tuxgraphics.org: 05101, AvrUsb500 -- an open source Atmel AVR Programmer, stk500 V2 compatible, with USB interface</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR>
+<META content=Hardware name=LFCATEGORY><LINK href="../../favicon.ico" 
+type=image/x-icon rel="shortcut icon">
+<STYLE type=text/css>TD.top {
+	FONT-SIZE: 12px; FONT-FAMILY: Arial,Geneva,Verdana,Helvetica,sans-serif
+}
+PRE {
+	FONT-FAMILY: monospace,Courier
+}
+PRE.code {
+	FONT-FAMILY: monospace,Courier; BACKGROUND-COLOR: #aedbe8
+}
+P.cl {
+	COLOR: #ee9500
+}
+TABLE.left {
+	MARGIN-RIGHT: 0.3cm
+}
+A.nodec {
+	TEXT-DECORATION: none
+}
+P.trans {
+	FONT-SIZE: 8pt; TEXT-ALIGN: right
+}
+P.clbox {
+	BORDER-RIGHT: #ffd700; PADDING-RIGHT: 0.5cm; BORDER-TOP: #ffd700; PADDING-LEFT: 0.5cm; PADDING-BOTTOM: 0.5cm; BORDER-LEFT: #ffd700; WIDTH: 50%; PADDING-TOP: 0.5cm; BORDER-BOTTOM: #ffd700; BACKGROUND-COLOR: #ffd700; TEXT-ALIGN: center; alignment: center
+}
+P.code {
+	BORDER-RIGHT: #aedbe8; PADDING-RIGHT: 0.1cm; BORDER-TOP: #aedbe8; PADDING-LEFT: 0.1cm; PADDING-BOTTOM: 0.1cm; BORDER-LEFT: #aedbe8; WIDTH: 80%; PADDING-TOP: 0.1cm; BORDER-BOTTOM: #aedbe8; BACKGROUND-COLOR: #aedbe8; TEXT-ALIGN: left; alignment: center
+}
+P.foot {
+	BORDER-RIGHT: #aaaaaa; PADDING-RIGHT: 0.5cm; BORDER-TOP: #aaaaaa; MARGIN-TOP: 0.1cm; PADDING-LEFT: 0.5cm; PADDING-BOTTOM: 0.5cm; MARGIN-LEFT: 1cm; BORDER-LEFT: #aaaaaa; COLOR: #ffffff; MARGIN-RIGHT: 1cm; PADDING-TOP: 0.5cm; BORDER-BOTTOM: #aaaaaa; BACKGROUND-COLOR: #aaaaaa; TEXT-ALIGN: center
+}
+DIV.tbbutton {
+	BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 12px; BACKGROUND: #ddd; PADDING-BOTTOM: 2px; MARGIN: 2px 5px; WIDTH: 24em; COLOR: #555; LINE-HEIGHT: 1.2em; PADDING-TOP: 2px; BORDER-BOTTOM: #aaa 1px solid; WHITE-SPACE: nowrap; TEXT-ALIGN: center
+}
+DIV.bbutton {
+	BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 12px; BACKGROUND: #ddd; FLOAT: left; PADDING-BOTTOM: 2px; MARGIN: 2px 5px; COLOR: #555; LINE-HEIGHT: 1.2em; PADDING-TOP: 2px; BORDER-BOTTOM: #aaa 1px solid; WHITE-SPACE: nowrap; TEXT-ALIGN: center
+}
+</STYLE>
+</HEAD>
+<BODY text=#000000 bgColor=#fdf5e6><!-- this is used by a number of tools:
+ =LF=AUTHOR: Guido     Socher
+ =LF=CAT___: Hardware
+ =LF=TITLE_: AvrUsb500 -- an open source Atmel AVR Programmer, stk500 V2 compatible, with USB interface 
+ =LF=NUMBER: 05101
+ =LF=ANAME_: article05101.shtml
+ =LF=PARSER: 2.54
+ --><!-- start navegation bar -->
+<CENTER><A href="http://www.tuxgraphics.org/">Home</A>&nbsp;|&nbsp; <A 
+href="http://www.tuxgraphics.org/electronics/">Electronics</A>&nbsp;|&nbsp; <A 
+href="http://www.tuxgraphics.org/toolbox/">Utilities</A>&nbsp;|&nbsp; <A 
+href="http://www.tuxgraphics.org/giniandkarlsworld/">Gini and Karl's 
+world</A>&nbsp;|&nbsp; <A 
+href="http://www.tuxgraphics.org/postcard/">E-cards</A>&nbsp;|&nbsp; <A 
+href="http://www.tuxgraphics.org/photos/">Photos</A>&nbsp;|&nbsp; <A 
+href="http://shop.tuxgraphics.org/">Online-Shop</A> </CENTER>
+<CENTER>
+<HR>
+<IMG height=151 
+src="tuxgraphics_org 05101, AvrUsb500 -- an open source Atmel AVR Programmer, stk500 V2 compatible, with USB interface_files/tuxgraphics_icon.png" 
+width=800> </CENTER><BR clear=all><!-- stop navegation bar -->
+<TABLE class=left width=195 align=left summary=toc border=0>
+  <TBODY>
+  <TR>
+    <TD><!-- INDEX_START --><BR><I>Content</I>: 
+      <UL>
+        <LI><A 
+        href="http://www.tuxgraphics.org/electronics/200510/article05101.shtml#05101lfindex0">Why 
+        Stk500 and USB?</A> 
+        <LI><A 
+        href="http://www.tuxgraphics.org/electronics/200510/article05101.shtml#05101lfindex1">The 
+        design idea behind this USB AVR programmer</A> 
+        <LI><A 
+        href="http://www.tuxgraphics.org/electronics/200510/article05101.shtml#05101lfindex2">Solving 
+        the chicken and egg problem </A>
+        <LI><A 
+        href="http://www.tuxgraphics.org/electronics/200510/article05101.shtml#05101lfindex3">The 
+        hardware</A> 
+        <LI><A 
+        href="http://www.tuxgraphics.org/electronics/200510/article05101.shtml#05101lfindex4">Soldering 
+        SMD chips</A> 
+        <LI><A 
+        href="http://www.tuxgraphics.org/electronics/200510/article05101.shtml#05101lfindex5">Testing 
+        the hardware</A> 
+        <LI><A 
+        href="http://www.tuxgraphics.org/electronics/200510/article05101.shtml#05101lfindex6">BitBang 
+        loading of the final firmware</A> 
+        <LI><A 
+        href="http://www.tuxgraphics.org/electronics/200510/article05101.shtml#05101lfindex7">Using 
+        the USB AVR programmer</A> 
+        <LI><A 
+        href="http://www.tuxgraphics.org/electronics/200510/article05101.shtml#05101lfindex8">Conclusions</A> 
+
+        <LI><A 
+        href="http://www.tuxgraphics.org/electronics/200510/article05101.shtml#05101lfindex9">References</A> 
+        </LI></UL><BR><SMALL>By Guido Socher 
+      <BR><SMALL>&lt;guido_at_tuxgraphics.org&gt;</SMALL></SMALL> 
+</TD></TR></TBODY></TABLE><!-- INDEX_STOP --><!-- HEAD_OF_THE_ARTICLE_START --><BR>&nbsp; 
+
+<TABLE border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <H2>AvrUsb500 -- an open source Atmel AVR Programmer, stk500 V2 
+      compatible, with USB interface </H2><IMG height=243 alt=[Illustration] 
+      hspace=10 
+      src="tuxgraphics_org 05101, AvrUsb500 -- an open source Atmel AVR Programmer, stk500 V2 compatible, with USB interface_files/title.jpg" 
+      width=450> <!-- ABSTRACT OF THE ARTICLE -->
+      <P><I>Abstract</I>: 
+      <P><!-- articleabstract_start -->It took me about 4 month to develop the 
+      software and hardware presented in this article. Especially coding the 
+      stk500 specification from scratch in C was not easy. The result was 
+      however worth the effort. I really like this new programmer and I am sure 
+      you will like it too. <BR><BR>In this article we will design a state of 
+      the art USB programmer for the AVR microcontrollers from Atmel. The 
+      programmer firmware has no device dependent data. Therefore it works for 
+      almost any AVR microcontroller on the market and possible future 
+      microcontrollers. <BR><BR>This USB programmer has, unlike other 
+      programmers, no "chicken and egg problem". That is: you can build it from 
+      scratch without the need of another programmer to load the initial 
+      firmware. <BR><BR>The firmware is open source and programmed in C 
+      according to the AVR068 specification from Atmel. <BR><BR><B>The avrusb500 
+      is available as a kit from <A 
+      href="http://shop.tuxgraphics.org/">http://shop.tuxgraphics.org/</A></B> <!-- articleabstract_stop --><BR><!-- HR divider -->
+      <CENTER><FONT color=#8282e0><B>_________________ _________________ 
+      _________________</B></FONT></CENTER><BR></TD></TR></TBODY></TABLE><!-- HEAD_OF_THE_ARTICLE_STOP --><!-- BODY_OF_THE_ARTICLE_START --><A 
+name=05101lfindex0>&nbsp;</A> 
+<H2>Why Stk500 and USB?</H2>Until the beginning of this year a simple parallel 
+port programmer was the only good programmer as it could be used for any device. 
+All device dependent information is stored in the programmer software on your 
+computer. The problem is however that the parallel port is slowly disappearing. 
+Apple does not have it at all and the smaller laptops don't have it either 
+anymore. It's time to look for alternatives. <BR>Atmel had at last a good idea 
+and published together with the avrstudio version 4.11 a completely redesigned 
+stk500 protocol. The new stk500 protocol is totally incompatible with version 1 
+of the stk500 protocol but it is the right solution. <BR><BR>The stk500 AVR068 
+specification needs no longer device dependent data structures in the programmer 
+hardware. All device dependent logic is now in the programmer software running 
+on the PC. As of today avrstudio (for windows) and avrdude (for multiple OSs 
+including Linux) support this version 2 of the stk500 protocol. <BR><BR>The 
+physical hardware interface to the PC is USB. This way we can build a fast and 
+modern programmer which can be used under Linux, BSD, Windows and MacOS X. <A 
+name=05101lfindex1>&nbsp;</A> 
+<H2>The design idea behind this USB AVR programmer</H2>The programmer will be an 
+In System Programmer. That is: you do not have to remove the microcontroller 
+from the circuit. Almost all Atmel microcontrollers have for this purpose an 
+interface called SPI (Serial Peripheral Interface). The microcontrollers can be 
+either spi master or spi slave. A spi slave is the microcontroller which is 
+programmed and the programmer is the master. The master is controlling the clock 
+(pin SCK) on the SPI interface. The purpose of the programmer is therefore to 
+"convert" the stk500 protocol to spi commands. To run spi directly over usb 
+would be too slow for normal programming and development. <BR>
+<CENTER><IMG height=136 alt=[protocols] 
+src="tuxgraphics_org 05101, AvrUsb500 -- an open source Atmel AVR Programmer, stk500 V2 compatible, with USB interface_files/idea.gif" 
+width=600></A> </CENTER><BR>The spi protocol is implemented in the 
+microcontroller hardware. We just enable the spi master as described in the 
+datasheet (see references at the end). <BR><BR>The stk500 protocol defines a 
+message format and appropriate commands such as CMD_SET_PARAMETER, 
+CMD_LOAD_ADDRESS, CMD_PROGRAM_FLASH_ISP etc... The protocol sends chunks of data 
+and this is very suitable for USB. The whole protocol is documented in the 
+application note AVR068 (stk500 V2) from Atmel. This stk500 protocol must not be 
+confused with AVR061, which is version 1 of the stk500 protocol and has 
+absolutely nothing to do with version 2. Atmel has done a complete re-design. <A 
+name=05101lfindex2>&nbsp;</A> 
+<H2>Solving the chicken and egg problem </H2>Since this programmer contains 
+already a microcontroller we must find a way to initially program it. For this 
+we need a programmer ... the thing that we are about to build... <BR><BR>For the 
+usb interface we use a FT232bm chip. This chip has an interesting mode called 
+"bit-bang" mode. I have written a library called ftdibb (only 2 files .c and .h, 
+available from http://linuxfocus.org/~guido/) which implements this bitbang mode 
+on top of the libUSB library. LibUSB (http://libusb.sourceforge.net) uses the 
+/proc file system to send and receive custom usb messages to any usb device on 
+the usb bus. One problem is that this requires root permissions under Linux, the 
+other problem is that we will send very short messages. Initially (when there is 
+no firmware on loaded in the microcontroller) we have absolutely no storage 
+place and no logic in the programmer. We must send all the commands directly 
+from the PC, bit by bit. USB is fast when you send long chunks of data but it is 
+very slow when you send only 1 bit at a time. <BR><BR>This is however acceptable 
+as it saves us from having to get first a different programmer to load the 
+initial firmware into this programmer. Therefore it is acceptable and you load 
+the firmware only once. <BR><BR>In other words the avrusb500 consists really of 
+two programmers: One internal for the initial loading of the firmware and the 
+actual avrusb500 programmer which is a fast and stk500 V2 based programmer for 
+every day use. <BR><BR>I called the bitbang programmer for the initial loading 
+"bbpg". I have modified the uisp programmer software for this purpose. You need 
+to download uisp-20050207.tar.gz and then apply the 
+uisp-20050207-usb-bbpg-patch.txt patch (cd uisp-20050207;patch -p1 &lt; 
+uisp-20050207-usb-bbpg-patch.txt ) or you can take the already patched sources 
+(uisp-20050207-usb-bbpg.tar.gz, download at the end). Libusb needs to be 
+installed before you compile the bbpg programmer. The avrusb500-X.Y.tar.gz 
+package contains also a patched and pre-compiled binary. There is no guarantee 
+that a pro-compiled will run on any linux distribution due to the dependencies 
+on the library versions but it will run on many. So if you want to save some 
+compile time then try this one first. You must name this version of uisp 
+"uisp_bbpg". This is what the makefiles and scripts expect.<BR><BR>The CD which 
+is sold from <A 
+href="http://shop.tuxgraphics.org/">http://shop.tuxgraphics.org/</A> together 
+with the parts for this programmer can also be used for the initial loading of 
+the firmware. It has the additional advantage that you can do this from the CD 
+without root permissions. <A name=05101lfindex3>&nbsp;</A> 
+<H2>The hardware</H2>The specification from Atmel for the STK500 communication 
+protocol is 37 pages long. It is however not a problem to fit it into an atmega8 
+microcontroller. It fills about half of the available memory. <BR><BR>Here is 
+the schematic drawing. The left side is the usb to rs232 conversion circuit to 
+provide usb connectivity to the atmega8. The whole circuit is self powered. That 
+is: unlike may other programmers (actually all, except for the simple parallel 
+port programmers) you do not need additional pins to draw the power from the 
+target circuit. <BR><BR>We can therefore continue to use the small little 
+connector introduced with the (<A 
+href="http://www.tuxgraphics.org/electronics/200411/article352.shtml">Programming 
+the AVR microcontroller with GCC, libc 1.0.4</A>). This is in my opinion the 
+right right solution as you don't waste space on the PCB for a bulky connector 
+which is used only once. <BR>
+<CENTER><A 
+href="http://www.tuxgraphics.org/common/src2/article05101/avrusb500_circuit_v2.pdf"><IMG 
+height=254 
+src="tuxgraphics_org 05101, AvrUsb500 -- an open source Atmel AVR Programmer, stk500 V2 compatible, with USB interface_files/circuit_th.gif" 
+width=500></A> </CENTER><BR>We need an external crystal for the atmega8. This is 
+because the UART for the serial communication via usb needs to run at 115.2K 
+baud and this can only be done with a 3.6864MHz crystal. Why do we need 115.2K 
+baud? This is mainly because AVRstudio from atmel is really stubborn. You can't 
+change the baud rate there. If you plan to use this programmer only in 
+combination with avrdude then you can set the baud rate to 19200 and use the 
+internal 4MHz oscillator. The speed will be a little slower but you will hardly 
+notice it as the baud-rate is not the bottleneck. <A 
+name=05101lfindex4>&nbsp;</A> 
+<H2>Soldering SMD chips</H2>I have designed the hardware such that conventional 
+parts can be used for almost all components. Only the ft232 is a SMD chip. It is 
+not available in any other package and that is also true for all other usb chips 
+on the market. <BR><BR>Soldering a SMD chip is a little challenge. The problem 
+is that the chips are rather small and there is little space between the pins. 
+If you are not careful you can easily solder several pins together. To correct 
+such a mistake is not easy and you may destroy not only the chip but also the 
+PCB. If you are not sure if you have the skills and the right equipment then buy 
+a board with the SMD parts already soldered on. <BR><BR>In any case here are 
+some smd soldering tips: 
+<UL>
+  <LI>Solder all smd chips first. You can do this before or after drilling the 
+  holes but in any case the smd chips should be soldered on before any other 
+  parts. </LI></UL>
+<UL>
+  <LI><IMG height=215 hspace=10 
+  src="tuxgraphics_org 05101, AvrUsb500 -- an open source Atmel AVR Programmer, stk500 V2 compatible, with USB interface_files/smd_solder1.jpg" 
+  width=250 align=right> The board should be 100% clean and the pads for the smd 
+  chip coated with solder flux. Do not use flux which contains aggressive 
+  chemicals. Such flux is for repairing a water spout. What you need is e.g 
+  known as "no clean flux". It is a solder flux which will mostly evaporate and 
+  any remains can stay on the board. </LI></UL><BR clear=all>
+<UL>
+  <LI><IMG height=129 hspace=10 
+  src="tuxgraphics_org 05101, AvrUsb500 -- an open source Atmel AVR Programmer, stk500 V2 compatible, with USB interface_files/smd_solder2.jpg" 
+  width=126 align=right> Put tiny amounts of solder with soldering iron onto 
+  each pad. The soldering iron should have a 0.8mm tip (or smaller) and you 
+  should use 0.5mm SMD solder wire. </LI></UL><BR clear=all>
+<UL>
+  <LI>Position the chip on the pads and solder just one pin onto the board. 
+  Check carefully the position again and then solder a pin on the opposite side 
+  onto the pcb. Just press the pin gently with the tip of the soldering iron and 
+  don't add any more solder. </LI></UL><BR clear=all>
+<UL>
+  <LI><IMG height=109 hspace=10 
+  src="tuxgraphics_org 05101, AvrUsb500 -- an open source Atmel AVR Programmer, stk500 V2 compatible, with USB interface_files/smd_solder3.jpg" 
+  width=300 align=right> Now go around the chip pin by pin and press each pin 
+  gently onto the board. Don't add solder. </LI></UL><A 
+name=05101lfindex5>&nbsp;</A> 
+<H2>Testing the hardware</H2>Check again the polarity of the USB connection. 
+Incorrect polarity will destroy the circuit. <BR>
+<CENTER><IMG height=159 
+src="tuxgraphics_org 05101, AvrUsb500 -- an open source Atmel AVR Programmer, stk500 V2 compatible, with USB interface_files/usb_a.gif" 
+width=249> </CENTER><BR>The first test is to just plug in the usb connector and 
+check (under linux) the file /proc/bus/usb/devices. You should see a new entry 
+which looks like this: 
+<CENTER>
+<TABLE width="90%" bgColor=#000000>
+  <TBODY>
+  <TR>
+    <TD><FONT color=#00ff00>guido@brain</FONT> <FONT face=Courier 
+      color=#ffffff><BR>T: Bus=01 Lev=01 Prnt=01 Port=00 Cnt=01 Dev#= 2 Spd=12 
+      MxCh= 0<BR>D: Ver= 1.10 Cls=00(&gt;ifc ) Sub=00 Prot=00 MxPS= 8 #Cfgs= 
+      1<BR>P: Vendor=0403 ProdID=6001 Rev= 2.00<BR>S: Manufacturer=FTDI<BR>S: 
+      Product=USB &lt;-&gt; Serial<BR>C:* #Ifs= 1 Cfg#= 1 Atr=80 MxPwr= 
+      90mA<BR>I: If#= 0 Alt= 0 #EPs= 2 Cls=ff(vend.) Sub=ff Prot=ff 
+      Driver=serial<BR>E: Ad=81(I) Atr=02(Bulk) MxPS= 64 Ivl=0ms<BR>E: Ad=02(O) 
+      Atr=02(Bulk) MxPS= 64 Ivl=0ms<BR></FONT></TD></TR></TBODY></TABLE></CENTER>This 
+shows that the ft232 is working. <BR><BR>Unpack the avrusb500-X.Y package (can 
+be downloaded at the end of this article). E.g: <PRE class=code>tar zxvf avrusb500-0.6.tar.gz
+cd avrusb500-0.6
+</PRE>The avrusb500-X.Y contains two more test programs which test the 
+microcontroller and the whole communication to your PC. Load them also. How to 
+do this is described in the README file inside the avrusb500-X.Y package. You 
+will basically just connect the bridge cable (CONN1 to CONN4) and execute a 
+command like <PRE class=code>make load_test_1
+</PRE>but please have a look at the readme file (command: more README). <A 
+name=05101lfindex6>&nbsp;</A> 
+<H2>BitBang loading of the final firmware</H2>Loading of firmware is done under 
+Linux only. The programmer is OS independent once you have loaded the firmware. 
+<BR><BR>Plug in the small bridge cable between the connectors CONN1 and CONN4. 
+Pay attention to correct polarity. If you have ordered the kit and the CD from 
+the tuxgraphics shop then you just execute the command <PRE class=code>make load
+</PRE>from the unpacked avrusb500-X.Y package. That's all. <BR><BR>If you do not 
+have this CD then you need to build first the special version of uisp which 
+contains the ppbg programmer (see above). The README file inside the avrusb500 
+package describes this procedure also. <BR><BR>Loading of the firmware takes 
+very long time due to the huge overhead you get on the USB bus when you send 
+just one bit at a time. You can calculate approximately 20minutes for loading 
+and 20minutes for verification. <A name=05101lfindex7>&nbsp;</A> 
+<H2>Using the USB AVR programmer</H2>This programmer is designed to be developed 
+in a Linux environment. However once build it is truly OS independent. You can 
+use it with the AVRstudio4.11 for windows or under Mac OSX or Linux or BSD Unix 
+... <BR><BR>The software to use the avrusb500 programmer under Linux is avrdude 
+(<A 
+href="http://savannah.nongnu.org/projects/avrdude/">http://savannah.nongnu.org/projects/avrdude/</A>). 
+You need version 5.0. As of this writing one a beta version of avrdude-5.0 was 
+available. By the time you read this article the final version may already be 
+available. The beta version has a few bugs. You still need a patch to get it to 
+work. Both the beta version and the patch can be downloaded at the end of this 
+article. <BR><BR>The command to load the code MyCode.hex into an ATmega8 would 
+be: <PRE class=code>avrdude -p m8 -c avrusb500 -e -U flash:w:MyCode.hex
+</PRE>The configuration file entry in the avrdude.conf file is: <PRE class=code>default_serial     = "/dev/usb/tts/0";
+#or
+#default_serial     = "/dev/ttyUSB0";
+
+# ... and further down:
+programmer
+  id    = "avrusb500";
+  desc  = "Atmel AVR ISP V2 programmer from tuxgraphics";
+  type  =  stk500v2;
+;
+#
+</PRE><A name=05101lfindex8>&nbsp;</A> 
+<H2>Conclusions</H2>This is the first modern USB based AVR programmer which can 
+be build from scratch without the need to find a programmer to program the 
+programmer. <BR><BR>If you like this type of articles then have also a look at 
+<A href="http://shop.tuxgraphics.org/">http://shop.tuxgraphics.org/</A>. It is 
+always nice to see that there are people who support my work. <BR><BR>Have fun 
+and happy soldering! <A name=05101lfindex9>&nbsp;</A> 
+<H2>References</H2>
+<UL>
+  <LI><A 
+  href="http://www.tuxgraphics.org/common/src2/article365/atmega8.pdf">Datasheet 
+  of the atmega8 [2.5Mb, pdf]</A> the SPI interface is described in this 
+  datasheet. 
+  <LI>The AVR068 specification (description of the stk500 V2 protocol): <A 
+  href="http://www.tuxgraphics.org/common/src2/article05101/stk500_spec_AVR068.pdf">stk500_spec_AVR068.pdf, 
+  0.5Mb</A> 
+  <LI>If you want to learn more about the BitBang mode of the ftdi chips then 
+  take a look at my BitBang library (ftdibb): <A 
+  href="http://linuxfocus.org/~guido/">http://linuxfocus.org/~guido/</A> 
+  <LI><B>Software, documents and future updates:<A 
+  href="http://www.tuxgraphics.org/common/src2/article05101/">Download page for 
+  this article</A></B> 
+  <LI><A 
+  href="http://www.tuxgraphics.org/common/src2/article05101/avrdude-5.0-BETA.tar.gz">avrdude-5.0-BETA.tar.gz</A>, 
+  <A 
+  href="http://www.tuxgraphics.org/common/src2/article05101/avrdude-5.0-BETA-stk500-patch.txt">avrdude-5.0-BETA-stk500-patch.txt</A> 
+
+  <LI><A 
+  href="http://www.tuxgraphics.org/common/src2/article05101/uisp-20050207-with-usb-bbpg-patch.tar.gz">uisp-20050207-with-usb-bbpg-patch.tar.gz</A>, 
+  uisp with the bbpg patch already applied. 
+  <LI>A complete kit to build this programmer is available from <A 
+  href="http://shop.tuxgraphics.org/">shop.tuxgraphics.org</A> </LI></UL><!-- vim: set sw=2 ts=2 et tw=80: --><!-- BODY_OF_THE_ARTICLE_STOP --><!-- 2pdaIgnoreStart --><BR 
+clear=all>
+<HR noShade SIZE=2>
+
+<TABLE width=250 border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=bbutton><A class=nodec 
+      href="http://www.tuxgraphics.org/">&lt;--, tuxgraphics Home</A></DIV></TD>
+    <TD>
+      <DIV class=bbutton><A class=nodec 
+      href="http://www.tuxgraphics.org/electronics/">Go to the index of this 
+      section</A></DIV></TD></TR></TBODY></TABLE><BR clear=all>
+<HR noShade SIZE=2>
+<!-- ARTICLE FOOT -->© Guido Socher, tuxgraphics.org<BR>
+<P align=right><FONT size=1>2005-10-28, generated by tuxgrparser version 
+2.54</FONT></P></BODY></HTML>

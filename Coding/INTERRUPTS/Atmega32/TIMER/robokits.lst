@@ -1,0 +1,197 @@
+   1               		.file	"robokits.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	__vector_9
+  20               	__vector_9:
+  21               	.LFB7:
+  22               	.LM1:
+  23 0000 1F92      		push __zero_reg__
+  24 0002 0F92      		push r0
+  25 0004 0FB6      		in r0,__SREG__
+  26 0006 0F92      		push r0
+  27 0008 1124      		clr __zero_reg__
+  28 000a 8F93      		push r24
+  29 000c 9F93      		push r25
+  30               	/* prologue: Signal */
+  31               	/* frame size = 0 */
+  32               	.LM2:
+  33 000e CE99      		sbic 57-32,6
+  34 0010 00C0      		rjmp .L2
+  35               	.LM3:
+  36 0012 DE9A      		sbi 59-32,6
+  37 0014 00C0      		rjmp .L3
+  38               	.L2:
+  39               	.LM4:
+  40 0016 DE98      		cbi 59-32,6
+  41               	.L3:
+  42               	.LM5:
+  43 0018 8EE2      		ldi r24,lo8(-978)
+  44 001a 9CEF      		ldi r25,hi8(-978)
+  45 001c 9DBD      		out (76)+1-32,r25
+  46 001e 8CBD      		out 76-32,r24
+  47               	/* epilogue start */
+  48               	.LM6:
+  49 0020 9F91      		pop r25
+  50 0022 8F91      		pop r24
+  51 0024 0F90      		pop r0
+  52 0026 0FBE      		out __SREG__,r0
+  53 0028 0F90      		pop r0
+  54 002a 1F90      		pop __zero_reg__
+  55 002c 1895      		reti
+  56               	.LFE7:
+  58               	.global	main
+  60               	main:
+  61               	.LFB8:
+  62               	.LM7:
+  63               	/* prologue: function */
+  64               	/* frame size = 0 */
+  65               	.LM8:
+  66 002e 80EF      		ldi r24,lo8(-16)
+  67 0030 8ABB      		out 58-32,r24
+  68               	.LM9:
+  69 0032 8BEF      		ldi r24,lo8(-5)
+  70 0034 87BB      		out 55-32,r24
+  71               	.LM10:
+  72 0036 81EF      		ldi r24,lo8(-15)
+  73 0038 81BB      		out 49-32,r24
+  74               	.LM11:
+  75 003a DC9A      		sbi 59-32,4
+  76               	.LM12:
+  77 003c C29A      		sbi 56-32,2
+  78               	.LM13:
+  79 003e 919A      		sbi 50-32,1
+  80               	.LM14:
+  81 0040 929A      		sbi 50-32,2
+  82               	.LM15:
+  83 0042 939A      		sbi 50-32,3
+  84               	.LM16:
+  85 0044 1FBC      		out 79-32,__zero_reg__
+  86               	.LM17:
+  87 0046 85E0      		ldi r24,lo8(5)
+  88 0048 8EBD      		out 78-32,r24
+  89               	.LM18:
+  90 004a 8EE2      		ldi r24,lo8(-978)
+  91 004c 9CEF      		ldi r25,hi8(-978)
+  92 004e 9DBD      		out (76)+1-32,r25
+  93 0050 8CBD      		out 76-32,r24
+  94               	.LM19:
+  95 0052 84E0      		ldi r24,lo8(4)
+  96 0054 89BF      		out 89-32,r24
+  97               	.LM20:
+  98               	/* #APP */
+  99               	 ;  115 "robokits.c" 1
+ 100 0056 7894      		sei
+ 101               	 ;  0 "" 2
+ 102               	/* #NOAPP */
+ 103               	.LBB30:
+ 104               	.LBB31:
+ 105               	.LBB32:
+ 106               	.LBB33:
+ 107               	.LM21:
+ 108 0058 24E2      		ldi r18,lo8(-3036)
+ 109 005a 34EF      		ldi r19,hi8(-3036)
+ 110               	.LVL0:
+ 111               	.L8:
+ 112               	.LBE33:
+ 113               	.LBE32:
+ 114               	.LBE31:
+ 115               	.LBE30:
+ 116               	.LM22:
+ 117 005c CD99      		sbic 57-32,5
+ 118 005e 00C0      		rjmp .L6
+ 119               	.LM23:
+ 120 0060 DD9A      		sbi 59-32,5
+ 121 0062 00C0      		rjmp .L7
+ 122               	.L6:
+ 123               	.LM24:
+ 124 0064 DD98      		cbi 59-32,5
+ 125               	.L7:
+ 126               	.LBB37:
+ 127               	.LBB36:
+ 128               	.LBB35:
+ 129               	.LBB34:
+ 130               	.LM25:
+ 131 0066 C901      		movw r24,r18
+ 132               	.LVL1:
+ 133               	/* #APP */
+ 134               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 135 0068 0197      		1: sbiw r24,1
+ 136 006a 01F4      		brne 1b
+ 137               	 ;  0 "" 2
+ 138               	/* #NOAPP */
+ 139               	.LBE34:
+ 140               	.LBE35:
+ 141               	.LBE36:
+ 142               	.LBE37:
+ 143               	.LBB38:
+ 144               	.LBB39:
+ 145               	.LBB40:
+ 146               	.LBB41:
+ 147 006c C901      		movw r24,r18
+ 148               	.LVL2:
+ 149               	/* #APP */
+ 150               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 151 006e 0197      		1: sbiw r24,1
+ 152 0070 01F4      		brne 1b
+ 153               	 ;  0 "" 2
+ 154               	/* #NOAPP */
+ 155               	.LBE41:
+ 156               	.LBE40:
+ 157               	.LBE39:
+ 158               	.LBE38:
+ 159               	.LBB42:
+ 160               	.LBB43:
+ 161               	.LBB44:
+ 162               	.LBB45:
+ 163 0072 C901      		movw r24,r18
+ 164               	.LVL3:
+ 165               	/* #APP */
+ 166               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 167 0074 0197      		1: sbiw r24,1
+ 168 0076 01F4      		brne 1b
+ 169               	 ;  0 "" 2
+ 170               	/* #NOAPP */
+ 171               	.LBE45:
+ 172               	.LBE44:
+ 173               	.LBE43:
+ 174               	.LBE42:
+ 175               	.LBB46:
+ 176               	.LBB47:
+ 177               	.LBB48:
+ 178               	.LBB49:
+ 179 0078 C901      		movw r24,r18
+ 180               	.LVL4:
+ 181               	/* #APP */
+ 182               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 183 007a 0197      		1: sbiw r24,1
+ 184 007c 01F4      		brne 1b
+ 185               	 ;  0 "" 2
+ 186               	/* #NOAPP */
+ 187 007e 00C0      		rjmp .L8
+ 188               	.LBE49:
+ 189               	.LBE48:
+ 190               	.LBE47:
+ 191               	.LBE46:
+ 192               	.LFE8:
+ 226               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccYJxu0C.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccYJxu0C.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccYJxu0C.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccYJxu0C.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccYJxu0C.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccYJxu0C.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccYJxu0C.s:20     .text:00000000 __vector_9
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccYJxu0C.s:60     .text:0000002e main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

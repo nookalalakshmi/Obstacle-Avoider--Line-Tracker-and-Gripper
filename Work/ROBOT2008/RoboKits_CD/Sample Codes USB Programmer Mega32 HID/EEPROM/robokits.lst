@@ -1,0 +1,217 @@
+   1               		.file	"robokits.c"
+   2               		.arch atmega32
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	main
+  20               	main:
+  21               	.LFB9:
+  22               	.LM1:
+  23               	/* prologue: frame size=7 */
+  24 0000 CF92      		push r12
+  25 0002 DF92      		push r13
+  26 0004 EF92      		push r14
+  27 0006 FF92      		push r15
+  28 0008 1F93      		push r17
+  29 000a CF93      		push r28
+  30 000c DF93      		push r29
+  31 000e CDB7      		in r28,__SP_L__
+  32 0010 DEB7      		in r29,__SP_H__
+  33 0012 2797      		sbiw r28,7
+  34 0014 0FB6      		in __tmp_reg__,__SREG__
+  35 0016 F894      		cli
+  36 0018 DEBF      		out __SP_H__,r29
+  37 001a 0FBE      		out __SREG__,__tmp_reg__
+  38 001c CDBF      		out __SP_L__,r28
+  39               	/* prologue end (size=15) */
+  40               	.LM2:
+  41 001e 80EF      		ldi r24,lo8(-16)
+  42 0020 8ABB      		out 58-0x20,r24
+  43               	.LM3:
+  44 0022 8BEF      		ldi r24,lo8(-5)
+  45 0024 87BB      		out 55-0x20,r24
+  46               	.LM4:
+  47 0026 81EF      		ldi r24,lo8(-15)
+  48 0028 81BB      		out 49-0x20,r24
+  49               	.LM5:
+  50 002a DC9A      		sbi 59-0x20,4
+  51               	.LM6:
+  52 002c C29A      		sbi 56-0x20,2
+  53               	.LM7:
+  54 002e 919A      		sbi 50-0x20,1
+  55               	.LM8:
+  56 0030 929A      		sbi 50-0x20,2
+  57               	.LM9:
+  58 0032 939A      		sbi 50-0x20,3
+  59               	.LM10:
+  60 0034 8CE0      		ldi r24,lo8(12)
+  61 0036 90E0      		ldi r25,hi8(12)
+  62 0038 0E94 0000 		call uart_init
+  63               	.LM11:
+  64               	/* #APP */
+  65 003c 7894      		sei
+  66               	.LM12:
+  67               	/* #NOAPP */
+  68 003e 80E0      		ldi r24,lo8(__c.1473)
+  69 0040 90E0      		ldi r25,hi8(__c.1473)
+  70 0042 0E94 0000 		call uart_puts_p
+  71               	.LM13:
+  72 0046 80E0      		ldi r24,lo8(__c.1475)
+  73 0048 90E0      		ldi r25,hi8(__c.1475)
+  74 004a 0E94 0000 		call uart_puts_p
+  75               	.LM14:
+  76 004e 80E0      		ldi r24,lo8(__c.1477)
+  77 0050 90E0      		ldi r25,hi8(__c.1477)
+  78 0052 0E94 0000 		call uart_puts_p
+  79 0056 A0E0      		ldi r26,lo8(0)
+  80 0058 B0E0      		ldi r27,hi8(0)
+  81               	.LVL0:
+  82               	.LVL1:
+  83               	.L2:
+  84               	.LM15:
+  85 005a CD01      		movw r24,r26
+  86 005c 0196      		adiw r24,1
+  87               	.LBB11:
+  88               	.LBB12:
+  89               	.LM16:
+  90               	/* #APP */
+  91 005e 0A2E      		mov __tmp_reg__,r26
+  92 0060 0E94 0000 		call __eeprom_write_byte_1C1D1E
+  93               	.LVL2:
+  94               	/* #NOAPP */
+  95               	.LBE12:
+  96               	.LBE11:
+  97               	.LM17:
+  98 0064 8F3F      		cpi r24,255
+  99 0066 9105      		cpc r25,__zero_reg__
+ 100 0068 01F0      		breq .L3
+ 101 006a DC01      		movw r26,r24
+ 102               	.LVL3:
+ 103 006c 00C0      		rjmp .L2
+ 104               	.LVL4:
+ 105               	.L3:
+ 106               	.LM18:
+ 107 006e 80E0      		ldi r24,lo8(__c.1483)
+ 108 0070 90E0      		ldi r25,hi8(__c.1483)
+ 109               	.LVL5:
+ 110 0072 0E94 0000 		call uart_puts_p
+ 111               	.LVL6:
+ 112 0076 CC24      		clr r12
+ 113 0078 DD24      		clr r13
+ 114               	.LVL7:
+ 115               	.L5:
+ 116               	.LBB13:
+ 117               	.LBB14:
+ 118               	.LM19:
+ 119 007a D601      		movw r26,r12
+ 120               	.LVL8:
+ 121               	/* #APP */
+ 122 007c 0E94 0000 		call __eeprom_read_byte_1C1D1E
+ 123 0080 102D      		mov r17,__tmp_reg__
+ 124               	.LVL9:
+ 125               	/* #NOAPP */
+ 126               	.LBE14:
+ 127               	.LBE13:
+ 128               	.LM20:
+ 129 0082 4AE0      		ldi r20,lo8(10)
+ 130 0084 50E0      		ldi r21,hi8(10)
+ 131 0086 7E01      		movw r14,r28
+ 132 0088 0894      		sec
+ 133 008a E11C      		adc r14,__zero_reg__
+ 134 008c F11C      		adc r15,__zero_reg__
+ 135 008e B701      		movw r22,r14
+ 136               	.LVL10:
+ 137 0090 812F      		mov r24,r17
+ 138 0092 9927      		clr r25
+ 139 0094 0E94 0000 		call itoa
+ 140               	.LVL11:
+ 141               	.LM21:
+ 142 0098 C701      		movw r24,r14
+ 143 009a 0E94 0000 		call uart_puts
+ 144               	.LM22:
+ 145 009e 80E0      		ldi r24,lo8(__c.1486)
+ 146 00a0 90E0      		ldi r25,hi8(__c.1486)
+ 147 00a2 0E94 0000 		call uart_puts_p
+ 148               	.LM23:
+ 149 00a6 0894      		sec
+ 150 00a8 C11C      		adc r12,__zero_reg__
+ 151 00aa D11C      		adc r13,__zero_reg__
+ 152 00ac 1F3F      		cpi r17,lo8(-1)
+ 153 00ae 01F4      		brne .L5
+ 154               	.LM24:
+ 155 00b0 80E0      		ldi r24,lo8(0)
+ 156 00b2 90E0      		ldi r25,hi8(0)
+ 157               	/* epilogue: frame size=7 */
+ 158 00b4 2796      		adiw r28,7
+ 159 00b6 0FB6      		in __tmp_reg__,__SREG__
+ 160 00b8 F894      		cli
+ 161 00ba DEBF      		out __SP_H__,r29
+ 162 00bc 0FBE      		out __SREG__,__tmp_reg__
+ 163 00be CDBF      		out __SP_L__,r28
+ 164 00c0 DF91      		pop r29
+ 165 00c2 CF91      		pop r28
+ 166 00c4 1F91      		pop r17
+ 167 00c6 FF90      		pop r15
+ 168 00c8 EF90      		pop r14
+ 169 00ca DF90      		pop r13
+ 170 00cc CF90      		pop r12
+ 171 00ce 0895      		ret
+ 172               	/* epilogue end (size=14) */
+ 173               	/* function main size 107 (78) */
+ 174               	.LFE9:
+ 176               		.section	.progmem.data,"a",@progbits
+ 179               	__c.1486:
+ 180 0000 2020 00   		.string	"  "
+ 183               	__c.1483:
+ 184 0003 0D0A 2045 		.string	"\r\n EEPROM written. Now read content from EEPROM\n\r"
+ 184      4550 524F 
+ 184      4D20 7772 
+ 184      6974 7465 
+ 184      6E2E 204E 
+ 187               	__c.1477:
+ 188 0035 0D0A 0A53 		.string	"\r\n\nSample code for eeprom writing and reading."
+ 188      616D 706C 
+ 188      6520 636F 
+ 188      6465 2066 
+ 188      6F72 2065 
+ 191               	__c.1475:
+ 192 0064 0D0A 0A56 		.string	"\r\n\nVisit Us at www.robokits.org. "
+ 192      6973 6974 
+ 192      2055 7320 
+ 192      6174 2077 
+ 192      7777 2E72 
+ 195               	__c.1473:
+ 196 0086 0D0A 0A53 		.string	"\r\n\nSample code made by Robokits India for ROBOGRID. "
+ 196      616D 706C 
+ 196      6520 636F 
+ 196      6465 206D 
+ 196      6164 6520 
+ 221               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIymZIy.s:3      *ABS*:0000003f __SREG__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIymZIy.s:4      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIymZIy.s:5      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIymZIy.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIymZIy.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIymZIy.s:20     .text:00000000 main
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIymZIy.s:195    .progmem.data:00000086 __c.1473
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIymZIy.s:191    .progmem.data:00000064 __c.1475
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIymZIy.s:187    .progmem.data:00000035 __c.1477
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIymZIy.s:183    .progmem.data:00000003 __c.1483
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccIymZIy.s:179    .progmem.data:00000000 __c.1486
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+uart_init
+uart_puts_p
+__eeprom_write_byte_1C1D1E
+__eeprom_read_byte_1C1D1E
+itoa
+uart_puts

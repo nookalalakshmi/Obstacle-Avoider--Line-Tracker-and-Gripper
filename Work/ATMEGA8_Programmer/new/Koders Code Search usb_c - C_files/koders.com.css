@@ -1,0 +1,93 @@
+#plugin_downloads {
+	MARGIN-TOP: 10px; WIDTH: 400px
+}
+#plugin_downloads .header {
+	BORDER-RIGHT: white 2px solid; FONT-WEIGHT: bold; COLOR: white; BORDER-BOTTOM: white 2px solid; BACKGROUND-COLOR: lightsteelblue
+}
+#plugin_downloads .p_name {
+	FONT-WEIGHT: bold
+}
+.languages {
+	FONT-SIZE: smaller; COLOR: gray
+}
+#tblDownloads {
+	BORDER-RIGHT: steelblue 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: steelblue 1px solid; MARGIN-TOP: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; MARGIN-LEFT: 20px; BORDER-LEFT: steelblue 1px solid; WIDTH: 300px; PADDING-TOP: 10px; BORDER-BOTTOM: steelblue 1px solid; BACKGROUND-COLOR: whitesmoke
+}
+#tblDownloads TH {
+	BORDER-BOTTOM: lightsteelblue 1px solid
+}
+#plugin_downloads TD {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: top; PADDING-TOP: 5px
+}
+#DashBoard {
+	
+}
+#DashBoard .dbRight {
+	
+}
+#DashBoard .dbRight P {
+	MARGIN: 10px
+}
+#DashBoard .dbRight OL {
+	
+}
+#DashBoard .dbRight DIV {
+	
+}
+#widgetColumn {
+	MARGIN-TOP: 10px; FLOAT: right; WIDTH: 400px
+}
+.DashboardWidgetContent {
+	MARGIN-LEFT: 25px
+}
+.widget_spacing {
+	PADDING-RIGHT: 0px; MARGIN-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+#widget_Downloads {
+	MARGIN-LEFT: 20px
+}
+#widget_Downloads TR TD {
+	VERTICAL-ALIGN: middle
+}
+UL.toolsMenu {
+	WIDTH: 180px
+}
+.toolsSection {
+	MARGIN-BOTTOM: 30px
+}
+.toolsSection DIV {
+	WIDTH: 600px
+}
+.toolsSubSection P A {
+	MARGIN-LEFT: 15px
+}
+.toolsSubSection P IMG {
+	MARGIN-TOP: 10px; MARGIN-LEFT: 15px
+}
+#tools_ascx_content FIELDSET {
+	BORDER-RIGHT: darkblue 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: darkblue 1px solid; PADDING-LEFT: 10px; MARGIN-BOTTOM: 20px; PADDING-BOTTOM: 10px; BORDER-LEFT: darkblue 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: darkblue 1px solid
+}
+#tools_ascx_content FIELDSET LEGEND {
+	BORDER-RIGHT: #336699 4px solid; PADDING-RIGHT: 16px; BORDER-TOP: #336699 4px solid; DISPLAY: inline; PADDING-LEFT: 8px; FONT-SIZE: 12px; MARGIN-BOTTOM: 10px; BORDER-LEFT: #336699 4px solid; COLOR: #ffffff; BORDER-BOTTOM: #336699 4px solid; BACKGROUND-COLOR: #336699; TEXT-ALIGN: center
+}
+UL.tools {
+	MARGIN-LEFT: 50px; LIST-STYLE-TYPE: disc
+}
+LI.tool_li {
+	FONT-WEIGHT: bold
+}
+#plugin_screenshots {
+	MARGIN-LEFT: 50px; TEXT-ALIGN: center
+}
+#plugin_screenshots .caption {
+	FONT-SIZE: 10px; COLOR: #777777
+}
+#plugin_demo_section {
+	MARGIN-TOP: 10px; MARGIN-BOTTOM: 10px
+}
+#plugin_demo {
+	FLOAT: right; VERTICAL-ALIGN: top; MARGIN-RIGHT: 50px
+}
+.section_heading {
+	DISPLAY: block; FONT-WEIGHT: bold; MARGIN-BOTTOM: 10px
+}

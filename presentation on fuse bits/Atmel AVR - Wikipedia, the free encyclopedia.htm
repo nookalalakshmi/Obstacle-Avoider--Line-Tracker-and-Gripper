@@ -1,0 +1,691 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0061)http://en.wikipedia.org/wiki/Atmel_AVR#JTAG_.28IEEE_1149.1.29 -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<META http-equiv="Content-Style-Type" content="text/css">
+		<META name="generator" content="MediaWiki 1.15alpha">
+		<META name="keywords" content="Atmel AVR,Special:Search/Atmel AVR,8-bit,AMD 29000,ARM architecture,ASIC,AVR32,AVR Butterfly,Address space,Advanced Encryption Standard,Analog-to-digital converter">
+		<LINK rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit">
+		<LINK rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit">
+		<LINK rel="apple-touch-icon" href="http://en.wikipedia.org/apple-touch-icon.png">
+		<LINK rel="shortcut icon" href="http://en.wikipedia.org/favicon.ico">
+		<LINK rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)">
+		<LINK rel="copyright" href="http://www.gnu.org/copyleft/fdl.html">
+		<LINK rel="alternate" type="application/rss+xml" title="Wikipedia RSS Feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&feed=rss">
+		<LINK rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&feed=atom">
+		<TITLE>Atmel AVR - Wikipedia, the free encyclopedia</TITLE>
+		<LINK rel="stylesheet" href="./Atmel AVR - Wikipedia, the free encyclopedia_files/shared.css" type="text/css" media="screen">
+		<LINK rel="stylesheet" href="./Atmel AVR - Wikipedia, the free encyclopedia_files/commonPrint.css" type="text/css" media="print">
+		<LINK rel="stylesheet" href="./Atmel AVR - Wikipedia, the free encyclopedia_files/main.css" type="text/css" media="screen">
+		<LINK rel="stylesheet" href="http://en.wikipedia.org/skins-1.5/chick/main.css?207xx" type="text/css" media="handheld">
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE50Fixes.css?207xx" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE55Fixes.css?207xx" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/skins-1.5/monobook/IE60Fixes.css?207xx" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/skins-1.5/monobook/IE70Fixes.css?207xx" type="text/css" media="screen" /><![endif]-->
+		<LINK rel="stylesheet" href="./Atmel AVR - Wikipedia, the free encyclopedia_files/index.php" type="text/css">
+		<LINK rel="stylesheet" href="./Atmel AVR - Wikipedia, the free encyclopedia_files/index(1).php" type="text/css" media="print">
+		<LINK rel="stylesheet" href="http://en.wikipedia.org/w/index.php?title=MediaWiki:Handheld.css&usemsgcache=yes&ctype=text%2Fcss&smaxage=2678400&action=raw&maxage=2678400" type="text/css" media="handheld">
+		<LINK rel="stylesheet" href="./Atmel AVR - Wikipedia, the free encyclopedia_files/index(2).php" type="text/css">
+		<LINK rel="stylesheet" href="./Atmel AVR - Wikipedia, the free encyclopedia_files/index(3).php" type="text/css">
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?207xx"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<SCRIPT type="text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/skins-1.5";
+		var wgArticlePath = "/wiki/$1";
+		var wgScriptPath = "/w";
+		var wgScript = "/w/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://en.wikipedia.org";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Atmel_AVR";
+		var wgTitle = "Atmel AVR";
+		var wgAction = "view";
+		var wgArticleId = "100290";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 291508052;
+		var wgVersion = "1.15alpha";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgMWSuggestTemplate = "http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest";
+		var wgDBname = "enwiki";
+		var wgSearchNamespaces = [0];
+		var wgMWSuggestMessages = ["with suggestions", "no suggestions"];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</SCRIPT>
+
+		<SCRIPT type="text/javascript" src="./Atmel AVR - Wikipedia, the free encyclopedia_files/wikibits.js"><!-- wikibits js --></SCRIPT><STYLE type="text/css">@import "/skins-1.5/monobook/KHTMLFixes.css";</STYLE>
+		<!-- Head Scripts -->
+		<SCRIPT type="text/javascript" src="./Atmel AVR - Wikipedia, the free encyclopedia_files/ajax.js"></SCRIPT>
+		<SCRIPT type="text/javascript" src="./Atmel AVR - Wikipedia, the free encyclopedia_files/mwsuggest.js"></SCRIPT>
+<SCRIPT type="text/javascript">/*<![CDATA[*/
+var wgNotice='';var wgNoticeLocal='';
+/*]]>*/</SCRIPT>		<SCRIPT type="text/javascript" src="./Atmel AVR - Wikipedia, the free encyclopedia_files/centralnotice.js"></SCRIPT><STYLE type="text/css">
+#centralNotice .siteNoticeSmall{display:none;}
+#centralNotice .siteNoticeSmallAnon{display:none;}
+#centralNotice .siteNoticeSmallUser{display:none;}
+#centralNotice.collapsed .siteNoticeBig{display:none;}
+#centralNotice.collapsed .siteNoticeSmall{display:block;}
+#centralNotice.collapsed .siteNoticeSmallUser{display:block;}
+#centralNotice.collapsed .siteNoticeSmallAnon{display:block;}
+#centralNotice.anonnotice .siteNoticeSmallUser{display:none !important;}
+#centralNotice.usernotice .siteNoticeSmallAnon{display:none !important;}
+</STYLE>
+
+		<SCRIPT type="text/javascript" src="./Atmel AVR - Wikipedia, the free encyclopedia_files/index(4).php"><!-- site js --></SCRIPT><SCRIPT src="./Atmel AVR - Wikipedia, the free encyclopedia_files/index(5).php" type="text/javascript"></SCRIPT>
+	<STYLE type="text/css"> 
+/*
+Styles for Notices
+*/
+
+.notice-wrapper-licensing-results, .notice-collapsed-wrapper-licensing-results {
+    margin: 2px auto 0;
+    width: 100%;
+    padding: 0;
+    font-family: 'Arial','Helvetica','Tahoma',sans-serif;
+    color: #333;
+    background-color: #ddd;
+    font-size: .9em;
+    font-weight: 200;
+}
+
+.notice-wrapper-licensing-results
+{
+    border: 1px solid #bbb;
+    background-color: #fcfcfc;
+    text-align: left;
+    font-size: .9em;
+}
+
+.notice-wrapper-licensing-results a
+{
+    color: #006699;
+}
+
+.trans-box
+{
+    text-align: right;
+    font-size: 0.8em;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.toggle-box-licensing-results
+{
+    text-align: right;
+    font-size: 0.8em;
+    padding: 0;
+}
+
+.notice-text-licensing-results
+{
+    margin: 0 auto 5px;
+    padding: 7px 5px 5px;
+    font-size: 1.2em;
+}
+
+.line-ht-fix
+{
+    line-height: 1em;
+}
+
+#centralNotice.anonnotice .siteNoticeUser 
+{
+    display:none !important;
+}
+
+#centralNotice.collapsed .siteNoticeUser
+{
+    display:none;
+}
+
+</STYLE><STYLE type="text/css">#bodyContent { position:relative; } 
+.topicon { position:absolute; top:-2em !important;}
+#coordinates{ position:absolute; top:1px !important; }</STYLE></HEAD><BODY class="mediawiki ltr ns-0 ns-subject page-Atmel_AVR skin-monobook">
+	<DIV id="globalWrapper"><DIV id="anon-banner" class="noprint" style="position: absolute; z-index: 40; left: 155px; top: 1px; clear: both; float: left; font-size: 90&percnt;; font-style: italic; white-space: nowrap; ">Help us provide free content to the world by <A href="http://wikimediafoundation.org/wiki/Donate/Now/en?utm_source=enwiki_05&utm_medium=anon_donation_banner&utm_campaign=spontaneous_donation" class="extiw" title="foundation:Fundraising"><B>donating today</B></A>!</DIV>
+		<DIV id="column-content">
+	<DIV id="content">
+		<A name="top" id="top"></A>
+		<DIV id="siteNotice"><SCRIPT type="text/javascript">if (wgNotice != '') document.writeln(wgNotice);</SCRIPT><DIV id="centralNotice" class="expanded anonnotice">
+
+<TABLE class="siteNoticeUser notice-wrapper-licensing-results">
+<TBODY><TR>
+ <TD>
+  <DIV class="notice-text-licensing-results">
+  The results for Wikimedia&#39;s licensing update vote have been announced. <A href="http://meta.wikimedia.org/wiki/Licensing_update/Result">View the results here.</A>
+  </DIV>
+ </TD>
+ <TD class="line-ht-fix">
+   <SPAN class="toggle-box-licensing-results">
+   [<A href="http://en.wikipedia.org/wiki/Atmel_AVR#" onclick="toggleNotice();return
+false">Hide</A>]
+ </SPAN><BR>
+  <SPAN class="trans-box">
+  [<A href="http://meta.wikimedia.org/wiki/Licensing_update/Translation">Help us with translations!</A>]
+  </SPAN>
+ </TD>
+</TR>
+</TBODY></TABLE>
+<DIV class="siteNoticeSmallAnon notice-collapsed-wrapper-licensing-results">
+</DIV></DIV>
+</DIV>		<H1 id="firstHeading" class="firstHeading">Atmel AVR</H1>
+		<DIV id="bodyContent">
+			<H3 id="siteSub">From Wikipedia, the free encyclopedia</H3>
+			<DIV id="contentSub"></DIV>
+									<DIV id="jump-to-nav">Jump to: <A href="http://en.wikipedia.org/wiki/Atmel_AVR#column-one">navigation</A>, <A href="http://en.wikipedia.org/wiki/Atmel_AVR#searchInput">search</A></DIV>			<!-- start content -->
+			<DIV class="floatright"><A href="http://en.wikipedia.org/wiki/File:AVR-logo.png" class="image" title="AVR logo"><IMG alt="AVR logo" src="./Atmel AVR - Wikipedia, the free encyclopedia_files/AVR-logo.png" width="257" height="113" border="0"></A></DIV>
+<DIV class="thumb tright">
+<DIV class="thumbinner" style="width:182px;"><A href="http://en.wikipedia.org/wiki/File:ATmega8_01_Pengo.jpg" class="image" title="Atmel AVR ATmega8 PDIP."><IMG alt="" src="./Atmel AVR - Wikipedia, the free encyclopedia_files/180px-ATmega8_01_Pengo.jpg" width="180" height="116" border="0" class="thumbimage"></A>
+<DIV class="thumbcaption">
+<DIV class="magnify"><A href="http://en.wikipedia.org/wiki/File:ATmega8_01_Pengo.jpg" class="internal" title="Enlarge"><IMG src="./Atmel AVR - Wikipedia, the free encyclopedia_files/magnify-clip.png" width="15" height="11" alt=""></A></DIV>
+Atmel AVR ATmega8 <A href="http://en.wikipedia.org/wiki/PDIP" title="PDIP" class="mw-redirect">PDIP</A>.</DIV>
+</DIV>
+</DIV>
+<P>The <B>AVR</B> is a <A href="http://en.wikipedia.org/wiki/Modified_Harvard_architecture" title="Modified Harvard architecture">Modified Harvard architecture</A> <A href="http://en.wikipedia.org/wiki/8-bit" title="8-bit">8-bit</A> <A href="http://en.wikipedia.org/wiki/Reduced_instruction_set_computer" title="Reduced instruction set computer">RISC</A> single chip <A href="http://en.wikipedia.org/wiki/Microcontroller" title="Microcontroller">microcontroller</A> (&micro;C) which was developed by <A href="http://en.wikipedia.org/wiki/Atmel" title="Atmel">Atmel</A> in 1996. The AVR was one of the first microcontroller families to use on-chip <A href="http://en.wikipedia.org/wiki/Flash_memory" title="Flash memory">flash memory</A> for program storage, as opposed to <A href="http://en.wikipedia.org/wiki/Programmable_read-only_memory" title="Programmable read-only memory">One-Time Programmable ROM</A>, <A href="http://en.wikipedia.org/wiki/EPROM" title="EPROM">EPROM</A>, or <A href="http://en.wikipedia.org/wiki/EEPROM" title="EEPROM">EEPROM</A> used by other microcontrollers at the time.</P>
+<TABLE id="toc" class="toc" summary="Contents">
+<TBODY><TR>
+<TD>
+<DIV id="toctitle">
+<H2>Contents</H2>
+ <SPAN class="toctoggle">[<A id="togglelink" class="internal" href="javascript:toggleToc()">hide</A>]</SPAN></DIV>
+<UL>
+<LI class="toclevel-1"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#Brief_History"><SPAN class="tocnumber">1</SPAN> <SPAN class="toctext">Brief History</SPAN></A></LI>
+<LI class="toclevel-1"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#Device_Overview"><SPAN class="tocnumber">2</SPAN> <SPAN class="toctext">Device Overview</SPAN></A>
+<UL>
+<LI class="toclevel-2"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#Basic_Families"><SPAN class="tocnumber">2.1</SPAN> <SPAN class="toctext">Basic Families</SPAN></A></LI>
+<LI class="toclevel-2"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#Device_Architecture"><SPAN class="tocnumber">2.2</SPAN> <SPAN class="toctext">Device Architecture</SPAN></A>
+<UL>
+<LI class="toclevel-3"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#Data_RAM"><SPAN class="tocnumber">2.2.1</SPAN> <SPAN class="toctext">Data RAM</SPAN></A></LI>
+<LI class="toclevel-3"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#Program_Memory_.28Flash.29"><SPAN class="tocnumber">2.2.2</SPAN> <SPAN class="toctext">Program Memory (Flash)</SPAN></A></LI>
+<LI class="toclevel-3"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#Internal_Data_Memory"><SPAN class="tocnumber">2.2.3</SPAN> <SPAN class="toctext">Internal Data Memory</SPAN></A></LI>
+<LI class="toclevel-3"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#Internal_Registers"><SPAN class="tocnumber">2.2.4</SPAN> <SPAN class="toctext">Internal Registers</SPAN></A></LI>
+<LI class="toclevel-3"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#EEPROM"><SPAN class="tocnumber">2.2.5</SPAN> <SPAN class="toctext">EEPROM</SPAN></A></LI>
+</UL>
+</LI>
+<LI class="toclevel-2"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#Program_Execution"><SPAN class="tocnumber">2.3</SPAN> <SPAN class="toctext">Program Execution</SPAN></A></LI>
+<LI class="toclevel-2"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#Instruction_Set"><SPAN class="tocnumber">2.4</SPAN> <SPAN class="toctext">Instruction Set</SPAN></A></LI>
+<LI class="toclevel-2"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#MCU_Speed"><SPAN class="tocnumber">2.5</SPAN> <SPAN class="toctext">MCU Speed</SPAN></A></LI>
+<LI class="toclevel-2"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#Development"><SPAN class="tocnumber">2.6</SPAN> <SPAN class="toctext">Development</SPAN></A></LI>
+<LI class="toclevel-2"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#Features"><SPAN class="tocnumber">2.7</SPAN> <SPAN class="toctext">Features</SPAN></A></LI>
+</UL>
+</LI>
+<LI class="toclevel-1"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#Development_Tools_and_Evaluation_Kits"><SPAN class="tocnumber">3</SPAN> <SPAN class="toctext">Development Tools and Evaluation Kits</SPAN></A>
+<UL>
+<LI class="toclevel-2"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#STK500_Starter_Kit"><SPAN class="tocnumber">3.1</SPAN> <SPAN class="toctext">STK500 Starter Kit</SPAN></A></LI>
+<LI class="toclevel-2"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#AVR_ISP_and_AVR_ISP_mkII"><SPAN class="tocnumber">3.2</SPAN> <SPAN class="toctext">AVR ISP and AVR ISP mkII</SPAN></A></LI>
+<LI class="toclevel-2"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#AVR_Dragon_.28USB.29"><SPAN class="tocnumber">3.3</SPAN> <SPAN class="toctext">AVR Dragon (USB)</SPAN></A></LI>
+<LI class="toclevel-2"><A href="./Atmel AVR - Wikipedia, the free encyclopedia_files/Atmel AVR - Wikipedia, the free encyclopedia.htm"><SPAN class="tocnumber">3.4</SPAN> <SPAN class="toctext">JTAG (IEEE 1149.1)</SPAN></A></LI>
+<LI class="toclevel-2"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#JTAGICE_mkI"><SPAN class="tocnumber">3.5</SPAN> <SPAN class="toctext">JTAGICE mkI</SPAN></A></LI>
+<LI class="toclevel-2"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#JTAGICE_mkII"><SPAN class="tocnumber">3.6</SPAN> <SPAN class="toctext">JTAGICE mkII</SPAN></A></LI>
+<LI class="toclevel-2"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#The_Butterfly_Demo_Board"><SPAN class="tocnumber">3.7</SPAN> <SPAN class="toctext">The Butterfly Demo Board</SPAN></A></LI>
+<LI class="toclevel-2"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#AT90USBKey"><SPAN class="tocnumber">3.8</SPAN> <SPAN class="toctext">AT90USBKey</SPAN></A></LI>
+<LI class="toclevel-2"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#Raven_Wireless_Kit"><SPAN class="tocnumber">3.9</SPAN> <SPAN class="toctext">Raven Wireless Kit</SPAN></A></LI>
+<LI class="toclevel-2"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#Third-Party_Programmers"><SPAN class="tocnumber">3.10</SPAN> <SPAN class="toctext">Third-Party Programmers</SPAN></A></LI>
+</UL>
+</LI>
+<LI class="toclevel-1"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#Atmel_AVR_Usage"><SPAN class="tocnumber">4</SPAN> <SPAN class="toctext">Atmel AVR Usage</SPAN></A></LI>
+<LI class="toclevel-1"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#The_New_32-Bit_AVRs"><SPAN class="tocnumber">5</SPAN> <SPAN class="toctext">The New 32-Bit AVRs</SPAN></A></LI>
+<LI class="toclevel-1"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#Footnotes"><SPAN class="tocnumber">6</SPAN> <SPAN class="toctext">Footnotes</SPAN></A></LI>
+<LI class="toclevel-1"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#External_links"><SPAN class="tocnumber">7</SPAN> <SPAN class="toctext">External links</SPAN></A></LI>
+</UL>
+</TD>
+</TR>
+</TBODY></TABLE>
+<SCRIPT type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</SCRIPT>
+<P><A name="Brief_History" id="Brief_History"></A></P>
+<H2><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=1" title="Edit section: Brief History">edit</A>]</SPAN> <SPAN class="mw-headline">Brief History</SPAN></H2>
+<P>It is believed the AVR basic architecture was conceived by two students at the <A href="http://en.wikipedia.org/wiki/Norwegian_Institute_of_Technology" title="Norwegian Institute of Technology">Norwegian Institute of Technology</A> (NTH) <A href="http://en.wikipedia.org/w/index.php?title=Alf-Egil_Bogen&action=edit&redlink=1" class="new" title="Alf-Egil Bogen (page does not exist)">Alf-Egil Bogen</A> and <A href="http://en.wikipedia.org/w/index.php?title=Vegard_Wollan&action=edit&redlink=1" class="new" title="Vegard Wollan (page does not exist)">Vegard Wollan</A>.<SUP id="cite_ref-0" class="reference"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#cite_note-0" title=""><SPAN>[</SPAN>1<SPAN>]</SPAN></A></SUP><SUP id="cite_ref-1" class="reference"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#cite_note-1" title=""><SPAN>[</SPAN>2<SPAN>]</SPAN></A></SUP></P>
+<P>The original AVR MCU was developed at a local <A href="http://en.wikipedia.org/wiki/ASIC" title="ASIC" class="mw-redirect">ASIC</A> house in <A href="http://en.wikipedia.org/wiki/Trondheim,_Norway" title="Trondheim, Norway" class="mw-redirect">Trondheim, Norway</A>, where the two founders of Atmel Norway were working as students. It was known as a &mu;RISC (Micro RISC). When the technology was sold to Atmel, the internal architecture was further developed by Alf and Vegard at Atmel Norway, a subsidiary of Atmel founded by the two architects.</P>
+<P>Atmel says that the name AVR is not an acronym and does not stand for anything in particular. But inside the walls of Atmel, the AVR is affectionately referred to as &quot;Alf and Vegard&#39;s Risc&quot;.It is also sometimes speculated that AVR might be the acronym for &quot;Advanced Virtual Risc&quot;. Officially, the creators of the AVR give no definitive answer as to what the term &quot;AVR&quot; stands for. <SUP id="cite_ref-2" class="reference"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#cite_note-2" title=""><SPAN>[</SPAN>3<SPAN>]</SPAN></A></SUP></P>
+<P>Note that the use of &quot;AVR&quot; in this article generally refers to the 8-bit RISC line of Atmel AVR Microcontrollers.</P>
+<P>Among the first of the AVR line was the AT90S8515, which in a 40-pin DIP package has the same pinout as an <A href="http://en.wikipedia.org/wiki/Intel_8051" title="Intel 8051">8051</A> microcontroller, including the external multiplexed address and data bus. The polarity of the <SPAN style="text-decoration: overline">RESET</SPAN> line was opposite (8051&#39;s having an active-high RESET, while the AVR has an active-low <SPAN style="text-decoration: overline">RESET</SPAN>), but other than that, the pinout was identical.</P>
+<P><A name="Device_Overview" id="Device_Overview"></A></P>
+<H2><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=2" title="Edit section: Device Overview">edit</A>]</SPAN> <SPAN class="mw-headline">Device Overview</SPAN></H2>
+<P>The AVR is a <A href="http://en.wikipedia.org/wiki/Modified_Harvard_architecture" title="Modified Harvard architecture">Modified Harvard architecture</A> machine with program and data stored in separate physical memory systems that appear in different address spaces, but having the ability to read data items from program memory using special instructions.</P>
+<P><A name="Basic_Families" id="Basic_Families"></A></P>
+<H3><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=3" title="Edit section: Basic Families">edit</A>]</SPAN> <SPAN class="mw-headline">Basic Families</SPAN></H3>
+<P>AVRs are generally classified into four broad groups:</P>
+<UL>
+<LI><A href="http://en.wikipedia.org/w/index.php?title=TinyAVR&action=edit&redlink=1" class="new" title="TinyAVR (page does not exist)">tinyAVR</A> &mdash; the ATtiny series
+<UL>
+<LI>1&ndash;8 kB program memory</LI>
+<LI>6&ndash;32-pin package</LI>
+<LI>Limited peripheral set</LI>
+</UL>
+</LI>
+</UL>
+<UL>
+<LI><A href="http://en.wikipedia.org/w/index.php?title=MegaAVR&action=edit&redlink=1" class="new" title="MegaAVR (page does not exist)">megaAVR</A> &mdash; the ATmega series
+<UL>
+<LI>4&ndash;256 kB program memory</LI>
+<LI>28&ndash;100-pin package</LI>
+<LI>Extended instruction set (Multiply instructions and instructions for handling larger program memories)</LI>
+<LI>Extensive peripheral set</LI>
+</UL>
+</LI>
+</UL>
+<UL>
+<LI><A href="http://en.wikipedia.org/w/index.php?title=XMEGA&action=edit&redlink=1" class="new" title="XMEGA (page does not exist)">XMEGA</A> &mdash; the ATxmega series
+<UL>
+<LI>16&ndash;384 kB program memory</LI>
+<LI>44&ndash;64&ndash;100-pin package (A4, A3, A1)</LI>
+<LI>Extended performance features, such as DMA, &quot;Event System&quot;, and cryptography support.</LI>
+<LI>Extensive peripheral set with DACs</LI>
+</UL>
+</LI>
+</UL>
+<UL>
+<LI><A href="http://en.wikipedia.org/w/index.php?title=Application_specific_AVR&action=edit&redlink=1" class="new" title="Application specific AVR (page does not exist)">Application specific AVR</A>
+<UL>
+<LI>megaAVRs with special features not found on the other members of the AVR family, such as LCD controller, USB controller, advanced PWM, CAN etc.</LI>
+<LI><A href="http://www.atmel.com/products/FPSLIC/" class="external text" title="http://www.atmel.com/products/FPSLIC/" rel="nofollow">FPSLIC</A> (Field Programmable System Level Integrated Circuit), an AVR core on-die with an <A href="http://en.wikipedia.org/wiki/Field-programmable_gate_array" title="Field-programmable gate array">FPGA</A>. The FPSLIC uses SRAM for the AVR program code, unlike all other AVRs. Partly due to the relative speed difference between SRAM and flash, the AVR core in the FPSLIC can run at up to 50MHz.</LI>
+</UL>
+</LI>
+</UL>
+<P><A name="Device_Architecture" id="Device_Architecture"></A></P>
+<H3><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=4" title="Edit section: Device Architecture">edit</A>]</SPAN> <SPAN class="mw-headline">Device Architecture</SPAN></H3>
+<P><A name="Data_RAM" id="Data_RAM"></A></P>
+<H4><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=5" title="Edit section: Data RAM">edit</A>]</SPAN> <SPAN class="mw-headline">Data RAM</SPAN></H4>
+<P><A href="http://en.wikipedia.org/wiki/Flash_memory" title="Flash memory">Flash</A>, <A href="http://en.wikipedia.org/wiki/EEPROM" title="EEPROM">EEPROM</A>, and <A href="http://en.wikipedia.org/wiki/Static_random_access_memory" title="Static random access memory">SRAM</A> are all integrated onto a single chip, removing the need for external memory. Some devices have an external bus to allow adding additional data memory or memory-mapped devices.</P>
+<P><A name="Program_Memory_.28Flash.29" id="Program_Memory_.28Flash.29"></A></P>
+<H4><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=6" title="Edit section: Program Memory (Flash)">edit</A>]</SPAN> <SPAN class="mw-headline">Program Memory (Flash)</SPAN></H4>
+<P><I>Program instructions</I> are stored in <A href="http://en.wikipedia.org/wiki/Non-volatile" title="Non-volatile" class="mw-redirect">non-volatile</A> <A href="http://en.wikipedia.org/wiki/Flash_memory" title="Flash memory">Flash memory</A>. Although they are 8-bit MCUs, each instruction takes one or two 16-bit words.</P>
+<P>The size of the <B>program memory</B> is usually indicated in the naming of the device itself (e.g., the ATmega64x line has 64 kB of Flash).</P>
+<P>There is no provision for off-chip program memory; all code executed by the AVR core must reside in the on-chip flash.</P>
+<P><A name="Internal_Data_Memory" id="Internal_Data_Memory"></A></P>
+<H4><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=7" title="Edit section: Internal Data Memory">edit</A>]</SPAN> <SPAN class="mw-headline">Internal Data Memory</SPAN></H4>
+<P>The data <A href="http://en.wikipedia.org/wiki/Address_space" title="Address space">address space</A> consists of the <A href="http://en.wikipedia.org/wiki/Register_file" title="Register file">register file</A>, I/O registers, and <A href="http://en.wikipedia.org/wiki/Static_random_access_memory" title="Static random access memory">SRAM</A>.</P>
+<P><A name="Internal_Registers" id="Internal_Registers"></A></P>
+<H4><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=8" title="Edit section: Internal Registers">edit</A>]</SPAN> <SPAN class="mw-headline">Internal Registers</SPAN></H4>
+<P>The AVRs have 32 <A href="http://en.wikipedia.org/wiki/Byte" title="Byte">single-byte</A> <A href="http://en.wikipedia.org/wiki/Processor_register" title="Processor register">registers</A> and are classified as 8-bit RISC devices.</P>
+<P>In most variants of the AVR architecture, the working registers are mapped in as the first 32 memory addresses (0000<SUB>16</SUB>-001F<SUB>16</SUB>) followed by the 64 I/O registers (0020<SUB>16</SUB>-005F<SUB>16</SUB>).</P>
+<P>Actual SRAM starts after these register sections (address 0060<SUB>16</SUB>). (Note that the I/O register space may be larger on some more extensive devices, in which case the <A href="http://en.wikipedia.org/wiki/Memory-mapped_I/O" title="Memory-mapped I/O">memory mapped I/O</A> registers will occupy a portion of the SRAM address space.)</P>
+<P>Even though there are separate addressing schemes and optimized opcodes for register file and I/O register access, all can still be addressed and manipulated as if they were in SRAM.</P>
+<P>In the XMEGA variant, the working register file is not mapped into the data address space; as such, it is not possible to treat any of the XMEGA&#39;s working registers as though they were SRAM. Instead, the I/O registers are mapped into the data address space starting at the very beginning of the address space. Additionally, the amount of data address space dedicated to I/O registers has grown substantially to 4096 bytes (0000<SUB>16</SUB>-0FFF<SUB>16</SUB>). As with previous generations, however, the fast I/O manipulation instructions can only reach the first 64 I/O register locations (the first 32 locations for bitwise instructions). Following the I/O registers, the XMEGA series sets aside a 4096 byte range of the data address space which can be used optionally for mapping the internal EEPROM to the data address space (1000<SUB>16</SUB>-1FFF<SUB>16</SUB>). The actual SRAM is located after these ranges, starting at 2000<SUB>16</SUB>.</P>
+<P><A name="EEPROM" id="EEPROM"></A></P>
+<H4><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=9" title="Edit section: EEPROM">edit</A>]</SPAN> <SPAN class="mw-headline">EEPROM</SPAN></H4>
+<P>Almost all AVR microcontrollers have internal Electrically Erasable Programmable Read Only Memory (EEPROM) for semi-permanent data storage. Like Flash memory, EEPROM can maintain its contents when electrical power is removed.</P>
+<P>In most variants of the AVR architecture, this internal EEPROM memory is not mapped into the MCU&#39;s addressable memory space. It can only be accessed the same way an external peripheral device is, using special pointer registers and read/write instructions which makes EEPROM access much slower than other internal RAM.</P>
+<P>However, some devices in the SecureAVR (AT90SC) family <SUP id="cite_ref-3" class="reference"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#cite_note-3" title=""><SPAN>[</SPAN>4<SPAN>]</SPAN></A></SUP> uses a special EEPROM mapping to the data or program memory depending on the configuration. The XMEGA family also allows the EEPROM to be mapped into the data address space.</P>
+<P>Since the number of writes to EEPROM is not unlimited &mdash; Atmel specifies 100,000 write cycles in their datasheets &mdash; a well designed EEPROM write routine should compare the contents of an EEPROM address with desired contents and only perform an actual write if contents need to be changed.</P>
+<P><A name="Program_Execution" id="Program_Execution"></A></P>
+<H3><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=10" title="Edit section: Program Execution">edit</A>]</SPAN> <SPAN class="mw-headline">Program Execution</SPAN></H3>
+<P>Atmel&#39;s AVRs have a two stage, single level <A href="http://en.wikipedia.org/wiki/Pipeline_(computing)" title="Pipeline (computing)">pipeline</A> design. This means the next machine instruction is fetched as the current one is executing. Most instructions take just one or two clock cycles, making AVRs relatively fast among the eight-bit microcontrollers.</P>
+<P>The AVR family of processors were designed with the efficient execution of <A href="http://en.wikipedia.org/wiki/Compiler" title="Compiler">compiled</A> <A href="http://en.wikipedia.org/wiki/C_(programming_language)" title="C (programming language)">C</A> code in mind and has several built-in pointers for the task.</P>
+<P><A name="Instruction_Set" id="Instruction_Set"></A></P>
+<H3><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=11" title="Edit section: Instruction Set">edit</A>]</SPAN> <SPAN class="mw-headline">Instruction Set</SPAN></H3>
+<DIV class="rellink noprint relarticle mainarticle">Main article: <A href="http://en.wikipedia.org/wiki/Atmel_AVR_instruction_set" title="Atmel AVR instruction set">Atmel AVR instruction set</A></DIV>
+<P>The <A href="http://en.wikipedia.org/wiki/Atmel_AVR_instruction_set" title="Atmel AVR instruction set">AVR Instruction Set</A> is more <A href="http://en.wikipedia.org/wiki/Orthogonal_instruction_set" title="Orthogonal instruction set">orthogonal</A> than most eight-bit microcontrollers, in particular the <A href="http://en.wikipedia.org/wiki/PIC_microcontroller" title="PIC microcontroller">PIC microcontrollers</A> with which AVR competes today. However, it is not completely regular:</P>
+<UL>
+<LI><A href="http://en.wikipedia.org/wiki/Pointer_register" title="Pointer register" class="mw-redirect">Pointer registers</A> X, Y, and Z have addressing capabilities that are different from each other.</LI>
+<LI><A href="http://en.wikipedia.org/wiki/Register" title="Register">Register</A> locations R0 to R15 have different addressing capabilities than register locations R16 to R31.</LI>
+<LI>I/O ports 0 to 31 have different addressing capabilities than I/O ports 32 to 63.</LI>
+<LI>CLR affects flags, while SER does not, even though they are complementary instructions. CLR set all bits to zero and SER sets them to one. (Note that CLR is pseudo-op for EOR R, R; and SER is short for LDI R,$FF. Math operations such as EOR modify flags while moves/loads/stores/branches such as LDI do not.)</LI>
+</UL>
+<P>The mostly-regular instruction set makes programming it using C (or even Ada) compilers fairly straightforward. In fact, Atmel solicited input from major developers of compilers for small microcontrollers, to determine the instruction set features that were most useful in a compiler for high-level languages.</P>
+<P><A name="MCU_Speed" id="MCU_Speed"></A></P>
+<H3><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=12" title="Edit section: MCU Speed">edit</A>]</SPAN> <SPAN class="mw-headline">MCU Speed</SPAN></H3>
+<P>The AVR line can normally support clock speeds from 0-20 MHz, with some devices reaching 32 MHz. Lower powered operation usually requires a reduced clock speed. All recent (Tiny and Mega, but not 90S) AVRs feature an on-chip oscillator, removing the need for external clocks or resonator circuitry. Some AVRs also have a system clock prescaler that can divide down the system clock by up to 256. This prescaler can be reconfigured by software during run-time, allowing to optimize clock speed.</P>
+<P>Since all operations (excluding literals) on registers R0 - R31 are single cycle, the AVR can achieve up to 1<A href="http://en.wikipedia.org/wiki/Million_instructions_per_second" title="Million instructions per second" class="mw-redirect">MIPS</A> per MHz. Loads and stores to/from memory take 2 cycles, branching takes 3 cycles. Branches in the latest &quot;3-byte PC&quot; parts such as ATmega2560 are one cycle slower than on previous devices.</P>
+<P><A name="Development" id="Development"></A></P>
+<H3><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=13" title="Edit section: Development">edit</A>]</SPAN> <SPAN class="mw-headline">Development</SPAN></H3>
+<P>AVRs have a large following due to the free and inexpensive development tools available, including reasonably priced development boards and free development software. The AVRs are sold under various names that share the same basic core but with different peripheral and memory combinations. Compatibility amongst chips is fairly good.</P>
+<P>See <A href="http://en.wikipedia.org/wiki/Atmel_AVR#External_links" title="">external links</A> for sites relating to AVR development.</P>
+<P><A name="Features" id="Features"></A></P>
+<H3><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=14" title="Edit section: Features">edit</A>]</SPAN> <SPAN class="mw-headline">Features</SPAN></H3>
+<P>Current AVRs offer a wide range of features:</P>
+<UL>
+<LI>Multifunction, Bi-directional General Purpose I/O ports with configurable, built-in <A href="http://en.wikipedia.org/wiki/Pull-up_resistor" title="Pull-up resistor">pull-up resistors</A></LI>
+<LI>Multiple Internal Oscillators, including RC oscillator without external parts</LI>
+<LI>Internal, Self-Programmable Instruction <A href="http://en.wikipedia.org/wiki/Flash_Memory" title="Flash Memory" class="mw-redirect">Flash Memory</A> up to 256 K
+<UL>
+<LI><A href="http://en.wikipedia.org/wiki/In-System_Programming" title="In-System Programming">In-System Programmable</A> using serial/parallel low-voltage proprietary interfaces or <A href="http://en.wikipedia.org/wiki/JTAG" title="JTAG" class="mw-redirect">JTAG</A></LI>
+<LI>Optional Boot Code Section with Independent Lock Bits for Protection</LI>
+</UL>
+</LI>
+<LI>On chip debugging (OCD) support through JTAG or debugWIRE on most devices
+<UL>
+<LI>The JTAG signals (TMS, TDI, TDO, and TCK) are multiplexed on <A href="http://en.wikipedia.org/wiki/GPIO" title="GPIO" class="mw-redirect">GPIOs</A>. These pins can be configured to function as JTAG or GPIO depending on the setting of a fuse bit, which can be programmed via ISP or HVSP. By default, AVRs with JTAG come with the JTAG interface enabled.</LI>
+<LI>debugWIRE uses the /RESET pin as a bi-directional communication channel to access on-chip debug circuitry. It is present on devices with lower pin counts, as it only requires one pin.</LI>
+</UL>
+</LI>
+<LI>Internal Data <A href="http://en.wikipedia.org/wiki/EEPROM" title="EEPROM">EEPROM</A> up to 4 kB</LI>
+<LI>Internal <A href="http://en.wikipedia.org/wiki/Static_random_access_memory" title="Static random access memory">SRAM</A> up to 8 K</LI>
+<LI>External 64KB little endian data space on certain models, including the Mega8515 and Mega162.
+<UL>
+<LI>The external data space is overlaid with the internal data space, such that the full 64KB address space does not appear on the external bus. An accesses to e.g. address 0100<SUB>16</SUB> will access internal RAM, not the external bus.</LI>
+<LI>In certain members of the XMEGA series, the external data space has been enhanced to support both SRAM and SDRAM. As well, the data addressing modes have been expanded to allow up to 16MB of data memory to be directly addressed.</LI>
+<LI>AVR&#39;s generally do not support executing code from external memory. Some <A href="http://en.wikipedia.org/wiki/Application_specific_standard_product" title="Application specific standard product">ASSP&#39;s</A> using the AVR code do support external program memory.</LI>
+</UL>
+</LI>
+<LI>8-Bit and 16-Bit Timers
+<UL>
+<LI><A href="http://en.wikipedia.org/wiki/Pulse-width_modulation" title="Pulse-width modulation">PWM</A> output (Dead time generator on some devices)</LI>
+<LI>Input capture</LI>
+</UL>
+</LI>
+<LI>Analog Comparator</LI>
+<LI>10 or 12-Bit <A href="http://en.wikipedia.org/wiki/Analog-to-digital_converter" title="Analog-to-digital converter">A/D Converters</A>, with multiplex of up to 16 channels</LI>
+<LI>12-bit <A href="http://en.wikipedia.org/wiki/Digital-to-analog_converter" title="Digital-to-analog converter">D/A Converters</A></LI>
+<LI>A variety of serial interfaces, including
+<UL>
+<LI><A href="http://en.wikipedia.org/wiki/I%C2%B2C" title="I&sup2;C">I&sup2;C</A> Compatible Two-Wire Interface (TWI)</LI>
+<LI>Synchronous/Asynchronous Serial Peripherals (<A href="http://en.wikipedia.org/wiki/UART" title="UART" class="mw-redirect">UART</A>/USART) (used with <A href="http://en.wikipedia.org/wiki/RS-232" title="RS-232">RS-232</A>, <A href="http://en.wikipedia.org/wiki/RS-485" title="RS-485" class="mw-redirect">RS-485</A>, and more)</LI>
+<LI><A href="http://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus" title="Serial Peripheral Interface Bus">Serial Peripheral Interface Bus</A> (SPI)</LI>
+<LI>Universal Serial Interface (USI) for Two or Three-Wire Synchronous Data Transfer</LI>
+</UL>
+</LI>
+<LI><A href="http://en.wikipedia.org/wiki/Power_outage" title="Power outage">Brownout</A> Detection</LI>
+<LI><A href="http://en.wikipedia.org/wiki/Watchdog_Timer" title="Watchdog Timer" class="mw-redirect">Watchdog Timer</A> (WDT)</LI>
+<LI>Multiple Power-Saving Sleep Modes</LI>
+<LI>Lighting and motor control (<A href="http://en.wikipedia.org/wiki/Pulse-width_modulation" title="Pulse-width modulation">PWM</A> Specific) Controller models</LI>
+<LI><A href="http://en.wikipedia.org/wiki/Controller_Area_Network" title="Controller Area Network" class="mw-redirect">CAN</A> Controller Support</LI>
+<LI><A href="http://en.wikipedia.org/wiki/USB" title="USB" class="mw-redirect">USB</A> Controller Support
+<UL>
+<LI>Proper Full-speed (12 Mbit/s) hardware &amp; Hub controller with embedded AVR.</LI>
+<LI>Also freely available Low-speed (1.5 Mbit/s) (<A href="http://en.wikipedia.org/wiki/Human_interface_device" title="Human interface device">HID</A>) bitbanging software emulations</LI>
+</UL>
+</LI>
+<LI><A href="http://en.wikipedia.org/wiki/Ethernet" title="Ethernet">Ethernet</A> Controller Support</LI>
+<LI><A href="http://en.wikipedia.org/wiki/LCD" title="LCD" class="mw-redirect">LCD</A> Controller Support</LI>
+<LI>Low-voltage Devices Operating Down to 1.8v (to 0.7v for parts with built-in DC-DC upconvertor)</LI>
+<LI>picoPower Devices</LI>
+<LI><A href="http://en.wikipedia.org/wiki/Direct_memory_access" title="Direct memory access">DMA</A> controllers and &quot;Event System&quot; peripheral communication.</LI>
+<LI>Fast Cryptography support for <A href="http://en.wikipedia.org/wiki/Advanced_Encryption_Standard" title="Advanced Encryption Standard">AES</A> and <A href="http://en.wikipedia.org/wiki/Data_Encryption_Standard" title="Data Encryption Standard">DES</A></LI>
+</UL>
+<P><A name="Development_Tools_and_Evaluation_Kits" id="Development_Tools_and_Evaluation_Kits"></A></P>
+<H2><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=15" title="Edit section: Development Tools and Evaluation Kits">edit</A>]</SPAN> <SPAN class="mw-headline">Development Tools and Evaluation Kits</SPAN></H2>
+<P>Official Atmel AVR development tools and evaluation kits consists of a small number of starter kits and debugging tools with support for most AVR devices:</P>
+<P><A name="STK500_Starter_Kit" id="STK500_Starter_Kit"></A></P>
+<H3><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=16" title="Edit section: STK500 Starter Kit">edit</A>]</SPAN> <SPAN class="mw-headline">STK500 Starter Kit</SPAN></H3>
+<P>The STK500 starter kit and development system features ISP and high voltage programming (HVP) for all AVR devices, either directly or through extension boards. The board is fitted with DIP sockets for all AVRs available in DIP packages.</P>
+<P>STK500 Expansion Modules: Several expansion modules are available for the STK500 board:</P>
+<UL>
+<LI>STK501 - Adds support for microcontrollers in 64-pin TQFP packages.</LI>
+<LI>STK502 - Adds support for LCD AVRs in 64-pin TQFP packages.</LI>
+<LI>STK503 - Adds support for microcontrollers in 100-pin TQFP packages.</LI>
+<LI>STK504 - Adds support for LCD AVRs in 100-pin TQFP packages.</LI>
+<LI>STK505 - Adds support for 14 and 20-pin AVRs.</LI>
+<LI>STK520 - Adds support for 14 and 20-pin microcontrollers from the AT90PWM family.</LI>
+<LI>STK524 - Adds support for the ATmega32M1/C1 32-pin CAN/LIN/Motor Control family.</LI>
+<LI>STK525 - Adds support for the AT90USB microcontrollers in 64-pin TQFP packages.</LI>
+<LI>STK526 - Adds support for the AT90USB microcontrollers in 32-pin TQFP packages</LI>
+</UL>
+<P><BR></P>
+<P><A name="AVR_ISP_and_AVR_ISP_mkII" id="AVR_ISP_and_AVR_ISP_mkII"></A></P>
+<H3><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=17" title="Edit section: AVR ISP and AVR ISP mkII">edit</A>]</SPAN> <SPAN class="mw-headline">AVR ISP and AVR ISP mkII</SPAN></H3>
+<P>The AVR ISP and AVR ISP mkII are inexpensive tools allowing all AVRs to be programmed via <A href="http://en.wikipedia.org/wiki/ICSP" title="ICSP">ICSP</A>.</P>
+<P>The AVR ISP connects to a PC via a serial port, and draws power from the target system. The AVR ISP allows using either of the &quot;standard&quot; ICSP pinouts, either the 10-pin or 6-pin connector. The AVR ISP has been discontinued, replaced by the AVR ISP mkII.</P>
+<P>The AVR ISP mkII connects to a PC via USB, and draws power from USB. LEDs visible through the translucent case indicate the state of target power.</P>
+<P><A name="AVR_Dragon_.28USB.29" id="AVR_Dragon_.28USB.29"></A></P>
+<H3><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=18" title="Edit section: AVR Dragon (USB)">edit</A>]</SPAN> <SPAN class="mw-headline">AVR Dragon (USB)</SPAN></H3>
+<P>The Dragon is an inexpensive tool allowing all AVRs to be programmed via JTAG, HVP or ICSP. The Dragon allows debugging of AVRs with 32KB or less of program memory, via JTAG or DebugWire. The Dragon has a small prototype area which can accommodate an 8, 28, or 40-pin AVR, including connections to power and programming pins. There is no area for any additional circuitry.</P>
+<P><A name="JTAG_.28IEEE_1149.1.29" id="JTAG_.28IEEE_1149.1.29"></A></P>
+<H3><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=19" title="Edit section: JTAG (IEEE 1149.1)">edit</A>]</SPAN> <SPAN class="mw-headline">JTAG (IEEE 1149.1)</SPAN></H3>
+<P>The Joint Test Action Group, In Circuit Emulator (JTAGICE) debugging tool supports on-chip debugging (OCD) of AVRs with a JTAG boundary-scan interface. The original JTAGICE is no longer in production, however it has been replaced by the JTAGICE mkII.</P>
+<P><A name="JTAGICE_mkI" id="JTAGICE_mkI"></A></P>
+<H3><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=20" title="Edit section: JTAGICE mkI">edit</A>]</SPAN> <SPAN class="mw-headline">JTAGICE mkI</SPAN></H3>
+<P>The JTAGICE mkI debugging tool supports on-chip debugging (OCD) of older AVRs with JTAG interface. Newer devices using the debugWire interface cannot be debugged.</P>
+<P><A name="JTAGICE_mkII" id="JTAGICE_mkII"></A></P>
+<H3><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=21" title="Edit section: JTAGICE mkII">edit</A>]</SPAN> <SPAN class="mw-headline">JTAGICE mkII</SPAN></H3>
+<P>The JTAGICE mkII debugging tool supports on-chip debugging (OCD) of AVRs with JTAG, PDI or debugWIRE interface. The debugWire interface enables debugging using only one pin (the Reset pin), allowing debugging of applications running on low pin-count microcontrollers.</P>
+<P><A name="The_Butterfly_Demo_Board" id="The_Butterfly_Demo_Board"></A></P>
+<H3><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=22" title="Edit section: The Butterfly Demo Board">edit</A>]</SPAN> <SPAN class="mw-headline">The Butterfly Demo Board</SPAN></H3>
+<DIV class="thumb tright">
+<DIV class="thumbinner" style="width:182px;"><A href="http://en.wikipedia.org/wiki/File:ATmega169-MLF.jpg" class="image" title="Atmel AVR ATmega169 MLF."><IMG alt="" src="./Atmel AVR - Wikipedia, the free encyclopedia_files/180px-ATmega169-MLF.jpg" width="180" height="135" border="0" class="thumbimage"></A>
+<DIV class="thumbcaption">
+<DIV class="magnify"><A href="http://en.wikipedia.org/wiki/File:ATmega169-MLF.jpg" class="internal" title="Enlarge"><IMG src="./Atmel AVR - Wikipedia, the free encyclopedia_files/magnify-clip.png" width="15" height="11" alt=""></A></DIV>
+Atmel AVR ATmega169 <A href="http://en.wikipedia.org/wiki/MicroLeadFrame" title="MicroLeadFrame">MLF</A>.</DIV>
+</DIV>
+</DIV>
+<DIV class="rellink noprint relarticle mainarticle">Main article: <A href="http://en.wikipedia.org/wiki/AVR_Butterfly" title="AVR Butterfly">AVR Butterfly</A></DIV>
+<P>The very popular AVR Butterfly demonstration board is a self-contained, battery-powered computer running the Atmel AVR ATmega169V microcontroller. It was built to show-off the AVR family especially a new built-in LCD interface. The board includes the LCD screen, joystick, speaker, serial port, real time clock (RTC), flash memory chip, and both temperature and voltage sensors. Earlier versions of the AVR Butterfly also contained a CdS <A href="http://en.wikipedia.org/wiki/Photoresistor" title="Photoresistor">photoresistor</A>; it is not present on Butterfly boards produced after June 2006 to allow <A href="http://en.wikipedia.org/wiki/RoHS" title="RoHS" class="mw-redirect">RoHS</A> compliance<SUP id="cite_ref-4" class="reference"><A href="http://en.wikipedia.org/wiki/Atmel_AVR#cite_note-4" title=""><SPAN>[</SPAN>5<SPAN>]</SPAN></A></SUP>. The small board has a shirt pin on its back so it can be worn as a name badge.</P>
+<P>The AVR Butterfly comes preloaded with software to demonstrate the capabilities of the microcontroller. Factory firmware can scroll your name, display the sensor readings, and show the time. The AVR Butterfly also has a piezo speaker that can be used to reproduce sounds and music.</P>
+<P>The AVR Butterfly demonstrates LCD driving by running a 14-segment, six alpha-numeric character display. However, the LCD interface consumes many of the I/O pins.</P>
+<P>The Butterfly&#39;s ATmega169 CPU is capable of speeds up to 8 MHz, however it is factory set by software to 2 MHz to preserve the button battery life. A pre-installed bootloader program allows the board to be re-programmed via a standard RS-232 serial plug with new programs that users can write with the free Atmel IDE tools.</P>
+<P><A name="AT90USBKey" id="AT90USBKey"></A></P>
+<H3><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=23" title="Edit section: AT90USBKey">edit</A>]</SPAN> <SPAN class="mw-headline">AT90USBKey</SPAN></H3>
+<P>This small board, about half the size of a business card, is priced at slightly more than an AVR Butterfly. It includes an at90usb1287 with USB-OTG support, 16 MB of <A href="http://en.wikipedia.org/wiki/DataFlash" title="DataFlash">DataFlash</A>, LEDs, a small joystick, and a temperature sensor. It&#39;s clocked at 8 MHz, and comes with software which lets it act as a USB Mass Storage device (its documentation is shipped on the DataFlash), a USB joystick, and more. To support the USB host capability, it must be operated from a battery; but when running as a USB peripheral, it only needs the power provided over USB.</P>
+<P>Only the JTAG port uses conventional 2.54mm pinout. All the other AVR I/O ports require more compact 1.27mm headers, which are not widely supported.</P>
+<P>Since it has 128 KB of flash memory, a JTAGICE mkII is the best debug solution; a Dragon can program it, but can&#39;t examine its status. You can also program it through USB from a Windows or Linux host, using the USB &quot;Device Firmware Update&quot; protocols. Atmel ships proprietary (source code included but distribution restricted) example programs and a USB protocol stack with the device. <A href="http://www.fourwalledcubicle.com/MyUSB.php" class="external text" title="http://www.fourwalledcubicle.com/MyUSB.php" rel="nofollow">MyUSB</A> is a third party <A href="http://en.wikipedia.org/wiki/Free_software" title="Free software">free software</A> (<A href="http://en.wikipedia.org/wiki/MIT_license" title="MIT license" class="mw-redirect">MIT license</A>) USB protocol stack for the USBKey.</P>
+<P><A name="Raven_Wireless_Kit" id="Raven_Wireless_Kit"></A></P>
+<H3><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=24" title="Edit section: Raven Wireless Kit">edit</A>]</SPAN> <SPAN class="mw-headline">Raven Wireless Kit</SPAN></H3>
+<P>The RAVEN kit supports wireless development using Atmel&#39;s <A href="http://en.wikipedia.org/wiki/IEEE_802.15.4" title="IEEE 802.15.4" class="mw-redirect">IEEE 802.15.4</A> chipsets, for <A href="http://en.wikipedia.org/wiki/ZigBee" title="ZigBee">ZigBee</A> and other wireless stacks. It resembles a pair of wireless more-powerful Butterfly cards, plus a wireless USBKey; and costing about that much (under $US100). All these boards support JTAG based development.</P>
+<P>The kit includes two AVR Raven boards, each with 2.4 GHz transceiver supporting IEEE 802.15.4 (and a freely licensed ZigBee stack). The radios are driven with ATmega1284p processors, which are supported by a custom segmented LCD display driven by an ATmega3290p processor. Raven peripherals resemble the Butterfly: piezo speaker, DataFlash (bigger), external EEPROM, sensors, 32K crystal for RTC, and so on. These are intended for use developing remote sensor nodes, to control relays, or whatever is needed.</P>
+<P>The USB stick uses an AT90usb1287 for connections to a USB host and to the 2.4 GHz wireless links. These are intended to monitor and control the remote nodes, relying on host power rather than local batteries.</P>
+<P><A name="Third-Party_Programmers" id="Third-Party_Programmers"></A></P>
+<H3><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=25" title="Edit section: Third-Party Programmers">edit</A>]</SPAN> <SPAN class="mw-headline">Third-Party Programmers</SPAN></H3>
+<P>A wide variety of third-party programming and debugging tools are available for the AVR. These devices use various interfaces, including RS-232, PC parallel port, and USB. <A href="http://www.avrfreaks.net/" class="external text" title="http://www.avrfreaks.net" rel="nofollow">AVR Freaks</A> has a comprehensive list.</P>
+<P><A name="Atmel_AVR_Usage" id="Atmel_AVR_Usage"></A></P>
+<H2><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=26" title="Edit section: Atmel AVR Usage">edit</A>]</SPAN> <SPAN class="mw-headline">Atmel AVR Usage</SPAN></H2>
+<P>AVRs have been used in various automotive applications such as security, safety, powertrain and entertainment systems. Atmel has recently launched a new publication &quot;Atmel Automotive Compilation&quot; to help developers with automotive applications. Some current usages are in BMW, Daimler-Chrysler and TRW.</P>
+<P>The <A href="http://en.wikipedia.org/wiki/Arduino" title="Arduino">Arduino</A> <A href="http://en.wikipedia.org/wiki/Physical_computing" title="Physical computing">physical computing</A> platform is based on an ATmega328 (ATMega168 or ATmega8 in older versions) processor.</P>
+<P>USB-based AVRs have been used in the Microsoft Xbox hand controllers. The link between the controllers and Xbox is USB.</P>
+<P>Lego has recently released the firmware source code files for 32-bit AVRs to aid in the development of open-source alternatives to its popular robotics <A href="http://en.wikipedia.org/wiki/Lego_Mindstorms_NXT" title="Lego Mindstorms NXT">NXT</A> &quot;brick&quot; operating system.</P>
+<P>Several companies produce AVR-based microcontrollers intended for use by hobbyists, robot builders, experimenters and small system developers including <A href="http://www.cubloc.com/" class="external text" title="http://www.cubloc.com" rel="nofollow">Cubloc</A>, <A href="http://www.basicx.com/" class="external text" title="http://www.basicx.com" rel="nofollow">BasicX</A>, <A href="http://www.oakmicros.com/" class="external text" title="http://www.oakmicros.com" rel="nofollow">Oak Micros</A>, and <A href="http://www.zbasic.net/" class="external text" title="http://www.zbasic.net" rel="nofollow">ZX Microcontrollers</A>.</P>
+<P><A href="http://www.systemsemi.com/" class="external text" title="http://www.systemsemi.com" rel="nofollow">System Semiconductor,Inc</A> released the &quot;System on a Chip&quot;, which is a Motor and Motion Control Chip, the <A href="http://www.systemsemi.com/" class="external text" title="http://www.systemsemi.com" rel="nofollow">M3000</A> with an Atmel AVR Core married to an Advanced Motion Controller for use in a variety of motion applications.</P>
+<P><A name="The_New_32-Bit_AVRs" id="The_New_32-Bit_AVRs"></A></P>
+<H2><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=27" title="Edit section: The New 32-Bit AVRs">edit</A>]</SPAN> <SPAN class="mw-headline">The New 32-Bit AVRs</SPAN></H2>
+<DIV class="rellink noprint relarticle mainarticle">Main article: <A href="http://en.wikipedia.org/wiki/AVR32" title="AVR32">AVR32</A></DIV>
+<P>In 2006 Atmel released microcontrollers based on the new, 32-bit, <A href="http://en.wikipedia.org/wiki/AVR32" title="AVR32">AVR32</A> architecture. They include <A href="http://en.wikipedia.org/wiki/SIMD" title="SIMD">SIMD</A> and <A href="http://en.wikipedia.org/wiki/Digital_signal_processor" title="Digital signal processor">DSP</A> instructions, along with other audio and video processing features. This 32-bit family of devices is intended to compete with the <A href="http://en.wikipedia.org/wiki/ARM_architecture" title="ARM architecture">ARM</A> based processors. The instruction set is similar to other RISC cores, but is not compatible with the original AVR or any of the various ARM cores.</P>
+<P><A name="Footnotes" id="Footnotes"></A></P>
+<H2><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=28" title="Edit section: Footnotes">edit</A>]</SPAN> <SPAN class="mw-headline">Footnotes</SPAN></H2>
+<OL class="references">
+<LI id="cite_note-0"><B><A href="http://en.wikipedia.org/wiki/Atmel_AVR#cite_ref-0" title="">^</A></B> Since 1996, NTH has become part of the <A href="http://en.wikipedia.org/wiki/Norwegian_University_of_Science_and_Technology" title="Norwegian University of Science and Technology">Norwegian University of Science and Technology</A> (NTNU)</LI>
+<LI id="cite_note-1"><B><A href="http://en.wikipedia.org/wiki/Atmel_AVR#cite_ref-1" title="">^</A></B> <A href="http://www.avrtv.com/2007/09/09/avrtv-special-005/" class="external text" title="http://www.avrtv.com/2007/09/09/avrtv-special-005/" rel="nofollow">AVR Television&nbsp;&raquo; Blog Archive&nbsp;&raquo; Special: The Story of AVR</A></LI>
+<LI id="cite_note-2"><B><A href="http://en.wikipedia.org/wiki/Atmel_AVR#cite_ref-2" title="">^</A></B> <A href="http://www.avrtv.com/2007/09/09/avrtv-special-005/" class="external text" title="http://www.avrtv.com/2007/09/09/avrtv-special-005/" rel="nofollow">AVR Television&nbsp;&raquo; Blog Archive&nbsp;&raquo; Special: The Story of AVR</A></LI>
+<LI id="cite_note-3"><B><A href="http://en.wikipedia.org/wiki/Atmel_AVR#cite_ref-3" title="">^</A></B> www.atmel.com/atmel/acrobat/1065s.pdf</LI>
+<LI id="cite_note-4"><B><A href="http://en.wikipedia.org/wiki/Atmel_AVR#cite_ref-4" title="">^</A></B> <A href="http://www.atmel.com/dyn/products/tools.asp?family_id=607" class="external free" title="http://www.atmel.com/dyn/products/tools.asp?family_id=607" rel="nofollow">http://www.atmel.com/dyn/products/tools.asp?family_id=607</A></LI>
+</OL>
+<P><A name="External_links" id="External_links"></A></P>
+<H2><SPAN class="editsection">[<A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit&section=29" title="Edit section: External links">edit</A>]</SPAN> <SPAN class="mw-headline">External links</SPAN></H2>
+<TABLE class="metadata plainlinks mbox-small" style="border:1px solid #aaa; background-color:#f9f9f9;">
+<TBODY><TR>
+<TD class="mbox-image"><A href="http://en.wikibooks.org/wiki/Special:Search/Atmel_AVR" title="b:Special:Search/Atmel AVR"><IMG alt="Sister project" src="./Atmel AVR - Wikipedia, the free encyclopedia_files/40px-Wikibooks-logo-en-noslogan.svg.png" width="40" height="40" border="0"></A></TD>
+<TD class="mbox-text" style="">The <A href="http://en.wikipedia.org/wiki/Wikibooks" title="Wikibooks">Wikibook</A> <I><A href="http://en.wikibooks.org/wiki/Embedded_Systems" class="extiw" title="wikibooks:Embedded Systems">Embedded Systems</A></I> has a page on the topic of
+<DIV style="margin-left:10px;"><I><B><A href="http://en.wikibooks.org/wiki/Embedded_Systems/Atmel_AVR" class="extiw" title="wikibooks:Embedded Systems/Atmel AVR">Atmel AVR</A></B></I></DIV>
+</TD>
+</TR>
+</TBODY></TABLE>
+<UL>
+<LI><A href="http://www.atmel.com/products/avr/" class="external text" title="http://www.atmel.com/products/avr/" rel="nofollow">Atmel AVR Homepage</A></LI>
+<LI><A href="http://www.avrfreaks.net/" class="external text" title="http://www.avrfreaks.net" rel="nofollow">AVR Freaks community</A></LI>
+<LI><A href="http://www.msc-ge.com/en/1218-www.html" class="external text" title="http://www.msc-ge.com/en/1218-www.html" rel="nofollow">AVR Infos</A></LI>
+<LI><A href="http://www.kdi-co.com/products/KDI-prog31.html" class="external text" title="http://www.kdi-co.com/products/KDI-prog31.html" rel="nofollow">Parallel Programmer for Atmel AVR</A></LI>
+<LI><A href="http://www.dmoz.org/Computers/Hardware/Components/Processors/AVR//" class="external text" title="http://www.dmoz.org/Computers/Hardware/Components/Processors/AVR//" rel="nofollow">Atmel AVR</A> at the <A href="http://en.wikipedia.org/wiki/Open_Directory_Project" title="Open Directory Project">Open Directory Project</A></LI>
+</UL>
+<TABLE class="navbox" cellspacing="0" style=";">
+<TBODY><TR>
+<TD style="padding:2px;">
+<TABLE cellspacing="0" class="nowraplinks collapsible autocollapse" style="width:100&percnt;;background:transparent;color:inherit;;" id="collapsibleTable0">
+<TBODY><TR>
+<TH style=";" colspan="2" class="navbox-title"><SPAN class="collapseButton">[<A id="collapseButton0" href="javascript:collapseTable(0);">show</A>]</SPAN>
+<DIV style="float:left; width:6em;text-align:left;">
+<DIV class="noprint plainlinks navbar" style="background:none; padding:0; font-weight:normal;;;border:none;; font-size:xx-small;"><A href="http://en.wikipedia.org/wiki/Template:8bitMCUs" title="Template:8bitMCUs"><SPAN title="View this template" style=";;border:none;">v</SPAN></A>&nbsp;<SPAN style="font-size:80&percnt;;">&bull;</SPAN>&nbsp;<A href="http://en.wikipedia.org/w/index.php?title=Template_talk:8bitMCUs&action=edit&redlink=1" class="new" title="Template talk:8bitMCUs (page does not exist)"><SPAN title="Discussion about this template" style=";;border:none;">d</SPAN></A>&nbsp;<SPAN style="font-size:80&percnt;;">&bull;</SPAN>&nbsp;<A href="http://en.wikipedia.org/w/index.php?title=Template:8bitMCUs&action=edit" class="external text" title="http://en.wikipedia.org/w/index.php?title=Template:8bitMCUs&amp;action=edit" rel="nofollow"><SPAN title="Edit this template" style=";;border:none;;">e</SPAN></A></DIV>
+</DIV>
+<SPAN style="font-size:110&percnt;;">8-bit <A href="http://en.wikipedia.org/wiki/Microcontroller" title="Microcontroller">microcontroller</A> families</SPAN></TH>
+</TR>
+<TR style="height: 2px; display: none; ">
+<TD>
+</TR>
+<TR style="display: none; ">
+<TD colspan="2" style="width:100&percnt;;padding:0px;line-height:1.5em;;;" class="navbox-list navbox-odd">
+<DIV style="padding:0em 0.25em"><STRONG class="selflink">AVR</STRONG><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/PIC_microcontroller" title="PIC microcontroller">PIC</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/COP8" title="COP8">COP8</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/Intel_8048" title="Intel 8048">MCS-48</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/Intel_8051" title="Intel 8051">MCS-51</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/Zilog_Z8" title="Zilog Z8">Z8</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/Zilog_eZ80" title="Zilog eZ80">eZ80</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/Freescale_68HC08" title="Freescale 68HC08">HC08</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/Freescale_68HC11" title="Freescale 68HC11">HC11</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/H8_Family" title="H8 Family">H8</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/PSoC" title="PSoC">PSoC</A></DIV>
+</TD>
+</TR>
+</TBODY></TABLE>
+</TD>
+</TR>
+</TBODY></TABLE>
+<TABLE class="navbox" cellspacing="0" style=";">
+<TBODY><TR>
+<TD style="padding:2px;">
+<TABLE cellspacing="0" class="nowraplinks collapsible autocollapse" style="width:100&percnt;;background:transparent;color:inherit;;" id="collapsibleTable1">
+<TBODY><TR>
+<TH style=";" colspan="2" class="navbox-title"><SPAN class="collapseButton">[<A id="collapseButton1" href="javascript:collapseTable(1);">show</A>]</SPAN>
+<DIV style="float:left; width:6em;text-align:left;">
+<DIV class="noprint plainlinks navbar" style="background:none; padding:0; font-weight:normal;;;border:none;; font-size:xx-small;"><A href="http://en.wikipedia.org/wiki/Template:RISC-based_processor_architectures" title="Template:RISC-based processor architectures"><SPAN title="View this template" style=";;border:none;">v</SPAN></A>&nbsp;<SPAN style="font-size:80&percnt;;">&bull;</SPAN>&nbsp;<A href="http://en.wikipedia.org/wiki/Template_talk:RISC-based_processor_architectures" title="Template talk:RISC-based processor architectures"><SPAN title="Discussion about this template" style=";;border:none;">d</SPAN></A>&nbsp;<SPAN style="font-size:80&percnt;;">&bull;</SPAN>&nbsp;<A href="http://en.wikipedia.org/w/index.php?title=Template:RISC-based_processor_architectures&action=edit" class="external text" title="http://en.wikipedia.org/w/index.php?title=Template:RISC-based_processor_architectures&amp;action=edit" rel="nofollow"><SPAN title="Edit this template" style=";;border:none;;">e</SPAN></A></DIV>
+</DIV>
+<SPAN style="font-size:110&percnt;;"><A href="http://en.wikipedia.org/wiki/Reduced_instruction_set_computer" title="Reduced instruction set computer">RISC</A>-based processor architectures</SPAN></TH>
+</TR>
+<TR style="height: 2px; display: none; ">
+<TD>
+</TR>
+<TR style="display: none; ">
+<TD colspan="2" style="width:100&percnt;;padding:0px;;;" class="navbox-list navbox-odd">
+<DIV style="padding:0em 0.25em"><A href="http://en.wikipedia.org/wiki/Nios_II" title="Nios II">Altera Nios II</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/AMD_29000" title="AMD 29000" class="mw-redirect">AMD 29000</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/Apollo_PRISM" title="Apollo PRISM">Apollo PRISM</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/Blackfin" title="Blackfin">Analog Devices Blackfin</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/ARM_architecture" title="ARM architecture">ARM</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <STRONG class="selflink">Atmel AVR</STRONG><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/AVR32" title="AVR32">Atmel AVR32</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/XAP_processor" title="XAP processor">Cambridge Consultants XAP</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/DEC_Alpha" title="DEC Alpha">DEC Alpha</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/DLX" title="DLX">DLX</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/Clipper_architecture" title="Clipper architecture">Fairchild Clipper</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/PA-RISC" title="PA-RISC">PA-RISC</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/Intel_i960" title="Intel i960">Intel i960</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/M32R" title="M32R">M32R</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/LatticeMico32" title="LatticeMico32">LatticeMico32</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/PIC_micro" title="PIC micro" class="mw-redirect">Microchip PIC</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/MIPS_architecture" title="MIPS architecture">MIPS</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/Motorola_88000" title="Motorola 88000" class="mw-redirect">Motorola 88000</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/Power_Architecture" title="Power Architecture">Power</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/SPARC" title="SPARC">SPARC</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/SuperH" title="SuperH">Renesas SuperH</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/MicroBlaze" title="MicroBlaze">Xilinx MicroBlaze</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/PicoBlaze" title="PicoBlaze">Xilinx Picoblaze</A><SPAN style="font-weight:bold;">&nbsp;&middot;</SPAN> <A href="http://en.wikipedia.org/wiki/XCore" title="XCore" class="mw-redirect">XMOS XCore</A></DIV>
+</TD>
+</TR>
+</TBODY></TABLE>
+</TD>
+</TR>
+</TBODY></TABLE>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 988/1000000
+Post-expand include size: 23028/2048000 bytes
+Template argument size: 7097/2048000 bytes
+Expensive parser function count: 0/500
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:100290-0!1!0!default!!en!2 and timestamp 20090521235834 -->
+<DIV class="printfooter">
+Retrieved from &quot;<A href="http://en.wikipedia.org/wiki/Atmel_AVR">http://en.wikipedia.org/wiki/Atmel_AVR</A>&quot;</DIV>
+			<DIV id="catlinks" class="catlinks"><DIV id="mw-normal-catlinks"><A href="http://en.wikipedia.org/wiki/Special:Categories" title="Special:Categories">Categories</A>: <SPAN dir="ltr"><A href="http://en.wikipedia.org/wiki/Category:Microcontrollers" title="Category:Microcontrollers">Microcontrollers</A></SPAN> | <SPAN dir="ltr"><A href="http://en.wikipedia.org/wiki/Category:Electronics_companies" title="Category:Electronics companies">Electronics companies</A></SPAN> | <SPAN dir="ltr"><A href="http://en.wikipedia.org/wiki/Category:Norwegian_Institute_of_Technology" title="Category:Norwegian Institute of Technology">Norwegian Institute of Technology</A></SPAN></DIV></DIV>			<!-- end content -->
+						<DIV class="visualClear"></DIV>
+		</DIV>
+	</DIV>
+		</DIV>
+		<DIV id="column-one">
+	<DIV id="p-cactions" class="portlet">
+		<H5>Views</H5>
+		<DIV class="pBody">
+			<UL>
+	
+				 <LI id="ca-nstab-main" class="selected"><A href="http://en.wikipedia.org/wiki/Atmel_AVR" title="View the content page [alt-c]" accesskey="c">Article</A></LI>
+				 <LI id="ca-talk"><A href="http://en.wikipedia.org/wiki/Talk:Atmel_AVR" title="Discussion about the content page [alt-t]" accesskey="t">Discussion</A></LI>
+				 <LI id="ca-edit"><A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=edit" title="You can edit this page. 
+Please use the preview button before saving. [alt-e]" accesskey="e">Edit this page</A></LI>
+				 <LI id="ca-history"><A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&action=history" title="Past versions of this page [alt-h]" accesskey="h">History</A></LI>			</UL>
+		</DIV>
+	</DIV>
+	<DIV class="portlet" id="p-personal">
+		<H5>Personal tools</H5>
+		<DIV class="pBody">
+			<UL>
+				<LI id="pt-login"><A href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Atmel_AVR" title="You are encouraged to log in; however, it is not mandatory. [alt-o]" accesskey="o">Log in / create account</A></LI>
+			</UL>
+		</DIV>
+	</DIV>
+	<DIV class="portlet" id="p-logo">
+		<A style="background-image: url(http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png);" href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [alt-z]" accesskey="z"></A>
+	</DIV>
+	<SCRIPT type="text/javascript"> if (window.isMSIE55) fixalpha(); </SCRIPT>
+	<DIV class="generated-sidebar portlet" id="p-navigation">
+		<H5>Navigation</H5>
+		<DIV class="pBody">
+			<UL>
+				<LI id="n-mainpage-description"><A href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [alt-z]" accesskey="z">Main page</A></LI>
+				<LI id="n-contents"><A href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</A></LI>
+				<LI id="n-featuredcontent"><A href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content &mdash; the best of Wikipedia">Featured content</A></LI>
+				<LI id="n-currentevents"><A href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</A></LI>
+				<LI id="n-randompage"><A href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [alt-x]" accesskey="x">Random article</A></LI>
+			</UL>
+		</DIV>
+	</DIV>
+	<DIV id="p-search" class="portlet">
+		<H5><LABEL for="searchInput">Search</LABEL></H5>
+		<DIV id="searchBody" class="pBody">
+			<FORM action="http://en.wikipedia.org/w/index.php" id="searchform"><DIV>
+				<INPUT type="hidden" name="title" value="Special:Search">
+				<INPUT id="searchInput" name="search" type="text" title="Search Wikipedia [alt-f]" accesskey="f" value="" autocomplete="off">
+				<INPUT type="submit" name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if one exists">&nbsp;
+				<INPUT type="submit" name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search Wikipedia for this text">
+			</DIV></FORM>
+		</DIV>
+	</DIV>
+	<DIV class="generated-sidebar portlet" id="p-interaction">
+		<H5>Interaction</H5>
+		<DIV class="pBody">
+			<UL>
+				<LI id="n-aboutsite"><A href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</A></LI>
+				<LI id="n-portal"><A href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</A></LI>
+				<LI id="n-recentchanges"><A href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [alt-r]" accesskey="r">Recent changes</A></LI>
+				<LI id="n-contact"><A href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</A></LI>
+				<LI id="n-sitesupport"><A href="http://wikimediafoundation.org/wiki/Donate/Now/en?utm_source=donate&utm_medium=sidebar&utm_campaign=spontaneous_donation" title="Support us">Donate to Wikipedia</A></LI>
+				<LI id="n-help"><A href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</A></LI>
+			</UL>
+		</DIV>
+	</DIV>
+	<DIV class="portlet" id="p-tb">
+		<H5>Toolbox</H5>
+		<DIV class="pBody">
+			<UL>
+				<LI id="t-whatlinkshere"><A href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Atmel_AVR" title="List of all English Wikipedia pages containing links to this page [alt-j]" accesskey="j">What links here</A></LI>
+				<LI id="t-recentchangeslinked"><A href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Atmel_AVR" title="Recent changes in pages linked from this page [alt-k]" accesskey="k">Related changes</A></LI>
+<LI id="t-upload"><A href="http://en.wikipedia.org/wiki/Wikipedia:Upload" title="Upload files [alt-u]" accesskey="u">Upload file</A></LI>
+<LI id="t-specialpages"><A href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="List of all special pages [alt-q]" accesskey="q">Special pages</A></LI>
+				<LI id="t-print"><A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&printable=yes" rel="alternate" title="Printable version of this page [alt-p]" accesskey="p">Printable version</A></LI>				<LI id="t-permalink"><A href="http://en.wikipedia.org/w/index.php?title=Atmel_AVR&oldid=291508052" title="Permanent link to this version of the page">Permanent link</A></LI><LI id="t-cite"><A href="http://en.wikipedia.org/w/index.php?title=Special:Cite&page=Atmel_AVR&id=291508052">Cite this page</A></LI>			</UL>
+		</DIV>
+	</DIV>
+	<DIV id="p-lang" class="portlet">
+		<H5>Languages</H5>
+		<DIV class="pBody">
+			<UL>
+				<LI class="interwiki-cs"><A href="http://cs.wikipedia.org/wiki/AVR">Česky</A></LI>
+				<LI class="interwiki-da"><A href="http://da.wikipedia.org/wiki/Atmel_AVR">Dansk</A></LI>
+				<LI class="interwiki-de"><A href="http://de.wikipedia.org/wiki/Atmel_AVR">Deutsch</A></LI>
+				<LI class="interwiki-es"><A href="http://es.wikipedia.org/wiki/AVR">Espa&ntilde;ol</A></LI>
+				<LI class="interwiki-fa"><A href="http://fa.wikipedia.org/wiki/%D8%A7%DB%8C%E2%80%8C%D9%88%DB%8C%E2%80%8C%D8%A2%D8%B1">فارسی</A></LI>
+				<LI class="interwiki-fr"><A href="http://fr.wikipedia.org/wiki/Atmel_AVR">Fran&ccedil;ais</A></LI>
+				<LI class="interwiki-hu"><A href="http://hu.wikipedia.org/wiki/Atmel_AVR">Magyar</A></LI>
+				<LI class="interwiki-id"><A href="http://id.wikipedia.org/wiki/Atmel_AVR">Bahasa Indonesia</A></LI>
+				<LI class="interwiki-it"><A href="http://it.wikipedia.org/wiki/Atmel_AVR">Italiano</A></LI>
+				<LI class="interwiki-ja"><A href="http://ja.wikipedia.org/wiki/Atmel_AVR">日本語</A></LI>
+				<LI class="interwiki-no"><A href="http://no.wikipedia.org/wiki/AVR">‪Norsk (bokm&aring;l)‬</A></LI>
+				<LI class="interwiki-nn"><A href="http://nn.wikipedia.org/wiki/AVR">‪Norsk (nynorsk)‬</A></LI>
+				<LI class="interwiki-pl"><A href="http://pl.wikipedia.org/wiki/Atmel_AVR">Polski</A></LI>
+				<LI class="interwiki-ru"><A href="http://ru.wikipedia.org/wiki/AVR">Русский</A></LI>
+				<LI class="interwiki-fi"><A href="http://fi.wikipedia.org/wiki/AVR">Suomi</A></LI>
+				<LI class="interwiki-sv"><A href="http://sv.wikipedia.org/wiki/AVR">Svenska</A></LI>
+				<LI class="interwiki-tr"><A href="http://tr.wikipedia.org/wiki/AVR">T&uuml;rk&ccedil;e</A></LI>
+				<LI class="interwiki-uk"><A href="http://uk.wikipedia.org/wiki/AVR">Українська</A></LI>
+			</UL>
+		</DIV>
+	</DIV>
+		</DIV><!-- end of the left (by default at least) column -->
+			<DIV class="visualClear"></DIV>
+			<DIV id="footer">
+				<DIV id="f-poweredbyico"><A href="http://www.mediawiki.org/"><IMG src="./Atmel AVR - Wikipedia, the free encyclopedia_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki"></A></DIV>
+				<DIV id="f-copyrightico"><A href="http://wikimediafoundation.org/"><IMG src="./Atmel AVR - Wikipedia, the free encyclopedia_files/wikimedia-button.png" border="0" alt="Wikimedia Foundation"></A></DIV>
+			<UL id="f-list">
+					<LI id="lastmod"> This page was last modified on 21 May 2009, at 23:58 (UTC).</LI>
+					<LI id="copyright">All text is available under the terms of the <A class="internal" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</A>. (See <B><A class="internal" href="http://en.wikipedia.org/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</A></B> for details.) <BR> Wikipedia&reg; is a registered trademark of the <A href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</A>, a U.S. registered <A class="internal" href="http://en.wikipedia.org/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</A> <A href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</A> <A class="internal" href="http://en.wikipedia.org/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</A> <A href="http://en.wikipedia.org/wiki/Charitable_organization" title="Charitable organization">charity</A>.<BR></LI>
+					<LI id="privacy"><A href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</A></LI>
+					<LI id="about"><A href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</A></LI>
+					<LI id="disclaimer"><A href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</A></LI>
+			</UL>
+		</DIV>
+</DIV>
+
+		<SCRIPT type="text/javascript">if (window.runOnloadHook) runOnloadHook();</SCRIPT>
+<!-- Served by srv168 in 0.053 secs. -->
+</BODY></HTML>

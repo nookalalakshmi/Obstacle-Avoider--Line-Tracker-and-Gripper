@@ -1,0 +1,722 @@
+   1               		.file	"motorIR.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  11               		.text
+  12               	.Ltext0:
+  71               	.global	__vector_4
+  73               	__vector_4:
+   1:motorIR.c     **** //			Two Motors and a Proximity IR sensor
+   2:motorIR.c     **** 
+   3:motorIR.c     **** /*-------------------------------------------------------------------          
+   4:motorIR.c     ****  Operation-
+   5:motorIR.c     ****  1. IR-Remote ecoder	
+   6:motorIR.c     ****  2. Test IR-Remote using 4-LEDs
+   7:motorIR.c     **** 
+   8:motorIR.c     ****  Description:
+   9:motorIR.c     ****  CPU => ATMEGA8-L @8MHz Internal
+  10:motorIR.c     **** 
+  11:motorIR.c     ****  
+  12:motorIR.c     ****     
+  13:motorIR.c     ****   PC0-INPUT- TSOC IR-Sensor Pin-3
+  14:motorIR.c     ****   
+  15:motorIR.c     ****   PD0-OUTPUT-LED-1 Red    	#2
+  16:motorIR.c     ****   PD1-OUTPUT-LED-2 Green	#3
+  17:motorIR.c     ****   PD2-OUTPUT-LED-3 Red		#4
+  18:motorIR.c     ****   PD3-OUTPUT-LED-4 Green	#5
+  19:motorIR.c     ****   
+  20:motorIR.c     **** ---------------------------------------------------------------------*/
+  21:motorIR.c     **** 
+  22:motorIR.c     **** /*----------------------------------------------------------------
+  23:motorIR.c     **** -----------------HEADER FILES-------------------------------------
+  24:motorIR.c     **** -----------------------------------------------------------------*/
+  25:motorIR.c     **** #include <avr/io.h>
+  26:motorIR.c     **** #include <avr/interrupt.h>
+  27:motorIR.c     **** #include <util/delay.h>
+  28:motorIR.c     **** #include <compat/deprecated.h>		//HEADER FILE FOR FUNCTIONS LIKE SBI AND CBI
+  29:motorIR.c     **** /*----------------------------------------------------------------
+  30:motorIR.c     **** -----------------GLOBAL VARIABLES-------------------------------------
+  31:motorIR.c     **** -----------------------------------------------------------------*/
+  32:motorIR.c     **** //#define TMC8_CK8	(_BV(CS22))	// 8 BIT TIMER2 AT 256 PRESCALAR
+  33:motorIR.c     **** #define TMC8_CK8	(_BV(CS21))	// 8 BIT TIMER2 AT 8 PRESCALAR
+  34:motorIR.c     **** 												// GIVES 8*64 = 512 CYCLES
+  35:motorIR.c     **** 												// AT 8MHZ FREQUENCY  = 0.125 microSECONDS/cycle
+  36:motorIR.c     **** 												
+  37:motorIR.c     **** #define TIMER_2_CNT     190  //191: 64 micro sec, use AVRcalc to calculate these values
+  38:motorIR.c     **** 								// MAX VALUE = 255 and up counting from 191
+  39:motorIR.c     **** 								// TIMER OVERFLOW ON 255-191 = 64 COUNTSd
+  40:motorIR.c     **** 
+  41:motorIR.c     **** static volatile uint8_t led;     // use volatile when variable is accessed from interrupts
+  42:motorIR.c     **** 
+  43:motorIR.c     **** static volatile int c3p5=0;
+  44:motorIR.c     **** static volatile int c131=0;
+  45:motorIR.c     **** static volatile int	irDt;	 
+  46:motorIR.c     **** static volatile char irMode=0; 
+  47:motorIR.c     **** static volatile char irState=0;
+  48:motorIR.c     **** static volatile char d_old;
+  49:motorIR.c     **** 
+  50:motorIR.c     **** static volatile char cmd;	 
+  51:motorIR.c     **** static volatile char cmd_old;	 
+  52:motorIR.c     **** static volatile char pwmc=0;
+  53:motorIR.c     **** static volatile char count=0;
+  54:motorIR.c     **** 
+  55:motorIR.c     **** /*----------------------------------------------------------------
+  56:motorIR.c     **** -----------------FUNCTION-----------------------------------------
+  57:motorIR.c     **** -----------------------------------------------------------------*/
+  58:motorIR.c     **** //Timer2 OVERFLOW Interupt----------------------
+  59:motorIR.c     **** SIGNAL(SIG_OVERFLOW2)     // signal handler for tcnt2 overflow interrupt
+  60:motorIR.c     **** {//every 70.721usec here
+  74               	 r0,__SREG__
+  75               		push r0
+  76               		clr __zero_reg__
+  77 0000 1F92      		push r18
+  78 0002 0F92      		push r19
+  79 0004 0FB6      		push r24
+  80 0006 0F92      		push r25
+  81 0008 1124      	/* prologue: Signal */
+  82 000a 2F93      	/* frame size = 0 */
+  84 000e 8F93      	.LM1:
+  85 0010 9F93      		lds r24,c3p5
+  86               		lds r25,(c3p5)+1
+  87               		adiw r24,1
+  61:motorIR.c     **** 	char d;
+  62:motorIR.c     **** //     sbi(PORTD,2);
+  63:motorIR.c     **** 	c3p5++;
+  88               	r25
+  89               		sts c3p5,r24
+  91 0016 9091 0000 	.LM2:
+  92 001a 0196      		lds r24,pwmc
+  93 001c 9093 0000 		subi r24,lo8(-(1))
+  94 0020 8093 0000 		sts pwmc,r24
+  64:motorIR.c     **** 	pwmc++;
+  95               		68,0,65,.LM3-.LFBB1
+  96               	.LM3:
+  97 0024 8091 0000 		ldi r24,lo8(-66)
+  98 0028 8F5F      		out 68-32,r24
+  65:motorIR.c     ****     TCNT2 = TIMER_2_CNT; // reset counter to get this interrupt again
+ 100               	
+ 101               		lds r24,pwmc
+ 102 002e 8EEB      		tst r24
+ 103 0030 84BD      		brne .L2
+  66:motorIR.c     **** 	
+  67:motorIR.c     **** 	if(pwmc==0)
+ 104               	tabn	68,0,69,.LM5-.LFBB1
+ 105               	.LM5:
+ 106 0032 8091 0000 		lds r24,c131
+ 107 0036 8823      		lds r25,(c131)+1
+ 108 0038 01F4      		adiw r24,1
+  68:motorIR.c     **** 	{
+  69:motorIR.c     ****      c131++;	
+ 109               	(c131)+1,r25
+ 110               		sts c131,r24
+ 112 003e 9091 0000 	.LM6:
+ 113 0042 0196      		lds r24,count
+ 114 0044 9093 0000 		subi r24,lo8(-(1))
+ 115 0048 8093 0000 		sts count,r24
+  70:motorIR.c     **** 	 count++;
+ 116               	stabn	68,0,72,.LM7-.LFBB1
+ 117               	.LM7:
+ 118 004c 8091 0000 		lds r24,count
+ 120 0052 8093 0000 	.LM8:
+ 121               		lds r24,count
+  71:motorIR.c     **** 	}
+  72:motorIR.c     **** 	if(count==0)
+ 122               	n	68,0,81,.LM9-.LFBB1
+ 123               	.LM9:
+ 124 0056 8091 0000 		lds r24,irMode
+  73:motorIR.c     **** 	{
+  74:motorIR.c     **** 	  
+  75:motorIR.c     **** 	}
+  76:motorIR.c     **** 	if(count==128)
+ 125               	t r24
+ 126               		brne .+2
+ 127 005a 8091 0000 		rjmp .L11
+  77:motorIR.c     **** 	{
+  78:motorIR.c     **** 	}
+  79:motorIR.c     **** 	
+  80:motorIR.c     **** 	//IR-Remote Decoder ----------------------------
+  81:motorIR.c     **** 	if(irMode==0)//Idle
+ 128               	tabn	68,0,86,.LM10-.LFBB1
+ 129               	.LM10:
+ 130 005e 8091 0000 		lds r18,irMode
+ 131 0062 8823      		cpi r18,lo8(1)
+ 132 0064 01F4      		breq .+2
+ 133 0066 00C0      		rjmp .L4
+  82:motorIR.c     **** 	{
+  83:motorIR.c     **** 		return;
+  84:motorIR.c     **** 	}
+  85:motorIR.c     **** 	//IR-Remote Decoder ----------------------------
+  86:motorIR.c     **** 	if(irMode==1)//Get start frame first mid-bit
+ 134               	n	68,0,88,.LM11-.LFBB1
+ 135               	.LM11:
+ 136 0068 2091 0000 		lds r24,irState
+ 137 006c 2130      		tst r24
+ 138 006e 01F0      		brne .L5
+  87:motorIR.c     **** 	{
+  88:motorIR.c     **** 		if(irState==0)//detect sylence for 3.5mSec
+ 140               	
+ 141               		sts (c3p5)+1,__zero_reg__
+ 142 0072 8091 0000 		sts c3p5,__zero_reg__
+ 144 0078 01F4      	.LM13:
+  89:motorIR.c     **** 		{//
+  90:motorIR.c     **** 			c3p5=0;
+ 145               	 irState,r18
+ 147 007a 1092 0000 	.LM14:
+ 148 007e 1092 0000 		in r24,51-32
+  91:motorIR.c     **** 			irState=1;
+ 149               	 r24
+ 150               		andi r24,lo8(1)
+ 151 0082 2093 0000 		sts d_old,r24
+  92:motorIR.c     **** 			d_old=bit_is_clear(PINC,0);
+ 152               	mp .L11
+ 153               	.L5:
+ 155 0088 8095      	.LM15:
+ 156 008a 8170      		lds r24,irState
+ 157 008c 8093 0000 		cpi r24,lo8(1)
+ 158 0090 00C0      		brne .L6
+  93:motorIR.c     **** 			return;
+  94:motorIR.c     **** 		}
+  95:motorIR.c     **** 		if(irState==1)
+ 160               	in r24,51-32
+ 162 0092 8091 0000 	.LM17:
+ 163 0096 8130      		lds r25,d_old
+ 164 0098 01F4      		com r24
+  96:motorIR.c     **** 		{
+  97:motorIR.c     **** 			d=bit_is_clear(PINC,0);
+ 165               	 r24,lo8(1)
+ 166               		cp r25,r24
+ 167 009a 83B3      		brne .L7
+  98:motorIR.c     **** 			if(d_old==d)
+ 168               	tabn	68,0,100,.LM18-.LFBB1
+ 169               	.LM18:
+ 170 009c 9091 0000 		lds r24,c3p5
+ 171 00a0 8095      		lds r25,(c3p5)+1
+ 172 00a2 8170      		sbiw r24,50
+ 173 00a4 9817      		brge .+2
+ 174 00a6 01F4      		rjmp .L11
+  99:motorIR.c     **** 			{
+ 100:motorIR.c     **** 				if(c3p5>49)
+ 175               		68,0,102,.LM19-.LFBB1
+ 176               	.LM19:
+ 177 00a8 8091 0000 		ldi r24,lo8(2)
+ 178 00ac 9091 0000 		sts irState,r24
+ 180 00b2 04F4      	.LM20:
+ 181 00b4 00C0      		sts (c131)+1,__zero_reg__
+ 101:motorIR.c     **** 				{//sylence for 3.5 mSec
+ 102:motorIR.c     **** 					irState=2;//now detect first transition
+ 182               	31,__zero_reg__
+ 183               		rjmp .L11
+ 184 00b6 82E0      	.L7:
+ 103:motorIR.c     **** 					c131=0;
+ 186               	1:
+ 187               		sts irState,__zero_reg__
+ 188 00bc 1092 0000 		rjmp .L11
+ 189 00c0 1092 0000 	.L6:
+ 191               	.LM22:
+ 104:motorIR.c     **** 				}
+ 105:motorIR.c     **** 			}
+ 106:motorIR.c     **** 			else
+ 107:motorIR.c     **** 			{
+ 108:motorIR.c     **** 				irState=0;
+ 192               	19,irState
+ 193               		cpi r19,lo8(2)
+ 194 00c6 1092 0000 		brne .L4
+ 196               	.LM23:
+ 109:motorIR.c     **** 			}
+ 110:motorIR.c     **** 			
+ 111:motorIR.c     **** 			return;
+ 112:motorIR.c     **** 		}
+ 113:motorIR.c     **** 		if(irState==2)
+ 197               	24,51-32
+ 199 00cc 3091 0000 	.LM24:
+ 200 00d0 3230      		lds r25,d_old
+ 201 00d2 01F4      		com r24
+ 114:motorIR.c     **** 		{
+ 115:motorIR.c     **** 			d=bit_is_clear(PINC,0);
+ 202               	 r24,lo8(1)
+ 203               		cp r25,r24
+ 204 00d4 83B3      		breq .L8
+ 116:motorIR.c     **** 			if(d_old!=d)
+ 205               	tabn	68,0,118,.LM25-.LFBB1
+ 206               	.LM25:
+ 207 00d6 9091 0000 		sts irState,r18
+ 209 00dc 8170      	.LM26:
+ 210 00de 9817      		sts (c3p5)+1,__zero_reg__
+ 211 00e0 01F0      		sts c3p5,__zero_reg__
+ 117:motorIR.c     **** 			{//first transition detected
+ 118:motorIR.c     **** 				irState=1;
+ 212               		68,0,120,.LM27-.LFBB1
+ 213               	.LM27:
+ 214 00e2 2093 0000 		sts (irDt)+1,__zero_reg__
+ 119:motorIR.c     **** 				c3p5=0;
+ 215               	s irDt,__zero_reg__
+ 217 00e6 1092 0000 	.LM28:
+ 218 00ea 1092 0000 		sts irMode,r19
+ 120:motorIR.c     **** 				irDt=0;//reset frame data
+ 219               	p .L11
+ 220               	.L8:
+ 222 00f2 1092 0000 	.LM29:
+ 121:motorIR.c     **** 				irMode=2;//go to frame read
+ 223               	 r24,c131
+ 224               		lds r25,(c131)+1
+ 225 00f6 3093 0000 		sbiw r24,9
+ 226 00fa 00C0      		brge .+2
+ 227               		rjmp .L11
+ 122:motorIR.c     **** 			}
+ 123:motorIR.c     **** 			else
+ 124:motorIR.c     **** 			{
+ 125:motorIR.c     **** 				if(c131>8)//144 mSec
+ 228               	bn	68,0,128,.LM30-.LFBB1
+ 229               	.LM30:
+ 230 00fc 8091 0000 		ldi r24,lo8(64)
+ 231 0100 9091 0000 		rjmp .L12
+ 232 0104 0997      	.L4:
+ 234 0108 00C0      	.LM31:
+ 126:motorIR.c     **** 				{//70.721*256*8=144
+ 127:motorIR.c     **** 					//PORTD=0;
+ 128:motorIR.c     **** 					cmd=64;
+ 235               	4,irMode
+ 236               		cpi r24,lo8(2)
+ 237 010a 80E4      		breq .+2
+ 238 010c 00C0      		rjmp .L11
+ 129:motorIR.c     **** 				}
+ 130:motorIR.c     **** 			}
+ 131:motorIR.c     **** 			return;
+ 132:motorIR.c     **** 		}
+ 133:motorIR.c     **** 	}
+ 134:motorIR.c     **** 	//IR-Remote Decoder ----------------------------
+ 135:motorIR.c     **** 	if(irMode==2)
+ 240               	:
+ 241               		lds r24,irState
+ 242 010e 8091 0000 		tst r24
+ 243 0112 8230      		brne .L9
+ 245 0116 00C0      	.LM33:
+ 136:motorIR.c     **** 	{
+ 137:motorIR.c     **** 		if(irState==0)
+ 246               	5,51-32
+ 247               		com r25
+ 248 0118 8091 0000 		andi r25,lo8(1)
+ 250 011e 01F4      	.LM34:
+ 138:motorIR.c     **** 		{//detect mid-bit transition
+ 139:motorIR.c     **** 			d=bit_is_clear(PINC,0);
+ 251               	r24,d_old
+ 252               		cp r24,r25
+ 253 0120 93B3      		breq .L10
+ 255 0124 9170      	.LM35:
+ 140:motorIR.c     **** 			if(d_old!=d)
+ 256               	d_old,r25
+ 258 0126 8091 0000 	.LM36:
+ 259 012a 8917      		ldi r24,lo8(1)
+ 260 012c 01F0      		sts irState,r24
+ 141:motorIR.c     **** 			{//data changed
+ 142:motorIR.c     **** 				d_old=d;
+ 261               	bn	68,0,144,.LM37-.LFBB1
+ 262               	.LM37:
+ 263 012e 9093 0000 		sts (c3p5)+1,__zero_reg__
+ 143:motorIR.c     **** 				irState=1; 
+ 264               	FBB1
+ 265               	.LM34:
+ 266 0132 81E0      		lds r24,d_old
+ 267 0134 8093 0000 		cp r24,r25
+ 144:motorIR.c     **** 				c3p5=0;
+ 268               	q .L10
+ 270 0138 1092 0000 	.LM35:
+ 271 013c 1092 0000 		sts d_old,r25
+ 273               	.LM36:
+ 145:motorIR.c     **** 				return;
+ 146:motorIR.c     **** 			}
+ 147:motorIR.c     **** 			if(c3p5>49)//3.5mSec
+ 274               	24,lo8(1)
+ 275               		sts irState,r24
+ 277 0146 9091 0000 	.LM37:
+ 278 014a C297      		sts (c3p5)+1,__zero_reg__
+ 279 014c 04F4      		sts c3p5,__zero_reg__
+ 280 014e 00C0      		rjmp .L11
+ 148:motorIR.c     **** 			{//no data in 2 bit period; end of frame
+ 149:motorIR.c     **** 			 irState=1;
+ 282               	.LM38:
+ 283 0150 81E0      		lds r24,c3p5
+ 284 0152 8093 0000 		lds r25,(c3p5)+1
+ 150:motorIR.c     **** 			 irMode=0;
+ 285               	43,.LM36-.LFBB1
+ 286               	.LM36:
+ 287 0156 1092 0000 		ldi r24,lo8(1)
+ 151:motorIR.c     **** 			 irDt = irDt>>1;
+ 288               	s irState,r24
+ 290 015a 8091 0000 	.LM37:
+ 291 015e 9091 0000 		sts (c3p5)+1,__zero_reg__
+ 292 0162 9595      		sts c3p5,__zero_reg__
+ 293 0164 8795      		rjmp .L11
+ 294 0166 9093 0000 	.L10:
+ 152:motorIR.c     **** 			 irDt=255-irDt;
+ 296               	lds r24,c3p5
+ 297               		lds r25,(c3p5)+1
+ 298 016e 2091 0000 		sbiw r24,50
+ 299 0172 3091 0000 		brge .+2
+ 300 0176 8FEF      		rjmp .L11
+ 302 017a 821B      	.LM39:
+ 303 017c 930B      		ldi r24,lo8(1)
+ 304 017e 9093 0000 		sts irState,r24
+ 153:motorIR.c     **** 			 cmd=irDt & 0x3f;
+ 306               	
+ 307               		rjmp .L11
+ 308 0186 8091 0000 	.L10:
+ 310 018e 8F73      	.LM38:
+ 311               		lds r24,c3p5
+ 312 0190 8093 0000 		lds r25,(c3p5)+1
+ 313 0194 00C0      		sbiw r24,50
+ 314               		brge .+2
+ 154:motorIR.c     **** 			//PORTD=cmd;
+ 155:motorIR.c     **** 			
+ 156:motorIR.c     **** 				
+ 157:motorIR.c     **** 			}
+ 158:motorIR.c     **** 			return;
+ 159:motorIR.c     **** 		}		
+ 160:motorIR.c     **** 		if(irState==1)
+ 315               	di r24,lo8(1)
+ 316               		sts irState,r24
+ 318 019a 8130      	.LM37:
+ 319 019c 01F4      		sts (c3p5)+1,__zero_reg__
+ 161:motorIR.c     **** 		{
+ 162:motorIR.c     **** 			if(c3p5>16)
+ 320               	c3p5,__zero_reg__
+ 321               		rjmp .L11
+ 322 019e 8091 0000 	.L10:
+ 324 01a6 4197      	.LM38:
+ 325 01a8 04F0      		lds r24,c3p5
+ 163:motorIR.c     **** 			{//skip bit boundary
+ 164:motorIR.c     **** 				irState=0;
+ 326               	,r25
+ 328 01aa 1092 0000 	.LM36:
+ 165:motorIR.c     **** 				d=bit_is_clear(PINC,0);
+ 329               	i r24,lo8(1)
+ 330               		sts irState,r24
+ 332 01b0 8095      	.LM37:
+ 333 01b2 8170      		sts (c3p5)+1,__zero_reg__
+ 166:motorIR.c     **** 				d_old=d;
+ 334               	c3p5,__zero_reg__
+ 335               		rjmp .L11
+ 336 01b4 8093 0000 	.L10:
+ 167:motorIR.c     **** 				irDt=irDt<<1;
+ 337               	q .L10
+ 339 01b8 2091 0000 	.LM35:
+ 340 01bc 3091 0000 		sts d_old,r25
+ 342 01c2 331F      	.LM36:
+ 343 01c4 3093 0000 		ldi r24,lo8(1)
+ 344 01c8 2093 0000 		sts irState,r24
+ 168:motorIR.c     **** 				irDt=irDt+d;
+ 345               	68,0,144,.LM37-.LFBB1
+ 346               	.LM37:
+ 347 01cc 2091 0000 		sts (c3p5)+1,__zero_reg__
+ 348 01d0 3091 0000 		sts c3p5,__zero_reg__
+ 349 01d4 280F      		rjmp .L11
+ 350 01d6 311D      	.L10:
+ 352 01dc 2093 0000 	.LM38:
+ 353               		lds r24,c3p5
+ 354               		lds r25,(c3p5)+1
+ 169:motorIR.c     **** 				return;
+ 170:motorIR.c     **** 			}
+ 171:motorIR.c     **** 		}
+ 172:motorIR.c     **** 		return;
+ 173:motorIR.c     **** 	}
+ 174:motorIR.c     **** 	//---------------------------------------------
+ 175:motorIR.c     **** }
+ 355               	43,.LM36-.LFBB1
+ 356               	.LM36:
+ 357 01e0 9F91      		ldi r24,lo8(1)
+ 358 01e2 8F91      		sts irState,r24
+ 360 01e6 2F91      	.LM37:
+ 361 01e8 0F90      		sts (c3p5)+1,__zero_reg__
+ 362 01ea 0FBE      		sts c3p5,__zero_reg__
+ 363 01ec 0F90      		rjmp .L11
+ 364 01ee 1F90      	.L10:
+ 366               	.LM38:
+ 367               		lds r24,c3p5
+ 368               		lds r25,(c3p5)+1
+ 369               		sbiw r24,50
+ 370               		brge .+2
+ 371               		rjmp .L11
+ 176:motorIR.c     **** /*----------------------------------------------------------------
+ 177:motorIR.c     **** -----------------MAIN PROGRAM-------------------------------------
+ 178:motorIR.c     **** -----------------------------------------------------------------*/
+ 179:motorIR.c     **** 
+ 180:motorIR.c     **** int main(void)
+ 181:motorIR.c     **** {    
+ 372               	.LM39-.LFBB1
+ 373               	.LM39:
+ 374               		ldi r24,lo8(1)
+ 375               		sts irState,r24
+ 182:motorIR.c     **** 	irState=0;
+ 377               	
+ 378               		rjmp .L11
+ 379 01f2 1092 0000 	.L10:
+ 183:motorIR.c     **** 	irMode=1;
+ 380               	q .L10
+ 382 01f6 81E0      	.LM35:
+ 383 01f8 8093 0000 		sts d_old,r25
+ 184:motorIR.c     **** 	DDRD=0X0F;				//SET DATA DIRECTION REGISTER
+ 384               	abn	68,0,143,.LM36-.LFBB1
+ 385               	.LM36:
+ 386 01fc 8FE0      		ldi r24,lo8(1)
+ 387 01fe 81BB      		sts irState,r24
+ 185:motorIR.c     **** 	TCCR2 = TMC8_CK8;               	
+ 388               	abn	68,0,144,.LM37-.LFBB1
+ 389               	.LM37:
+ 390 0200 82E0      		sts (c3p5)+1,__zero_reg__
+ 391 0202 85BD      		sts c3p5,__zero_reg__
+ 186:motorIR.c     ****     TCNT2  = TIMER_2_CNT;        	// reset TCNT1
+ 392               	ld
+ 393               		cp r24,r25
+ 394 0204 8EEB      		breq .L10
+ 187:motorIR.c     ****      TIMSK  = _BV(TOIE2);         	// enable TCNT2 overflow 
+ 396               	5:
+ 397               		sts d_old,r25
+ 399 020a 89BF      	.LM36:
+ 188:motorIR.c     ****     
+ 189:motorIR.c     ****     sei();                       	// enable interrupts
+ 400               	 r24,lo8(1)
+ 401               		sts irState,r24
+ 403               	.LM37:
+ 404 020c 7894      		sts (c3p5)+1,__zero_reg__
+ 405               		sts c3p5,__zero_reg__
+ 190:motorIR.c     **** 
+ 191:motorIR.c     ****     for (;;)			 	//
+ 192:motorIR.c     **** 	{	
+ 193:motorIR.c     **** 	
+ 194:motorIR.c     **** 		if(irMode==0)
+ 195:motorIR.c     **** 		{
+ 196:motorIR.c     **** 			if(irState==1)
+ 197:motorIR.c     **** 			{
+ 198:motorIR.c     **** 				irMode=1;
+ 199:motorIR.c     **** 				irState=0;
+ 200:motorIR.c     **** 			}
+ 201:motorIR.c     **** 			else
+ 202:motorIR.c     **** 			{
+ 203:motorIR.c     **** 				if(c3p5>5000)
+ 204:motorIR.c     **** 				{
+ 205:motorIR.c     **** 					c3p5=0;
+ 206:motorIR.c     **** 					irMode=1;
+ 406               	.L11
+ 407               	.L10:
+ 409 020e 41E0      	.LM38:
+ 410               		lds r24,c3p5
+ 411               		lds r25,(c3p5)+1
+ 412               		sbiw r24,50
+ 413               		brge .+2
+ 414               		rjmp .L11
+   1:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /* Copyright (c) 2002, Marek Michalkiewicz
+   2:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    Copyright (c) 2007 Joerg Wunsch
+   3:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    All rights reserved.
+   4:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+   5:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    Redistribution and use in source and binary forms, with or without
+   6:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    modification, are permitted provided that the following conditions are met:
+   7:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+   8:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    * Redistributions of source code must retain the above copyright
+   9:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      notice, this list of conditions and the following disclaimer.
+  10:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  11:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    * Redistributions in binary form must reproduce the above copyright
+  12:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      notice, this list of conditions and the following disclaimer in
+  13:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      the documentation and/or other materials provided with the
+  14:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      distribution.
+  15:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  16:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    * Neither the name of the copyright holders nor the names of
+  17:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      contributors may be used to endorse or promote products derived
+  18:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      from this software without specific prior written permission.
+  19:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  20:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  21:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  22:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  23:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  24:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  25:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  26:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  27:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  28:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  29:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  30:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   POSSIBILITY OF SUCH DAMAGE. */
+  31:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  32:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /* $Id: delay_basic.h,v 1.1 2007/05/13 21:23:20 joerg_wunsch Exp $ */
+  33:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  34:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #ifndef _UTIL_DELAY_BASIC_H_
+  35:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #define _UTIL_DELAY_BASIC_H_ 1
+  36:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  37:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #include <inttypes.h>
+  38:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  39:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /** \file */
+  40:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /** \defgroup util_delay_basic <util/delay_basic.h>: Basic busy-wait delay loops
+  41:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     \code
+  42:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     #include <util/delay_basic.h>
+  43:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     \endcode
+  44:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  45:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     The functions in this header file implement simple delay loops
+  46:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     that perform a busy-waiting.  They are typically used to
+  47:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     facilitate short delays in the program execution.  They are
+  48:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     implemented as count-down loops with a well-known CPU cycle
+  49:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     count per loop iteration.  As such, no other processing can
+  50:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     occur simultaneously.  It should be kept in mind that the
+  51:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     functions described here do not disable interrupts.
+  52:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  53:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     In general, for long delays, the use of hardware timers is
+  54:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     much preferrable, as they free the CPU, and allow for
+  55:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     concurrent processing of other events while the timer is
+  56:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     running.  However, in particular for very short delays, the
+  57:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     overhead of setting up a hardware timer is too much compared
+  58:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     to the overall delay time.
+  59:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  60:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Two inline functions are provided for the actual delay algorithms.
+  61:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  62:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** */
+  63:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  64:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #if !defined(__DOXYGEN__)
+  65:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** static inline void _delay_loop_1(uint8_t __count) __attribute__((always_inline));
+  66:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** static inline void _delay_loop_2(uint16_t __count) __attribute__((always_inline));
+  67:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #endif
+  68:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  69:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /** \ingroup util_delay_basic
+  70:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  71:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Delay loop using an 8-bit counter \c __count, so up to 256
+  72:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     iterations are possible.  (The value 256 would have to be passed
+  73:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     as 0.)  The loop executes three CPU cycles per iteration, not
+  74:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     including the overhead the compiler needs to setup the counter
+  75:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     register.
+  76:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  77:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Thus, at a CPU speed of 1 MHz, delays of up to 768 microseconds
+  78:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     can be achieved.
+  79:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** */
+  80:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** void
+  81:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** _delay_loop_1(uint8_t __count)
+  82:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** {
+  83:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 	__asm__ volatile (
+  84:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 		"1: dec %0" "\n\t"
+  85:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 		"brne 1b"
+  86:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 		: "=r" (__count)
+  87:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 		: "0" (__count)
+  88:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 	);
+  89:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** }
+  90:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  91:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /** \ingroup util_delay_basic
+  92:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  93:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Delay loop using a 16-bit counter \c __count, so up to 65536
+  94:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     iterations are possible.  (The value 65536 would have to be
+  95:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     passed as 0.)  The loop executes four CPU cycles per iteration,
+  96:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     not including the overhead the compiler requires to setup the
+  97:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     counter register pair.
+  98:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  99:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Thus, at a CPU speed of 1 MHz, delays of up to about 262.1
+ 100:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     milliseconds can be achieved.
+ 101:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****  */
+ 102:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** void
+ 103:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** _delay_loop_2(uint16_t __count)
+ 104:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** {
+ 105:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 	__asm__ volatile (
+ 416               	,144,.LM37-.LFBB1
+ 417               	.LM37:
+ 418 0210 24EC      		sts (c3p5)+1,__zero_reg__
+ 419 0212 39E0      		sts c3p5,__zero_reg__
+ 420               		rjmp .L11
+ 421               	.L10:
+ 423               	.LM38:
+ 424               		lds r24,c3p5
+ 425               		lds r25,(c3p5)+1
+ 426               		sbiw r24,50
+ 427               		brge .+2
+ 428               		rjmp .L11
+ 430 0218 8823      	.LM39:
+ 431 021a 01F4      		ldi r24,lo8(1)
+ 432               		sts irState,r24
+ 434 021c 8091 0000 	.LM40:
+ 435 0220 8130      		sts irMode,__zero_reg__
+ 437               	.LM41:
+ 438               		lds r24,irDt
+ 439 0224 8093 0000 		lds r25,(irDt)+1
+ 440 0228 00C0      		asr r25
+ 441               		ror r24
+ 442               		sts (irDt)+1,r25
+ 443               		sts irDt,r24
+ 445 022e 9091 0000 	.LM42:
+ 446 0232 8958      		lds r18,irDt
+ 447 0234 9341      		lds r19,(irDt)+1
+ 448 0236 04F0      		ldi r24,lo8(255)
+ 449               		ldi r25,hi8(255)
+ 450               		sub r24,r18
+ 451 0238 1092 0000 		sbc r25,r19
+ 452 023c 1092 0000 		sts (irDt)+1,r25
+ 453               		sts irDt,r24
+ 455 0240 4093 0000 	.LM43:
+ 456               		lds r24,irDt
+ 207:motorIR.c     **** 					irState=0;
+ 457               	,.LM42-.LFBB1
+ 458               	.LM42:
+ 459 0244 1092 0000 		lds r18,irDt
+ 460               		lds r19,(irDt)+1
+ 208:motorIR.c     **** 				}
+ 209:motorIR.c     **** 			}
+ 210:motorIR.c     **** 		}
+ 211:motorIR.c     **** 		PORTD=cmd;
+ 461               	rMode,__zero_reg__
+ 463 0248 8091 0000 	.LM41:
+ 464 024c 82BB      		lds r24,irDt
+ 465               		lds r25,(irDt)+1
+ 466               		asr r25
+ 467               		ror r24
+ 468               		sts (irDt)+1,r25
+ 469               		sts irDt,r24
+ 471               	.LM42:
+ 472               		lds r18,irDt
+ 473 024e C901      		lds r19,(irDt)+1
+ 474               		ldi r24,lo8(255)
+ 475               		ldi r25,hi8(255)
+ 476 0250 0197      		sub r24,r18
+ 477 0252 01F4      		sbc r25,r19
+ 478               		sts (irDt)+1,r25
+ 479               		sts irDt,r24
+ 481               	.LM43:
+ 482               		lds r24,irDt
+ 483               		lds r25,(irDt)+1
+ 484               		andi r24,lo8(63)
+ 485               	.L12:
+ 486               		sts cmd,r24
+ 487               		rjmp .L11
+ 488               	.L9:
+ 490               	.LM44:
+ 491               		lds r24,irState
+ 492               		cpi r24,lo8(1)
+ 493               		brne .L11
+ 495               	.LM45:
+ 496               		lds r24,c3p5
+ 497               		lds r25,(c3p5)+1
+ 498               		sbiw r24,17
+ 499               		brlt .L11
+ 501               	.LM46:
+ 502               		sts irState,__zero_reg__
+ 504               	.LM47:
+ 505               		in r24,51-32
+ 506               		com r24
+DEFINED SYMBOLS
+                            *ABS*:00000000 motorIR.c
+C:\Users\user\AppData\Local\Temp/cc6JfmK3.s:2      *ABS*:0000003f __SREG__
+C:\Users\user\AppData\Local\Temp/cc6JfmK3.s:3      *ABS*:0000003e __SP_H__
+C:\Users\user\AppData\Local\Temp/cc6JfmK3.s:4      *ABS*:0000003d __SP_L__
+C:\Users\user\AppData\Local\Temp/cc6JfmK3.s:5      *ABS*:00000034 __CCP__
+C:\Users\user\AppData\Local\Temp/cc6JfmK3.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\user\AppData\Local\Temp/cc6JfmK3.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\user\AppData\Local\Temp/cc6JfmK3.s:73     .text:00000000 __vector_4
+C:\Users\user\AppData\Local\Temp/cc6JfmK3.s:488    .bss:00000002 c3p5
+C:\Users\user\AppData\Local\Temp/cc6JfmK3.s:489    .bss:00000004 pwmc
+C:\Users\user\AppData\Local\Temp/cc6JfmK3.s:490    .bss:00000005 c131
+C:\Users\user\AppData\Local\Temp/cc6JfmK3.s:491    .bss:00000007 count
+C:\Users\user\AppData\Local\Temp/cc6JfmK3.s:487    .bss:00000001 irMode
+                             .bss:00000000 irState
+C:\Users\user\AppData\Local\Temp/cc6JfmK3.s:493    .bss:0000000a d_old
+C:\Users\user\AppData\Local\Temp/cc6JfmK3.s:492    .bss:00000008 irDt
+C:\Users\user\AppData\Local\Temp/cc6JfmK3.s:494    .bss:0000000b cmd
+C:\Users\user\AppData\Local\Temp/cc6JfmK3.s:371    .text:000001f2 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

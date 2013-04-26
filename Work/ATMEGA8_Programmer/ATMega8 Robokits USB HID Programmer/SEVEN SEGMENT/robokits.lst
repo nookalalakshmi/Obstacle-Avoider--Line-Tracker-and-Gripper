@@ -1,0 +1,505 @@
+   1               		.file	"robokits.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.global __do_copy_data
+   8               		.global __do_clear_bss
+  10               		.text
+  11               	.Ltext0:
+  71               	.global	Display
+  73               	Display:
+   1:robokits.c    **** //			MADE BY ROBOKITS INDIA
+   2:robokits.c    **** //			VISIT US AT WWW.ROBOKITS.ORG
+   3:robokits.c    **** //			PROGRAM FOR SEVEN SEGMENT DISPLAY (Common Cathod Type)
+   4:robokits.c    **** //			WRITTEN FOR PRODUCT ID 19
+   5:robokits.c    **** 
+   6:robokits.c    **** /*-------------------------------------------------------------------          
+   7:robokits.c    ****  Description:
+   8:robokits.c    ****  This example writes 0 to 9 numbers constantly to a common cathode type
+   9:robokits.c    ****  Seven Segment display at 1Hz.
+  10:robokits.c    **** 
+  11:robokits.c    ****  Note:
+  12:robokits.c    ****  Remove jumpers jp2 and jp3.
+  13:robokits.c    ****  
+  14:robokits.c    ****  Connect display as per the connection list shown below.
+  15:robokits.c    ****  
+  16:robokits.c    ****  Change the statements within switch for display on a common anode 
+  17:robokits.c    ****  7 segment.
+  18:robokits.c    ****  
+  19:robokits.c    ****   _delay_ms() function parameter passed should not exeed
+  20:robokits.c    ****  262.14ms / F_CPU in mhz.
+  21:robokits.c    ****  
+  22:robokits.c    ****  so for 16MHz the maximum paramer should be 16ms.
+  23:robokits.c    ****  
+  24:robokits.c    ****  For 1MHz it can be upto 262ms (250 is used for this example).
+  25:robokits.c    ****   
+  26:robokits.c    ****  Must be changed to get accurate delay at higher MHz.
+  27:robokits.c    ****  ---------------------------------------------------------------------*/
+  28:robokits.c    **** 
+  29:robokits.c    **** /*----------------------------------------------------------------
+  30:robokits.c    **** -----------------HEADER FILES-------------------------------------
+  31:robokits.c    **** -----------------------------------------------------------------*/
+  32:robokits.c    **** #include<avr/io.h>
+  33:robokits.c    **** #include<util/delay.h>
+  34:robokits.c    **** #include<compat/deprecated.h>		//HEADER FILE FOR FUNCTIONS LIKE SBI AND CBI
+  35:robokits.c    **** 
+  36:robokits.c    **** /*----------------------------------------------------------------
+  37:robokits.c    **** -------------CONNECTION BETWEEN 7 segment AND ATMEGA8-----------
+  38:robokits.c    **** -----------------------------------------------------------------*/
+  39:robokits.c    **** 
+  40:robokits.c    **** #define DATA_PORT 	 PORTD
+  41:robokits.c    **** #define Pin_a     		0
+  42:robokits.c    **** #define Pin_b     		1
+  43:robokits.c    **** #define Pin_c     		2
+  44:robokits.c    **** #define Pin_d     		3
+  45:robokits.c    **** #define Pin_e     		4
+  46:robokits.c    **** #define Pin_f     		5
+  47:robokits.c    **** #define Pin_g     		6
+  48:robokits.c    **** #define Pin_Dec         7
+  49:robokits.c    **** 
+  50:robokits.c    **** /*----------------------------------------------------------------
+  51:robokits.c    **** -----------------FUNCTION DECLARATION-----------------------------
+  52:robokits.c    **** -----------------------------------------------------------------*/
+  53:robokits.c    **** void Display(int a);
+  54:robokits.c    **** 
+  55:robokits.c    **** /*----------------------------------------------------------------
+  56:robokits.c    **** -----------------MAIN PROGRAM-------------------------------------
+  57:robokits.c    **** -----------------------------------------------------------------*/
+  58:robokits.c    **** int main(void)
+  59:robokits.c    **** {
+  60:robokits.c    **** 	DDRB=0x01;						//SET DATA DIRECTION REGISTER
+  61:robokits.c    **** 									//SET 1 for OUTPUT PORT
+  62:robokits.c    **** 									//SET 0 FOR INPUT PORT
+  63:robokits.c    **** 									//ONLY PORTB.0 IS OUTPUT
+  64:robokits.c    **** 									//CONFIGURE AS PER REQUIREMENT
+  65:robokits.c    **** 									//DEFAULT ALL OTHERS ARE INPUT
+  66:robokits.c    **** 									//CHANGE ACCORDING TO USE
+  67:robokits.c    **** 
+  68:robokits.c    **** 	sbi(PORTB,0);					//LED1 ON (INDICATION FOR READY TO USE)
+  69:robokits.c    **** 	
+  70:robokits.c    **** 	DDRD = 0xff;					//OUTPUT FOR SEVEN SEGMENTS
+  71:robokits.c    **** 	
+  72:robokits.c    **** 	unsigned int i;
+  73:robokits.c    **** 	i=0;
+  74:robokits.c    **** 	do
+  75:robokits.c    **** 	{
+  76:robokits.c    **** 		Display(i);
+  77:robokits.c    **** 		i++;
+  78:robokits.c    **** 		if(i>9) 
+  79:robokits.c    **** 			i=0;		
+  80:robokits.c    **** 		_delay_ms(250);			//DELAY IN MILISECOND ARGUMENT SHOULD NOT BE MORE THAN 262.14MS / F_CPU IN MHZ
+  81:robokits.c    **** 		_delay_ms(250);			//DELAY IN MILISECOND ARGUMENT SHOULD NOT BE MORE THAN 262.14MS / F_CPU IN MHZ
+  82:robokits.c    **** 		_delay_ms(250);			//DELAY IN MILISECOND ARGUMENT SHOULD NOT BE MORE THAN 262.14MS / F_CPU IN MHZ	
+  83:robokits.c    **** 		_delay_ms(250);			//DELAY IN MILISECOND ARGUMENT SHOULD NOT BE MORE THAN 262.14MS / F_CPU IN MHZ	
+  84:robokits.c    **** 	}while(1);
+  85:robokits.c    **** } 
+  86:robokits.c    ****   
+  87:robokits.c    **** /*----------------------------------------------------------------
+  88:robokits.c    **** -----------------FUNCTIONS TO DISPLAY VALUES----------------------
+  89:robokits.c    **** -----------------------------------------------------------------*/  
+  90:robokits.c    **** void Display(int a)
+  91:robokits.c    **** {
+  74               	 prologue end (size=0) */
+  76               	.LM1:
+  77               		movw r30,r24
+  78               		sbiw r24,10
+  92:robokits.c    **** 	switch(a)
+  79               	 .L14
+  81 0000 FC01      	.LM2:
+  82 0002 0A97      		subi r30,lo8(-(gs(.L13)))
+  83 0004 00F4      		sbci r31,hi8(-(gs(.L13)))
+  84               		ijmp
+  85               		.data
+  86 0006 E050      		.section .progmem.gcc_sw_table, "ax", @progbits
+****  Warning:expression dangerous with linker stubs
+  87 0008 F040      		.p2align 1
+****  Warning:expression dangerous with linker stubs
+  88 000a 0994      	.L13:
+  89               		.data
+  90               		.section .progmem.gcc_sw_table, "ax", @progbits
+  91               		.p2align 1
+  92               		rjmp .L3
+  93               		rjmp .L4
+  94               		rjmp .L5
+  95               		rjmp .L6
+  96 0000 00C0      		rjmp .L7
+  97 0002 00C0      		rjmp .L8
+  98 0004 00C0      		rjmp .L9
+  99 0006 00C0      		rjmp .L10
+ 100 0008 00C0      		rjmp .L11
+ 101 000a 00C0      		rjmp .L12
+ 102 000c 00C0      		.text
+ 103 000e 00C0      	.L3:
+ 105 0012 00C0      	.LM3:
+ 106               		cbi 50-0x20,6
+  93:robokits.c    **** 	{
+  94:robokits.c    **** 		case 0:  
+  95:robokits.c    **** 			DATA_PORT&=~(_BV(Pin_g));
+ 108               	4,lo8(63)
+ 109               		rjmp .L15
+ 110 000c 9698      	.L4:
+  96:robokits.c    **** 			DATA_PORT|=(_BV(Pin_a)|_BV(Pin_b)|_BV(Pin_c)|_BV(Pin_d)|_BV(Pin_e)|_BV(Pin_f));
+ 111               	jmp .L5
+ 112               		rjmp .L6
+ 113 000e 82B3      		rjmp .L7
+ 114 0010 8F63      		rjmp .L8
+ 115 0012 00C0      		rjmp .L9
+ 116               		rjmp .L10
+  97:robokits.c    **** 			break;			
+  98:robokits.c    **** 		case 1:			
+  99:robokits.c    **** 			DATA_PORT&=~(_BV(Pin_a)|_BV(Pin_d)|_BV(Pin_e)|_BV(Pin_f)|_BV(Pin_g));
+ 117               	(.L13)))
+ 118               		ijmp
+ 119 0014 82B3      		.data
+ 120 0016 8678      		.section .progmem.gcc_sw_table, "ax", @progbits
+ 121 0018 82BB      		.p2align 1
+ 100:robokits.c    **** 			DATA_PORT|=(_BV(Pin_b)|_BV(Pin_c));
+ 122               	
+ 123               		.data
+ 124 001a 82B3      		.section .progmem.gcc_sw_table, "ax", @progbits
+ 125 001c 8660      		.p2align 1
+ 126 001e 00C0      		rjmp .L3
+ 127               		rjmp .L4
+ 101:robokits.c    **** 			break;
+ 102:robokits.c    **** 		case 2:  
+ 103:robokits.c    **** 			DATA_PORT&=~(_BV(Pin_c)|_BV(Pin_f));
+ 128               	,92,.LM2-.LFBB1
+ 129               	.LM2:
+ 130 0020 82B3      		subi r30,lo8(-(gs(.L13)))
+ 131 0022 8B7D      		sbci r31,hi8(-(gs(.L13)))
+ 132 0024 82BB      		ijmp
+ 104:robokits.c    **** 			DATA_PORT|=(_BV(Pin_b)|_BV(Pin_d)|_BV(Pin_e)|_BV(Pin_a)|_BV(Pin_g));
+ 133               	a
+ 134               		.section .progmem.gcc_sw_table, "ax", @progbits
+ 135 0026 82B3      		.p2align 1
+ 136 0028 8B65      	.L13:
+ 137 002a 00C0      		.data
+ 138               		.section .progmem.gcc_sw_table, "ax", @progbits
+ 105:robokits.c    **** 			break;
+ 106:robokits.c    **** 		case 3:  
+ 107:robokits.c    **** 			DATA_PORT&=~(_BV(Pin_e)|_BV(Pin_f));
+ 139               	ign 1
+ 140               		rjmp .L3
+ 141 002c 82B3      		rjmp .L4
+ 142 002e 8F7C      		rjmp .L5
+ 143 0030 82BB      		rjmp .L6
+ 108:robokits.c    **** 			DATA_PORT|=(_BV(Pin_c)|_BV(Pin_d)|_BV(Pin_a)|_BV(Pin_b)|_BV(Pin_g));
+ 144               		subi r30,lo8(-(gs(.L13)))
+ 145               		sbci r31,hi8(-(gs(.L13)))
+ 146 0032 82B3      		ijmp
+ 147 0034 8F64      		.data
+ 148 0036 00C0      		.section .progmem.gcc_sw_table, "ax", @progbits
+ 149               		.p2align 1
+ 109:robokits.c    **** 			break;
+ 110:robokits.c    **** 		case 4:  
+ 111:robokits.c    **** 			DATA_PORT&=~(_BV(Pin_a)|_BV(Pin_d)|_BV(Pin_e));
+ 150               		.data
+ 151               		.section .progmem.gcc_sw_table, "ax", @progbits
+ 152 0038 82B3      		.p2align 1
+ 153 003a 867E      		rjmp .L3
+ 154 003c 82BB      		rjmp .L4
+ 112:robokits.c    **** 			DATA_PORT|=(_BV(Pin_c)|_BV(Pin_b)|_BV(Pin_f)|_BV(Pin_g));
+ 155               	,92,.LM2-.LFBB1
+ 156               	.LM2:
+ 157 003e 82B3      		subi r30,lo8(-(gs(.L13)))
+ 158 0040 8666      		sbci r31,hi8(-(gs(.L13)))
+ 159 0042 00C0      		ijmp
+ 160               		.data
+ 113:robokits.c    **** 			break;
+ 114:robokits.c    **** 		case 5:  
+ 115:robokits.c    **** 			DATA_PORT&=~(_BV(Pin_b)|_BV(Pin_e));
+ 161               	ion .progmem.gcc_sw_table, "ax", @progbits
+ 162               		.p2align 1
+ 163 0044 82B3      	.L13:
+ 164 0046 8D7E      		.data
+ 165 0048 82BB      		.section .progmem.gcc_sw_table, "ax", @progbits
+ 116:robokits.c    **** 			DATA_PORT|=(_BV(Pin_a)|_BV(Pin_c)|_BV(Pin_d)|_BV(Pin_f)|_BV(Pin_g));
+ 166               	lign 1
+ 167               		rjmp .L3
+ 168 004a 82B3      		rjmp .L4
+ 169 004c 8D66      		rjmp .L5
+ 170 004e 00C0      		rjmp .L6
+ 171               		rjmp .L7
+ 117:robokits.c    **** 			break;
+ 118:robokits.c    **** 		case 6:  
+ 119:robokits.c    **** 			DATA_PORT&=~(_BV(Pin_a)|_BV(Pin_b));
+ 172               	o8(-(gs(.L13)))
+ 173               		sbci r31,hi8(-(gs(.L13)))
+ 174 0050 82B3      		ijmp
+ 175 0052 8C7F      		.data
+ 176 0054 82BB      		.section .progmem.gcc_sw_table, "ax", @progbits
+ 120:robokits.c    **** 			DATA_PORT|=(_BV(Pin_a)|_BV(Pin_c)|_BV(Pin_d)|_BV(Pin_f)|_BV(Pin_g)|_BV(Pin_e));
+ 177               	lign 1
+ 178               	.L13:
+ 179 0056 82B3      		.data
+ 180 0058 8D67      		.section .progmem.gcc_sw_table, "ax", @progbits
+ 181 005a 00C0      		.p2align 1
+ 182               		rjmp .L3
+ 121:robokits.c    **** 			break;
+ 122:robokits.c    **** 		case 7:  
+ 123:robokits.c    **** 			DATA_PORT&=~(_BV(Pin_d)|_BV(Pin_e)|_BV(Pin_f)|_BV(Pin_g));
+ 184               	.LM2:
+ 185 005c 82B3      		subi r30,lo8(-(gs(.L13)))
+ 186 005e 8778      		sbci r31,hi8(-(gs(.L13)))
+ 187 0060 82BB      		ijmp
+ 124:robokits.c    **** 			DATA_PORT|=(_BV(Pin_a)|_BV(Pin_c)|_BV(Pin_b));
+ 188               	a
+ 189               		.section .progmem.gcc_sw_table, "ax", @progbits
+ 190 0062 82B3      		.p2align 1
+ 191 0064 8760      	.L13:
+ 192 0066 00C0      		.data
+ 193               		.section .progmem.gcc_sw_table, "ax", @progbits
+ 125:robokits.c    **** 			break;
+ 126:robokits.c    **** 		case 8:  
+ 127:robokits.c    **** 			DATA_PORT|=(_BV(Pin_a)|_BV(Pin_d)|_BV(Pin_e)|_BV(Pin_c)|_BV(Pin_b)|_BV(Pin_f)|_BV(Pin_g));
+ 194               	ign 1
+ 195               		rjmp .L3
+ 196 0068 82B3      		rjmp .L4
+ 197 006a 8F67      		rjmp .L5
+ 198               		rjmp .L6
+ 199 006c 82BB      		rjmp .L7
+ 200 006e 0895      		rjmp .L8
+ 201               		rjmp .L9
+ 128:robokits.c    **** 			break;
+ 129:robokits.c    **** 		case 9:  
+ 130:robokits.c    **** 			DATA_PORT&=~(_BV(Pin_d)|_BV(Pin_e));
+ 202               	r31,hi8(-(gs(.L13)))
+ 203               		ijmp
+ 204 0070 82B3      		.data
+ 205 0072 877E      		.section .progmem.gcc_sw_table, "ax", @progbits
+ 206 0074 82BB      		.p2align 1
+ 131:robokits.c    **** 			DATA_PORT|=(_BV(Pin_a)|_BV(Pin_c)|_BV(Pin_b)|_BV(Pin_f)|_BV(Pin_g));
+ 207               	
+ 208               		.data
+ 209 0076 82B3      		.section .progmem.gcc_sw_table, "ax", @progbits
+ 210 0078 8766      		.p2align 1
+ 211 007a 82BB      		rjmp .L3
+ 212               		rjmp .L4
+ 213 007c 0895      		rjmp .L5
+ 214               		rjmp .L6
+ 215               		rjmp .L7
+ 216               		rjmp .L8
+ 217               		rjmp .L9
+ 218               		rjmp .L10
+ 219               		rjmp .L11
+ 220               		rjmp .L12
+ 221               		.text
+ 222               	.L3:
+ 224               	.LM3:
+ 225               		cbi 50-0x20,6
+ 227               	.LM4:
+ 228 007e CF93      		in r24,50-0x20
+ 229 0080 DF93      		ori r24,lo8(63)
+ 230               		rjmp .L15
+ 231               	.L4:
+ 233 0082 81E0      	.LM5:
+ 234 0084 87BB      		in r24,50-0x20
+ 235               		andi r24,lo8(-122)
+ 236               		out 50-0x20,r24
+ 238               	.LM6:
+ 239               		in r24,50-0x20
+ 240 0088 8FEF      		ori r24,lo8(6)
+ 241 008a 81BB      		rjmp .L15
+ 242 008c C0E0      	.L5:
+ 244               	.LM7:
+ 245               		in r24,50-0x20
+ 246               		andi r24,lo8(-37)
+ 247 0090 CE01      		out 50-0x20,r24
+ 249               	.LM8:
+ 250               		in r24,50-0x20
+ 251 0094 2196      		ori r24,lo8(91)
+ 252               		rjmp .L15
+ 253               	.L6:
+ 255 0098 D105      	.LM9:
+ 256 009a 00F0      		in r24,50-0x20
+ 257 009c C0E0      		andi r24,lo8(-49)
+ 258 009e D0E0      		out 50-0x20,r24
+ 260               	.LM10:
+ 261               		in r24,50-0x20
+ 262               		ori r24,lo8(79)
+ 263               		rjmp .L15
+ 264               	.L7:
+   1:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** /* Copyright (c) 2002, Marek Michalkiewicz
+   2:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****    Copyright (c) 2007 Joerg Wunsch
+   3:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****    All rights reserved.
+   4:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+   5:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****    Redistribution and use in source and binary forms, with or without
+   6:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****    modification, are permitted provided that the following conditions are met:
+   7:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+   8:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****    * Redistributions of source code must retain the above copyright
+   9:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****      notice, this list of conditions and the following disclaimer.
+  10:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  11:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****    * Redistributions in binary form must reproduce the above copyright
+  12:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****      notice, this list of conditions and the following disclaimer in
+  13:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****      the documentation and/or other materials provided with the
+  14:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****      distribution.
+  15:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  16:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****    * Neither the name of the copyright holders nor the names of
+  17:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****      contributors may be used to endorse or promote products derived
+  18:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****      from this software without specific prior written permission.
+  19:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  20:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  21:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  22:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  23:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  24:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  25:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  26:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  27:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  28:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  29:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  30:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   POSSIBILITY OF SUCH DAMAGE. */
+  31:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  32:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** /* $Id: delay_basic.h,v 1.1 2007/05/13 21:23:20 joerg_wunsch Exp $ */
+  33:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  34:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** #ifndef _UTIL_DELAY_BASIC_H_
+  35:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** #define _UTIL_DELAY_BASIC_H_ 1
+  36:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  37:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** #include <inttypes.h>
+  38:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  39:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** /** \file */
+  40:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** /** \defgroup util_delay_basic <util/delay_basic.h>: Basic busy-wait delay loops
+  41:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     \code
+  42:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     #include <util/delay_basic.h>
+  43:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     \endcode
+  44:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  45:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     The functions in this header file implement simple delay loops
+  46:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     that perform a busy-waiting.  They are typically used to
+  47:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     facilitate short delays in the program execution.  They are
+  48:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     implemented as count-down loops with a well-known CPU cycle
+  49:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     count per loop iteration.  As such, no other processing can
+  50:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     occur simultaneously.  It should be kept in mind that the
+  51:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     functions described here do not disable interrupts.
+  52:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  53:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     In general, for long delays, the use of hardware timers is
+  54:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     much preferrable, as they free the CPU, and allow for
+  55:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     concurrent processing of other events while the timer is
+  56:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     running.  However, in particular for very short delays, the
+  57:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     overhead of setting up a hardware timer is too much compared
+  58:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     to the overall delay time.
+  59:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  60:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     Two inline functions are provided for the actual delay algorithms.
+  61:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  62:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** */
+  63:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  64:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** #if !defined(__DOXYGEN__)
+  65:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** static inline void _delay_loop_1(uint8_t __count) __attribute__((always_inline));
+  66:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** static inline void _delay_loop_2(uint16_t __count) __attribute__((always_inline));
+  67:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** #endif
+  68:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  69:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** /** \ingroup util_delay_basic
+  70:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  71:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     Delay loop using an 8-bit counter \c __count, so up to 256
+  72:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     iterations are possible.  (The value 256 would have to be passed
+  73:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     as 0.)  The loop executes three CPU cycles per iteration, not
+  74:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     including the overhead the compiler needs to setup the counter
+  75:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     register.
+  76:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  77:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     Thus, at a CPU speed of 1 MHz, delays of up to 768 microseconds
+  78:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     can be achieved.
+  79:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** */
+  80:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** void
+  81:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** _delay_loop_1(uint8_t __count)
+  82:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** {
+  83:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 	__asm__ volatile (
+  84:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 		"1: dec %0" "\n\t"
+  85:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 		"brne 1b"
+  86:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 		: "=r" (__count)
+  87:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 		: "0" (__count)
+  88:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 	);
+  89:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** }
+  90:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  91:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** /** \ingroup util_delay_basic
+  92:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  93:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     Delay loop using a 16-bit counter \c __count, so up to 65536
+  94:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     iterations are possible.  (The value 65536 would have to be
+  95:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     passed as 0.)  The loop executes four CPU cycles per iteration,
+  96:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     not including the overhead the compiler requires to setup the
+  97:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     counter register pair.
+  98:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  99:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     Thus, at a CPU speed of 1 MHz, delays of up to about 262.1
+ 100:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     milliseconds can be achieved.
+ 101:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****  */
+ 102:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** void
+ 103:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** _delay_loop_2(uint16_t __count)
+ 104:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** {
+ 105:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 	__asm__ volatile (
+ 266               	,107,.LM9-.LFBB1
+ 267               	.LM9:
+ 268 00a0 84E2      		in r24,50-0x20
+ 269 00a2 94EF      		andi r24,lo8(-49)
+ 270 00a4 FC01      		out 50-0x20,r24
+ 272 00a6 3197      	.LM10:
+ 273 00a8 01F4      		in r24,50-0x20
+ 274               		ori r24,lo8(79)
+ 275               		rjmp .L15
+ 276               	.L7:
+ 278               	.LM11:
+ 279               		in r24,50-0x20
+ 280               		andi r24,lo8(-26)
+ 281               		out 50-0x20,r24
+ 283 00aa FC01      	.LM12:
+ 284               		in r24,50-0x20
+ 285 00ac 3197      		ori r24,lo8(102)
+ 286 00ae 01F4      		rjmp .L15
+ 287               	.L8:
+ 289               	.LM13:
+ 290               		in r24,50-0x20
+ 291               		andi r24,lo8(-19)
+ 292               		out 50-0x20,r24
+ 294               	.LM14:
+ 295               		in r24,50-0x20
+ 296 00b0 FC01      		ori r24,lo8(109)
+ 297               		rjmp .L15
+ 298 00b2 3197      	.L9:
+ 300               	.LM15:
+ 301               		in r24,50-0x20
+ 302               		andi r24,lo8(-4)
+ 303               		out 50-0x20,r24
+ 305               	.LM16:
+ 306               		in r24,50-0x20
+ 307               		ori r24,lo8(125)
+ 308               		rjmp .L15
+ 309               	.L10:
+ 311 00b8 01F4      	.LM17:
+ 312               		in r24,50-0x20
+ 313 00ba 00C0      		andi r24,lo8(-121)
+ 314               		out 50-0x20,r24
+ 316               	.LM18:
+ 317               		in r24,50-0x20
+ 318               		ori r24,lo8(7)
+ 319               		rjmp .L15
+ 320               	.L11:
+ 322               	.LM19:
+ 323               		in r24,50-0x20
+ 324               		ori r24,lo8(127)
+ 325               	.L15:
+ 326               		out 50-0x20,r24
+ 327               		ret
+ 328               	.L12:
+ 330               	.LM20:
+ 331               		in r24,50-0x20
+ 332               		andi r24,lo8(-25)
+ 333               		out 50-0x20,r24
+ 335               	.LM21:
+ 336               		in r24,50-0x20
+ 337               		ori r24,lo8(103)
+ 338               		out 50-0x20,r24
+ 339               	.L14:
+ 340               		ret
+ 341               	/* epilogue: frame size=0 */
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccYviY4A.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccYviY4A.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccYviY4A.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccYviY4A.s:5      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccYviY4A.s:6      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccYviY4A.s:73     .text:00000000 Display
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccYviY4A.s:223    .text:0000007e main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

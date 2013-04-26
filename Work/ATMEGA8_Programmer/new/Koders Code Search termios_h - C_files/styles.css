@@ -1,0 +1,555 @@
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Helvetica, sans-serif; BACKGROUND-COLOR: white
+}
+.license_detail_table {
+	FONT-SIZE: 12px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.grayborder {
+	BORDER-RIGHT: gainsboro 1px solid; BORDER-TOP: gainsboro 1px solid; BORDER-LEFT: gainsboro 1px solid; BORDER-BOTTOM: gainsboro 1px solid
+}
+.blackborder {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.redborder {
+	BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; BORDER-LEFT: red 1px solid; BORDER-BOTTOM: red 1px solid
+}
+.licenseWarningMessage {
+	
+}
+.licenseErrorMessage {
+	COLOR: red
+}
+.licstyle2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.licstyle3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.licstyle5 {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.licstyle7 {
+	FONT-WEIGHT: bold; COLOR: #ffffff
+}
+.licstyle9 {
+	FONT-SIZE: 14px
+}
+.style7 {
+	FONT-SIZE: 14px; COLOR: #2966cc; TEXT-ALIGN: left
+}
+.examplesBox {
+	PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; LINE-HEIGHT: 18px; PADDING-TOP: 10px; BACKGROUND-COLOR: #f5f7fa
+}
+IMG {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+TABLE {
+	BORDER-LEFT-COLOR: white; BORDER-BOTTOM-COLOR: white; BORDER-TOP-COLOR: white; BORDER-RIGHT-COLOR: white
+}
+P {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+TD {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+textbox {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+SELECT {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+INPUT {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+LI {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+TD {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; VERTICAL-ALIGN: top; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+TH {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; LINE-HEIGHT: 12px; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+ACRONYM {
+	CURSOR: help; BORDER-BOTTOM: #000 1px dotted
+}
+.textblock {
+	WIDTH: 500px
+}
+.tbSearch {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; VERTICAL-ALIGN: middle; WIDTH: 300px; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+.kvSearchBox {
+	WIDTH: 176px; POSITION: relative; TOP: -1px
+}
+.tbSearchSmall {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; WIDTH: 200px; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+.normal {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; LINE-HEIGHT: 16px; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+.heading2 {
+	CLEAR: left; FONT-WEIGHT: bold; FONT-SIZE: 20px; LINE-HEIGHT: 30px; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+.heading3 {
+	CLEAR: left; FONT-WEIGHT: bold; FONT-SIZE: 14px; LINE-HEIGHT: 22px; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+H3 {
+	CLEAR: left; FONT-WEIGHT: bold; FONT-SIZE: 14px; LINE-HEIGHT: 22px; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+LEGEND {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #4a6184; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+#Homepage_Promo {
+	FONT-WEIGHT: bolder; FONT-SIZE: larger
+}
+#Homepage_Promo A {
+	COLOR: #333399
+}
+.block_header {
+	PADDING-RIGHT: 0px; BORDER-TOP: lightsteelblue 2px solid; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; PADDING-BOTTOM: 2px; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Helvetica, sans-serif; BACKGROUND-COLOR: #f5f5f5
+}
+.results_summary {
+	PADDING-RIGHT: 0px; BORDER-TOP: lightsteelblue 2px solid; PADDING-LEFT: 8px; FONT-WEIGHT: normal; FONT-SIZE: 12px; PADDING-BOTTOM: 2px; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Helvetica, sans-serif; BACKGROUND-COLOR: #f5f5f5; TEXT-ALIGN: right
+}
+.snippet {
+	BORDER-RIGHT: lightsteelblue 2px solid; PADDING-RIGHT: 2px; BORDER-TOP: lightsteelblue 2px solid; MARGIN-TOP: 2px; PADDING-LEFT: 2px; FONT-SIZE: 9pt; MARGIN-BOTTOM: 2px; PADDING-BOTTOM: 2px; OVERFLOW: auto; BORDER-LEFT: lightsteelblue 2px solid; LINE-HEIGHT: 10.5pt; PADDING-TOP: 2px; BORDER-BOTTOM: lightsteelblue 2px solid; HEIGHT: 60pt; BACKGROUND-COLOR: #eeeeee
+}
+.snippet PRE {
+	FLOAT: left; MARGIN: 0px
+}
+.error_message {
+	COLOR: red
+}
+.error {
+	COLOR: red
+}
+A.results_header:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: navy; LINE-HEIGHT: 24px; FONT-FAMILY: Lucida Sans, Tahoma, Arial, Sans-Serif; TEXT-DECORATION: none
+}
+A.results_header:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: navy; LINE-HEIGHT: 24px; FONT-FAMILY: Lucida Sans, Tahoma, Arial, Sans-Serif; TEXT-DECORATION: none
+}
+A.results_header:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: navy; LINE-HEIGHT: 24px; FONT-FAMILY: Lucida Sans, Tahoma, Arial, Sans-Serif; TEXT-DECORATION: none
+}
+A.results_header:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: purple; LINE-HEIGHT: 24px; FONT-FAMILY: Lucida Sans, Tahoma, Arial, Sans-Serif; TEXT-DECORATION: none
+}
+.footer {
+	FONT-SIZE: 10px; COLOR: #333333; FONT-FAMILY: Tahoma, Arial, Sans-Serif
+}
+.code {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; LINE-HEIGHT: 12px; FONT-FAMILY: Courier
+}
+A:link {
+	TEXT-DECORATION: none
+}
+A:visited {
+	TEXT-DECORATION: none
+}
+A:active {
+	TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+.c {
+	COLOR: green
+}
+.str {
+	COLOR: red
+}
+.k {
+	COLOR: blue
+}
+.r {
+	COLOR: black
+}
+.s0 {
+	COLOR: black; BACKGROUND-COLOR: yellow
+}
+.s1 {
+	COLOR: black; BACKGROUND-COLOR: #00ffff
+}
+.s2 {
+	COLOR: black; BACKGROUND-COLOR: lime
+}
+.s3 {
+	COLOR: black; BACKGROUND-COLOR: purple
+}
+.s4 {
+	COLOR: black; BACKGROUND-COLOR: teal
+}
+.s5 {
+	COLOR: black; BACKGROUND-COLOR: yellow
+}
+.s6 {
+	COLOR: black; BACKGROUND-COLOR: yellow
+}
+.s7 {
+	COLOR: black; BACKGROUND-COLOR: yellow
+}
+.s8 {
+	COLOR: black; BACKGROUND-COLOR: yellow
+}
+.s9 {
+	COLOR: black; BACKGROUND-COLOR: yellow
+}
+.info_panel {
+	PADDING-RIGHT: 0px; BORDER-TOP: #336699 4px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #f5f5f5
+}
+.kodeviewer_info_panel {
+	PADDING-RIGHT: 0px; BORDER-TOP: #336699 4px solid; PADDING-LEFT: 8px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #f5f5f5
+}
+.PureLanguage {
+	FONT-WEIGHT: bold; MARGIN-BOTTOM: 10px; TEXT-ALIGN: center
+}
+#SiteToolbar A {
+	COLOR: #333399
+}
+.toolbar_tip {
+	MARGIN-TOP: 1px; FONT-SIZE: 11px; RIGHT: 366px; LINE-HEIGHT: 17px; POSITION: absolute; HEIGHT: 17px
+}
+.toolbar_tip IMG {
+	MARGIN-TOP: 1px; FLOAT: left; MARGIN-RIGHT: 1px
+}
+.toolbar_button {
+	BORDER-RIGHT: gray thin ridge; PADDING-RIGHT: 10px; BORDER-TOP: gray thin ridge; PADDING-LEFT: 10pt; PADDING-BOTTOM: 5px; BORDER-LEFT: gray thin ridge; WIDTH: 48px; PADDING-TOP: 5px; BORDER-BOTTOM: gray thin ridge; HEIGHT: 48px; TEXT-ALIGN: center
+}
+.toolbar_corner {
+	BACKGROUND-POSITION: left bottom; BACKGROUND-IMAGE: url(../../images/gray-white-vgrad.png); BACKGROUND-REPEAT: repeat-x
+}
+.toolbar2 {
+	BACKGROUND-POSITION: left bottom; BACKGROUND-IMAGE: url(../../images/gray-white-vgrad.png); BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-REPEAT: repeat-x
+}
+.score_panel {
+	BORDER-RIGHT: gray thin outset; PADDING-RIGHT: 10px; BORDER-TOP: gray thin outset; PADDING-LEFT: 10pt; PADDING-BOTTOM: 5px; BORDER-LEFT: gray thin outset; PADDING-TOP: 5px; BORDER-BOTTOM: gray thin outset; BACKGROUND-COLOR: yellow
+}
+.quote {
+	FONT-WEIGHT: normal; FONT-STYLE: italic; FONT-FAMILY: Georgia, "Times New Roman" , Times, serif
+}
+.quote_signature {
+	FONT-WEIGHT: bold; FONT-FAMILY: Georgia, "Times New Roman" , Times, serif; TEXT-ALIGN: right
+}
+.pexp_table {
+	BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; BORDER-LEFT: gray 1px solid; BORDER-BOTTOM: gray 1px solid; FONT-FAMILY: Tahoma, Arial; BORDER-COLLAPSE: collapse
+}
+.pexp_header {
+	BORDER-RIGHT: gray 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: gray 0px solid; PADDING-LEFT: 3px; FONT-WEIGHT: bold; PADDING-BOTTOM: 1px; BORDER-LEFT: gray 0px solid; PADDING-TOP: 1px; BORDER-BOTTOM: gray 1px solid; FONT-FAMILY: Tahoma, Arial; BACKGROUND-COLOR: #f5f5f5; TEXT-ALIGN: center
+}
+.pexp_folders {
+	BORDER-RIGHT: #000000 1px solid; PADDING-RIGHT: 0px; PADDING-LEFT: 4px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; LINE-HEIGHT: 120%; PADDING-TOP: 4px; BACKGROUND-COLOR: #f5f5f5
+}
+.pexp_files {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 1px; VERTICAL-ALIGN: top; LINE-HEIGHT: 120%; PADDING-TOP: 1px; BACKGROUND-COLOR: white
+}
+.paginator {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 6px; PADDING-BOTTOM: 2px; FONT: 11px Arial, Helvetica, sans-serif; PADDING-TOP: 2px
+}
+.paginator A {
+	BORDER-RIGHT: #ddd 1px solid; PADDING-RIGHT: 6px; PADDING-LEFT: 6px; PADDING-BOTTOM: 2px; BORDER-LEFT: #ddd 1px solid; PADDING-TOP: 2px; TEXT-DECORATION: none
+}
+.pageList .this-page {
+	BORDER-RIGHT: #ddd 1px solid; PADDING-RIGHT: 6px; PADDING-LEFT: 6px; PADDING-BOTTOM: 2px; BORDER-LEFT: #ddd 1px solid; PADDING-TOP: 2px; TEXT-DECORATION: none
+}
+.paginator SPAN {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 6px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px
+}
+.paginator .break {
+	BORDER-RIGHT: medium none; PADDING-RIGHT: 6px; BORDER-TOP: medium none; PADDING-LEFT: 6px; PADDING-BOTTOM: 2px; BORDER-LEFT: medium none; PADDING-TOP: 2px; BORDER-BOTTOM: medium none; TEXT-DECORATION: none
+}
+.paginator .end {
+	BORDER-RIGHT: #ddd 2px solid; PADDING-RIGHT: 6px; BORDER-TOP: #ddd 2px solid; PADDING-LEFT: 6px; PADDING-BOTTOM: 2px; BORDER-LEFT: #ddd 2px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #ddd 2px solid
+}
+.paginator .this-page {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 6px; FONT-WEIGHT: bold; BORDER-LEFT-COLOR: #999; BORDER-BOTTOM-COLOR: #999; PADDING-BOTTOM: 2px; BORDER-TOP-COLOR: #999; PADDING-TOP: 2px; BORDER-RIGHT-COLOR: #999
+}
+.paginator A:hover {
+	BORDER-LEFT-COLOR: #036; BACKGROUND: #0063dc; BORDER-BOTTOM-COLOR: #036; COLOR: #fff; BORDER-TOP-COLOR: #036; TEXT-DECORATION: none; BORDER-RIGHT-COLOR: #036
+}
+.ffLabel {
+	DISPLAY: block; FLOAT: left; MARGIN-LEFT: 4px; WIDTH: 100px
+}
+.ffLabelLong {
+	DISPLAY: block; FLOAT: left; MARGIN-LEFT: 4px; WIDTH: 150px
+}
+.ffInput {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; MARGIN-BOTTOM: 2px; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+.ffInputShort {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; WIDTH: 48px; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+.ffError {
+	FONT-SIZE: 10px; COLOR: red
+}
+.floatLeft {
+	RIGHT: 20px; DIRECTION: rtl; POSITION: absolute
+}
+.pointerhand {
+	CURSOR: pointer
+}
+.chart_title {
+	BORDER-RIGHT: #336699 4px solid; PADDING-RIGHT: 16px; BORDER-TOP: #336699 4px solid; DISPLAY: inline; PADDING-LEFT: 8px; FONT-WEIGHT: bold; FONT-SIZE: 13px; BORDER-LEFT: #336699 4px solid; COLOR: #ffffff; BORDER-BOTTOM: #336699 4px solid; BACKGROUND-COLOR: #336699; TEXT-ALIGN: center
+}
+.results_title {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 8px; FONT-WEIGHT: bold; PADDING-BOTTOM: 2px; COLOR: #000000; BACKGROUND-COLOR: #b0c4de; TEXT-ALIGN: center
+}
+#ProjectDirectory {
+	MARGIN-LEFT: 50px
+}
+#ProjectDirectory H1 {
+	MARGIN-TOP: 20px; FONT-WEIGHT: bold; FONT-SIZE: 14px; MARGIN-BOTTOM: 0px
+}
+#ProjectDirectory SPAN {
+	MARGIN-LEFT: 20px
+}
+.SidePadding {
+	PADDING-RIGHT: 20px; PADDING-LEFT: 20px
+}
+.SideMargins {
+	MARGIN-LEFT: 20px; MARGIN-RIGHT: 20px
+}
+.LOCHomePageTag {
+	MARGIN-TOP: 10px; FONT-WEIGHT: bold; FONT-SIZE: 13px
+}
+.InfoPage {
+	MARGIN-LEFT: 50px
+}
+SUP {
+	COLOR: red
+}
+UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+UL.ulist1 {
+	MARGIN-LEFT: 20px; LIST-STYLE-TYPE: disc
+}
+UL.NavUL {
+	MARGIN-LEFT: 15px; WIDTH: 175px
+}
+UL.ul2 {
+	MARGIN-TOP: 5px; MARGIN-LEFT: 20px
+}
+UL.SubscriptionFeatures {
+	MARGIN-TOP: 10px; MARGIN-LEFT: 36px; LIST-STYLE-TYPE: disc
+}
+LI {
+	PADDING-BOTTOM: 7px
+}
+.LeftNavBorder {
+	BORDER-RIGHT: #dddddd 1px solid; VERTICAL-ALIGN: top; TEXT-ALIGN: left
+}
+.LabsControl {
+	PADDING-LEFT: 40px
+}
+.MyAccountControl {
+	MARGIN-LEFT: 40px
+}
+.MyAccountControl DIV {
+	
+}
+.MyAccountControl DIV DIV {
+	MARGIN-LEFT: 20px
+}
+FIELDSET {
+	MARGIN-BOTTOM: 10px
+}
+.MACInner {
+	MARGIN-LEFT: 20px
+}
+#MyAccountLayout {
+	WIDTH: 100%
+}
+#MyAccountMenuCSS {
+	BORDER-RIGHT: #dddddd 1px solid; VERTICAL-ALIGN: top; WIDTH: 150px; TEXT-ALIGN: left
+}
+#MADashboard {
+	
+}
+#InfoPageContent DIV DIV {
+	MARGIN-LEFT: 20px; WIDTH: 500px
+}
+DIV.notice {
+	BORDER-RIGHT: lightsteelblue 2px solid; PADDING-RIGHT: 5px; BORDER-TOP: lightsteelblue 2px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; BORDER-LEFT: lightsteelblue 2px solid; WIDTH: 500px; PADDING-TOP: 5px; BORDER-BOTTOM: lightsteelblue 2px solid; BACKGROUND-COLOR: #f5f5f5; TEXT-ALIGN: left
+}
+#SubscriptionForm {
+	WIDTH: 500px
+}
+#SubscriptionFeatures {
+	WIDTH: 500px
+}
+#SubscriptionForm FIELDSET {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.SubscriptionFormButton {
+	FLOAT: right
+}
+#PaymentReceipt {
+	MARGIN-TOP: 50px; MARGIN-BOTTOM: 50px
+}
+#OFContent {
+	MARGIN-BOTTOM: 100px
+}
+.FilterLevel1 {
+	BORDER-RIGHT: #b0c4de 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #b0c4de 1px solid; MARGIN-TOP: 5px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; BORDER-LEFT: #b0c4de 1px solid; WIDTH: 500px; PADDING-TOP: 10px; BORDER-BOTTOM: #b0c4de 1px solid; BACKGROUND-COLOR: #f5f5f5
+}
+.ReportTable {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; MARGIN: 5px; BORDER-LEFT: #ccc 1px solid; WIDTH: 98%; COLOR: #333; BORDER-BOTTOM: #bbb 1px solid; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: white
+}
+.ReportTable TR TD {
+	BORDER-RIGHT: #ccc 1px solid; PADDING-RIGHT: 4px; BORDER-TOP: #ccc 1px solid; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; BORDER-LEFT: #ccc 1px solid; PADDING-TOP: 4px; BORDER-BOTTOM: #ccc 1px solid
+}
+.ReportContents {
+	CLEAR: both; BORDER-RIGHT: 0px; PADDING-RIGHT: 5px! important; BORDER-TOP: 0px; PADDING-LEFT: 5px! important; PADDING-BOTTOM: 5px! important; OVERFLOW: hidden; BORDER-LEFT: 0px; PADDING-TOP: 5px! important; BORDER-BOTTOM: 0px; POSITION: relative
+}
+#IEroot .ReportContents {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 5px; BORDER-TOP: 0px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; MARGIN: 4px 4px 6px; BORDER-LEFT: 0px; WIDTH: 100%; PADDING-TOP: 5px; BORDER-BOTTOM: 0px
+}
+.DataGridHeader {
+	
+}
+.DataGridHeader TD {
+	FONT-WEIGHT: bold! important; COLOR: #222; BACKGROUND-COLOR: #e6e6e6
+}
+.DataGridHeader {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; MARGIN: 5px; BORDER-LEFT: #ccc 1px solid; COLOR: #333; BORDER-BOTTOM: #bbb 1px solid; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: white
+}
+.DataGridItem TD {
+	PADDING-RIGHT: 5px; BORDER-TOP: #ccc 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; COLOR: #333; PADDING-TOP: 5px; BACKGROUND-COLOR: #fdfdfd
+}
+.DataGridAlternateItem TD {
+	PADDING-RIGHT: 5px; BORDER-TOP: #ccc 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; COLOR: #333; PADDING-TOP: 5px; BACKGROUND-COLOR: #fafafa
+}
+.DataGridHighlight TD {
+	BACKGROUND-POSITION: 0px -20px; COLOR: black; BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #deefff
+}
+.report_nav {
+	PADDING-RIGHT: 0px; BORDER-TOP: #336699 4px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: #cccccc 1px solid; POSITION: relative; BACKGROUND-COLOR: #f5f5f5
+}
+.report_nav A {
+	DISPLAY: block; PADDING-BOTTOM: 5px; COLOR: #222; PADDING-TOP: 5px; BORDER-BOTTOM: #eee 1px solid
+}
+.report_nav BR {
+	DISPLAY: none; OVERFLOW: hidden; HEIGHT: 1px
+}
+A.toolbarLink {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; PADDING-BOTTOM: 0px; COLOR: black; PADDING-TOP: 0px; TEXT-DECORATION: none
+}
+.toolbar2 A {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; PADDING-BOTTOM: 0px; COLOR: black; PADDING-TOP: 0px; TEXT-DECORATION: none
+}
+A.toolbarLink:hover {
+	BACKGROUND: #ddd; COLOR: #114477; TEXT-DECORATION: none
+}
+.toolbar2 A:hover {
+	BACKGROUND: #ddd; COLOR: #114477; TEXT-DECORATION: none
+}
+.loggedEmailDiv {
+	FONT-SIZE: 10px; RIGHT: 2px; BACKGROUND: white; WIDTH: 300px; POSITION: absolute; TOP: 38px; TEXT-ALIGN: right
+}
+.trialUpgradeA {
+	FONT-WEIGHT: bold; COLOR: red
+}
+IMG.dojoComboBox {
+	DISPLAY: none! important
+}
+INPUT.dojoComboBox {
+	BORDER-RIGHT: #afafaf 1px inset; BORDER-TOP: #afafaf 1px inset; BORDER-LEFT: #afafaf 1px inset; BORDER-BOTTOM: #afafaf 1px inset
+}
+.warningDiv {
+	BORDER-RIGHT: #cccccc 1px dotted; PADDING-RIGHT: 9px; BORDER-TOP: #cccccc 1px dotted; PADDING-LEFT: 9px; PADDING-BOTTOM: 9px; BORDER-LEFT: #cccccc 1px dotted; PADDING-TOP: 9px; BORDER-BOTTOM: #cccccc 1px dotted; BACKGROUND-COLOR: #ffffcc
+}
+#promoStatus {
+	MARGIN-TOP: 5px; DISPLAY: block; HEIGHT: 20px
+}
+.upgrade-promotion .success {
+	COLOR: #060
+}
+.promoLabelSpan {
+	PADDING-RIGHT: 5px; DISPLAY: block; FLOAT: left; HEIGHT: 40px
+}
+.promoCodeTextBox {
+	BORDER-RIGHT: #336699 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #336699 1px solid; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; BORDER-LEFT: #336699 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #336699 1px solid
+}
+BLOCKQUOTE#feedback {
+	WIDTH: 871px
+}
+#feedback #feeds_pane {
+	PADDING-LEFT: 20px; FLOAT: left; BORDER-LEFT: #ccc 1px solid; WIDTH: 400px
+}
+#feedback #feedback_pane {
+	PADDING-RIGHT: 20px; FLOAT: left; WIDTH: 430px
+}
+#feedback .recent_posts {
+	FONT-SIZE: 12px; MARGIN-BOTTOM: 40px; COLOR: #000; FONT-FAMILY: arial
+}
+#feedback .recent_posts A {
+	COLOR: #225588; TEXT-DECORATION: none
+}
+#feedback .recent_posts DIV {
+	MARGIN-BOTTOM: 3px
+}
+#feedback .recent_posts A:hover {
+	COLOR: #4477aa; TEXT-DECORATION: underline
+}
+#feedback .recent_posts H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 15px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 10px
+}
+.nm_type {
+	FONT-SIZE: 10pt; FONT-FAMILY: Tahoma, Arial
+}
+.namesp {
+	FONT-WEIGHT: bold; FONT-SIZE: 12pt; FONT-FAMILY: Tahoma, Arial
+}
+.uml_type {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-SIZE: 8pt; PADDING-BOTTOM: 3px; PADDING-TOP: 3px; FONT-FAMILY: Tahoma, Arial
+}
+.uml_section {
+	PADDING-RIGHT: 3px; BORDER-TOP: gray 1px solid; PADDING-LEFT: 3px; FONT-SIZE: 8pt; PADDING-BOTTOM: 3px; PADDING-TOP: 3px; FONT-FAMILY: Tahoma, Arial; BACKGROUND-COLOR: #6495ed
+}
+.uml_item {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-SIZE: 8pt; PADDING-BOTTOM: 3px; PADDING-TOP: 3px; FONT-FAMILY: Tahoma, Arial
+}
+.entity {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; LINE-HEIGHT: 12pt; FONT-FAMILY: Tahoma, Arial
+}
+TH.entity {
+	FONT-WEIGHT: normal; BACKGROUND-IMAGE: url(../../images/blue-white-grad.PNG); BACKGROUND-REPEAT: repeat-y
+}
+.exp_header {
+	BORDER-RIGHT: gray 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: gray 1px solid; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; BORDER-LEFT: gray 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: gray 1px solid; FONT-FAMILY: Tahoma, Arial; BACKGROUND-COLOR: #f5f5f5
+}
+.exp_items {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; LINE-HEIGHT: 110%; PADDING-TOP: 3px
+}
+.kvHeaderLimiter {
+	WIDTH: 510px; POSITION: relative
+}
+.detailsTable TD {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 10px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+#plugin_screenshots {
+	MARGIN-TOP: 15px; PADDING-LEFT: 0px; MARGIN-BOTTOM: 50px; MARGIN-LEFT: 30px! important
+}
+#plugin_screenshots TD {
+	MARGIN-LEFT: 0px; VERTICAL-ALIGN: middle; TEXT-ALIGN: center
+}
+#plugin_screenshots TD.c2 {
+	PADDING-LEFT: 30px
+}
+#plugin_demo {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 6px; FLOAT: none; BACKGROUND-IMAGE: url(http://koders.com/media/images/koders/smartsearch_bg.gif); PADDING-BOTTOM: 6px; WIDTH: 320px; PADDING-TOP: 5px; BACKGROUND-REPEAT: no-repeat
+}
+#smartsearch_info {
+	MARGIN-LEFT: 30px
+}
+#smartsearch_info TD {
+	VERTICAL-ALIGN: middle
+}
+#smartsearch_info TD.c1 {
+	PADDING-RIGHT: 20px; TEXT-ALIGN: center
+}
+.kodeViewerContDiv {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}

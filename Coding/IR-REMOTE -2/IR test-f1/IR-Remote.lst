@@ -1,0 +1,276 @@
+   1               		.file	"IR-Remote.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	__vector_4
+  20               	__vector_4:
+  21               	.LFB7:
+  22               	.LM1:
+  23 0000 1F92      		push __zero_reg__
+  24 0002 0F92      		push r0
+  25 0004 0FB6      		in r0,__SREG__
+  26 0006 0F92      		push r0
+  27 0008 1124      		clr __zero_reg__
+  28 000a 8F93      		push r24
+  29 000c 9F93      		push r25
+  30               	/* prologue: Signal */
+  31               	/* frame size = 0 */
+  32               	.LM2:
+  33 000e 8091 0000 		lds r24,bitdetector
+  34 0012 9091 0000 		lds r25,(bitdetector)+1
+  35 0016 0196      		adiw r24,1
+  36 0018 9093 0000 		sts (bitdetector)+1,r25
+  37 001c 8093 0000 		sts bitdetector,r24
+  38               	.LM3:
+  39 0020 8EEF      		ldi r24,lo8(-2)
+  40 0022 84BD      		out 68-32,r24
+  41               	/* epilogue start */
+  42               	.LM4:
+  43 0024 9F91      		pop r25
+  44 0026 8F91      		pop r24
+  45 0028 0F90      		pop r0
+  46 002a 0FBE      		out __SREG__,r0
+  47 002c 0F90      		pop r0
+  48 002e 1F90      		pop __zero_reg__
+  49 0030 1895      		reti
+  50               	.LFE7:
+  52               	.global	detect_silence
+  54               	detect_silence:
+  55               	.LFB8:
+  56               	.LM5:
+  57               	/* prologue: function */
+  58               	/* frame size = 0 */
+  59               	.LM6:
+  60 0032 12BE      		out 82-32,__zero_reg__
+  61               	.LM7:
+  62 0034 1092 0000 		sts (silence)+1,__zero_reg__
+  63 0038 1092 0000 		sts silence,__zero_reg__
+  64               	.LM8:
+  65 003c 1092 0000 		sts (startdetector)+1,__zero_reg__
+  66 0040 1092 0000 		sts startdetector,__zero_reg__
+  67               	.L8:
+  68               	.LM9:
+  69 0044 8299      		sbic 48-32,2
+  70 0046 00C0      		rjmp .L4
+  71               	.LM10:
+  72 0048 82B7      		in r24,82-32
+  73 004a 90E0      		ldi r25,lo8(0)
+  74 004c 9093 0000 		sts (silence)+1,r25
+  75 0050 8093 0000 		sts silence,r24
+  76 0054 00C0      		rjmp .L5
+  77               	.L4:
+  78               	.LM11:
+  79 0056 1092 0000 		sts (silence)+1,__zero_reg__
+  80 005a 1092 0000 		sts silence,__zero_reg__
+  81               	.L5:
+  82               	.LM12:
+  83 005e 82B7      		in r24,82-32
+  84 0060 90E0      		ldi r25,lo8(0)
+  85 0062 9093 0000 		sts (startdetector)+1,r25
+  86 0066 8093 0000 		sts startdetector,r24
+  87               	.LM13:
+  88 006a 8091 0000 		lds r24,silence
+  89 006e 9091 0000 		lds r25,(silence)+1
+  90 0072 0697      		sbiw r24,6
+  91 0074 04F0      		brlt .L6
+  92               	.LM14:
+  93 0076 1092 0000 		sts flag,__zero_reg__
+  94 007a 00C0      		rjmp .L7
+  95               	.L6:
+  96               	.LM15:
+  97 007c 8091 0000 		lds r24,startdetector
+  98 0080 9091 0000 		lds r25,(startdetector)+1
+  99 0084 873F      		cpi r24,247
+ 100 0086 9105      		cpc r25,__zero_reg__
+ 101 0088 04F0      		brlt .L8
+ 102               	.LM16:
+ 103 008a 81E0      		ldi r24,lo8(1)
+ 104 008c 8093 0000 		sts flag,r24
+ 105               	.L7:
+ 106               	.LM17:
+ 107 0090 8091 0000 		lds r24,flag
+ 108 0094 8150      		subi r24,lo8(-(-1))
+ 109 0096 8230      		cpi r24,lo8(2)
+ 110 0098 00F0      		brlo .L12
+ 111               	.LM18:
+ 112 009a 1092 0000 		sts (startdetector)+1,__zero_reg__
+ 113 009e 1092 0000 		sts startdetector,__zero_reg__
+ 114               	.L11:
+ 115               	.LM19:
+ 116 00a2 12BE      		out 82-32,__zero_reg__
+ 117               	.LM20:
+ 118 00a4 829B      		sbis 48-32,2
+ 119 00a6 00C0      		rjmp .L10
+ 120               	.LM21:
+ 121 00a8 1092 0000 		sts flag,__zero_reg__
+ 122 00ac 0895      		ret
+ 123               	.L10:
+ 124               	.LM22:
+ 125 00ae 82B7      		in r24,82-32
+ 126 00b0 90E0      		ldi r25,lo8(0)
+ 127 00b2 9093 0000 		sts (startdetector)+1,r25
+ 128 00b6 8093 0000 		sts startdetector,r24
+ 129               	.LM23:
+ 130 00ba 8091 0000 		lds r24,startdetector
+ 131 00be 9091 0000 		lds r25,(startdetector)+1
+ 132 00c2 873F      		cpi r24,247
+ 133 00c4 9105      		cpc r25,__zero_reg__
+ 134 00c6 04F0      		brlt .L11
+ 135               	.LM24:
+ 136 00c8 81E0      		ldi r24,lo8(1)
+ 137 00ca 8093 0000 		sts flag,r24
+ 138               	.L12:
+ 139 00ce 0895      		ret
+ 140               	.LFE8:
+ 142               	.global	detect_start
+ 144               	detect_start:
+ 145               	.LFB9:
+ 146               	.LM25:
+ 147               	/* prologue: function */
+ 148               	/* frame size = 0 */
+ 149               	.LM26:
+ 150 00d0 8EEF      		ldi r24,lo8(-2)
+ 151 00d2 84BD      		out 68-32,r24
+ 152               	.LM27:
+ 153 00d4 1092 0000 		sts (bitdetector)+1,__zero_reg__
+ 154 00d8 1092 0000 		sts bitdetector,__zero_reg__
+ 155               	.L16:
+ 156               	.LM28:
+ 157 00dc 8091 0000 		lds r24,bitdetector
+ 158 00e0 9091 0000 		lds r25,(bitdetector)+1
+ 159 00e4 863A      		cpi r24,166
+ 160 00e6 9105      		cpc r25,__zero_reg__
+ 161 00e8 04F4      		brge .L16
+ 162               	.LM29:
+ 163 00ea 829B      		sbis 48-32,2
+ 164 00ec 00C0      		rjmp .L17
+ 165               	.LM30:
+ 166 00ee 1092 0000 		sts flag,__zero_reg__
+ 167 00f2 00C0      		rjmp .L18
+ 168               	.L17:
+ 169               	.LM31:
+ 170 00f4 81E0      		ldi r24,lo8(1)
+ 171 00f6 8093 0000 		sts flag,r24
+ 172               	.L18:
+ 173               	.LM32:
+ 174 00fa 8091 0000 		lds r24,flag
+ 175 00fe 8130      		cpi r24,lo8(1)
+ 176 0100 01F0      		breq .L23
+ 177               	.LM33:
+ 178 0102 20E0      		ldi r18,lo8(0)
+ 179 0104 30E0      		ldi r19,hi8(0)
+ 180               	.LVL0:
+ 181               	.LM34:
+ 182 0106 4EEF      		ldi r20,lo8(-2)
+ 183               	.L21:
+ 184 0108 44BD      		out 68-32,r20
+ 185               	.LM35:
+ 186 010a 1092 0000 		sts (bitdetector)+1,__zero_reg__
+ 187 010e 1092 0000 		sts bitdetector,__zero_reg__
+ 188               	.L20:
+ 189               	.LM36:
+ 190 0112 8091 0000 		lds r24,bitdetector
+ 191 0116 9091 0000 		lds r25,(bitdetector)+1
+ 192 011a 813E      		cpi r24,225
+ 193 011c 9105      		cpc r25,__zero_reg__
+ 194 011e 04F4      		brge .L20
+ 195               	.LM37:
+ 196 0120 2F5F      		subi r18,lo8(-(1))
+ 197 0122 3F4F      		sbci r19,hi8(-(1))
+ 198 0124 2930      		cpi r18,9
+ 199 0126 3105      		cpc r19,__zero_reg__
+ 200 0128 01F4      		brne .L21
+ 201               	.LM38:
+ 202 012a 1092 0000 		sts (bitdetector)+1,__zero_reg__
+ 203 012e 1092 0000 		sts bitdetector,__zero_reg__
+ 204               	.LM39:
+ 205 0132 8299      		sbic 48-32,2
+ 206 0134 00C0      		rjmp .L22
+ 207               	.LM40:
+ 208 0136 C298      		cbi 56-32,2
+ 209 0138 0895      		ret
+ 210               	.L22:
+ 211               	.LM41:
+ 212 013a C29A      		sbi 56-32,2
+ 213               	.L23:
+ 214 013c 0895      		ret
+ 215               	.LFE9:
+ 217               	.global	main
+ 219               	main:
+ 220               	.LFB10:
+ 221               	.LM42:
+ 222               	/* prologue: function */
+ 223               	/* frame size = 0 */
+ 224               	.LM43:
+ 225 013e 11BA      		out 49-32,__zero_reg__
+ 226               	.LM44:
+ 227 0140 8FEF      		ldi r24,lo8(-1)
+ 228 0142 84BB      		out 52-32,r24
+ 229               	.LM45:
+ 230 0144 84E0      		ldi r24,lo8(4)
+ 231 0146 87BB      		out 55-32,r24
+ 232               	.LM46:
+ 233 0148 83E0      		ldi r24,lo8(3)
+ 234 014a 83BF      		out 83-32,r24
+ 235               	.LM47:
+ 236 014c 9EEF      		ldi r25,lo8(-2)
+ 237 014e 92BF      		out 82-32,r25
+ 238               	.LM48:
+ 239 0150 82E0      		ldi r24,lo8(2)
+ 240 0152 85BD      		out 69-32,r24
+ 241               	.LM49:
+ 242 0154 94BD      		out 68-32,r25
+ 243               	.LM50:
+ 244 0156 80E4      		ldi r24,lo8(64)
+ 245 0158 89BF      		out 89-32,r24
+ 246               	.LM51:
+ 247               	/* #APP */
+ 248               	 ;  158 "IR-Remote.c" 1
+ 249 015a 7894      		sei
+ 250               	 ;  0 "" 2
+ 251               	/* #NOAPP */
+ 252               	.L32:
+ 253               	.LM52:
+ 254 015c 00D0      		rcall detect_silence
+ 255               	.LM53:
+ 256 015e 8091 0000 		lds r24,flag
+ 257 0162 8823      		tst r24
+ 258 0164 01F4      		brne .L32
+ 259               	.LM54:
+ 260 0166 00D0      		rcall detect_start
+ 261 0168 00C0      		rjmp .L32
+ 262               	.LFE10:
+ 264               	.global	flag
+ 265               		.data
+ 268               	flag:
+ 269 0000 02        		.byte	2
+ 270               		.lcomm bitdetector,2
+ 271               		.lcomm silence,2
+ 272               		.lcomm startdetector,2
+ 321               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 IR-Remote.c
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccu7OHId.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccu7OHId.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccu7OHId.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccu7OHId.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccu7OHId.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccu7OHId.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccu7OHId.s:20     .text:00000000 __vector_4
+                             .bss:00000000 bitdetector
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccu7OHId.s:54     .text:00000032 detect_silence
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccu7OHId.s:270    .bss:00000002 silence
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccu7OHId.s:271    .bss:00000004 startdetector
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccu7OHId.s:268    .data:00000000 flag
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccu7OHId.s:144    .text:000000d0 detect_start
+C:\DOCUME~1\ankit\LOCALS~1\Temp/ccu7OHId.s:219    .text:0000013e main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

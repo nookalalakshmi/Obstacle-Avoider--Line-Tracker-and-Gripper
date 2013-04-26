@@ -1,0 +1,12 @@
+;
+;
+;#include<avr/io.h>
+;//#include<compat/deprecated.h>
+;#include<util/delay.h>
+
+	.CSEG
+;PCODE: $00000000 VOL: 0
+;PCODE: $00000001 VOL: 0
+;PCODE: $00000002 VOL: 0
+;PCODE: $00000003 VOL: 0
+;PCODE: $00000004 VOL: 0

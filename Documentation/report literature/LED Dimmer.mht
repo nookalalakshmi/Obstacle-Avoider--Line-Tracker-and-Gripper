@@ -1,0 +1,942 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: LED Dimmer
+Date: Fri, 10 Apr 2009 00:30:35 +0530
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0053_01C9B973.90597850"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5579
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0053_01C9B973.90597850
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.mikesflightdeck.com/led_dimmer.htm
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>LED Dimmer</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.6000.16788" name=3DGENERATOR>
+<META content=3DFrontPage.Editor.Document name=3DProgId>
+<META content=3D"blueprnt 011, default" name=3D"Microsoft Theme">
+<META content=3D"tlb, default" name=3D"Microsoft Border"></HEAD>
+<BODY text=3D#003399 vLink=3D#9900ff aLink=3D#000066 link=3D#3366ff =
+bgColor=3D#ffffff=20
+background=3Dhttp://www.mikesflightdeck.com/_themes/blueprnt/blutextb.gif=
+><!--msnavigation-->
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%" border=3D0>
+  <TBODY>
+  <TR>
+    <TD><!--mstheme--><FONT face=3D"Century Gothic, Arial, Helvetica">
+      <P align=3Dcenter><IMG height=3D60 alt=3D"LED Dimmer"=20
+      =
+src=3D"http://www.mikesflightdeck.com/_derived/led_dimmer.htm_cmp_blueprn=
+t010_bnr.gif"=20
+      width=3D600 border=3D0>=20
+  =
+<BR></P><!--mstheme--></FONT></TD></TR><!--msnavigation--></TBODY></TABLE=
+><!--msnavigation-->
+<TABLE dir=3Dltr cellSpacing=3D0 cellPadding=3D0 width=3D"100%" =
+border=3D0>
+  <TBODY>
+  <TR>
+    <TD vAlign=3Dtop width=3D"1%"><!--mstheme--><FONT=20
+      face=3D"Century Gothic, Arial, Helvetica"><NOBR>[&nbsp;<A=20
+      href=3D"http://www.mikesflightdeck.com/" =
+target=3D"">Home</A>&nbsp;]</NOBR><!--mstheme--></FONT></TD>
+    <TD vAlign=3Dtop width=3D24></TD><!--msnavigation-->
+    <TD vAlign=3Dtop><!--mstheme--><FONT=20
+face=3D"Century Gothic, Arial, Helvetica">
+      <H3><!--mstheme--><FONT color=3D#660066>LEDs : Cool Light<O:P> =
+</O:P><!--mstheme--></FONT></H3>
+      <P>Light emitting diodes are an inexpensive source of light for=20
+      instrument, panel and task lighting. They offer a choice of colors =
+and=20
+      even =93white=94 LEDs are now affordable. They have no filaments =
+to burn out,=20
+      and efficiencies have grown to the point that some are amazingly=20
+      bright.<O:P> </O:P></P>
+      <P>Sometimes so bright, you=92d like to be able to dim them.<O:P> =
+</O:P></P>
+      <H3><!--mstheme--><FONT color=3D#660066>Less current : less =
+light<O:P>=20
+</O:P><!--mstheme--></FONT></H3>
+      <P>LEDs are current driven devices. Fewer amps in means fewer =
+photons out.=20
+      But we don=92t generally power LEDs from a true current source. =
+The vast=20
+      majority of power supplies are voltage sources, and that=92s what =
+we usually=20
+      find powering LEDs.<O:P> </O:P></P>
+      <H3><!--mstheme--><FONT color=3D#660066>Of course, it=92s not =
+quite that=20
+      simple<O:P> </O:P><!--mstheme--></FONT></H3>
+      <P>The relationship between current and voltage in an LED is =
+non-linear.=20
+      As the voltage increases from zero there is only a trickle of =
+current and=20
+      no noticeable light. At about a volt and a half (we=92re talking =
+red LEDs=20
+      here) the current begins to increase appreciably and the first =
+glimmers=20
+      appear. At two volts the LED is bright and with a fraction more =
+it=92s very=20
+      bright. Once over about 2.2 volts, the current rapidly soars =
+beyond safe=20
+      operation. The LED soon overheats and dies.</P>
+      <P class=3DMsoNormal>&nbsp;<O:P> </O:P></P>
+      <P class=3DMsoNormal style=3D"TEXT-ALIGN: center" =
+align=3Dcenter><!--[if gte vml 1]><V:SHAPETYPE id=3D_x0000_t75 =
+stroked=3D"f"=20
+      filled=3D"f" path=3D"m@4@5l@4@11@9@11@9@5xe" =
+o:preferrelative=3D"t" o:spt=3D"75"=20
+      coordsize=3D"21600,21600"><V:STROKE joinstyle=3D"miter" =
+/><V:FORMULAS><V:F=20
+      eqn=3D"if lineDrawn pixelLineWidth 0" /><V:F eqn=3D"sum @0 1 0" =
+/><V:F=20
+      eqn=3D"sum 0 0 @1" /><V:F eqn=3D"prod @2 1 2" /><V:F=20
+      eqn=3D"prod @3 21600 pixelWidth" /><V:F eqn=3D"prod @3 21600 =
+pixelHeight"=20
+      /><V:F eqn=3D"sum @0 0 1" /><V:F eqn=3D"prod @6 1 2" /><V:F=20
+      eqn=3D"prod @7 21600 pixelWidth" /><V:F eqn=3D"sum @8 21600 0" =
+/><V:F=20
+      eqn=3D"prod @7 21600 pixelHeight" /><V:F eqn=3D"sum @10 21600 0"=20
+      /></V:FORMULAS><V:PATH o:connecttype=3D"rect" =
+gradientshapeok=3D"t"=20
+      o:extrusionok=3D"f" /><O:LOCK aspectratio=3D"t" v:ext=3D"edit"=20
+      /></V:SHAPETYPE><V:SHAPE id=3D_x0000_i1025=20
+      style=3D"WIDTH: 324pt; HEIGHT: 262.5pt" =
+type=3D"#_x0000_t75"><V:IMAGEDATA=20
+      cropleft=3D".25" o:title=3D"LED I V curve"=20
+      src=3D"../WINDOWS/TEMP/msoclip1/01/clip_image001.jpg" =
+/></V:SHAPE><![endif]--><IMG height=3D350=20
+      src=3D"http://www.mikesflightdeck.com/images/led_di1.jpg" =
+width=3D432=20
+      v:shapes=3D"_x0000_i1025"></P>
+      <P class=3DMsoNormal>&nbsp;<O:P> </O:P></P>
+      <P>Nonetheless, you <U>can</U> power an LED directly from a =
+voltage source=20
+      if you control the voltage carefully, but there are problems. As =
+the=20
+      temperature of the LED changes the operating voltage for constant =
+light=20
+      output changes. Generally we would prefer that the light levels =
+stay put.=20
+      Further, if you parallel a number of LEDs and power them directly =
+from a=20
+      voltage source, they won=92t all have the same light output. Each =
+will have=20
+      a slightly different operating voltage for the same light output. =
+All in=20
+      all, powering LEDs directly from a voltage source is not such a =
+good=20
+      idea.<O:P> </O:P></P>
+      <H3><!--mstheme--><FONT color=3D#660066>So make it act linear<O:P> =
+</O:P><!--mstheme--></FONT></H3>
+      <P>The usual approach is to put a resistor in series with the LED. =
+The=20
+      combination is still non-linear, but in a much more well behaved =
+manner.=20
+      In fact, over the range of safe operating current, it acts =
+incrementally=20
+      linear.</P>
+      <P class=3DMsoNormal>&nbsp;<O:P> </O:P></P>
+      <P class=3DMsoNormal style=3D"TEXT-ALIGN: center" =
+align=3Dcenter><!--[if gte vml 1]><V:SHAPE id=3D_x0000_i1026=20
+      style=3D"WIDTH: 261pt; HEIGHT: 158.25pt" =
+type=3D"#_x0000_t75"><V:IMAGEDATA=20
+      o:title=3D"LED Res I V curve"=20
+      src=3D"../WINDOWS/TEMP/msoclip1/01/clip_image003.jpg" =
+/></V:SHAPE><![endif]--><IMG height=3D211=20
+      src=3D"http://www.mikesflightdeck.com/images/led_di2.jpg" =
+width=3D348=20
+      v:shapes=3D"_x0000_i1026"></P>
+      <P class=3DMsoNormal>&nbsp;<O:P> </O:P></P>
+      <P>The catch is that it wastes power. If a 12 volt supply is =
+powering a=20
+      single LED-resistor combination, 2 volts goes to the LED and 10 to =
+the=20
+      resistor. Only one sixth of the power makes it to the LED.</P>
+      <P class=3DMsoNormal>&nbsp;<O:P> </O:P></P>
+      <P class=3DMsoNormal style=3D"TEXT-ALIGN: center" =
+align=3Dcenter><!--[if gte vml 1]><V:SHAPE id=3D_x0000_i1027=20
+      style=3D"WIDTH: 256.5pt; HEIGHT: 156pt" =
+type=3D"#_x0000_t75"><V:IMAGEDATA=20
+      o:title=3D"LED Res power 1"=20
+      src=3D"../WINDOWS/TEMP/msoclip1/01/clip_image005.jpg" =
+/></V:SHAPE><![endif]--><IMG height=3D208=20
+      src=3D"http://www.mikesflightdeck.com/images/led_di3.jpg" =
+width=3D342=20
+      v:shapes=3D"_x0000_i1027"></P>
+      <P class=3DMsoNormal>&nbsp;<O:P> </O:P></P>
+      <P>If you only have a few LEDs this is not a big deal. If you=92re =
+lighting=20
+      several panels you may have a couple hundred LEDs. Depending upon =
+your=20
+      budget and power supplies, this may become a big deal.<O:P> =
+</O:P></P>
+      <P>There are several approaches with varying degrees of complexity =
+that=20
+      address this. An effective compromise between complexity and =
+efficiency is=20
+      to place several LEDs in series with a single resistor. If four =
+LEDs are=20
+      placed in series, two thirds of the power makes it to the LEDs, =
+quite an=20
+      improvement.</P>
+      <P class=3DMsoNormal>&nbsp;<O:P> </O:P></P>
+      <P class=3DMsoNormal style=3D"TEXT-ALIGN: center" =
+align=3Dcenter><!--[if gte vml 1]><V:SHAPE id=3D_x0000_i1028=20
+      style=3D"WIDTH: 279pt; HEIGHT: 169.5pt" =
+type=3D"#_x0000_t75"><V:IMAGEDATA=20
+      o:title=3D"LED Res power 2"=20
+      src=3D"../WINDOWS/TEMP/msoclip1/01/clip_image007.jpg" =
+/></V:SHAPE><![endif]--><IMG height=3D226=20
+      src=3D"http://www.mikesflightdeck.com/images/led_di4.jpg" =
+width=3D372=20
+      v:shapes=3D"_x0000_i1028"></P>
+      <P class=3DMsoNormal>&nbsp;<O:P> </O:P></P>
+      <H3><!--mstheme--><FONT color=3D#660066>Back to dimming LEDs<O:P> =
+</O:P><!--mstheme--></FONT></H3>
+      <P>If you simply reduce the voltage to a resistor-LED series =
+combination,=20
+      you will dim the LED. The slight hiccup is that the LEDs will not =
+begin to=20
+      light up until there=92s about 1.5 volts across each LED. If you =
+have four=20
+      LEDs in series, the power supply has to be cranked up to 6 volts =
+to get=20
+      those red photons started.<O:P> </O:P></P>
+      <P>So if you=92ve got a 0 to 12 volt variable power supply dimming =
+your=20
+      4-LED chain, you have to turn the knob half way around before you =
+get some=20
+      action. A subtle point, to be sure, but an important one to the =
+true=20
+      dimming aficionado.<O:P> </O:P></P>
+      <P>Here=92s an inexpensive dimmer that starts at about 5.6 volts =
+and goes up=20
+      to 2 volts below the supply voltage. It uses readily available =
+parts and=20
+      can supply up to an amp of lighting current if the 7805 has an =
+adequate=20
+      heat sink. You could have up to about 50&nbsp; groups of four =
+LEDs,=20
+      although the 7805 may start to get a bit toasty.</P>
+      <P class=3DMsoNormal>&nbsp;<O:P> </O:P></P>
+      <P class=3DMsoNormal style=3D"TEXT-ALIGN: center" =
+align=3Dcenter><!--[if gte vml 1]><V:SHAPE id=3D_x0000_i1029=20
+      style=3D"WIDTH: 333pt; HEIGHT: 202.5pt" =
+type=3D"#_x0000_t75"><V:IMAGEDATA=20
+      o:title=3D"LED Dimmer" =
+src=3D"../WINDOWS/TEMP/msoclip1/01/clip_image009.jpg"=20
+      /></V:SHAPE><![endif]--><IMG height=3D270=20
+      src=3D"http://www.mikesflightdeck.com/images/led_di5.jpg" =
+width=3D444=20
+      v:shapes=3D"_x0000_i1029"></P>
+      <P class=3DMsoNormal>&nbsp;<O:P> </O:P></P>
+      <P>Not all LEDs have the same forward voltage drop. The 2.0~2.2 =
+volts=20
+      common for red LEDs is not shared by all LEDs. Blue and white LEDs =
+may=20
+      have up to 5 volts across them when operating normally, although =
+3.5 volts=20
+      is more common. If you want to use this dimmer circuit with 3.5 =
+volt blue=20
+      or white LEDs,&nbsp; put just two LEDs in series and use 150 ohm =
+resistors=20
+      in place of the 82 ohm units.</P>
+      <P>&nbsp;</P>
+      <P><!--webbot bot=3D"HitCounter" u-custom i-digits=3D"0" =
+i-image=3D"4"
+PREVIEW=3D"&lt;strong&gt;[Hit Counter]&lt;/strong&gt;" =
+i-resetvalue=3D"0" startspan --><IMG=20
+      alt=3D"Hit Counter"=20
+      =
+src=3D"http://www.mikesflightdeck.com/_vti_bin/fpcount.exe/?Page=3Dled_di=
+mmer.htm|Image=3D4"><!--webbot bot=3D"HitCounter" endspan =
+i-checksum=3D"28252" -->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+      12 Oct =
+2003<!--mstheme--></FONT><!--msnavigation--></P></TD></TR><!--msnavigatio=
+n--></TBODY></TABLE><!--msnavigation-->
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%" border=3D0>
+  <TBODY>
+  <TR>
+    <TD><!--mstheme--><FONT face=3D"Century Gothic, Arial, =
+Helvetica"><!--msthemeseparator-->
+      <P align=3Dcenter><IMG height=3D10=20
+      =
+src=3D"http://www.mikesflightdeck.com/_themes/blueprnt/bluhorsa.gif"=20
+      width=3D600></P>
+      <P><FONT size=3D1>It's possible that I'm not as smart as I think I =
+am.=20
+      (Occasionally, I have moments when I know this to be true. =
+Fortunately the=20
+      feeling passes quickly.) Although I have tried to make this =
+information as=20
+      accurate as I can, it is not only possible, but also quite likely, =
+that=20
+      errors lurk within. I cannot and do not warrant these pages to be =
+error=20
+      free and correct. Further I accept no liability for the use of =
+this=20
+      information (or misinformation). If, after reading this, you are =
+still=20
+      interested, please be aware that the contents of this site are =
+protected=20
+      by copyright (copyright =A9 2002, 2003, 2004, 2005, 2006, 2007, =
+2008, 2009=20
+      by John M. Powell). Nonetheless, you may copy this material =
+subject to=20
+      these three conditions: (1) the copyright notice is copied and =
+presented=20
+      along with the material, (2) the copy is used for non-commercial =
+purposes,=20
+      and (3) the source of the material is properly credited. And of =
+course,=20
+      you may link to this =
+page.</FONT></P><!--mstheme--></FONT></TD></TR><!--msnavigation--></TBODY=
+></TABLE></BODY></HTML>
+
+------=_NextPart_000_0053_01C9B973.90597850
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.mikesflightdeck.com/_derived/led_dimmer.htm_cmp_blueprnt010_bnr.gif
+
+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
+5z77+c+K2LMMIgAAOw==
+
+------=_NextPart_000_0053_01C9B973.90597850
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: http://www.mikesflightdeck.com/images/led_di1.jpg
+
+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
+AAAAAAAAAAAAAD//2Q==
+
+------=_NextPart_000_0053_01C9B973.90597850
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: http://www.mikesflightdeck.com/images/led_di2.jpg
+
+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
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/9k=
+
+------=_NextPart_000_0053_01C9B973.90597850
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: http://www.mikesflightdeck.com/images/led_di3.jpg
+
+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
+1v2YAAAAAAAAAAAAAAAH/9k=
+
+------=_NextPart_000_0053_01C9B973.90597850
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: http://www.mikesflightdeck.com/images/led_di4.jpg
+
+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
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf//Z
+
+------=_NextPart_000_0053_01C9B973.90597850
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: http://www.mikesflightdeck.com/images/led_di5.jpg
+
+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
+IiICIiAiIgIiICIiAiIgIiICIiAiIg//2Q==
+
+------=_NextPart_000_0053_01C9B973.90597850
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://www.mikesflightdeck.com/_vti_bin/fpcount.exe/?Page=led_dimmer.htm|Image=4
+
+R0lGODdhWgAYAIQAAMDAwJmZmWhoaAAAAJmZaACZAABoAAD/AADAAJloaGiZmWj/AADhAJlomWgA
+AGjhAGjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAA
+WgAYAAAF/iAQjGRpjuKpkumqtq4Jx6Qw3Hiu3/bu472fLyjUJYo+Aq5gMDCbzUJOeXs+oVIcdWCF
+RqfI3fFmQBTO6ALCgAsM2IWDfC5H5NxwOt3efnP1c3w3bn5FbAOENwyABwyFbmp/ell9kXGTOpB2
+l3SUg29rQpGIOgiNDIubjqQGB3ZeTTt4rm+wsm+0sId3N427Oa18Cju7bK2rsweeP8nLPs1hhHXE
+qZ9Ii6tHrcph2nLOYrjcSFTVO9MDY0UQjTfD2+A6799h8+NF5bTn+kQ/5u8L7gkBKPAHwXg5hg0I
+CM5cIlHtWHFTQzEUr1ZSKqr5JTGjmY8cCTHISHHjAAZ8/h4OQMAS5UguKXMs0sPg18OZdGrywoFz
+jk4cDXKYAmRTKCNBpMgM3RPLGihAa3YlKgO1adIqgGpKBYaq0SkoN7aQ6YIri9g3ZDGG1eEkirFx
+Z9uCNYCSh49Dh1A5/QFv7116V/kCVuljURbCOxAsEIak7wCFQhxDFjxusj99iEvpO0sMMGe2nhsD
+tlx4XGajfIIaMnxDdWTWA1zzhS37xwPTYeLEzJHmzJsFh3X0lmIAuN/hv4M3rhuYC8qWUliuxWEq
+oJzFXwaIrT4Hu5PpN7hfj2o2DNob6lYefbQElXtsSBMVeN+VudP59BvFN7/TOX33lEDWFF6FuIPD
+gGQUNPjYgQT68QtpSEBITB86OHCDhbdUeOEzO2CIYSbmfQihA2x86McMNASAIg0rxtCiCy+uEAIA
+Ow==
+
+------=_NextPart_000_0053_01C9B973.90597850
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.mikesflightdeck.com/_themes/blueprnt/bluhorsa.gif
+
+R0lGODlhWAIKAHcAACH/C01TT0ZGSUNFOS4wDQAAAAFzUkdCAK7OHOkAIf8LTVNPRkZJQ0U5LjAY
+AAAADG1zT1BNU09GRklDRTkuMAr/QjykACH/C01TT0ZGSUNFOS4wGAAAAAxjbVBQSkNtcDA3MTIC
+AAAIddtivwAh+QQBAAAAACwAAAAAWAIKAIPAwMAzZv+Zmf/MzP9mmf+ZzP9mZv//////zP/M//8B
+AgMBAgMBAgMBAgMBAgMBAgME/xDISau9OOvNu/9gKI5kaZ5oqq5s675wLM90bd94ru987/9AGKIQ
+MCQyAU+ys+Q0N09NFKmsMq1OLFQr5VKv4Gx4O+6Wv+I0WW1mo9fwdrxiCAiOm8NgQAj4B3KBb4IY
+U4Veh2eJbotzjYQXhpGIkxR8BgSAE5IWnBWeFKCblJ2kn6ahqKOKlYytjq8WA352AgN4EgMCBH20
+fgSwpazCrsTBp8PIxcrHqcnOy9BxvXbSkMbXzNnWg92P3rHg2OLa5NzfFAXUfpgCtgMF7kW+Ar72
+9/j5+vv8/f7/AAMKHEiwoMGDCBMqXMiwocOHECNKRFiPVp9dBTRJ0MOHlsZw6JtAihwXkuTIciVR
+njy3clU0l81gAqAGTKY5mylZmtypkqfOnkB/CsXZUoIoo6Zm/dqDK8OBituI+pQalOpQpM+sasX6
+kmtMr1HBDtIVINNVAEfRqhKbc6varGyLvu0692vdsHfJ+RGAwEXav2vzto07lXBVw2cBwxUsVzFd
+x3Yh45V8E7FbyoMZF9Z8OIjnz6BDix5NurTp0x8iAAA7
+
+------=_NextPart_000_0053_01C9B973.90597850
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.mikesflightdeck.com/_themes/blueprnt/blutextb.gif
+
+R0lGODlhdABuAPABAMz//////yH/C01TT0ZGSUNFOS4wDQAAAAFzUkdCAK7OHOkAIf8LTVNPRkZJ
+Q0U5LjAYAAAADG1zT1BNU09GRklDRTkuMALxmbSWACH/C01TT0ZGSUNFOS4wGAAAAAxjbVBQSkNt
+cDA3MTICAAAIddtivwAsAAAAAHQAbgAAAv+Mj4mg7e8YnPTIit/NfPVvbGAmjlVpQmiqsaR7wrE8
+rXR4q3m7K3b+uwVlQ2KvUXQllUdf0/O0RKXTJcuawo602ymu6g1wQeNO2Rw+v7zqdbSNgc/e6TqY
+bafj93oz4A8YKDhIWGh4iJiouHhIlvckRxFZw9dn2TSpU4n5SGmSGdHJeUd6eQQaunkquloKybqD
+igQLRFvrOorbI+ukumsr5PsrfKs7bNpqXIx8/Eq8nMsc+xxMbWR9LQ0dzd1Ns8ELpfwthg0TLu48
+Xq3N3p79Du/drF5vP7+dHM9kzr/v/y8LGUYECxo8iLDRB3RUAgrs93AdOYny8Lm7p8/iRY2rFTNy
+PAdsosNPIUFCjIiR3keAKadRNPnySkmYLfOpvInT5cguJ3nGlPkTZU2RQmf1dHQU6U6lS9EkXfjU
+aVCfTaUOJXqVZlatHrvm3OhV51aWK4FOpVrWbFU3a9mmLRoWrKSEdOvavct0LNyvcm2K1UsyKgeG
+5QS7jdvXb+LFWBE3dswVcuS/bwO3jTNTLWDLm9FWzvsZNN/HoydTlqw5NNSzokuTRZ3adYICADs=
+
+------=_NextPart_000_0053_01C9B973.90597850--

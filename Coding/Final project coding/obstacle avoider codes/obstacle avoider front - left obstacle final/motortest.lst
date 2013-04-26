@@ -1,0 +1,943 @@
+   1               		.file	"motortest.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  11               		.text
+  12               	.Ltext0:
+  71               	.global	main
+  73               	main:
+   1:motortest.c   **** //			Two Motors and a Proximity IR sensor
+   2:motortest.c   **** 
+   3:motortest.c   **** /*-------------------------------------------------------------------          
+   4:motortest.c   ****  Operation-
+   5:motortest.c   ****  This example shows how to drive two mtors and control the direction
+   6:motortest.c   ****  based on Proximity Sensor output.
+   7:motortest.c   ****  At powerup robot moves forward by moving motor M1 Anti-Clockwise and 
+   8:motortest.c   ****  motor M2 Clockwise. 
+   9:motortest.c   ****  If IR Proxmity sensor detects obstrical then robot
+  10:motortest.c   ****  moves backward for 2 second (motor M1 Clockwise and motor M2 
+  11:motortest.c   ****  Anti-Clockwise) then turns clockwise (motor M1 Clockwise and motor 
+  12:motortest.c   ****  M2 Clockwise) till no obstriction in IR Sensor and then moves forward 
+  13:motortest.c   ****  again.
+  14:motortest.c   **** 
+  15:motortest.c   ****  1. Robot move forward => motor M1 Anti-Clockwise and motor M2 Clockwise
+  16:motortest.c   ****  2. Robot move backward => motor M2 Anti-Clockwise and motor M1 Clockwise
+  17:motortest.c   ****  3. Robot turn right => motor M1 Anti-Clockwise and motor M2 Anti-Clockwise
+  18:motortest.c   ****  4. Robot turn left => motor M1 Clockwise and motor M2 Clockwise
+  19:motortest.c   **** 	
+  20:motortest.c   **** 
+  21:motortest.c   ****  Description:
+  22:motortest.c   ****  CPU => ATMEGA8-L @8MHz Internal
+  23:motortest.c   **** 
+  24:motortest.c   ****  Motors- 
+  25:motortest.c   **** 
+  26:motortest.c   ****   M1 Connected to PB6 and PB7 such that-
+  27:motortest.c   ****   PB6	PB7		M1
+  28:motortest.c   ****   0		0		Stop
+  29:motortest.c   ****   1		0		Move Clockwsi
+  30:motortest.c   ****   0		1		Move Anti-Clockwsi
+  31:motortest.c   ****   1		1		Stop
+  32:motortest.c   **** 
+  33:motortest.c   ****   M2 Connected to PB6 and PB7 such that-
+  34:motortest.c   ****   PB0	PB1		M2
+  35:motortest.c   ****   0		0		Stop
+  36:motortest.c   ****   1		0		Move Clockwsi
+  37:motortest.c   ****   0		1		Move Anti-Clockwsi
+  38:motortest.c   ****   1		1		Stop
+  39:motortest.c   **** 
+  40:motortest.c   ****   LED indicator-
+  41:motortest.c   ****   PB2	State
+  42:motortest.c   ****   0		Off
+  43:motortest.c   ****   1		On
+  44:motortest.c   **** 
+  45:motortest.c   ****   Proximity IR Sensor Input
+  46:motortest.c   ****   PD2(INT0)	State
+  47:motortest.c   ****   0			Obstruction
+  48:motortest.c   ****   1			Clear Path
+  49:motortest.c   **** ---------------------------------------------------------------------*/
+  50:motortest.c   **** 
+  51:motortest.c   **** //************** HEADER FILES ********************
+  52:motortest.c   **** #include<avr/io.h>					//HEADER FILE FOR AVR INPUT OUTPUT
+  53:motortest.c   **** #include<compat/deprecated.h>		//HEADER FILE FOR FUNCTIONS LIKE SBI AND CBI
+  54:motortest.c   **** #include<util/delay.h>				//HEADER FILE FOR DELAY
+  55:motortest.c   **** #include <avr/interrupt.h>
+  56:motortest.c   **** 
+  57:motortest.c   **** //************** GLOBAL VARIABLES ********************
+  58:motortest.c   **** char navflag;
+  59:motortest.c   **** int count = 0;
+  60:motortest.c   **** int fwdrestrict=0;
+  61:motortest.c   **** char pathfound=0;
+  62:motortest.c   **** int flag=0;
+  63:motortest.c   **** char sendsig=0;
+  64:motortest.c   **** int leftjam=0;
+  65:motortest.c   **** int rightjam=0;
+  66:motortest.c   **** //**************Timer CONSTANTS ********************
+  67:motortest.c   **** #define TIMER_0_CNT     0xC0  // 500 micro sec, Timer set at 500 microsec.
+  68:motortest.c   ****                                 // ((TCNT0=0xC0))
+  69:motortest.c   **** 								// DECIMAL VALUE = 192
+  70:motortest.c   **** 								// MAX VALUE = 255
+  71:motortest.c   **** 								// TIMER OVERFLOW ON 255-192 = 63 COUNTS
+  72:motortest.c   **** #define TMC8_CK64	(_BV(CS01)+_BV(CS00))	// 8 BIT TIMER0 AT 64 PRESCALAR
+  73:motortest.c   **** 											// GIVES 64*63 =  4000 CYCLES	
+  74:motortest.c   **** 											// AT 8MHZ FREQUENCY 1 cycle is of 0.125 micro sec.
+  75:motortest.c   **** //************** FUNCTIONS ********************
+  76:motortest.c   **** 
+  77:motortest.c   **** //************** MAIN PROGRAM ********************
+  78:motortest.c   **** int main(void)
+  79:motortest.c   **** {
+  74               	push r14
+  75               		push r15
+  76               		push r16
+  77 0000 BF92      		push r17
+  78 0002 CF92      		push r28
+  79 0004 DF92      		push r29
+  80 0006 EF92      	/* prologue: function */
+  81 0008 FF92      	/* frame size = 0 */
+  83 000c 1F93      	.LM1:
+  84 000e CF93      		ldi r24,lo8(-57)
+  85 0010 DF93      		out 55-32,r24
+  87               	.LM2:
+  80:motortest.c   **** 	
+  81:motortest.c   **** 	DDRB=0xC7;						//SET DATA DIRECTION REGISTER
+  88               	15)
+  89               		out 49-32,r24
+  91 0014 87BB      	.LM3:
+  82:motortest.c   **** 	DDRD=0xF1;						//SET DATA DIRECTION REGISTER
+  92               	 r24,lo8(48)
+  93               		out 52-32,r24
+  95 0018 81BB      	.LM4:
+  83:motortest.c   **** 	
+  84:motortest.c   **** 	DDRC=0x30;
+  96               	 r24,lo8(3)
+  97               		out 83-32,r24
+  99 001c 84BB      	.LM5:
+  85:motortest.c   **** 	
+  86:motortest.c   **** 	
+  87:motortest.c   ****     char i=0;
+  88:motortest.c   ****      
+  89:motortest.c   **** 	TCCR0 = TMC8_CK64;       		// use CLK/1024 prescale value
+ 100               	 r24,lo8(83)
+ 101               		sts navflag,r24
+ 103 0020 83BF      	.LM6:
+  90:motortest.c   ****     //TIMSK  = _BV(TOIE0);        	// enable TCNT0 overflow 
+  91:motortest.c   **** 	//sei();                       	// enable interrupts
+  92:motortest.c   **** 	navflag = 'S';
+ 104               	 53-32,5
+ 106 0022 83E5      	.LM7:
+ 107 0024 8093 0000 		ldi r24,lo8(-64)
+  93:motortest.c   **** 	cbi(PORTC,5);
+ 108               	 82-32,r24
+ 109               		lds r22,rightjam
+ 110 0028 AD98      		lds r23,(rightjam)+1
+  94:motortest.c   **** 	TCNT0=TIMER_0_CNT;
+ 111               	s r20,leftjam
+ 112               		lds r21,(leftjam)+1
+ 113 002a 80EC      		lds r18,fwdrestrict
+ 114 002c 82BF      		lds r19,(fwdrestrict)+1
+ 116 0032 7091 0000 	.LM8:
+ 117 0036 4091 0000 		ldi r16,lo8(-127)
+ 118 003a 5091 0000 	.LBB72:
+ 119 003e 2091 0000 	.LBB73:
+ 120 0042 3091 0000 	.LBB74:
+  95:motortest.c   **** 	while(1)						//INFINITE LOOP
+  96:motortest.c   **** 	{
+  97:motortest.c   **** 		fwdrestrict++;
+  98:motortest.c   **** 		PORTB=0x81;	//Forward
+ 121               	stabs	"c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h",132,0,0,.Ltext1
+ 122               	.Ltext1:
+ 124               	.LM9:
+ 125               		ldi r28,lo8(2500)
+ 126               		ldi r29,hi8(2500)
+ 127               	.LBE75:
+ 128               	.LBE74:
+ 129               	.LBE73:
+   1:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /* Copyright (c) 2002, Marek Michalkiewicz
+   2:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    Copyright (c) 2007 Joerg Wunsch
+   3:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    All rights reserved.
+   4:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+   5:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    Redistribution and use in source and binary forms, with or without
+   6:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    modification, are permitted provided that the following conditions are met:
+   7:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+   8:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    * Redistributions of source code must retain the above copyright
+   9:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      notice, this list of conditions and the following disclaimer.
+  10:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  11:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    * Redistributions in binary form must reproduce the above copyright
+  12:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      notice, this list of conditions and the following disclaimer in
+  13:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      the documentation and/or other materials provided with the
+  14:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      distribution.
+  15:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  16:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    * Neither the name of the copyright holders nor the names of
+  17:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      contributors may be used to endorse or promote products derived
+  18:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      from this software without specific prior written permission.
+  19:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  20:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  21:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  22:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  23:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  24:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  25:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  26:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  27:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  28:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  29:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  30:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   POSSIBILITY OF SUCH DAMAGE. */
+  31:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  32:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /* $Id: delay_basic.h,v 1.1 2007/05/13 21:23:20 joerg_wunsch Exp $ */
+  33:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  34:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #ifndef _UTIL_DELAY_BASIC_H_
+  35:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #define _UTIL_DELAY_BASIC_H_ 1
+  36:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  37:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #include <inttypes.h>
+  38:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  39:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /** \file */
+  40:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /** \defgroup util_delay_basic <util/delay_basic.h>: Basic busy-wait delay loops
+  41:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     \code
+  42:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     #include <util/delay_basic.h>
+  43:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     \endcode
+  44:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  45:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     The functions in this header file implement simple delay loops
+  46:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     that perform a busy-waiting.  They are typically used to
+  47:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     facilitate short delays in the program execution.  They are
+  48:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     implemented as count-down loops with a well-known CPU cycle
+  49:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     count per loop iteration.  As such, no other processing can
+  50:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     occur simultaneously.  It should be kept in mind that the
+  51:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     functions described here do not disable interrupts.
+  52:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  53:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     In general, for long delays, the use of hardware timers is
+  54:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     much preferrable, as they free the CPU, and allow for
+  55:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     concurrent processing of other events while the timer is
+  56:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     running.  However, in particular for very short delays, the
+  57:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     overhead of setting up a hardware timer is too much compared
+  58:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     to the overall delay time.
+  59:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  60:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Two inline functions are provided for the actual delay algorithms.
+  61:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  62:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** */
+  63:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  64:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #if !defined(__DOXYGEN__)
+  65:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** static inline void _delay_loop_1(uint8_t __count) __attribute__((always_inline));
+  66:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** static inline void _delay_loop_2(uint16_t __count) __attribute__((always_inline));
+  67:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #endif
+  68:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  69:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /** \ingroup util_delay_basic
+  70:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  71:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Delay loop using an 8-bit counter \c __count, so up to 256
+  72:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     iterations are possible.  (The value 256 would have to be passed
+  73:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     as 0.)  The loop executes three CPU cycles per iteration, not
+  74:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     including the overhead the compiler needs to setup the counter
+  75:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     register.
+  76:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  77:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Thus, at a CPU speed of 1 MHz, delays of up to 768 microseconds
+  78:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     can be achieved.
+  79:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** */
+  80:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** void
+  81:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** _delay_loop_1(uint8_t __count)
+  82:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** {
+  83:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 	__asm__ volatile (
+  84:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 		"1: dec %0" "\n\t"
+  85:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 		"brne 1b"
+  86:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 		: "=r" (__count)
+  87:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 		: "0" (__count)
+  88:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 	);
+  89:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** }
+  90:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  91:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /** \ingroup util_delay_basic
+  92:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  93:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Delay loop using a 16-bit counter \c __count, so up to 65536
+  94:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     iterations are possible.  (The value 65536 would have to be
+  95:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     passed as 0.)  The loop executes four CPU cycles per iteration,
+  96:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     not including the overhead the compiler requires to setup the
+  97:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     counter register pair.
+  98:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  99:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Thus, at a CPU speed of 1 MHz, delays of up to about 262.1
+ 100:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     milliseconds can be achieved.
+ 101:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****  */
+ 102:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** void
+ 103:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** _delay_loop_2(uint16_t __count)
+ 104:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** {
+ 105:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 	__asm__ volatile (
+ 131               	.Ltext2:
+ 133 004a D9E0      	.LM10:
+ 134               		ldi r31,lo8(-126)
+ 135               		mov r11,r31
+ 137               	.LM11:
+ 138               		ldi r30,lo8(66)
+ 139               		mov r15,r30
+  99:motortest.c   **** 		for(i=0;i<5;i++)
+ 100:motortest.c   **** 		{
+ 101:motortest.c   **** 				
+ 102:motortest.c   **** 				_delay_ms(10);
+ 103:motortest.c   **** 				sbi(PORTC,5);
+ 104:motortest.c   **** 				_delay_ms(10);
+ 105:motortest.c   **** 				
+ 106:motortest.c   **** 				if(bit_is_clear(PIND,2))
+ 107:motortest.c   **** 				{
+ 108:motortest.c   **** 					sbi(PORTB,2);
+ 109:motortest.c   **** 					fwdrestrict=0;
+ 110:motortest.c   **** 					
+ 111:motortest.c   **** 					while(bit_is_clear(PIND,2))
+ 112:motortest.c   **** 					{
+ 113:motortest.c   **** 						PORTB=0x82;		//Left
+ 140               	BB80:
+ 141               	.LBB81:
+ 142 004c F2E8      	.LBB82:
+ 114:motortest.c   **** 						sbi(PORTB,2);
+ 115:motortest.c   **** 						leftjam++;
+ 116:motortest.c   **** 						if(leftjam==1000)
+ 117:motortest.c   **** 						{
+ 118:motortest.c   **** 							PORTB=0x42;
+ 144               	xt3:
+ 146 0050 E2E4      	.LM12:
+ 147 0052 FE2E      		ldi r26,lo8(25)
+ 148               		ldi r27,hi8(25)
+ 149               	.LBE82:
+ 150               	.LBE81:
+ 151               	.LBE80:
+ 152               	.LBE79:
+ 154               	.Ltext4:
+ 156 0054 A9E1      	.LM13:
+ 157 0056 B0E0      		ldi r25,lo8(65)
+ 158               		mov r14,r25
+ 159               	.LBB86:
+ 160               	.LBB87:
+ 161               	.LBB88:
+ 162               	.LBB89:
+ 119:motortest.c   **** 							sbi(PORTB,2);
+ 120:motortest.c   **** 							_delay_ms(3000);
+ 121:motortest.c   **** 							PORTB=0x82;
+ 122:motortest.c   **** 							sbi(PORTB,2);
+ 123:motortest.c   **** 						}
+ 124:motortest.c   **** 					}
+ 125:motortest.c   **** 					_delay_ms(2000);
+ 126:motortest.c   **** 					PORTB=0x81;		//Forward
+ 127:motortest.c   **** 		
+ 128:motortest.c   **** 					//_delay_ms(10);
+ 129:motortest.c   **** 					
+ 130:motortest.c   **** 				}
+ 131:motortest.c   **** 				else
+ 132:motortest.c   **** 				{
+ 133:motortest.c   **** 					cbi(PORTB,2);
+ 134:motortest.c   **** 				}
+ 135:motortest.c   **** 				if(bit_is_clear(PINC,0))
+ 136:motortest.c   **** 				{
+ 137:motortest.c   **** 					sbi(PORTB,2);
+ 138:motortest.c   **** 					fwdrestrict=0;
+ 139:motortest.c   **** 					
+ 140:motortest.c   **** 					while(bit_is_clear(PINC,0))
+ 141:motortest.c   **** 					{
+ 142:motortest.c   **** 						PORTB=0x41;		//right
+ 164               	0,105,.LM14-.LFBB1
+ 165               	.LM14:
+ 166 0058 91E4      		ldi r24,lo8(12500)
+ 167 005a E92E      		mov r12,r24
+ 168               		ldi r24,hi8(12500)
+ 169               		mov r13,r24
+ 170               	.L34:
+ 171               	.LBE89:
+ 172               	.LBE88:
+ 173               	.LBE87:
+ 174               	.LBE86:
+ 176 005c 84ED      	.Ltext6:
+ 178 0060 80E3      	.LM15:
+ 179 0062 D82E      		subi r18,lo8(-(1))
+ 180               		sbci r19,hi8(-(1))
+ 182               	.LM16:
+ 183               		out 56-32,r16
+ 184               		ldi r17,lo8(0)
+ 185               	.L14:
+ 186               	.LBB93:
+ 187               	.LBB78:
+ 188               	.LBB77:
+ 189 0064 2F5F      	.LBB76:
+ 191               	.Ltext7:
+ 193 0068 08BB      	.LM17:
+ 194 006a 10E0      		movw r24,r28
+ 195               	/* #APP */
+ 196               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 197               		1: sbiw r24,1
+ 198               		brne 1b
+ 199               	 ;  0 "" 2
+ 200               	/* #NOAPP */
+ 201               	.LBE76:
+ 202               	.LBE77:
+ 203               	.LBE78:
+ 204 006c CE01      	.LBE93:
+ 206               	.Ltext8:
+ 208 0070 01F4      	.LM18:
+ 209               		sbi 53-32,5
+ 210               	.LBB94:
+ 211               	.LBB95:
+ 212               	.LBB96:
+ 213               	.LBB97:
+ 215               	.Ltext9:
+ 217               	.LM19:
+ 218               		movw r24,r28
+ 219 0072 AD9A      	/* #APP */
+ 220               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 221               		1: sbiw r24,1
+ 222               		brne 1b
+ 223               	 ;  0 "" 2
+ 224               	/* #NOAPP */
+ 225               	.LBE97:
+ 226               	.LBE96:
+ 227               	.LBE95:
+ 228 0074 CE01      	.LBE94:
+ 230               	.Ltext10:
+ 232 0078 01F4      	.LM20:
+ 233               		sbic 48-32,2
+ 234               		rjmp .L2
+ 235               		rjmp .L35
+ 236               	.L5:
+ 238               	.LM21:
+ 239               		out 56-32,r11
+ 241               	.LM22:
+ 242               		sbi 56-32,2
+ 244 007c 00C0      	.LM23:
+ 245 007e 00C0      		subi r20,lo8(-(1))
+ 246               		sbci r21,hi8(-(1))
+ 248               	.LM24:
+ 249 0080 B8BA      		ldi r24,hi8(1000)
+ 250               		cpi r20,lo8(1000)
+ 251               		cpc r21,r24
+ 252 0082 C29A      		brne .L32
+ 254               	.LM25:
+ 255 0084 4F5F      		out 56-32,r15
+ 257               	.LM26:
+ 258               		sbi 56-32,2
+ 259 0088 83E0      		ldi r24,lo8(30000)
+ 260 008a 483E      		ldi r25,hi8(30000)
+ 261 008c 5807      	.L4:
+ 262 008e 01F4      	.LBB98:
+ 263               	.LBB85:
+ 264               	.LBB84:
+ 265 0090 F8BA      	.LBB83:
+ 267               	.Ltext11:
+ 269 0094 80E3      	.LM27:
+ 270 0096 95E7      		movw r30,r26
+ 271               	/* #APP */
+ 272               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 273               		1: sbiw r30,1
+ 274               		brne 1b
+ 275               	 ;  0 "" 2
+ 276               	/* #NOAPP */
+ 277               	.LBE83:
+ 278               	.LBE84:
+ 280 0098 FD01      	.Ltext12:
+ 282               	.LM28:
+ 283 009a 3197      		sbiw r24,1
+ 285               	.LM29:
+ 286               		brne .L4
+ 287               	.LBE85:
+ 288               	.LBE98:
+ 290               	.Ltext13:
+   1:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** /* Copyright (c) 2002, Marek Michalkiewicz
+   2:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    Copyright (c) 2004,2005,2007 Joerg Wunsch
+   3:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    Copyright (c) 2007  Florin-Viorel Petrov
+   4:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    All rights reserved.
+   5:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+   6:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    Redistribution and use in source and binary forms, with or without
+   7:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    modification, are permitted provided that the following conditions are met:
+   8:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+   9:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    * Redistributions of source code must retain the above copyright
+  10:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer.
+  11:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  12:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    * Redistributions in binary form must reproduce the above copyright
+  13:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer in
+  14:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****      the documentation and/or other materials provided with the
+  15:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****      distribution.
+  16:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  17:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    * Neither the name of the copyright holders nor the names of
+  18:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****      contributors may be used to endorse or promote products derived
+  19:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****      from this software without specific prior written permission.
+  20:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  21:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  22:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  23:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  24:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  25:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  26:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  27:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  28:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  29:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  30:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  31:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****   POSSIBILITY OF SUCH DAMAGE. */
+  32:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  33:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** /* $Id: delay.h,v 1.5 2007/10/28 23:25:56 joerg_wunsch Exp $ */
+  34:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  35:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** #ifndef _UTIL_DELAY_H_
+  36:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** #define _UTIL_DELAY_H_ 1
+  37:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  38:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** #include <inttypes.h>
+  39:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** #include <util/delay_basic.h>
+  40:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  41:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** /** \file */
+  42:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** /** \defgroup util_delay <util/delay.h>: Convenience functions for busy-wait delay loops
+  43:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     \code
+  44:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     #define F_CPU 1000000UL  // 1 MHz
+  45:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     //#define F_CPU 14.7456E6
+  46:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     #include <util/delay.h>
+  47:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     \endcode
+  48:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  49:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     \note As an alternative method, it is possible to pass the
+  50:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     F_CPU macro down to the compiler from the Makefile.
+  51:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     Obviously, in that case, no \c \#define statement should be
+  52:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     used.
+  53:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  54:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     The functions in this header file are wrappers around the basic
+  55:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     busy-wait functions from <util/delay_basic.h>.  They are meant as
+  56:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     convenience functions where actual time values can be specified
+  57:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     rather than a number of cycles to wait for.  The idea behind is
+  58:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     that compile-time constant expressions will be eliminated by
+  59:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     compiler optimization so floating-point expressions can be used
+  60:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     to calculate the number of delay cycles needed based on the CPU
+  61:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     frequency passed by the macro F_CPU.
+  62:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  63:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     \note In order for these functions to work as intended, compiler
+  64:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     optimizations <em>must</em> be enabled, and the delay time
+  65:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     <em>must</em> be an expression that is a known constant at
+  66:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     compile-time.  If these requirements are not met, the resulting
+  67:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     delay will be much longer (and basically unpredictable), and
+  68:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     applications that otherwise do not use floating-point calculations
+  69:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     will experience severe code bloat by the floating-point library
+  70:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     routines linked into the application.
+  71:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  72:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     The functions available allow the specification of microsecond, and
+  73:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     millisecond delays directly, using the application-supplied macro
+  74:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****     F_CPU as the CPU clock frequency (in Hertz).
+  75:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  76:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** */
+  77:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  78:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** #if !defined(__DOXYGEN__)
+  79:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** static inline void _delay_us(double __us) __attribute__((always_inline));
+  80:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** static inline void _delay_ms(double __ms) __attribute__((always_inline));
+  81:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** #endif
+  82:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  83:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** #ifndef F_CPU
+  84:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** /* prevent compiler error by supplying a default */
+  85:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** # warning "F_CPU not defined for <util/delay.h>"
+  86:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** # define F_CPU 1000000UL
+  87:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** #endif
+  88:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  89:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** #ifndef __OPTIMIZE__
+  90:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+  91:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** #endif
+  92:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  93:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** /**
+  94:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    \ingroup util_delay
+  95:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  96:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    Perform a delay of \c __us microseconds, using _delay_loop_1().
+  97:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+  98:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    The macro F_CPU is supposed to be defined to a
+  99:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    constant defining the CPU clock frequency (in Hertz).
+ 100:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+ 101:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    The maximal possible delay is 768 us / F_CPU in MHz.
+ 102:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+ 103:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    If the user requests a delay greater than the maximal possible one,
+ 104:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    _delay_us() will automatically call _delay_ms() instead.  The user
+ 105:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    will not be informed about this case.
+ 106:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****  */
+ 107:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** void
+ 108:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** _delay_us(double __us)
+ 109:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** {
+ 110:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 	uint8_t __ticks;
+ 111:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 	double __tmp = ((F_CPU) / 3e6) * __us;
+ 112:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 	if (__tmp < 1.0)
+ 113:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 		__ticks = 1;
+ 114:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 	else if (__tmp > 255)
+ 115:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 	{
+ 116:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 		_delay_ms(__us / 1000.0);
+ 117:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 		return;
+ 118:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 	}
+ 119:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 	else
+ 120:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 		__ticks = (uint8_t)__tmp;
+ 121:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 	_delay_loop_1(__ticks);
+ 122:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** }
+ 123:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+ 124:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+ 125:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** /**
+ 126:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    \ingroup util_delay
+ 127:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+ 128:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    Perform a delay of \c __ms milliseconds, using _delay_loop_2().
+ 129:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+ 130:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    The macro F_CPU is supposed to be defined to a
+ 131:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    constant defining the CPU clock frequency (in Hertz).
+ 132:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+ 133:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    The maximal possible delay is 262.14 ms / F_CPU in MHz.
+ 134:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 
+ 135:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    When the user request delay which exceed the maximum possible one,
+ 136:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    _delay_ms() provides a decreased resolution functionality. In this
+ 137:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    mode _delay_ms() will work with a resolution of 1/10 ms, providing
+ 138:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    delays up to 6.5535 seconds (independent from CPU frequency).  The
+ 139:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****    user will not be informed about decreased resolution.
+ 140:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h ****  */
+ 141:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** void
+ 142:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** _delay_ms(double __ms)
+ 143:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** {
+ 144:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 	uint16_t __ticks;
+ 145:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 	double __tmp = ((F_CPU) / 4e3) * __ms;
+ 146:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 	if (__tmp < 1.0)
+ 147:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 		__ticks = 1;
+ 148:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 	else if (__tmp > 65535)
+ 149:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 	{
+ 150:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 		//	__ticks = requested delay in 1/10 ms
+ 151:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 		__ticks = (uint16_t) (__ms * 10.0);
+ 152:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 		while(__ticks)
+ 153:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 		{
+ 154:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 			// wait 1/10 ms
+ 155:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 			_delay_loop_2(((F_CPU) / 4e3) / 10);
+ 156:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h **** 			__ticks --;
+ 291               	111,.LM32-.LFBB1
+ 292               	.LM32:
+ 293 009e 0197      		sbis 48-32,2
+ 294               		rjmp .L5
+ 295               		ldi r24,lo8(20000)
+ 296 00a0 01F4      		ldi r25,hi8(20000)
+ 297               	.L6:
+ 298               	.LBB99:
+ 299               	.LBB100:
+ 300               	.LBB101:
+ 301               	.LBB102:
+ 303 00a2 B8BA      	.Ltext14:
+ 305               	.LM33:
+ 306               		movw r30,r26
+ 307 00a4 C29A      	/* #APP */
+ 308               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 309               		1: sbiw r30,1
+ 310               		brne 1b
+ 311 00a6 829B      	 ;  0 "" 2
+ 312 00a8 00C0      	/* #NOAPP */
+ 313 00aa 80E2      	.LBE102:
+ 314 00ac 9EE4      	.LBE101:
+ 316               	.Ltext15:
+ 318               	.LM34:
+ 319               		sbiw r24,1
+ 321               	.LM35:
+ 322               		brne .L6
+ 323               	.LBE100:
+ 324 00ae FD01      	.LBE99:
+ 326               	.Ltext16:
+ 328 00b2 01F4      	.LM36:
+ 329               		out 56-32,r16
+ 330               		ldi r18,lo8(0)
+ 331               		ldi r19,hi8(0)
+ 332               		rjmp .L7
+ 333               	.L2:
+ 335               	.LM37:
+ 336               		cbi 56-32,2
+ 337 00b4 0197      	.L7:
+ 339               	.LM38:
+ 340 00b6 01F4      		sbic 51-32,0
+ 341               		rjmp .L8
+ 342               		rjmp .L36
+ 343               	.L11:
+ 345               	.LM39:
+ 346               		out 56-32,r14
+ 348 00ba 20E0      	.LM40:
+ 349 00bc 30E0      		sbi 56-32,2
+ 351               	.LM41:
+ 352               		subi r22,lo8(-(1))
+ 353               		sbci r23,hi8(-(1))
+ 355               	.LM42:
+ 356               		ldi r24,hi8(1000)
+ 357               		cpi r22,lo8(1000)
+ 358 00c2 9899      		cpc r23,r24
+ 359 00c4 00C0      		brne .L33
+ 361               	.LM43:
+ 362               		out 56-32,r15
+ 364 00c8 E8BA      	.LM44:
+ 143:motortest.c   **** 						sbi(PORTB,2);
+ 365               	4:
+ 366               	.LBB105:
+ 367 00ca C29A      	.LBB106:
+ 369               	.Ltext17:
+ 371 00ce 7F4F      	.LM45:
+ 144:motortest.c   **** 						rightjam++;
+ 145:motortest.c   **** 						if(rightjam==1000)
+ 372               	30,r26
+ 373               	/* #APP */
+ 374 00d0 83E0      	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 375 00d2 683E      		1: sbiw r30,1
+ 376 00d4 7807      		brne 1b
+ 377 00d6 01F4      	 ;  0 "" 2
+ 146:motortest.c   **** 						{
+ 147:motortest.c   **** 							PORTB=0x42;
+ 378               	APP */
+ 379               	.LBE106:
+ 380 00d8 F8BA      	.LBE105:
+ 148:motortest.c   **** 							sbi(PORTB,2);
+ 381               	tabs	"c:/winavr-20080610/lib/gcc/../../avr/include/util/delay.h",132,0,0,.Ltext18
+ 382               	.Ltext18:
+ 384 00dc 80E3      	.LM46:
+ 385 00de 95E7      		sbiw r24,1
+ 387               	.LM47:
+ 388               		brne .L10
+ 389               	.LBE104:
+ 390               	.LBE103:
+ 392               	.Ltext19:
+ 394               	.LM48:
+ 395 00e0 FD01      		out 56-32,r14
+ 396               	.L36:
+ 398 00e2 3197      	.LM49:
+ 399 00e4 01F4      		sbi 56-32,2
+ 400               	.L33:
+ 402               	.LM50:
+ 403               		sbis 51-32,0
+ 404               		rjmp .L11
+ 405               		ldi r24,lo8(20000)
+ 406               		ldi r25,hi8(20000)
+ 407               	.L12:
+ 408 00e6 0197      	.LBB107:
+ 409               	.LBB108:
+ 410               	.LBB109:
+ 411 00e8 01F4      	.LBB110:
+ 413               	.Ltext20:
+ 415               	.LM51:
+ 149:motortest.c   **** 							_delay_ms(3000);
+ 150:motortest.c   **** 							PORTB=0x41;
+ 416               	:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 417               		1: sbiw r30,1
+ 418 00ea E8BA      		brne 1b
+ 419               	 ;  0 "" 2
+ 151:motortest.c   **** 							sbi(PORTB,2);
+ 420               	NOAPP */
+ 421               	.LBE110:
+ 422 00ec C29A      	.LBE109:
+ 424               	.Ltext21:
+ 426 00ee 989B      	.LM52:
+ 427 00f0 00C0      		sbiw r24,1
+ 429 00f4 9EE4      	.LM53:
+ 430               		brne .L12
+ 431               	.LBE108:
+ 432               	.LBE107:
+ 434               	.Ltext22:
+ 436               	.LM54:
+ 437               		out 56-32,r16
+ 438               		ldi r18,lo8(0)
+ 439 00f6 FD01      		ldi r19,hi8(0)
+ 440               		rjmp .L13
+ 441               	.L8:
+ 443 00fa 01F4      	.LM55:
+ 444               		cbi 56-32,2
+ 445               	.L13:
+ 446               	.LBB111:
+ 447               	.LBB112:
+ 448               	.LBB113:
+ 449               	.LBB114:
+ 451               	.Ltext23:
+ 453               	.LM56:
+ 454               		movw r24,r28
+ 455 00fe 01F4      	/* #APP */
+ 456               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 457               		1: sbiw r24,1
+ 458               		brne 1b
+ 459               	 ;  0 "" 2
+ 152:motortest.c   **** 						}
+ 153:motortest.c   **** 					}
+ 154:motortest.c   **** 					_delay_ms(2000);
+ 155:motortest.c   **** 					PORTB=0x81;		//Forward
+ 460               	.LBE111:
+ 462 0100 08BB      	.Ltext24:
+ 464 0104 30E0      	.LM57:
+ 465 0106 00C0      		cbi 53-32,5
+ 466               	.LBB115:
+ 156:motortest.c   **** 		
+ 157:motortest.c   **** 					//_delay_ms(10);
+ 158:motortest.c   **** 					
+ 159:motortest.c   **** 				}
+ 160:motortest.c   **** 				else
+ 161:motortest.c   **** 				{
+ 162:motortest.c   **** 					cbi(PORTB,2);
+ 467               	:
+ 468               	.LBB117:
+ 469 0108 C298      	.LBB118:
+ 471               	.Ltext25:
+ 473               	.LM58:
+ 474               		movw r24,r28
+ 475               	/* #APP */
+ 476               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 477               		1: sbiw r24,1
+ 478               		brne 1b
+ 479 010a CE01      	 ;  0 "" 2
+ 480               	/* #NOAPP */
+ 481               	.LBE118:
+ 482 010c 0197      	.LBE117:
+ 483 010e 01F4      	.LBE116:
+ 484               	.LBE115:
+ 486               	.Ltext26:
+ 488               	.LM59:
+ 489               		subi r17,lo8(-(1))
+ 490               		cpi r17,lo8(5)
+ 491               		breq .+2
+ 163:motortest.c   **** 				}
+ 164:motortest.c   **** 				
+ 165:motortest.c   **** 				
+ 166:motortest.c   **** 				_delay_ms(10);
+ 167:motortest.c   **** 				cbi(PORTC,5);
+ 492               	2:
+ 493               	.LBB91:
+ 494 0110 AD98      	.LBB90:
+ 496               	.Ltext27:
+ 498               	.LM60:
+ 499               		movw r24,r12
+ 500               	/* #APP */
+ 501               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 502               		1: sbiw r24,1
+ 503 0112 CE01      		brne 1b
+ 504               	 ;  0 "" 2
+ 505               	/* #NOAPP */
+ 506 0114 0197      	.LBE90:
+ 507 0116 01F4      	.LBE91:
+ 508               	.LBE92:
+ 509               	.LBE119:
+ 511               	.Ltext28:
+ 513               	.LM61:
+ 514               		ldi r24,hi8(300)
+ 515               		cpi r18,lo8(300)
+ 516               		cpc r19,r24
+ 517               		breq .+2
+ 518 0118 1F5F      		rjmp .L34
+ 520 011c 01F0      	.LM62:
+ 521 011e 00C0      		out 56-32,r15
+ 522               		ldi r24,lo8(-5536)
+ 523               		ldi r25,hi8(-5536)
+ 524               	.L16:
+ 525               	.LBB120:
+ 526               	.LBB121:
+ 527               	.LBB122:
+ 528               	.LBB123:
+ 530 0120 C601      	.Ltext29:
+ 532               	.LM63:
+ 533 0122 0197      		movw r30,r26
+ 534 0124 01F4      	/* #APP */
+ 535               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 536               		1: sbiw r30,1
+ 537               		brne 1b
+ 538               	 ;  0 "" 2
+ 539               	/* #NOAPP */
+ 540               	.LBE123:
+ 541               	.LBE122:
+ 168:motortest.c   **** 				_delay_ms(10);
+ 169:motortest.c   **** 				
+ 170:motortest.c   **** 				
+ 171:motortest.c   **** 		}
+ 172:motortest.c   **** 		
+ 173:motortest.c   **** 		_delay_ms(50);
+ 174:motortest.c   **** 		if(fwdrestrict==300)
+ 543               	w r24,1
+ 545 0126 81E0      	.LM65:
+ 546 0128 2C32      		brne .L16
+ 547 012a 3807      	.LBE121:
+ 548 012c 01F0      	.LBE120:
+ 175:motortest.c   **** 		{
+ 176:motortest.c   **** 			PORTB=0x42;
+ 550               	8,0,156,.LM64-.LFBB1
+ 551               	.LM64:
+ 552 0130 F8BA      		sbiw r24,1
+ 554 0134 9AEE      	.LM65:
+ 555               		brne .L16
+ 556               	.LBE121:
+ 557               	.LBE120:
+ 559               	.Ltext31:
+ 561               	.LM66:
+ 562               		ldi r24,lo8(2)
+ 563               		out 56-32,r24
+ 564 0136 FD01      		ldi r24,lo8(-15536)
+ 565               		ldi r25,hi8(-15536)
+ 566               	.L17:
+ 567 0138 3197      	.LBB124:
+ 568 013a 01F4      	.LBB125:
+ 569               	.LBB126:
+ 570               	.LBB127:
+ 572               	.Ltext32:
+ 574               	.LM67:
+ 575               		movw r30,r26
+ 576               	/* #APP */
+ 577 013c 0197      	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 578               		1: sbiw r30,1
+ 579               		brne 1b
+ 580 013e 01F4      	 ;  0 "" 2
+ 581               	/* #NOAPP */
+ 582               	.LBE127:
+ 583               	.LBE126:
+ 177:motortest.c   **** 			_delay_ms(6000);
+ 178:motortest.c   **** 			PORTB=0x02;
+ 585               	 2
+ 586               	/* #NOAPP */
+ 587 0140 82E0      	.LBE127:
+ 588 0142 88BB      	.LBE126:
+ 590 0146 93EC      	.Ltext33:
+ 592               	.LM68:
+ 593               		sbiw r24,1
+ 595               	.LM69:
+ 596               		brne .L17
+ 597               	.LBE125:
+ 598               	.LBE124:
+ 600 0148 FD01      	.Ltext34:
+ 602               	.LM70:
+ 603 014a 3197      		out 56-32,r16
+ 604 014c 01F4      		ldi r18,lo8(0)
+ 605               		ldi r19,hi8(0)
+ 606               		rjmp .L34
+ 179:motortest.c   **** 			_delay_ms(5000);
+ 180:motortest.c   **** 			PORTB=0x81;
+ 621               		224,0,0,.LBE80-.LFBB1
+ 656               	.Lscope1:
+ 657               	.global	count
+ 658               	.global	count
+ 659               		.section .bss
+ 662               	count:
+ 663               		.skip 2,0
+ 664               	.global	fwdrestrict
+ 665               	.global	fwdrestrict
+ 668               	fwdrestrict:
+ 669               		.skip 2,0
+ 670               	.global	pathfound
+ 671               	.global	pathfound
+ 674               	pathfound:
+ 675               		.skip 1,0
+ 676               	.global	flag
+ 677               	.global	flag
+ 680 0000 0000      	flag:
+ 681               		.skip 2,0
+ 682               	.global	sendsig
+ 683               	.global	sendsig
+ 686 0002 0000      	sendsig:
+ 687               		.skip 1,0
+ 688               	.global	leftjam
+ 689               	.global	leftjam
+ 692 0004 00        	leftjam:
+ 693               		.skip 2,0
+ 694               	.global	rightjam
+ 695               	.global	rightjam
+ 698 0005 0000      	rightjam:
+ 699               		.skip 2,0
+ 700               		.comm navflag,1,1
+ 709               		.text
+ 711               	.Letext0:
+ 712               	...
+DEFINED SYMBOLS
+                            *ABS*:00000000 motortest.c
+C:\Users\user\AppData\Local\Temp/cclfkluX.s:2      *ABS*:0000003f __SREG__
+C:\Users\user\AppData\Local\Temp/cclfkluX.s:3      *ABS*:0000003e __SP_H__
+C:\Users\user\AppData\Local\Temp/cclfkluX.s:4      *ABS*:0000003d __SP_L__
+C:\Users\user\AppData\Local\Temp/cclfkluX.s:5      *ABS*:00000034 __CCP__
+C:\Users\user\AppData\Local\Temp/cclfkluX.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\user\AppData\Local\Temp/cclfkluX.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\user\AppData\Local\Temp/cclfkluX.s:73     .text:00000000 main
+                            *COM*:00000001 navflag
+C:\Users\user\AppData\Local\Temp/cclfkluX.s:715    .bss:0000000a rightjam
+C:\Users\user\AppData\Local\Temp/cclfkluX.s:709    .bss:00000008 leftjam
+C:\Users\user\AppData\Local\Temp/cclfkluX.s:685    .bss:00000002 fwdrestrict
+C:\Users\user\AppData\Local\Temp/cclfkluX.s:679    .bss:00000000 count
+C:\Users\user\AppData\Local\Temp/cclfkluX.s:691    .bss:00000004 pathfound
+C:\Users\user\AppData\Local\Temp/cclfkluX.s:697    .bss:00000005 flag
+C:\Users\user\AppData\Local\Temp/cclfkluX.s:703    .bss:00000007 sendsig
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0034)http://www.rentron.com/ruf-bot.htm -->
+<HTML><HEAD><TITLE>RF Remote Control for Robotics</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META 
+content="How to build an RF remote control system for your next robotics project using PicBasic and inexpensive RF components" 
+name=description>
+<META 
+content="picbasic,robotics,robots,remote control,rf remote control,RF remote,hoby robots" 
+name=keywords>
+<META content="rings2 111" name="Microsoft Theme">
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY text=#000000 vLink=#0000ff aLink=#0000ff link=#0000ff bgColor=#cccccc 
+leftMargin=50 background="RF Remote Control for Robotics_files/spiral.gif" 
+topMargin=0><!--mstheme--><FONT face=Verdana>
+<DIV align=left><!--mstheme--></FONT>
+<TABLE height="100%" width=505 
+background="RF Remote Control for Robotics_files/spider.gif" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left width=513><!--mstheme--><FONT face=Verdana><FONT 
+      face=Verdana size=2><IMG height=95 
+      alt="BASIC Stamp, Microchip PIC, 8051, and Remote Control Projects" 
+      src="RF Remote Control for Robotics_files/engin_banner.jpg" 
+      width=503><BR><MAP name=FPMap4><AREA shape=RECT coords=7,2,95,21 
+        href="http://www.rentron.com/BasicStamp.htm"><AREA shape=RECT 
+        coords=7,27,94,47 
+        href="http://www.rentron.com/listinfoadd/signup.htm"><AREA shape=RECT 
+        coords=106,2,196,21 href="http://www.rentron.com/PicBasic.htm"><AREA 
+        shape=RECT coords=108,28,195,48 
+        href="http://www.rentron.com/Robo-Ware.htm"><AREA shape=RECT 
+        coords=206,3,294,22 href="http://www.rentron.com/8051.htm"><AREA 
+        shape=RECT coords=206,29,294,48 
+        href="http://www.rentron.com/PicBasic/Rentron.htm"><AREA shape=RECT 
+        coords=303,3,397,23 href="http://www.rentron.com/remote.htm"><AREA 
+        shape=RECT coords=303,27,395,47 
+        href="http://www.rentron.com/index.html"><AREA shape=RECT 
+        coords=405,2,494,23 href="http://www.rentron.com/pic.htm"><AREA 
+        shape=RECT coords=407,27,492,48 
+      href="http://www.rentron.com/books.htm"></MAP><IMG height=49 
+      src="RF Remote Control for Robotics_files/rentron-buttons.gif" width=500 
+      useMap=#FPMap4 border=0></FONT><!--mstheme--></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width=513><!--mstheme--><FONT face=Verdana>
+      <P align=center><FONT face=Verdana size=2><IMG height=10 
+      src="RF Remote Control for Robotics_files/module.gif" width=416 
+      border=0></FONT> 
+      <P align=center><FONT face=Verdana size=2><B><FONT color=#999999>-- 
+      Building an RF Remote Control System --&nbsp;<BR>-- For Robotics Control 
+      --</FONT><FONT color=#800000> <BR></FONT></B>By: <B><A 
+      href="mailto:luckyrob@verizon.net"><FONT color=#0000ff>Rob 
+      Arnold</FONT></A></B></FONT> 
+      <P align=center><FONT face=Verdana size=2><IMG height=10 
+      src="RF Remote Control for Robotics_files/module.gif" width=416 
+      border=0></FONT> 
+      <P align=center><FONT face=Verdana size=2><IMG height=279 
+      src="RF Remote Control for Robotics_files/sideview.gif" width=252 
+      border=0><BR>Completed Ruf-Bot Photo</FONT></P>
+      <BLOCKQUOTE>
+        <P align=left><FONT face=Verdana size=2>With a handful of inexpensive 
+        components, a little creativity, and the power of PicBasic, you can 
+        build some pretty outstanding robotics creations as Rob Arnold proves 
+        with his Ruf-Bot project.</FONT></P></BLOCKQUOTE>
+      <P align=center><FONT face=Verdana size=2><IMG height=10 
+      src="RF Remote Control for Robotics_files/module.gif" width=416 
+      border=0></FONT></P>
+      <BLOCKQUOTE>
+        <P align=left><FONT face=Verdana size=2><FONT color=#000000>RF</FONT> 
+        remote control is just way too cool not to use in your designs, but if 
+        you're a newbie like me it's difficult to successfully build solid RF 
+        transmitters and receivers on your own.</FONT> </P></BLOCKQUOTE>
+      <P align=center><FONT face=Verdana size=2><IMG height=10 
+      src="RF Remote Control for Robotics_files/module.gif" width=416 
+      border=0></FONT></P>
+      <BLOCKQUOTE>
+        <P align=left><FONT face=Verdana size=2><FONT color=#000000>W</FONT>hen 
+        I started out I didn't realize that the larger breadboard I was working 
+        off of was causing a lot of the signal deviance because the metal traces 
+        on the breadboard worked like small capacitors, and changed my circuit 
+        dynamics.&nbsp; So after much research, I found the Reynolds Electronics 
+        RWS-434 and TWS-434 RX/TX pair.</FONT> </P></BLOCKQUOTE>
+      <P align=center><FONT face=Verdana size=2><IMG height=279 
+      src="RF Remote Control for Robotics_files/rearview.gif" width=252 
+      border=0> </FONT>
+      <BLOCKQUOTE>
+        <P align=left><FONT face=Verdana size=2>I looked into a similar RF 
+        products by MING Microsystems and Radio Shack, but the Reynolds 
+        Electronics TWS-434 modules proved to be far superior in performance, 
+        cost and ease of use.&nbsp; So with that and two PIC16F84's I started 
+        working on my serial RF link from my control interface (Joystick) to my 
+        robot.&nbsp; This article will show you the results, and hopefully help 
+        you to design your own RF remote control system for your next robotics 
+        project as well.</FONT> </P></BLOCKQUOTE>
+      <P align=center><FONT face=Verdana size=2><IMG height=10 
+      src="RF Remote Control for Robotics_files/module.gif" width=416 
+      border=0></FONT></P>
+      <BLOCKQUOTE>
+        <P align=left><FONT face=Verdana size=2>I found that the TX/RX pair 
+        worked very well with the serial communications commands built into the 
+        PicBasic compiler.&nbsp; I wasn't sure how well the timing would work 
+        using asynchronous serial communications at 9600 baud, and I fully 
+        expected some sort of problems at these higher speeds.&nbsp; During my 
+        initial tests I found very little error, and decided to use the higher 
+        baud rate for my design.</FONT> 
+        <P align=left><FONT face=Verdana size=2>The actual programming for the 
+        RF remote link is extremely simple since it's written in PicBasic, and 
+        uses pre-made serial communication routines.</FONT> 
+        <P align=left><FONT face=Verdana size=2>As shown below, I simply read 
+        the position of the potentiometer in the joystick using the PicBasic 
+        '<B>POT</B>' command and put the result in memory location 'B0'.</FONT> 
+        <P align=left><B><FONT face=Verdana size=2>Transmitter Code:</FONT></B> 
+        <P align=left><FONT face=Verdana size=2>TX CODE:<BR><BR>symbol trisb = 
+        134<BR>symbol trisa = 133<BR>symbol portb = 6<BR>symbol porta = 5<BR>low 
+        1<BR>input 0<BR>input 2<BR><BR>start:<BR>pot 0,50,B0<BR><BR>pot 
+        2,50,B1<BR>B0 = B0 * 5<BR>B1 = B1 * 5<BR>y:<BR>if B0 &lt; 100 then 
+        yf<BR>if B0 &gt; 150 then yb<BR><BR>x:<BR>if B1 &lt; 100 then xr<BR>if 
+        B1 &gt; 150 then xl<BR>serout 1,n9600,(5)<BR>goto 
+        start<BR><BR>yf:<BR>serout 1,n9600,(2)<BR>goto 
+        start<BR><BR>yb:<BR>serout 1,n9600,(1)<BR>goto 
+        start<BR><BR>xl:<BR>serout 1,n9600,(3)<BR>goto 
+        start<BR><BR>xr:<BR>serout 1,n9600,(4)<BR>goto start<BR><BR>end</FONT> 
+        </P></BLOCKQUOTE>
+      <P align=center><FONT face=Verdana size=2><IMG height=10 
+      src="RF Remote Control for Robotics_files/module.gif" width=416 
+      border=0></FONT></P>
+      <P align=center><FONT face=Verdana size=2><IMG height=279 
+      src="RF Remote Control for Robotics_files/tx.jpg" width=314 
+      border=0><BR>RF Remote Control Joystick</FONT> 
+      <P align=center><FONT face=Verdana size=2><IMG height=10 
+      src="RF Remote Control for Robotics_files/module.gif" width=416 
+      border=0></FONT></P>
+      <P align=center><FONT face=Verdana size=2><IMG height=473 
+      src="RF Remote Control for Robotics_files/TWS%20434.gif" width=493 
+      border=0> </FONT>
+      <P align=center><FONT face=Verdana size=2><IMG height=10 
+      src="RF Remote Control for Robotics_files/module.gif" width=416 
+      border=0></FONT></P>
+      <BLOCKQUOTE>
+        <P align=left><FONT face=Verdana size=2>From there using the 
+        '<B>SEROUT</B>' command, I sent the contents of 'B0' to pin 6 of the 
+        TWS-434 transmitter.&nbsp; On the receiver end I use the '<B>SERIN</B>' 
+        command and read the incoming data from pin 3 on the RWS-434, and put 
+        the result in 'B0'.&nbsp; The value in 'B0' then directly correlates to 
+        joystick position.&nbsp; Above 150 is right, below 106 is left, and in 
+        between is center.&nbsp; By using these numbers I can thereby define a 
+        dead-zone.</FONT> 
+        <P align=left><B><FONT face=Verdana size=2>Receiver Code:</FONT> </B>
+        <P align=left><FONT face=Verdana size=2>RX CODE:<BR><BR>symbol trisb = 
+        134<BR>symbol trisa = 133<BR>symbol portb = 6<BR>symbol porta = 
+        5<BR>poke trisa, 0<BR>poke porta, 0<BR>low 0<BR>input 
+        1<BR><BR>prestart:<BR>pause 400<BR>poke porta, 10<BR>pause 200<BR>poke 
+        porta, 5<BR>pause 200<BR>poke porta, 6<BR>pause 200<BR>poke porta, 
+        9<BR>pause 200<BR>poke porta, 0<BR>pause 200<BR><BR>start:<BR>serin 
+        1,n9600,B0<BR>if B0 = 1 then forward<BR>if B0 = 2 then backward<BR>if B0 
+        = 3 then left<BR>if B0 = 4 then right<BR>if B0 = 5 then nomove<BR>goto 
+        start<BR><BR>forward:<BR>poke porta, 10<BR>goto 
+        start<BR><BR>backward:<BR>poke porta, 5<BR>goto 
+        start<BR><BR>right:<BR>poke porta, 6<BR>goto start<BR><BR>left:<BR>poke 
+        porta, 9<BR>goto start<BR><BR>nomove:<BR>poke porta, 0<BR>goto 
+        start<BR>end</FONT> </P></BLOCKQUOTE>
+      <P align=center><FONT face=Verdana size=2><IMG height=10 
+      src="RF Remote Control for Robotics_files/module.gif" width=416 
+      border=0></FONT></P>
+      <BLOCKQUOTE>
+        <P align=left><B><FONT face=Verdana size=2>Additional Pictures &amp; 
+        Schematics:</FONT> </B></P></BLOCKQUOTE><!--mstheme--></FONT><!--msthemelist-->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0><!--msthemelist-->
+        <TBODY>
+        <TR>
+          <TD vAlign=baseline width=42><IMG height=15 alt=bullet hspace=14 
+            src="RF Remote Control for Robotics_files/bullet.gif" width=13></TD>
+          <TD vAlign=top width="100%"><!--mstheme--><FONT face=Verdana>
+            <P align=left><FONT face=Verdana size=2>Click <A 
+            href="http://www.rentron.com/Files/rws434.gif">HERE</A> for the 
+            receiver 
+          schematic.</FONT><!--mstheme--></FONT><!--msthemelist--></P></TD></TR><!--msthemelist-->
+        <TR>
+          <TD vAlign=baseline width=42><IMG height=15 alt=bullet hspace=14 
+            src="RF Remote Control for Robotics_files/bullet.gif" width=13></TD>
+          <TD vAlign=top width="100%"><!--mstheme--><FONT face=Verdana>
+            <P align=left><FONT face=Verdana size=2>Click <A 
+            href="http://www.rentron.com/Files/overhead1.jpg">HERE</A> for an 
+            overhead photo of transmitter on the bread board.</FONT><!--mstheme--></FONT><!--msthemelist--></P></TD></TR><!--msthemelist-->
+        <TR>
+          <TD vAlign=baseline width=42><IMG height=15 alt=bullet hspace=14 
+            src="RF Remote Control for Robotics_files/bullet.gif" width=13></TD>
+          <TD vAlign=top width="100%"><!--mstheme--><FONT face=Verdana>
+            <P align=left><FONT face=Verdana size=2>Click <A 
+            href="http://www.rentron.com/Files/overhead.jpg">HERE</A> for an 
+            overhead shot of the robot &amp; receiver section.</FONT><!--mstheme--></FONT><!--msthemelist--></P></TD></TR><!--msthemelist--></TBODY></TABLE><!--mstheme--><FONT 
+      face=Verdana>
+      <P align=center><FONT face=Verdana size=2><IMG height=277 
+      src="RF Remote Control for Robotics_files/topview.gif" width=278 border=0> 
+      </FONT>
+      <P align=center><FONT face=Verdana size=2><IMG height=10 
+      src="RF Remote Control for Robotics_files/module.gif" width=416 
+      border=0></FONT></P>
+      <BLOCKQUOTE>
+        <P align=left><FONT face=Verdana size=2>At this point implications are 
+        easy to see.&nbsp; From the numbers transmitted we can easily determine 
+        direction (left, right, etc) and also extent, or how far left and how 
+        far right. With this information speed control can be introduced. The 
+        further the number from 128 (center) the more speed is 
+        applied.<BR><BR>In this example I used the pins on PORTA of the PIC to 
+        control the motor direction and no speed control is used. Since our 
+        serial data is 10 bits in length (1 start bit, 8 data bits, 1 stop bit) 
+        we can send 960 commands to the receiving PIC in one second. Not bad for 
+        under $20 in parts.<BR><BR>Using antennas made for 900Mhz cordless 
+        telephones I was able to get a range of 350 feet outdoors, and when I 
+        boosted transmitter power slightly past 12 volts (not recommended) I 
+        achieved a distance of 500 feet.<BR><BR><B>Note</B>: I used the linear 
+        output on the receiver because I wanted to see how much noise it would 
+        take to distort the signal before it became useless. To my surprise the 
+        signal strength (at 500 feet) dropped off before any noise on the 
+        frequency caused problems.</FONT> </P></BLOCKQUOTE>
+      <P align=center><FONT face=Verdana size=2><IMG height=10 
+      src="RF Remote Control for Robotics_files/module.gif" width=416 
+      border=0></FONT></P>
+      <BLOCKQUOTE>
+        <P align=left><B><FONT face=Verdana size=2>About This Project &amp; The 
+        Author:</FONT> </B>
+        <P align=left><FONT face=Verdana size=2>I built this project originally 
+        to help people newly interested in robotics, who didn't have a lot of 
+        electrical or mechanical skill, to be able to build a robot easily, 
+        cheaply and yet still get some nice results.</FONT> 
+        <P align=left><FONT face=Verdana size=2>This project originally extended 
+        from my first project using microcontrollers.</FONT>
+        <P align=left><FONT face=Verdana size=2>You can read the details at 
+        </FONT><FONT face=Arial size=2>is <A 
+        href="http://mysite.verizon.net/res8dbeh">http://mysite.verizon.net/res8dbeh</A></FONT><FONT 
+        face=Verdana size=2>&nbsp;I myself didn't have a huge amount of 
+        electrical knowledge but I did know Ohms law and had taken a year of 
+        electronics in high school so off I went.&nbsp; One of the best parts of 
+        this bot project is that once you finish building it, you have a nice 
+        platform that can be expanded on and used as a prototype for other 
+        designs.&nbsp; This projects' total cost is about $75 if you buy all new 
+        parts but only about $40 if you hack old electronic equipment for the 
+        goodies inside.</FONT> </P></BLOCKQUOTE>
+      <P align=center><FONT face=Verdana size=2><IMG height=10 
+      src="RF Remote Control for Robotics_files/module.gif" width=416 
+      border=0></FONT></P>
+      <BLOCKQUOTE>
+        <P align=left><FONT face=Verdana size=2>My real interest in robotics 
+        came from the Discovery channels piece on robotics called 'Robots 
+        Rising'.&nbsp; They did a section on BEAM robotics and Mark 
+        Tilden.</FONT> 
+        <P align=left><FONT face=Verdana size=2>That immediately got me 
+        interested and I scoured the Internet for information with beam-online 
+        being the best source.&nbsp; The only problem was the only cool BEAM 
+        robots were walkers and they were so hard to make that if I didn't get 
+        some results pretty soon, it would be hard to justify the costs and 
+        time.</FONT> 
+        <P align=left><FONT face=Verdana size=2>So after playing with some 
+        moderately successful light following heads I started looking into more 
+        robust designs including embedded software and recalled a site I had 
+        seen quite a few months previous about this guy who had built a robot 
+        that he controlled with an old IR remote control and used a Basic Stamp 
+        to decode the signal.&nbsp; So now I was looking into the Basic Stamp 
+        for my microprocessor (MCU).</FONT> 
+        <P align=left><FONT face=Verdana size=2>Parallax had a nice site setup 
+        with information all about Basic Stamp I &amp; II but the starter kit 
+        for Stamp I was over $100 at that time, a little more than I could 
+        justify since I didn't know how well it would work for me (had been a 
+        long time since last I programmed in basic).&nbsp; So I found some 
+        information on how to build your own interface cable (actually very 
+        easy) and downloaded the editor and manual from parallax ftp site with 
+        some sample programs and started tinkering, and all it cost me was $34 
+        for the stamp I module (from Radio Shack).&nbsp; Although Basic Stamp 
+        was easy to use it was costly and limiting.</FONT> </P></BLOCKQUOTE>
+      <P align=center><FONT face=Verdana size=2><IMG height=10 
+      src="RF Remote Control for Robotics_files/module.gif" width=416 
+      border=0></FONT></P>
+      <BLOCKQUOTE>
+        <P align=left><FONT face=Verdana size=2>Microchips series of PIC 
+        microcontrollers now seemed the clear choice.&nbsp; For $6 or less in 
+        parts you could have a fully functioning MCU that had more I/O pins and 
+        ran faster than a Stamp.&nbsp; The catch was buying PicBasic for 
+        $100.&nbsp; I could have learned Assembly language as an alternative but 
+        my time and sanity is valuable so I stepped up and bought the 
+        software... best investment since the PIC itself.&nbsp; I also purchased 
+        a PIC programmer and programmer software (free) to do the 
+        programming.&nbsp; Total invested $125.&nbsp; A little pricey, but now 
+        each project's MCU was $6 instead of $30 (Stamp I) or $50 (Stamp 
+        II).</FONT> 
+        <P align=left><FONT face=Verdana size=2>Once I was off and running with 
+        the PIC I did the basic 'blinking led' project and found I didn't know 
+        what to do with this powerful little device by itself.&nbsp; So luckily 
+        I found <A href="http://www.rentron.com/">http://www.rentron.com/</A> 
+        when it came up on a search for "Wireless Link" and I came across their 
+        TWS/RWS pairs for $17.&nbsp; I think I actually drooled when I saw the 
+        specs and cost.&nbsp; From this arose RuF-Bot.&nbsp; My wirelessly 
+        controlled robot using a serial data link sending at 9600 baud.</FONT> 
+        <P align=left><FONT face=Verdana size=2>Click <A 
+        href="mailto:luckyrob@verizon.net">HERE</A> to send email with any 
+        comments or questions to Rob concerning this project.....</FONT>
+        <P align=left><FONT size=2>Looking for an assembled PIC robotics 
+        development platform? We have them in stock. The Micro-Bot CD-ROM 
+        includes the free "demo version" PicBasic Pro compiler.</FONT>
+        <P align=center><FONT face=Verdana size=2>** Micro-Bot **<BR></FONT><A 
+        href="http://www.rentron.com/Micro-Bot.htm"><IMG height=71 
+        src="RF Remote Control for Robotics_files/Small_2nd_small.gif" width=100 
+        border=0 xthumbnail-orig-image="images/Small_2nd.gif"></A><BR><FONT 
+        face=Verdana color=#ff0000 size=2>Available Now<BR></FONT><FONT 
+        face=Verdana color=#000000 size=2>Click <A 
+        href="http://www.rentron.com/Micro-Bot.htm">HERE</A> for 
+        details</FONT></P></BLOCKQUOTE></FONT>
+    <TD vAlign=top align=middle width=3 height=94><!--mstheme--><FONT 
+      face=Verdana>&nbsp;<!--mstheme--></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=middle width=513><!--mstheme--><FONT face=Verdana>
+      <P align=center><FONT face=Verdana size=2><IMG height=10 
+      src="RF Remote Control for Robotics_files/module.gif" width=416 
+      border=0></FONT></P>
+      <P align=center><FONT face=Verdana size=2>Grab a set of TWS-434 &amp; 
+      RWS-434 RF modules at<BR><A 
+      href="http://www.rentron.com/PicBasic/RemoteControl.htm"><IMG height=20 
+      alt="Remote Control Store" 
+      src="RF Remote Control for Robotics_files/remote-store.gif" width=255 
+      border=0></A><BR>Add "<B>RF Remote Control</B>" to your next project for 
+      $17.00</FONT></P>
+      <BLOCKQUOTE>
+        <P align=left><B><FONT face=Verdana size=2>Get PicBasic or RF Components 
+        Below:</FONT></B></P><!--mstheme--></FONT><!--msthemelist-->
+        <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0><!--msthemelist-->
+          <TBODY>
+          <TR>
+            <TD vAlign=top width=42><IMG height=15 alt=bullet hspace=14 
+              src="RF Remote Control for Robotics_files/bullet.gif" width=13></TD>
+            <TD vAlign=top width="100%"><!--mstheme--><FONT face=Verdana>
+              <P align=left><FONT face=Verdana size=2>Click <A 
+              href="http://www.rentron.com/PicBasic/RemoteControl.htm">HERE</A> 
+              for the TWS/RWS RF modules.</FONT><!--mstheme--></FONT><!--msthemelist--></P></TD></TR><!--msthemelist-->
+          <TR>
+            <TD vAlign=baseline width=42><IMG height=15 alt=bullet hspace=14 
+              src="RF Remote Control for Robotics_files/bullet.gif" width=13></TD>
+            <TD vAlign=top width="100%"><!--mstheme--><FONT face=Verdana>
+              <P align=left><FONT face=Verdana size=2>Click <A 
+              href="http://www.rentron.com/PicBasic/PBP.htm">HERE</A> to 
+              purchase PicBasic Compilers - and 
+              hardware.</FONT><!--mstheme--></FONT><!--msthemelist--></P></TD></TR><!--msthemelist-->
+          <TR>
+            <TD vAlign=baseline width=42><IMG height=15 alt=bullet hspace=14 
+              src="RF Remote Control for Robotics_files/bullet.gif" width=13></TD>
+            <TD vAlign=top width="100%"><!--mstheme--><FONT face=Verdana>
+              <P align=left><FONT face=Verdana size=2>Click <A 
+              href="http://www.rentron.com/PicBasic2.htm">HERE</A> to learn more 
+              about the PicBasic compiler.</FONT><!--mstheme--></FONT><!--msthemelist--></P></TD></TR><!--msthemelist-->
+          <TR>
+            <TD vAlign=baseline width=42><IMG height=15 alt=bullet hspace=14 
+              src="RF Remote Control for Robotics_files/bullet.gif" width=13></TD>
+            <TD vAlign=top width="100%"><!--mstheme--><FONT face=Verdana>
+              <P align=left><FONT face=Verdana size=2>Click <A 
+              href="http://www.rentron.com/PicBasic1.htm">HERE</A> to return to 
+              the PicBasic projects page.</FONT><!--mstheme--></FONT><!--msthemelist--></P></TD></TR><!--msthemelist--></TBODY></TABLE><!--mstheme--><FONT 
+        face=Verdana>
+        <P align=left><FONT face=Verdana size=2>Reynolds Electronics is now a 
+        distributor for Parallax Basic Stamps and other excellent products. 
+        Visit our new Basic Stamp online store <A 
+        href="http://www.rentron.com/PicBasic/stamp_stuff.htm">HERE</A>.&nbsp; 
+        We also have the Scott Edwards Mini SSC II serial servo controllers <A 
+        href="http://www.rentron.com/PicBasic/Mini_SSC_II.htm">HERE</A>.</FONT></P>
+        <P align=center><FONT face=Verdana size=2><A 
+        href="http://www.rentron.com/PicBasic/exterminator.htm"><IMG height=192 
+        src="RF Remote Control for Robotics_files/exterminator1.gif" width=292 
+        border=1></A><BR>Check Out Freddy "<A 
+        href="http://www.rentron.com/PicBasic/exterminator.htm">The 
+        Exterminator</A>"<BR>A New Robot Project Submitted<BR>by: <SPAN 
+        lang=EN-US>Greg Fredericksen</SPAN></FONT></P>
+        <P align=center><FONT face=Verdana size=2><IMG height=10 
+        src="RF Remote Control for Robotics_files/module.gif" width=416 
+        border=0> </FONT></P>
+        <P align=center><SPAN style="FONT-SIZE: 9pt"><B>|</B> <B><A 
+        href="http://www.rentron.com/contact.htm">Contact Information</A></B> 
+        <B>|</B></SPAN></P>
+        <P align=center><B><FONT face=Verdana size=2>| <A 
+        href="http://www.rentron.com/how-to-order.htm">How to order</A> | <A 
+        href="http://www.rentron.com/shipping.htm">Shipping Options</A> |</FONT> 
+        </B></P>
+        <P align=center><FONT face=Verdana size=2><IMG height=10 
+        src="RF Remote Control for Robotics_files/module.gif" width=416 
+        border=0></FONT></P>
+        <P align=center><FONT face=Verdana size=2>Copyright © 1999-2008 Reynolds 
+        Electronics</FONT></P></BLOCKQUOTE><!--mstheme--></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=left width=513><!--mstheme--><FONT face=Verdana><FONT 
+      face=Verdana size=2><MAP name=FPMap3><AREA shape=RECT coords=7,2,95,21 
+        href="http://www.rentron.com/BasicStamp.htm"><AREA shape=RECT 
+        coords=7,27,94,47 
+        href="http://www.rentron.com/listinfoadd/signup.htm"><AREA shape=RECT 
+        coords=106,2,196,21 href="http://www.rentron.com/PicBasic.htm"><AREA 
+        shape=RECT coords=108,28,195,48 
+        href="http://www.rentron.com/Robo-Ware.htm"><AREA shape=RECT 
+        coords=206,3,294,22 href="http://www.rentron.com/8051.htm"><AREA 
+        shape=RECT coords=206,29,294,48 
+        href="http://www.rentron.com/PicBasic/Rentron.htm"><AREA shape=RECT 
+        coords=303,3,397,23 href="http://www.rentron.com/remote.htm"><AREA 
+        shape=RECT coords=303,27,395,47 
+        href="http://www.rentron.com/index.html"><AREA shape=RECT 
+        coords=405,2,494,23 href="http://www.rentron.com/pic.htm"><AREA 
+        shape=RECT coords=407,27,492,48 
+      href="http://www.rentron.com/books.htm"></MAP><IMG height=49 
+      src="RF Remote Control for Robotics_files/rentron-buttons.gif" width=500 
+      useMap=#FPMap3 border=0></FONT><!--mstheme--></FONT></TD></TR></TBODY></TABLE><!--mstheme--><FONT 
+face=Verdana></DIV>
+<P>&nbsp;</P></FONT><!--mstheme--></FONT></BODY></HTML>

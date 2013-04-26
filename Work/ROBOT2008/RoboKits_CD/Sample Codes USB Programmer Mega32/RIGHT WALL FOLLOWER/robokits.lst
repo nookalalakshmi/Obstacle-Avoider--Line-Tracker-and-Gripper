@@ -1,0 +1,140 @@
+   1               		.file	"robokits.c"
+   2               		.arch atmega32
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               		.data
+  19               	.LC0:
+  20 0000 524F 424F 		.string	"ROBOKITS NEOBOT\n"
+  20      4B49 5453 
+  20      204E 454F 
+  20      424F 540A 
+  20      00
+  21               	.LC1:
+  22 0011 5741 4C4C 		.string	"WALL HUGGER BOT"
+  22      2048 5547 
+  22      4745 5220 
+  22      424F 5400 
+  23               		.text
+  24               	.global	main
+  26               	main:
+  27               	.LFB7:
+  28               	.LM1:
+  29               	/* prologue: frame size=0 */
+  30               	/* prologue end (size=0) */
+  31               	.LM2:
+  32 0000 81B3      		in r24,49-0x20
+  33 0002 8066      		ori r24,lo8(96)
+  34 0004 81BB      		out 49-0x20,r24
+  35               	.LM3:
+  36 0006 91EF      		ldi r25,lo8(-15)
+  37 0008 9FBD      		out 79-0x20,r25
+  38               	.LM4:
+  39 000a 8AE0      		ldi r24,lo8(10)
+  40 000c 8EBD      		out 78-0x20,r24
+  41               	.LM5:
+  42 000e 82E3      		ldi r24,lo8(50)
+  43 0010 8ABD      		out 74-0x20,r24
+  44               	.LM6:
+  45 0012 80EA      		ldi r24,lo8(-96)
+  46 0014 88BD      		out 72-0x20,r24
+  47               	.LM7:
+  48 0016 80EF      		ldi r24,lo8(-16)
+  49 0018 8ABB      		out 58-0x20,r24
+  50               	.LM8:
+  51 001a 8BEF      		ldi r24,lo8(-5)
+  52 001c 87BB      		out 55-0x20,r24
+  53               	.LM9:
+  54 001e 8FEF      		ldi r24,lo8(-1)
+  55 0020 84BB      		out 52-0x20,r24
+  56               	.LM10:
+  57 0022 91BB      		out 49-0x20,r25
+  58               	.LM11:
+  59 0024 8CE0      		ldi r24,lo8(12)
+  60 0026 0E94 0000 		call lcd_init
+  61               	.LM12:
+  62 002a 0E94 0000 		call lcd_clrscr
+  63               	.LM13:
+  64 002e 80E0      		ldi r24,lo8(.LC0)
+  65 0030 90E0      		ldi r25,hi8(.LC0)
+  66 0032 0E94 0000 		call lcd_puts
+  67               	.LM14:
+  68 0036 80E0      		ldi r24,lo8(.LC1)
+  69 0038 90E0      		ldi r25,hi8(.LC1)
+  70 003a 0E94 0000 		call lcd_puts
+  71               	.LM15:
+  72 003e C29A      		sbi 56-0x20,2
+  73               	.LM16:
+  74 0040 919A      		sbi 50-0x20,1
+  75               	.LM17:
+  76 0042 929A      		sbi 50-0x20,2
+  77               	.LM18:
+  78 0044 939A      		sbi 50-0x20,3
+  79 0046 38E0      		ldi r19,lo8(8)
+  80 0048 E8E8      		ldi r30,lo8(5000)
+  81 004a F3E1      		ldi r31,hi8(5000)
+  82 004c 2AE0      		ldi r18,lo8(10)
+  83               	.LVL0:
+  84               	.L11:
+  85               	.LM19:
+  86 004e 8199      		sbic 48-0x20,1
+  87 0050 00C0      		rjmp .L3
+  88               	.LM20:
+  89 0052 DC98      		cbi 59-0x20,4
+  90               	.LM21:
+  91 0054 DD98      		cbi 59-0x20,5
+  92               	.LM22:
+  93 0056 DE9A      		sbi 59-0x20,6
+  94               	.LM23:
+  95 0058 35BB      		out 53-0x20,r19
+  96               	.LBB8:
+  97               	.LBB9:
+  98               	.LBB10:
+  99               	.LBB11:
+ 100               	.LM24:
+ 101 005a CF01      		movw r24,r30
+ 102               	/* #APP */
+ 103 005c 0197      		1: sbiw r24,1
+ 104 005e 01F4      		brne 1b
+ 105               	/* #NOAPP */
+ 106 0060 00C0      		rjmp .L11
+ 107               	.L3:
+ 108               	.LBE11:
+ 109               	.LBE10:
+ 110               	.LBE9:
+ 111               	.LBE8:
+ 112               	.LM25:
+ 113 0062 25BB      		out 53-0x20,r18
+ 114               	.LM26:
+ 115 0064 DC98      		cbi 59-0x20,4
+ 116               	.LM27:
+ 117 0066 DD98      		cbi 59-0x20,5
+ 118               	.LM28:
+ 119 0068 DE98      		cbi 59-0x20,6
+ 120 006a 00C0      		rjmp .L11
+ 121               	/* epilogue: frame size=0 */
+ 122               	/* epilogue: noreturn */
+ 123               	/* epilogue end (size=0) */
+ 124               	/* function main size 56 (56) */
+ 125               	.LFE7:
+ 151               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cc9DUurd.s:3      *ABS*:0000003f __SREG__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cc9DUurd.s:4      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cc9DUurd.s:5      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cc9DUurd.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cc9DUurd.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cc9DUurd.s:26     .text:00000000 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+lcd_init
+lcd_clrscr
+lcd_puts

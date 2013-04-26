@@ -1,0 +1,2365 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: SparkFun Electronics :: View topic - AVR based learning IR remote reciever?
+Date: Thu, 12 Feb 2009 08:50:29 +0530
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0090_01C98CEE.F4E408A0"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5579
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://forum.sparkfun.com/viewtopic.php?t=12862&sid=501c77abd2c4291cfabeeb0d2dd7332c
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML dir=3Dltr><HEAD><TITLE>SparkFun Electronics :: View topic - AVR =
+based learning IR remote reciever?</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META http-equiv=3DContent-Style-Type content=3Dtext/css><LINK=20
+title=3D"SparkFun Electronics Forum Index" href=3D"./index.php" =
+rel=3Dtop><LINK=20
+title=3DSearch href=3D"./search.php" rel=3Dsearch><LINK title=3DFAQ =
+href=3D"./faq.php"=20
+rel=3Dhelp><LINK title=3DMemberlist href=3D"./memberlist.php" =
+rel=3Dauthor><LINK=20
+title=3D"View previous topic" =
+href=3D"viewtopic.php?t=3D12862&amp;view=3Dprevious"=20
+rel=3Dprev><LINK title=3D"View next topic"=20
+href=3D"viewtopic.php?t=3D12862&amp;view=3Dnext" rel=3Dnext><LINK =
+title=3DCode=20
+href=3D"viewforum.php?f=3D8" rel=3Dup><LINK title=3D"Start Here"=20
+href=3D"viewforum.php?f=3D10" rel=3D"chapter forum"><LINK title=3D"AVR =
+Programmers"=20
+href=3D"viewforum.php?f=3D7" rel=3D"chapter forum"><LINK title=3DCode=20
+href=3D"viewforum.php?f=3D8" rel=3D"chapter forum"><LINK=20
+title=3D"PIC Programmers - Software and Hardware" =
+href=3D"viewforum.php?f=3D4"=20
+rel=3D"chapter forum"><LINK title=3D"Code Snippets" =
+href=3D"viewforum.php?f=3D6"=20
+rel=3D"chapter forum"><LINK title=3D"Boot Loading" =
+href=3D"viewforum.php?f=3D12"=20
+rel=3D"chapter forum"><LINK title=3D"USB Development" =
+href=3D"viewforum.php?f=3D19"=20
+rel=3D"chapter forum"><LINK title=3D"MSP Programmers" =
+href=3D"viewforum.php?f=3D9"=20
+rel=3D"chapter forum"><LINK title=3D"Everything ARM and LPC"=20
+href=3D"viewforum.php?f=3D11" rel=3D"chapter forum"><LINK =
+title=3DOpenOCD=20
+href=3D"viewforum.php?f=3D18" rel=3D"chapter forum"><LINK title=3D"New =
+Product Ideas"=20
+href=3D"viewforum.php?f=3D5" rel=3D"chapter forum"><LINK =
+title=3DProjects=20
+href=3D"viewforum.php?f=3D14" rel=3D"chapter forum"><LINK=20
+title=3D"SparkFun Site Questions/Comments" href=3D"viewforum.php?f=3D15" =
+
+rel=3D"chapter forum"><LINK title=3DWireless/RF =
+href=3D"viewforum.php?f=3D13"=20
+rel=3D"chapter forum"><LINK title=3D"PCB Deal Details" =
+href=3D"viewforum.php?f=3D16"=20
+rel=3D"chapter forum"><LINK title=3D"PCB Design Questions" =
+href=3D"viewforum.php?f=3D20"=20
+rel=3D"chapter forum"><LINK title=3DGPS href=3D"viewforum.php?f=3D17"=20
+rel=3D"chapter forum"><!-- link rel=3D"stylesheet" =
+href=3D"templates/subSilver/subSilver.css" type=3D"text/css" -->
+<STYLE type=3Dtext/css>@import url( templates/subSilver/formIE.css );
+BODY {
+	SCROLLBAR-FACE-COLOR: #dee3e7; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; =
+SCROLLBAR-SHADOW-COLOR: #dee3e7; SCROLLBAR-3DLIGHT-COLOR: #d1d7dc; =
+SCROLLBAR-ARROW-COLOR: #006699; SCROLLBAR-TRACK-COLOR: #efefef; =
+SCROLLBAR-DARKSHADOW-COLOR: #98aab1; BACKGROUND-COLOR: #e5e5e5
+}
+FONT {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+TH {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+TD {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+P {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A:link {
+	COLOR: #006699
+}
+A:active {
+	COLOR: #006699
+}
+A:visited {
+	COLOR: #006699
+}
+A:hover {
+	COLOR: #dd6900; TEXT-DECORATION: underline
+}
+HR {
+	BORDER-RIGHT: #d1d7dc 0px solid; BORDER-TOP: #d1d7dc 1px solid; =
+BORDER-LEFT: #d1d7dc 0px solid; BORDER-BOTTOM: #d1d7dc 0px solid; =
+HEIGHT: 0px
+}
+.bodyline {
+	BORDER-RIGHT: #98aab1 1px solid; BORDER-TOP: #98aab1 1px solid; =
+BORDER-LEFT: #98aab1 1px solid; BORDER-BOTTOM: #98aab1 1px solid; =
+BACKGROUND-COLOR: #ffffff
+}
+.forumline {
+	BORDER-RIGHT: #006699 2px solid; BORDER-TOP: #006699 2px solid; =
+BORDER-LEFT: #006699 2px solid; BORDER-BOTTOM: #006699 2px solid; =
+BACKGROUND-COLOR: #ffffff
+}
+TD.row1 {
+	BACKGROUND-COLOR: #efefef
+}
+TD.row2 {
+	BACKGROUND-COLOR: #dee3e7
+}
+TD.row3 {
+	BACKGROUND-COLOR: #d1d7dc
+}
+TD.rowpic {
+	BACKGROUND-IMAGE: url(templates/subSilver/images/cellpic2.jpg); =
+BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #ffffff
+}
+TH {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; BACKGROUND-IMAGE: =
+url(templates/subSilver/images/cellpic3.gif); COLOR: #ffa34f; HEIGHT: =
+25px; BACKGROUND-COLOR: #006699
+}
+TD.cat {
+	BORDER-RIGHT: #ffffff solid; BORDER-TOP: #ffffff solid; =
+BACKGROUND-IMAGE: url(templates/subSilver/images/cellpic1.gif); =
+BORDER-LEFT: #ffffff solid; BORDER-BOTTOM: #ffffff solid; HEIGHT: 28px; =
+BACKGROUND-COLOR: #d1d7dc
+}
+TD.catHead {
+	BORDER-RIGHT: #ffffff solid; BORDER-TOP: #ffffff solid; =
+BACKGROUND-IMAGE: url(templates/subSilver/images/cellpic1.gif); =
+BORDER-LEFT: #ffffff solid; BORDER-BOTTOM: #ffffff solid; HEIGHT: 28px; =
+BACKGROUND-COLOR: #d1d7dc
+}
+TD.catSides {
+	BORDER-RIGHT: #ffffff solid; BORDER-TOP: #ffffff solid; =
+BACKGROUND-IMAGE: url(templates/subSilver/images/cellpic1.gif); =
+BORDER-LEFT: #ffffff solid; BORDER-BOTTOM: #ffffff solid; HEIGHT: 28px; =
+BACKGROUND-COLOR: #d1d7dc
+}
+TD.catLeft {
+	BORDER-RIGHT: #ffffff solid; BORDER-TOP: #ffffff solid; =
+BACKGROUND-IMAGE: url(templates/subSilver/images/cellpic1.gif); =
+BORDER-LEFT: #ffffff solid; BORDER-BOTTOM: #ffffff solid; HEIGHT: 28px; =
+BACKGROUND-COLOR: #d1d7dc
+}
+TD.catRight {
+	BORDER-RIGHT: #ffffff solid; BORDER-TOP: #ffffff solid; =
+BACKGROUND-IMAGE: url(templates/subSilver/images/cellpic1.gif); =
+BORDER-LEFT: #ffffff solid; BORDER-BOTTOM: #ffffff solid; HEIGHT: 28px; =
+BACKGROUND-COLOR: #d1d7dc
+}
+TD.catBottom {
+	BORDER-RIGHT: #ffffff solid; BORDER-TOP: #ffffff solid; =
+BACKGROUND-IMAGE: url(templates/subSilver/images/cellpic1.gif); =
+BORDER-LEFT: #ffffff solid; BORDER-BOTTOM: #ffffff solid; HEIGHT: 28px; =
+BACKGROUND-COLOR: #d1d7dc
+}
+TD.cat {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: =
+0px; HEIGHT: 29px; BORDER-RIGHT-WIDTH: 0px
+}
+TD.catHead {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: =
+0px; HEIGHT: 29px; BORDER-RIGHT-WIDTH: 0px
+}
+TD.catBottom {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: =
+0px; HEIGHT: 29px; BORDER-RIGHT-WIDTH: 0px
+}
+TH.thHead {
+	BORDER-RIGHT: #ffffff solid; BORDER-TOP: #ffffff solid; FONT-WEIGHT: =
+bold; BORDER-LEFT: #ffffff solid; BORDER-BOTTOM: #ffffff solid; HEIGHT: =
+28px
+}
+TH.thSides {
+	BORDER-RIGHT: #ffffff solid; BORDER-TOP: #ffffff solid; FONT-WEIGHT: =
+bold; BORDER-LEFT: #ffffff solid; BORDER-BOTTOM: #ffffff solid; HEIGHT: =
+28px
+}
+TH.thTop {
+	BORDER-RIGHT: #ffffff solid; BORDER-TOP: #ffffff solid; FONT-WEIGHT: =
+bold; BORDER-LEFT: #ffffff solid; BORDER-BOTTOM: #ffffff solid; HEIGHT: =
+28px
+}
+TH.thLeft {
+	BORDER-RIGHT: #ffffff solid; BORDER-TOP: #ffffff solid; FONT-WEIGHT: =
+bold; BORDER-LEFT: #ffffff solid; BORDER-BOTTOM: #ffffff solid; HEIGHT: =
+28px
+}
+TH.thRight {
+	BORDER-RIGHT: #ffffff solid; BORDER-TOP: #ffffff solid; FONT-WEIGHT: =
+bold; BORDER-LEFT: #ffffff solid; BORDER-BOTTOM: #ffffff solid; HEIGHT: =
+28px
+}
+TH.thBottom {
+	BORDER-RIGHT: #ffffff solid; BORDER-TOP: #ffffff solid; FONT-WEIGHT: =
+bold; BORDER-LEFT: #ffffff solid; BORDER-BOTTOM: #ffffff solid; HEIGHT: =
+28px
+}
+TH.thCornerL {
+	BORDER-RIGHT: #ffffff solid; BORDER-TOP: #ffffff solid; FONT-WEIGHT: =
+bold; BORDER-LEFT: #ffffff solid; BORDER-BOTTOM: #ffffff solid; HEIGHT: =
+28px
+}
+TH.thCornerR {
+	BORDER-RIGHT: #ffffff solid; BORDER-TOP: #ffffff solid; FONT-WEIGHT: =
+bold; BORDER-LEFT: #ffffff solid; BORDER-BOTTOM: #ffffff solid; HEIGHT: =
+28px
+}
+TD.row3Right {
+	BORDER-RIGHT: #ffffff solid; BORDER-TOP: #ffffff solid; BORDER-LEFT: =
+#ffffff solid; BORDER-BOTTOM: #ffffff solid; BACKGROUND-COLOR: #d1d7dc
+}
+TD.spaceRow {
+	BORDER-RIGHT: #ffffff solid; BORDER-TOP: #ffffff solid; BORDER-LEFT: =
+#ffffff solid; BORDER-BOTTOM: #ffffff solid; BACKGROUND-COLOR: #d1d7dc
+}
+TH.thHead {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 12px; =
+BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 1px
+}
+TD.catHead {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 12px; =
+BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 1px
+}
+TH.thSides {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 1px; BORDER-BOTTOM-WIDTH: =
+0px; BORDER-RIGHT-WIDTH: 1px
+}
+TD.catSides {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 1px; BORDER-BOTTOM-WIDTH: =
+0px; BORDER-RIGHT-WIDTH: 1px
+}
+TD.spaceRow {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 1px; BORDER-BOTTOM-WIDTH: =
+0px; BORDER-RIGHT-WIDTH: 1px
+}
+TH.thRight {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: =
+0px; BORDER-RIGHT-WIDTH: 1px
+}
+TD.catRight {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: =
+0px; BORDER-RIGHT-WIDTH: 1px
+}
+TD.row3Right {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: =
+0px; BORDER-RIGHT-WIDTH: 1px
+}
+TH.thLeft {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 1px; BORDER-BOTTOM-WIDTH: =
+0px; BORDER-RIGHT-WIDTH: 0px
+}
+TD.catLeft {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 1px; BORDER-BOTTOM-WIDTH: =
+0px; BORDER-RIGHT-WIDTH: 0px
+}
+TH.thBottom {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 1px; BORDER-BOTTOM-WIDTH: =
+1px; BORDER-RIGHT-WIDTH: 1px
+}
+TD.catBottom {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 1px; BORDER-BOTTOM-WIDTH: =
+1px; BORDER-RIGHT-WIDTH: 1px
+}
+TH.thTop {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: =
+0px; BORDER-RIGHT-WIDTH: 0px
+}
+TH.thCornerL {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; BORDER-BOTTOM-WIDTH: =
+0px; BORDER-RIGHT-WIDTH: 0px
+}
+TH.thCornerR {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: =
+0px; BORDER-RIGHT-WIDTH: 1px
+}
+.maintitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 22px; COLOR: #000000; LINE-HEIGHT: 120%; =
+FONT-FAMILY: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif; =
+TEXT-DECORATION: none
+}
+.gen {
+	FONT-SIZE: 12px
+}
+.genmed {
+	FONT-SIZE: 11px
+}
+.gensmall {
+	FONT-SIZE: 10px
+}
+.gen {
+	COLOR: #000000
+}
+.genmed {
+	COLOR: #000000
+}
+.gensmall {
+	COLOR: #000000
+}
+A.gen {
+	COLOR: #006699; TEXT-DECORATION: none
+}
+A.genmed {
+	COLOR: #006699; TEXT-DECORATION: none
+}
+A.gensmall {
+	COLOR: #006699; TEXT-DECORATION: none
+}
+A.gen:hover {
+	COLOR: #dd6900; TEXT-DECORATION: underline
+}
+A.genmed:hover {
+	COLOR: #dd6900; TEXT-DECORATION: underline
+}
+A.gensmall:hover {
+	COLOR: #dd6900; TEXT-DECORATION: underline
+}
+.mainmenu {
+	FONT-SIZE: 11px; COLOR: #000000
+}
+A.mainmenu {
+	COLOR: #006699; TEXT-DECORATION: none
+}
+A.mainmenu:hover {
+	COLOR: #dd6900; TEXT-DECORATION: underline
+}
+.cattitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #006699; LETTER-SPACING: 1px
+}
+A.cattitle {
+	COLOR: #006699; TEXT-DECORATION: none
+}
+A.cattitle:hover {
+	TEXT-DECORATION: underline
+}
+.forumlink {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #006699
+}
+A.forumlink {
+	COLOR: #006699; TEXT-DECORATION: none
+}
+A.forumlink:hover {
+	COLOR: #dd6900; TEXT-DECORATION: underline
+}
+.nav {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000
+}
+A.nav {
+	COLOR: #006699; TEXT-DECORATION: none
+}
+A.nav:hover {
+	TEXT-DECORATION: underline
+}
+.topictitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000
+}
+H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000
+}
+H2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000
+}
+A.topictitle:link {
+	COLOR: #006699; TEXT-DECORATION: none
+}
+A.topictitle:visited {
+	COLOR: #5493b4; TEXT-DECORATION: none
+}
+A.topictitle:hover {
+	COLOR: #dd6900; TEXT-DECORATION: underline
+}
+.name {
+	FONT-SIZE: 11px; COLOR: #000000
+}
+.postdetails {
+	FONT-SIZE: 10px; COLOR: #000000
+}
+.postbody {
+	FONT-SIZE: 12px; LINE-HEIGHT: 18px
+}
+A.postlink:link {
+	COLOR: #006699; TEXT-DECORATION: none
+}
+A.postlink:visited {
+	COLOR: #5493b4; TEXT-DECORATION: none
+}
+A.postlink:hover {
+	COLOR: #dd6900; TEXT-DECORATION: underline
+}
+.code {
+	BORDER-RIGHT: #d1d7dc 1px solid; BORDER-TOP: #d1d7dc 1px solid; =
+FONT-SIZE: 11px; BORDER-LEFT: #d1d7dc 1px solid; COLOR: #006600; =
+BORDER-BOTTOM: #d1d7dc 1px solid; FONT-FAMILY: Courier, 'Courier New', =
+sans-serif; BACKGROUND-COLOR: #fafafa
+}
+.quote {
+	BORDER-RIGHT: #d1d7dc 1px solid; BORDER-TOP: #d1d7dc 1px solid; =
+FONT-SIZE: 11px; BORDER-LEFT: #d1d7dc 1px solid; COLOR: #444444; =
+LINE-HEIGHT: 125%; BORDER-BOTTOM: #d1d7dc 1px solid; FONT-FAMILY: =
+Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #fafafa
+}
+.copyright {
+	FONT-SIZE: 10px; COLOR: #444444; FONT-FAMILY: Verdana, Arial, =
+Helvetica, sans-serif; LETTER-SPACING: -1px
+}
+A.copyright {
+	COLOR: #444444; TEXT-DECORATION: none
+}
+A.copyright:hover {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+INPUT {
+	BORDER-LEFT-COLOR: #000000; BORDER-BOTTOM-COLOR: #000000; FONT: 11px =
+Verdana, Arial, Helvetica, sans-serif; COLOR: #000000; BORDER-TOP-COLOR: =
+#000000; BORDER-RIGHT-COLOR: #000000
+}
+TEXTAREA {
+	BORDER-LEFT-COLOR: #000000; BORDER-BOTTOM-COLOR: #000000; FONT: 11px =
+Verdana, Arial, Helvetica, sans-serif; COLOR: #000000; BORDER-TOP-COLOR: =
+#000000; BORDER-RIGHT-COLOR: #000000
+}
+SELECT {
+	BORDER-LEFT-COLOR: #000000; BORDER-BOTTOM-COLOR: #000000; FONT: 11px =
+Verdana, Arial, Helvetica, sans-serif; COLOR: #000000; BORDER-TOP-COLOR: =
+#000000; BORDER-RIGHT-COLOR: #000000
+}
+INPUT.post {
+	BACKGROUND-COLOR: #ffffff
+}
+TEXTAREA.post {
+	BACKGROUND-COLOR: #ffffff
+}
+SELECT {
+	BACKGROUND-COLOR: #ffffff
+}
+INPUT {
+	TEXT-INDENT: 2px
+}
+INPUT.button {
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, =
+Helvetica, sans-serif; BACKGROUND-COLOR: #efefef
+}
+INPUT.mainoption {
+	FONT-WEIGHT: bold; BACKGROUND-COLOR: #fafafa
+}
+INPUT.liteoption {
+	FONT-WEIGHT: normal; BACKGROUND-COLOR: #fafafa
+}
+.helpline {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: =
+none; BACKGROUND-COLOR: #dee3e7; BORDER-BOTTOM-STYLE: none
+}
+</STYLE>
+
+<META content=3D"MSHTML 6.00.6000.16788" name=3DGENERATOR></HEAD>
+<BODY text=3D#000000 vLink=3D#5493b4 link=3D#006699 bgColor=3D#e5e5e5><A =
+name=3Dtop></A>
+<TABLE cellSpacing=3D0 cellPadding=3D10 width=3D"100%" align=3Dcenter =
+border=3D0>
+  <TBODY>
+  <TR>
+    <TD class=3Dbodyline>
+      <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%" border=3D0>
+        <TBODY>
+        <TR>
+          <TD><A =
+href=3D"http://www.sparkfun.com/commerce/categories.php"><IMG=20
+            alt=3D"SparkFun Electronics Forum Index"=20
+            =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/logo_phpBB.gi=
+f"=20
+            vspace=3D1 border=3D0></A></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle width=3D"100%"><SPAN=20
+            class=3Dmaintitle>SparkFun Electronics</SPAN><BR><SPAN=20
+            class=3Dgen>MicroController Ideas and Support<BR>&nbsp; =
+</SPAN>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dtop noWrap align=3Dmiddle><SPAN=20
+                  class=3Dmainmenu>&nbsp;<A class=3Dmainmenu=20
+                  href=3D"http://forum.sparkfun.com/faq.php"><IMG =
+height=3D13=20
+                  alt=3DFAQ hspace=3D3=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/icon_mini_faq=
+.gif"=20
+                  width=3D12 border=3D0>FAQ</A>&nbsp; &nbsp;<A =
+class=3Dmainmenu=20
+                  href=3D"http://forum.sparkfun.com/search.php"><IMG =
+height=3D13=20
+                  alt=3DSearch hspace=3D3=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/icon_mini_sea=
+rch.gif"=20
+                  width=3D12 border=3D0>Search</A>&nbsp; &nbsp;<A =
+class=3Dmainmenu=20
+                  href=3D"http://forum.sparkfun.com/memberlist.php"><IMG =
+height=3D13=20
+                  alt=3DMemberlist hspace=3D3=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/icon_mini_mem=
+bers.gif"=20
+                  width=3D12 border=3D0>Memberlist</A>&nbsp; &nbsp;<A =
+class=3Dmainmenu=20
+                  href=3D"http://forum.sparkfun.com/groupcp.php"><IMG =
+height=3D13=20
+                  alt=3DUsergroups hspace=3D3=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/icon_mini_gro=
+ups.gif"=20
+                  width=3D12 border=3D0>Usergroups</A>&nbsp; &nbsp;<A =
+class=3Dmainmenu=20
+                  =
+href=3D"http://forum.sparkfun.com/profile.php?mode=3Dregister"><IMG=20
+                  height=3D13 alt=3DRegister hspace=3D3=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/icon_mini_reg=
+ister.gif"=20
+                  width=3D12 border=3D0>Register</A>&nbsp; =
+</SPAN></TD></TR>
+              <TR>
+                <TD vAlign=3Dtop noWrap align=3Dmiddle height=3D25><SPAN =
+
+                  class=3Dmainmenu>&nbsp;<A class=3Dmainmenu=20
+                  =
+href=3D"http://forum.sparkfun.com/profile.php?mode=3Deditprofile"><IMG=20
+                  height=3D13 alt=3DProfile hspace=3D3=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/icon_mini_pro=
+file.gif"=20
+                  width=3D12 border=3D0>Profile</A>&nbsp; &nbsp;<A =
+class=3Dmainmenu=20
+                  =
+href=3D"http://forum.sparkfun.com/privmsg.php?folder=3Dinbox"><IMG=20
+                  height=3D13 alt=3D"Log in to check your private =
+messages" hspace=3D3=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/icon_mini_mes=
+sage.gif"=20
+                  width=3D12 border=3D0>Log in to check your private=20
+                  messages</A>&nbsp; &nbsp;<A class=3Dmainmenu=20
+                  href=3D"http://forum.sparkfun.com/login.php"><IMG =
+height=3D13=20
+                  alt=3D"Log in" hspace=3D3=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/icon_mini_log=
+in.gif"=20
+                  width=3D12 border=3D0>Log=20
+          =
+in</A>&nbsp;</SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><B=
+R>
+      <TABLE cellSpacing=3D2 cellPadding=3D2 width=3D"100%" border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dbottom align=3Dleft colSpan=3D2><A =
+class=3Dmaintitle=20
+            =
+href=3D"http://forum.sparkfun.com/viewtopic.php?t=3D12862&amp;start=3D0&a=
+mp;postdays=3D0&amp;postorder=3Dasc&amp;highlight=3D">AVR=20
+            based learning IR remote reciever?</A><BR><SPAN=20
+            class=3Dgensmall><B></B><BR>&nbsp; =
+</SPAN></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=3D2 cellPadding=3D2 width=3D"100%" border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dbottom noWrap align=3Dleft><SPAN class=3Dnav><A=20
+            =
+href=3D"http://forum.sparkfun.com/posting.php?mode=3Dnewtopic&amp;f=3D8">=
+<IMG=20
+            alt=3D"Post new topic"=20
+            =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+post.gif"=20
+            align=3Dmiddle border=3D0></A>&nbsp;&nbsp;&nbsp;<A=20
+            =
+href=3D"http://forum.sparkfun.com/posting.php?mode=3Dreply&amp;t=3D12862"=
+><IMG=20
+            alt=3D"Reply to topic"=20
+            =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+reply.gif"=20
+            align=3Dmiddle border=3D0></A></SPAN></TD>
+          <TD vAlign=3Dcenter align=3Dleft width=3D"100%"><SPAN=20
+            class=3Dnav>&nbsp;&nbsp;&nbsp;<A class=3Dnav=20
+            href=3D"http://forum.sparkfun.com/index.php">SparkFun =
+Electronics=20
+            Forum Index</A> -&gt; <A class=3Dnav=20
+            =
+href=3D"http://forum.sparkfun.com/viewforum.php?f=3D8">Code</A></SPAN></T=
+D></TR></TBODY></TABLE>
+      <TABLE class=3Dforumline cellSpacing=3D1 cellPadding=3D3 =
+width=3D"100%"=20
+        border=3D0><TBODY>
+        <TR align=3Dright>
+          <TD class=3DcatHead colSpan=3D2 height=3D28><SPAN =
+class=3Dnav><A class=3Dnav=20
+            =
+href=3D"http://forum.sparkfun.com/viewtopic.php?t=3D12862&amp;view=3Dprev=
+ious">View=20
+            previous topic</A> :: <A class=3Dnav=20
+            =
+href=3D"http://forum.sparkfun.com/viewtopic.php?t=3D12862&amp;view=3Dnext=
+">View=20
+            next topic</A> &nbsp;</SPAN></TD></TR>
+        <TR>
+          <TH class=3DthLeft noWrap width=3D150 height=3D26>Author</TH>
+          <TH class=3DthRight noWrap>Message</TH></TR>
+        <TR>
+          <TD class=3Drow1 vAlign=3Dtop align=3Dleft width=3D150><SPAN =
+class=3Dname><A=20
+            name=3D58714></A><B>keen101</B></SPAN><BR><SPAN=20
+            class=3Dpostdetails><BR><BR><BR>Joined: 13 Aug =
+2008<BR>Posts:=20
+            5<BR></SPAN><BR></TD>
+          <TD class=3Drow1 vAlign=3Dtop width=3D"100%" height=3D28>
+            <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%" =
+border=3D0>
+              <TBODY>
+              <TR>
+                <TD width=3D"100%"><A=20
+                  =
+href=3D"http://forum.sparkfun.com/viewtopic.php?p=3D58714#58714"><IMG=20
+                  title=3DPost height=3D9 alt=3DPost=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/icon_minipost=
+.gif"=20
+                  width=3D12 border=3D0></A><SPAN =
+class=3Dpostdetails>Posted: Mon Nov=20
+                  10, 2008 11:31 am<SPAN class=3Dgen>&nbsp;</SPAN>&nbsp; =
+
+                  &nbsp;Post subject: AVR based learning IR remote=20
+                  reciever?</SPAN></TD>
+                <TD vAlign=3Dtop noWrap><A=20
+                  =
+href=3D"http://forum.sparkfun.com/posting.php?mode=3Dquote&amp;p=3D58714"=
+><IMG=20
+                  title=3D"Reply with quote" alt=3D"Reply with quote"=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+icon_quote.gif"=20
+                  border=3D0></A> </TD></TR>
+              <TR>
+                <TD colSpan=3D2>
+                  <HR>
+                </TD></TR>
+              <TR>
+                <TD colSpan=3D2><SPAN class=3Dpostbody>Hi, I'd like to =
+attempt a=20
+                  project involving an AVR as the microprocessor, and to =
+add=20
+                  some code to turn it into learning IR remote receiver. =
+It=20
+                  should be noted that i am still relatively new at this =
+kind of=20
+                  thing, and i have almost no programming knowledge at =
+all. I=20
+                  have made a few simple AVR projects, but those were =
+with code=20
+                  that was provided. I have an arduino, and a bunch of =
+Mega8's=20
+                  handy. <BR><BR>basically i want to clone this device:=20
+                  <BR><BR><A=20
+                  =
+href=3D"http://www.tauntek.com/tinyir2-learning-ir-remote-control-receive=
+r.htm"=20
+                  =
+target=3D_blank>http://www.tauntek.com/tinyir2-learning-ir-remote-control=
+-receiver.htm</A>=20
+                  <BR><BR>I have some sample AVR based IR recording =
+code, but i=20
+                  don't know that much about programing to modify it to =
+what i=20
+                  need. Ideally it would be nice if someone could help =
+me=20
+                  translate the c code into arduino code. <BR><BR>here =
+are two=20
+                  sample codes that might be useful... <BR><BR></SPAN>
+                  <TABLE cellSpacing=3D1 cellPadding=3D3 width=3D"90%" =
+align=3Dcenter=20
+                  border=3D0>
+                    <TBODY>
+                    <TR>
+                      <TD><SPAN =
+class=3Dgenmed><B>Code:</B></SPAN></TD></TR>
+                    <TR>
+                      <TD class=3Dcode>/pin connected to TSOP1736=20
+                        <BR><BR>#define K1 (1&lt; <BR><BR>uint8_t =
+impulse_prev =3D=20
+                        0; <BR><BR>uint8_t counter_impulse_1 =3D 0;=20
+                        <BR><BR>uint8_t flag_rx =3D 0; <BR><BR>uint8_t=20
+                        counter_impulse_0 =3D 0; <BR><BR>uint8_t impulse =
+=3D 0;=20
+                        <BR><BR>uint64_t counter_ik =3D 0; =
+<BR><BR>uint64_t code =3D=20
+                        0; <BR><BR>ISR(TIMER0_OVF_vect) <BR><BR>{=20
+                        <BR><BR>uint8_t c; <BR><BR>uint8_t str[35];=20
+                        <BR><BR>uint64_t i; <BR><BR>//Timer0 =
+initialization=20
+                        <BR><BR>TCNT0=3D0xFF; <BR><BR>//Invert input =
+signal=20
+                        <BR><BR>if (K1=3D=3D1) impulse=3D0; else =
+impulse=3D1; <BR><BR>if=20
+                        =
+((impulse_prev=3D=3D0)&amp;&amp;(impulse=3D=3D1))=20
+                        <BR><BR>{//rising edge detection <BR><BR>//reset =
+counter=20
+                        <BR><BR>counter_impulse_1=3D0; <BR><BR>if=20
+                        =
+((counter_impulse_0&gt;3)&amp;&amp;(flag_rx=3D=3D1)&amp;&amp;(counter_imp=
+ulse_0&lt;23))=20
+                        <BR><BR>{//if receiving symbols=20
+                        <BR><BR>if(counter_impulse_0&gt;12) =
+<BR><BR>//logical 1=20
+                        received <BR><BR>code |=3D(1&lt; =
+<BR><BR>counter_ik++;=20
+                        <BR><BR>}; <BR><BR>};=20
+                        =
+<BR><BR>if((impulse=3D=3D1)&amp;&amp;(counter_impulse_1&lt;50))=20
+                        <BR><BR>//counting positive pulses=20
+                        <BR><BR>counter_impulse_1++;=20
+                        =
+<BR><BR>if((impulse_prev=3D=3D1)&amp;&amp;(impulse=3D=3D0))=20
+                        <BR><BR>{//negative front =
+<BR><BR>counter_impulse_0=3D0;=20
+                        <BR><BR>if(counter_impulse_1&gt;30) =
+<BR><BR>{//one long=20
+                        synchro pulse <BR><BR>code=3D0; =
+<BR><BR>counter_ik=3D0;=20
+                        <BR><BR>flag_rx=3D1; <BR><BR>} <BR><BR>};=20
+                        =
+<BR><BR>if((impulse=3D=3D0)&amp;&amp;(flag_rx=3D=3D1)&amp;(counter_impuls=
+e_1&lt;150))=20
+                        <BR><BR>//counting negative pulses=20
+                        <BR><BR>counter_impulse_0++;=20
+                        =
+<BR><BR>if((counter_impulse_0&gt;50)&amp;&amp;(flag_rx=3D=3D1)&amp;&amp;(=
+impulse=3D=3D0))=20
+                        <BR><BR>{//end of receive <BR><BR>flag_rx=3D0;=20
+                        <BR><BR>counter_impulse_0=3D0;=20
+                        <BR><BR>counter_impulse_1=3D0; =
+<BR><BR>counter_ik=3D0;=20
+                        <BR><BR>code=3D0; <BR><BR>}; =
+<BR><BR>impulse_prev=3Dimpulse;=20
+                        <BR><BR>}</TD></TR></TBODY></TABLE><SPAN=20
+                  class=3Dpostbody><BR><BR></SPAN>
+                  <TABLE cellSpacing=3D1 cellPadding=3D3 width=3D"90%" =
+align=3Dcenter=20
+                  border=3D0>
+                    <TBODY>
+                    <TR>
+                      <TD><SPAN =
+class=3Dgenmed><B>Code:</B></SPAN></TD></TR>
+                    <TR>
+                      <TD class=3Dcode>#include &lt;avr/io.h&gt; =
+<BR>#include=20
+                        &lt;avr/interrupt.h&gt; <BR>#include "uart.h" =
+<BR><BR>/*=20
+                        constants */ <BR>#define MAX 160 <BR><BR>/* =
+global=20
+                        variables */ <BR><BR>/* allocate 160*2 =3D 320 =
+byte memory=20
+                        for storing a code, <BR>&nbsp;* this means we =
+can store=20
+                        80 on/off sequence timings */ <BR>volatile =
+uint16_t=20
+                        code[MAX]; <BR>/* current index in code[] =
+(default: 0)=20
+                        */ <BR>volatile uint8_t pos =3D 0; <BR>/* =
+current pin=20
+                        state (default: high =3D=3D idle) */ =
+<BR>volatile uint8_t=20
+                        state =3D 1; <BR>/* signal for the main =
+application that a=20
+                        code has been received <BR>&nbsp;* (default: 0) =
+*/=20
+                        <BR>volatile uint8_t done =3D 0; <BR>/* signal =
+button=20
+                        presses from interrupt to main */ <BR>volatile =
+uint8_t=20
+                        button_press; <BR>/* current system mode */ =
+<BR>enum {=20
+                        <BR>&nbsp; &nbsp; MODE_OFF =3D 0, <BR>&nbsp; =
+&nbsp;=20
+                        MODE_DISPLAY =3D 1, <BR>} mode =3D MODE_DISPLAY; =
+<BR>/*=20
+                        current viewmode */ <BR>enum { <BR>&nbsp; &nbsp; =
+
+                        VIEW_VALUE_AND_TIME =3D 0, <BR>&nbsp; &nbsp; =
+VIEW_VALUE =3D=20
+                        1, <BR>&nbsp; &nbsp; VIEW_TIME =3D 2, <BR>} view =
+=3D=20
+                        VIEW_VALUE_AND_TIME; <BR><BR>/* call every 10 =
+ms, for=20
+                        buttons at pins PC0-PC3 */ <BR>static uint8_t=20
+                        button_sample(void) <BR>{ <BR>&nbsp; &nbsp; =
+static=20
+                        uint8_t btn_state =3D 0b1111;&nbsp; &nbsp; =
+&nbsp; &nbsp;/*=20
+                        initialize state, buttons are active low! */ =
+<BR>&nbsp;=20
+                        &nbsp; static uint8_t last_sample =3D 0b1111; /* =
+
+                        initialize old sample */ <BR>&nbsp; &nbsp; =
+uint8_t=20
+                        new_sample =3D PINC &amp; 0b1111;&nbsp; /* read =
+inputs */=20
+                        <BR><BR>&nbsp; &nbsp; /* mark bits which are =
+sampled=20
+                        with the same value */ <BR>&nbsp; &nbsp; uint8_t =
+
+                        same_sample =3D (last_sample ^ ~new_sample); =
+<BR>&nbsp;=20
+                        &nbsp; /* all bits set in same_sample now have =
+been=20
+                        sampled with the same value at <BR>&nbsp; &nbsp; =
+&nbsp;*=20
+                        least two times, which means the button has =
+settled */=20
+                        <BR><BR>&nbsp; &nbsp; /* compare the current =
+button=20
+                        state with the most recent sampled value, =
+<BR>&nbsp;=20
+                        &nbsp; &nbsp;* but only for those bits which =
+have stayed=20
+                        the same */ <BR>&nbsp; &nbsp; uint8_t =
+state_different =3D=20
+                        btn_state ^ (new_sample &amp; same_sample); =
+<BR>&nbsp;=20
+                        &nbsp; /* all bits set in state_different have =
+been=20
+                        sampled at least two times <BR>&nbsp; &nbsp; =
+&nbsp;*=20
+                        with the same value, and this value is different =
+from=20
+                        the current button state */ <BR><BR>&nbsp; =
+&nbsp; /* if=20
+                        a bit is set in state (means: button is not =
+pressed) AND=20
+                        bit is set <BR>&nbsp; &nbsp; &nbsp;* in =
+state_different=20
+                        (means: input has settled and value is different =
+from=20
+                        state) <BR>&nbsp; &nbsp; &nbsp;* together means: =
+button=20
+                        has been pressed recently */ <BR>&nbsp; &nbsp; =
+uint8_t=20
+                        btn_press =3D btn_state &amp; state_different;=20
+                        <BR><BR>&nbsp; &nbsp; /* toggle all bits for =
+inputs=20
+                        which switched state */ <BR>&nbsp; &nbsp; =
+btn_state ^=3D=20
+                        state_different; <BR><BR>&nbsp; &nbsp; /* store =
+current=20
+                        sample for next time */ <BR>&nbsp; &nbsp; =
+last_sample =3D=20
+                        new_sample; <BR><BR>&nbsp; &nbsp; /* if bit is =
+set in=20
+                        btn_press, a button has been pressed (not =
+released yet)=20
+                        */ <BR>&nbsp; &nbsp; return btn_press; <BR>}=20
+                        <BR><BR><BR>/* pin change interrupt 1 service =
+function=20
+                        */ <BR>ISR(PCINT1_vect) <BR>{ <BR>&nbsp; &nbsp; =
+/* do=20
+                        nothing if we are just processing a code in the =
+main=20
+                        loop, <BR>&nbsp; &nbsp; &nbsp;* or no more space =
+is=20
+                        available for a timer value */ <BR>&nbsp; &nbsp; =
+if=20
+                        (done || pos =3D=3D MAX) <BR>&nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+                        return; <BR><BR>&nbsp; &nbsp; /* if this would =
+be the=20
+                        first timing value ever recorded, and the =
+<BR>&nbsp;=20
+                        &nbsp; &nbsp;* state before was high (=3Didle), =
+do not=20
+                        record the timing value <BR>&nbsp; &nbsp; =
+&nbsp;* and=20
+                        just reset the timer */ <BR>&nbsp; &nbsp; if =
+(state=20
+                        &amp;&amp; pos =3D=3D 0) { <BR>&nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+                        TCNT1 =3D 0; <BR>&nbsp; &nbsp; /* else record =
+the timing=20
+                        value */ <BR>&nbsp; &nbsp; } else { <BR>&nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; /* store current timer value in =
+code[]=20
+                        <BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* and =
+reset the=20
+                        timer */ <BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+code[pos++] =3D=20
+                        TCNT1; <BR>&nbsp; &nbsp; &nbsp; &nbsp; TCNT1 =3D =
+0;=20
+                        <BR>&nbsp; &nbsp; } <BR><BR>&nbsp; &nbsp; /* =
+toggle=20
+                        second led */ <BR>&nbsp; &nbsp; PORTD ^=3D =
+_BV(PD3);=20
+                        <BR><BR>&nbsp; &nbsp; /* toggle state */ =
+<BR>&nbsp;=20
+                        &nbsp; state =3D !state; <BR>} <BR><BR>/* timer =
+1 compare=20
+                        A interrupt service function */=20
+                        <BR>ISR(TIMER1_COMPA_vect) <BR>{ <BR>&nbsp; =
+&nbsp; /* do=20
+                        nothing if we are just processing a code in the =
+main=20
+                        loop */ <BR>&nbsp; &nbsp; if (done) <BR>&nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; return; <BR><BR>&nbsp; &nbsp; /* =
+if some=20
+                        code has been received */ <BR>&nbsp; &nbsp; if =
+(pos &gt;=20
+                        0) { <BR>&nbsp; &nbsp; &nbsp; &nbsp; /* if pos =
+is odd,=20
+                        one last 'off'-timing is missing, fill with zero =
+*/=20
+                        <BR>&nbsp; &nbsp; &nbsp; &nbsp; if (pos % 2 =
+=3D=3D 1)=20
+                        <BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=20
+                        code[pos++] =3D 0; <BR><BR>&nbsp; &nbsp; &nbsp; =
+&nbsp; /*=20
+                        signal main */ <BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+done =3D 1;=20
+                        <BR><BR>&nbsp; &nbsp; &nbsp; &nbsp; /* turn on =
+third led=20
+                        */ <BR>&nbsp; &nbsp; &nbsp; &nbsp; PORTD |=3D =
+_BV(PD6);=20
+                        <BR>&nbsp; &nbsp; } <BR>} <BR><BR>/* timer 2 =
+compare A=20
+                        interrupt service function */ =
+<BR>ISR(TIMER2_COMPA_vect)=20
+                        <BR>{ <BR>&nbsp; &nbsp; /* sample buttons every =
+10ms */=20
+                        <BR>&nbsp; &nbsp; button_press |=3D =
+button_sample(); <BR>}=20
+                        <BR><BR>int main(void) <BR>{ <BR>&nbsp; &nbsp; =
+/*=20
+                        initialize uart */ <BR>&nbsp; &nbsp; =
+uart_init();=20
+                        <BR>&nbsp; &nbsp; uart_printf("rumpus ir =
+analyzer\n");=20
+                        <BR><BR>&nbsp; &nbsp; /* configure led pins as =
+outputs=20
+                        and turn leds off */ <BR>&nbsp; &nbsp; DDRC |=3D =
+_BV(PC4);=20
+                        <BR>&nbsp; &nbsp; DDRD |=3D _BV(PD3) | _BV(PD6) =
+|=20
+                        _BV(PD7); <BR>&nbsp; &nbsp; PORTC &amp;=3D =
+~_BV(PC4);=20
+                        <BR>&nbsp; &nbsp; PORTD &amp;=3D ~(_BV(PD3) | =
+_BV(PD6) |=20
+                        _BV(PD7)); <BR><BR>&nbsp; &nbsp; /* configure ir =
+input=20
+                        pin, with pullup */ <BR>&nbsp; &nbsp; DDRC =
+&amp;=3D=20
+                        ~_BV(PC3); <BR>&nbsp; &nbsp; PORTC |=3D =
+_BV(PC3);=20
+                        <BR><BR>&nbsp; &nbsp; /* configure button input =
+pins,=20
+                        with pullup */ <BR>&nbsp; &nbsp; DDRC &amp;=3D =
+~(_BV(PC0)=20
+                        | _BV(PC1) | _BV(PC2) | _BV(PC3)); <BR>&nbsp; =
+&nbsp;=20
+                        PORTC |=3D _BV(PC0) | _BV(PC1) | _BV(PC2) | =
+_BV(PC3);=20
+                        <BR><BR>&nbsp; &nbsp; /* wait until pin is high =
+(no ir=20
+                        carrier is detected) */ <BR>&nbsp; &nbsp; =
+while(!(PINC=20
+                        &amp; _BV(PC3))); <BR><BR>&nbsp; &nbsp; /* =
+enable pin=20
+                        change interrupt 1 for ir input pin =
+(PC3/PCINT11) */=20
+                        <BR>&nbsp; &nbsp; PCMSK1 |=3D _BV(PCINT11); =
+<BR>&nbsp;=20
+                        &nbsp; PCICR |=3D _BV(PCIE1); <BR><BR>&nbsp; =
+&nbsp; /*=20
+                        configure timer1 with prescaler 64 and CTC for =
+measuring=20
+                        ir timings */ <BR>&nbsp; &nbsp; TCCR1B =3D =
+_BV(CS11) |=20
+                        _BV(CS10) | _BV(WGM12); <BR>&nbsp; &nbsp; /* =
+configure=20
+                        timer action after 200ms: 20mhz/64/5 */ =
+<BR>&nbsp;=20
+                        &nbsp; OCR1A =3D F_CPU/5/64; <BR>&nbsp; &nbsp; =
+/* enable=20
+                        OCR1A interrupt */ <BR>&nbsp; &nbsp; TIMSK1 =3D=20
+                        _BV(OCIE1A); <BR><BR>&nbsp; &nbsp; /* configure =
+timer 2=20
+                        with prescaler 1024 and CTC <BR>&nbsp; &nbsp; =
+&nbsp;*=20
+                        for button sampling */ <BR>&nbsp; &nbsp; TCCR2A =
+=3D=20
+                        _BV(WGM21); <BR>&nbsp; &nbsp; TCCR2B =3D =
+_BV(CS22) |=20
+                        _BV(CS21) | _BV(CS20); <BR>&nbsp; &nbsp; /* =
+configure=20
+                        compare event a to occur after 10ms and enable =
+interrupt=20
+                        */ <BR>&nbsp; &nbsp; OCR2A =3D F_CPU/1024/100; =
+<BR>&nbsp;=20
+                        &nbsp; TIMSK2 =3D _BV(OCIE2A); <BR><BR>&nbsp; =
+&nbsp; /*=20
+                        signal user availability by turning on led 1 */=20
+                        <BR>&nbsp; &nbsp; PORTC |=3D _BV(PC4); =
+<BR><BR>&nbsp;=20
+                        &nbsp; /* enable interrupts */ <BR>&nbsp; &nbsp; =
+sei();=20
+                        <BR><BR>&nbsp; &nbsp; /* signal the user that =
+the=20
+                        analyzer part has started by turning led 1 on */ =
+
+                        <BR>&nbsp; &nbsp; PORTC |=3D _BV(PC3); =
+<BR><BR>&nbsp;=20
+                        &nbsp; while(1) { <BR>&nbsp; &nbsp; &nbsp; =
+&nbsp; /* if=20
+                        a code has been received */ <BR>&nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; if (mode =3D=3D MODE_DISPLAY &amp;&amp; =
+done) {=20
+                        <BR><BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; /*=20
+                        print code to serial uart */ <BR>&nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; uart_printf("complete code=20
+                        received, %u on-off-timings:\n", pos/2); =
+<BR>&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (uint8_t =
+i =3D 0; i=20
+                        &lt; pos; i +=3D 2) { <BR><BR>&nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; if (view =3D=3D=20
+                        VIEW_VALUE_AND_TIME) { <BR>&nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+uint32_t on,=20
+                        off; <BR><BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; /* compute timing in =
+
+                        microseconds */ <BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; on =3D=20
+                        ((uint32_t)code[i]) * 64 / 20; <BR>&nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+off =3D=20
+                        ((uint32_t)code[i+1]) * 64 / 20; <BR><BR>&nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        uart_printf("&nbsp; %5lu us (%5u) on, %5lu us =
+(%5u)=20
+                        off\n", <BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        on, code[i], <BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; off, code[i+1]); <BR>&nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; } else if (view =
+=3D=3D=20
+                        VIEW_VALUE) { <BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+uart_printf("&nbsp;=20
+                        %5u on, %5u off\n", <BR>&nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; code[i], code[i+1]); <BR>&nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else =
+if=20
+                        (view =3D=3D VIEW_TIME) { <BR>&nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+uint32_t on,=20
+                        off; <BR><BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; /* compute timing in =
+
+                        microseconds */ <BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; on =3D=20
+                        ((uint32_t)code[i]) * 64 / 20; <BR>&nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+off =3D=20
+                        ((uint32_t)code[i+1]) * 64 / 20; <BR><BR>&nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        uart_printf("&nbsp; %5lu us on, %5lu us off\n",=20
+                        <BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+on,=20
+                        off); <BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; } <BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; } <BR><BR><BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; /* turn off second and third led */ =
+<BR>&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; PORTD =
+&amp;=3D=20
+                        ~(_BV(PD3) | _BV(PD6)); <BR><BR>&nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; /* wait until pin is high =
+(no ir=20
+                        carrier is detected) */ <BR>&nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; while(!(PINC &amp; _BV(PC3)));=20
+                        <BR><BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; /*=20
+                        reset all global variables */ <BR>&nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; pos =3D 0; <BR>&nbsp; =
+&nbsp; &nbsp;=20
+                        &nbsp; &nbsp; &nbsp; state =3D 1; <BR>&nbsp; =
+&nbsp; &nbsp;=20
+                        &nbsp; &nbsp; &nbsp; done =3D 0; <BR>&nbsp; =
+&nbsp; &nbsp;=20
+                        &nbsp; } <BR><BR>&nbsp; &nbsp; &nbsp; &nbsp; if=20
+                        (button_press) { <BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; /* first button toggles system mode */ =
+<BR>&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if =
+(button_press=20
+                        &amp; 0b1) { <BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; mode++; <BR>&nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (mode &gt; =
+
+                        MODE_DISPLAY) <BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mode =3D =
+MODE_OFF;=20
+                        <BR><BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+                        &nbsp; if (mode =3D=3D MODE_OFF) { <BR>&nbsp; =
+&nbsp; &nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+
+                        uart_printf("ir analyzer switched off\n");=20
+                        <BR><BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+                        &nbsp; &nbsp; &nbsp; /* disable timer1 and pin =
+change=20
+                        interrupts */ <BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TIMSK1 =
+&amp;=3D=20
+                        ~_BV(OCIE1A); <BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; PCMSK1 =
+&amp;=3D=20
+                        ~_BV(PCINT11); <BR><BR>&nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /* =
+turn off=20
+                        led1 */ <BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; PORTC &amp;=3D =
+~_BV(PC4);=20
+                        <BR><BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+                        &nbsp; } else if (mode =3D=3D MODE_DISPLAY) { =
+<BR>&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; uart_printf("scan and display codes\n");=20
+                        <BR><BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+                        &nbsp; &nbsp; &nbsp; /* clear interrupt flags, =
+enable=20
+                        timer1 and pin change interrupts */ <BR>&nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        TIFR1 =3D _BV(OCIE1A); <BR>&nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TIMSK1 =
+|=3D=20
+                        _BV(OCIE1A); <BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; PCMSK1 |=3D=20
+                        _BV(PCINT11); <BR><BR>&nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /* turn on =
+led1 */=20
+                        <BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; PORTC |=3D _BV(PC4); =
+<BR>&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+}=20
+                        <BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }=20
+                        <BR><BR><BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; /*=20
+                        second button toggles view mode */ <BR>&nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; if (button_press =
+&amp; 0b10)=20
+                        { <BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; view++; <BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; if (view &gt; VIEW_TIME) =
+<BR>&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; view =3D VIEW_VALUE_AND_TIME; =
+<BR><BR>&nbsp; &nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if =
+(view =3D=3D=20
+                        VIEW_VALUE_AND_TIME) <BR>&nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=20
+                        uart_printf("display timer value and time (in =
+us)\n");=20
+                        <BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; else if (view =3D=3D VIEW_VALUE) =
+<BR>&nbsp; &nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        uart_printf("display timer value\n"); <BR>&nbsp; =
+&nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else =
+if (view=20
+                        =3D=3D VIEW_TIME) <BR>&nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+uart_printf("display=20
+                        time (in us)\n"); <BR>&nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+                        &nbsp; } <BR><BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+                        &nbsp; button_press =3D 0; <BR>&nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+                        } <BR>&nbsp; &nbsp; } <BR>} =
+</TD></TR></TBODY></TABLE><SPAN=20
+                  class=3Dpostbody><BR><BR><BR>I obtained these codes =
+from here:=20
+                  <BR><BR><A=20
+                  =
+href=3D"http://www.scienceprog.com/ir-remote-control-signal-receiver-usin=
+g-avr-microcontroller/"=20
+                  =
+target=3D_blank>http://www.scienceprog.com/ir-remote-control-signal-recei=
+ver-using-avr-microcontroller/</A>=20
+                  <BR><A =
+href=3D"http://git.lochraster.org:2080/?p=3Dfd0/rumpus"=20
+                  =
+target=3D_blank>http://git.lochraster.org:2080/?p=3Dfd0/rumpus</A>=20
+                  <BR><BR>I also found this arduino code, but it was not =
+very=20
+                  helpful <BR><A=20
+                  =
+href=3D"http://www.arduino.cc/playground/Code/InfraredReceivers"=20
+                  =
+target=3D_blank>http://www.arduino.cc/playground/Code/InfraredReceivers</=
+A>=20
+                  <BR><BR><BR>If someone could help me out a little it =
+would be=20
+                  appreciated. I don't expect someone to write all the =
+code for=20
+                  me, nor do i really want that either. I just need a =
+boost to=20
+                  get started. <BR><BR>Thanks, =
+<BR><BR>-Andrew</SPAN><SPAN=20
+                  =
+class=3Dgensmall></SPAN></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=3Drow1 vAlign=3Dcenter align=3Dleft =
+width=3D150><SPAN class=3Dnav><A=20
+            class=3Dnav=20
+            =
+href=3D"http://forum.sparkfun.com/viewtopic.php?t=3D12862&amp;sid=3D501c7=
+7abd2c4291cfabeeb0d2dd7332c#top">Back=20
+            to top</A></SPAN></TD>
+          <TD class=3Drow1 vAlign=3Dbottom noWrap width=3D"100%" =
+height=3D28>
+            <TABLE height=3D18 cellSpacing=3D0 cellPadding=3D0 =
+width=3D18 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter noWrap><A=20
+                  =
+href=3D"http://forum.sparkfun.com/profile.php?mode=3Dviewprofile&amp;u=3D=
+13637"><IMG=20
+                  title=3D"View user's profile" alt=3D"View user's =
+profile"=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+icon_profile.gif"=20
+                  border=3D0></A> <A=20
+                  =
+href=3D"http://forum.sparkfun.com/privmsg.php?mode=3Dpost&amp;u=3D13637">=
+<IMG=20
+                  title=3D"Send private message" alt=3D"Send private =
+message"=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+icon_pm.gif"=20
+                  border=3D0></A> <A =
+href=3D"mailto:keen101@gmail.com"><IMG=20
+                  title=3D"Send e-mail" alt=3D"Send e-mail"=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+icon_email.gif"=20
+                  border=3D0></A>
+                  <SCRIPT language=3DJavaScript =
+type=3Dtext/javascript><!--=0A=
+=0A=
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') !=3D -1 && =
+navigator.userAgent.indexOf('5.') =3D=3D -1 && =
+navigator.userAgent.indexOf('6.') =3D=3D -1 )=0A=
+		document.write(' ');=0A=
+	else=0A=
+		document.write('</td><td>&nbsp;</td><td valign=3D"top" =
+nowrap=3D"nowrap"><div style=3D"position:relative"><div =
+style=3D"position:absolute"></div><div =
+style=3D"position:absolute;left:3px;top:-1px"></div></div>');=0A=
+=0A=
+				//--></SCRIPT>
+                   =
+<NOSCRIPT></NOSCRIPT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=3DspaceRow colSpan=3D2 height=3D1><IMG height=3D1 =
+alt=3D""=20
+            =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/spacer.gif"=20
+            width=3D1></TD></TR>
+        <TR>
+          <TD class=3Drow2 vAlign=3Dtop align=3Dleft width=3D150><SPAN =
+class=3Dname><A=20
+            name=3D58746></A><B>newbie123</B></SPAN><BR><SPAN=20
+            class=3Dpostdetails><BR><BR><BR>Joined: 05 Jan =
+2008<BR>Posts:=20
+            47<BR></SPAN><BR></TD>
+          <TD class=3Drow2 vAlign=3Dtop width=3D"100%" height=3D28>
+            <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%" =
+border=3D0>
+              <TBODY>
+              <TR>
+                <TD width=3D"100%"><A=20
+                  =
+href=3D"http://forum.sparkfun.com/viewtopic.php?p=3D58746#58746"><IMG=20
+                  title=3DPost height=3D9 alt=3DPost=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/icon_minipost=
+.gif"=20
+                  width=3D12 border=3D0></A><SPAN =
+class=3Dpostdetails>Posted: Mon Nov=20
+                  10, 2008 6:58 pm<SPAN class=3Dgen>&nbsp;</SPAN>&nbsp; =
+&nbsp;Post=20
+                  subject: TWIRP at AVRFreaks</SPAN></TD>
+                <TD vAlign=3Dtop noWrap><A=20
+                  =
+href=3D"http://forum.sparkfun.com/posting.php?mode=3Dquote&amp;p=3D58746"=
+><IMG=20
+                  title=3D"Reply with quote" alt=3D"Reply with quote"=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+icon_quote.gif"=20
+                  border=3D0></A> </TD></TR>
+              <TR>
+                <TD colSpan=3D2>
+                  <HR>
+                </TD></TR>
+              <TR>
+                <TD colSpan=3D2><SPAN class=3Dpostbody>look here: <BR><A =
+
+                  class=3Dpostlink=20
+                  =
+href=3D"http://www.avrfreaks.net/index.php?module=3DFreaks%20Academy&amp;=
+func=3DviewItem&amp;item_id=3D616&amp;item_type=3Dproject"=20
+                  =
+target=3D_blank>http://www.avrfreaks.net/index.php?module=3DFreaks%20Acad=
+emy&amp;func=3DviewItem&amp;item_id=3D616&amp;item_type=3Dproject</A>=20
+                  <BR>I think it is exactly what you are looking=20
+                  for.</SPAN><SPAN=20
+        class=3Dgensmall></SPAN></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=3Drow2 vAlign=3Dcenter align=3Dleft =
+width=3D150><SPAN class=3Dnav><A=20
+            class=3Dnav=20
+            =
+href=3D"http://forum.sparkfun.com/viewtopic.php?t=3D12862&amp;sid=3D501c7=
+7abd2c4291cfabeeb0d2dd7332c#top">Back=20
+            to top</A></SPAN></TD>
+          <TD class=3Drow2 vAlign=3Dbottom noWrap width=3D"100%" =
+height=3D28>
+            <TABLE height=3D18 cellSpacing=3D0 cellPadding=3D0 =
+width=3D18 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter noWrap><A=20
+                  =
+href=3D"http://forum.sparkfun.com/profile.php?mode=3Dviewprofile&amp;u=3D=
+11190"><IMG=20
+                  title=3D"View user's profile" alt=3D"View user's =
+profile"=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+icon_profile.gif"=20
+                  border=3D0></A> <A=20
+                  =
+href=3D"http://forum.sparkfun.com/privmsg.php?mode=3Dpost&amp;u=3D11190">=
+<IMG=20
+                  title=3D"Send private message" alt=3D"Send private =
+message"=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+icon_pm.gif"=20
+                  border=3D0></A>
+                  <SCRIPT language=3DJavaScript =
+type=3Dtext/javascript><!--=0A=
+=0A=
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') !=3D -1 && =
+navigator.userAgent.indexOf('5.') =3D=3D -1 && =
+navigator.userAgent.indexOf('6.') =3D=3D -1 )=0A=
+		document.write(' ');=0A=
+	else=0A=
+		document.write('</td><td>&nbsp;</td><td valign=3D"top" =
+nowrap=3D"nowrap"><div style=3D"position:relative"><div =
+style=3D"position:absolute"></div><div =
+style=3D"position:absolute;left:3px;top:-1px"></div></div>');=0A=
+=0A=
+				//--></SCRIPT>
+                   =
+<NOSCRIPT></NOSCRIPT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=3DspaceRow colSpan=3D2 height=3D1><IMG height=3D1 =
+alt=3D""=20
+            =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/spacer.gif"=20
+            width=3D1></TD></TR>
+        <TR>
+          <TD class=3Drow1 vAlign=3Dtop align=3Dleft width=3D150><SPAN =
+class=3Dname><A=20
+            name=3D58769></A><B>keen101</B></SPAN><BR><SPAN=20
+            class=3Dpostdetails><BR><BR><BR>Joined: 13 Aug =
+2008<BR>Posts:=20
+            5<BR></SPAN><BR></TD>
+          <TD class=3Drow1 vAlign=3Dtop width=3D"100%" height=3D28>
+            <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%" =
+border=3D0>
+              <TBODY>
+              <TR>
+                <TD width=3D"100%"><A=20
+                  =
+href=3D"http://forum.sparkfun.com/viewtopic.php?p=3D58769#58769"><IMG=20
+                  title=3DPost height=3D9 alt=3DPost=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/icon_minipost=
+.gif"=20
+                  width=3D12 border=3D0></A><SPAN =
+class=3Dpostdetails>Posted: Tue Nov=20
+                  11, 2008 12:11 am<SPAN class=3Dgen>&nbsp;</SPAN>&nbsp; =
+
+                  &nbsp;Post subject: </SPAN></TD>
+                <TD vAlign=3Dtop noWrap><A=20
+                  =
+href=3D"http://forum.sparkfun.com/posting.php?mode=3Dquote&amp;p=3D58769"=
+><IMG=20
+                  title=3D"Reply with quote" alt=3D"Reply with quote"=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+icon_quote.gif"=20
+                  border=3D0></A> </TD></TR>
+              <TR>
+                <TD colSpan=3D2>
+                  <HR>
+                </TD></TR>
+              <TR>
+                <TD colSpan=3D2><SPAN class=3Dpostbody>thanks, that was =
+an=20
+                  interesting link. <BR><BR>However, that's not what i =
+want. I=20
+                  don't want to hook this up to a serial port at all. =
+Instead i=20
+                  want to have the chip remember the codes (at least 4), =
+and=20
+                  after that when one of the 4 codes is sent to the =
+device it=20
+                  sends a 5v pulse to a robot..... <BR><BR>This is the =
+actual=20
+                  device i want to copy.... <BR><A=20
+                  =
+href=3D"http://www.usfirst.org/uploadedfiles/community/frc/frc_documents_=
+and_updates/2008_assets/firstir%20-%20instructions%20_121007.pdf?fragment=
+=3DFalse&amp;terms=3DIR&amp;SearchType=3DAndWords"=20
+                  =
+target=3D_blank>http://www.usfirst.org/uploadedfiles/community/frc/frc_do=
+cuments_and_updates/2008_assets/firstir%20-%20instructions%20_121007.pdf?=
+fragment=3DFalse&amp;terms=3DIR&amp;SearchType=3DAndWords</A>=20
+                  <BR><BR><BR>I think what i need is to store 4 =
+different IR=20
+                  variables to 4 different strings?</SPAN><SPAN=20
+                  =
+class=3Dgensmall></SPAN></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=3Drow1 vAlign=3Dcenter align=3Dleft =
+width=3D150><SPAN class=3Dnav><A=20
+            class=3Dnav=20
+            =
+href=3D"http://forum.sparkfun.com/viewtopic.php?t=3D12862&amp;sid=3D501c7=
+7abd2c4291cfabeeb0d2dd7332c#top">Back=20
+            to top</A></SPAN></TD>
+          <TD class=3Drow1 vAlign=3Dbottom noWrap width=3D"100%" =
+height=3D28>
+            <TABLE height=3D18 cellSpacing=3D0 cellPadding=3D0 =
+width=3D18 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter noWrap><A=20
+                  =
+href=3D"http://forum.sparkfun.com/profile.php?mode=3Dviewprofile&amp;u=3D=
+13637"><IMG=20
+                  title=3D"View user's profile" alt=3D"View user's =
+profile"=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+icon_profile.gif"=20
+                  border=3D0></A> <A=20
+                  =
+href=3D"http://forum.sparkfun.com/privmsg.php?mode=3Dpost&amp;u=3D13637">=
+<IMG=20
+                  title=3D"Send private message" alt=3D"Send private =
+message"=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+icon_pm.gif"=20
+                  border=3D0></A> <A =
+href=3D"mailto:keen101@gmail.com"><IMG=20
+                  title=3D"Send e-mail" alt=3D"Send e-mail"=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+icon_email.gif"=20
+                  border=3D0></A>
+                  <SCRIPT language=3DJavaScript =
+type=3Dtext/javascript><!--=0A=
+=0A=
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') !=3D -1 && =
+navigator.userAgent.indexOf('5.') =3D=3D -1 && =
+navigator.userAgent.indexOf('6.') =3D=3D -1 )=0A=
+		document.write(' ');=0A=
+	else=0A=
+		document.write('</td><td>&nbsp;</td><td valign=3D"top" =
+nowrap=3D"nowrap"><div style=3D"position:relative"><div =
+style=3D"position:absolute"></div><div =
+style=3D"position:absolute;left:3px;top:-1px"></div></div>');=0A=
+=0A=
+				//--></SCRIPT>
+                   =
+<NOSCRIPT></NOSCRIPT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=3DspaceRow colSpan=3D2 height=3D1><IMG height=3D1 =
+alt=3D""=20
+            =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/spacer.gif"=20
+            width=3D1></TD></TR>
+        <TR>
+          <TD class=3Drow2 vAlign=3Dtop align=3Dleft width=3D150><SPAN =
+class=3Dname><A=20
+            name=3D58872></A><B>Thunderhammer</B></SPAN><BR><SPAN=20
+            class=3Dpostdetails><BR><BR><BR>Joined: 12 Nov =
+2008<BR>Posts:=20
+            1<BR></SPAN><BR></TD>
+          <TD class=3Drow2 vAlign=3Dtop width=3D"100%" height=3D28>
+            <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%" =
+border=3D0>
+              <TBODY>
+              <TR>
+                <TD width=3D"100%"><A=20
+                  =
+href=3D"http://forum.sparkfun.com/viewtopic.php?p=3D58872#58872"><IMG=20
+                  title=3DPost height=3D9 alt=3DPost=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/icon_minipost=
+.gif"=20
+                  width=3D12 border=3D0></A><SPAN =
+class=3Dpostdetails>Posted: Wed Nov=20
+                  12, 2008 9:02 am<SPAN class=3Dgen>&nbsp;</SPAN>&nbsp; =
+&nbsp;Post=20
+                  subject: </SPAN></TD>
+                <TD vAlign=3Dtop noWrap><A=20
+                  =
+href=3D"http://forum.sparkfun.com/posting.php?mode=3Dquote&amp;p=3D58872"=
+><IMG=20
+                  title=3D"Reply with quote" alt=3D"Reply with quote"=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+icon_quote.gif"=20
+                  border=3D0></A> </TD></TR>
+              <TR>
+                <TD colSpan=3D2>
+                  <HR>
+                </TD></TR>
+              <TR>
+                <TD colSpan=3D2><SPAN class=3Dpostbody>You're almost =
+certainly=20
+                  going to need an external EEPROM to store the codes =
+locally. I=20
+                  would also suggest taking a look at the TVBGone, for =
+which the=20
+                  source code and schematic is readily available <BR><A=20
+                  =
+href=3D"http://www.ladyada.net/make/tvbgone/download.html"=20
+                  =
+target=3D_blank>http://www.ladyada.net/make/tvbgone/download.html</A>=20
+                  <BR><BR>Basically you probably want to store remote =
+codes in a=20
+                  similar way to how that program stores them - a =
+carrier=20
+                  frequency combined with a number of on/off pulses at =
+that=20
+                  frequency. Then you'll have to write some code that =
+recognizes=20
+                  incoming signals and compares them to previous =
+signals,=20
+                  allowing for a certain tolerance. <BR><BR>There are IR =
+
+                  receiver modules that basically filter out the carrier =
+
+                  frequency - usually something like 38 KHz, I think - =
+and just=20
+                  give you a number of on/off pulses. It sounds like you =
+just=20
+                  have one remote you want to work with, so this would =
+probalby=20
+                  be the easier choice for your project. They're like $2 =
+or $3=20
+                  on digikey/mouser.</SPAN><SPAN=20
+              =
+class=3Dgensmall></SPAN></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=3Drow2 vAlign=3Dcenter align=3Dleft =
+width=3D150><SPAN class=3Dnav><A=20
+            class=3Dnav=20
+            =
+href=3D"http://forum.sparkfun.com/viewtopic.php?t=3D12862&amp;sid=3D501c7=
+7abd2c4291cfabeeb0d2dd7332c#top">Back=20
+            to top</A></SPAN></TD>
+          <TD class=3Drow2 vAlign=3Dbottom noWrap width=3D"100%" =
+height=3D28>
+            <TABLE height=3D18 cellSpacing=3D0 cellPadding=3D0 =
+width=3D18 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter noWrap><A=20
+                  =
+href=3D"http://forum.sparkfun.com/profile.php?mode=3Dviewprofile&amp;u=3D=
+14665"><IMG=20
+                  title=3D"View user's profile" alt=3D"View user's =
+profile"=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+icon_profile.gif"=20
+                  border=3D0></A> <A=20
+                  =
+href=3D"http://forum.sparkfun.com/privmsg.php?mode=3Dpost&amp;u=3D14665">=
+<IMG=20
+                  title=3D"Send private message" alt=3D"Send private =
+message"=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+icon_pm.gif"=20
+                  border=3D0></A>
+                  <SCRIPT language=3DJavaScript =
+type=3Dtext/javascript><!--=0A=
+=0A=
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') !=3D -1 && =
+navigator.userAgent.indexOf('5.') =3D=3D -1 && =
+navigator.userAgent.indexOf('6.') =3D=3D -1 )=0A=
+		document.write(' ');=0A=
+	else=0A=
+		document.write('</td><td>&nbsp;</td><td valign=3D"top" =
+nowrap=3D"nowrap"><div style=3D"position:relative"><div =
+style=3D"position:absolute"></div><div =
+style=3D"position:absolute;left:3px;top:-1px"></div></div>');=0A=
+=0A=
+				//--></SCRIPT>
+                   =
+<NOSCRIPT></NOSCRIPT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=3DspaceRow colSpan=3D2 height=3D1><IMG height=3D1 =
+alt=3D""=20
+            =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/spacer.gif"=20
+            width=3D1></TD></TR>
+        <TR>
+          <TD class=3Drow1 vAlign=3Dtop align=3Dleft width=3D150><SPAN =
+class=3Dname><A=20
+            name=3D58892></A><B>stevech</B></SPAN><BR><SPAN=20
+            class=3Dpostdetails><BR><BR><BR>Joined: 05 Jun =
+2004<BR>Posts:=20
+            632<BR></SPAN><BR></TD>
+          <TD class=3Drow1 vAlign=3Dtop width=3D"100%" height=3D28>
+            <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%" =
+border=3D0>
+              <TBODY>
+              <TR>
+                <TD width=3D"100%"><A=20
+                  =
+href=3D"http://forum.sparkfun.com/viewtopic.php?p=3D58892#58892"><IMG=20
+                  title=3DPost height=3D9 alt=3DPost=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/icon_minipost=
+.gif"=20
+                  width=3D12 border=3D0></A><SPAN =
+class=3Dpostdetails>Posted: Wed Nov=20
+                  12, 2008 1:00 pm<SPAN class=3Dgen>&nbsp;</SPAN>&nbsp; =
+&nbsp;Post=20
+                  subject: </SPAN></TD>
+                <TD vAlign=3Dtop noWrap><A=20
+                  =
+href=3D"http://forum.sparkfun.com/posting.php?mode=3Dquote&amp;p=3D58892"=
+><IMG=20
+                  title=3D"Reply with quote" alt=3D"Reply with quote"=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+icon_quote.gif"=20
+                  border=3D0></A> </TD></TR>
+              <TR>
+                <TD colSpan=3D2>
+                  <HR>
+                </TD></TR>
+              <TR>
+                <TD colSpan=3D2><SPAN class=3Dpostbody></SPAN>
+                  <TABLE cellSpacing=3D1 cellPadding=3D3 width=3D"90%" =
+align=3Dcenter=20
+                  border=3D0>
+                    <TBODY>
+                    <TR>
+                      <TD><SPAN =
+class=3Dgenmed><B>Quote:</B></SPAN></TD></TR>
+                    <TR>
+                      <TD class=3Dquote>thanks, that was an interesting =
+link.=20
+                        <BR><BR>However, that's not what i want. I don't =
+want to=20
+                        hook this up to a serial port at all. Instead i =
+want to=20
+                        have the chip remember the codes (at least 4), =
+and after=20
+                        that when one of the 4 codes is sent to the =
+device it=20
+                        sends a 5v pulse to a robot..... <BR><BR>This is =
+the=20
+                        actual device i want to copy.... <BR><A=20
+                        =
+href=3D"http://www.usfirst.org/uploadedfiles/community/frc/frc_documents_=
+and_updates/2008_assets/firstir%20-%20instructions%20_121007.pdf?fragment=
+=3DFalse&amp;terms=3DIR&amp;SearchType=3DAndWords"=20
+                        =
+target=3D_blank>http://www.usfirst.org/uploadedfiles/community/frc/frc_do=
+cuments_and_updates/2008_assets/firstir%20-%20instructions%20_121007.pdf?=
+fragment=3DFalse&amp;terms=3DIR&amp;SearchType=3DAndWords</A>=20
+                        <BR><BR><BR>I think what i need is to store 4 =
+different=20
+                        IR variables to 4 different=20
+                  strings?</TD></TR></TBODY></TABLE><SPAN=20
+                  class=3Dpostbody><BR><BR>Take that code for receiving =
+and=20
+                  sending IR, and add your code to store in EEPROM or =
+some such,=20
+                  and omit the PC interface portion. <BR><BR>Or start =
+with one=20
+                  of the other several RC5 and IR projects donated here. =
+
+                  <BR><BR><BR>BUT BASED ON THIS " i have almost no =
+programming=20
+                  knowledge at all" then <BR><BR>If you want to be given =
+the=20
+                  exact functionality you wish, then either do a hobby=20
+                  collaboration with someone with the requisite skills,=20
+                  collaborate with fellow students if applicable, or =
+hire the=20
+                  work done.</SPAN><SPAN=20
+            class=3Dgensmall></SPAN></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=3Drow1 vAlign=3Dcenter align=3Dleft =
+width=3D150><SPAN class=3Dnav><A=20
+            class=3Dnav=20
+            =
+href=3D"http://forum.sparkfun.com/viewtopic.php?t=3D12862&amp;sid=3D501c7=
+7abd2c4291cfabeeb0d2dd7332c#top">Back=20
+            to top</A></SPAN></TD>
+          <TD class=3Drow1 vAlign=3Dbottom noWrap width=3D"100%" =
+height=3D28>
+            <TABLE height=3D18 cellSpacing=3D0 cellPadding=3D0 =
+width=3D18 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter noWrap><A=20
+                  =
+href=3D"http://forum.sparkfun.com/profile.php?mode=3Dviewprofile&amp;u=3D=
+165"><IMG=20
+                  title=3D"View user's profile" alt=3D"View user's =
+profile"=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+icon_profile.gif"=20
+                  border=3D0></A> <A=20
+                  =
+href=3D"http://forum.sparkfun.com/privmsg.php?mode=3Dpost&amp;u=3D165"><I=
+MG=20
+                  title=3D"Send private message" alt=3D"Send private =
+message"=20
+                  =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+icon_pm.gif"=20
+                  border=3D0></A>
+                  <SCRIPT language=3DJavaScript =
+type=3Dtext/javascript><!--=0A=
+=0A=
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') !=3D -1 && =
+navigator.userAgent.indexOf('5.') =3D=3D -1 && =
+navigator.userAgent.indexOf('6.') =3D=3D -1 )=0A=
+		document.write(' ');=0A=
+	else=0A=
+		document.write('</td><td>&nbsp;</td><td valign=3D"top" =
+nowrap=3D"nowrap"><div style=3D"position:relative"><div =
+style=3D"position:absolute"></div><div =
+style=3D"position:absolute;left:3px;top:-1px"></div></div>');=0A=
+=0A=
+				//--></SCRIPT>
+                   =
+<NOSCRIPT></NOSCRIPT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=3DspaceRow colSpan=3D2 height=3D1><IMG height=3D1 =
+alt=3D""=20
+            =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/spacer.gif"=20
+            width=3D1></TD></TR>
+        <TR align=3Dmiddle>
+          <TD class=3DcatBottom colSpan=3D2 height=3D28>
+            <TABLE cellSpacing=3D0 cellPadding=3D0 border=3D0>
+              <TBODY>
+              <TR>
+                <FORM action=3Dviewtopic.php?t=3D12862&amp;start=3D0 =
+method=3Dpost>
+                <TD align=3Dmiddle><SPAN class=3Dgensmall>Display posts =
+from=20
+                  previous: <SELECT name=3Dpostdays><OPTION value=3D0 =
+selected>All=20
+                    Posts</OPTION><OPTION value=3D1>1 =
+Day</OPTION><OPTION=20
+                    value=3D7>7 Days</OPTION><OPTION value=3D14>2=20
+                    Weeks</OPTION><OPTION value=3D30>1 =
+Month</OPTION><OPTION=20
+                    value=3D90>3 Months</OPTION><OPTION value=3D180>6=20
+                    Months</OPTION><OPTION value=3D364>1=20
+                  Year</OPTION></SELECT>&nbsp;<SELECT =
+name=3Dpostorder><OPTION=20
+                    value=3Dasc selected>Oldest First</OPTION><OPTION=20
+                    value=3Ddesc>Newest =
+First</OPTION></SELECT>&nbsp;<INPUT class=3Dliteoption type=3Dsubmit =
+value=3DGo =
+name=3Dsubmit></SPAN></TD></FORM></TR></TBODY></TABLE></TD></TR></TBODY><=
+/TABLE>
+      <TABLE cellSpacing=3D2 cellPadding=3D2 width=3D"100%" =
+align=3Dcenter border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter noWrap align=3Dleft><SPAN class=3Dnav><A=20
+            =
+href=3D"http://forum.sparkfun.com/posting.php?mode=3Dnewtopic&amp;f=3D8">=
+<IMG=20
+            alt=3D"Post new topic"=20
+            =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+post.gif"=20
+            align=3Dmiddle border=3D0></A>&nbsp;&nbsp;&nbsp;<A=20
+            =
+href=3D"http://forum.sparkfun.com/posting.php?mode=3Dreply&amp;t=3D12862"=
+><IMG=20
+            alt=3D"Reply to topic"=20
+            =
+src=3D"http://forum.sparkfun.com/templates/subSilver/images/lang_english/=
+reply.gif"=20
+            align=3Dmiddle border=3D0></A></SPAN></TD>
+          <TD vAlign=3Dcenter align=3Dleft width=3D"100%"><SPAN=20
+            class=3Dnav>&nbsp;&nbsp;&nbsp;<A class=3Dnav=20
+            href=3D"http://forum.sparkfun.com/index.php">SparkFun =
+Electronics=20
+            Forum Index</A> -&gt; <A class=3Dnav=20
+            =
+href=3D"http://forum.sparkfun.com/viewforum.php?f=3D8">Code</A></SPAN></T=
+D>
+          <TD vAlign=3Dtop noWrap align=3Dright><SPAN =
+class=3Dgensmall>All times are=20
+            GMT - 7 Hours</SPAN><BR><SPAN class=3Dnav></SPAN></TD></TR>
+        <TR>
+          <TD align=3Dleft colSpan=3D3><SPAN class=3Dnav>Page <B>1</B> =
+of=20
+            <B>1</B></SPAN></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=3D2 width=3D"100%" align=3Dcenter border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dtop noWrap align=3Dleft width=3D"40%"><SPAN=20
+            class=3Dgensmall></SPAN><BR>&nbsp;<BR></TD>
+          <TD vAlign=3Dtop noWrap align=3Dright>
+            <FORM name=3Djumpbox=20
+            onsubmit=3D"if(document.jumpbox.f.value =3D=3D -1){return =
+false;}"=20
+            action=3Dviewforum.php method=3Dget>
+            <TABLE cellSpacing=3D0 cellPadding=3D0 border=3D0>
+              <TBODY>
+              <TR>
+                <TD noWrap><SPAN class=3Dgensmall>Jump to:&nbsp;<SELECT=20
+                  onchange=3D"if(this.options[this.selectedIndex].value =
+!=3D -1){ forms['jumpbox'].submit() }"=20
+                  name=3Df><OPTION value=3D-1>Select a =
+forum</OPTION><OPTION=20
+                    value=3D-1>&nbsp;</OPTION><OPTION=20
+                    value=3D-1>Orientation</OPTION><OPTION=20
+                    value=3D-1>----------------</OPTION><OPTION =
+value=3D10>Start=20
+                    Here</OPTION><OPTION =
+value=3D-1>&nbsp;</OPTION><OPTION=20
+                    value=3D-1>AVR Atmel</OPTION><OPTION=20
+                    value=3D-1>----------------</OPTION><OPTION =
+value=3D7>AVR=20
+                    Programmers</OPTION><OPTION value=3D8=20
+                    selected>Code</OPTION><OPTION=20
+                    value=3D-1>&nbsp;</OPTION><OPTION value=3D-1>PIC=20
+                    Microchip</OPTION><OPTION=20
+                    value=3D-1>----------------</OPTION><OPTION =
+value=3D4>PIC=20
+                    Programmers - Software and Hardware</OPTION><OPTION=20
+                    value=3D6>Code Snippets</OPTION><OPTION =
+value=3D12>Boot=20
+                    Loading</OPTION><OPTION value=3D19>USB=20
+                    Development</OPTION><OPTION =
+value=3D-1>&nbsp;</OPTION><OPTION=20
+                    value=3D-1>MSP Texas Instruments</OPTION><OPTION=20
+                    value=3D-1>----------------</OPTION><OPTION =
+value=3D9>MSP=20
+                    Programmers</OPTION><OPTION =
+value=3D-1>&nbsp;</OPTION><OPTION=20
+                    value=3D-1>ARM / LPC</OPTION><OPTION=20
+                    value=3D-1>----------------</OPTION><OPTION=20
+                    value=3D11>Everything ARM and LPC</OPTION><OPTION=20
+                    value=3D18>OpenOCD</OPTION><OPTION=20
+                    value=3D-1>&nbsp;</OPTION><OPTION value=3D-1>General =
+
+                    Discussions</OPTION><OPTION=20
+                    value=3D-1>----------------</OPTION><OPTION =
+value=3D5>New=20
+                    Product Ideas</OPTION><OPTION=20
+                    value=3D14>Projects</OPTION><OPTION =
+value=3D15>SparkFun Site=20
+                    Questions/Comments</OPTION><OPTION=20
+                    value=3D13>Wireless/RF</OPTION><OPTION =
+value=3D16>PCB Deal=20
+                    Details</OPTION><OPTION value=3D20>PCB Design=20
+                    Questions</OPTION><OPTION =
+value=3D17>GPS</OPTION></SELECT><INPUT=20
+                  type=3Dhidden value=3D55825b2ae052328b7d595fcbf6611a18 =
+
+name=3Dsid>&nbsp;<INPUT class=3Dliteoption type=3Dsubmit =
+value=3DGo></SPAN></TD></TR></TBODY></TABLE></FORM><SPAN=20
+            class=3Dgensmall>You <B>cannot</B> post new topics in this=20
+            forum<BR>You <B>cannot</B> reply to topics in this =
+forum<BR>You=20
+            <B>cannot</B> edit your posts in this forum<BR>You =
+<B>cannot</B>=20
+            delete your posts in this forum<BR>You <B>cannot</B> vote in =
+polls=20
+            in this forum<BR></SPAN></TD></TR></TBODY></TABLE>
+      <DIV align=3Dcenter><SPAN class=3Dcopyright><BR><BR><!--=0A=
+	We request you retain the full copyright notice below including the =
+link to www.phpbb.com.=0A=
+	This not only gives respect to the large amount of time given freely by =
+the developers=0A=
+	but also helps build interest, traffic and use of phpBB 2.0. If you =
+cannot (for good=0A=
+	reason) retain the full copyright we request you at least leave in =
+place the=0A=
+	Powered by phpBB line, with phpBB linked to www.phpbb.com. If you refuse=0A=
+	to include even this then support on our forums may be affected.=0A=
+=0A=
+	The phpBB Group : 2002=0A=
+// -->Powered=20
+      by <A class=3Dcopyright href=3D"http://www.phpbb.com/" =
+target=3D_phpbb>phpBB</A>=20
+      =A9 2001, 2005 phpBB=20
+Group<BR></SPAN></DIV></TD></TR></TBODY></TABLE></BODY></HTML>
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://forum.sparkfun.com/templates/subSilver/images/logo_phpBB.gif
+
+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
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://forum.sparkfun.com/templates/subSilver/images/icon_mini_faq.gif
+
+R0lGODlhDAANAMQAAGOOowJIbJS5zLnK0+bm5svX3Yy2y////+3t7enp6fX19fHx8fn5+Yepufz8
+/EJ2kIeuw1SEnPv8/dne4TiBpTyDp/b5+6q9x+7z9XyfsCJgf+Ln6T+FqKrCzuHj5eLk5SH5BAAA
+AAAALAAAAAAMAA0AAAVY4GFQZEkaonCs7CoYldS2UkWtnRYEEbaSrkcjEgA4HMDjMcNjMEgO52AX
+KCgUpKtiCtgsvtlvITNAmBGkM/OBSLgplUR7cpkQ7p+KAeK5++8QKAIcJiUoIQA7
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://forum.sparkfun.com/templates/subSilver/images/icon_mini_search.gif
+
+R0lGODlhDAANAMQAAI+3y8Xq/TmBpQ1Lauf2/6/k/7fW5err6////0WIqn272vLy8uXl5afE09/0
+/1iWtfb6/Pr8/cfc5vj4+ChmhYOltufp6X+rwmOlxtLv/3K01Xaht3Kftevv8fL2+Zzc/SH5BAAA
+AAAALAAAAAAMAA0AAAVqIAIIZEkCIoqsbCpE3iVQQgMhESkKBRE8hghCl8gEPr5LJydAJCAOY4DT
+mZAiiZXvs7EsSJMiLoMBdL6CReNRCGgGisCB1LE0KhXAY4AJkCwHBxaDEhQDGgoAFwwWDI4MhYci
+CSYkCQMDIQA7
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://forum.sparkfun.com/templates/subSilver/images/icon_mini_members.gif
+
+R0lGODlhDAANAMQAAPDw8O3t7ZK6zuzs7Pr6+vj4+PT09PLy8oeuw+rq6vv8/TiBpf///wBCY/f3
+9wAAAP7+/jyDp+Xl5Y63zOfn5+jo6Obm5vz8/Iq1yvb5+/39/enp6eLk5T+FqOfp6vb29iH5BAAA
+AAAALAAAAAAMAA0AAAVcIIMtZElizCQwbMsKU6S4rhIt7MM0PA+RLghEo7lcSMPHpccrkAhQQsHh
++BgMJOrDwAQASIbDwQsImAek8iPA3FQWEc8g4a5QKBZOZILg4C0SgRIIEwwCHSYlKCEAOw==
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://forum.sparkfun.com/templates/subSilver/images/icon_mini_groups.gif
+
+R0lGODlhDAANAMQAAPX19fz8/JK6zvr6+vDw8Ozs7Ieuw+7u7urq6vv8/TiBpf///wBCY/f39+Xl
+5T2Dp463zOjo6PLy8ubm5vb5++fn54q1yvPz8+np6fb29vj4+P7+/vn5+efp6uLk5eHj5SH5BAAA
+AAAALAAAAAAMAA0AAAVb4GIpZElaCyQsbMsK0JO4bvIotLuRLLMwQEYgQNoEhEEGR0MKDAbLRiMD
+AJCkVMBFIiEQSFsGIVkokAgHRiGJiSgenQKiHalUJp4HxPC5TxyADgYQCwI3JicLIQA7
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://forum.sparkfun.com/templates/subSilver/images/icon_mini_register.gif
+
+R0lGODlhDAANAMQAADJmgQxKaurq6v///+7u7uXl5Yy2y9bf47bGzfHy8vn5+fX19crX3oemtfz8
+/JqyvpK6zoeuw/v8/SFadziBpT2Dp/b5++Pn6ejt75CquHKWp1J+lOnu8OHj5eLk5ejo6CH5BAAA
+AAAALAAAAAAMAA0AAAVd4GBQZEkaIjSs7AoZldSuSSNV1DwwUzOQM0bg4XAAiw5hQ8EkJTkYwEax
+qJIOAYAmcEl4E6QEIhDIEM4EAek8CQje7w+l8hE8EJ/8p+CpGCIdewWDgxEoEDgmJwMhADs=
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://forum.sparkfun.com/templates/subSilver/images/icon_mini_profile.gif
+
+R0lGODlhDAANAMQAAG9jWHCPnI+3y+jp6tbRzqWAdzmBpWaz2ppkSNKubPLy8j90jv///3NMOYOr
+v0ZGSNTe4oaEg3TB6vf3924yMcKSZoyYoKmpp/v8/Pb5+8W6v4C/4UyTuOTy+BMUFqGcnCH5BAAA
+AAAALAAAAAAMAA0AAAVpICMYZEkKIgpF0aUwqYEND2A9EcZgJHN5jwYC8GL0Io2EMkHA8AyMD6JC
+RRAmExKGIEQgClgFCRuhmC0DhdigGDgCGs3BARmQFA6JBNLZzO0GdgcScwccAXYCDgILHAsLARYQ
+iyImJighADs=
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://forum.sparkfun.com/templates/subSilver/images/icon_mini_message.gif
+
+R0lGODlhDAANAMQAAPPz8/7+/mVlZdDQ0KOjo4y2y+np6d7e3oWFhaysrJ2dnXNzc7y8vPj4+LW1
+te7u7tnZ2ebm5uTk5FhYWPz8/JK6zoeuw/v8/TiBpTyDp/b5+8zMzODg4Ofp6uLk5T+FqCH5BAAA
+AAAALAAAAAAMAA0AAAVlYFBgZEkWYhWs7FoV2bUeiOIcwZVhrJI4CwGOtIoIDIHBgkAhBhKEXqJB
+ohgjLAQDQGoQoivAZPMgARATBIFxEEDKmMdhwFCgFxADJtMx+A0SEBASHhkFFh4RiosRFigVHyYl
+KCEAOw==
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://forum.sparkfun.com/templates/subSilver/images/icon_mini_login.gif
+
+R0lGODlhDAANAMQAAApJaTiBpbXI0YaltfLy8nmcrcbT2qi8x+bm5v///4y2y0t5kJy1wunp6uzu
+793m6jhrheLq7fj4+JK6zoeuw/v8/Sxiffb5+2OLn+Lk5dHd4+Hj5fz8/D2Dp+/z9SVdeiH5BAAA
+AAAALAAAAAAMAA0AAAVmYKIEZEkq4pSs7DopXbU+DPOsVResxYdhgMGKlGBgPKvIQsAhQgwtwUJC
+4gAciQEjobEQSBLIIQGwFBffAEEAEQAAB4DBQXI4GOX3AYEIdBqADgsWDXwZHQoUG3yMfBQoEzom
+JwkhADs=
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://forum.sparkfun.com/templates/subSilver/images/lang_english/post.gif
+
+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
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://forum.sparkfun.com/templates/subSilver/images/lang_english/reply.gif
+
+R0lGODlhUgAZAOZ/AExMStnn7vHx8ezczABdjNzc3PX19fqUL/yjTKSkpLi4t+q5iABll83f6DJ9
+o/jDj5mZmDF1l+Dg4NLS0ujo6DyHrOrq6uXl5fbYu6rH1fz8/IiHhuJ6FOzs7NZzEZWosqW8x8PD
+w/n5+Xx8emuhvLjO2TY2Nc3MusbR1vj4+OfGps/PztnZ2f+JFebg2fTl14m1y5KlrgVPc3epwePj
+4+7u7nKVp96tfkmLrGtrZmScuV6evhRsmPXRrVeKo+Lhy6yso+rSumuUqfnNoYWmt97ayYKCffm4
+eZ7D1brDyO+AE1WCmbPP3fmFE/msYPecRPnjzcfJyg9ii+LKspi+0MXN0PLr5YCvxvb5+r7V4eWx
+f/7+/VxcWtN+Kh9znpO6zvrz7ODs8ebl4NugZf20bFGUtv////7+/v39/fr8/XObr/j6+2aQpfyO
+InV1cdmXVebs7+/v69yLOvn7/NTV1tjc3unw8/T09PH2+Z+fnv///ZGQkNne4e7n4OilY////yH5
+BAEAAH8ALAAAAABSABkAAAf/gH+Cg39MJA5eBIqLjI2Oj5CRko4OFVcBhJmCVA44Xw1hZqKjpKWm
+p6ipqqYNWVdeJJiaZ4cNq7e4uatnvGdmZ2hrX1JUmbQkpBJ7Ciy6zs+ivbxo1NQa1xoNPEiEM8ik
+I3kjXCZcRiHQ6aPS09XY7xoi8lkEc4JMDlikFCYaZtcbyEnwpe4Wu2rW4F2Tx1BEioc6rgiqkKXU
+njxmRBgQEIJcDn8FS7ED5k5hPBFQEAyR97BlCgMG+BBI08ABQVF3TNTQaIYCBHImIKApyCvMlWsI
+TZ5smAJDiwUtYUq9c4cCjgwwZpSCsCfFhmUF/gkAAGDFzV0H0WRhcCeFwoYM/10+dLpgKtW7AjoQ
+0YGDCamcHVgIuBMlzwYzW4JyESGqARI0SHYEQFN0BxIRGtSWgWEnyw4GagRAIQNmyEowDxA8SPGC
+zIsHTnrApAvlSA8BAo48sIK7BghEoUbl2WMGwlcFNIbWMEGDS5ShO3g44FGBQQYRTBhM9wInAAMc
+UkBwkhHBwoEW6BFAaYO+xREn7dPfcaplSIsnAl60UFKjf40qUkihjygaAEDDBRfcIYECxpmxAhdi
+cBFCCmd4J0MdFuDggwBl+EABH+FlwAAKYlggABMyFEDBEE1w4EEPR7TwwBFKyOEUB2+ocIASL9An
+wI4vxHhDDR0UuYIi6ygwgv8ZeySgwAo04GYGEG6IYYJg8VSwxAU1ZCCFBQyAQEENFfhgwQwMXNHB
+iQzQYMEdB3jQAZz3tRiEAE9wMEBuSixAXw0xHnGAnh1YYOgKAeJBIAATmBECEHt85aQZXxVhwgUC
+YFYmBXfAwAMFXhDxpgNqUNDBFdaxicKbCHCAG3wHODFADQIg0EIPgCqhAn0dDIBeE2MYagEFFERB
+gBdhAKPkLyDVsAIQCZiRAxAKcBGlPBXwUAI+bFywgwNYMZBECSRI4MASFKzlYa2uCvBAE2040cSs
+tsbbAgcdBNGCFobK68EUxBIrQRI89EVNAuQA4IYCEugxih4AnJCHGxII8FD/BRFIQcASdVBAgw8y
+SGGDBBkkIkUUNHTggAwSWPCEB/314YcHHowxQAcIKOFiFypYEAQHNxCrQhNdBEwsCx9U8AUJC9VQ
+gAlu5ACACTlAEEIcJvxgxB5RwlSBDRNUceCaHaAwgQQXDKtAARKYKkEVbRcpd69BCNuqCwAbHbC8
+CyDo9wpCkBAGDy3VkEAOP/xQxAlAGJHwD1wAESVVFahBA7FrCkAk5kVScIGphXpuQaHClk5sq3oT
+i6ALbXCAtt8SRBFBA3/oQEVbBvxkAgBG5HFC4j/8DkAImN4hwNcp49YbkR0wT3qRpRuaesAvq+63
+3w8oMcb1F0zwgQOCaNOA+sVVsQDEBlKXswEQlrLAJW4loHBB8/7NDX30w05vNIJBTME99yoowvUK
+EIIIFEMQMHAAH9ZkARoUgAV0mEAIEjCO3bmvfsQa3dzwpz+9/e+DIPQbAdlAgkzMIAJwG53nHPjA
+CEqQBaC7H/7y10HPhfCGIJTABBRgAx3IghBXkIIQkjABFrBNAhJo4QRWQIcC0OCJNECiFKeIxAJY
+8YpYzKIWt6hFCK4gCgqIQQR0QDtN/CEMMyCAA4SgBiJ84I1vjIEc4UjHOsJRjnjMox73yMc+xsAG
+QvABDyLwBTNmQgMlmAFfHMDIRjrykZCMpCQnSUlHliEiPyREIAAAOw==
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://forum.sparkfun.com/templates/subSilver/images/icon_minipost.gif
+
+R0lGODlhDAAJALMJAAAAAP///7i4uPf39/39/fDw8Onp6dzc3PPz8////wAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAkALAAAAAAMAAkAAAQnMCVAqbwShG3x3EPlAURZAuOgDgeKAUght2Nh3IJ7AYfg
+56OKSBIBADs=
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://forum.sparkfun.com/templates/subSilver/images/lang_english/icon_quote.gif
+
+R0lGODlhOwASANU/AAZpm8fHxdzc3FKSss/h546OikNxh////4uzyHd3df796+Hh4TNwj/n5+W2U
+qA4ODr29veXl5fT09Ieksv/98urq6vDw8O3t7QBdjExMSqSkpECJrtPT03usxMrR1be3twtSdkhI
+e2+ft7DJ1r7Hy/z8/KG7x7fM1+70+OHs8avCzbrS3s3c5L7Y5VB8kv/+9xx0oP///DN+pMvNztjW
+zLG6vtjY2Obt8KOilM7X2x8tNF5lZ6mtrWaNoeXj0v///yH5BAEAAD8ALAAAAAA7ABIAAAb/wJ9w
+SCwaj8ikcvl7PHTOB3NKZT4ys8Yr1vhAq2BqD4PR8QjoNHqnI7vf8Lh8/u4NMYiUpvDqh0IvfzEl
+OxwHh4iJiouMjQcpCBg/PQiHOwEUFIGAf30FBSWOoo0lpaYlDakNHWMoBzGXmZohmYAvOAUNo6Kn
+Gx2qwKkSEh5kiAk8Csq0FCEKmQkauokErijXLaUpBKYoLKorMgMsEg03KzfD6hzGhxUZyvHKmTQZ
+EdMHBBsAAB3iKwDKddhQDgE/GCck8APhoEIHfgBWXLBg4QI7DIkSZPAhLx6WCvhEyMihAgAIFSMw
+VJDgrwIBABNsDGBQoQKDHgJyADihAoOL/wgVLlSY0e5QiRkZMuAqkKCAAiwWGpgCgCDoBgYLUka4
+4C8CAhgLFpzA4KHCBgcCOsAYYLKGAKBDix5AVQHCpwIadCgokCGqKhgTKliQgXUEgAUVBoA1+Lan
+hwgbBggw6EDEDA5vI0QIUNSUhAsRwi7QiGNHAnUsqT7E+lLEPgwTIgDYYEKGCxsLBmAgoVOEiQ0q
+FmjeTOaUqmEUK86IJljdggkgZFx9KwKEARIuXAhQ4QJEDxK4PYCYIMAEA4YehIfmjCEdMNTIKywQ
+gHjiBaHzRTCwoVmADRsCBDjffwCG5R99ARaomQ01YNBDB83Bl1xFNQElVE0VaKYffaGJ5jehh5qJ
+1mFYodkQQA92YCBCDQFA4OKLMMb44gc0OuACDzTmqOOOPPLIwxhDjEHHkEQWOaQdPwQBADs=
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://forum.sparkfun.com/templates/subSilver/images/lang_english/icon_profile.gif
+
+R0lGODlhOwASANU/AOPj467G0ri4uCtZbv///6JwJ9zc3Yuzxn2rwuvr6+7TbE+Ss/66UQZpmmyV
+qTZsg9Ti5/Pz8//4g8bGxAFdizyIrfyoQPn5+dfX14+ntFim0Mze5tmBBfe2EMq2mPvRE8zQ0lmG
+m7qlcG223cmOMYF5cXOlvu70+P2dM9ejVdKYRa6spaO3wTt6meHs8obG6aSssEaeybrS3hx2oil/
+q5u+0I2Ojz+WwbOwp7Cwseft8Xi+4v+UHdmmFP//4f///yH5BAEAAD8ALAAAAAA7ABIAAAb/wJ9w
+WOgpFL2hcslsOp/QX6Ej8Uk+nKh2yxWSOimP4tMpdM/oDIVCslhQboZqsK7b7/i8Pp8ZUg4uBCkM
+hIUqKwAEiouMjY6NgY+QBxQ/GQeLbRaFDCSIF5KhjxoNGxsyBDINF6CsrhcIaieLE3BubgU5AKCi
+vakNAAkLCxEyFAkRrxfJIGuMFyQo0ig8JRMJkIoQswQns96KG9wyFTMOCRAyCcbBEToyEBHyGM6M
+HgUc+QUPINiLEA0QVGjQ4MCFBTRqNJCxYWADYjVmUHiQQGCCABSCHSDYoEaCBM0oNKrwQIQIDxU0
+tADBS1EFCi0AIKCwIUADCiEgLFiJUZ2J/wcGAJiIidEAwAA2HwQLyajFCw0IFJl4sSPELkUXME4I
+NiNDAhpWAcxgEaxCiARDDaAlSsHAxgU3WQRlqohFjBEvWkAgsGDHiJUJXKnqF6GB1woOuJoIRiNx
+WqEtDGDEoNCBAwEYgk6oR6BFDA0jRoSQ0VfDgK2sij0MsCAjAMTBTMw4YILCBAOPh2KYbKCBgwMV
+DgAAsFkkqxY0boC+MeDGghkDBACQV4yCA5xyAbRwoNaAgwEPMgTdiQHAgRC7H2Rm0cI6CM1rdCRL
+8GCA/fslbODYKu8ihcwGBJUAAEENR6ABmWHEQnkHNkggBhACgIEAFGSAADIJGDCBABxyOD7BBJl9
+9BFvBpZYYoEBoFegiSYiOIEDfVgnwIYc5mCjjR3mmMEDOOboo483/igkDCFUIoQaeySp5JJJ9vFD
+EAA7
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://forum.sparkfun.com/templates/subSilver/images/lang_english/icon_pm.gif
+
+R0lGODlhOwASANU/ALa2t6zG02e13dnZ2P60Sf///+Tk5PnIXtZoHI21yfPz88XFxiFXcerq6mVl
+ZgBci2mSpo2jryxuiPumO6toHUuQsgNllvyVNvj4+DuDp8WhXqp0bpCVl5UjDMawltjl6FyCjX2I
+jENre8iSFGIqEve2EGtaIfvRE3/H7SMfHdKNN3qnv8zd5j6Ww6ypoO7v8PT5/C1+peLs8RNvnvz8
+/FikyXqdrrWckP+UHd6tDf//4c/S0v/4g97e3kJCP////yH5BAEAAD8ALAAAAAA7ABIAAAb/wJ9w
++PM5fMTkL3c45CjKqHRKNbqO0tGJp+OVoNSwmJgyhhyplJJSOh08mtJoTJdCHqI0iYRAmBgPgQ8M
+GgQEE4gTI4KMjY6PjRBDFgkyHCkqE4YHFzcNNAUFPSpNpQQqCy+hq6ytrq8yCRY/EAmhER0Xuhc4
+CDc9GKEDKoaamqiqr8qhNM3ONBjRGAl3MKELHX3aFADAoT0UiYidOwrLq8/O0uvSA4GrGA7ZFAgd
+GwufzBs4E7uoA8FayWjG4kWzFy8wvPgQjYUMBRAjKtjxjtkCEh0ydohQDh0IEwhGhLyBLx0NFhZW
+ZLAwI4GCCjESzLBQY+WMggoQIqT4gJUC/xEONmyIUCOBgWAfMtSoAEeDhBg7DEJbl+FBhgErHuwI
+YOFBhASDBsyAYKDBiwZoeaKrgMJGsAACBID4BAIFihWhVtRAIcGAAnYKAjzo1mCGDQMxIAwQPGBA
+Bgg9yqJtsKBigQgCUAiwBRfFVQUxNlcokFRzjcMSIXJdUHZGhB6PFz8YAFuxgdu3K/cMJSEuihoB
+EmhmgI9B5go7QMSt0SLDDrM6X3CtEKDC7NqyacfGnTuQMxszWtQQIGFGDAYhWPuYUaGFhBYCmMeQ
+sKDH2clc74AAQBtChMUS9PdfZLjp9hcGDYQAAggMOBACBy4AwFoPHITgAwMYYiiCC/VNhl6WYDsM
+EGJkPZRoQA+0GZAibj0A8EAt0PWwwwI00hiiZDLuAMCOPAKwA3e3gbgikETiNsACEEjywAoSLtDj
+k1C6IKWUUO4YgQQRVqnlji7cMcQdkIQp5phkBiLJD0EAADs=
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://forum.sparkfun.com/templates/subSilver/images/lang_english/icon_email.gif
+
+R0lGODlhOwASANU/ALm5ua3F0f///+rq6pm6yv33rt3d3f/7yAhomIdpL+jQaWVjW+jUsNnj5/r6
++gBdjNG0jcXFxauPauLi4vDw8OXl5TRyklSXuJSUlLWaWfb29tPU1P/832yWqgdPdHNaHnOkvDmH
+rmCGliolEHiqw0d4kYqtv7vT30mGpOPt8qiYgL2khL3N1ZmCYkI8MsWfN/39/CJ3oeTLp9e/k87h
+6//+7/b5+9C4e6mKONfY2auvse309+7ixfPz883NzP///yH5BAEAAD8ALAAAAAA7ABIAAAb/wJ9w
+SCwaj8ikcvlTrVbMqHT6W6gEjtmqRe1KRY/wQ0IWmHkMlQghbrvf8LhbNEQQUmaATJCAmAU1BwwM
+MxgOf4iJiouMMCkECD8iBDB/C2YQEgIcBxxmMAkjO4eMpYowNCcOJwgaNg4ONiZgNn8GK2YTCQw1
+NQIMCR8jCwO1poswyckOMBcoPScPAxQa1TlhiCocPSsSLRmDoQkZIwADpGY0NGYplTTJOzSwsCcp
+sTYNJwMsDxMDPQA3YDPjQwaPbjI4JHAR6kUBBi4mUKgkgEYIBAguNLBzMQYIjBd6aLiIwASFHiRC
+DAjwwMA0ChR8DOyxIMEMHpwOKNj5wWGL/wUTNAhIduEChRAecoR4YCFHDA8mCHioAHOACQQDBpCw
+UIGlgQpZB8h8YKaHDgwLFoArwLbAiw8FXGCooAEWjIwxHpSYINXHhBAiDLCc0OACxpZaLQh+kMNf
+1rF/YPQwAADthww32Ca44cLHAFc2NMRA0SHAV68VQnRYbOAjiAB2JoBQzLJxhduQPznQ0GNAhQ1o
+GeL4sMBlNYAXYhAA0WFly9Sra4OIYSKv4tkbWG74ejtCmGXzjlPImgPAArn+AMJs0MFDCQIVWCiu
+0MFEDvn3S7hv72NWjgBNcVeBdw+IZENo1RzXw3i++bABWDAxOMAEBhgwQQUUTkChhRVSuFHBBjmE
+WCGHtlVA2QMimDANQCwuGCGDYIUlI4YX3lajhjRqmKGOPOqYQwQd0IEACABEYGSRACSp5JJMNunk
+k1ACoEMHDwwBhhxYZqkllnT8EAQAOw==
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://forum.sparkfun.com/templates/subSilver/images/spacer.gif
+
+R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://forum.sparkfun.com/templates/subSilver/formIE.css
+
+INPUT {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; BORDER-BOTTOM-WIDTH: =
+1px; BORDER-RIGHT-WIDTH: 1px
+}
+TEXTAREA {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; BORDER-BOTTOM-WIDTH: =
+1px; BORDER-RIGHT-WIDTH: 1px
+}
+SELECT {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; BORDER-BOTTOM-WIDTH: =
+1px; BORDER-RIGHT-WIDTH: 1px
+}
+INPUT {
+	TEXT-INDENT: 2px
+}
+INPUT.button {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; BORDER-BOTTOM-WIDTH: =
+1px; BORDER-RIGHT-WIDTH: 1px
+}
+.postbody {
+	LINE-HEIGHT: 18px
+}
+
+------=_NextPart_000_0090_01C98CEE.F4E408A0--

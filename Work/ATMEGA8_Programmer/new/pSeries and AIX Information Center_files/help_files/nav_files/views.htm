@@ -1,0 +1,160 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0124)http://publib.boulder.ibm.com/infocenter/pseries/v5r3/advanced/views.jsp?topic=/com.ibm.aix.files/doc/aixfiles/termios.h.htm -->
+<HTML><HEAD><TITLE>Navigation Views</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<STYLE type=text/css>HTML {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: 0px; WIDTH: 100%; PADDING-TOP: 0px; BORDER-BOTTOM: 0px; HEIGHT: 100%
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; HEIGHT: 100%
+}
+IFRAME {
+	WIDTH: 100%; HEIGHT: 100%
+}
+.hidden {
+	VISIBILITY: hidden; WIDTH: 0px; HEIGHT: 0px
+}
+.visible {
+	VISIBILITY: visible; WIDTH: 100%; HEIGHT: 100%
+}
+</STYLE>
+
+<SCRIPT language=Javascript>
+
+var lastView = "";
+/**
+ * Switches to specified view
+ */
+function showView(view)
+{ 	
+	if (view == lastView) 
+		return;
+		
+	lastView = view;
+       	
+	// show appropriate frame
+ 	var iframes = parent.ViewsFrame.document.body.getElementsByTagName("IFRAME");
+ 	for (var i=0; i<iframes.length; i++)
+ 	{			
+  		if (iframes[i].id != view){
+   			iframes[i].className = "hidden";
+   			iframes[i].style.visibility="hidden";
+  		}else{
+   			iframes[i].className = "visible";
+   			iframes[i].style.visibility="visible";
+   			if (view == "index") {
+   				if (parent.ViewsFrame.index && parent.ViewsFrame.index.indexViewFrame && parent.ViewsFrame.index.indexViewFrame.loadIndex) {
+   					parent.ViewsFrame.index.indexViewFrame.loadIndex();
+   				}
+   			}
+   		}
+ 	}
+}
+
+var activityFiltering = false;
+var displayShowAllConfirmation = true;
+var regExp=/&(showAll|synch)=(on|off|yes|no)/gi;
+function toggleShowAll(){
+	if(activityFiltering){
+		if( displayShowAllConfirmation ){
+			confirmShowAll();
+		}else{
+			showAll();
+		}
+	} else {
+		dontShowAll();
+	}
+}
+
+function dontAskAgain(){
+	displayShowAllConfirmation = false;
+}
+function showAll(){
+	var displayConfirmParam;
+	if(displayShowAllConfirmation){
+		displayConfirmParam="";
+	}else{
+		displayConfirmParam="&showconfirm=false";
+	}
+	activityFiltering=false;
+	try{
+		window.frames.toc.tocToolbarFrame.setButtonState("show_all", true);
+	}catch(ex) {}
+	try{
+		window.frames.search.searchToolbarFrame.setButtonState("show_all", true);
+	}catch(ex) {}
+	try{
+		window.frames.toc.tocViewFrame.location.replace(window.frames.toc.tocViewFrame.location.href.replace(regExp, "")+"&showAll=on"+displayConfirmParam);
+	}catch(ex) {}
+	try{
+		window.frames.search.searchViewFrame.location.replace(window.frames.search.searchViewFrame.location.href.replace(regExp, "")+"&showAll=on");
+	}catch(ex) {}
+}
+function openFilter(){
+	try{
+		window.frames.toc.tocToolbarFrame.setButtonState("filter", true);
+	}catch(ex) {}
+}
+
+function dontShowAll(){
+	activityFiltering=true;
+	try{
+		window.frames.toc.tocToolbarFrame.setButtonState("show_all", false);
+	}catch(ex) {}
+	try{
+		window.frames.search.searchToolbarFrame.setButtonState("show_all", false);
+	}catch(ex) {}
+	try{
+		window.frames.toc.tocViewFrame.location.replace(window.frames.toc.tocViewFrame.location.href.replace(regExp, "")+"&showAll=off");
+	}catch(ex) {}
+	try{
+		window.frames.search.searchViewFrame.location.replace(window.frames.search.searchViewFrame.location.href.replace(regExp, "")+"&showAll=off");
+	}catch(ex) {}
+}
+
+var confirmShowAllDialog;
+var w = 470;
+var h = 300;
+
+function confirmShowAll()
+{
+
+	var l = top.screenLeft + (top.document.body.clientWidth - w) / 2;
+	var t = top.screenTop + (top.document.body.clientHeight - h) / 2;
+
+	// move the dialog just a bit higher than the middle
+	if (t-50 > 0) t = t-50;
+	
+	window.location="javascript://needModal";
+	confirmShowAllDialog = window.open("confirmShowAll.jsp", "confirmShowAllDialog", "resizable=yes,height="+h+",width="+w+",left="+l+",top="+t );
+	confirmShowAllDialog.focus(); 
+}
+
+function closeConfirmShowAllDialog(){
+	try {
+		if (confirmShowAllDialog){
+			confirmShowAllDialog.close();
+		}
+	}
+	catch(e) {}
+}
+// uat4i00000002
+function onunloadHandler() {
+	closeConfirmShowAllDialog();
+	window.frames.toc.tocViewFrame.closeQuickSearchDialog();
+	
+	}
+// end of uat4i00000002
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY dir=ltr tabIndex=-1 onunload=onunloadHandler()><IFRAME class=visible 
+id=toc title="Layout frame: toc" name=toc src="views_files/view.htm" 
+frameBorder=0>
+ 	</IFRAME><IFRAME class=hidden id=search 
+title="Layout frame: search" name=search 
+src="C:\ATMEGA8_Programmer\new\pSeries and AIX Information Center_files\help_files\nav_files\views_files\view(1).htm" 
+frameBorder=0>
+ 	</IFRAME><IFRAME id=temp title="Layout frame: temp" 
+style="VISIBILITY: hidden" tabIndex=-1 name=temp src="about:blank" 
+frameBorder=0></IFRAME></BODY></HTML>

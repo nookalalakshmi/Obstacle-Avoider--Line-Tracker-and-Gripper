@@ -1,0 +1,48 @@
+.pointerhand {
+	CURSOR: hand
+}
+A.toolbarLink {
+	DISPLAY: inline-block
+}
+.toolbar2 A {
+	DISPLAY: inline-block
+}
+.content_wrapper {
+	HEIGHT: 100%
+}
+HTML BODY.home #footer_wrapper {
+	MARGIN-TOP: -90px
+}
+HTML BODY.scoped #footer_wrapper {
+	MARGIN-TOP: -90px
+}
+HTML BODY.results .content_wrapper {
+	HEIGHT: auto
+}
+HTML BODY.results #footer_wrapper {
+	MARGIN-TOP: 0px
+}
+#loginDialogDiv .loginMessage {
+	WIDTH: 229px! important
+}
+#loginDialogDiv .loginCheckbox {
+	MARGIN: -3px 0px 0px -3px
+}
+#loginDialogDiv .ffRow {
+	HEIGHT: 20px
+}
+#loginDialogDiv .caption4 {
+	MARGIN: 0px 0px 4px; HEIGHT: 20px
+}
+#loginDialogDiv .caption3 {
+	MARGIN: 0px 0px 4px; HEIGHT: 20px
+}
+.topToolbarCorner {
+	HEIGHT: 18px! important
+}
+#loginDialogDiv #postRegisterOKButton {
+	MARGIN: 4px 0px 2px
+}
+.kodeViewerContDiv {
+	WIDTH: 100%; HEIGHT: 1%
+}

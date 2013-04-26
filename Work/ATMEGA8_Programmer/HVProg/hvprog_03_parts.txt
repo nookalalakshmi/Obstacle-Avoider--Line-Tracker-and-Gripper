@@ -1,0 +1,52 @@
+Part     Value         	Remark 
+
+C1       100nF          
+C2       100nF          
+C3       100nF          
+C4       33pF           
+C5       33pF           
+C6       100nF          
+C7       100nF          
+C8       100nF          
+C9       100nF          
+C10      1uF            
+C11      1uF            
+C12      1uF            
+C13      1uF            
+C14      100nF          
+D1       1N4148       	  
+IC1      AT90S8535	or Mega8535
+IC2      74HC165N       
+IC3      MAX232         
+JP1                     to disable high voltage mode (jumper unmounted)
+JP2 	 Reset Select
+LED1     Red            
+LED2     Green          
+Q1       7,37MHz        7,3726MHz
+Q2       BC337          
+Q3       BC337          
+Q4       BC327          
+R1       10k            
+R2       1k5            
+R3       1k5                  
+R6       36k            
+R7       150k           
+R8       10k            
+R9       10k            
+R12      47k            
+R14      10k            
+R16      10k            
+R17      10k            
+R18      10k            
+R19      10k             
+R20      10k            
+S1                      Controller Reset
+S2                      Target Reset
+SV1                     8535 ISP Connector (6 or 10 Pin)
+SV2                     6 Pin ISP
+SV3                     Parallel Prog Misc. Header (at least 6 Pin)
+SV4                     10 Pin ISP
+SV5                     Parallel Prog Data Header (STK500 compatibel)
+SV6                     Parallel Prog Control Header (STK500 compatibel)
+SV8                     Serial HV Programming Header (at least 8 Pin)
+X1                      SubD 9pin for RS232 interface

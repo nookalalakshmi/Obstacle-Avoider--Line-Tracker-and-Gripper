@@ -1,0 +1,82 @@
+BODY {
+	COLOR: #333; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: transparent
+}
+.menu {
+	BORDER-RIGHT: #007700 1px; PADDING-RIGHT: 0.5em; BORDER-TOP: #007700 1px; RIGHT: 2em; BORDER-LEFT: #007700 1px solid; WIDTH: 17.5em; BORDER-BOTTOM: #007700 1px; POSITION: absolute; TOP: 2em
+}
+.menu UL {
+	MARGIN-TOP: 1em; PADDING-LEFT: 0px; MARGIN-LEFT: 1.5em
+}
+.menu LI {
+	MARGIN-TOP: 0.4em
+}
+.menu A {
+	COLOR: #007700; BACKGROUND-COLOR: white; TEXT-DECORATION: none
+}
+.menu A:hover {
+	COLOR: blue; BACKGROUND-COLOR: white
+}
+.menu_comment {
+	FONT-SIZE: 0.8em
+}
+.content {
+	RIGHT: 20em; LEFT: 0em; MARGIN-LEFT: 2em; MARGIN-RIGHT: 2em; POSITION: absolute; TOP: 2em
+}
+.content H1 {
+	MARGIN-TOP: 0px; COLOR: #005500; TEXT-ALIGN: center
+}
+.content H2 {
+	COLOR: #005500
+}
+.content H3 {
+	COLOR: #005500
+}
+.content P {
+	LINE-HEIGHT: 140%
+}
+.title_image {
+	FLOAT: left; MARGIN: 1em 2em 1em 1em; WIDTH: 12em
+}
+.logo {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; MARGIN-LEFT: 1em; MARGIN-RIGHT: 0.5em; BORDER-BOTTOM: 1px solid; BORDER-RIGHT-WIDTH: 1px
+}
+.last_update {
+	FONT-SIZE: 0.6em; MARGIN-LEFT: 1em
+}
+.looking_for {
+	COLOR: #666
+}
+.cv_list {
+	LIST-STYLE-TYPE: none
+}
+
+@media Print    
+{
+.menu {
+	DISPLAY: none
+}
+A {
+	TEXT-DECORATION: none
+}
+.cv_image {
+	DISPLAY: none
+}
+.cv_link_remark {
+	DISPLAY: none
+}
+.content {
+	FONT-SIZE: 10pt; RIGHT: 0em; LEFT: 0em; MARGIN-LEFT: 2em; MARGIN-RIGHT: 2em
+}
+.print_hide {
+	DISPLAY: none
+}
+
+}
+
+@media Screen    
+{
+.screen_hide {
+	DISPLAY: none
+}
+
+}

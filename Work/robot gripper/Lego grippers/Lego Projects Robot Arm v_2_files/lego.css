@@ -1,0 +1,24 @@
+BODY {
+	BACKGROUND: url(http://www.cuug.ab.ca/~lapierrs/rez/images/bg_lego_darkgrey.jpg) #505050; COLOR: white
+}
+A:link {
+	TEXT-DECORATION: underline
+}
+A:visited {
+	TEXT-DECORATION: underline
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+A:link {
+	COLOR: #00ff00
+}
+A:visited {
+	COLOR: #ffff00
+}
+A:hover {
+	COLOR: #0000ff
+}
+.ctr {
+	TEXT-ALIGN: center
+}

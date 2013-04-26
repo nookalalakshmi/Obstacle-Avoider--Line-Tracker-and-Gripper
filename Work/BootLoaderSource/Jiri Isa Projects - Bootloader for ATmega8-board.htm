@@ -1,0 +1,324 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0080)http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/bootloader-for-atmega8-board/ -->
+<HTML><HEAD><TITLE>Jiri Isa: Projects - Bootloader for ATmega8-board</TITLE>
+<META http-equiv=Content-Type content=text/html;charset=iso-8859-2>
+<META content="Jiďż˝ďż˝, Iďż˝a, Jiri, Isa" name=keywords><LINK 
+href="Jiri Isa Projects - Bootloader for ATmega8-board_files/style.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY>
+<DIV class=content><A title="Inside of Fatima" 
+href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/bootloader-for-atmega8-board/fatima_v5in.jpg"><IMG 
+class=title_image title="Insode of Fatima" alt="Inside of Fatima" 
+src="Jiri Isa Projects - Bootloader for ATmega8-board_files/fatima_v5in_thumb.jpg"> 
+</A>
+<H1>Bootloader for ATmega8-board</H1>
+<P><A href="http://www.robotika.cz/articles/atmega8-board/">ATmega8-board</A> 
+has been successfully used for a long time (<A 
+href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/ferda_and_fatima/">Ferda 
+and Fatima</A>, <A href="http://robotika.cz/articles/gerda">Gerda</A>, <A 
+href="http://robotika.cz/robots/daisy">Daisy</A> and other). This article 
+describes how I made the avr109 bootloader (<A 
+href="http://www.atmel.com/dyn/resources/prod_documents/doc1644.pdf">Application 
+note</A>, <A 
+href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/bootloader-for-atmega8-board/avr109.zip">original 
+source code</A>) run for this board. If you do not intent to use the bootloader 
+with ATmega8-board, I suggest to read this text and then to adapt the original 
+source to your needs yourself. Do not use my version in this case. </P>
+<H2>Why a bootloader?</H2>
+<P></P>The experience from the <A href="http://www.eurobot.cz/">Eurobot 2007 
+Czech finals</A> has shown, that there is a new problem becoming stronger and 
+stronger - the microprocessor programmers. Most of the programmers we have been 
+using are designed for parallel port. Parallel ports are becoming a rare 
+commodity, though. Most new laptops are not equipped with them. In past, I 
+overcame this problem by soldering a serial-port programmer (DASA), used 
+together with a USB-to-serial converter. In present, I have troubles using this 
+combination with FreeBSD 6.2 and avrdude 5.2 (uisp is no longer distributed with 
+FreeBSD). Altogether, there is no way to flash a new program to my 
+ATmega8-boards for me. Bootloaders give me an opportunity to pre-flash the 
+ATmega8-board in the convenience of a desktop computer at home and simply upload 
+a new program via the serial line, if needed on the battlefield. 
+<P></P>
+<H2>Why avr109?</H2>
+<P>First of all, my requirement for a bootloader is that I can use it with any 
+operating system I meet nowadays (FreeBSD, Linux, Windows). This removes 
+bootloaders such as MegaLoad from the list of candidates. There are actually 
+probably only STK500 and avr109-based bootloaders left. Having troubles with 
+making any STK500-compatible bootloader run, I tried the avr109 bootloader. 
+After few trials it works for me (TM). </P>
+<H2>How to make it work?</H2>
+<H3>Programmer</H3>
+<P>First of all, a hardware programmer is still necessary to upload the 
+bootloader to the processor. If you do not posses one, get it. </P>
+<H3>Configuration and compilation</H3>
+<P>I have been using the "Gcc" branch of the bootloader compiled with avr-gcc 
+and avr-libc. The original code is configured for the ATmega128 microprocessor. 
+It is easy, though, to change this configuration. The source distribution 
+contains a file named <CODE>preprocessor.xls</CODE> designed exactly for this 
+purpose (<STRONG>Warning:</STRONG> macros involved; Disclaimer: it can be used 
+with OpenOffice). Following the advice on the first tab, it is very 
+straightforward to change the device to <CODE>_ATMEGA8</CODE> and the boot size 
+to <CODE>_B1024</CODE> on the second tab. The older ATmega8-boards came pre-set 
+to the speed of 1MHz, hence the <CODE>CPU_FREQ</CODE> should be set to 
+<CODE>1000000</CODE> in this case. Newer boards are set to 8MHz, thus the value 
+<CODE>8000000</CODE> in this case. I have troubles using a baudrate higher than 
+4800 bauds. I suggest to save yourself from troubles by using this baudrate too. 
+I do not feel any big speed limitation when uploading a new program using the 
+bootloader. The macros in the sheet fill all the other defines for the file 
+<CODE>defines.h</CODE>. Just copy the generated content to the 
+<CODE>defines.h</CODE> file. Typing <CODE>make</CODE> in the source directory 
+should compile the bootloader with a requested configuration. </P>
+<H3>Upload to the microprocessor</H3>
+<P>I cannot help you much with the upload of the new bootloader to your 
+ATmega8-board, because the method is specific for your particular combination of 
+hardware and software. Check the <CODE>Makefile</CODE> for the pre-specified 
+method using avrdude. I had just changed <CODE>AVRDUDE_PROGRAMMER</CODE> to 
+<CODE>dasa</CODE> (the type of my programmer) and <CODE>AVRDUDE_PORT</CODE> to 
+<CODE>/dev/ttyUSB0</CODE> (because I use the USB-to-serial converter), then I 
+typed <CODE>make program</CODE> and waited until it finished. </P>
+<H3>Setting the ATmega8 fuses</H3>
+<P>The microprocessor needs to know, that there is some bootloader involved. It 
+also needs to know, where to find it. The first fact is signaled by setting the 
+least significant bit of the high fuse (<CODE>BOOTRST</CODE>) to 0 (from the 
+default value 1). This makes the processor aware of the bootloader. The 
+bootloader location is defined through its size specified in the two preceding 
+bits (<CODE>BOOTSZ0</CODE> and <CODE>BOOTSZ1</CODE>). For the booloader size I 
+suggested in the configuration, they should both contain zeros. This combination 
+gives me a complete value of high fuse <CODE>0xD8</CODE>. The following command 
+changes the high fuse byte to the requested value (with dasa programmer and 
+/dev/ttyUSB0 again):<BR>
+<CENTER><CODE>avrdude -p m8 -c dasa -P /dev/ttyUSB0 -U 
+hfuse:w:0xD8:m</CODE></CENTER>
+<P></P>
+<P>If you do not know or want to change the board speed (e.g. from 1MHz to 
+8MHz), check the datasheet (or <A 
+href="http://wolfpaulus.com/journal/embedded/arduino3.html">arduino</A>) for the 
+<CODE>CKSEL0</CODE> and <CODE>CKSEL1</CODE> bits of the low fuse byte. </P>
+<H3>Uploading a new program to the microprocessor using the bootloader</H3>
+<P>Pull the <CODE>PD4</CODE> pin down first (press the connected button, plug 
+the starting cable in or whatever) and switch the board on afterwards. The 
+bootloader should be waiting for instructions now. I use the following command 
+to upload a new program:<BR>
+<CENTER><CODE>avrdude -p m8 -c avr109 -b 4800 -P /dev/ttyUSB0 -U 
+program.hex</CODE></CENTER>
+<P></P>
+<H3>Modifications</H3>
+<P>In the original version of the avr109 bootloader, the bootloader starts, 
+checks the <CODE>PD4</CODE> pin and if pulled low, waits for a new program to be 
+uploaded. If the pin is not pulled low, the execution jumps to the begining of 
+the program in the chip. Luckily, we use <CODE>PD4</CODE> as a starting cable 
+input in our Eurobot competing robots. For this reason I did not change this 
+configuration in the <CODE>preprocess.xls</CODE> file. If I plug the starting 
+cable in before the board is started, the bootloader waits for a new program. If 
+I start the board before the starting cable is plugged in, the "real" program is 
+executed (and it can wait for the starting cable to be plugged in). </P>
+<P>Furthermore, I had troubles with the bootloader (the baudrate). For this 
+reason, I fully understand other people adding different LED signalizations to 
+their bootloader. I did the same. ATmega8-board comes with a LED specificaly 
+added to the <CODE>PB0</CODE> pin for this purpose (the red one). I added a 
+status LED signalization to the bootloader code. <STRONG>And this is why I urge 
+you not to use my version of bootloader for other boards than 
+ATmega8-board.</STRONG> You can find my changes by looking up the <CODE>status 
+led</CODE> string in the <CODE>main.c</CODE> file. When the bootloader starts, 
+the red LED is switched on (as opposed to blinking when the normal program 
+executes). When the bootloader is over, it switches it of (and it starts 
+blinking if the new program executes correctly). </P>
+<H3>Download</H3>
+<UL>
+  <LI><A 
+  href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/bootloader-for-atmega8-board/avr109.zip">The 
+  original source code.</A> 
+  <LI><A 
+  href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/bootloader-for-atmega8-board/avr109_atmega8-board.tar.gz">The 
+  version of the GCC branch of the source code modified for the ATmega8-board 
+  (with a predefined clock rate 1MHz).</A> 
+  <LI><A 
+  href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/bootloader-for-atmega8-board/bootloader_atmega8-board_1MHz_4800b.zip">Bootloader 
+  compiled for the 1MHz version of ATmega8-board.</A> 
+  <LI><A 
+  href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/bootloader-for-atmega8-board/bootloader_atmega8-board_8MHz_4800b.zip">Bootloader 
+  compiled for the 8MHz version of ATmega8-board.</A> </LI></UL></DIV>
+<DIV class=menu>
+<DIV class=logo><A title="Jiří Iša" 
+href="http://artax.karlin.mff.cuni.cz/~isa_j1am/">Jiří Iša</A></DIV>
+<UL>
+  <LI>Projects <SPAN class=menu_comment>(the newest first)</SPAN> 
+  <UL>
+    <LI><A title="Robotour 2008" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/robotour2008">Robotour 
+    2008</A> <SPAN class=menu_comment>(Outdoor robotic delivery challenge &#8212; in 
+    progress)</SPAN> 
+    <LI><A title="Reinforcement learning competition 2008" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/rl-competition2008">Winning 
+    Reinforcement learning competition 2008</A> <SPAN 
+    class=menu_comment>(International competition in reinforcement 
+    learning)</SPAN> 
+    <LI><A title="Robotour 2007" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/robotour2007">Robotour 
+    2007</A> <SPAN class=menu_comment>(Outdoor robotic delivery 
+    challenge)</SPAN> 
+    <LI><A title="Bootloader for ATmega8-board" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/bootloader-for-atmega8-board">Bootloader 
+    for ATmega8-board</A> 
+    <LI><A title="Gomoku playing engine" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/nabamoku">Nabamoku</A> 
+    <SPAN class=menu_comment>(Gomoku playing engine)</SPAN> 
+    <LI><A title="Robotic vision" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/visiir">Visiir</A> 
+    <SPAN class=menu_comment>(Robotic vision - track search)</SPAN> 
+    <LI><A title="Cart-pole system" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/cart_pole">Cart-pole 
+    system</A> <SPAN class=menu_comment>(A well-known reinforcement learning 
+    testbed)</SPAN> 
+    <LI><A title=Minirisk 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/minirisk">Minirisk</A> 
+    <SPAN class=menu_comment>(Multi-agent artificial intelligence and/or game 
+    theory testbed)</SPAN> 
+    <LI><A title=Hovecraft 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/hovercraft">Hovercraft</A> 
+    <SPAN class=menu_comment>(Autonomous hovecraft)</SPAN> 
+    <LI><A title=Aygen 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/aygen">Aygen</A> 
+    <SPAN class=menu_comment>(The ultimate groan generator)</SPAN> 
+    <LI><A title="Wikipedia 1b" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/wikipedia1b">Wikipedia 
+    1b</A> <SPAN class=menu_comment>(Wikipedia search engine)</SPAN> 
+    <LI><A title="Nyzzuf 1" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/nyzzuf1">Nyzzuf 
+    1</A> <SPAN class=menu_comment>(Fuzzy neural network)</SPAN> 
+    <LI><A title="FreeBSD ports of Player/Stage/Gazebo" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/playerstage">FreeBSD 
+    ports of Player/Stage/Gazebo</A> <SPAN class=menu_comment>(FreeBSD ports of 
+    the robotic control and simulation project)</SPAN> 
+    <LI><A title="Traffic accidents handling" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/trafficsim/">Trafficsim</A> 
+    <SPAN class=menu_comment>(Traffic accidents handling, reinforcement 
+    learning)</SPAN> 
+    <LI><A title="Lasp I" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/lasp_I">Lasp I</A> 
+    <SPAN class=menu_comment>(Statistical language and speech processing)</SPAN> 
+
+    <LI><A title=CB1D 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/cb1d">CB1D</A> 
+    <SPAN class=menu_comment>(Real value 1D classification learner)</SPAN> 
+    <LI><A title=Robovis 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/robovis/">Robovis</A> 
+    <SPAN class=menu_comment>(Visualization of the probabilistic robot 
+    localization)</SPAN> 
+    <LI><A title=Graphplan 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/graphplan/">Graphplan</A> 
+    <SPAN class=menu_comment>(A classical planning algorithm)</SPAN> 
+    <LI><A title="Robots Ferda and Fatima" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/ferda_and_fatima/">Robots 
+    Ferda and Fatima</A> <SPAN class=menu_comment>(Eurobot 2005 international 
+    robotic competition)</SPAN> 
+    <LI><A title="Neural Network Motor Controller" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/nnmc/">Neural 
+    Network Motor Controller</A> <SPAN class=menu_comment>(Conference 
+    article)</SPAN> 
+    <LI><A title=JPresentator 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/jpresentator">JPresentator</A> 
+    <SPAN class=menu_comment>(Chess tournaments organization application)</SPAN> 
+
+    <LI><A title=Pepoun 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/pepoun">Pepoun</A> 
+    <SPAN class=menu_comment>(Lego robot, Kohonen neural network)</SPAN> 
+    <LI><A title=Guido 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/guido">Guido</A> 
+    <SPAN class=menu_comment>(Unconstrained influence diagrams)</SPAN> 
+    <LI><A title=Botanicus 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/botanicus/">Botanicus</A> 
+    <SPAN class=menu_comment>(Distributed genetic algorithm)</SPAN> 
+    <LI><A title=Daama3 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/daama3/">Daama3</A> 
+    <SPAN class=menu_comment>(Checkers, advanced alpha-beta algorithm)</SPAN> 
+    <LI><A title=Wumpus 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/wumpus/">Wumpus</A> 
+    <SPAN class=menu_comment>(Reinforcement learning)</SPAN> 
+    <LI><A title=Dwarfs 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/dwarfs/">Dwarfs</A> 
+    <SPAN class=menu_comment>(Kohonen neural networks)</SPAN> 
+    <LI><A title=XlsHtmlGUI 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/xlshtmlgui/">XlsHtmlGUI</A> 
+    <SPAN class=menu_comment>(Xls to html convertor)</SPAN> 
+    <LI><A title=Maffy 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/maffy/">Maffy</A> 
+    <SPAN class=menu_comment>(Simulated robosoccer)</SPAN> 
+    <LI><A title=Exprt 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/exprt/">Exprt</A> 
+    <SPAN class=menu_comment>(Expert system in Prolog)</SPAN> 
+    <LI><A title=Daama 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/daama/">Daama</A> 
+    <SPAN class=menu_comment>(Checkers, advanced alpha-beta algorithm)</SPAN> 
+    <LI><A title=Prsi 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/projects/prsi/">Prsi 
+    (Storm)</A> <SPAN class=menu_comment>(Card game, neural network)</SPAN> 
+  </LI></UL>
+  <LI>Presentations 
+  <UL>
+    <LI><A 
+    href="http://www.ieeexplore.ieee.org/xpl/freeabs_all.jsp?isnumber=4410241&amp;arnumber=4410257&amp;count=97&amp;index=15" 
+    target=new>Unconstrained Influence Diagram Solver: Guido</A> [Outgoing link, 
+    new window] <SPAN class=menu_comment>(19th IEEE Conference on tools with 
+    artificial intelligence - ICTAI 2007) 
+    <LI>Growing Fuzzy Inference Neural Networks <SPAN class=menu_comment>(Master 
+    thesis topic)</SPAN> 
+    <LI><A 
+    title="A polynomial-time Nash equlibrium algorithm for repeated games" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/presentations/repeated_games/">A 
+    polynomial-time Nash equlibrium algorithm for repeated games</A> <SPAN 
+    class=menu_comment>(based on M. L. Littman &amp; P. Stone article)</SPAN> 
+    <LI>Reinforcement learning dealing with the accidents<BR>in the traffic 
+    control 
+    <LI><A title="Fuzzy decision trees" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/presentations/fuzzy_decision_trees/">Fuzzy 
+    decision trees</A> <SPAN class=menu_comment>(based on C. Omaru &amp; L. 
+    Wehenkel article)</SPAN> 
+    <LI><A title="Scientific visualization" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/presentations/scientific_visualization/">Scientific 
+    visualization</A> <SPAN class=menu_comment>(feature extraction and flow 
+    field visualization, based on Frits H. Post, Benjamin Vrolijk, Helwig 
+    Hauser, Robert S. Laramee and Helmut Doleish article)</SPAN> 
+    <LI><A title="Reinforcement learning and robotic soccer" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/presentations/robosoccer_and_reinforcement_learning/">Reinforcement 
+    learning and robotic soccer</A> 
+    <LI><A title="Kohonen line following" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/presentations/kohonen_line_following/">Kohonen 
+    line following</A> <SPAN class=menu_comment>(about Pepoun project, Kohonen 
+    neural network, line following)</SPAN> 
+    <LI>Lazy evaluation<BR>of Bayesian networks 
+    <LI>Reinforcement learning 
+    <LI>Neural networks </LI></UL>
+  <LI>Articles 
+  <UL>
+    <LI><A 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/cv/index.php#articles">In 
+    the CV</A> </LI></UL>
+  <LI>Other 
+  <UL>
+    <LI><A title="Other - Sharing a directory on Linux" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/other/sharing_a_directory/">Sharing 
+    a directory on Linux</A> <SPAN class=menu_comment>(Sharing a directory on a 
+    more advanced filesystems made simple)</SPAN> 
+    <LI><A title="Other - OpenCV troubles" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/other/opencv/">OpenCV 
+    troubles</A> <SPAN class=menu_comment>(OpenCV problems with 
+    Linux&amp;jpeglib&amp;V4L and with FreeBSD)</SPAN> 
+    <LI><A title="Other - RoboTour 2006" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/other/robotour2006/">RoboTour 
+    2006</A> <SPAN class=menu_comment>(Robotic outdoor challenge)</SPAN> 
+    <LI><A title="Other - Roboludens 2006" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/other/roboludens/">Roboludens 
+    2006</A> <SPAN class=menu_comment>(RoboCup European championship)</SPAN> 
+    <LI><A title="Other - Queensday" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/other/queensday/">Queensday</A> 
+    <SPAN class=menu_comment>(Queen's day celebration in Amsterdam - 
+    photos)</SPAN> 
+    <LI><A title="Other - Keukenhof" 
+    href="http://artax.karlin.mff.cuni.cz/~isa_j1am/other/keukenhof/">Keukenhof</A> 
+    <SPAN class=menu_comment>(Dutch tulip park - photos)</SPAN> </LI></UL>
+  <LI><A title="Curriculum Vitae" 
+  href="http://artax.karlin.mff.cuni.cz/~isa_j1am/cv/">About Jiří Iša (CV)</A> 
+  </LI></UL>
+<DIV class=last_update>Last update: August 30th, 
+2008</DIV></DIV></SPAN></BODY></HTML>

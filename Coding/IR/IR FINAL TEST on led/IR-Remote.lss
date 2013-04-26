@@ -1,0 +1,273 @@
+
+IR-Remote.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000011e  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000004  00800060  0000011e  00000192  2**0
+                  ALLOC
+  2 .debug_aranges 00000020  00000000  00000000  00000192  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_pubnames 00000040  00000000  00000000  000001b2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   00000127  00000000  00000000  000001f2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 000000cc  00000000  00000000  00000319  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   0000016d  00000000  00000000  000003e5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  00000040  00000000  00000000  00000554  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    000000b6  00000000  00000000  00000594  2**0
+                  CONTENTS, READONLY, DEBUGGING
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	2c c0       	rjmp	.+88     	; 0x5c <__bad_interrupt>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	56 c0       	rjmp	.+172    	; 0xb6 <__vector_4>
+   a:	28 c0       	rjmp	.+80     	; 0x5c <__bad_interrupt>
+   c:	27 c0       	rjmp	.+78     	; 0x5c <__bad_interrupt>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	25 c0       	rjmp	.+74     	; 0x5c <__bad_interrupt>
+  12:	24 c0       	rjmp	.+72     	; 0x5c <__bad_interrupt>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	22 c0       	rjmp	.+68     	; 0x5c <__bad_interrupt>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+  1e:	1e c0       	rjmp	.+60     	; 0x5c <__bad_interrupt>
+  20:	1d c0       	rjmp	.+58     	; 0x5c <__bad_interrupt>
+  22:	1c c0       	rjmp	.+56     	; 0x5c <__bad_interrupt>
+  24:	1b c0       	rjmp	.+54     	; 0x5c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	ee e1       	ldi	r30, 0x1E	; 30
+  3a:	f1 e0       	ldi	r31, 0x01	; 1
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <.do_copy_data_start>
+
+0000003e <.do_copy_data_loop>:
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+
+00000042 <.do_copy_data_start>:
+  42:	a0 36       	cpi	r26, 0x60	; 96
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <.do_copy_data_loop>
+
+00000048 <__do_clear_bss>:
+  48:	10 e0       	ldi	r17, 0x00	; 0
+  4a:	a0 e6       	ldi	r26, 0x60	; 96
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+  52:	a4 36       	cpi	r26, 0x64	; 100
+  54:	b1 07       	cpc	r27, r17
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+  58:	53 d0       	rcall	.+166    	; 0x100 <main>
+  5a:	5f c0       	rjmp	.+190    	; 0x11a <_exit>
+
+0000005c <__bad_interrupt>:
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
+
+0000005e <detect>:
+
+/*----------------------------------------------------------------
+-----------------FUNCTIONS-------------------------------------
+-----------------------------------------------------------------*/	
+void detect(void)
+{
+  5e:	20 e0       	ldi	r18, 0x00	; 0
+		{
+			m131++;
+		}
+		if(m3p5<50)
+		{
+			flag=1;
+  60:	41 e0       	ldi	r20, 0x01	; 1
+  62:	50 e0       	ldi	r21, 0x00	; 0
+	char m131=0;
+
+	
+	while(m131<8)
+	{
+		TCNT0=0;
+  64:	12 be       	out	0x32, r1	; 50
+		
+		//while(PINC & 0x01);
+		
+		m3p5=TCNT0;
+  66:	92 b7       	in	r25, 0x32	; 50
+		if(TCNT0>220)
+  68:	82 b7       	in	r24, 0x32	; 50
+  6a:	8d 3d       	cpi	r24, 0xDD	; 221
+  6c:	08 f0       	brcs	.+2      	; 0x70 <detect+0x12>
+		{
+			m131++;
+  6e:	2f 5f       	subi	r18, 0xFF	; 255
+		}
+		if(m3p5<50)
+  70:	92 33       	cpi	r25, 0x32	; 50
+  72:	28 f4       	brcc	.+10     	; 0x7e <detect+0x20>
+		{
+			flag=1;
+  74:	50 93 63 00 	sts	0x0063, r21
+  78:	40 93 62 00 	sts	0x0062, r20
+  7c:	04 c0       	rjmp	.+8      	; 0x86 <detect+0x28>
+		}
+		else
+		{
+			flag=0;
+  7e:	10 92 63 00 	sts	0x0063, r1
+  82:	10 92 62 00 	sts	0x0062, r1
+		}
+		
+		if(flag==0)
+  86:	80 91 62 00 	lds	r24, 0x0062
+  8a:	90 91 63 00 	lds	r25, 0x0063
+  8e:	89 2b       	or	r24, r25
+  90:	11 f0       	breq	.+4      	; 0x96 <detect+0x38>
+{
+	char m3p5=0;
+	char m131=0;
+
+	
+	while(m131<8)
+  92:	28 30       	cpi	r18, 0x08	; 8
+  94:	38 f3       	brcs	.-50     	; 0x64 <detect+0x6>
+			break;
+		}
+	}
+		
+
+	if(flag==1)
+  96:	80 91 62 00 	lds	r24, 0x0062
+  9a:	90 91 63 00 	lds	r25, 0x0063
+  9e:	01 97       	sbiw	r24, 0x01	; 1
+  a0:	11 f4       	brne	.+4      	; 0xa6 <detect+0x48>
+	{
+		sbi(PORTD,0);
+  a2:	90 9a       	sbi	0x12, 0	; 18
+  a4:	08 95       	ret
+		return;
+	}
+	if(flag==0)
+  a6:	80 91 62 00 	lds	r24, 0x0062
+  aa:	90 91 63 00 	lds	r25, 0x0063
+  ae:	89 2b       	or	r24, r25
+  b0:	09 f4       	brne	.+2      	; 0xb4 <detect+0x56>
+	{
+		cbi(PORTD,0);
+  b2:	90 98       	cbi	0x12, 0	; 18
+  b4:	08 95       	ret
+
+000000b6 <__vector_4>:
+	
+}
+
+
+SIGNAL(SIG_OVERFLOW2)
+{
+  b6:	1f 92       	push	r1
+  b8:	0f 92       	push	r0
+  ba:	0f b6       	in	r0, 0x3f	; 63
+  bc:	0f 92       	push	r0
+  be:	11 24       	eor	r1, r1
+  c0:	2f 93       	push	r18
+  c2:	3f 93       	push	r19
+  c4:	4f 93       	push	r20
+  c6:	5f 93       	push	r21
+  c8:	6f 93       	push	r22
+  ca:	7f 93       	push	r23
+  cc:	8f 93       	push	r24
+  ce:	9f 93       	push	r25
+  d0:	af 93       	push	r26
+  d2:	bf 93       	push	r27
+  d4:	ef 93       	push	r30
+  d6:	ff 93       	push	r31
+	
+		detect();
+  d8:	c2 df       	rcall	.-124    	; 0x5e <detect>
+	TCNT2=TIMER_2_CNT;
+  da:	8f e8       	ldi	r24, 0x8F	; 143
+  dc:	84 bd       	out	0x24, r24	; 36
+	
+	
+}
+  de:	ff 91       	pop	r31
+  e0:	ef 91       	pop	r30
+  e2:	bf 91       	pop	r27
+  e4:	af 91       	pop	r26
+  e6:	9f 91       	pop	r25
+  e8:	8f 91       	pop	r24
+  ea:	7f 91       	pop	r23
+  ec:	6f 91       	pop	r22
+  ee:	5f 91       	pop	r21
+  f0:	4f 91       	pop	r20
+  f2:	3f 91       	pop	r19
+  f4:	2f 91       	pop	r18
+  f6:	0f 90       	pop	r0
+  f8:	0f be       	out	0x3f, r0	; 63
+  fa:	0f 90       	pop	r0
+  fc:	1f 90       	pop	r1
+  fe:	18 95       	reti
+
+00000100 <main>:
+/*----------------------------------------------------------------
+-----------------MAIN-------------------------------------
+-----------------------------------------------------------------*/
+
+int main(void)
+{
+ 100:	84 e0       	ldi	r24, 0x04	; 4
+ 102:	87 bb       	out	0x17, r24	; 23
+	DDRB=0x04;
+	DDRC=0x00;
+ 104:	14 ba       	out	0x14, r1	; 20
+	DDRD=0x03;
+ 106:	83 e0       	ldi	r24, 0x03	; 3
+ 108:	81 bb       	out	0x11, r24	; 17
+	
+	
+	//TCCR0 = TMC8_CK8;               	
+    //TCCR1A=0x00;
+	//TCCR1B=TMC16_CK64;
+	TCCR2=TMC8_CK1024;
+ 10a:	85 e0       	ldi	r24, 0x05	; 5
+ 10c:	85 bd       	out	0x25, r24	; 37
+    
+	TCNT2=TIMER_2_CNT;
+ 10e:	8f e8       	ldi	r24, 0x8F	; 143
+ 110:	84 bd       	out	0x24, r24	; 36
+	TIMSK  = _BV(TOIE2);         	// enable TCNT2 overflow
+ 112:	80 e4       	ldi	r24, 0x40	; 64
+ 114:	89 bf       	out	0x39, r24	; 57
+
+	
+    sei();                       	// enable interrupts
+ 116:	78 94       	sei
+ 118:	ff cf       	rjmp	.-2      	; 0x118 <main+0x18>
+
+0000011a <_exit>:
+ 11a:	f8 94       	cli
+
+0000011c <__stop_program>:
+ 11c:	ff cf       	rjmp	.-2      	; 0x11c <__stop_program>

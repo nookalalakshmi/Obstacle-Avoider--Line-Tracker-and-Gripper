@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0041)http://elm-chan.org/fsw/ff/00index_e.html -->
+<HTML lang=en><HEAD><TITLE>ELM - FAT File System Module</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META http-equiv=Content-Style-Type content=text/css><LINK title="Site Top" 
+href="../../" rel=start><LINK title=Freewares href="../../fsw_e.html" 
+rel=up><LINK title="Japanese version" hreflang=ja href="00index_j.html" 
+rel=alternate><LINK title="ELM Default" media=screen 
+href="ELM - FAT File System Module_files/css_e.css" type=text/css 
+rel=stylesheet>
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY>
+<H1>FAT File System Module</H1>
+<HR>
+
+<DIV class=abst><IMG class=rset height=255 alt=layer 
+src="ELM - FAT File System Module_files/layers.png" width=245> 
+<P>FatFs is a generic file system module to implement the FAT file system to 
+small embedded systems. The FatFs is written in compliance with ANSI C, 
+therefore it is independent of hardware architecture. It can be incorporated 
+into cheap microcontrollers, such as 8051, PIC, AVR, SH, Z80, H8, ARM and 
+etc..., without any change.</P>
+<H4>Features of FatFs</H4>
+<OL>
+  <LI>Separated buffer for FAT structure and each file, suitable for fast 
+  multiple file access. 
+  <LI>Supports multiple drives and partitions. 
+  <LI>Supports FAT12, FAT16 and FAT32. 
+  <LI>Supports 8.3 format file name. (LFN is not supported) 
+  <LI>Supports two partitioning rules: FDISK and Super-floppy. 
+  <LI>Optimized for 8/16-bit microcontrollers. </LI></OL>
+<H4>Features of Tiny-FatFs (different to FatFs)</H4>
+<OL>
+  <LI>Very low memory consumption, suitable for small memory system. (1KB RAM) 
+  <LI>Supports only single drive. </LI></OL></DIV>
+<DIV class=para>
+<H3>Application Interface</H3>
+<P>FatFs/Tiny-FatFs module provides following functions.</P>
+<UL>
+  <LI><A href="http://elm-chan.org/fsw/ff/en/mount.html">f_mount</A> - 
+  Register/Unregister a Work Area 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/open.html">f_open</A> - Open/Create 
+  a File 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/close.html">f_close</A> - Close a 
+  File 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/read.html">f_read</A> - Read File 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/write.html">f_write</A> - Write 
+  File 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/lseek.html">f_lseek</A> - Move File 
+  R/W Pointer 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/truncate.html">f_truncate</A> - 
+  Truncate File 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/sync.html">f_sync</A> - Flush 
+  Cached Data 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/opendir.html">f_opendir</A> - Open 
+  a Directory 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/readdir.html">f_readdir</A> - Read 
+  a Directory Item 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/getfree.html">f_getfree</A> - Get 
+  Free Clusters 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/stat.html">f_stat</A> - Get File 
+  Status 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/mkdir.html">f_mkdir</A> - Create a 
+  Directory 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/unlink.html">f_unlink</A> - Remove 
+  a File or Directory 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/chmod.html">f_chmod</A> - Change 
+  Attribute 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/utime.html">f_utime</A> - Change 
+  Timestamp 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/rename.html">f_rename</A> - 
+  Rename/Move a File or Directory 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/mkfs.html">f_mkfs</A> - Create a 
+  File System on the Drive 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/forward.html">f_forward</A> - 
+  Forward file data to the stream directly 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/gets.html">fgets</A> - Read a 
+  string 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/putc.html">fputc</A> - Write a 
+  character 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/puts.html">fputs</A> - Write a 
+  string 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/printf.html">fprintf</A> - Write a 
+  formatted string </LI></UL></DIV>
+<DIV class=para>
+<H3>Disk I/O Interface</H3>
+<P>Since the FatFs/Tiny-FatFs module is completely separated from disk I/O 
+layer, it requires following functions to lower layer to read/write physical 
+disk and to get current time. The low level disk I/O module with this interface 
+must be provided by user. The sample drivers are also available in the next 
+resources.</P>
+<UL>
+  <LI><A href="http://elm-chan.org/fsw/ff/en/dinit.html">disk_initialize</A> - 
+  Initialize disk drive 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/dstat.html">disk_status</A> - Get 
+  disk status 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/dread.html">disk_read</A> - Read 
+  sector(s) 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/dwrite.html">disk_write</A> - Write 
+  sector(s) 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/dioctl.html">disk_ioctl</A> - 
+  Control device dependent features 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/fattime.html">get_fattime</A> - Get 
+  current time </LI></UL></DIV>
+<DIV class=para>
+<H3>Resources</H3>
+<P>The FatFs/Tiny-FatFs module is a free software and is opened for education, 
+research and development. You can use, modify and/or republish it for personal, 
+non-profit or commercial use without any restriction under your 
+responsibility.</P>
+<UL>
+  <LI><A href="http://elm-chan.org/fsw/ff/ff006.zip">FatFs/Tiny-FatFs R0.06</A> 
+  | <A href="http://elm-chan.org/fsw/ff/updates.txt">Updates</A> | <A 
+  href="http://elm-chan.org/fsw/ff/patches.txt">Patches</A> <SPAN class=mfd>Oct 
+  22, 2008</SPAN> 
+  <LI><A href="http://elm-chan.org/fsw/ff/en/appnote.html">FatFs module 
+  application note</A> 
+  <LI><A href="http://elm-chan.org/fsw/ff/ffsample.zip">Sample projects</A> 
+  (AVR, LPC2000, H8/300H, TLCS-870/C, PIC and V850ES) <SPAN class=mfd>Oct 22, 
+  2008</SPAN> 
+  <LI><A 
+  href="http://www.siwawi.arubi.uni-kl.de/avr_projects/arm_projects/">ARM-Projects 
+  by Martin THOMAS</A> (examples for LPC2000 and AT91SAM) 
+  <LI><A href="http://elm-chan.org/fsw/ff/img/rwtest.png">Benchmark 1</A> 
+  (ATmega64/9.2MHz with MMC via SPI, HDD/CFC via GPIO) 
+  <LI><A href="http://elm-chan.org/fsw/ff/img/rwtest2.png">Benchmark 2</A> 
+  (LPC2368/72MHz with MMC via MCI) 
+  <LI><A 
+  href="http://www.microsoft.com/whdc/system/platform/firmware/fatgen.mspx">FAT32 
+  Specification by Microsoft</A> (The reference document on FAT file system) 
+  <LI><A href="http://elm-chan.org/docs/mmc/mmc_e.html">How to Use MMC/SDC</A> 
+  <LI>Previous versions: <A 
+  href="http://elm-chan.org/fsw/ff/ff005a.zip">R0.05a</A> | <A 
+  href="http://elm-chan.org/fsw/ff/ff005.zip">R0.05</A> | <A 
+  href="http://elm-chan.org/fsw/ff/ff004b.zip">R0.04b</A> | <A 
+  href="http://elm-chan.org/fsw/ff/ff004a.zip">R0.04a</A> | <A 
+  href="http://elm-chan.org/fsw/ff/ff004.zip">R0.04</A> | <A 
+  href="http://elm-chan.org/fsw/ff/ff003a.zip">R0.03a</A> | <A 
+  href="http://elm-chan.org/fsw/ff/ff003.zip">R0.03</A> | <A 
+  href="http://elm-chan.org/fsw/ff/ff002a.zip">R0.02a</A> | <A 
+  href="http://elm-chan.org/fsw/ff/ff002.zip">R0.02</A> | <A 
+  href="http://elm-chan.org/fsw/ff/ff001.zip">R0.01</A> </LI></UL></DIV>
+<HR>
+
+<P class=foot><A 
+href="http://elm-chan.org/fsw_e.html">Return</A></P></BODY></HTML>

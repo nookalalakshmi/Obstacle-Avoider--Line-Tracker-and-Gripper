@@ -1,0 +1,495 @@
+   1               		.file	"robokits.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.global __do_copy_data
+   8               		.global __do_clear_bss
+  10               		.text
+  11               	.Ltext0:
+  70               	.global	main
+  72               	main:
+   1:robokits.c    **** //			MADE BY ROBOKITS INDIA.
+   2:robokits.c    **** //			VISIT US AT WWW.ROBOKITS.ORG
+   3:robokits.c    **** //			PROGRAM FOR DRIVING STEPPER
+   4:robokits.c    **** //			WRITTEN FOR PRODUCT ID 19
+   5:robokits.c    **** 
+   6:robokits.c    **** /*-------------------------------------------------------------------          
+   7:robokits.c    ****  Description:
+   8:robokits.c    ****  This example runs two stepper motors if used with motor driver from 
+   9:robokits.c    ****  robokits india.
+  10:robokits.c    **** 
+  11:robokits.c    ****  Note: 
+  12:robokits.c    ****  First stepper is connected with portd.0,d.1,d.2,d.3 pins. 
+  13:robokits.c    ****  
+  14:robokits.c    ****  Second stepper is connected with portc.0,c.1,c.2,c.3 pins.
+  15:robokits.c    ****  
+  16:robokits.c    ****  Press sw1 to drive both motors forward.
+  17:robokits.c    ****  
+  18:robokits.c    ****  Press sw2 to drive both motors reverse.
+  19:robokits.c    **** ---------------------------------------------------------------------*/
+  20:robokits.c    **** 
+  21:robokits.c    **** /*----------------------------------------------------------------
+  22:robokits.c    **** -----------------HEADER FILES-------------------------------------
+  23:robokits.c    **** -----------------------------------------------------------------*/
+  24:robokits.c    **** #include<avr/io.h>					//HEADER FILE FOR AVR INPUT OUTPUT
+  25:robokits.c    **** #include<compat/deprecated.h>		//HEADER FILE FOR FUNCTIONS LIKE SBI AND CBI
+  26:robokits.c    **** #include<util/delay.h>				//HEADER FILE FOR DELAY
+  27:robokits.c    **** 
+  28:robokits.c    **** /*----------------------------------------------------------------
+  29:robokits.c    **** -----------------MAIN PROGRAM-------------------------------------
+  30:robokits.c    **** -----------------------------------------------------------------*/
+  31:robokits.c    **** 
+  32:robokits.c    **** int main(void)
+  33:robokits.c    **** {
+  73               	* prologue end (size=0) */
+  75               	.LM1:
+  76               		ldi r24,lo8(1)
+  77               		out 55-0x20,r24
+  34:robokits.c    **** 	DDRB=0x01;						//SET DATA DIRECTION REGISTER
+  78               	bn	68,0,42,.LM2-.LFBB1
+  79               	.LM2:
+  80 0000 81E0      		ldi r24,lo8(-49)
+  81 0002 87BB      		out 49-0x20,r24
+  35:robokits.c    **** 									//SET 1 for OUTPUT PORT
+  36:robokits.c    **** 									//SET 0 FOR INPUT PORT
+  37:robokits.c    **** 									//ONLY PORTB.0 IS OUTPUT
+  38:robokits.c    **** 									//CONFIGURE AS PER REQUIREMENT
+  39:robokits.c    **** 									//DEFAULT ALL OTHERS ARE INPUT
+  40:robokits.c    **** 									//CHANGE ACCORDING TO USE
+  41:robokits.c    **** 	
+  42:robokits.c    **** 	DDRD=0xCF;						//SET DATA DIRECTION REGISTER
+  82               	abn	68,0,51,.LM3-.LFBB1
+  83               	.LM3:
+  84 0004 8FEC      		ldi r24,lo8(15)
+  85 0006 81BB      		out 52-0x20,r24
+  43:robokits.c    **** 									//SET 1 for OUTPUT PORT
+  44:robokits.c    **** 									//SET 0 FOR INPUT PORT
+  45:robokits.c    **** 									//PORTD.7 AND PORTD.6 ARE CONFIGURED OUTPUT FOR LED
+  46:robokits.c    **** 									//PORTD.0, D.1, D.2, D.3 ARE OUTPUTS FOR STEPPER1
+  47:robokits.c    **** 									//CONFIGURE AS PER REQUIREMENT
+  48:robokits.c    **** 									//DEFAULT ALL OTHERS ARE INPUT
+  49:robokits.c    **** 									//CHANGE ACCORDING TO USE
+  50:robokits.c    **** 	
+  51:robokits.c    **** 	DDRC=0x0F;						//PORTC.0, C.1, C.2, C.3 ARE OUTPUTS FOR STEPPER2
+  86               	abn	68,0,53,.LM4-.LFBB1
+  87               	.LM4:
+  88 0008 8FE0      		sbi 56-0x20,0
+  52:robokits.c    **** 	
+  53:robokits.c    **** 	sbi(PORTB,0);					//LED1 ON (INDICATION FOR READY TO USE)
+  90               	:
+  91               		sbi 50-0x20,2
+  54:robokits.c    **** 	
+  55:robokits.c    **** 	sbi(PORTD,2);					//ENABLE PULL UP FOR SW1
+  93               	6:
+  94               		sbi 50-0x20,3
+  95 000e 929A      	.L20:
+  56:robokits.c    **** 	sbi(PORTD,3);					//ENABLE PULL UP FOR SW2
+  96               	tabn	68,0,61,.LM7-.LFBB1
+  97               	.LM7:
+  98 0010 939A      		sbic 48-0x20,2
+  99               		rjmp .L3
+  57:robokits.c    **** 	
+  58:robokits.c    **** 	while(1)
+  59:robokits.c    **** 	{
+  60:robokits.c    **** 		mainloop:
+  61:robokits.c    **** 		if (bit_is_clear(PIND, 2))			//IF SW1 IS PRESSED STEPPER1&2 FORWARD
+ 100               	:
+ 102 0012 8299      	.LM8:
+ 103 0014 00C0      		ldi r24,lo8(1)
+ 104               		out 50-0x20,r24
+  62:robokits.c    **** 		{
+  63:robokits.c    **** 			while(1)
+  64:robokits.c    **** 			{
+  65:robokits.c    **** 				PORTD=0x01;						//COIL1 +
+ 105               	bn	68,0,66,.LM9-.LFBB1
+ 106               	.LM9:
+ 107 0016 81E0      		out 53-0x20,r24
+ 108 0018 82BB      	.LBB54:
+  66:robokits.c    **** 				PORTC=0x01;						//COIL1 +
+ 109               	55:
+ 110               	.LBB56:
+ 111 001a 85BB      	.LBB57:
+ 113               	.Ltext1:
+ 115               	.LM10:
+ 116               		ldi r24,lo8(500)
+ 117               		ldi r25,hi8(500)
+   1:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** /* Copyright (c) 2002, Marek Michalkiewicz
+   2:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****    Copyright (c) 2007 Joerg Wunsch
+   3:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****    All rights reserved.
+   4:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+   5:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****    Redistribution and use in source and binary forms, with or without
+   6:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****    modification, are permitted provided that the following conditions are met:
+   7:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+   8:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****    * Redistributions of source code must retain the above copyright
+   9:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****      notice, this list of conditions and the following disclaimer.
+  10:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  11:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****    * Redistributions in binary form must reproduce the above copyright
+  12:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****      notice, this list of conditions and the following disclaimer in
+  13:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****      the documentation and/or other materials provided with the
+  14:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****      distribution.
+  15:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  16:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****    * Neither the name of the copyright holders nor the names of
+  17:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****      contributors may be used to endorse or promote products derived
+  18:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****      from this software without specific prior written permission.
+  19:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  20:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  21:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  22:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  23:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  24:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  25:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  26:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  27:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  28:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  29:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  30:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****   POSSIBILITY OF SUCH DAMAGE. */
+  31:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  32:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** /* $Id: delay_basic.h,v 1.1 2007/05/13 21:23:20 joerg_wunsch Exp $ */
+  33:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  34:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** #ifndef _UTIL_DELAY_BASIC_H_
+  35:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** #define _UTIL_DELAY_BASIC_H_ 1
+  36:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  37:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** #include <inttypes.h>
+  38:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  39:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** /** \file */
+  40:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** /** \defgroup util_delay_basic <util/delay_basic.h>: Basic busy-wait delay loops
+  41:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     \code
+  42:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     #include <util/delay_basic.h>
+  43:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     \endcode
+  44:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  45:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     The functions in this header file implement simple delay loops
+  46:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     that perform a busy-waiting.  They are typically used to
+  47:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     facilitate short delays in the program execution.  They are
+  48:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     implemented as count-down loops with a well-known CPU cycle
+  49:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     count per loop iteration.  As such, no other processing can
+  50:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     occur simultaneously.  It should be kept in mind that the
+  51:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     functions described here do not disable interrupts.
+  52:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  53:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     In general, for long delays, the use of hardware timers is
+  54:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     much preferrable, as they free the CPU, and allow for
+  55:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     concurrent processing of other events while the timer is
+  56:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     running.  However, in particular for very short delays, the
+  57:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     overhead of setting up a hardware timer is too much compared
+  58:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     to the overall delay time.
+  59:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  60:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     Two inline functions are provided for the actual delay algorithms.
+  61:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  62:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** */
+  63:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  64:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** #if !defined(__DOXYGEN__)
+  65:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** static inline void _delay_loop_1(uint8_t __count) __attribute__((always_inline));
+  66:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** static inline void _delay_loop_2(uint16_t __count) __attribute__((always_inline));
+  67:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** #endif
+  68:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  69:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** /** \ingroup util_delay_basic
+  70:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  71:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     Delay loop using an 8-bit counter \c __count, so up to 256
+  72:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     iterations are possible.  (The value 256 would have to be passed
+  73:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     as 0.)  The loop executes three CPU cycles per iteration, not
+  74:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     including the overhead the compiler needs to setup the counter
+  75:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     register.
+  76:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  77:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     Thus, at a CPU speed of 1 MHz, delays of up to 768 microseconds
+  78:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     can be achieved.
+  79:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** */
+  80:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** void
+  81:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** _delay_loop_1(uint8_t __count)
+  82:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** {
+  83:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 	__asm__ volatile (
+  84:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 		"1: dec %0" "\n\t"
+  85:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 		"brne 1b"
+  86:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 		: "=r" (__count)
+  87:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 		: "0" (__count)
+  88:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 	);
+  89:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** }
+  90:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  91:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** /** \ingroup util_delay_basic
+  92:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  93:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     Delay loop using a 16-bit counter \c __count, so up to 65536
+  94:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     iterations are possible.  (The value 65536 would have to be
+  95:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     passed as 0.)  The loop executes four CPU cycles per iteration,
+  96:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     not including the overhead the compiler requires to setup the
+  97:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     counter register pair.
+  98:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 
+  99:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     Thus, at a CPU speed of 1 MHz, delays of up to about 262.1
+ 100:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****     milliseconds can be achieved.
+ 101:c:/program files/winavr/bin/../avr/include/util/delay_basic.h ****  */
+ 102:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** void
+ 103:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** _delay_loop_2(uint16_t __count)
+ 104:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** {
+ 105:c:/program files/winavr/bin/../avr/include/util/delay_basic.h **** 	__asm__ volatile (
+ 118               	,r24
+ 119               	/* #APP */
+ 120 001c 84EF      		1: sbiw r30,1
+ 121 001e 91E0      		brne 1b
+ 122 0020 FC01      	/* #NOAPP */
+ 123               	.LBE57:
+ 124 0022 3197      	.LBE56:
+ 125 0024 01F4      	.LBE55:
+ 126               	.LBE54:
+ 128               	.Ltext2:
+ 130               	.LM11:
+ 131               		ldi r18,lo8(2)
+ 132               		out 50-0x20,r18
+  67:robokits.c    **** 				_delay_ms(2);					//DELAY IN MILISECOND ARGUMENT SHOULD NOT BE MORE THAN 262.14MS / F_CPU IN MH
+  68:robokits.c    **** 				PORTD=0x02;						//COIL2 +
+ 133               	,.LM12-.LFBB1
+ 134               	.LM12:
+ 135 0026 22E0      		out 53-0x20,r18
+ 136 0028 22BB      	.LBB58:
+  69:robokits.c    **** 				PORTC=0x02;						//COIL2 +
+ 137               	59:
+ 138               	.LBB60:
+ 139 002a 25BB      	.LBB61:
+ 141               	.Ltext3:
+ 143               	.LM13:
+ 144               		movw r30,r24
+ 145               	/* #APP */
+ 146               		1: sbiw r30,1
+ 147               		brne 1b
+ 148 002c FC01      	/* #NOAPP */
+ 149               	.LBE61:
+ 150 002e 3197      	.LBE60:
+ 151 0030 01F4      	.LBE59:
+ 152               	.LBE58:
+ 154               	.Ltext4:
+ 156               	.LM14:
+ 157               		ldi r18,lo8(4)
+ 158               		out 50-0x20,r18
+  70:robokits.c    **** 				_delay_ms(2);					//DELAY IN MILISECOND ARGUMENT SHOULD NOT BE MORE THAN 262.14MS / F_CPU IN MH
+  71:robokits.c    **** 				PORTD=0x04;						//COIL1 -
+ 159               	.LFBB1
+ 160               	.LM15:
+ 161 0032 24E0      		out 53-0x20,r18
+ 162 0034 22BB      	.LBB62:
+  72:robokits.c    **** 				PORTC=0x04;						//COIL1 -
+ 163               	 */
+ 164               	.LBE61:
+ 165 0036 25BB      	.LBE60:
+ 166               	.LBE59:
+ 167               	.LBE58:
+ 169               	.Ltext4:
+ 171               	.LM14:
+ 172               		ldi r18,lo8(4)
+ 173               		out 50-0x20,r18
+ 175               	.LM15:
+ 176 003a 3197      		out 53-0x20,r18
+ 177 003c 01F4      	.LBB62:
+ 178               	.LBB63:
+ 179               	.LBB64:
+ 180               	.LBB65:
+ 182               	.Ltext5:
+ 184               	.LM16:
+  73:robokits.c    **** 				_delay_ms(2);					//DELAY IN MILISECOND ARGUMENT SHOULD NOT BE MORE THAN 262.14MS / F_CPU IN MH
+  74:robokits.c    **** 				PORTD=0x08;						//COIL2 -
+ 185               	*/
+ 186               		1: sbiw r30,1
+ 187 003e 28E0      		brne 1b
+ 188 0040 22BB      	/* #NOAPP */
+  75:robokits.c    **** 				PORTC=0x08;						//COIL2 -				
+ 189               	65:
+ 191 0042 25BB      	.Ltext5:
+ 193               	.LM16:
+ 194               		movw r30,r24
+ 195               	/* #APP */
+ 196               		1: sbiw r30,1
+ 197               		brne 1b
+ 198               	/* #NOAPP */
+ 199               	.LBE65:
+ 200               	.LBE64:
+ 201 0044 0197      	.LBE63:
+ 202 0046 01F4      	.LBE62:
+ 204               	.Ltext6:
+ 206               	.LM17:
+ 207               		ldi r18,lo8(8)
+ 208               		out 50-0x20,r18
+  76:robokits.c    **** 				_delay_ms(2);					//DELAY IN MILISECOND ARGUMENT SHOULD NOT BE MORE THAN 262.14MS / F_CPU IN MH
+  77:robokits.c    **** 				if (bit_is_set(PIND, 2))		//CHECK WHETHER THE SWITCH IS STILL PRESSED
+ 210               	/* #NOAPP */
+ 211               	.LBE65:
+ 212 0048 829B      	.LBE64:
+ 213 004a 00C0      	.LBE63:
+ 214 004c 00C0      	.LBE62:
+  78:robokits.c    **** 				{
+  79:robokits.c    **** 					PORTD=0x00;					//CLEAR PORTD
+  80:robokits.c    **** 					PORTC=0x00;					//CLEAR PORTC
+  81:robokits.c    **** 					goto mainloop;				//IF NOT GOTO MAINLOOP
+  82:robokits.c    **** 				}
+  83:robokits.c    **** 			}
+  84:robokits.c    **** 		}
+  85:robokits.c    **** 		else if (bit_is_clear(PIND, 3))		//IF SW2 IS PRESSED STEPPER1&2 BACKWARD
+ 216               	",132,0,0,.Ltext5
+ 217               	.Ltext5:
+ 219 0050 00C0      	.LM16:
+ 220               		movw r30,r24
+  86:robokits.c    **** 		{
+  87:robokits.c    **** 			while(1)
+  88:robokits.c    **** 			{
+  89:robokits.c    **** 				PORTD=0x08;						//COIL1 +
+ 221               	.LM15:
+ 222               		out 53-0x20,r18
+ 223 0052 88E0      	.LBB62:
+ 224 0054 82BB      	.LBB63:
+  90:robokits.c    **** 				PORTC=0x08;						//COIL1 +
+ 225               	1:
+ 226               	.LBE60:
+ 227 0056 85BB      	.LBE59:
+ 228               	.LBE58:
+ 230               	.Ltext4:
+ 232               	.LM14:
+ 233               		ldi r18,lo8(4)
+ 234               		out 50-0x20,r18
+ 236 0058 84EF      	.LM15:
+ 237 005a 91E0      		out 53-0x20,r18
+ 238 005c FC01      	.LBB62:
+ 239               	.LBB63:
+ 240 005e 3197      	.LBB64:
+ 241 0060 01F4      	.LBB65:
+ 243               	.Ltext5:
+ 245               	.LM16:
+ 246               		movw r30,r24
+ 247               	/* #APP */
+ 248               		1: sbiw r30,1
+  91:robokits.c    **** 				_delay_ms(2);					//DELAY IN MILISECOND ARGUMENT SHOULD NOT BE MORE THAN 262.14MS / F_CPU IN MH
+  92:robokits.c    **** 				PORTD=0x04;						//COIL2 -
+ 249               	BE65:
+ 250               	.LBE64:
+ 251 0062 24E0      	.LBE63:
+ 252 0064 22BB      	.LBE62:
+  93:robokits.c    **** 				PORTC=0x04;						//COIL2 -				
+ 253               	/bin/../avr/include/util/delay_basic.h",132,0,0,.Ltext5
+ 254               	.Ltext5:
+ 256               	.LM16:
+ 257               		movw r30,r24
+ 258               	/* #APP */
+ 259               		1: sbiw r30,1
+ 260               		brne 1b
+ 261               	/* #NOAPP */
+ 262               	.LBE65:
+ 263               	.LBE64:
+ 264 0068 FC01      	.LBE63:
+ 265               	.LBE62:
+ 267 006c 01F4      	.Ltext6:
+ 269               	.LM17:
+ 270               		ldi r18,lo8(8)
+ 271               		out 50-0x20,r18
+ 273               	.LM18:
+ 274               		out 53-0x20,r18
+  94:robokits.c    **** 				_delay_ms(2);					//DELAY IN MILISECOND ARGUMENT SHOULD NOT BE MORE THAN 262.14MS / F_CPU IN MH
+  95:robokits.c    **** 				PORTD=0x02;						//COIL1 -
+ 275               	4:
+ 276               	.LBE63:
+ 277 006e 22E0      	.LBE62:
+  96:robokits.c    **** 				PORTC=0x02;						//COIL1 -
+ 279               	",132,0,0,.Ltext5
+ 280               	.Ltext5:
+ 282               	.LM16:
+ 283               		movw r30,r24
+ 284               	/* #APP */
+ 285               		1: sbiw r30,1
+ 286               		brne 1b
+ 287               	/* #NOAPP */
+ 288               	.LBE65:
+ 289               	.LBE64:
+ 290 0074 FC01      	.LBE63:
+ 291               	.LBE62:
+ 293 0078 01F4      	.Ltext6:
+ 295               	.LM17:
+ 296               		ldi r18,lo8(8)
+ 297               		out 50-0x20,r18
+ 299               	.LM18:
+ 300               		out 53-0x20,r18
+  97:robokits.c    **** 				_delay_ms(2);					//DELAY IN MILISECOND ARGUMENT SHOULD NOT BE MORE THAN 262.14MS / F_CPU IN MH
+  98:robokits.c    **** 				PORTD=0x01;						//COIL2 +
+ 301               	4:
+ 302               	.LBE63:
+ 303 007a 21E0      	.LBE62:
+  99:robokits.c    **** 				PORTC=0x01;						//COIL2 +
+ 305               	",132,0,0,.Ltext5
+ 306               	.Ltext5:
+ 308               	.LM16:
+ 309               		movw r30,r24
+ 310               	/* #APP */
+ 311               		1: sbiw r30,1
+ 312               		brne 1b
+ 313               	/* #NOAPP */
+ 314               	.LBE65:
+ 315               	.LBE64:
+ 316               	.LBE63:
+ 317 0080 0197      	.LBE62:
+ 319               	.Ltext6:
+ 321               	.LM17:
+ 322               		ldi r18,lo8(8)
+ 323               		out 50-0x20,r18
+ 325               	.LM18:
+ 100:robokits.c    **** 				_delay_ms(2);					//DELAY IN MILISECOND ARGUMENT SHOULD NOT BE MORE THAN 262.14MS / F_CPU IN MH
+ 101:robokits.c    **** 				if (bit_is_set(PIND, 3))
+ 326               	P */
+ 327               	.LBE65:
+ 328 0084 839B      	.LBE64:
+ 329 0086 00C0      	.LBE63:
+ 330               	.LBE62:
+ 102:robokits.c    **** 				{
+ 103:robokits.c    **** 					PORTD=0x00;					//CLEAR PORTD			
+ 331               	/bin/../avr/include/util/delay_basic.h",132,0,0,.Ltext5
+ 332               	.Ltext5:
+ 104:robokits.c    **** 					PORTC=0x00;					//CLEAR PORTC
+ 334               	n	68,0,72,.LM15-.LFBB1
+ 335               	.LM15:
+ 336 008a 15BA      		out 53-0x20,r18
+ 337 008c 00C0      	.LBB62:
+ 338               	.LBB63:
+ 105:robokits.c    **** 					goto mainloop;				//IF NOT GOTO MAINLOOP
+ 106:robokits.c    **** 				}
+ 107:robokits.c    **** 			}		
+ 108:robokits.c    **** 		}
+ 109:robokits.c    **** 		else
+ 110:robokits.c    **** 		{
+ 111:robokits.c    **** 			PORTC=0x00;
+ 339               	1:
+ 340               	.LBE60:
+ 341 008e 15BA      	.LBE59:
+ 112:robokits.c    **** 			PORTD=0X00;
+ 342               	E58:
+ 344 0090 12BA      	.Ltext4:
+ 346               	.LM14:
+ 347               		ldi r18,lo8(4)
+ 348               		out 50-0x20,r18
+ 350               	.LM15:
+ 351               		out 53-0x20,r18
+ 352               	.LBB62:
+ 353               	.LBB63:
+ 354               	.LBB64:
+ 355               	.LBB65:
+ 357               	.Ltext5:
+ 359               	.LM16:
+ 360               		movw r30,r24
+ 361               	/* #APP */
+ 362               		1: sbiw r30,1
+ 363               		brne 1b
+ 364               	/* #NOAPP */
+ 365               	.LBE65:
+ 366               	.LBE64:
+ 367               	.LBE63:
+ 368               	.LBE62:
+ 370               	.Ltext6:
+ 372               	.LM17:
+ 373               		ldi r18,lo8(8)
+ 374               		out 50-0x20,r18
+ 376               	.LM18:
+ 377               		out 53-0x20,r18
+ 378               	.LBB66:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cckSDuyY.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cckSDuyY.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cckSDuyY.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cckSDuyY.s:5      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cckSDuyY.s:6      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/cckSDuyY.s:72     .text:00000000 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

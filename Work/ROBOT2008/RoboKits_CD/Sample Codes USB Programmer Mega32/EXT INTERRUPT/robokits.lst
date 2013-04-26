@@ -1,0 +1,132 @@
+   1               		.file	"robokits.c"
+   2               		.arch atmega32
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	__vector_1
+  20               	__vector_1:
+  21               	.LFB7:
+  22               	.LM1:
+  23               	/* prologue: frame size=0 */
+  24 0000 1F92      		push __zero_reg__
+  25 0002 0F92      		push __tmp_reg__
+  26 0004 0FB6      		in __tmp_reg__,__SREG__
+  27 0006 0F92      		push __tmp_reg__
+  28 0008 1124      		clr __zero_reg__
+  29               	/* prologue end (size=5) */
+  30               	.LM2:
+  31 000a CE99      		sbic 57-0x20,6
+  32 000c 00C0      		rjmp .L2
+  33               	.LM3:
+  34 000e DE9A      		sbi 59-0x20,6
+  35 0010 00C0      		rjmp .L5
+  36               	.L2:
+  37               	.LM4:
+  38 0012 DE98      		cbi 59-0x20,6
+  39               	.L5:
+  40               	/* epilogue: frame size=0 */
+  41 0014 0F90      		pop __tmp_reg__
+  42 0016 0FBE      		out __SREG__,__tmp_reg__
+  43 0018 0F90      		pop __tmp_reg__
+  44 001a 1F90      		pop __zero_reg__
+  45 001c 1895      		reti
+  46               	/* epilogue end (size=5) */
+  47               	/* function __vector_1 size 15 (5) */
+  48               	.LFE7:
+  50               	.global	main
+  52               	main:
+  53               	.LFB8:
+  54               	.LM5:
+  55               	/* prologue: frame size=0 */
+  56               	/* prologue end (size=0) */
+  57               	.LM6:
+  58 001e 80EF      		ldi r24,lo8(-16)
+  59 0020 8ABB      		out 58-0x20,r24
+  60               	.LM7:
+  61 0022 8BEF      		ldi r24,lo8(-5)
+  62 0024 87BB      		out 55-0x20,r24
+  63               	.LM8:
+  64 0026 81EF      		ldi r24,lo8(-15)
+  65 0028 81BB      		out 49-0x20,r24
+  66               	.LM9:
+  67 002a DC9A      		sbi 59-0x20,4
+  68               	.LM10:
+  69 002c C29A      		sbi 56-0x20,2
+  70               	.LM11:
+  71 002e 919A      		sbi 50-0x20,1
+  72               	.LM12:
+  73 0030 929A      		sbi 50-0x20,2
+  74               	.LM13:
+  75 0032 939A      		sbi 50-0x20,3
+  76               	.LM14:
+  77 0034 80E4      		ldi r24,lo8(64)
+  78 0036 8BBF      		out 91-0x20,r24
+  79               	.LM15:
+  80 0038 82E0      		ldi r24,lo8(2)
+  81 003a 85BF      		out 85-0x20,r24
+  82               	.LM16:
+  83               	/* #APP */
+  84 003c 7894      		sei
+  85               	/* #NOAPP */
+  86 003e E4E2      		ldi r30,lo8(-3036)
+  87 0040 F4EF      		ldi r31,hi8(-3036)
+  88               	.L7:
+  89               	.LM17:
+  90 0042 DD9A      		sbi 59-0x20,5
+  91               	.LBB12:
+  92               	.LBB13:
+  93               	.LBB14:
+  94               	.LBB15:
+  95               	.LM18:
+  96 0044 CF01      		movw r24,r30
+  97               	.LVL0:
+  98               	/* #APP */
+  99 0046 0197      		1: sbiw r24,1
+ 100 0048 01F4      		brne 1b
+ 101               	/* #NOAPP */
+ 102               	.LBE15:
+ 103               	.LBE14:
+ 104               	.LBE13:
+ 105               	.LBE12:
+ 106               	.LM19:
+ 107 004a DD98      		cbi 59-0x20,5
+ 108               	.LBB16:
+ 109               	.LBB17:
+ 110               	.LBB18:
+ 111               	.LBB19:
+ 112               	.LM20:
+ 113 004c CF01      		movw r24,r30
+ 114               	.LVL1:
+ 115               	/* #APP */
+ 116 004e 0197      		1: sbiw r24,1
+ 117 0050 01F4      		brne 1b
+ 118               	/* #NOAPP */
+ 119 0052 00C0      		rjmp .L7
+ 120               	.LBE19:
+ 121               	.LBE18:
+ 122               	.LBE17:
+ 123               	.LBE16:
+ 124               	/* epilogue: frame size=0 */
+ 125               	/* epilogue: noreturn */
+ 126               	/* epilogue end (size=0) */
+ 127               	/* function main size 32 (32) */
+ 128               	.LFE8:
+ 162               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccS9WysF.s:3      *ABS*:0000003f __SREG__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccS9WysF.s:4      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccS9WysF.s:5      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccS9WysF.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccS9WysF.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccS9WysF.s:20     .text:00000000 __vector_1
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccS9WysF.s:52     .text:0000001e main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

@@ -1,0 +1,2223 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: Reliance - Formulas & Calculations
+Date: Fri, 10 Apr 2009 17:23:43 +0530
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_003D_01C9BA01.18EA1F20"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5579
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_003D_01C9BA01.18EA1F20
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.reliance.com/mtr/flaclcmn.htm
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Reliance - Formulas & Calculations</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dutf-8"><LINK=20
+href=3D"http://www.reliance.com/css/style.css" type=3Dtext/css =
+rel=3DSTYLESHEET>
+<META content=3Ddocument name=3Dresource-type>
+<META content=3Den-US name=3Dcontent-language>
+<META content=3Dglobal name=3Ddistribution>
+<META content=3Dworldwide name=3Dcoverage>
+<META http-equiv=3Dreply-to content=3Dwebmaster@reliance.com>
+<META=20
+content=3D"A leading supplier of industrial automation solutions =
+including motors, drives and controls."=20
+name=3Ddescription>
+<META=20
+content=3D"Reliance, industrial automation, energy saving, industrial =
+control, industrial automation software, AC and DC drives, variable =
+speed drives, drives, power quality and power monitoring devices, =
+motors, electric motor, industrial and engineered motors, synchronous =
+motors and generators, adjustable speed drives, VS drives, motor brakes" =
+
+name=3Dkeywords><!-- =EF=BF=BDBASE =
+HREF=3D"http://www.reliance.com/"=EF=BF=BD -->
+<META content=3D"MSHTML 6.00.6000.16788" name=3DGENERATOR></HEAD>
+<BODY text=3D#000000 vLink=3D#000066 aLink=3D#b3b3ff link=3D#00008c =
+bgColor=3D#ffffff>
+<DIV align=3Dleft><A name=3Dtop></A>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D476 border=3D0>
+  <TBODY>
+  <TR>
+    <TD>
+      <H2 align=3Dcenter>Basic Motor Formulas And Calculations</H2>
+      <P>The formulas and calculations which appear below should be used =
+for=20
+      estimating purposes only. It is the responsibility of the customer =
+to=20
+      specify the required motor Hp, Torque, and accelerating time for =
+his=20
+      application. The salesman may wish to check the customers =
+specified values=20
+      with the formulas in this section, however, if there is serious =
+doubt=20
+      concerning the customers application or if the customer requires=20
+      guaranteed motor/application performance, the Product Department =
+Customer=20
+      Service group should be contacted. </P><A name=3Dfcrt>
+      <H5 align=3Dleft>Rules Of Thumb (Approximation)</H5></A>
+      <P>At 1800 rpm, a motor develops a 3 lb.ft. per hp<BR>At 1200 rpm, =
+a motor=20
+      develops a 4.5 lb.ft. per hp<BR>At 575 volts, a 3-phase motor =
+draws 1 amp=20
+      per hp<BR>At 460 volts, a 3-phase motor draws 1.25 amp per =
+hp<BR>At 230=20
+      volts a 3-phase motor draws 2.5 amp per hp<BR>At 230 volts, a =
+single-phase=20
+      motor draws 5 amp per hp<BR>At 115 volts, a single-phase motor =
+draws 10=20
+      amp per hp </P><BR><A name=3Dfcmf>
+      <H5 align=3Dleft>Mechanical Formulas</H5></A>
+      <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dright>Torque in lb.ft. =3D</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>HP x 5250<BR><IMG =
+height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D60=20
+            border=3D0><BR>rpm</TD>
+          <TD vAlign=3Dcenter align=3Dleft><IMG height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/1pxltrn.gif" =
+width=3D20=20
+            border=3D0></TD>
+          <TD vAlign=3Dcenter align=3Dright>HP =3D</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>Torque x rpm<BR><IMG =
+height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D71=20
+            border=3D0><BR>5250</TD>
+          <TD vAlign=3Dcenter align=3Dleft><IMG height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/1pxltrn.gif" =
+width=3D20=20
+            border=3D0></TD>
+          <TD vAlign=3Dcenter align=3Dright>rpm =3D</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>120 x Frequency<BR><IMG =
+height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D85=20
+            border=3D0><BR>No. of Poles</TD></TR></TBODY></TABLE><BR>
+      <H6 align=3Dleft>Temperature Conversion</H6>
+      <P>Deg C =3D (Deg F - 32) x 5/9<BR>Deg F =3D (Deg C x 9/5) + 32 =
+</P><BR>
+      <H6 align=3Dleft>High Inertia Loads</H6>
+      <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dright>t =3D</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>WK<SUP>2</SUP> x =
+rpm<BR><IMG height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D60=20
+            border=3D0><BR>308 x T av.</TD>
+          <TD vAlign=3Dcenter align=3Dleft rowSpan=3D2><IMG height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/1pxltrn.gif" =
+width=3D20=20
+            border=3D0></TD>
+          <TD vAlign=3Dcenter align=3Dleft rowSpan=3D2>WK<SUP>2</SUP> =
+=3D inertia in=20
+            lb.ft.<SUP>2</SUP><BR>t =3D accelerating time in sec.<BR>T =
+=3D Av.=20
+            accelerating torque lb.ft..</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dright>T =3D</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>WK<SUP>2</SUP> x =
+rpm<BR><IMG height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D60=20
+            border=3D0><BR>308 x t</TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dright>inertia reflected to motor =
+=3D Load=20
+            Inertia <IMG =
+src=3D"http://www.reliance.com/prod_elements/2lparen.gif"=20
+            align=3DabsMiddle border=3D0></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>Load rpm<BR><IMG height=3D1 =
+
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D60=20
+            border=3D0><BR>Motor rpm</TD>
+          <TD vAlign=3Dcenter align=3Dleft><IMG=20
+            src=3D"http://www.reliance.com/prod_elements/2rparen.gif" =
+align=3Dtop=20
+            border=3D0> 2</TD></TR></TBODY></TABLE><BR>
+      <H6 align=3Dleft>Synchronous Speed, Frequency And Number Of Poles =
+Of AC=20
+      Motors</H6>
+      <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dright>n<SUB>s</SUB> =3D</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>120 x f<BR><IMG height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D50=20
+            border=3D0><BR>P</TD>
+          <TD vAlign=3Dcenter align=3Dleft><IMG height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/1pxltrn.gif" =
+width=3D20=20
+            border=3D0></TD>
+          <TD vAlign=3Dcenter align=3Dright>f =3D</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>P x n<SUB>s</SUB><BR><IMG =
+height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D50=20
+            border=3D0><BR>120</TD>
+          <TD vAlign=3Dcenter align=3Dleft><IMG height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/1pxltrn.gif" =
+width=3D20=20
+            border=3D0></TD>
+          <TD vAlign=3Dcenter align=3Dright>P =3D</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>120 x f<BR><IMG height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D50=20
+            border=3D0><BR>n<SUB>s</SUB></TD></TR></TBODY></TABLE><BR>
+      <H6 align=3Dleft>Relation Between Horsepower, Torque, And =
+Speed</H6>
+      <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dright>HP =3D</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>T x n<BR><IMG height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D50=20
+            border=3D0><BR>5250</TD>
+          <TD vAlign=3Dcenter align=3Dleft><IMG height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/1pxltrn.gif" =
+width=3D20=20
+            border=3D0></TD>
+          <TD vAlign=3Dcenter align=3Dright>T =3D</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>5250 HP<BR><IMG height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D50=20
+            border=3D0><BR>n</TD>
+          <TD vAlign=3Dcenter align=3Dleft><IMG height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/1pxltrn.gif" =
+width=3D20=20
+            border=3D0></TD>
+          <TD vAlign=3Dcenter align=3Dright>n =3D</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>5250 HP<BR><IMG height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D50=20
+            border=3D0><BR>T</TD></TR></TBODY></TABLE><BR>
+      <H6 align=3Dleft>Motor Slip</H6>
+      <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dright>% Slip =3D</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>n<SUB>s</SUB> - n<BR><IMG =
+height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D40=20
+            border=3D0><BR>n<SUB>s</SUB></TD>
+          <TD vAlign=3Dcenter align=3Dleft>x =
+100</TD></TR></TBODY></TABLE><BR><A=20
+      name=3Dkvahp></A>
+      <TABLE cellSpacing=3D0 cellPadding=3D4 width=3D476 border=3D1>
+        <TBODY>
+        <TR>
+          <TH vAlign=3Dtop align=3Dmiddle bgColor=3D#00008c><FONT=20
+            color=3D#ffffff>Code</FONT></TH>
+          <TH vAlign=3Dtop align=3Dmiddle bgColor=3D#00008c><FONT=20
+            color=3D#ffffff>KVA/HP</FONT></TH>
+          <TH vAlign=3Dtop align=3Dmiddle bgColor=3D#00008c><BR></TH>
+          <TH vAlign=3Dtop align=3Dmiddle bgColor=3D#00008c><FONT=20
+            color=3D#ffffff>Code</FONT></TH>
+          <TH vAlign=3Dtop align=3Dmiddle bgColor=3D#00008c><FONT=20
+            color=3D#ffffff>KVA/HP</FONT></TH>
+          <TH vAlign=3Dtop align=3Dmiddle bgColor=3D#00008c><BR></TH>
+          <TH vAlign=3Dtop align=3Dmiddle bgColor=3D#00008c><FONT=20
+            color=3D#ffffff>Code</FONT></TH>
+          <TH vAlign=3Dtop align=3Dmiddle bgColor=3D#00008c><FONT=20
+            color=3D#ffffff>KVA/HP</FONT></TH>
+          <TH vAlign=3Dtop align=3Dmiddle bgColor=3D#00008c><BR></TH>
+          <TH vAlign=3Dtop align=3Dmiddle bgColor=3D#00008c><FONT=20
+            color=3D#ffffff>Code</FONT></TH>
+          <TH vAlign=3Dtop align=3Dmiddle bgColor=3D#00008c><FONT=20
+            color=3D#ffffff>KVA/HP</FONT></TH></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dmiddle>A</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>0-3.14</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>F</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>5.0 -5.59</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>L</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>9.0-9.99</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>S</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>16.0-17.99</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dmiddle>B</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>3.15-3.54</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>G</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>5.6 -6.29</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>M</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>10.0-11.19</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>T</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>18.0-19.99</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dmiddle>C</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>3.55-3.99</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>H</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>6.3 -7.09</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>N</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>11.2-12.49</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>U</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>20.0-22.39</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dmiddle>D</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>4.0 -4.49</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>I</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>7.1 -7.99</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>P</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>12.5-13.99</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>V</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>22.4 &amp; Up</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dmiddle>E</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>4.5 -4.99</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>K</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>8.0 -8.99</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>R</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>14.0-15.99</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter =
+align=3Dmiddle><BR></TD></TR></TBODY></TABLE>
+      <H6 align=3Dleft>Symbols</H6>
+      <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>I</TD>
+          <TD vAlign=3Dcenter align=3Dleft>=3D</TD>
+          <TD vAlign=3Dcenter align=3Dleft>current in amperes</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>E</TD>
+          <TD vAlign=3Dcenter align=3Dleft>=3D</TD>
+          <TD vAlign=3Dcenter align=3Dleft>voltage in volts</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>KW</TD>
+          <TD vAlign=3Dcenter align=3Dleft>=3D</TD>
+          <TD vAlign=3Dcenter align=3Dleft>power in kilowatts</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>KVA</TD>
+          <TD vAlign=3Dcenter align=3Dleft>=3D</TD>
+          <TD vAlign=3Dcenter align=3Dleft>apparent power in=20
+        kilo-volt-amperes</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>HP </TD>
+          <TD vAlign=3Dcenter align=3Dleft>=3D</TD>
+          <TD vAlign=3Dcenter align=3Dleft>output power in =
+horsepower</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>n</TD>
+          <TD vAlign=3Dcenter align=3Dleft>=3D</TD>
+          <TD vAlign=3Dcenter align=3Dleft>motor speed in revolutions =
+per minute=20
+            (RPM)</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>ns</TD>
+          <TD vAlign=3Dcenter align=3Dleft>=3D</TD>
+          <TD vAlign=3Dcenter align=3Dleft>synchronous speed in =
+revolutions per=20
+            minute (RPM)</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>P</TD>
+          <TD vAlign=3Dcenter align=3Dleft>=3D</TD>
+          <TD vAlign=3Dcenter align=3Dleft>number of poles</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>f</TD>
+          <TD vAlign=3Dcenter align=3Dleft>=3D</TD>
+          <TD vAlign=3Dcenter align=3Dleft>frequency in cycles per =
+second=20
+        (CPS)</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>T</TD>
+          <TD vAlign=3Dcenter align=3Dleft>=3D</TD>
+          <TD vAlign=3Dcenter align=3Dleft>torque in =
+pound-feet</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>EFF</TD>
+          <TD vAlign=3Dcenter align=3Dleft>=3D</TD>
+          <TD vAlign=3Dcenter align=3Dleft>efficiency as a =
+decimal</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>PF</TD>
+          <TD vAlign=3Dcenter align=3Dleft>=3D</TD>
+          <TD vAlign=3Dcenter align=3Dleft>power factor as a=20
+      decimal</TD></TR></TBODY></TABLE><BR>
+      <H6 align=3Dleft>Equivalent Inertia</H6>
+      <P>In mechanical systems, all rotating parts do not usually =
+operate at the=20
+      same speed. Thus, we need to determine the "equivalent inertia" of =
+each=20
+      moving part at a particular speed of the prime mover. </P>
+      <P>The total equivalent WK<SUP>2</SUP> for a system is the sum of =
+the=20
+      WK<SUP>2</SUP> of each part, referenced to prime mover speed. </P>
+      <P>The equation says: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter =
+align=3Dright>WK<SUP>2</SUP><SUB>EQ</SUB> =3D=20
+                  WK<SUP>2</SUP><SUB>part</SUB> <IMG=20
+                  =
+src=3D"http://www.reliance.com/prod_elements/2lparen.gif"=20
+                  align=3DabsMiddle border=3D0></TD>
+                <TD vAlign=3Dcenter =
+align=3Dmiddle>N<SUB>part</SUB><BR><IMG=20
+                  height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D75 border=3D0><BR>N<SUB>prime mover</SUB></TD>
+                <TD vAlign=3Dcenter align=3Dleft><IMG=20
+                  =
+src=3D"http://www.reliance.com/prod_elements/2rparen.gif"=20
+                  align=3Dtop border=3D0> =
+2</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>This equation becomes a common denominator on which other =
+calculations=20
+      can be based. For variable-speed devices, inertia should be =
+calculated=20
+      first at low speed. </P>
+      <P>Let's look at a simple system which has a prime mover (PM), a =
+reducer=20
+      and a load. </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%" border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dmiddle>WK<SUP>2</SUP> =3D 100=20
+            lb.ft.<SUP>2</SUP></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>WK<SUP>2</SUP> =3D 900=20
+            lb.ft.<SUP>2</SUP><BR>(as seen at output shaft)</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>WK<SUP>2</SUP> =3D 27,000=20
+            lb.ft.<SUP>2</SUP></TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dmiddle>
+            <TABLE height=3D60 cellSpacing=3D0 cellPadding=3D0 =
+width=3D"100%"=20
+              border=3D1><TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dmiddle>PRIME=20
+          MOVER</TD></TR></TBODY></TABLE></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle width=3D"10%">
+            <TABLE height=3D20 cellSpacing=3D0 cellPadding=3D0 =
+width=3D"100%"=20
+              border=3D1><TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dmiddle=20
+              bgColor=3D#e6e6ff><BR></TD></TR></TBODY></TABLE></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>
+            <TABLE height=3D60 cellSpacing=3D0 cellPadding=3D0 =
+width=3D"100%"=20
+              border=3D1><TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dmiddle>3:1 GEAR=20
+            REDUCER</TD></TR></TBODY></TABLE></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle width=3D"10%">
+            <TABLE height=3D20 cellSpacing=3D0 cellPadding=3D0 =
+width=3D"100%"=20
+              border=3D1><TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dmiddle=20
+              bgColor=3D#e6e6ff><BR></TD></TR></TBODY></TABLE></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>
+            <TABLE height=3D60 cellSpacing=3D0 cellPadding=3D0 =
+width=3D"100%"=20
+              border=3D1><TBODY>
+              <TR>
+                <TD vAlign=3Dcenter=20
+        =
+align=3Dmiddle>LOAD</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>The formula states that the system WK<SUP>2</SUP> equivalent is =
+equal=20
+      to the sum of WK<SUP>2</SUP><SUB>parts</SUB> at the prime mover's =
+RPM, or=20
+      in this case: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter =
+align=3Dright>WK<SUP>2</SUP><SUB>EQ</SUB> =3D=20
+                  WK<SUP>2</SUP><SUB>pm</SUB> + =
+WK<SUP>2</SUP><SUB>Red.</SUB>=20
+                  <IMG =
+src=3D"http://www.reliance.com/prod_elements/2lparen.gif"=20
+                  align=3DabsMiddle border=3D0></TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>Red. RPM<BR><IMG =
+height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D60 border=3D0><BR>P<SUB>M</SUB> RPM</TD>
+                <TD vAlign=3Dcenter align=3Dleft><IMG=20
+                  =
+src=3D"http://www.reliance.com/prod_elements/2rparen.gif"=20
+                  align=3Dtop border=3D0> 2</TD>
+                <TD vAlign=3Dcenter align=3Dright>+ =
+WK<SUP>2</SUP><SUB>Load</SUB>=20
+                  <IMG =
+src=3D"http://www.reliance.com/prod_elements/2lparen.gif"=20
+                  align=3DabsMiddle border=3D0></TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>Load RPM<BR><IMG =
+height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D60 border=3D0><BR>PM RPM</TD>
+                <TD vAlign=3Dcenter align=3Dleft><IMG=20
+                  =
+src=3D"http://www.reliance.com/prod_elements/2rparen.gif"=20
+                  align=3Dtop border=3D0> =
+2</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>Note: reducer RPM =3D Load RPM </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter =
+align=3Dright>WK<SUP>2</SUP><SUB>EQ</SUB> =3D=20
+                  WK<SUP>2</SUP><SUB>pm</SUB> + =
+WK<SUP>2</SUP><SUB>Red.</SUB>=20
+                  <IMG =
+src=3D"http://www.reliance.com/prod_elements/2lparen.gif"=20
+                  align=3DabsMiddle border=3D0></TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>1<BR><IMG height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D60 border=3D0><BR>3</TD>
+                <TD vAlign=3Dcenter align=3Dleft><IMG=20
+                  =
+src=3D"http://www.reliance.com/prod_elements/2rparen.gif"=20
+                  align=3Dtop border=3D0> 2</TD>
+                <TD vAlign=3Dcenter align=3Dright>+ =
+WK<SUP>2</SUP><SUB>Load</SUB>=20
+                  <IMG =
+src=3D"http://www.reliance.com/prod_elements/2lparen.gif"=20
+                  align=3DabsMiddle border=3D0></TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>1<BR><IMG height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D60 border=3D0><BR>3</TD>
+                <TD vAlign=3Dcenter align=3Dleft><IMG=20
+                  =
+src=3D"http://www.reliance.com/prod_elements/2rparen.gif"=20
+                  align=3Dtop border=3D0> =
+2</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>The WK<SUP>2</SUP> equivalent is equal to the WK<SUP>2</SUP> of =
+the=20
+      prime mover, plus the WK<SUP>2</SUP> of the load. This is equal to =
+the=20
+      WK<SUP>2</SUP> of the prime mover, plus the WK<SUP>2</SUP> of the =
+reducer=20
+      times (1/3)<SUP>2</SUP>, plus the WK<SUP>2</SUP> of the load times =
+
+      (1/3)<SUP>2</SUP>. </P>
+      <P>This relationship of the reducer to the driven load is =
+expressed by the=20
+      formula given earlier: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter =
+align=3Dright>WK<SUP>2</SUP><SUB>EQ</SUB> =3D=20
+                  WK<SUP>2</SUP><SUB>part</SUB> <IMG=20
+                  =
+src=3D"http://www.reliance.com/prod_elements/2lparen.gif"=20
+                  align=3DabsMiddle border=3D0></TD>
+                <TD vAlign=3Dcenter =
+align=3Dmiddle>N<SUB>part</SUB><BR><IMG=20
+                  height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D75 border=3D0><BR>N<SUB>prime mover</SUB></TD>
+                <TD vAlign=3Dcenter align=3Dleft><IMG=20
+                  =
+src=3D"http://www.reliance.com/prod_elements/2rparen.gif"=20
+                  align=3Dtop border=3D0> =
+2</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>In other words, when a part is rotating at a speed (N) =
+different from=20
+      the prime mover, the WK<SUP>2</SUP><SUB>EQ</SUB> is equal to the=20
+      WK<SUP>2</SUP> of the part's speed ratio squared. </P>
+      <P>In the example, the result can be obtained as follows: </P>
+      <P>The WK<SUP>2</SUP> equivalent is equal to: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter =
+align=3Dright>WK<SUP>2</SUP><SUB>EQ</SUB> =3D=20
+                  100 lb.ft.<SUP>2</SUP> + 900 lb.ft.<SUP>2</SUP> <IMG=20
+                  =
+src=3D"http://www.reliance.com/prod_elements/2lparen.gif"=20
+                  align=3DabsMiddle border=3D0></TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>1<BR><IMG height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D20 border=3D0><BR>3</TD>
+                <TD vAlign=3Dcenter align=3Dleft><IMG=20
+                  =
+src=3D"http://www.reliance.com/prod_elements/2rparen.gif"=20
+                  align=3Dtop border=3D0> 2</TD>
+                <TD vAlign=3Dcenter align=3Dright>+ 27,000 =
+lb.ft.<SUP>2</SUP> <IMG=20
+                  =
+src=3D"http://www.reliance.com/prod_elements/2lparen.gif"=20
+                  align=3DabsMiddle border=3D0></TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>1<BR><IMG height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D20 border=3D0><BR>3</TD>
+                <TD vAlign=3Dcenter align=3Dleft><IMG=20
+                  =
+src=3D"http://www.reliance.com/prod_elements/2rparen.gif"=20
+                  align=3Dtop border=3D0> =
+2</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>Finally: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <P>WK<SUP>2</SUP><SUB>EQ</SUB> =3D =
+lb.ft.<SUP>2</SUP><SUB>pm</SUB> +=20
+            100 lb.ft.<SUP>2</SUP><SUB>Red</SUB> + 3,000=20
+            lb.ft<SUP>2</SUP><SUB>Load</SUB> </P>
+            <P>WK<SUP>2</SUP><SUB>EQ</SUB> =3D 3200 lb.ft.<SUP>2</SUP>=20
+        </P></TD></TR></TBODY></TABLE>
+      <P>The total WK<SUP>2</SUP> equivalent is that WK<SUP>2</SUP> seen =
+by the=20
+      prime mover at its speed. </P><BR><A name=3Dfcef>
+      <H5 align=3Dleft>Electrical Formulas</H5></A>
+      <TABLE cellSpacing=3D0 cellPadding=3D4 width=3D476 border=3D1>
+        <TBODY>
+        <TR>
+          <TH vAlign=3Dcenter align=3Dmiddle bgColor=3D#00008c =
+rowSpan=3D2><FONT=20
+            color=3D#ffffff>To Find</FONT></TH>
+          <TH vAlign=3Dtop align=3Dmiddle bgColor=3D#00008c =
+colSpan=3D2><FONT=20
+            color=3D#ffffff>Alternating Current</FONT></TH></TR>
+        <TR>
+          <TH vAlign=3Dtop align=3Dmiddle bgColor=3D#00008c><FONT=20
+            color=3D#ffffff>Single-Phase</FONT></TH>
+          <TH vAlign=3Dtop align=3Dmiddle bgColor=3D#00008c><FONT=20
+            color=3D#ffffff>Three-Phase</FONT></TH></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>Amperes when horsepower is =
+known</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>HP x 746<BR><IMG height=3D1 =
+
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D60=20
+            border=3D0><BR>E x Eff x pf</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>HP x 746<BR><IMG height=3D1 =
+
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D95=20
+            border=3D0><BR>1.73 x E x Eff x pf</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>Amperes when kilowatts are =
+known</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>Kw x 1000<BR><IMG =
+height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D60=20
+            border=3D0><BR>E x pf</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>Kw x 1000<BR><IMG =
+height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D75=20
+            border=3D0><BR>1.73 x E x pf</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>Amperes when kva are =
+known</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>Kva x 1000<BR><IMG =
+height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D65=20
+            border=3D0><BR>E</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>Kva x 1000<BR><IMG =
+height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D65=20
+            border=3D0><BR>1.73 x E</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>Kilowatts</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>I x E x pf<BR><IMG =
+height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D55=20
+            border=3D0><BR>1000</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>1.73 x I x E x pf<BR><IMG =
+height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D85=20
+            border=3D0><BR>1000</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>Kva</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>I x E<BR><IMG height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D40=20
+            border=3D0><BR>1000</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>1.73 x I x E<BR><IMG =
+height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D70=20
+            border=3D0><BR>1000</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>Horsepower =3D (Output)</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>I x E x Eff x pf<BR><IMG =
+height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D80=20
+            border=3D0><BR>746</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>1.73 x I x E x Eff x =
+pff<BR><IMG=20
+            height=3D1 =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+            width=3D110 border=3D0><BR>746</TD></TR></TBODY></TABLE>
+      <P>I =3D Amperes; E =3D Volts; Eff =3D Efficiency; pf =3D Power =
+Factor; Kva =3D=20
+      Kilovolt-amperes; Kw =3D Kilowatts </P><BR>
+      <H6 align=3Dleft>Locked Rotor Current (I<SUB>L</SUB>) From =
+Nameplate=20
+      Data</H6>
+      <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dright>Three Phase: I<SUB>L</SUB> =
+=3D</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>577 x HP x KVA/HP<BR><IMG =
+height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D110=20
+            border=3D0><BR>E</TD>
+          <TD vAlign=3Dcenter align=3Dleft rowSpan=3D2><IMG height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/1pxltrn.gif" =
+width=3D16=20
+            border=3D0></TD>
+          <TD vAlign=3Dcenter align=3Dleft rowSpan=3D2><A=20
+            href=3D"http://www.reliance.com/mtr/flaclcmn.htm#kvahp">See: =
+KVA/HP=20
+            Chart</A></TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dright>Single Phase: I<SUB>L</SUB> =
+=3D</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>1000 x HP x KVA/HP<BR><IMG =
+height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D110=20
+            border=3D0><BR>E</TD></TR></TBODY></TABLE><BR>
+      <TABLE cellSpacing=3D0 cellPadding=3D0 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dtop align=3Dleft>EXAMPLE: </TD>
+          <TD vAlign=3Dtop align=3Dleft>
+            <P>Motor nameplate indicates 10 HP, 3 Phase, 460 Volts, Code =
+F. </P>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>I<SUB>L</SUB> =3D</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>577 x 10 x (5.6 or=20
+                  6.29)<BR><IMG height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D125 =
+border=3D0><BR>460</TD></TR></TBODY></TABLE><BR>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>I<SUB>L</SUB> =3D</TD>
+                <TD vAlign=3Dcenter align=3Dleft>70.25 or 78.9 Amperes =
+(possible=20
+                  =
+range)</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+      <H6 align=3Dleft>Effect Of Line Voltage On Locked Rotor Current=20
+      (I<SUB>L</SUB>) (Approx.)</H6><!-- =EF=BF=BDP=EF=BF=BD
+I=EF=BF=BDSUB=EF=BF=BDL=EF=BF=BD/SUB=EF=BF=BD =
+OCE=EF=BF=BDSUB=EF=BF=BDLINE=EF=BF=BD/SUB=EF=BF=BD
+=EF=BF=BD/P=EF=BF=BD
+=EF=BF=BDP=EF=BF=BD
+Or
+=EF=BF=BD/P=EF=BF=BD -->
+      <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dright>I<SUB>L</SUB> @ =
+E<SUB>LINE</SUB> =3D=20
+            I<SUB>L</SUB> @ E<SUB>N/P</SUB> x</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>E<SUB>LINE</SUB><BR><IMG =
+height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D40=20
+            border=3D0><BR>E<SUB>N/P</SUB></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellSpacing=3D0 cellPadding=3D0 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dtop align=3Dleft>EXAMPLE: </TD>
+          <TD vAlign=3Dtop align=3Dleft>
+            <P>Motor has a locked rotor current (inrush of 100 Amperes=20
+            (I<SUB>L</SUB>) at the rated nameplate voltage =
+(E<SUB>N/P</SUB>) of=20
+            230 volts. </P>
+            <P>What is I<SUB>L</SUB> with 245 volts (E<SUB>LINE</SUB>) =
+applied=20
+            to this motor? </P>
+            <P>I<SUB>L</SUB> @ 245 V. =3D 100 x 254V/230V </P>
+            <P>I<SUB>L</SUB> @ 245V. =3D 107 Amperes =
+</P></TD></TR></TBODY></TABLE>
+      <H6 align=3Dleft>Basic Horsepower Calculations</H6>
+      <P>Horsepower is work done per unit of time. One HP equals 33,000 =
+ft-lb of=20
+      work per minute. When work is done by a source of torque (T) to =
+produce=20
+      (M) rotations about an axis, the work done is: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D6 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>radius x 2 <IMG=20
+            src=3D"http://www.reliance.com/prod_elements/pi.gif" =
+border=3D0> x rpm x=20
+            lb. or 2 <IMG =
+src=3D"http://www.reliance.com/prod_elements/pi.gif"=20
+            border=3D0> TM</TD></TR></TBODY></TABLE>
+      <P>When rotation is at the rate N rpm, the HP delivered is: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>HP =3D</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>radius x 2 <IMG=20
+                  src=3D"http://www.reliance.com/prod_elements/pi.gif" =
+border=3D0> x=20
+                  rpm x lb.<BR><IMG height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D110 border=3D0><BR>33,000</TD>
+                <TD vAlign=3Dcenter align=3Dright>=3D</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>TN<BR><IMG height=3D1 =
+
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D35=20
+      =
+border=3D0><BR>5,250</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>For vertical or hoisting motion: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D6 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dright>HP =3D</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>W x S<BR><IMG height=3D1=20
+            src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif" =
+width=3D60=20
+            border=3D0><BR>33,000 x E</TD></TR></TBODY></TABLE>
+      <P>Where: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dleft>W</TD>
+                <TD vAlign=3Dcenter align=3Dleft>=3D</TD>
+                <TD vAlign=3Dcenter align=3Dleft>total weight in lbs. to =
+be raised=20
+                  by motor</TD></TR>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dleft>S</TD>
+                <TD vAlign=3Dcenter align=3Dleft>=3D</TD>
+                <TD vAlign=3Dcenter align=3Dleft>hoisting speed in feet =
+per=20
+                minute</TD></TR>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dleft>E</TD>
+                <TD vAlign=3Dcenter align=3Dleft>=3D</TD>
+                <TD vAlign=3Dcenter align=3Dleft>overall mechanical =
+efficiency of=20
+                  hoist and gearing. For purposes of =
+estimating</TD></TR>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dleft>E</TD>
+                <TD vAlign=3Dcenter align=3Dleft>=3D</TD>
+                <TD vAlign=3Dcenter align=3Dleft>.65 for eff. of hoist =
+and=20
+                  connected =
+gear.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>For fans and blowers: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>HP =3D</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>Volume (cfm) x Head =
+(inches of=20
+                  water)<BR><IMG height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D200 border=3D0><BR>6356 x Mechanical =
+Efficiency of=20
+              Fan</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>Or </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>HP =3D</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>Volume (cfm) x =
+Pressure (lb.=20
+                  Per sq. ft.)<BR><IMG height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D200 border=3D0><BR>3300 x Mechanical =
+Efficiency of=20
+              Fan</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>Or </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>HP =3D</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>Volume (cfm) x =
+Pressure (lb.=20
+                  Per sq. in.)<BR><IMG height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D200 border=3D0><BR>229 x Mechanical Efficiency =
+of=20
+              Fan</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>For purpose of estimating, the eff. of a fan or blower may be =
+assumed=20
+      to be 0.65. </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D0 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dtop align=3Dleft>Note: </TD>
+          <TD vAlign=3Dtop align=3Dleft>Air Capacity (cfm) varies =
+directly with=20
+            fan speed. Developed Pressure varies with square of fan =
+speed. Hp=20
+            varies with cube of fan speed.</TD></TR></TBODY></TABLE>
+      <P>For pumps: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>HP =3D</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>GPM x Pressure in lb. =
+Per sq.=20
+                  in. x Specific Grav.<BR><IMG height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D230 border=3D0><BR>1713 x Mechanical =
+Efficiency of=20
+              Pump</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>Or </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>HP =3D</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>GPM x Total Dynamic =
+Head in=20
+                  Feet x S.G.<BR><IMG height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D200 border=3D0><BR>3960 x Mechanical =
+Efficiency of=20
+              =
+Pump</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>where Total Dynamic =
+Head =3D=20
+                  Static Head + Friction=20
+      Head</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>For estimating, pump efficiency may be assumed at 0.70. =
+</P><BR>
+      <H6 align=3Dleft>Accelerating Torque</H6>
+      <P>The equivalent inertia of an adjustable speed drive indicates =
+the=20
+      energy required to keep the system running. However, starting or=20
+      accelerating the system requires extra energy. </P>
+      <P>The torque required to accelerate a body is equal to the =
+WK<SUP>2</SUP>=20
+      of the body, times the change in RPM, divided by 308 times the =
+interval=20
+      (in seconds) in which this acceleration takes place: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>ACCELERATING TORQUE =
+=3D</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>WK<SUP>2</SUP>N (in=20
+                  lb.ft.)<BR><IMG height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D75=20
+      =
+border=3D0><BR>308t</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>Where: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>N</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>=3D</TD>
+                <TD vAlign=3Dcenter align=3Dleft>Change in RPM</TD></TR>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>W</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>=3D</TD>
+                <TD vAlign=3Dcenter align=3Dleft>Weight in =
+Lbs.</TD></TR>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>K</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>=3D</TD>
+                <TD vAlign=3Dcenter align=3Dleft>Radius of =
+gyration</TD></TR>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>t</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>=3D</TD>
+                <TD vAlign=3Dcenter align=3Dleft>Time of acceleration=20
+(secs.)</TD></TR>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>WK<SUP>2</SUP></TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>=3D</TD>
+                <TD vAlign=3Dcenter align=3Dleft>Equivalent =
+Inertia</TD></TR>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>308</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>=3D</TD>
+                <TD vAlign=3Dcenter align=3Dleft>Constant of=20
+              =
+proportionality</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>Or </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>T<SUB>Acc</SUB> =
+=3D</TD>
+                <TD vAlign=3Dcenter =
+align=3Dmiddle>WK<SUP>2</SUP>N<BR><IMG=20
+                  height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D40=20
+      =
+border=3D0><BR>308t</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>The constant (308) is derived by transferring linear motion to =
+angular=20
+      motion, and considering acceleration due to gravity. If, for =
+example, we=20
+      have simply a prime mover and a load with no speed adjustment: =
+</P>
+      <P><I>Example 1</I> </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%" border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dmiddle width=3D"45%">
+            <TABLE height=3D50 cellSpacing=3D0 cellPadding=3D0 =
+width=3D"100%"=20
+              border=3D1><TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dmiddle>PRIME=20
+          LOADER</TD></TR></TBODY></TABLE></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle width=3D"25%">
+            <TABLE height=3D20 cellSpacing=3D0 cellPadding=3D0 =
+width=3D"100%"=20
+              border=3D1><TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dmiddle=20
+              bgColor=3D#e6e6ff><BR></TD></TR></TBODY></TABLE></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>
+            <TABLE height=3D50 cellSpacing=3D0 cellPadding=3D0 =
+width=3D"100%"=20
+              border=3D1><TBODY>
+              <TR>
+                <TD vAlign=3Dcenter =
+align=3Dmiddle>LOAD</TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dmiddle>WK<SUP>2</SUP> =3D 200=20
+            lb.ft.<SUP>2</SUP></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle><BR></TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>WK<SUP>2</SUP> =3D 800=20
+            lb.ft.<SUP>2</SUP></TD></TR></TBODY></TABLE>
+      <P>The WK<SUP>2</SUP><SUB>EQ</SUB> is determined as before: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft rowSpan=3D3><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>WK<SUP>2</SUP><SUB>EQ</SUB> =
+=3D=20
+            WK<SUP>2</SUP><SUB>pm</SUB> + =
+WK<SUP>2</SUP><SUB>Load</SUB></TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>WK<SUP>2</SUP><SUB>EQ</SUB> =
+=3D 200 +=20
+          800</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft>WK<SUP>2</SUP><SUB>EQ</SUB> =
+=3D 1000=20
+            ft.lb.<SUP>2</SUP></TD></TR></TBODY></TABLE>
+      <P>If we want to accelerate this load to 1800 RPM in 1 minute, =
+enough=20
+      information is available to find the amount of torque necessary to =
+
+      accelerate the load. </P>
+      <P>The formula states: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>T<SUB>Acc</SUB> =
+=3D</TD>
+                <TD vAlign=3Dcenter=20
+                  align=3Dmiddle>WK<SUP>2</SUP><SUB>EQ</SUB>N<BR><IMG =
+height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D60 border=3D0><BR>308t</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>or </TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>1000 x 1800<BR><IMG =
+height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D60 border=3D0><BR>308 x 60</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>or </TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>1800000<BR><IMG =
+height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D60=20
+      =
+border=3D0><BR>18480</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dleft =
+bgColor=3D#e6e6ff>T<SUB>Acc</SUB> =3D=20
+                  97.4 =
+lb.ft.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>In other words, 97.4 lb.ft. of torque must be applied to get =
+this load=20
+      turning at 1800 RPM, in 60 seconds. </P>
+      <P>Note that T<SUB>Acc</SUB> is an average value of accelerating =
+torque=20
+      during the speed change under consideration. If a more accurate=20
+      calculation is desired, the following example may be helpful. </P>
+      <P><I>Example 2</I> </P>
+      <P>The time that it takes to accelerate an induction motor from =
+one speed=20
+      to another may be found from the following equation: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dright>t =3D</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>WR<SUP>2</SUP> x =
+change in=20
+                  rpm<BR><IMG height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D120 border=3D0><BR>308 x=20
+        T</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>Where: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dtop align=3Dright>T</TD>
+                <TD vAlign=3Dtop align=3Dmiddle>=3D</TD>
+                <TD vAlign=3Dtop align=3Dleft>Average value of =
+accelerating torque=20
+                  during the speed change under consideration.</TD></TR>
+              <TR>
+                <TD vAlign=3Dtop align=3Dright>t</TD>
+                <TD vAlign=3Dtop align=3Dmiddle>=3D</TD>
+                <TD vAlign=3Dtop align=3Dleft>Time the motor takes to =
+accelerate=20
+                  from the initial speed to the final speed.</TD></TR>
+              <TR>
+                <TD vAlign=3Dtop align=3Dright>WR<SUB>2</SUB></TD>
+                <TD vAlign=3Dtop align=3Dmiddle>=3D</TD>
+                <TD vAlign=3Dtop align=3Dleft>Flywheel effect, or moment =
+of=20
+                  inertia, for the driven machinery plus the motor rotor =
+in=20
+                  lb.ft.<SUP>2</SUP> (WR<SUP>2</SUP> of driven machinery =
+must be=20
+                  referred to the motor=20
+      shaft).</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>The Application of the above formula will now be considered by =
+means of=20
+      an example. Figure A shows the speed-torque curves of a =
+squirrel-cage=20
+      induction motor and a blower which it drives. At any speed of the =
+blower,=20
+      the difference between the torque which the motor can deliver at =
+its shaft=20
+      and the torque required by the blower is the torque available for=20
+      acceleration. Reference to Figure A shows that the accelerating =
+torque may=20
+      vary greatly with speed. When the speed-torque curves for the =
+motor and=20
+      blower intersect there is no torque available for acceleration. =
+The motor=20
+      then drives the blower at constant speed and just delivers the =
+torque=20
+      required by the load. </P>
+      <P>In order to find the total time required to accelerate the =
+motor and=20
+      blower, the area between the motor speed-torque curve and the =
+blower=20
+      speed-torque curve is divided into strips, the ends of which =
+approximate=20
+      straight lines. Each strip corresponds to a speed increment which =
+takes=20
+      place within a definite time interval. The solid horizontal lines =
+in=20
+      Figure A represent the boundaries of strips; the lengths of the =
+broken=20
+      lines the average accelerating torques for the selected speed =
+intervals.=20
+      In order to calculate the total acceleration time for the motor =
+and the=20
+      direct-coupled blower it is necessary to find the time required to =
+
+      accelerate the motor from the beginning of one speed interval to =
+the=20
+      beginning of the next interval and add up the incremental times =
+for all=20
+      intervals to arrive at the total acceleration time. If the =
+WR<SUP>2</SUP>=20
+      of the motor whose speed-torque curve is given in Figure A is 3.26 =
+
+      ft.lb.<SUP>2</SUP> and the WR<SUP>2</SUP> of the blower referred =
+to the=20
+      motor shaft is 15 ft.lb.<SUP>2</SUP>, the total WR<SUP>2</SUP> is: =
+</P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>15 + 3.26 =3D 18.26=20
+        ft.lb.<SUP>2</SUP>,</TD></TR></TBODY></TABLE>
+      <P>And the total time of acceleration is: </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter =
+align=3Dmiddle>WR<SUP>2</SUP><BR><IMG height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D30 border=3D0><BR>308</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle><IMG=20
+                  =
+src=3D"http://www.reliance.com/prod_elements/2lbracket.gif"=20
+                  align=3DabsMiddle border=3D0></TD>
+                <TD vAlign=3Dcenter =
+align=3Dmiddle>rpm<SUB>1</SUB><BR><IMG=20
+                  height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D35 border=3D0><BR>T<SUB>1</SUB></TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>+</TD>
+                <TD vAlign=3Dcenter =
+align=3Dmiddle>rpm<SUB>2</SUB><BR><IMG=20
+                  height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D35 border=3D0><BR>T<SUB>2</SUB></TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>+</TD>
+                <TD vAlign=3Dcenter =
+align=3Dmiddle>rpm<SUB>3</SUB><BR><IMG=20
+                  height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D35 border=3D0><BR>T<SUB>3</SUB></TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>+ - - - - - - - - - =
++</TD>
+                <TD vAlign=3Dcenter =
+align=3Dmiddle>rpm<SUB>9</SUB><BR><IMG=20
+                  height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D35 border=3D0><BR>T<SUB>9</SUB></TD>
+                <TD vAlign=3Dcenter align=3Dleft><IMG=20
+                  =
+src=3D"http://www.reliance.com/prod_elements/2rbracket.gif"=20
+                  align=3Dtop =
+border=3D0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>Or </P>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>
+            <TABLE cellSpacing=3D0 cellPadding=3D2 border=3D0>
+              <TBODY>
+              <TR>
+                <TD vAlign=3Dcenter align=3Dmiddle>t =3D</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>18.26<BR><IMG =
+height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D30 border=3D0><BR>308</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle><IMG=20
+                  =
+src=3D"http://www.reliance.com/prod_elements/2lbracket.gif"=20
+                  align=3DabsMiddle border=3D0></TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>150<BR><IMG =
+height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D25 border=3D0><BR>46</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>+</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>150<BR><IMG =
+height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D25 border=3D0><BR>48</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>+</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>300<BR><IMG =
+height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D25 border=3D0><BR>47</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>+</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>300<BR><IMG =
+height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D25 border=3D0><BR>43.8</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>+</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>200<BR><IMG =
+height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D25 border=3D0><BR>39.8</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>+</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>200<BR><IMG =
+height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D25 border=3D0><BR>36.4</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>+</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>300<BR><IMG =
+height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D25 border=3D0><BR>32.8</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>+</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>100<BR><IMG =
+height=3D1=20
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D25 border=3D0><BR>29.6</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>+</TD>
+                <TD vAlign=3Dcenter align=3Dmiddle>40<BR><IMG height=3D1 =
+
+                  =
+src=3D"http://www.reliance.com/nav_elements/4pxlblack.gif"=20
+                  width=3D20 border=3D0><BR>11</TD>
+                <TD vAlign=3Dcenter align=3Dleft><IMG=20
+                  =
+src=3D"http://www.reliance.com/prod_elements/2rbracket.gif"=20
+                  align=3Dtop =
+border=3D0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=3D0 cellPadding=3D6 border=3D0>
+        <TBODY>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dleft><BR></TD>
+          <TD vAlign=3Dcenter align=3Dleft>t =3D 2.75 =
+sec.</TD></TR></TBODY></TABLE>
+      <P><B>Figure A</B><BR>Curves used to determine time required to =
+accelerate=20
+      induction motor and blower </P>
+      <DIV align=3Dcenter>
+      <CENTER>
+      <TABLE cellSpacing=3D0 cellPadding=3D3 width=3D300 border=3D0>
+        <TBODY>
+        <TR>
+          <TH vAlign=3Dtop align=3Dmiddle colSpan=3D3>Accelerating =
+Torques</TH></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dmiddle>T<SUB>1</SUB> =3D 46 =
+lb.ft.</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>T<SUB>4</SUB> =3D 43.8 =
+lb.ft.</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>T<SUB>7</SUB> =3D 32.8 =
+lb.ft.</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dmiddle>T<SUB>2</SUB> =3D 48 =
+lb.ft.</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>T<SUB>5</SUB> =3D 39.8 =
+lb.ft.</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>T<SUB>8</SUB> =3D 29.6 =
+lb.ft.</TD></TR>
+        <TR>
+          <TD vAlign=3Dcenter align=3Dmiddle>T<SUB>3</SUB> =3D 47 =
+lb.ft.</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>T<SUB>6</SUB> =3D 36.4 =
+lb.ft.</TD>
+          <TD vAlign=3Dcenter align=3Dmiddle>T<SUB>9</SUB> =3D 11=20
+        lb.ft.</TD></TR></TBODY></TABLE></CENTER></DIV><BR><IMG =
+height=3D356=20
+      src=3D"http://www.reliance.com/mtr/images/fcfiga.gif" width=3D476 =
+border=3D0>=20
+      <BR>
+      <H6 align=3Dleft>Duty Cycles</H6>
+      <P>Sales Orders are often entered with a note under special =
+features such=20
+      as: </P><IMG height=3D1=20
+      src=3D"http://www.reliance.com/nav_elements/1pxltrn.gif" =
+width=3D18=20
+      border=3D0>"Suitable for 10 starts per hour"<BR>Or<BR><IMG =
+height=3D1=20
+      src=3D"http://www.reliance.com/nav_elements/1pxltrn.gif" =
+width=3D18=20
+      border=3D0>"Suitable for 3 reverses per minute"<BR>Or<BR><IMG =
+height=3D1=20
+      src=3D"http://www.reliance.com/nav_elements/1pxltrn.gif" =
+width=3D18=20
+      border=3D0>"Motor to be capable of accelerating 350=20
+      lb.ft.<SUP>2</SUP>"<BR>Or<BR><IMG height=3D1=20
+      src=3D"http://www.reliance.com/nav_elements/1pxltrn.gif" =
+width=3D18=20
+      border=3D0>"Suitable for 5 starts and stops per hour"<BR>
+      <P>Orders with notes such as these can not be processed for two =
+reasons.=20
+      </P>
+      <OL type=3D1>
+        <LI>The appropriate product group must first be consulted to see =
+if a=20
+        design is available that will perform the required duty cycle =
+and, if=20
+        not, to determine if the type of design required falls within =
+our=20
+        present product line.=20
+        <LI>None of the above notes contain enough information to make =
+the=20
+        necessary duty cycle calculation. In order for a duty cycle to =
+be=20
+        checked out, the duty cycle information must include the =
+following:=20
+        <OL type=3Da>
+          <LI>Inertia reflected to the motor shaft.=20
+          <LI>Torque load on the motor during all portions of the duty =
+cycle=20
+          including starts, running time, stops or reversals.=20
+          <LI>Accurate timing of each portion of the cycle.=20
+          <LI>Information on how each step of the cycle is accomplished. =
+For=20
+          example, a stop can be by coasting, mechanical braking, DC =
+dynamic=20
+          braking or plugging. A reversal can be accomplished by =
+plugging, or=20
+          the motor may be stopped by some means then re-started in the =
+opposite=20
+          direction.=20
+          <LI>When the motor is multi-speed, the cycle for each speed =
+must be=20
+          completely defined, including the method of changing from one =
+speed to=20
+          another.=20
+          <LI>Any special mechanical problems, features or limitations.=20
+        </LI></OL></LI></OL>
+      <P>Obtaining this information and checking with the product group =
+before=20
+      the order is entered can save much time, expense and =
+correspondence. </P>
+      <P>Duty cycle refers to the detailed description of a work cycle =
+that=20
+      repeats in a specific time period. This cycle may include frequent =
+starts,=20
+      plugging stops, reversals or stalls. These characteristics are =
+usually=20
+      involved in batch-type processes and may include tumbling barrels, =
+certain=20
+      cranes, shovels and draglines, dampers, gate- or plow-positioning =
+drives,=20
+      drawbridges, freight and personnel elevators, press-type =
+extractors, some=20
+      feeders,presses of certain types, hoists, indexers, boring =
+machines,cinder=20
+      block machines, keyseating, kneading, car-pulling, shakers =
+(foundry or=20
+      car), swaging and washing machines, and certain freight and =
+passenger=20
+      vehicles. The list is not all-inclusive. The drives for these =
+loads must=20
+      be capable of absorbing the heat generated during the duty cycles. =
+
+      Adequate thermal capacity would be required in slip couplings, =
+clutches or=20
+      motors to accelerate or plug-stop these drives or to withstand =
+stalls. It=20
+      is the product of the slip speed and the torque absorbed by the =
+load per=20
+      unit of time which generates heat in these drive components. All =
+the=20
+      events which occur during the duty cycle generate heat which the =
+drive=20
+      components must dissipate. </P>
+      <P>Because of the complexity of the Duty Cycle Calculations and =
+the=20
+      extensive engineering data per specific motor design and rating =
+required=20
+      for the calculations, it is necessary for the sales engineer to =
+refer to=20
+      the Product Department for motor sizing with a duty cycle =
+application.=20
+</P>
+      <P><EM>Last Updated September 1, =
+1998</EM></P></TD></TR></TBODY></TABLE><BR><BR>
+<TABLE cellSpacing=3D2 cellPadding=3D2 width=3D476 align=3Dleft>
+  <TBODY>
+  <TR>
+    <TD vAlign=3D"MIDDLE<font face=3D" align=3Dleft size=3D"1" =
+Verdana?>Copyright=20
+      =C2=A92007, Baldor Electric Company. <BR>All Rights=20
+  Reserved.</FONT></A></TD></TR></TBODY></TABLE></DIV><!--Company: =
+Reliance--><!--Address: 6065 Parkland Boulevard, Cleveland, Ohio =
+44124-62106 USA--><!--Phone: Toll-Free: 1-800-245-4501--><!--Phone: =
+216-266-7000--><!--Web Site: http://www.reliance.com/--><!--E-mail: =
+webmaster@reliance.com--><!--Origination date: 7/13/98--><!--Updated by =
+RA Electronic Publishing 7/14/98--><!--Updated by RA Electronic =
+Publishing 7/15/98--><!--Updated by RA Electronic Publishing =
+8/27/98--></BODY></HTML>
+
+------=_NextPart_000_003D_01C9BA01.18EA1F20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.reliance.com/nav_elements/4pxlblack.gif
+
+R0lGODlhBAAEAID/AP///wAAACwAAAAABAAEAAACBIyPGQUAOw==
+
+------=_NextPart_000_003D_01C9BA01.18EA1F20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.reliance.com/nav_elements/1pxltrn.gif
+
+R0lGODlhAQABAID/AP///wAA/yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==
+
+------=_NextPart_000_003D_01C9BA01.18EA1F20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.reliance.com/prod_elements/2lparen.gif
+
+R0lGODlhBQAVALP/AP///9/f38/Pz7u7u6qqqpqamoqKinZ2dmZmZlVVVUVFRTExMSEhIREREQAA
+AAAAACH5BAEAAAAALAAAAAAFABUAAAQvEEiVZHFBMmTd0IwkOIdkOMTkCJojAY4rxS/dvgpmoqLD
+SYvG65LSKF4DzyuhiAAAOw==
+
+------=_NextPart_000_003D_01C9BA01.18EA1F20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.reliance.com/prod_elements/2rparen.gif
+
+R0lGODlhBQAVALP/AP///9/f38/Pz7u7u6qqqpqamoqKinZ2dmZmZlVVVUVFRTExMSEhIREREQAA
+AAAAACH5BAEAAAAALAAAAAAFABUAAAQwMClAgysUIJbHzQxHHY5AEY5BCc5EOSLgONlc069ouaiq
+lZTG4vQBKESeAUWRyEQAADs=
+
+------=_NextPart_000_003D_01C9BA01.18EA1F20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.reliance.com/prod_elements/pi.gif
+
+R0lGODlhCAALALP/AP///+/v79/f38/Pz7u7u6qqqpqamoqKinZ2dmZmZlVVVUVFRTExMSEhIRER
+EQAAACH5BAEAAAAALAAAAAAIAAsAAAQpEMhJq51hvb3XOYvXHMYAJAbAUAsBPJRjwpJAwyazAo6C
+CI6D5OAoRAAAOw==
+
+------=_NextPart_000_003D_01C9BA01.18EA1F20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.reliance.com/prod_elements/2lbracket.gif
+
+R0lGODlhBAAVAKL/AP///4qKikVFRSEhIQAAAAAAAAAAAAAAACH5BAEAAAAALAAAAAAEABUAAAMV
+SKoTQQIAKOmMt2LLt9dgJnZV8ywJADs=
+
+------=_NextPart_000_003D_01C9BA01.18EA1F20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.reliance.com/prod_elements/2rbracket.gif
+
+R0lGODlhBAAVAKL/AP///4qKikVFRSEhIQAAAAAAAAAAAAAAACH5BAEAAAAALAAAAAAEABUAAAMW
+SEoRQwAIKOmMt2LLt9dgJnZV8yxEAgA7
+
+------=_NextPart_000_003D_01C9BA01.18EA1F20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.reliance.com/mtr/images/fcfiga.gif
+
+R0lGODlh3AFkAbP/AP///+/v79/f38/Pz7+/v5+fn4+Pj39/f3BwcGBgYFBQUEBAQDAwMCAgIBAQ
+EAAAACH5BAEAAAAALAAAAADcAWQBAAT/EMhJq7046827/2AojlwwnAGVYkNRCFOwAsQMA61x6PNA
+/DWScEgsAgqI2dGgOigOg8kAgdglEkxJoHAoRCmtg5hgLJvP6LR6zRYsGgxGYjVYKLWJxiJOBiAU
+Wg2AAAIMMG9xC3MSBA2OjgxfbJOUFQINDgUTlw03BAwKfw0IEgYLb4ILpDgMigqjMQx6rQ1Zlbe4
+ubq7ZnUCMlWMDBYBp78BnzAFDlEHjlEFwwAMBzIVBQ0DAr8I0rzfQ5wMK86dhAyaEgMNfRLRSop0
+6FoL7dh34Pn6+/xFBAorDKQbMM6SIQpUcNQCsMDUAT8JJCiYE+DXBGw3Avzpx1FDIYJM/wJQO1hg
+0AQxFD7ZsEOhQMRzL34E60izps1+6xYoOCXvxoR/1wCJPFBIgAFACvo4O6XzSyNQCuL4vKkviIRC
+AQ6MM0UQxoFVP8EeaTCDwMufg0SCkkWWqtu3cNO4IbANwcsAZ3+yvDjoT4IFCgnstbtNSaMdCByl
+i6srgAIH7S4NENmNLklvElD+bKtub6m08yomMMm4tOnTFwaYXJdCAOmr7GI0ZOToYTE9E6hdaHTj
+0mvUahw7ALgpNgIH49bBWLf4UjsanCUsaM4gi8h2n4Br3w63EQIDCeTQnjg6izMEXATFwPTFwAOT
+b+z+SbfMXmzuaAiyUyIySiFNbtwQTf8CdlGjxD0pyfEVKCuItBhv+EUooT6OMbUIAHjtpMhD7sRh
+IAUG2OIadqNdkUA6gvlUTAEaTTWhCAE8c8EMNDahiIsYPnfVX0ldoyKLL25DgQAEFGBVjkeqM9mL
+TKZRET5oFFILlE1mQNACklTJkUbq0SZHAy/pJ8sXjunRwGJapulWAAY4YgCVao4llhoGZBmnBt3o
+NEFUKQwAGUOGZFUQNjXkgeOdJMCJaAhGwWHnEBUJ8ChH2NiyxnW4WDRjCtbskkIBgDFSj1EAxZjO
+JZoosNh0KWlzwqvbHCODrLHGqk1Fr74KBAE+7DqZpNpgqA0SVewg0K5FGpnrCby6yuv/D732Sles
+yBYpx7PH7lqAAcka+YML37ogrrjhjmvuti4IpG6I64aYrpFc6CCQufPOuy27+IZorL3bfkWFQAw4
+AOa+++ogxsEIi0GFGOE9QiAVD1Mh8cQUyzfxFeRhTN7GJXaswMdXLOCAAzqVrKGGTJ3y8U5QTbTy
+yys33PLJKJsoMYFX2GUiyC9jvAcke3gYBySQeJhyyisnYYYpFLwiI6qBPLTHF7PR9sjVshgtdNBC
+JzK0h1eHHfbIszgy8tlopy2w2Gy3DUfXbLH1NtxwnyJ3122vHXbcc789N9yP6O0223IPjglyQ1+t
+kyxnm03211kLfXjjas/SClMo2320/06YgLKzzZ+DbCLGVJC9wwEJCAyxyh/r1LPooI+O81968Kwx
+zDBjLvvoCIisx+abv+x66zvFHPTIOg7B9GfaCEZXNoEwIUcUlE2Qx3foelststEuC6sAebxQq629
+fxx54FeTbfj6butkLAEHDMdrrTLUX78W9udv/y+NsDir/gAM4P7i579ZyUqACKyfG0h2wE7NyhmJ
+g0wC3ZA+k3lBURtwxqRCcBglPGENHwGhAzh0Bhk0InlCKElubNGAarTwKn+qGtQw1Ao2tOlQxPiF
+pIAgENSN5hR+C5zahog2t0kODrrLmby4RRf7lQB6aGjEBokgEoFhsBh6c8CFMCClzv8BCYMeaBMY
+NxANNEkgASSM0kHUcAlLlTASZjhAqADQpi5EBQbhKwlLPnGAf5hDOnlBAzamCCNkbEOO0sKXv6gg
+PLDBAROTa1wkiag3oYFMYuCC1mGOYQYIyYUBCCAkPdSHCeLsBhWjwKEQxCgCAqBHAGW8wAeDswBV
+EmGGn0QhCYqUkt4pDUOmCMUMQNUUCiwgjVH8YxpcmahjEMkH6hLF8H7GOEpas4iKexnEmJir+2XA
+k2noUQcE0I3DYWJOGErd2kRJgm6MMSXm/JMs0VmGELLxPk5igC45ggU2gFOQgTSDg1TwC2lxQWF2
+yVziHEe2a2LzcopAYxeUpY3EsJP/BOL0gAm6QbYD+W5kAS2DAQqi0XI4DocEAuEa5QLFXL4FCWwQ
+iS2HANM1JGCfGqDRrHzQqzahxwATo1nWJklErCGNZzFb2A7GxaxbzUBVI0AGemJwHLKZIqRGGOk7
+6Sg45FAJjZdSwEyF4JxL6fMtOmCDctbATJteNKorxUCkiFQkAujgL3YLGOUcOkTCtQJjcPjODnzl
+Kll903eCwCNWizBSEATMcWfFAFjXgICxkkAyKsUpP1K6hrWqwa5h1SxZ4VgEE/IqMV3QwcJ09rDR
+mO9nY6ucNbH2V5udLjF6q0EhSrVVD0TjAwZYm+oUpQA3ClSsIGypGkWrj2OqNTqC/zTjGRDAXLha
+NgSsgVFhmfUDY+UhohrimxBna8RWJFU+3CKXUxW1PA74CZIGGOss5VLL5L5VBIWoLjgmqwbPpoEL
+l6qHSq8Lgkb0FgQZxZAJXKVX6lZhYXIj5eQYytei7WEiEEstt17hLW1oqgLBTawH+snGuJ4Bs8GJ
+LFVq+ll8CpKeRliHfhlF2jMY2Kb7bMQbkFmHtenTVtv4RFKKxK+v4PVjRWMLebH5NtZFxRFYOFh6
+M/kDSYHywB4oin3NOmNesPiT9w2BCoOT4BN7ppPQPQNUMSCyr8xxLGZTLjJ4BcoYxKpTBNVBv/Ql
+x7Tlja+zTZzrcjbYut4ZQxo1Jf9LwwwCTLmFv/kkMAeRKVABs/HMZbixGspszLUNwixmi8MWabCT
+c+pFdPTEq3M3kYg9MLBW3CXXQX/INSVXjqh+fsTWNDS6hHWjC83yQWFuqUw0OJoqoYipiTtJ6Xqq
+WI2S9oCmw7lPWDaCCdg4WwI+bIF1iOV+eFaBN8U9Kz0Vcq49DdFogujQBzwA0A0VXJNtZ6w+8nQb
+k9GfFLn8Fs6mONofAO0aOO1sRndg2miwdAbKmBhIVIMDihj4b8rgoAUDIV2+lljuWhHheOca1x9H
+ouaoWW92dbhX4xt2Bo59ExfEFLmfla4ZbjrgZZI0DTS3kl0gqYd3+hsNH2ODwqn/WJgTLAML+hpN
+4QwnXI9TuK88Jxok0JgkLTzbJl82dn3VsC02ENwIbsAyBxCuZs1G42oJiBa+PQysE+hk7d7j6fx2
+SBe2p/wTkfDes5oKLV1JC1nwAgW8uiWueuEL44YXyKvOEy7ULZ19kI+82OahgqvXJEQx3foym12G
+rxch7Gmog9g7sObUpM5xFEb92AYnMAnHmemvZxslifp0kMP7mra//ex1L9tHPKFBWHqpcXtRbBsP
+vww5p+/oNWAWNiT/GpAkWYhuxsidYZhArwClXRBahWi6C10mV23BIKi9uppfW+T6FhPLtS05gB9e
+Jh/X9qoFLvC0EFyFx3/+4SX//+0NILhRNliZdC/f5y7sQgUi03rE4RgApwtdl1wN2AEPqAbUBUJv
+1kkTRwLBMgGhRAzYAAm/FAITMXAwZgRD90bLtwEoBikloYC/AHMrxnlgV3xmMIE412UfAHpRlIEi
+UA6L0YEq8BiYgGkItlhE8HMJd3xGUFmdpVxE8IF68Ak46IAy+HnLVgYuR2ZTOE5EWASqgXx9tEZA
+2CG+F4GARFklWARV4yQwmB8u5oVhs4W4kIX9RYOZVoWQ4nm31IVEABRLGAp7kXNZcTVyaD1pOATJ
+tgYnWGlmqIJXqDx6Y3AOKHP1ZIdGAD/OR4mfx4dD8IVWSDbp0COfUEnNwitKIP8pKbckMTAR4SZu
+GHWIQ7CIFNeGJ/aIsSgwttgPAFZzn6WEVMQql5aCGCAYwugH1GAW0jAaDUd7ArMXItE2a9QmSRZx
+scBxRkOLTgAzsAAiu3MFxuUX2sSEDBFRu0MFGYE6SoVJUiAxjkcgz/EHSUNiJ4EzrFVcxSEH7Phg
+toAEi2QXKJIz/1IOmfBSmmiFjch8eDhahegRnCgExFgEoIAhlqZOj0BdR3E6IfIcvZI9B7UCrgEH
+EWMpjmFeK7MHLlJOSBQwczJSe5AyYGIBeVI8UUFaiKU1WZMRecA2JtEIbJNG2ZdXF/hkR0RSlyBJ
+WLMC6sQ3oRJiuoYEyPNSRkj/BARRjBhgg0C3kBmggzbWkB6gFVFBClugZNVRQom4chpVGDJAjRvQ
+inL1VNVgWAp2ByYwPnLpYXVQdU+CP/igP7dSHFBwAnQZA6aoQDbgKktCAAJzkJQwZiVGlbvhi5Bi
+efXElSPwkJ/XRxgihG7imBSgGTgHi0Igi2UQglHCg8T2huFgJzw1JAIxFcgAJC2RkKOlmFUpm1EF
+jMoXelEJI6dXG2ioiLY5ArhpbLRoBlpZQm8giRYgGLhBD6pQZ3QEJt0wEKDway1RkFSUi0MgcPmE
+lVxEma1kmq30UWfifKApnOcpnNgpBAyoUsrJAXnwni0RInN0FJxCPS80FlFA/40WdRHrSVaW6A+Q
+yZ6i+XniSQKg4piN4GnaOQRIaAarpgbDWYucWQGqUaEIgZoOOUfTYVd9gGLMESMfWp6l8J+J0qAa
+OKCJUqAhMG6ugaE0AJ5rKY1wUCgopFPWkEDhlhArxykBpJdxORQNAkCuSG4A9B8/SgwxoFOIxmr5
+FqQJpAVteQ7yqQHxWYPeEB9a8RD7RghnUlYYQqJHAEpiwH/nci/15mtfsS3/Eh62VQUYdzDfYTDc
+R33F8gdkKi9IgHTxclBpSqd1um6qgjsusxO3AzEaAzyvRR4JVai3Izyh4FobdzSh0KiSWqgZcwWP
+1TlK1zIpA1FcU2tdwzUy2f9qJXOqmAM8ptqSLRk3i2M3v2MyNFOSCjWUdYM7KsM6lHo0kcMUdCOq
+vlqSp+o1cNA6wINGrCU7GwMz6xagIgAqKyQMJrBGIiqigfAg8mY45zOq1giroIqqwLOruVprIhc8
+xYM0roM5hCqUjGqoo/EVX1Gps9ozruVagsCsl4qqtBausCqr+Do6GPYxOydcrgBERxUzHQMxFqOw
+/bgweaB9xYKRS3UudQVUcIqOCtMKZZou6vIu63Iv2WOxE0UsggCvYiAvC3OA+sIvcFovSPAKFINQ
+GGmxFcNI64oIQSM8omo0Lmk4VdoSczRLUxkjWQAhujEWPoEEd1YYaKmjSar/ZQJVP1zAKQpGcc9H
+ljCqEqsUaklytdOVniGwhmnAopCieVFSS+O2pEkKpfsjC7SZGd7gHSP1EsdBINvYCKGAHNepbDCq
+DmAbAhVIZv11gR+AF2ZTnIGrBl8xcCqKUd45I8VZT4p2BtiAoh7gAzFwFPGgBdkYgsE0hkdgoiMA
+tcvUuCPgtbP4WYR7cIj1cDD5uBeAOgMXnCKgh5CybRaIoVziCG+7BnT4Sb17DaYrAqhrBI7RX5jh
+W+akiYmbBosroX+LYLBbAY7Rt+cQvFgEST87CbykUtabddM1vUGoulu1uyKWAc2LBjw6ttH7AaVH
+nME7JJY7TnlAMoKxvWzw/7vGdnNRRLuAK7otupuVKaOjeL4a0AU21L4dEKHUFlbxy2qOKSUkkwJk
+uw/6+0YP7A7DC7jiu4pcB55QKE8b8ANs8Lzh5L8gUMGJMrm1SJsU5AC/pML5cMHGyb82psAdULyl
+daAjwJhZuYySuRsAHAIPWgaqIHQdrAWRC3bz+01ZgyYKgL9sNcSNJqMiMAXOl8SZ+cEeASqtN780
+XAYmDHQo/AEyPAJLbJC/KDDPUQxSHHOZl8E0UMYeMFWCu0x8SBB6g7sfYCQljMMbcMSKqMXtWWKN
+6BoCY0Zu/Bbdm2LW21YUSMgCPJ4YQKOmFgIIbFOArAGCrAZBvMNyjBUAyv9AF3DG3xDGMdbEBbbJ
+eCLJXBdQWZFFLNwB6XsGRWwE85UGn1wEo9bCK8zGGBDFjLzBIEC6AMUGdkyBn/UaoBI4powQVPwB
+Y6xmrJwBu3yE1mvMOSgyBSrMbrGLjuy7kzwCyZwG1WwB73ARgkOa/5vAJMgG14yIoVxjhfsYNlwB
+3kwV3JlPj3zOF1DOaDDOBcYShhtnxFwBAE25/ozPC10BzwwCvVzD0SYcYhrMWnyHmffIAk3E0dwB
+1ftfgFHApVSMJ5K/Db0nJz0BD/0BEe1skiYcDWq7+4CJZvXIPOy4l7LRyruMcOC6RMAt+UvHHFCW
+unzRfAy8OXh6zCXTVXH/0Imm0ULX0SWQ0ssgXPecQnJ8BCkNAESNBpS3adbbH1mmvR6QzzdB02QG
+1Yoo1Wt50hRkNmZbBJjpu1vd1WcQz0KQxrd01bELzGWd1Zco1CVgxRyk0+7L1jl100twL3I1UoEz
+y0SQyXQi2Fa61Qxh1NbbFSWQkzPG1PkAyWyo1hLqymUdZ3vZm53zwH68BkClyUjsfHKs2RtwHM5a
+yhcd2BnNVobtARNqy8WcGMnzD4IT1yJ10eAMdJa90h5N3C49woohAsqNC/usdaI9toi9crT7HxYQ
+P3tjvQJh0u88yMg8z7bUJgNZu7ftD9etAZB9ibvdAV9tbLT7oFB4NYr9/6zGXdfJfdHsbJymuQ4w
+jNPfTNmJXd0Bvd4YALZvMiQ8jQkngiV4RiRB9gM0wnZz5SIa8Sb6MyT4Zit3QD/109pq+yRs2eFy
+JRhRrCt0oQJVZuIE1XaAiZswPj93IHceRgwtMCrCNiNxlysVsCsjZUZ0pRVeRQLRTQx7ySsxsC1Z
+Mmd3gNahzVb3zdHOJwR6PF6P5AihIiULlRaoFEQLQQ/TGDRfUN9Y0xJGhQpgoRVeIwtpNJJAYwwU
+kJNtEyaPtVBoYslhMxCrxwcXwTZ58QlR9wiPYlJik5jrgU1ZUlXaltfbKwBeaQGPwSHRMBGUVwx2
+gybTjbW67XUI/s+Xhf9YjjARriCdJGRX9vLdjOCx/QIFLREKBmNyHnmmqn4VsX6A0IkDS8SmOkJ4
+B2MYLBl+GakF+6cDWWJtRMYul06ABEgUm2AudoUmsOQC00GA+EBX9BcihlGxLcQf0YAcsInG3glU
+IxgDSoefHHJj1OgMPgHl+cHX/vDeEPfp1Nu+Cxpnz5EdbGW9S/Cba13lOb0bjlCI9mQE0HoSdiBg
+MgYbNXAfiIkdln2cNibvG+DZ+DXlhIBKyNHrq4uFxk3gkrXfzpfNJiaNiF3wcl2foaIbJ8TwYIqY
+D0LvBmHTng5CG33vI72cHb+Eb3wNIP/Pyd3zq5jZcRUjWoTLvfu8MTL/HSMFGShWrfeBS5tunIQN
+Ai7hdaQtbekD2YKBzEI/ASL+mVEdVkSvIkJImxbPARuBIV75CvXFIEjLEKswSD/h1Mv9yDLfNGE9
+yWwSh1lZ9dL89e7w8zAZ9MiczYr2GMx9ulKslrHQB9gARHzOOW/mSmEN+NJG8St35DnV38RA22bj
+i1PZoktatU3qB5SIZ05rQFJbWf+D5PnTQAF0BQbEtHLJH2p7QIUQXwikAqcvpXrZGmi7P84k+8Rf
++7gCS1OyBSNTWYDpo4TQ4fqjQ8fgC70wKUdiFvJ4BFfg7FJQOyiDYRTTMR5TIgqjClXgpnY6OxxT
+Ii4DsNe3OGCSM7Nz/zMRk6yXmjs5OzzKCgFJTirVtekuttQCvSRUEMVpGgdVNAvbmmveQvALO5Dp
+eK+7MGQvWu1T2/mSPmFDx2hNZh7aDUdVNnnb7UITxby+U1uTc/OcW7Dw12YU2jhZXbIMPeN5qQZI
+5eSS23Ka4zJUIQBQXGRsdHyEjJRcHGAoIDi4NDjgLPA0MPAkEL0kMD099UxoKBgYuHT1LMg0lbUd
+tb0lQFgoRUUdMA3+rfWtHW04ID51HW52FXiGjhYQIDBgQDUmGDhYSXFQIKherlVo4B6w5hZlBl4e
+ZlYwaE6HDhAOqLaGlvYfQJAgmrqB+wwGQIhQQMJ9AZ4JkGCwGsGBDv+nUSu4L101SwP7FaSoL6G+
+aMLIDVtg7+G+f9IaOtxXoIEBAiqykVwnLN3OUaBkoTqAbtJQokUhATSaVFEABgGUGh1g4KlRBQKm
+Eg2QQFJWFCkOOB3a7SpRemOHzjIrCW3aSFXZRkIA9m0jAU1rCp2rKEGivH0VRfXLKMACuX4BB1ak
+YABiABAjEWDQlRVUBIwBHFjM2EBlxAk4d7aquXDfAX1UaPW71/LbV5brjs6LybJixlkhyQTXIHNR
+Agosl2V84HPq4X5pB4c9t3RXvn2PrzbbmvFrxrssJyhQG3UjA3xQZE8qljGC3YE3jy/uvHzq5G8F
+gDvQeT30p9IRU0f/vFZ+bd+CE3R1oKn60ssLs98IfAsBBN9aYL4C22OrgBW2M85B+owaxTUBEZON
+sQQsZEuA/hSBCMDnkrIuuObMWzAtzyxr0LKvEBsMhdAC+/DCsQqQaroNA+twv/tGXA6cHqcqoMW0
+gENMOPRgBJGtGQM7wYEVU4tSR7Xi8xHCtILEMcuxbAPgLj64vCpFxJhksTo0qRTzqgAU8DJNPm6E
+U8upMuzSzevinEpEAbrjIEBAI0lSxkOfSpTDNyu0LC6/BkvhxzD1fIrP+yztS81LaeTBgV5SuHJP
+Jc2i6UDNTh3rRL8k7SsoQPDEElOlNA0Mv8CQ8nDRpOpKYYE+fIWE/wAK/VLmt0fzUnA2Yqmq81YV
+xKHzT1uT8sSyAQirjtWrXJ1LAGHB4fYtYxWN1NunDjhWvdmiTeqEBhYqV8hricq2T8R4RQxctmrk
+A1Zz1X0qVcZKWHU2WvtKAF7eTmuMgYXzUu1efI/MldO8+J3UX1Qj4wO82JZlttS8FCD5LScPdniq
+hsMFeTFxJ56rYosnyXdTmtkaoN25mHr2MT5SCFoSjpHdmS2EmyQ4qcGKnmTOaEciiWp9VnGAS3Fb
+firHm3HG2C9d/fK0L6B/LqCJSjkJJZefyonHHUxSckWnuMvBG5USinH77WLa5tttEHy5pG/DeZTF
+p1AM4ACUTTiBPP8TBTlBIPLHOanAgj4oMCEgzyanXMHKRRddONIVgEL0zDGYYwlDhAgHrK1nM/lr
+Rnh0rdp9U04Q6kXmlAzAb1YgXvjiiQeneBUkG7p555N/Prc/UGjim+ivj9744633LjcUlD8++e3H
+J5/7ob+fvvzyxd9+efXfR57oRepK2sXabVdEv1xH3LVpo57+l7xU0Iu0lcIZ12jF3dpRDGKcoxXc
++MU/UmFAjMRtHgspiT084g+JSIQkkFEMPLhhkH70wx6luIQHIghBvAXDhRrECGQMQI141M2F9eCg
+BAuok7zVQhmjYNsqZMCI2fUKf48JW1/GRhr/FeVsZoHM0AwAFt7/QdFncylA/cyyNCAlkWJcU8rL
+0iKr8szsOvfDH5jEpjHlNLEoNkNS9zBWxbGcSzNodJEbh3INhckIjI6oiQOKQ78zHrFYXvxZvch2
+RZXhMRIBkNVp1qNHSdhxTY4cS7OaRMctajGTf2zECTjFFE9exWuGbAQfa8PGgdFuKgDzyiM4uSdG
+ssVgiNFkYPRnnFJORWCBUkF6itgZTFrMPvsDJVEEMEtTFtM/AUqByARDycfUcknO7Bo1H8PMqcQI
+OWbxhm4cMUwcYdNWqhxSMveozUgkC0Vqw4ssOWRNVJkzKRLwE2O8iUt1LodA7/GdJE6JykWo0WwL
+6OWt6JlJbL7H/wkBul8A2AlI/vmlFemqDiLf4pbxJLQR/xHnOEOKy4D+BQEiCwDjVLgUXqBMLge4
+wJQUYdC8DMajlCkkVrABDjHCZZ6/sadRcmlRbnbtpkY5wFEBsBxEEtJDQXVEdxywHQkpIyhWWYUp
+GMCloNBkiAUtqlKkNh2NpmVOzTlpO00UrbDyZqKyLCkk8LmmtlIlro+Y4VUQgAILObVfUG3EJVZW
+JvAEAB2G5UtNEDIZAHTnRjT9me6AtNBXiiN/8RRMd8AhWUnUNSwV7cslIkXZTJU1LRxd01FL04f2
+1OWujoDjGEF7GbuEtDTqsNJfcjtTaU5KYtUh7VMQwJcFSIVWsP9kLFE8OwlL6hKwQxlqp0xrloEi
+zWUr6C0Rf/tUioFWJoupSWhqog68hBesliHldJY7FNUYtgUN+IyIJFPU6e5ptnO5ZWACUp3sUuy1
+jUhqfWwCIb/q97mNMEFmERCa9/BlAA7AbWLnVdC3OmKs+6pwI1JSJhQIS0CQ6co+i1Lf+tz3LaId
+T3BRROJu/pcReVXKXjE7TkW+6q4XoAQUBoAQABiWAepIgIAYIBARTfgvqF2jUsOi4v9ZAgD/yWIf
+GvMHFfgKkuqMxAA4G9oDdzbD5z2YkociUycuIByTKDCysBxYkfVmBFBwioiAEJo58YA8jFhtDl53
+BjnkQM+vcwL/G4ow6DTcwA1e8EwSUEeFNQza0VdAAxoIYRMhQMF5jP5Aw5xyAEbnoAGoSZsIpsAZ
+iBRhMVqegQY4cAG+cBoHG8BAYV3Q6DUIBADZIsUn5MIjx4HCnZmFHOMYsAlpLjNywqGVACoHioC0
+WSpJKt3ofnlr0lUbO4xoUAEmoKDPrag3YbjAfEyggdRVrjAS5ZyCzuGECgSkCpsj3ee2He92S0B1
+8p4JdHgsGNiowxGVSKA2eIi3XOOiFEFBYd7iJopQjOIYpUCAJXrYQxS6jQHD7UkWBRgOdUTwRvyo
+mykYx2ADxq2gwFhKBA+QjR3/pR4nMYVc7hZyAjjlEkypFCB2/4O6PdM4B5JZAJ7h6YQrVcIQIzrX
+ygtxhfVgo89BwFi2AzEHjG0LCCEo1Qj8sAXO1vkQQxPEGzwMaRIsARCAeB2gHdBfQzaKZdP58iIs
+ywgCjEuQ6lxvJERkGdHywyD8tlqdstKwhTSiaiJ5hNXoPpyE1GwxjV/Kv3IEoZHculJZqgseGaKQ
+wFe+xyJycafivhSEAteVSwFpNMeIYcuYQlkZdRbfuSZjMdn0N2uGTnMnVXoOmVhphZVxLJfE+up0
+GS6jR6d+Q6+IABvFzAsF4Hhwvxpto3fLsfH9aRMhLgCxXSksDk/QGYNiXOYdidbSTC8DiUnXRoqg
+gGTy/64/l//e/Al4fwB/Z/fFAL4bHxLRjY38uyf/w6teEiV4eaImGQpI4rYg8D7DiD+qELNKikCi
+mAchQgECFECi2JbpewTy06/R2yXnIMCoKqXlYKb00owFPA1UmECcqg3eAxLzawsAMTL8uo8KHLMS
+5A4RpEFI8Ji3gLGhkBdAScDAmCXI2DBMOZqDesFi+UGRAocf84sN/KxI4cEX80H0axJPYgpRcZgj
+rEIn2gUoKAAPXDL0ksFFopF1C5An5A40pIQaK5AsXITBIqrYSz+iIADsarLluzWlULas0RHd46Xq
+yL7K6ortsqhNkUNG+LU24RArJIpp64sFq0S++sPWCw9eqK7/1hs9vYBD+Nu9ruipMcyYR7xDO1SE
+89gXSmQvQGw+SXAo8XMiKhy/oiiyXtATQ2SYUUwlWLSwjWPFxlLFbcFCVXnF0+MQtloB8BPDmnrA
+RSCUM9y3C+mZ1UCyTolCgIGmYiSzcEnEsQgFvovCRhAPYvqN+qGUG8SKbODEqLGJD0iBUERHHRyK
+NSSNccQKAWqYT8yLaZQTfkSSYnRFIAnFuQuMrLCQhJAJQRIreKwOPmSXFtiMYkwlgpyKbdwYfFwK
+AUKHSpghaRiHGnIhhqgGheggfVCMDtqgDWoJf8AGFnIHGxIGdbgIjIDJFniGvFmgT8iFtuE1EMCF
+nqAFXqu4/8JRysRJnMbxBMphG1lYNoZrGwTwtWVjl4DogMp5SntLgF47trAMy8oJMgwIiHF7sz3Y
+rSYrRoH8Gl9MJGDEM48EFujBHu9gnrOrlKHLuaHhy7vEnrwEzMEkzOzBy/dhH/JZnuzhHvAZn8QM
+n8Wksu5hnuCBH/hxn8fUAjCKxrwgsWhQxTRcJbmkBHz0xmELhVUYrp8oOGIghRYyhV54IWaoB4cb
+OLxBgJm4TdpMhYb7BKG8hQJYAMyAhwNioZDbhl/wgLshBmfoSZqjyd7IBhFSuJm7IRkqCRcqiW2Y
+Teb8hbTJhFvYjBl6j6l6is7EInzhAY98Cse4DtI0KbOYE/9yKYzY6gthhITBaL22PEc8C0VM/KYs
+UwEBZAqDXEBLOCtMqb9Igc+lqsBteagtSyvpW0iNvJVinCuEvA63vAoDqcEZe8ditETDE5By7EX2
+hIsGbcKiwI3IoMNr85A23E9l1KX/DE1FuDNIqMU/KtD3nIRKWIgDmCI9KQALdRqOVA4jnbLNSo7h
+ihRV3Lvx41Ak6c9FGEFmadAn25mH3MAe9ZD6eTAn2MsqhQROQy9GNAwjnc9paQ8npdCO+Y0pZRQR
+DEUYJakPfRYv7Qy2kjeu1BEzjcEGrTvh+h46XAQ37QwZlVK+o9NIkdMYa0gzU9Iek0jQeL8Xs8WF
+RFPSyNT/BQQpUUmaCcWlfenUTnlUbGnU8ThVowDIpVKBVaVUDC0lsCAJHRHOMxXUinKImhtGMT3F
+R1AAWK1EVZwTvhPWs0C+Oj3WScjRqLIROVlCS42ac/jKSosTa0i2wiOi+RjU0awOW6wzJ0i2T2Wl
+34lW/YJSQz2xZd2SbtlQBoUEMyvV/znX1NCimhiBPmCTmVqA4ZAViZSzDqDVIIMCPOlWGtFH7LvD
+YOVVRsjNKYwTEXsVYlXXCGFXREnWd91DkTJPaMVQtno2Q1Up/ruscYCMHStYZROQC6gGDpC5ScWK
+hKU/8ZMJApEQcimleo0VhL1RE82PjPWQi4WEIbydDBwT/52lGC0qx7KZnwBIG2q0RQQNqQYDqJmK
+p4NdSJk1F99YrWRwBHmJHecTWnkCknJNi5zpInc9GINMjv8w26hB2ppR2uxY0UO1xYMsrgYjEVYY
+r71tDqzdPUFFjVOwlCgKEK6JWyEkVWM1R7XtF1mEjbqAyKMV0WhhHEywBE9YGEBtrO3oV72dskvY
+rdsqKBSNVxX9EceiBD6YP0nQWsXN2hsFwSoE2jvdWLqTH7NIXLawNeZ6nlLZr1YkWQCQWvCgWrz4
+LiutCpRsPLmg1c4TCc6rhJKkCJxsBhJqCWKwhj74hNjBILvLv8EYW0cY0bQgp9ACxCs1F/yEixu9
+DNgwgP9nPdrlywpPWslHCLL5kQEDCDKncCDGqZaV4xEekAuQ4QI+oIMy8LPWEQRC4LM+g2ASQALX
+gZ0AOcOIG5c/eILmEBcl0LORyopOswE8CTVBGI69yJzY0jZuk4D56Bly+xzVWRHTibfoUjbPEA4P
+EJ3COEtu8+HCSJLQkYD4cBIGrDZuuxJtmzfhaOGZ6hH+PWI7zZ9qM53HkoCt/Bwmzq4btrcedlNl
+47Yhq5zIGZcW8Jx5O+I0XoV+tbZ2a+MKaAPNgVlHQFvh7AA6k5WeWoUhI+HptAfazCEPSsmFYIgf
+g7zEi7yowSDhFADNTbmhaYWBOMPfYaBUWAWDPZzCWIf/t8mvr5gF09GA9SjSVAMXLctXNjYBooTE
+NDiCRdNkOyAEOGOEERi0IQPiQgsBrSjiReszJ7sdGuABHPBlVWqpVhaWR1m319kNJXTgQtuqf8O0
+GvBlcQkCtMuDSpngCI5mGmC3KBiDLxCDbYvhGPbhVTBdo9BWIoKNlNLGG9UyC3vYkXoKJE3PXXlb
+cgTEg5STo3jA5EC8HvPn3XWixHOVQMq7wSjGIMSfY6ISd24XAYIaeoZdw5hX+ktf5Bvfj8pSom0s
++e0kLrxUdn4XxsjG34nnA5PY+9yXOcaZtkQ+9gVCWVyP/2DpxADEVj0iiVJDdx4RWAoohT7b+wjF
+2b3P/5fWw9TSLgfAT/R8C5xe6FAcDJ4uqO+hQacO6gqVXVk06oO5aYPNXfnERdudBANAmV3gAEBc
+vHYmad+AJCN5C4T+DZ4dPxFN1b+CV2oEw40CxGYVGtRxgpvDRntsXZ7xjXASlUQCRyg958ACR+Qj
+U5teR4ftWKXJUqu+Nd8wLy1RNrUmVc2aKjRUSF0i1sV+sY0evcN4XB9dhP/4wZT2L2Rdqpq+FcF2
+5+mp6FYBRDss1uAwbdjj6t/YjS+MK8seC8tOFGTUk7qtmdq2CWDUU12iEdI+VIM8bZgG1r2+kdXy
+QL5ODUcSzmuYCVDIUiJ67MQIzfn8bN8qRjt0z/zo7f/dOWocuZH4lW29uGlH6loqy+j8LG8AGOyj
+7QqKXe8hkT1GJWnr/tq9lgvWRuyc+lEeGm/B6O//NiXqadDXZQvdlu6Zct9NOPD4Npvl1Qcz87/o
+U8dLjc8+qqnUI6AHOqDr5InofAdswA4ZL4ek/E5bYBzAUUqhfM7aVIlTwIbkTM4Rcs6eVAlUu3Fj
+gIXafCAbDzeCcxvgpIlPoAVQGIGG0wYiJ5yfENIk8bWVQ5lgsxzIGR1yRuMzfjNPu2e7cvAFrAY9
+2WwVf+vUg8zhOR/BlJ7GjAw9jx/JvPP2uczCdMzM/B7r0fM8Fx9Dx0z2YfT4ucxIF3RJp/RDr3RJ
+d5//YKqpSlU+rBAi+HJfwxPsUbxZGQjmL2AXIQ02MCdzx7FKoKzKTwOFHBeFYPjJvukJXOgFbaAJ
+TPihIL6Gy+GRTghisk4Gn0AcXP+E0dmEz2E24diEIeO18GyHBaoFBfEJUxAOaPc1fQ02rPxyMF82
+H972yQEd1IEcWcgEYlN3oXR34BwFBdlfV3ecqGRNoEy4ZN+MVUAZrLFuuOYu9pIB4fgq+lDujYJD
+Sjmz6gOVLN3vxqjvD8xSPCSNh1cE154LjjKzsWVq3sXvsK4Jixd1zjZf2KkWt9s99314nR6/994V
+kQdq6nKKGiHAjk8LRG2nYxmyC5nzMAugFSgXlHdC/76jkVDk6Es87fIObXtd0lG0eeoSk+BdBC+4
+EJb/UrMSIkZk+Kyd+Pso76OnmNMORYEeE1vrwza/xb12JMhw3mHDxg3vMQzHl64oj633ra4Hkoh3
+BA/FpaQH8V+8NUKsKbk3C5yPhDvGUXd0DbhXwVZ51cDacNtbwdjVjJtGcLq7fEbg9Fexir0aXxM3
+MD4MFsTnecYn/EfCmnax+xBX+TbM6kh5bKbNC7IvbqcQFuem/Q4FlEGZh1CnC8bf1HihHthYfefY
+6N7ju73OfBJR+sp9D7QvM3DEyBAx/WS6i7D+ZTqH7l2Be+6+z9gv782/RHyY7ESSRUcalHshk6sX
+MP9EuA24l+gM55CKXZK9FnvLEH9mSSnB7wsIWAPQai/O9xBtCeN5AXEcRVAJRSFYAkGkbyLad7C4
+9yUwjaOmKQh5Rotid1walkfCYubkGSZTI6J5vQkQWx6j87UhBAqHdYxRiNUazg0qxTZMDAXF0Fgs
+GgXKQAPDTxvAAJ6bx4HS0YKDg5cHQVGiRUBSZcZfporCHGdBGicFwsFoxUDkKYCC6ChHH2PiZeFo
+1U1BQ8LuLpsNQySBg0CALsVBQ0AAsHKfFAHiKoCBLC4Qw+fFpDSrK6fMakJ2ZSg3gdZpF3cr94Ee
+9uild6ZBbYawIMOCvr32ggGRJgIaWBmARpgYg23/oHEDUGZJrgYEbWyTxk5av0TipBXImKiAqVXq
+pIXhhqDPglOXqtHziGrikmUSG7ggAHPgAIQUBm4CEEDVKh1HBkp0SaHiqourjG65NO7jvEoGQqqk
+NMqXtARAonFCwPRLvRuBWIpAUEaAgSg4d9IUZmVgm0PElNGta/eu3bnEBAgQeoGuT7oCEjxC95dC
+igIIACvz6caHDLyIAVdoXLmu4wAHno45xO2WNAOGOQ1e93ULYUirvJpk2pdzhmViBDhA4SCkML5+
+jiWrUMDBTH2DhhMvPlPQ8eQSPyETtO/HD+B7FOzjY11f9eLPq1Pno6D7gu/Wx5Mvrp36IOfkx2u3
+/75nAa9e3+fTF+89vH0FCfYlMIug/3//9ZLAfKWYYGAW7kw1FQJ3+HeAgPEdQOB3/YkmYCkEYgjh
+IA/6x4tZ+lFYH3z6VYiAAifpAyKA8cVXIYW7oCgedd8NAmOEZrnYH4QmTHigAQEmMOEPgujYIoYy
+lhJgkKVMZcKTWi3gI5U/QrikfzXCSOB41DVw2hTIpBieMj+4w4AQCPihB1d6LFmlWaIVIBqDAOoY
+4JVmHeDMBQXUt8txfGC3npYdhkihgOHNaOJ8LOqHoQK69CiaOxCycOmHPNqJYIj8nUSjfFrGuKWJ
+8f2wnqDdaQnjqvVh59ygXapKH36MKnBHjXyoh/+qd42G2mitz8EaK6/F3jeeROYJt12x6C17XXKD
+DpLdtNcNt4ey6eWT7bXbGhecrjOBSQALsH0wJwqIlQBHBZN4NYcAVKkURRzXDJCCuQAoJk1f3AQw
+WiUDbIRBviMo08IqyihAVcE8KFMCZZnkcK9dmeXb2BwB9FUUxphhFhhed/UVWcgli9yxMqzhgMAj
+goCpRioNDazuX9EBLMK+q3jGTU+kATVKz6dkIc0AQXOCScJn0HtKAmR9ZHQGyCDQUQIMRDUKAT9f
+tUMLesxxRgOLQXRzImY0BPVjWtPT8BWlYIR2IkrFcwZXR1/tBgs47FYBfA2hUjcnK+nrBwOGGfD/
+COC4qJ3IzhyJtHgiBrA9xdA6kx23026cAbkaCdytxpxxwNNuSn77xLkaK/HkgxIRfTkFSPyWHppI
+VnGyGTdDvr1O5mqcAbcaCHw+Rt42DDD7UchzM1LSyDgwnwriXlEC0YlnAvwXZtNukrycFM37Og68
+vMTMpxT/C8MLoB6w8oGzQaQDo7MMRAKXngDQB3oauKdVRdfTEQvIxYicxKCABUzB8aSwggASYAAO
+jIHTDFjAnBRBYwIYwAX5kg0YOHAGFkRF6QLgwL2QkCV8mUtgLjC1uQiGGBoQYQZF6EAMXoBAGlTG
+BcchwxPyZYSfgMYMG9hAgvEwgy7MAAwKN8MR/2pAgg8kgBICMKcYRGR4WxAbR75yOAXMaR+9C5jt
+jjYDH1ihOWGjUJek8CMu2ahuB0BTisDDgJ698T7XqkG/KtAgWdmIbD7A1XOgM4O09Gof3fNBPsIT
+nkEkRAf7eVZxugeC4VgrDZGSFnG8cYlkCSc9lDiceu7wA6PlIDjGsQoyvtW9WxGHk5oskrfugERu
+UeWP2loa06y4hdDxoAB90MUXA7a+MSDNlxT4TfyCOYRhjgAxJERg+14oAstkJmaW8OC9MFBEI6bB
+bBb85gVnuMEHBjFdFKifBWEwwRcu8YRMrIz6NJYTjYFDm+TEoDt/2LQbzvMvGGwgBx2ogSS2IP+d
+T8nLXgimjMNFsxJYXMX5eEBD06EijJnAxDJMkYP46XKZ/LIeOUQCUjd0bxQJuBzMsEdMZU6BoZNb
+gvB4Nj6KWqBx4XDBv1JwgMKAjplT0F7CSjoLi0bupeTzqRMGINRKyE1iDHAALgPnOZ4tVRsgeRBL
+O4NUyjHCJhLJqia2eoQE8ixp7TDqEU5ANJT6rqNLCMQe0MqDmHJEpQOJX3xmegWBNWQRlQGCX4gn
+ViOU5jMi/YxceXBSounVCEgbxV2jejuwjo0HSkvsFqyZldY9orF9IirMRkpSkUg2E7iThlnWug63
+HmEZ8cOsCE4L0apaggjqq6fp+Jq7HfggCOT/GCwPstbXw0pDtkxTaWaRu4WmVsK1pXUobHGmXHX1
+YbpjKGzChOLc6B4TtGMQbjuIu5qGcJFfnr3BYwMnSNRyt4nj2yhbwbg8BrjgN68jB22/C1wj5HcL
+rwlNezNQP6L19wtNS9hTRye0AGMgBkb4lz4QRlHsqgQbNvHt9c4rAqUOVyWiHYPkTGLdt+73BuVz
+KlQZbIGHnsLBNzDAIMxJUwpDNgxF0nCfRjzWAjelxCP48BdYfBUdG0Gz8fDxCBzRUI2o+Fx6ix+E
+CETkn3r3usgJG9CmLJYqf0Ez4l3wOrRsPCR7gMyxgQ5l+ZtmI0RUESnK64SB3JQiKZgcYt6w/5nf
+YNbtWeTOHjDyKITcXDSHZs299HNDbBqP6CA6x0TjMliS1uQ8NKRyp+BwVia90TpzghrmaHT1eCYR
+SDuhzZlQdKATRuqWygzUPcBxmSfNihRvlmeuroo0ZAKTLGNk1WHa8yriS0xh7xXWGhA0U5NpEVnr
+69ajQDU5HuHsY07bEL52ArGdcImzriPbSTW2gGV9SUPbwK91pal/5azt9UK02tCmB7BPwePlztsJ
+MMidpotE7tiytrLongxh1d1awjRA4KV2t8GdUO+hXDut5PX2ElaQ6xMPWhD79kB6ec2v/QzsJ4P4
+JB9YHICG2wCUcT23zkjO3y+/4uH8qvbI8//9WkmbA9w90McbI6GVUtThmGGTmiVU7oFfosjWoTbs
+vGS9cCcoAOJDsXkN821xi1xcEtXWXQp5chSCFGMTuUjDtm+3Faeg/NJCv8HSJXr22Mos7Ty4d6YR
+PPWkVH0I1VbfSTZik4T4YS0AgEtl1v4C6SX8CVBXgdsdJnhtOt3huWv82w9fgcTfQMn4/jSCF0A1
+POwdEH7o/N/vCwAQAIRcAXyiBFNfQAD+co4FCAMBCRiDIE5Q9vcKpxFPCKFwCgaD3zQZC3F4MM9h
+UJwibGBOih8DHI6whPi8YCu2WUTfw/BkNxRhEgRTlx5Ov/k9XOIM/RR7A8p+grUHf+pzclv/5LNf
+9VTsyOzJv8QJub/+ToQi6oWo+SCOX4jy5/8ItRMICEIoJF//NZ/vnVA68VDxHUIVzFA4gR9dLBHy
+JaATKVW1lYRPEATgGYL4+F0Hjt4jjGDLwJJynCAQnKB0oCALHoe2mKAJSgS0PAt5OAtxBJK2REu4
+uCC4RAsMomAMJouuEMu0VMsvxdK1BGELsqB0tExyNKETPuFMNKFErOASXiEWtiAUYqEVMmEWfiEQ
+0lkOomAXnmC3mKEK3gZq6R02FMM+vVGZLIZm9AYguJ6cXEoAMZD9xUCRCM8KzJH/vR8AkQsV7aHp
+scAu4KEiHqIissCCzMkJzImcNAgerp4h/0rQIKILSGgeHgIEAC0i/OmhAWEKAyiInNDJHSpi6TWi
+Kmpe/T0RK+ah6rHAHRDiIN6f+T1QOJEfuaDIJf4i+3WRJxYiIR4iJq6iI0oiQDRH4diiM66eI1IJ
+KsYiMLAiQFzj/vgInUCJKVLKScDcqdyXV0nEW0DHHH1A4d3DTEhBOgaX5P3dkn1EwuQZBkCeESyW
+zlQbACxeBljespmDPeIAEfSMFIHGTszJD8Vja9lMZXhCFh0dn/lMeOUO5YkAuVxeUEDVbplDRfpN
+2KkBPuBSDsiaqeGXv/CjJdCjJbSjYgWkCEhc3CWFRtYaRrik6axdKYmeTzzX03CETf5Y7f9MHHl1
+pAZ8T0zGgz8mRb89gT6WDUtu3R5gAE/iTbXFjlCmw1OOAEpiANa12E9qAMXNArudAnNdz1diRAiM
+QSnVxhqQZFWqZEqynMRsZQ0R5T2cZVtKQx9wWiZMFUfYJUYoZL0IQjY4JES94zn4C1z+HV0iBmBm
+QNOp1lGOwl7Kml8uxTvK1xhohU5WgGG2GGI+5l8sJlAdWUNMiWSugmhawC8tpWK5Zi/hZYuVGFw1
+VFj25FKsZkPKZSXQmEnJJiro5jFwQ2VmBWziQlO6AXhdERCozcgZXW4qZrwFzmLqUbXFy0RmJH0Z
+Z8392xRg2hW4DkuMZNlhTXX6BHAyZq7/nScrVFtiohZxzuRqMJuLeedYAVdOog3ZBdtb+otuvpsb
+/AR5uadwOgRxEiZNYqZ9LgFSJFWyiMBtUiVHnKeXYeV6VhqBmsQ6ICjd8Ux6ZkKDMsEjQM5+mk9V
+NqZj6kxWvhB7Tg1GFGiBFmc4HCdFJCfMNFxOXk0etRtGUKhuliZ1VppwgqfQHOiumRSNWmRmMk7D
+RQRfqsBUgk6GXqiFzqOQ9mh2nsIv1R1XcmmD2ahWTcFaAs9/8Wh0amiVqgR7LgyBZSllAoeXWsCB
+leeCjtkUjCNs7KiJTqh0YuWk6ZZFfCj1TCYnOMKTJgJdKWidql2YSJsNACkofGjOWGma/0IWilJA
+eZ3peFkEcMhaooLmojJqTBSJuZSp+SAmhZLmisbGmn4okUpV+NAhmO1OqD7qVl3Yh5Uo0IRmpdGc
+mg4olqparMZpBUSocoLpFwDqX+iHLKiJGj5qlBJPkjZRi/qqaYZZsP4qp9IEahFruyCrfy3Ov/AJ
+WwBBfPkASXrr6BUoAOjmRxYptuqMcArotqrrQ9Bqrf4ZiXpNBZgcHJFIT/gAB8DfOv3FBF1Q+82B
+wHCAAUkBCaheNTwsIaYCGxjQq5kextpD0eihL0mYChjiABHsOQCiK5BALF4KbiEG/O1Jxtbn6IEi
+C7QOnaDs6wUWIyoiuxyFJqpiTkQCWv/0iAlcije2Tn8MyZE8xH4eQopMSKPIVs1aR4t0R+E4gqwG
+mrqO3rRyg7IOHoZRwC+xwScakBIgUiwVHAaoCSe1ktXAU9oWBSqE43HYjuuwYFTpwZWlx3aumAsW
+iQOMBmeO4XEAhd1O4UxYxTjC0hm6wtye4NJskrdIz07eoAm2QdVQUnXsg+Bmi0ScgM8ai3WkwZ4o
+kq/glGFOAqmkyEOVgH9QSqVMiPAYqroaF9Zk7WN4A6BVxuvRIVFwKxdkn11kk8Ea4PNB0WiiwPf9
+BTEI7zjgHgYdQBLwHgbQkMYoA/D2QPLyhS/ZAwztRQXOEME8ny/5njYF3/YJlELBQPT/Pd8niEz1
+xsYFleJfUIa5hMy6UmlG8q68XW1JdsXoQMM+GObxYIcohOjoVeMgzACuBpw5qKtVFldQ8Qt74qP5
+zGt15qS6Ztw3ZObIwekG0tcAAINP3AEx7AM6EoxWAEcbIBOPoStH0O4FTMXyNObWguiqgqWgUnCu
+6Vt2Xa35poMDPIAvpQDo5YZCbF0aEPBOTNQ5OerbResXlEOwnSeAdoZwInFfCuqHVui8cPC88LAL
+V8YPT8CB5QICi08u8F0KyxnZ6hK9quY7Tqq2PptgboEVM5WkZvGHzlrVFqoXq0Rn+YQvgMAMjIVN
+7MBYqAAz4cOhasIC/2UMp9yjudxS/+RxgYKNrDlx9nzxMdlHXAWCFRAxGuSBrEIBQOEFD0VKEOAL
+yLAQyEBD8PHQArqQKk+vM20fB3xMJUwIYkzTZYAMyFTMYKAQiG6EKlfCJODy9CazMDvsL9sFmypU
+yEif92WQYqBMM5fMKxcREHUf8yKgDxWfXgTRjW1TOj3f8zFvDLkT6ekF9fqQ9E0f7u1iCWgyYjzQ
+AnRAMUjAIZQOH8RAVLJFFJoHEK6H5I7hGZphdqCHHWUHuBjhsaAKeOAgDr6HPkS0oFASt6jtqyQS
+fhRSR5eHQwuHEA4HjWjJfZS0SZeHt9gR3kLHR/NKJ7k0teCgQLdtC1ZLSGN0EWpuPv8Ex5WxYA62
+Uk8D9ePy4BUeIeF+CyeZUksrBywBBz1rwwz40rTswMh9HCM0iDQuCJQABNoWzs5Wov0oRuHUwzmg
+CyqmtScio1ifQIo8SaU4CZX4x53QtV3riSF19VYH7TYCrY9ko4HcSpUALVwfCDfStYXkCXXQdZ4w
+tmE3NpYgNooAQ574dev29V/DNYMcyB7d9ZsMtjZOhTJ2IyE9tjZetjuARJCcgGE7opzsySmebCO2
+rGpHoh0IgoIEkCcKLVrv9iJ2NUiUIusuCHGrtST2tm9TigTYJzVZgjYN012tGnZyhFsuTw3XlHD6
+Zldgca7lsSNc9wV85qUtqXIO0+H/PKsRDKpqkmQea7dyDuml7uMd88u8juVVRLUhkDdIzjEqv4x6
+n0KIzZbWgjcguGoEczckb2tUl6Ux6/d35eqWMiiMkmRmujfMDGmr1mQkZ9fMzadM5atFrk9vLfI9
+THhxVTiBGwKGtx2+xsO8Gqpl0qeDfwFDGA9gOcF/vwKFP/KlfSjzhEMV+3h905pSdieIF+X64IPB
+vWqnMXCFy3B2r2mQ91quJWUuGfmRE0x8nbCvMfn17DjRzPF3DmmK841w8tKlVTDscidGzDgdf9gZ
+qMZbFWiAA7g+QoHOVCee5457uuqlnkHeCg1+u2yWV5QNrCXE3a5pqSv+hHmeY0SZ/2OqpA6pdxP5
+rCpqoVtCfiESW74VJTP6nYt5UlVxfKPmalTnAGQxjLM5pmf6TogWXB1pcJ2nuQF4Zu75s+l5fEem
+gCf4FpP4GHwq1rj5FTynRQKHqAcn+KhmqD/6UkT6Pr4jDDv7FmNy2ww6sX+naAnD83zned6rnWtt
+sg8FfJPXG2f3i1u61WK5q4+eQu4UASofwd6TAVIHOQHUDSlgEeGL8FFMCgyGDLAQO2uQXhD89+HT
+8+2C9r2zNAcg+IUTjFHgwycg887eO/sS90HgLgKgwyff+e0HL9777Il8/NUfjCWAJT6jMXZiJ8aA
+aKcFF3XENX6iWMciKnKKcLcuZ///daZsypBw9pLosIe3uKtPMStMYRmq4HEAxwiCodpuC1IPtUEP
+9U9fIeByoXI4IRSSIOGiYRSCIRgyPdMvPQmWvdmfPdo3PRCkPdu3/da7PdyX/drHPd1H4TsiW4O3
+e2XkF9VuLgvcXgOu3oTs5X9cCWfLyFzvzy78tYvciojEx9FuSmQjiDTaQSlCyFrrCaXM7OYn43Gj
+y56AtW3HtTsESBY0ic4niI/ciocYtpDU9c8XrYf4xz6goo/sbCo2InFDyaUQRsyTi4Lk9jSq4m5f
+I2vj3P944yNWypMU9yN2InV4I88biPPPLPEvSaTMndBcLaFn+o/3I9MjlTCgqGb/yFpYOPqllXmO
+B47mFde8Drm1hwl9guteedcRupVN5LE+nr+KQgCQk1Z75ziY9zoMT/SUYjyrIkRZYWXRxWECGD1q
++yQI3dcHCs+i0VjACMefyJBbYg6mJyc4vRAQ1gtIexE0pN2JYSOeEMpmiWLmFAcSAvU5PJ8Osh2Z
+I4Gk2QEQ5OYMeuwGlMwI+uYIXtQCGAzVyOywAGX+IBXcFCcBlwYYOfYeRwgc8uYSBuwKAavULucK
+0lY/xWotbc0yO7uaAHlApwRGMdgcTEUIGpa7BO2ihIVkq9V0ARPqcnm70DDb7BB+v7mJbQRUMRIc
+Gq5PChpaXQFfD+G7YrHX1bbt/7Kp0RBOk5kAnAAVOIeOhSgKATq1K4LLg7xyWgpcnHJvzj4xi3YB
+ikQR4zMrs+b4mhNggcYpwxj6cCiBAAMG5CZInMeiAANQwQiR1IKo0bFugAQwWGhFhSWjYtgwGGRQ
+wVSB9FY6wgogAA83XQl02geWwc5A7syeMJBoDg5XQq147FLgKcZ+ZhTAfRJQkbcuUa12ORj4o94l
+SW2CkTCgrJEciG1+khvJLAJ3DjbkgPgLIgADaSm5XMJRYEtZdZmitpLU8A++YkRt5irhYgABFwXk
+hihABmjBUhO29lGAXADGAyKRU3ckQIPiCgoKgGfA5lQDaBUcsNmYAVYERRgQaf8QPoz2BQsUKDiP
+3mqC9e8ZIITDNb369OjrI6SA4LyCBP8TUE8SAKaRgD/81HuPHpbOC++9BQaUQJ7t0PsvP/UM4S/B
+9QQ0LRAjOKywBAPDu9C/+uKoIAEQ1wvwxJvGKPE+9CBcwCrtxnvwvAQ6gY7C8Gyy0YLvHgwSxgl4
+09HBpwYAb7snedzPSZukYKyIK68EDpIFtjKjAOGeiMQ4TZoZABV6msRqnwEccGeBFVABT4VaEEgA
+KAAWSS/AIhKYpBaF6kygTpzGEBRABBBd4SADXXRRT/8iOhFA99RrpUAAiJtzUgQMmIq4Aw4YFNH0
+sJIHAVARUO/U//Cjx4D8ANT/M0UAVkwP0UChW+EAQxVINb8dOyEyVv8E5e+FAnpF1NH03Jqgp/GK
+DTBAbwwo9lRQDTj1lwQYOPS/QB8JYNdT6wy1XAtqOsCAWgxot1pTBviSgFoOGCQAhbK9tiwt1agq
+OGJ4C6GZQZqct4FBvsBKujO65a+BHpq7UjQV79ICjol9OABMHQpgay7V9qpYiy82hoFTS5ayoh1+
+8SJsrpLT6ZYmsxKWZxCbkQTZwMtKDhUQka0gra9G/GKqaCtGcsWkO2BmwTKWoXJZC5hoiRCAJqWo
+CU8HDDngYCRvajcKOskAlYHLgL7APc5o40o22jaLW7fNFEAO44fi5uyfCpzI/9vvv23bDNnb2p5A
+I7/druFeTgCfzbbc3J4Nb81S/Tu3yy8fYIDbIEIuN7s3u62ZjPzmHPPTBdBc9c05hwjR0B9/HPPd
+5kZ99XjrNnN1AnQ38/PMMWf9880RKaLT1FPnXXXlNW89dNRzSzd14ptfffrbr1+eh3mRTXkvd26t
+YcVQlZKA21AbsOWLBu+Lr4EHHngfLSPqexDFAPf98Ukjn4TQwf2DVCPwNEh//fMfAAP4v/EgkIEF
+bGBiBnjAB05wO1MCIHwcRMAJWpCCNtlQgxYIJAiGsIMMJGEFT1jCCZ7HSTWSYJBmpMEHYolFMvTf
+evb3wgNCKEcYFOEIsdQYGv/SMBV2EAC+suMsCNVhLeWjQBIKZ7jNfAZLbWpAm6xYRT5AZ3tm2l4X
+Ncc7Me5OdcjTXQkE8EUeePGL8lKjFxUSR4X0igduVOMawci8MJYxjNDZnUK29yV52fGObMRCXpSX
+RuUR4HSPM+Qi1RggSDIPeZVsZObGqDp5GEB7t2se8GQnu+mt8T9eJKMnT1nGy02xCYBzpShpt0rb
+9CYsjUucbfZ4PUteThJ5Q51xMqlHVQZvAU2LCW3ywQ60MJJ40zsd7zyTticcbQr1EobOfIASRSxt
+CpHokjkO4b0nPE1qU4iGJYx5zPkwAy3SpMCrfqaNdJ7CY1qAZ1vc+YNIiPP/B44ASDK7IJFvauEA
+A53aPBmyKBE0CTx389lKojQHBPCznz7BBjaHk08fJI0QGrUBcQDBBt8E1KBMoegxLaBQD1DmimC6
+lD9+hlAPEACgUwCpRD1qA5bIlAOV6MhJdSDQlXRHGEBFaQbqCYXLnHRXdriYNMr5Eox+dKo2QJRI
+rOYlkd2NA8T5ykPA+srnBcEdJV3CQbhqA6od9QQqXSl3brWpAI3Kf8QykbRg5R9lJSuu34IOsQwV
+V0SFKgHmGuytbmWuUB0APaBy7GIdi1jJTlZZhsLfpAo7LnJx6rGRVaxnibDZyUb2WqXt7GcRYJPJ
+WlZamI1Vo2SFVyMsy0Qm/0KQferXH26xKEEdciF8aNSfIvEwgSqcIQ3Nqk/90MKobHWrB65TBCxO
+l7pZrG51pXvF6273Mtz17netCF60YPeK2t2uecWb3vCql73SJS97uYte+ILXvelF7321WF7v3ne8
+Q5zf/JK7USEBpLlH5Q0K2FQEBKBBjoOc03nuGEhCthGQ+OIe9xYw4QhvWMKCjGO3CAnICxuyEF2c
+F4VpmuELx7GOKw5kIVTQrhfnql34WheL71hhHL84PBEOY4slfGIO88BrCx7yIIUcYTsi6007FmSL
+FWJINqKyTsTL4xp7J0xd3i4J44mqPgfMXLay4LkdoIwDKHrVeozjy0sAyf9ppJFTGxQTINR0c4FR
+YBkPUSWtSMDzMWnqNHdATW12XoKhf1BQWFSVBW9Ww0PtQOdGcPPOP5tBm3WA1qKOGQULQ0HE+CAC
+Ozm1pirjKQe0+Q1Gs0BQSMnqURrx5xEowMsrCTM2ZM0QovBk0KIZ9UrkzOpTY8DRHyn1ExYQ7E6/
+ei7KPgWll8CGPb/h1l7KNTp2zYI92LnV0pDnNWmRVCvUCRR5AYizmQHtHzytzzHA9HCuTQy5jCC6
+mOkAuSEa0mFfYdVqEXc10S0ClsQbA6+ZC8ExYJmvbendHEP4IfodsSKUU82bCGmA+9nvEXTMDkk0
+IrMxgmgdzAsQBxBHSjD/Dm9OnyDbjZbucitQcapcnBqE+PcTPG7rh6cg4B0AxzguHemGf3TnpfGB
+wu19AXxbvOP7RpfGRcCfjovcByOiBdWRoO6ju2Pon+ZSQopuhgOTWXFXSjrFnAr1EUS0I2rvwFrs
+8GudnxtlJef6HJKScoevfARjj4EUCjC/AiBvM/HZzeQ4x4HOXKDMAj/BrDYKN7EwIm63zNjN/4aB
+20COPqgJpSxdFrzcyKNem0upGFHfRQv4zkzu2V4HUGm9yRczyV+0wBHlFa8v3cMFX5JI19tKVALz
+XQR+PwEDXhBd8CyQhwt8GG3Ew3wIYcU9AYTQNQbzQfx06yvQUVKCpvLX/9z2xz5f4dYN+zeVmvio
+uDZ5ShI+KKBqpKoC5mngNz+zLxoVAeZ42t+U0odvxIM7xiNLvm4CvmOIEqMgriZ/hsgkkmAB82c7
+HiEpskQCGwMXqKO4/KcVamKEgG8EvOlfiK8DkiKtMmw/xqtTiOcdTuyJlMwJ/oRd1mUS0MoRHKEW
+imUZ/oR7aowMCIVWkm1sBKlsJsoC2MXGxMaaaKKYdk+OVuUcXGBejPBPJICxKuDEREyNfkGR2og8
+Tk97Uo8wTEmTnMOU+GaXOAc5bm9zbIM/VMcljCNzhIdwHkJbnod2GE8zpIhvfm+oQnAH9G7MGCOt
+nAj60ILtko3UQqrdOv+t5zDgnvwB62CgOcKOJiCR2C7xCotgED9N+MSsBDngBFmNGw4CLbRkEVei
+/0gKKdyup45tCQoLqzYx1Q7uZzpxqDyRJ7SO0xDBEflGv4REFZluDuoGKWLRB6ol7iiRzA5REV6x
+qzbxLBbOIEBRFpxODaQDGLPwbK6EOqKRA8IRGQKx78YxBZLRB2bRqZ4xFzLxAhRCGyZOF0lQFBlv
+2g6jvLTrHVOKFbXAH4fiHN/JovqFH1OqHb/BICnA4AJqHiHhGs1gXUQRLFLq5tIhGYoAH4fCIpdA
+I78hHT+KI31gAZrxEzeRLuospBzSGncRBYRmzDomVbKqEBXBG8fjTob/ggHFoNqMrWq4UQ9KkuUQ
+EiMEkgJeygxWpBrfAOTsKRvTQTEAgNZkkCCpbbxS8BuoEi9+cqZAEgaQJdJ60QawJu660mSCcu2C
+bkuccgzWkicWbmCcRSoqb6UwRjqqKAjDpC0BwCOnpixR4CtTYhpJZvhWQSEpoB34MkyYspv6hPhw
+BlPSwuRIqEaARIaszz50hEam64ri41sapbW+xVfIBVU4CwhR5T/aZaLopMFYE19c02v6xMNac06U
+MMZijAzWBVvOZ8eUbAtdrMGIwME0LMeALJB4Rx7q5shkk3t0LMaYsxac48kuDMXq6Mlak3s0hzbX
+ZQlVgAiv5bQ4pVqU/6UIomA7y3M7b9MISctcCmuwVsQdeiVaXAuwvjOzvrOy+MMdPlNZ6oRYKgtF
+amtDziYsaaEBcqBMkGQJDYuyRnOxAoVBB4uwMvKwVmtTAiU0LYSvLrQ/5cozH3Sv/Eo+B8Va+LNC
+7QpWHIX/MlRWLhR/rs89AiQzRSRAf0v7BESEQiRGbfRCGkSCfisz72NHAxSwJuWDYOg9gpT8fmVI
+ARSw9ARJ8SNKA3RFL+S1XOtKQ1RaOPR+2jO2aAtLMStITUQvWQ4qv2MrN6ol7VEM0mhN3fRN4TRO
+5XQ/4oPWCHRO8TRP9XRP+bRPQSEH1dRPBXVQCbVQDfVQETVRFXVRGf+1UR31USE1UiV1Uim1Ui31
+UjE1Uu+lsIYtAFJlriymS/Bgb8JkKja1P2RKANSlDualHBdDIZyACiUyFL7kK7wi016QNhxhXQLV
+cLaiKzgpVM8gVmRtOZYISapsLzYkB4gDQGTqXibKCUb1Tsstw7SD4BhDY77ECnCkVDKsYxKTGXaL
+YNKnjsrxIJBPOzJjWiAl06BjV8qnGU6lXZQr2YLzCrtlRZpr/bglD75DWWSqeAyBMXrlSJbgWRQH
+xGQs0cAgV3tCXRjgLJOixAwhEmivAHqVQVJLCT6jsBaA7fiuJnLAa9A0CN4mTOokLa5yMJUxPQxU
+ApIi8c5K0iziM+T/oGCAwIlWBE+Y4wkWIQfo7wvKADrSyqe+QA7+w2LEQwq4pQZw9ge+oDoAgGXH
+iXE0Q2YwxQHUdBsXjytuwjaqaRRaoTmqIU1EESUXQymziX4idijMYgS9VqY+IweahEYQoFeNUgjS
+gzaQbwr2Fjk/lqeM4wgRdGuM6YhwglvcAy9tYC14wwQi4QVIUrnqBTiapFvSoxy/Q0B64AvgBM3W
+Fj24z2tB5Bh/INn+pAa+QApWVxQDDWYJTacwdmqHUq1oRvh2apxelisakyV2V59Sqwb21mt7jjpq
+oGMGzzJkqhm+pnBRwZjagR64hXeaNpuqwXKfz2uDMimyIBLkAA5w/4A3spInWMH/bMMZ0vbP1KGW
+2pZWcOIz1JQyCis8riZ798l1CVJkkSYnMrFwOYqjGFYznGBFflIdzC0qlSA59Mk9TJU2AvAJ1CEL
+CjfwjKkrhGTxqLYFXBAckQMqAdhkHOBE3mFsz+B3K5ECeumBn5dbKQ9JuGajnChhWpcroJL4Ijc3
+DNbNnAMLdFIZs5dAqiIA5lZ3D9QZDMYvU6ABeIRZd+Jp1epjZfDr5CGdFmEQtOYLooSAWS1KLDEq
+l7gnHNFT3WNpaQU4eiIQQYBVxoORkC910OMHpveIgINo4cCEG00p5BhiukVziHbdGGEwy0IOztge
+vSYxXNVwaM14MP/ihyMhPND3CbSYE6GFGykDSLr3+kb3KWcAQkLAAiGEcT+RbctgRRy5uQIPSBCi
+kCFEcPu2fo3AOVZDS/JvPAKVecsia5xP1ny3LPQjAddYhwv2DyaECKgVKXgHTSlANwQjMIzD9Lqp
+SwKHaVSPK3DwzrBTV2eXVheWDoJVLOPICdIom+8AnAEJmSUHZm/1rNYomaMsTJqnAqanZL/ZcOYF
+bzP1nvE5n/V5n/m5n/35nwE6oAV6oAm6oA36oBE6oRV6oRm6oR36oSE6oiV6oim6oi36ojE6ozV6
+ozm6oz36o0E6pEV6pElaoDXDDg0nBFG6rWanpAs1b/AmcgziZNv/Zi5d2g/eg5YloInaeD+Q1A0i
+MDymgjesYlsxZX+OBg4+oSbqgCWsQog1MAyMmvEG7wMWi1U5w1cqRCPWKhBsJUG4oSc+oWNskC56
+TIlIEn/SgMmg2HAYC1UZ71Wy42ZsgQtSoFli5El6gDE8KEg6gSE1YEdIoicCSJBdaDsOOaTxoFqi
+s1P8T1uJoGJtwrHU40AjFlAi5EwoQAFWADrcSCNIGZzpNy7dYELcADomALULzgGm7TwQxWCvMpkj
+ljlR7YrqYFdIuU64YWUe44rSYEXas33FU7VOxv8m6lW0pBmi5ZGNMmK14w/OlGHcICmUoQIgBFsy
+YmoLqx16Ba/N/yepaO1WEDJAcDO76SJVnKNdzFmx+cWpDec8+DYNEoaGPyF48QQ09qbbPOA4eoUC
+nvaD846z6TS1xY0xRmez6VYTDvgh/GWlPpb+LIAYY448JbkM9Hdm6gBtYXcrPnZmpuKNKyBCuqIG
+jDcDGDA74HICOhwDmkMo3ENtqkGBVeRoUvymXYNfWo52+fYmEOVNJEQp4TKD9+Yz4lPSLGDUahyB
+d5oBm0prEJAgh/fIhQAwJaDJqmUSFhxsHvwIL6DEIRIA4gMZqkUJSFLNBHyz1+EA4MHJGSZtjUw7
+KIJbSsAJvCZE2CJm93IdaA1ATPGHYy6pUktd0uMXNpdZkjixXf+6JtTPYxgD+vKV1qRgiMfAAeRg
+vlObaZUijlxmis0kzDNgHprDFvbJNg5R6tYgqTx3TCYBQlglDKxOtidqVbcgAOFAJ1d8SDplHnhD
+XPLg1av8GCCcJrLSyZuEWGyiHOYFOvzVGeIoyveSS1S1GoEbUbghg40S0NMnW4w8J741HhfSz21c
+LPkFz3PCoppDFcB4av18eGc4bndamlgKS9zgY73GKmx5X4A2EQIEHgftiq6hwVk2y5FJNCSTh86u
+ykXmqmDUBB4q2GnYFhyeFBGwbBdOaFOKYXpAO8D5Gr6gikZh31n8yw0EoKJc42NuaQo33DkGNFKL
+kaJdCppjFFj/ljqYyWuy+yDAwEwqG1+/6JvkAWPrqH1n5oGhT1tV4JFffA0kYXu+N9nIgDigsphs
+oxkMYa5XiXYH73M64SDsRF2ow2Ow9sgFpk0s5Y8j9nPWxqf/PCzyeGZWPR8MfPMGhGSl+wpLYHu+
+gx4gZBTBPScehumrvDvM5DycdhCypbZ/FdE/OjYqYAPjAysO4hGMnLCN5FjW405E4T28YcE+wGPo
+9YnyAQsDIRG8BkuE4HW5vcqx5AUkIjFWgJS3o0s4Lpn9XL9TQArwjeSE/Ur67/AfAvYPsAEnQRKd
+BUssHB4Y/xdVRApARfFiOwvRbwWoaDxwgiUsPGWO4zDHV+UrSNGZzSwNW+fiGe+cRbD84Rlukrml
+yZ8rEGaNnlqPwBlzUoowVrprcZWRWuCY+WYEdA8CBpi01mCz3jt4TAkiOJEcJ0jnyrZVBAA7
+
+------=_NextPart_000_003D_01C9BA01.18EA1F20
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.reliance.com/css/style.css
+
+BODY {
+	bgcolor: "#FFFFFF"; text: "#000000"; link: "#00008C"; vlink: "#000066"; =
+alink: "#B3B3FF"
+}
+BODY {
+	FONT-SIZE: 10pt
+}
+TABLE {
+	FONT-SIZE: 10pt
+}
+TH {
+	FONT-SIZE: 10pt
+}
+TR {
+	FONT-SIZE: 10pt
+}
+TD {
+	FONT-SIZE: 10pt
+}
+P {
+	FONT-SIZE: 10pt
+}
+LI {
+	FONT-SIZE: 10pt
+}
+A {
+	FONT-SIZE: 10pt
+}
+B {
+	FONT-SIZE: 10pt
+}
+EM {
+	FONT-SIZE: 10pt
+}
+I {
+	FONT-SIZE: 10pt
+}
+STRONG {
+	FONT-SIZE: 10pt
+}
+TT {
+	FONT-FAMILY: "Courier","Courier New",sans-serif
+}
+PRE {
+	FONT-FAMILY: "Geneva","Chicago","Courier","Courier =
+New",system,sans-serif
+}
+BODY {
+	FONT-FAMILY: "Times",serif
+}
+TABLE {
+	FONT-FAMILY: "Times",serif
+}
+TH {
+	FONT-FAMILY: "Times",serif
+}
+TR {
+	FONT-FAMILY: "Times",serif
+}
+TD {
+	FONT-FAMILY: "Times",serif
+}
+P {
+	FONT-FAMILY: "Times",serif
+}
+LI {
+	FONT-FAMILY: "Times",serif
+}
+A {
+	FONT-FAMILY: "Times",serif
+}
+B {
+	FONT-FAMILY: "Arial","Helvetica",sans-serif
+}
+EM {
+	FONT-FAMILY: "Arial","Helvetica",sans-serif
+}
+I {
+	FONT-FAMILY: "Arial","Helvetica",sans-serif
+}
+STRONG {
+	FONT-FAMILY: "Arial","Helvetica",sans-serif
+}
+FONT {
+	FONT-FAMILY: "Arial","Helvetica",sans-serif
+}
+H1 {
+	FONT-FAMILY: "Arial","Helvetica",sans-serif
+}
+H2 {
+	FONT-FAMILY: "Arial","Helvetica",sans-serif
+}
+H3 {
+	FONT-FAMILY: "Arial","Helvetica",sans-serif
+}
+H4 {
+	FONT-FAMILY: "Arial","Helvetica",sans-serif
+}
+H5 {
+	FONT-FAMILY: "Arial","Helvetica",sans-serif
+}
+H6 {
+	FONT-FAMILY: "Arial","Helvetica",sans-serif
+}
+B {
+	FONT-WEIGHT: bold
+}
+STRONG {
+	FONT-WEIGHT: bold
+}
+TH {
+	FONT-WEIGHT: bold
+}
+H1 {
+	FONT-WEIGHT: bold
+}
+H2 {
+	FONT-WEIGHT: bold
+}
+H3 {
+	FONT-WEIGHT: bold
+}
+H4 {
+	FONT-WEIGHT: bold
+}
+H5 {
+	FONT-WEIGHT: bold
+}
+H6 {
+	FONT-WEIGHT: bold
+}
+H1 {
+	FONT-SIZE: 18pt
+}
+H2 {
+	FONT-SIZE: 16pt
+}
+H3 {
+	FONT-SIZE: 15pt
+}
+H4 {
+	FONT-SIZE: 14pt
+}
+H5 {
+	FONT-SIZE: 13pt
+}
+H6 {
+	FONT-SIZE: 12pt
+}
+
+------=_NextPart_000_003D_01C9BA01.18EA1F20--

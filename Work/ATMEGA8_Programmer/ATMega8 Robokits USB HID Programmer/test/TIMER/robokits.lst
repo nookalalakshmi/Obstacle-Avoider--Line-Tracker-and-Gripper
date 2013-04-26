@@ -1,0 +1,369 @@
+   1               		.file	"robokits.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  11               		.text
+  12               	.Ltext0:
+  71               	.global	__vector_8
+  73               	__vector_8:
+   1:robokits.c    **** //			MADE BY ROBOKITS INDIA.
+   2:robokits.c    **** //			VISIT US AT WWW.ROBOKITS.ORG
+   3:robokits.c    **** //			PROGRAM FOR BLINKING LED'S ON TIMER1
+   4:robokits.c    **** //			WRITTEN FOR PRODUCT ID 19
+   5:robokits.c    **** 
+   6:robokits.c    **** /*-------------------------------------------------------------------          
+   7:robokits.c    ****  Description:
+   8:robokits.c    ****  This example shows how to generate delays with timers so that cpu is
+   9:robokits.c    ****  free for processing other things. Here cpu is used for blinking led2.
+  10:robokits.c    **** 
+  11:robokits.c    ****  Note:
+  12:robokits.c    ****  Led2 is blinking with normal delay routine and led3 on timer1 interrupt.
+  13:robokits.c    ****  
+  14:robokits.c    ****  Both leds work at almost 1hz rate.
+  15:robokits.c    ****  
+  16:robokits.c    ****  Since _delay_ms() function will be affected by the interrupt generation 
+  17:robokits.c    ****  and gives more delay. So, after sometime the led timing will be mismached.
+  18:robokits.c    ****  
+  19:robokits.c    ****  Even the timer delay is not perfectly mached to 1s. Use smaller presclar
+  20:robokits.c    ****  for better operation.
+  21:robokits.c    ****  
+  22:robokits.c    ****   _delay_ms() function parameter passed should not exeed
+  23:robokits.c    ****  262.14ms / F_CPU in mhz.
+  24:robokits.c    ****  
+  25:robokits.c    ****  so for 16MHz the maximum paramer should be 16ms.
+  26:robokits.c    ****  
+  27:robokits.c    ****  For 1MHz it can be upto 262ms (250 is used for this example).
+  28:robokits.c    ****   
+  29:robokits.c    ****  Must be changed to get accurate delay at higher MHz.
+  30:robokits.c    ****  
+  31:robokits.c    ****  The timing will differ if the operating frequency is changed.
+  32:robokits.c    **** ---------------------------------------------------------------------*/
+  33:robokits.c    **** 
+  34:robokits.c    **** /*----------------------------------------------------------------
+  35:robokits.c    **** -----------------HEADER FILES-------------------------------------
+  36:robokits.c    **** -----------------------------------------------------------------*/
+  37:robokits.c    **** 
+  38:robokits.c    **** #include <avr/io.h>
+  39:robokits.c    **** #include <avr/interrupt.h>
+  40:robokits.c    **** #include<compat/deprecated.h>		//HEADER FILE FOR FUNCTIONS LIKE SBI AND CBI
+  41:robokits.c    **** #include<util/delay.h>				//HEADER FILE FOR DELAY
+  42:robokits.c    **** 
+  43:robokits.c    **** /*----------------------------------------------------------------
+  44:robokits.c    **** -----------------CONSTANTS----------------------------------------
+  45:robokits.c    **** -----------------------------------------------------------------*/
+  46:robokits.c    **** 
+  47:robokits.c    **** #define TIMER_1_CNT     0xfe5a  // 1 sec, use AVRcalc to calculate these values
+  48:robokits.c    ****                                 // ((TCNT1H=0xfc, TCNT1L=0x2e)
+  49:robokits.c    **** 								// DECIMAL VALUE = 64558
+  50:robokits.c    **** 								// MAX VALUE = 65535
+  51:robokits.c    **** 								// TIMER OVERFLOW ON 65535-65114 = 421 COUNTS
+  52:robokits.c    **** #define CNT             0xfffc
+  53:robokits.c    **** #define TMC16_CK1024	(_BV(CS10))	// 16 BIT TIMER1 AT 1024 PRESCALAR
+  54:robokits.c    **** 												// GIVES 1024*977 = 1000448 CYCLES
+  55:robokits.c    **** 												// AT 1MHZ FREQUENCY DELAY OF 1.000448 SECONDS
+  56:robokits.c    **** 
+  57:robokits.c    **** /*----------------------------------------------------------------
+  58:robokits.c    **** -----------------GLOBAL VARIABLE----------------------------------
+  59:robokits.c    **** -----------------------------------------------------------------*/
+  60:robokits.c    **** 
+  61:robokits.c    **** static volatile uint8_t led; 					// use volatile when variable is accessed from interrupts
+  62:robokits.c    **** 
+  63:robokits.c    **** 
+  64:robokits.c    **** /*----------------------------------------------------------------
+  65:robokits.c    **** -----------------FUNCTIONS----------------------------------------
+  66:robokits.c    **** -----------------------------------------------------------------*/
+  67:robokits.c    **** 
+  68:robokits.c    **** SIGNAL(SIG_OVERFLOW1)            	// signal handler for tcnt1 overflow interrupt
+  69:robokits.c    **** {
+  74               	 r0,__SREG__
+  75               		push r0
+  76               		clr __zero_reg__
+  77 0000 1F92      		push r24
+  78 0002 0F92      		push r25
+  79 0004 0FB6      	/* prologue: Signal */
+  80 0006 0F92      	/* frame size = 0 */
+  82 000a 8F93      	.LM1:
+  83 000c 9F93      		sbis 48-32,6
+  84               		rjmp .L2
+  70:robokits.c    **** 	
+  71:robokits.c    **** 	if (!bit_is_clear(PIND, 6))		//BLINK LED3 ON TIMER INTERRUPT
+  86               	zero_reg__
+  87               		push r24
+  88 000e 869B      		push r25
+  89 0010 00C0      	/* prologue: Signal */
+  72:robokits.c    **** 	{
+  73:robokits.c    **** 		TCNT1 = TIMER_1_CNT;
+  90               	_vector_8:
+  92 0012 8AE5      	.LM0:
+  93 0014 9EEF      	.LFBB1:
+  94 0016 9DBD      		push __zero_reg__
+  95 0018 8CBD      		push r0
+  74:robokits.c    **** 		cbi(PORTD,6);				//LED3 ON
+  96               	abs	"__vector_8:F(0,15)",36,0,0,__vector_8
+  97               	.global	__vector_8
+  99 001c 00C0      	__vector_8:
+  75:robokits.c    **** 	}
+  76:robokits.c    **** 	else					
+  77:robokits.c    **** 	{
+  78:robokits.c    **** 		TCNT1 = TIMER_1_CNT;		//ELSE
+ 101               	0,0,0
+ 105 0022 9DBD      	.global	__vector_8
+  79:robokits.c    **** 		sbi(PORTD,6);				//LED3 OFF	
+ 107               	)=s2low:(0,11),0,8;high:(0,11),8,8;;",128,0,0,0
+ 111               	.global	__vector_8
+  80:robokits.c    **** 	}           	// reset counter to get this interrupt again
+  81:robokits.c    **** }
+ 112               	
+ 117 002e 0FBE      	.global	__vector_8
+ 119 0032 1F90      	__vector_8:
+ 121               	.LM0:
+ 122               	.LFBB1:
+ 123               		push __zero_reg__
+ 124               		push r0
+ 125               		in r0,__SREG__
+ 126               		push r0
+  82:robokits.c    **** 
+  83:robokits.c    **** /*----------------------------------------------------------------
+  84:robokits.c    **** -----------------MAIN PROGRAM-------------------------------------
+  85:robokits.c    **** -----------------------------------------------------------------*/
+  86:robokits.c    **** 
+  87:robokits.c    **** int main(void)
+  88:robokits.c    **** {
+ 127               	,0,0,__vector_8
+ 128               	.global	__vector_8
+ 130               	__vector_8:
+  89:robokits.c    ****     
+  90:robokits.c    **** 	DDRB=0x01;						//SET DATA DIRECTION REGISTER
+ 132               	0,0,0
+  91:robokits.c    **** 									//SET 1 for OUTPUT PORT
+  92:robokits.c    **** 									//SET 0 FOR INPUT PORT
+  93:robokits.c    **** 									//ONLY PORTB.0 IS OUTPUT
+  94:robokits.c    **** 									//CONFIGURE AS PER REQUIREMENT
+  95:robokits.c    **** 									//DEFAULT ALL OTHERS ARE INPUT
+  96:robokits.c    **** 									//CHANGE ACCORDING TO USE
+  97:robokits.c    **** 	
+  98:robokits.c    **** 	DDRD=0xC0;						//SET DATA DIRECTION REGISTER
+ 136               	vr/fuse.h",130,0,0,0
+  99:robokits.c    **** 									//SET 1 for OUTPUT PORT
+ 100:robokits.c    **** 									//SET 0 FOR INPUT PORT
+ 101:robokits.c    **** 									//ONLY PORTD.7 AND PORTD.6 ARE OUTPUT
+ 102:robokits.c    **** 									//CONFIGURE AS PER REQUIREMENT
+ 103:robokits.c    **** 									//DEFAULT ALL OTHERS ARE INPUT
+ 104:robokits.c    **** 									//CHANGE ACCORDING TO USE
+ 105:robokits.c    **** 	
+ 106:robokits.c    **** 	sbi(PORTB,0);					//LED1 ON (INDICATION FOR READY TO USE)
+ 140               		"c:/winavr-20080610/lib/gcc/../../avr/include/avr/fuse.h",130,0,0,0
+ 107:robokits.c    **** 
+ 108:robokits.c    ****     TCCR1A = 0x00;               	// disable PWM and Compare Output Mode
+ 143               	n	162,0,0,0
+ 109:robokits.c    ****     TCCR1B = TMC16_CK1024;       	// use CLK/1024 prescale value
+ 146               	bn	162,0,0,0
+ 110:robokits.c    ****     TCNT1  = CNT;        	// reset TCNT1
+ 149               	t:t(3,1)=(4,5)",128,0,0,0
+ 111:robokits.c    ****     
+ 112:robokits.c    ****     TIMSK  = _BV(TOIE1);         	// enable TCNT1 overflow 
+ 155               	bn	162,0,0,0
+ 113:robokits.c    ****     
+ 114:robokits.c    ****     sei();                       	// enable interrupts 
+ 159               	bn	162,0,0,0
+ 166               	.global	__vector_8
+ 168               	__vector_8:
+ 170               	.LM0:
+ 171               	.LFBB1:
+   1:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /* Copyright (c) 2002, Marek Michalkiewicz
+   2:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    Copyright (c) 2007 Joerg Wunsch
+   3:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    All rights reserved.
+   4:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+   5:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    Redistribution and use in source and binary forms, with or without
+   6:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    modification, are permitted provided that the following conditions are met:
+   7:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+   8:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    * Redistributions of source code must retain the above copyright
+   9:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      notice, this list of conditions and the following disclaimer.
+  10:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  11:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    * Redistributions in binary form must reproduce the above copyright
+  12:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      notice, this list of conditions and the following disclaimer in
+  13:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      the documentation and/or other materials provided with the
+  14:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      distribution.
+  15:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  16:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****    * Neither the name of the copyright holders nor the names of
+  17:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      contributors may be used to endorse or promote products derived
+  18:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****      from this software without specific prior written permission.
+  19:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  20:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  21:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  22:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  23:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  24:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  25:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  26:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  27:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  28:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  29:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  30:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****   POSSIBILITY OF SUCH DAMAGE. */
+  31:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  32:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /* $Id: delay_basic.h,v 1.1 2007/05/13 21:23:20 joerg_wunsch Exp $ */
+  33:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  34:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #ifndef _UTIL_DELAY_BASIC_H_
+  35:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #define _UTIL_DELAY_BASIC_H_ 1
+  36:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  37:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #include <inttypes.h>
+  38:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  39:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /** \file */
+  40:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /** \defgroup util_delay_basic <util/delay_basic.h>: Basic busy-wait delay loops
+  41:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     \code
+  42:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     #include <util/delay_basic.h>
+  43:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     \endcode
+  44:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  45:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     The functions in this header file implement simple delay loops
+  46:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     that perform a busy-waiting.  They are typically used to
+  47:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     facilitate short delays in the program execution.  They are
+  48:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     implemented as count-down loops with a well-known CPU cycle
+  49:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     count per loop iteration.  As such, no other processing can
+  50:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     occur simultaneously.  It should be kept in mind that the
+  51:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     functions described here do not disable interrupts.
+  52:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  53:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     In general, for long delays, the use of hardware timers is
+  54:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     much preferrable, as they free the CPU, and allow for
+  55:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     concurrent processing of other events while the timer is
+  56:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     running.  However, in particular for very short delays, the
+  57:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     overhead of setting up a hardware timer is too much compared
+  58:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     to the overall delay time.
+  59:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  60:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Two inline functions are provided for the actual delay algorithms.
+  61:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  62:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** */
+  63:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  64:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #if !defined(__DOXYGEN__)
+  65:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** static inline void _delay_loop_1(uint8_t __count) __attribute__((always_inline));
+  66:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** static inline void _delay_loop_2(uint16_t __count) __attribute__((always_inline));
+  67:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** #endif
+  68:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  69:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /** \ingroup util_delay_basic
+  70:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  71:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Delay loop using an 8-bit counter \c __count, so up to 256
+  72:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     iterations are possible.  (The value 256 would have to be passed
+  73:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     as 0.)  The loop executes three CPU cycles per iteration, not
+  74:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     including the overhead the compiler needs to setup the counter
+  75:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     register.
+  76:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  77:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Thus, at a CPU speed of 1 MHz, delays of up to 768 microseconds
+  78:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     can be achieved.
+  79:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** */
+  80:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** void
+  81:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** _delay_loop_1(uint8_t __count)
+  82:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** {
+  83:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 	__asm__ volatile (
+  84:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 		"1: dec %0" "\n\t"
+  85:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 		"brne 1b"
+  86:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 		: "=r" (__count)
+  87:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 		: "0" (__count)
+  88:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 	);
+  89:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** }
+  90:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  91:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** /** \ingroup util_delay_basic
+  92:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  93:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Delay loop using a 16-bit counter \c __count, so up to 65536
+  94:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     iterations are possible.  (The value 65536 would have to be
+  95:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     passed as 0.)  The loop executes four CPU cycles per iteration,
+  96:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     not including the overhead the compiler requires to setup the
+  97:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     counter register pair.
+  98:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 
+  99:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     Thus, at a CPU speed of 1 MHz, delays of up to about 262.1
+ 100:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****     milliseconds can be achieved.
+ 101:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h ****  */
+ 102:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** void
+ 103:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** _delay_loop_2(uint16_t __count)
+ 104:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** {
+ 105:c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h **** 	__asm__ volatile (
+ 172               	2,0,0,0
+ 175 0054 34EF      	.global	__vector_8
+ 177 0056 C901      	__vector_8:
+ 179               	.LM0:
+ 180 0058 0197      	.LFBB1:
+ 181 005a 01F4      		push __zero_reg__
+ 182               		push r0
+ 183               		in r0,__SREG__
+ 184               		push r0
+ 185               		clr __zero_reg__
+ 186               		push r24
+ 187               		push r25
+ 188               	/* prologue: Signal */
+ 189               	/* frame size = 0 */
+ 191               	.LM1:
+ 192 005c C901      		sbis 48-32,6
+ 193               		rjmp .L2
+ 195 005e 0197      	.LM2:
+ 196 0060 01F4      		ldi r24,lo8(-422)
+ 197               		ldi r25,hi8(-422)
+ 198               		out (76)+1-32,r25
+ 199               		out 76-32,r24
+ 201               	.LM3:
+ 202               		cbi 50-32,6
+ 203               		rjmp .L4
+ 204               	.L2:
+ 206               	.LM4:
+ 207 0062 C901      		ldi r24,lo8(-422)
+ 208               		ldi r25,hi8(-422)
+ 209               		out (76)+1-32,r25
+ 210 0064 0197      		out 76-32,r24
+ 212               	.LM5:
+ 213               		sbi 50-32,6
+ 214               	.L4:
+ 215               	/* epilogue start */
+ 217               	.LM6:
+ 218               		pop r25
+ 219               		pop r24
+ 220               		pop r0
+ 221               		out __SREG__,r0
+ 222 0068 C901      		pop r0
+ 223               		pop __zero_reg__
+ 224               		reti
+ 226 006c 01F4      	.Lscope1:
+ 228               	.global	main
+ 230               	main:
+ 232               	.LM7:
+ 233               	.LFBB2:
+ 234               	/* prologue: function */
+ 115:robokits.c    ****     
+ 116:robokits.c    ****     for (;;) 						// loop forever
+ 117:robokits.c    **** 	{                      
+ 118:robokits.c    **** 			_delay_ms(250);
+ 119:robokits.c    **** 			_delay_ms(250);	
+ 120:robokits.c    **** 			_delay_ms(250);	
+ 121:robokits.c    **** 			_delay_ms(250);	
+ 122:robokits.c    **** 
+ 123:robokits.c    **** 		if (bit_is_clear(PIND, 7))	//BLINK LED2 WITH NORMAL DELAY
+ 235               	36,0,0,main
+ 236               	.global	main
+ 238 0070 00C0      	main:
+ 124:robokits.c    **** 			sbi(PORTD,7);			//LED2 ON
+ 239               	
+ 240               		reti
+ 242 0074 00C0      	.Lscope1:
+ 125:robokits.c    **** 		else						//ELSE
+ 126:robokits.c    **** 			cbi(PORTD,7);			//LED2 OFF
+ 244               	r0
+ 245               		out __SREG__,r0
+ 246 0076 9798      		pop r0
+ 247 0078 00C0      		pop __zero_reg__
+ 248               		reti
+ 250               	.Lscope1:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\Users\ankit\AppData\Local\Temp/ccaFkROm.s:2      *ABS*:0000003f __SREG__
+C:\Users\ankit\AppData\Local\Temp/ccaFkROm.s:3      *ABS*:0000003e __SP_H__
+C:\Users\ankit\AppData\Local\Temp/ccaFkROm.s:4      *ABS*:0000003d __SP_L__
+C:\Users\ankit\AppData\Local\Temp/ccaFkROm.s:5      *ABS*:00000034 __CCP__
+C:\Users\ankit\AppData\Local\Temp/ccaFkROm.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\ankit\AppData\Local\Temp/ccaFkROm.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\ankit\AppData\Local\Temp/ccaFkROm.s:73     .text:00000000 __vector_8
+C:\Users\ankit\AppData\Local\Temp/ccaFkROm.s:126    .text:00000036 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

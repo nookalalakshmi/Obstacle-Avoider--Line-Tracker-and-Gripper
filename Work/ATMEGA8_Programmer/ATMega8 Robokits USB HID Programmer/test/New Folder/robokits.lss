@@ -1,0 +1,251 @@
+
+robokits.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000dc  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000002  00800060  000000dc  00000150  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000002  00800062  000000de  00000152  2**0
+                  ALLOC
+  3 .stab         000004b0  00000000  00000000  00000154  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000709  00000000  00000000  00000604  2**0
+                  CONTENTS, READONLY, DEBUGGING
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	2c c0       	rjmp	.+88     	; 0x5c <__bad_interrupt>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	29 c0       	rjmp	.+82     	; 0x5c <__bad_interrupt>
+   a:	28 c0       	rjmp	.+80     	; 0x5c <__bad_interrupt>
+   c:	27 c0       	rjmp	.+78     	; 0x5c <__bad_interrupt>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	25 c0       	rjmp	.+74     	; 0x5c <__bad_interrupt>
+  12:	24 c0       	rjmp	.+72     	; 0x5c <__bad_interrupt>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	22 c0       	rjmp	.+68     	; 0x5c <__bad_interrupt>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+  1e:	1e c0       	rjmp	.+60     	; 0x5c <__bad_interrupt>
+  20:	1d c0       	rjmp	.+58     	; 0x5c <__bad_interrupt>
+  22:	1c c0       	rjmp	.+56     	; 0x5c <__bad_interrupt>
+  24:	1b c0       	rjmp	.+54     	; 0x5c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	ec ed       	ldi	r30, 0xDC	; 220
+  3a:	f0 e0       	ldi	r31, 0x00	; 0
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <.do_copy_data_start>
+
+0000003e <.do_copy_data_loop>:
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+
+00000042 <.do_copy_data_start>:
+  42:	a2 36       	cpi	r26, 0x62	; 98
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <.do_copy_data_loop>
+
+00000048 <__do_clear_bss>:
+  48:	10 e0       	ldi	r17, 0x00	; 0
+  4a:	a2 e6       	ldi	r26, 0x62	; 98
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+  52:	a4 36       	cpi	r26, 0x64	; 100
+  54:	b1 07       	cpc	r27, r17
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+  58:	0c d0       	rcall	.+24     	; 0x72 <main>
+  5a:	3e c0       	rjmp	.+124    	; 0xd8 <_exit>
+
+0000005c <__bad_interrupt>:
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
+
+0000005e <spi_masterinit>:
+-----------------------------------------------------------------*/
+
+
+void spi_masterinit(void)
+{
+	DDRB=0x28;
+  5e:	88 e2       	ldi	r24, 0x28	; 40
+  60:	87 bb       	out	0x17, r24	; 23
+	SPCR=0x51;
+  62:	81 e5       	ldi	r24, 0x51	; 81
+  64:	8d b9       	out	0x0d, r24	; 13
+
+}
+  66:	08 95       	ret
+
+00000068 <master_transmit>:
+void master_transmit(char cdata)
+{
+	SPDR=cdata;
+  68:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR &&(1<<SPIF)));
+  6a:	8e b1       	in	r24, 0x0e	; 14
+  6c:	88 23       	and	r24, r24
+  6e:	e9 f3       	breq	.-6      	; 0x6a <master_transmit+0x2>
+}
+  70:	08 95       	ret
+
+00000072 <main>:
+
+int main(void)
+{
+   
+	
+	cbi(PORTC,6);
+  72:	ae 98       	cbi	0x15, 6	; 21
+
+	cbi(PORTB,5);
+  74:	c5 98       	cbi	0x18, 5	; 24
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+  76:	88 e8       	ldi	r24, 0x88	; 136
+  78:	93 e1       	ldi	r25, 0x13	; 19
+  7a:	01 97       	sbiw	r24, 0x01	; 1
+  7c:	f1 f7       	brne	.-4      	; 0x7a <main+0x8>
+-----------------------------------------------------------------*/
+
+
+void spi_masterinit(void)
+{
+	DDRB=0x28;
+  7e:	88 e2       	ldi	r24, 0x28	; 40
+  80:	87 bb       	out	0x17, r24	; 23
+	SPCR=0x51;
+  82:	81 e5       	ldi	r24, 0x51	; 81
+  84:	8d b9       	out	0x0d, r24	; 13
+
+}
+void master_transmit(char cdata)
+{
+	SPDR=cdata;
+  86:	4c ea       	ldi	r20, 0xAC	; 172
+  88:	33 e5       	ldi	r19, 0x53	; 83
+  8a:	21 e1       	ldi	r18, 0x11	; 17
+  8c:	92 e3       	ldi	r25, 0x32	; 50
+  8e:	4f b9       	out	0x0f, r20	; 15
+	while(!(SPSR &&(1<<SPIF)));
+  90:	8e b1       	in	r24, 0x0e	; 14
+  92:	88 23       	and	r24, r24
+  94:	e9 f3       	breq	.-6      	; 0x90 <main+0x1e>
+	SPCR=0x51;
+
+}
+void master_transmit(char cdata)
+{
+	SPDR=cdata;
+  96:	3f b9       	out	0x0f, r19	; 15
+	while(!(SPSR &&(1<<SPIF)));
+  98:	8e b1       	in	r24, 0x0e	; 14
+  9a:	88 23       	and	r24, r24
+  9c:	e9 f3       	breq	.-6      	; 0x98 <main+0x26>
+	SPCR=0x51;
+
+}
+void master_transmit(char cdata)
+{
+	SPDR=cdata;
+  9e:	1f b8       	out	0x0f, r1	; 15
+	while(!(SPSR &&(1<<SPIF)));
+  a0:	8e b1       	in	r24, 0x0e	; 14
+  a2:	88 23       	and	r24, r24
+  a4:	e9 f3       	breq	.-6      	; 0xa0 <main+0x2e>
+	SPCR=0x51;
+
+}
+void master_transmit(char cdata)
+{
+	SPDR=cdata;
+  a6:	2f b9       	out	0x0f, r18	; 15
+	while(!(SPSR &&(1<<SPIF)));
+  a8:	8e b1       	in	r24, 0x0e	; 14
+  aa:	88 23       	and	r24, r24
+  ac:	e9 f3       	breq	.-6      	; 0xa8 <main+0x36>
+	SPCR=0x51;
+
+}
+void master_transmit(char cdata)
+{
+	SPDR=cdata;
+  ae:	9f b9       	out	0x0f, r25	; 15
+	while(!(SPSR &&(1<<SPIF)));
+  b0:	8e b1       	in	r24, 0x0e	; 14
+  b2:	88 23       	and	r24, r24
+  b4:	e9 f3       	breq	.-6      	; 0xb0 <main+0x3e>
+	SPCR=0x51;
+
+}
+void master_transmit(char cdata)
+{
+	SPDR=cdata;
+  b6:	9f b9       	out	0x0f, r25	; 15
+	while(!(SPSR &&(1<<SPIF)));
+  b8:	8e b1       	in	r24, 0x0e	; 14
+  ba:	88 23       	and	r24, r24
+  bc:	e9 f3       	breq	.-6      	; 0xb8 <main+0x46>
+	SPCR=0x51;
+
+}
+void master_transmit(char cdata)
+{
+	SPDR=cdata;
+  be:	9f b9       	out	0x0f, r25	; 15
+	while(!(SPSR &&(1<<SPIF)));
+  c0:	8e b1       	in	r24, 0x0e	; 14
+  c2:	88 23       	and	r24, r24
+  c4:	e9 f3       	breq	.-6      	; 0xc0 <main+0x4e>
+	SPCR=0x51;
+
+}
+void master_transmit(char cdata)
+{
+	SPDR=cdata;
+  c6:	9f b9       	out	0x0f, r25	; 15
+	while(!(SPSR &&(1<<SPIF)));
+  c8:	8e b1       	in	r24, 0x0e	; 14
+  ca:	88 23       	and	r24, r24
+  cc:	e9 f3       	breq	.-6      	; 0xc8 <main+0x56>
+	SPCR=0x51;
+
+}
+void master_transmit(char cdata)
+{
+	SPDR=cdata;
+  ce:	9f b9       	out	0x0f, r25	; 15
+	while(!(SPSR &&(1<<SPIF)));
+  d0:	8e b1       	in	r24, 0x0e	; 14
+  d2:	88 23       	and	r24, r24
+  d4:	e9 f3       	breq	.-6      	; 0xd0 <main+0x5e>
+  d6:	db cf       	rjmp	.-74     	; 0x8e <main+0x1c>
+
+000000d8 <_exit>:
+  d8:	f8 94       	cli
+
+000000da <__stop_program>:
+  da:	ff cf       	rjmp	.-2      	; 0xda <__stop_program>

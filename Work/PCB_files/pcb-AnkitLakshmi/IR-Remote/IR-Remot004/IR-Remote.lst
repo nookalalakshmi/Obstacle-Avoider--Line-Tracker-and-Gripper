@@ -1,0 +1,343 @@
+   1               		.file	"IR-Remote.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	__vector_5
+  20               	__vector_5:
+  21               	.LFB7:
+  22               	.LM1:
+  23 0000 1F92      		push __zero_reg__
+  24 0002 0F92      		push r0
+  25 0004 0FB6      		in r0,__SREG__
+  26 0006 0F92      		push r0
+  27 0008 1124      		clr __zero_reg__
+  28 000a 8F93      		push r24
+  29 000c 9F93      		push r25
+  30               	/* prologue: Signal */
+  31               	/* frame size = 0 */
+  32               	.LM2:
+  33 000e 8091 0000 		lds r24,c3p5
+  34 0012 9091 0000 		lds r25,(c3p5)+1
+  35 0016 0196      		adiw r24,1
+  36 0018 9093 0000 		sts (c3p5)+1,r25
+  37 001c 8093 0000 		sts c3p5,r24
+  38               	.LM3:
+  39 0020 8091 0000 		lds r24,c131
+  40 0024 9091 0000 		lds r25,(c131)+1
+  41 0028 0196      		adiw r24,1
+  42 002a 9093 0000 		sts (c131)+1,r25
+  43 002e 8093 0000 		sts c131,r24
+  44               	.LM4:
+  45 0032 9999      		sbic 51-32,1
+  46 0034 00C0      		rjmp .L2
+  47               	.LM5:
+  48 0036 A99A      		sbi 53-32,1
+  49 0038 00C0      		rjmp .L3
+  50               	.L2:
+  51               	.LM6:
+  52 003a A998      		cbi 53-32,1
+  53               	.L3:
+  54               	.LM7:
+  55 003c 8FEB      		ldi r24,lo8(-65)
+  56 003e 84BD      		out 68-32,r24
+  57               	/* epilogue start */
+  58               	.LM8:
+  59 0040 9F91      		pop r25
+  60 0042 8F91      		pop r24
+  61 0044 0F90      		pop r0
+  62 0046 0FBE      		out __SREG__,r0
+  63 0048 0F90      		pop r0
+  64 004a 1F90      		pop __zero_reg__
+  65 004c 1895      		reti
+  66               	.LFE7:
+  68               	.global	GetFrameStart
+  70               	GetFrameStart:
+  71               	.LFB8:
+  72               	.LM9:
+  73               	/* prologue: function */
+  74               	/* frame size = 0 */
+  75               	.LM10:
+  76 004e 1092 0000 		sts (c3p5)+1,__zero_reg__
+  77 0052 1092 0000 		sts c3p5,__zero_reg__
+  78               	.LM11:
+  79 0056 1092 0000 		sts (c131)+1,__zero_reg__
+  80 005a 1092 0000 		sts c131,__zero_reg__
+  81               	.L8:
+  82               	.LM12:
+  83 005e C899      		sbic 57-32,0
+  84 0060 00C0      		rjmp .L6
+  85               	.LM13:
+  86 0062 1092 0000 		sts (c3p5)+1,__zero_reg__
+  87 0066 1092 0000 		sts c3p5,__zero_reg__
+  88               	.L6:
+  89               	.LM14:
+  90 006a 8091 0000 		lds r24,c3p5
+  91 006e 9091 0000 		lds r25,(c3p5)+1
+  92 0072 C297      		sbiw r24,50
+  93 0074 04F4      		brge .L7
+  94               	.LM15:
+  95 0076 8091 0000 		lds r24,c131
+  96 007a 9091 0000 		lds r25,(c131)+1
+  97 007e 8D53      		subi r24,lo8(1853)
+  98 0080 9740      		sbci r25,hi8(1853)
+  99 0082 04F0      		brlt .L8
+ 100 0084 82E0      		ldi r24,lo8(2)
+ 101               	.LVL0:
+ 102 0086 0895      		ret
+ 103               	.LVL1:
+ 104               	.L7:
+ 105               	.LM16:
+ 106 0088 1092 0000 		sts (c131)+1,__zero_reg__
+ 107 008c 1092 0000 		sts c131,__zero_reg__
+ 108               	.L11:
+ 109               	.LM17:
+ 110 0090 C899      		sbic 57-32,0
+ 111 0092 00C0      		rjmp .L10
+ 112 0094 80E0      		ldi r24,lo8(0)
+ 113               	.LVL2:
+ 114 0096 0895      		ret
+ 115               	.LVL3:
+ 116               	.L10:
+ 117               	.LM18:
+ 118 0098 8091 0000 		lds r24,c131
+ 119 009c 9091 0000 		lds r25,(c131)+1
+ 120 00a0 8D53      		subi r24,lo8(1853)
+ 121 00a2 9740      		sbci r25,hi8(1853)
+ 122 00a4 04F0      		brlt .L11
+ 123 00a6 82E0      		ldi r24,lo8(2)
+ 124               	.LVL4:
+ 125               	.LVL5:
+ 126               	.LM19:
+ 127 00a8 0895      		ret
+ 128               	.LFE8:
+ 130               	.global	GetFrameData
+ 132               	GetFrameData:
+ 133               	.LFB9:
+ 134               	.LM20:
+ 135               	/* prologue: function */
+ 136               	/* frame size = 0 */
+ 137               	.LM21:
+ 138 00aa 1092 0000 		sts (c3p5)+1,__zero_reg__
+ 139 00ae 1092 0000 		sts c3p5,__zero_reg__
+ 140               	.LM22:
+ 141 00b2 1092 0000 		sts (c131)+1,__zero_reg__
+ 142 00b6 1092 0000 		sts c131,__zero_reg__
+ 143 00ba 40E0      		ldi r20,lo8(0)
+ 144 00bc 50E0      		ldi r21,hi8(0)
+ 145               	.LVL6:
+ 146 00be 20E0      		ldi r18,lo8(0)
+ 147 00c0 30E0      		ldi r19,hi8(0)
+ 148               	.LBB2:
+ 149               	.LM23:
+ 150 00c2 E1E0      		ldi r30,lo8(1)
+ 151 00c4 F0E0      		ldi r31,hi8(1)
+ 152               	.LVL7:
+ 153               	.L22:
+ 154               	.LBE2:
+ 155               	.LM24:
+ 156 00c6 8091 0000 		lds r24,c3p5
+ 157 00ca 9091 0000 		lds r25,(c3p5)+1
+ 158 00ce 4297      		sbiw r24,18
+ 159 00d0 04F0      		brlt .L22
+ 160               	.LBB3:
+ 161               	.LM25:
+ 162 00d2 89B3      		in r24,57-32
+ 163 00d4 8E27      		eor r24,r30
+ 164 00d6 8170      		andi r24,lo8(1)
+ 165               	.LM26:
+ 166 00d8 220F      		lsl r18
+ 167 00da 331F      		rol r19
+ 168               	.LM27:
+ 169 00dc 90E0      		ldi r25,lo8(0)
+ 170               	.LVL8:
+ 171 00de 280F      		add r18,r24
+ 172 00e0 391F      		adc r19,r25
+ 173               	.LM28:
+ 174 00e2 4F5F      		subi r20,lo8(-(1))
+ 175 00e4 5F4F      		sbci r21,hi8(-(1))
+ 176               	.LM29:
+ 177 00e6 1092 0000 		sts (c3p5)+1,__zero_reg__
+ 178 00ea 1092 0000 		sts c3p5,__zero_reg__
+ 179               	.LBE3:
+ 180               	.LM30:
+ 181 00ee BC01      		movw r22,r24
+ 182               	.L17:
+ 183 00f0 89B3      		in r24,57-32
+ 184 00f2 90E0      		ldi r25,lo8(0)
+ 185               	.LVL9:
+ 186 00f4 8E27      		eor r24,r30
+ 187 00f6 9F27      		eor r25,r31
+ 188 00f8 8170      		andi r24,lo8(1)
+ 189 00fa 9070      		andi r25,hi8(1)
+ 190 00fc 6817      		cp r22,r24
+ 191 00fe 7907      		cpc r23,r25
+ 192 0100 01F0      		breq .L17
+ 193               	.LM31:
+ 194 0102 4D30      		cpi r20,13
+ 195 0104 5105      		cpc r21,__zero_reg__
+ 196 0106 01F4      		brne .L22
+ 197 0108 3093 0000 		sts (data.1280)+1,r19
+ 198 010c 2093 0000 		sts data.1280,r18
+ 199               	.LM32:
+ 200 0110 C901      		movw r24,r18
+ 201               	/* epilogue start */
+ 202 0112 0895      		ret
+ 203               	.LFE9:
+ 205               	.global	Test2
+ 207               	Test2:
+ 208               	.LFB10:
+ 209               	.LM33:
+ 210               	/* prologue: function */
+ 211               	/* frame size = 0 */
+ 212               	.LM34:
+ 213 0114 1092 0000 		sts (c3p5)+1,__zero_reg__
+ 214 0118 1092 0000 		sts c3p5,__zero_reg__
+ 215 011c 40E0      		ldi r20,lo8(0)
+ 216 011e 50E0      		ldi r21,hi8(0)
+ 217               	.LVL10:
+ 218 0120 20E0      		ldi r18,lo8(0)
+ 219               	.LVL11:
+ 220 0122 30E0      		ldi r19,lo8(0)
+ 221               	.LVL12:
+ 222               	.LM35:
+ 223 0124 61E0      		ldi r22,lo8(1)
+ 224 0126 70E0      		ldi r23,hi8(1)
+ 225               	.L32:
+ 226               	.LM36:
+ 227 0128 8091 0000 		lds r24,c3p5
+ 228 012c 9091 0000 		lds r25,(c3p5)+1
+ 229               	.LVL13:
+ 230 0130 4817      		cp r20,r24
+ 231 0132 5907      		cpc r21,r25
+ 232 0134 01F0      		breq .L24
+ 233               	.LM37:
+ 234 0136 29B3      		in r18,57-32
+ 235 0138 2627      		eor r18,r22
+ 236 013a 2170      		andi r18,lo8(1)
+ 237               	.LM38:
+ 238 013c 4091 0000 		lds r20,c3p5
+ 239 0140 5091 0000 		lds r21,(c3p5)+1
+ 240               	.LVL14:
+ 241               	.L24:
+ 242               	.LM39:
+ 243 0144 8091 0000 		lds r24,c3p5
+ 244 0148 9091 0000 		lds r25,(c3p5)+1
+ 245 014c 4197      		sbiw r24,17
+ 246 014e 04F0      		brlt .L25
+ 247               	.LM40:
+ 248 0150 8091 0000 		lds r24,c3p5
+ 249 0154 9091 0000 		lds r25,(c3p5)+1
+ 250 0158 C297      		sbiw r24,50
+ 251 015a 04F4      		brge .L31
+ 252               	.LM41:
+ 253 015c 3217      		cp r19,r18
+ 254 015e 01F0      		breq .L28
+ 255               	.LM42:
+ 256 0160 1092 0000 		sts (c3p5)+1,__zero_reg__
+ 257 0164 1092 0000 		sts c3p5,__zero_reg__
+ 258 0168 322F      		mov r19,r18
+ 259 016a 40E0      		ldi r20,lo8(0)
+ 260 016c 50E0      		ldi r21,hi8(0)
+ 261 016e 00C0      		rjmp .L28
+ 262               	.L25:
+ 263               	.LM43:
+ 264 0170 3217      		cp r19,r18
+ 265 0172 01F0      		breq .L28
+ 266               	.LM44:
+ 267 0174 1092 0000 		sts (c3p5)+1,__zero_reg__
+ 268 0178 1092 0000 		sts c3p5,__zero_reg__
+ 269               	.L28:
+ 270               	.LM45:
+ 271 017c 3323      		tst r19
+ 272 017e 01F4      		brne .L29
+ 273               	.LM46:
+ 274 0180 A89A      		sbi 53-32,0
+ 275 0182 00C0      		rjmp .L32
+ 276               	.L29:
+ 277               	.LM47:
+ 278 0184 A898      		cbi 53-32,0
+ 279 0186 00C0      		rjmp .L32
+ 280               	.L31:
+ 281 0188 0895      		ret
+ 282               	.LFE10:
+ 284               	.global	main
+ 286               	main:
+ 287               	.LFB11:
+ 288               	.LM48:
+ 289               	/* prologue: function */
+ 290               	/* frame size = 0 */
+ 291               	.LM49:
+ 292 018a 1ABA      		out 58-32,__zero_reg__
+ 293               	.LM50:
+ 294 018c 8FEF      		ldi r24,lo8(-1)
+ 295 018e 84BB      		out 52-32,r24
+ 296               	.LM51:
+ 297 0190 82E0      		ldi r24,lo8(2)
+ 298 0192 85BD      		out 69-32,r24
+ 299               	.LM52:
+ 300 0194 8FEB      		ldi r24,lo8(-65)
+ 301 0196 84BD      		out 68-32,r24
+ 302               	.LM53:
+ 303 0198 80E4      		ldi r24,lo8(64)
+ 304 019a 89BF      		out 89-32,r24
+ 305               	.LM54:
+ 306               	/* #APP */
+ 307               	 ;  236 "IR-Remote.c" 1
+ 308 019c 7894      		sei
+ 309               	 ;  0 "" 2
+ 310               	/* #NOAPP */
+ 311               	.L39:
+ 312               	.LBB4:
+ 313               	.LM55:
+ 314 019e AB9A      		sbi 53-32,3
+ 315               	.LM56:
+ 316 01a0 0E94 0000 		call GetFrameStart
+ 317               	.LM57:
+ 318 01a4 8823      		tst r24
+ 319 01a6 01F4      		brne .L39
+ 320               	.LM58:
+ 321 01a8 AB98      		cbi 53-32,3
+ 322               	.LM59:
+ 323 01aa 0E94 0000 		call Test2
+ 324               	.LM60:
+ 325 01ae 9A99      		sbic 51-32,2
+ 326 01b0 00C0      		rjmp .L35
+ 327               	.LM61:
+ 328 01b2 AA9A      		sbi 53-32,2
+ 329 01b4 00C0      		rjmp .L39
+ 330               	.L35:
+ 331               	.LM62:
+ 332 01b6 AA98      		cbi 53-32,2
+ 333 01b8 00C0      		rjmp .L39
+ 334               	.LBE4:
+ 335               	.LFE11:
+ 337               		.lcomm c3p5,2
+ 338               		.lcomm c131,2
+ 339               		.lcomm data.1280,2
+ 396               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 IR-Remote.c
+C:\DOCUME~1\HSMAZU~1\LOCALS~1\Temp/ccR0HOXk.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\HSMAZU~1\LOCALS~1\Temp/ccR0HOXk.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\HSMAZU~1\LOCALS~1\Temp/ccR0HOXk.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\HSMAZU~1\LOCALS~1\Temp/ccR0HOXk.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\HSMAZU~1\LOCALS~1\Temp/ccR0HOXk.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\HSMAZU~1\LOCALS~1\Temp/ccR0HOXk.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\HSMAZU~1\LOCALS~1\Temp/ccR0HOXk.s:20     .text:00000000 __vector_5
+                             .bss:00000000 c3p5
+C:\DOCUME~1\HSMAZU~1\LOCALS~1\Temp/ccR0HOXk.s:337    .bss:00000002 c131
+C:\DOCUME~1\HSMAZU~1\LOCALS~1\Temp/ccR0HOXk.s:70     .text:0000004e GetFrameStart
+C:\DOCUME~1\HSMAZU~1\LOCALS~1\Temp/ccR0HOXk.s:132    .text:000000aa GetFrameData
+C:\DOCUME~1\HSMAZU~1\LOCALS~1\Temp/ccR0HOXk.s:338    .bss:00000004 data.1280
+C:\DOCUME~1\HSMAZU~1\LOCALS~1\Temp/ccR0HOXk.s:207    .text:00000114 Test2
+C:\DOCUME~1\HSMAZU~1\LOCALS~1\Temp/ccR0HOXk.s:286    .text:0000018a main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

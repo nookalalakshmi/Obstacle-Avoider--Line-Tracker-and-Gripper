@@ -1,0 +1,36 @@
+TT {
+	FONT-SIZE: 12px; FONT-FAMILY: Lucida Console,Courier New,Courier,monotype
+}
+PRE {
+	FONT-SIZE: 12px; FONT-FAMILY: Lucida Console,Courier New,Courier,monotype
+}
+TABLE {
+	BACKGROUND-POSITION: 100% 100%; BACKGROUND-REPEAT: no-repeat
+}
+H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 24px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A {
+	FILTER: FlipH; TEXT-DECORATION: none
+}
+H2 {
+	FONT-SIZE: 20px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+H3 {
+	FONT-SIZE: 18px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+H4 {
+	FONT-SIZE: 16px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.Main {
+	FONT-SIZE: 24px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: circle
+}
+.links {
+	FONT-SIZE: 18px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.footer {
+	FONT-SIZE: 18px; FONT-STYLE: italic; FONT-FAMILY: "Times New Roman", Times, serif
+}
+.buttons {
+	FONT-SIZE: 14px; COLOR: white; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}

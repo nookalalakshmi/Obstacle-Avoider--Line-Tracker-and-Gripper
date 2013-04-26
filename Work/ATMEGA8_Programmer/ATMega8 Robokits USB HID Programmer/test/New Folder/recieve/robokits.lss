@@ -1,0 +1,186 @@
+
+robokits.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000a2  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000004  00800060  000000a2  00000116  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000004  00800064  000000a6  0000011a  2**0
+                  ALLOC
+  3 .stab         00000450  00000000  00000000  0000011c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      000006d3  00000000  00000000  0000056c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	2c c0       	rjmp	.+88     	; 0x5c <__bad_interrupt>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	29 c0       	rjmp	.+82     	; 0x5c <__bad_interrupt>
+   a:	28 c0       	rjmp	.+80     	; 0x5c <__bad_interrupt>
+   c:	27 c0       	rjmp	.+78     	; 0x5c <__bad_interrupt>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	25 c0       	rjmp	.+74     	; 0x5c <__bad_interrupt>
+  12:	24 c0       	rjmp	.+72     	; 0x5c <__bad_interrupt>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	22 c0       	rjmp	.+68     	; 0x5c <__bad_interrupt>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+  1e:	1e c0       	rjmp	.+60     	; 0x5c <__bad_interrupt>
+  20:	1d c0       	rjmp	.+58     	; 0x5c <__bad_interrupt>
+  22:	1c c0       	rjmp	.+56     	; 0x5c <__bad_interrupt>
+  24:	1b c0       	rjmp	.+54     	; 0x5c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	e2 ea       	ldi	r30, 0xA2	; 162
+  3a:	f0 e0       	ldi	r31, 0x00	; 0
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <.do_copy_data_start>
+
+0000003e <.do_copy_data_loop>:
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+
+00000042 <.do_copy_data_start>:
+  42:	a4 36       	cpi	r26, 0x64	; 100
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <__SP_H__>
+
+00000048 <__do_clear_bss>:
+  48:	10 e0       	ldi	r17, 0x00	; 0
+  4a:	a4 e6       	ldi	r26, 0x64	; 100
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+  52:	a8 36       	cpi	r26, 0x68	; 104
+  54:	b1 07       	cpc	r27, r17
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+  58:	0c d0       	rcall	.+24     	; 0x72 <main>
+  5a:	21 c0       	rjmp	.+66     	; 0x9e <_exit>
+
+0000005c <__bad_interrupt>:
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__heap_end>
+
+0000005e <spi_slaveinit>:
+-----------------------------------------------------------------*/
+
+
+void spi_slaveinit(void)
+{
+	DDRB=0x10;
+  5e:	80 e1       	ldi	r24, 0x10	; 16
+  60:	87 bb       	out	0x17, r24	; 23
+	SPCR=0x40;
+  62:	80 e4       	ldi	r24, 0x40	; 64
+  64:	8d b9       	out	0x0d, r24	; 13
+
+}
+  66:	08 95       	ret
+
+00000068 <slave_recieve>:
+char slave_recieve(void)
+{
+	while(!(SPSR & (1<<SPIF)));
+  68:	77 9b       	sbis	0x0e, 7	; 14
+  6a:	fe cf       	rjmp	.-4      	; 0x68 <slave_recieve>
+		sbi(PORTD,6);
+  6c:	96 9a       	sbi	0x12, 6	; 18
+		return SPDR;
+  6e:	8f b1       	in	r24, 0x0f	; 15
+		
+}
+  70:	08 95       	ret
+
+00000072 <main>:
+-----------------------------------------------------------------*/
+
+
+void spi_slaveinit(void)
+{
+	DDRB=0x10;
+  72:	80 e1       	ldi	r24, 0x10	; 16
+  74:	87 bb       	out	0x17, r24	; 23
+	SPCR=0x40;
+  76:	80 e4       	ldi	r24, 0x40	; 64
+  78:	8d b9       	out	0x0d, r24	; 13
+	
+		
+	spi_slaveinit();
+	while(1)
+	{
+		if(bit_is_clear(PINC,6))
+  7a:	9e 99       	sbic	0x13, 6	; 19
+  7c:	fe cf       	rjmp	.-4      	; 0x7a <main+0x8>
+	SPCR=0x40;
+
+}
+char slave_recieve(void)
+{
+	while(!(SPSR & (1<<SPIF)));
+  7e:	77 9b       	sbis	0x0e, 7	; 14
+  80:	fe cf       	rjmp	.-4      	; 0x7e <main+0xc>
+		sbi(PORTD,6);
+  82:	96 9a       	sbi	0x12, 6	; 18
+		return SPDR;
+  84:	8f b1       	in	r24, 0x0f	; 15
+	SPCR=0x40;
+
+}
+char slave_recieve(void)
+{
+	while(!(SPSR & (1<<SPIF)));
+  86:	77 9b       	sbis	0x0e, 7	; 14
+  88:	fe cf       	rjmp	.-4      	; 0x86 <main+0x14>
+		sbi(PORTD,6);
+  8a:	96 9a       	sbi	0x12, 6	; 18
+		return SPDR;
+  8c:	8f b1       	in	r24, 0x0f	; 15
+	SPCR=0x40;
+
+}
+char slave_recieve(void)
+{
+	while(!(SPSR & (1<<SPIF)));
+  8e:	77 9b       	sbis	0x0e, 7	; 14
+  90:	fe cf       	rjmp	.-4      	; 0x8e <main+0x1c>
+		sbi(PORTD,6);
+  92:	96 9a       	sbi	0x12, 6	; 18
+		return SPDR;
+  94:	8f b1       	in	r24, 0x0f	; 15
+		if(bit_is_clear(PINC,6))
+		{
+		 a= slave_recieve();
+		 b= slave_recieve();
+		 c= slave_recieve();
+		 if(c!='d')
+  96:	84 36       	cpi	r24, 0x64	; 100
+  98:	81 f3       	breq	.-32     	; 0x7a <main+0x8>
+		 {
+			 sbi(PORTD,7);
+  9a:	97 9a       	sbi	0x12, 7	; 18
+  9c:	ee cf       	rjmp	.-36     	; 0x7a <main+0x8>
+
+0000009e <_exit>:
+  9e:	f8 94       	cli
+
+000000a0 <__stop_program>:
+  a0:	ff cf       	rjmp	.-2      	; 0xa0 <__stop_program>

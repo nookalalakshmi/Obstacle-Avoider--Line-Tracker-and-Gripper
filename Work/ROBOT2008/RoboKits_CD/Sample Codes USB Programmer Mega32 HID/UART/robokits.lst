@@ -1,0 +1,201 @@
+   1               		.file	"robokits.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	main
+  20               	main:
+  21               	.LFB3:
+  22               	.LM1:
+  23 0000 0F93      		push r16
+  24 0002 1F93      		push r17
+  25 0004 DF93      		push r29
+  26 0006 CF93      		push r28
+  27 0008 CDB7      		in r28,__SP_L__
+  28 000a DEB7      		in r29,__SP_H__
+  29 000c 2797      		sbiw r28,7
+  30 000e 0FB6      		in __tmp_reg__,__SREG__
+  31 0010 F894      		cli
+  32 0012 DEBF      		out __SP_H__,r29
+  33 0014 0FBE      		out __SREG__,__tmp_reg__
+  34 0016 CDBF      		out __SP_L__,r28
+  35               	/* prologue: function */
+  36               	/* frame size = 7 */
+  37               	.LM2:
+  38 0018 80EF      		ldi r24,lo8(-16)
+  39 001a 8ABB      		out 58-32,r24
+  40               	.LM3:
+  41 001c 8BEF      		ldi r24,lo8(-5)
+  42 001e 87BB      		out 55-32,r24
+  43               	.LM4:
+  44 0020 81EF      		ldi r24,lo8(-15)
+  45 0022 81BB      		out 49-32,r24
+  46               	.LM5:
+  47 0024 DC9A      		sbi 59-32,4
+  48               	.LM6:
+  49 0026 C29A      		sbi 56-32,2
+  50               	.LM7:
+  51 0028 919A      		sbi 50-32,1
+  52               	.LM8:
+  53 002a 929A      		sbi 50-32,2
+  54               	.LM9:
+  55 002c 939A      		sbi 50-32,3
+  56               	.LM10:
+  57 002e 8CE0      		ldi r24,lo8(12)
+  58 0030 90E0      		ldi r25,hi8(12)
+  59 0032 0E94 0000 		call uart_init
+  60               	.LM11:
+  61               	/* #APP */
+  62               	 ;  86 "robokits.c" 1
+  63 0036 7894      		sei
+  64               	 ;  0 "" 2
+  65               	.LM12:
+  66               	/* #NOAPP */
+  67 0038 80E0      		ldi r24,lo8(__c.1441)
+  68 003a 90E0      		ldi r25,hi8(__c.1441)
+  69 003c 0E94 0000 		call uart_puts_p
+  70               	.LM13:
+  71 0040 80E0      		ldi r24,lo8(__c.1443)
+  72 0042 90E0      		ldi r25,hi8(__c.1443)
+  73 0044 0E94 0000 		call uart_puts_p
+  74               	.LM14:
+  75 0048 80E0      		ldi r24,lo8(__c.1445)
+  76 004a 90E0      		ldi r25,hi8(__c.1445)
+  77 004c 0E94 0000 		call uart_puts_p
+  78               	.LM15:
+  79 0050 4AE0      		ldi r20,lo8(10)
+  80 0052 50E0      		ldi r21,hi8(10)
+  81 0054 8E01      		movw r16,r28
+  82 0056 0F5F      		subi r16,lo8(-(1))
+  83 0058 1F4F      		sbci r17,hi8(-(1))
+  84 005a B801      		movw r22,r16
+  85 005c 86E8      		ldi r24,lo8(134)
+  86 005e 90E0      		ldi r25,hi8(134)
+  87 0060 0E94 0000 		call itoa
+  88               	.LM16:
+  89 0064 C801      		movw r24,r16
+  90 0066 0E94 0000 		call uart_puts
+  91               	.LM17:
+  92 006a 8DE0      		ldi r24,lo8(13)
+  93 006c 0E94 0000 		call uart_putc
+  94               	.LM18:
+  95 0070 80E0      		ldi r24,lo8(__c.1447)
+  96 0072 90E0      		ldi r25,hi8(__c.1447)
+  97 0074 0E94 0000 		call uart_puts_p
+  98               	.LVL0:
+  99               	.L9:
+ 100               	.LM19:
+ 101 0078 0E94 0000 		call uart_getc
+ 102 007c 8C01      		movw r16,r24
+ 103               	.LM20:
+ 104 007e 90FD      		sbrc r25,0
+ 105 0080 00C0      		rjmp .L9
+ 106               	.LVL1:
+ 107               	.LM21:
+ 108 0082 93FF      		sbrs r25,3
+ 109 0084 00C0      		rjmp .L3
+ 110               	.LM22:
+ 111 0086 80E0      		ldi r24,lo8(__c.1449)
+ 112 0088 90E0      		ldi r25,hi8(__c.1449)
+ 113               	.LVL2:
+ 114 008a 0E94 0000 		call uart_puts_p
+ 115               	.LVL3:
+ 116               	.L3:
+ 117               	.LM23:
+ 118 008e 12FF      		sbrs r17,2
+ 119 0090 00C0      		rjmp .L4
+ 120               	.LM24:
+ 121 0092 80E0      		ldi r24,lo8(__c.1451)
+ 122 0094 90E0      		ldi r25,hi8(__c.1451)
+ 123 0096 0E94 0000 		call uart_puts_p
+ 124               	.LVL4:
+ 125               	.L4:
+ 126               	.LM25:
+ 127 009a 11FF      		sbrs r17,1
+ 128 009c 00C0      		rjmp .L5
+ 129               	.LM26:
+ 130 009e 80E0      		ldi r24,lo8(__c.1453)
+ 131 00a0 90E0      		ldi r25,hi8(__c.1453)
+ 132 00a2 0E94 0000 		call uart_puts_p
+ 133               	.LVL5:
+ 134               	.L5:
+ 135               	.LM27:
+ 136 00a6 802F      		mov r24,r16
+ 137 00a8 0E94 0000 		call uart_putc
+ 138 00ac 00C0      		rjmp .L9
+ 139               	.LFE3:
+ 141               		.section	.progmem.data,"a",@progbits
+ 144               	__c.1453:
+ 145 0000 4275 6666 		.string	"Buffer overflow error: "
+ 145      6572 206F 
+ 145      7665 7266 
+ 145      6C6F 7720 
+ 145      6572 726F 
+ 148               	__c.1451:
+ 149 0018 5541 5254 		.string	"UART Overrun Error: "
+ 149      204F 7665 
+ 149      7272 756E 
+ 149      2045 7272 
+ 149      6F72 3A20 
+ 152               	__c.1449:
+ 153 002d 5541 5254 		.string	"UART Frame Error: "
+ 153      2046 7261 
+ 153      6D65 2045 
+ 153      7272 6F72 
+ 153      3A20 00
+ 156               	__c.1447:
+ 157 0040 0A0A 5072 		.string	"\n\nPress any key on keyboard: "
+ 157      6573 7320 
+ 157      616E 7920 
+ 157      6B65 7920 
+ 157      6F6E 206B 
+ 160               	__c.1445:
+ 161 005e 0D0A 0A57 		.string	"\r\n\nWriting number to UART: "
+ 161      7269 7469 
+ 161      6E67 206E 
+ 161      756D 6265 
+ 161      7220 746F 
+ 164               	__c.1443:
+ 165 007a 0D0A 0A56 		.string	"\r\n\nVisit Us at www.robokits.org. "
+ 165      6973 6974 
+ 165      2055 7320 
+ 165      6174 2077 
+ 165      7777 2E72 
+ 168               	__c.1441:
+ 169 009c 0D0A 0A53 		.string	"\r\n\nSample code made by Robokits India for ROBOGRID. "
+ 169      616D 706C 
+ 169      6520 636F 
+ 169      6465 206D 
+ 169      6164 6520 
+ 194               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccM9PQnh.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccM9PQnh.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccM9PQnh.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccM9PQnh.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccM9PQnh.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccM9PQnh.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccM9PQnh.s:20     .text:00000000 main
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccM9PQnh.s:168    .progmem.data:0000009c __c.1441
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccM9PQnh.s:164    .progmem.data:0000007a __c.1443
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccM9PQnh.s:160    .progmem.data:0000005e __c.1445
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccM9PQnh.s:156    .progmem.data:00000040 __c.1447
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccM9PQnh.s:152    .progmem.data:0000002d __c.1449
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccM9PQnh.s:148    .progmem.data:00000018 __c.1451
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccM9PQnh.s:144    .progmem.data:00000000 __c.1453
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+uart_init
+uart_puts_p
+itoa
+uart_puts
+uart_putc
+uart_getc

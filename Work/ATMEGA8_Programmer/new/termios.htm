@@ -1,0 +1,429 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0060)http://opengroup.org/onlinepubs/007908775/xsh/termios.h.html -->
+<HTML><HEAD><TITLE><termios.h></TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><!-- Copyright 1997 The Open Group, All Rights Reserved -->
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY bgColor=white>
+<CENTER><FONT size=2>The Single UNIX ® Specification, Version 2<BR>Copyright © 
+1997 The Open Group </FONT></CENTER>
+<HR noShade SIZE=2>
+
+<H4><A name=tag_000_009_537>&nbsp;</A>NAME</H4>
+<BLOCKQUOTE>termios.h - define values for termios </BLOCKQUOTE>
+<H4><A name=tag_000_009_538>&nbsp;</A>SYNOPSIS</H4>
+<BLOCKQUOTE><PRE><CODE>
+
+#include &lt;termios.h&gt;
+</CODE>
+</PRE></BLOCKQUOTE>
+<H4><A name=tag_000_009_539>&nbsp;</A>DESCRIPTION</H4>
+<BLOCKQUOTE>The <I>&lt;termios.h&gt;</I> header contains the definitions used 
+  by the terminal I/O interfaces (see the <B>XBD</B> specification, <A 
+  href="http://opengroup.org/onlinepubs/007908775/xbd/termios.html"><B>General 
+  Terminal Interface</B>&nbsp;</A> for the structures and names defined). 
+  <H5><A name=tag_000_009_539_001>&nbsp;</A>The termios Structure</H5>The 
+  following data types are defined through <B>typedef</B>: 
+  <DL compact>
+    <DT><B>cc_t</B>
+    <DD><INDEX term="data type, cc_t"></INDEX>Used for terminal special 
+    characters. 
+    <DT><B>speed_t</B>
+    <DD><INDEX term="data type, speed_t"></INDEX>Used for terminal baud rates. 
+    <DT><B>tcflag_t</B>
+    <DD><INDEX term="data type, tcflag_t"></INDEX>Used for terminal modes. 
+  </DD></DL>
+  <P>The above types are all unsigned integral types. 
+  <P>The <B>termios</B> structure is defined, and includes at least the 
+  following members: <PRE><CODE>
+tcflag_t  c_iflag     input modes
+tcflag_t  c_oflag     output modes
+tcflag_t  c_cflag     control modes
+tcflag_t  c_lflag     local modes
+cc_t      c_cc[NCCS]  control chars
+</CODE>
+</PRE>
+  <P>A definition is given for: 
+  <DL compact>
+    <DT>NCCS
+    <DD>Size of the array <B>c_cc</B> for control characters. </DD></DL>
+  <P>The following subscript names for the array <B>c_cc</B> are defined: 
+  <P>
+  <TABLE borderColor=#000000 align=center border=1>
+    <TBODY>
+    <TR vAlign=top>
+      <TH align=middle colSpan=2><B>Subscript Usage</B> 
+      <TH align=left>&nbsp; 
+    <TR vAlign=top>
+      <TH align=middle><B>Canonical Mode</B> 
+      <TH align=middle><B>Non-canonical Mode</B> 
+      <TH align=middle><B>Description</B> 
+    <TR vAlign=top>
+      <TD align=left>VEOF 
+      <TD align=left>&nbsp; 
+      <TD align=left>EOF character 
+    <TR vAlign=top>
+      <TD align=left>VEOL 
+      <TD align=left>&nbsp; 
+      <TD align=left>EOL character 
+    <TR vAlign=top>
+      <TD align=left>VERASE 
+      <TD align=left>&nbsp; 
+      <TD align=left>ERASE character 
+    <TR vAlign=top>
+      <TD align=left>VINTR 
+      <TD align=left>VINTR 
+      <TD align=left>INTR character 
+    <TR vAlign=top>
+      <TD align=left>VKILL 
+      <TD align=left>&nbsp; 
+      <TD align=left>KILL character 
+    <TR vAlign=top>
+      <TD align=left>&nbsp; 
+      <TD align=left>VMIN 
+      <TD align=left>MIN value 
+    <TR vAlign=top>
+      <TD align=left>VQUIT 
+      <TD align=left>VQUIT 
+      <TD align=left>QUIT character 
+    <TR vAlign=top>
+      <TD align=left>VSTART 
+      <TD align=left>VSTART 
+      <TD align=left>START character 
+    <TR vAlign=top>
+      <TD align=left>VSTOP 
+      <TD align=left>VSTOP 
+      <TD align=left>STOP character 
+    <TR vAlign=top>
+      <TD align=left>VSUSP 
+      <TD align=left>VSUSP 
+      <TD align=left>SUSP character 
+    <TR vAlign=top>
+      <TD align=left>
+      <TD align=left>VTIME 
+      <TD align=left>TIME value </TR></TBODY></TABLE>The subscript values are 
+  unique, except that the VMIN and VTIME subscripts may have the same values as 
+  the VEOF and VEOL subscripts, respectively. 
+  <H5><A name=tag_000_009_539_002>&nbsp;</A>Input Modes</H5>The <B>c_iflag</B> 
+  field describes the basic terminal input control: 
+  <DL compact>
+    <DT>BRKINT
+    <DD>Signal interrupt on break. 
+    <DT>ICRNL
+    <DD>Map CR to NL on input. 
+    <DT>IGNBRK
+    <DD>Ignore break condition. 
+    <DT>IGNCR
+    <DD>Ignore CR 
+    <DT>IGNPAR
+    <DD>Ignore characters with parity errors. 
+    <DT>INLCR
+    <DD>Map NL to CR on input. 
+    <DT>INPCK
+    <DD>Enable input parity check. 
+    <DT>ISTRIP
+    <DD>Strip character 
+    <DT>IUCLC
+    <DD>Map upper-case to lower-case on input (<B>LEGACY</B>). 
+    <DT>IXANY
+    <DD>Enable any character to restart output. 
+    <DT>IXOFF
+    <DD>Enable start/stop input control. 
+    <DT>IXON
+    <DD>Enable start/stop output control. 
+    <DT>PARMRK
+    <DD>Mark parity errors. </DD></DL>
+  <H5><A name=tag_000_009_539_003>&nbsp;</A>Output Modes</H5>The <B>c_oflag</B> 
+  field specifies the system treatment of output: 
+  <DL compact>
+    <DT>OPOST
+    <DD>Post-process output 
+    <DT>OLCUC
+    <DD>Map lower-case to upper-case on output (<B>LEGACY</B>). 
+    <DT>ONLCR
+    <DD>Map NL to CR-NL on output. 
+    <DT>OCRNL
+    <DD>Map CR to NL on output. 
+    <DT>ONOCR
+    <DD>No CR output at column 0. 
+    <DT>ONLRET
+    <DD>NL performs CR function. 
+    <DT>OFILL
+    <DD>Use fill characters for delay. 
+    <DT>NLDLY
+    <DD>Select newline delays: 
+    <DL compact>
+      <DT>NL0
+      <DD>Newline character type 0. 
+      <DT>NL1
+      <DD>Newline character type 1. </DD></DL>
+    <P>
+    <P></P>
+    <DT>CRDLY
+    <DD>Select carriage-return delays: 
+    <DL compact>
+      <DT>CR0
+      <DD>Carriage-return delay type 0. 
+      <DT>CR1
+      <DD>Carriage-return delay type 1. 
+      <DT>CR2
+      <DD>Carriage-return delay type 2. 
+      <DT>CR3
+      <DD>Carriage-return delay type 3. </DD></DL>
+    <P>
+    <P></P>
+    <DT>TABDLY
+    <DD>Select horizontal-tab delays: 
+    <DL compact>
+      <DT>TAB0
+      <DD>Horizontal-tab delay type 0. 
+      <DT>TAB1
+      <DD>Horizontal-tab delay type 1. 
+      <DT>TAB2
+      <DD>Horizontal-tab delay type 2. 
+      <DT>TAB3
+      <DD>Expand tabs to spaces. </DD></DL>
+    <P>
+    <P></P>
+    <DT>BSDLY
+    <DD>Select backspace delays: 
+    <DL compact>
+      <DT>BS0
+      <DD>Backspace-delay type 0. 
+      <DT>BS1
+      <DD>Backspace-delay type 1. </DD></DL>
+    <P>
+    <P></P>
+    <DT>VTDLY
+    <DD>Select vertical-tab delays: 
+    <DL compact>
+      <DT>VT0
+      <DD>Vertical-tab delay type 0. 
+      <DT>VT1
+      <DD>Vertical-tab delay type 1. </DD></DL>
+    <P>
+    <P></P>
+    <DT>FFDLY
+    <DD>Select form-feed delays: 
+    <DL compact>
+      <DT>FF0
+      <DD>Form-feed delay type 0. 
+      <DT>FF1
+      <DD>Form-feed delay type 1. </DD></DL>
+    <P></P></DD></DL>
+  <H5><A name=tag_000_009_539_004>&nbsp;</A>Baud Rate Selection</H5>The input 
+  and output baud rates are stored in the <B>termios</B> structure. These are 
+  the valid values for objects of type <B>speed_t</B>. The following values are 
+  defined, but not all baud rates need be supported by the underlying hardware. 
+  <DL compact>
+    <DT>B0
+    <DD>Hang up 
+    <DT>B50
+    <DD>50 baud 
+    <DT>B75
+    <DD>75 baud 
+    <DT>B110
+    <DD>110 baud 
+    <DT>B134
+    <DD>134.5 baud 
+    <DT>B150
+    <DD>150 baud 
+    <DT>B200
+    <DD>200 baud 
+    <DT>B300
+    <DD>300 baud 
+    <DT>B600
+    <DD>600 baud 
+    <DT>B1200
+    <DD>1200 baud 
+    <DT>B1800
+    <DD>1800 baud 
+    <DT>B2400
+    <DD>2400 baud 
+    <DT>B4800
+    <DD>4800 baud 
+    <DT>B9600
+    <DD>9600 baud 
+    <DT>B19200
+    <DD>19200 baud 
+    <DT>B38400
+    <DD>38400 baud </DD></DL>
+  <H5><A name=tag_000_009_539_005>&nbsp;</A>Control Modes</H5>The <B>c_cflag</B> 
+  field describes the hardware control of the terminal; not all values specified 
+  are required to be supported by the underlying hardware: 
+  <DL compact>
+    <DT>CSIZE
+    <DD>Character size: 
+    <DL compact>
+      <DT>CS5
+      <DD>5 bits. 
+      <DT>CS6
+      <DD>6 bits. 
+      <DT>CS7
+      <DD>7 bits. 
+      <DT>CS8
+      <DD>8 bits. </DD></DL>
+    <P>
+    <P></P>
+    <DT>CSTOPB
+    <DD>Send two stop bits, else one. 
+    <P></P>
+    <DT>CREAD
+    <DD>Enable receiver. 
+    <P></P>
+    <DT>PARENB
+    <DD>Parity enable. 
+    <P></P>
+    <DT>PARODD
+    <DD>Odd parity, else even. 
+    <P></P>
+    <DT>HUPCL
+    <DD>Hang up on last close. 
+    <P></P>
+    <DT>CLOCAL
+    <DD>Ignore modem status lines. 
+    <P></P></DD></DL>
+  <H5><A name=tag_000_009_539_006>&nbsp;</A>Local Modes</H5>The <B>c_lflag</B> 
+  field of the argument structure is used to control various terminal functions: 
+
+  <DL compact>
+    <DT>ECHO
+    <DD>Enable echo. 
+    <DT>ECHOE
+    <DD>Echo erase character as error-correcting backspace. 
+    <DT>ECHOK
+    <DD>Echo KILL. 
+    <DT>ECHONL
+    <DD>Echo NL. 
+    <DT>ICANON
+    <DD>Canonical input (erase and kill processing). 
+    <DT>IEXTEN
+    <DD>Enable extended input character processing. 
+    <DT>ISIG
+    <DD>Enable signals. 
+    <DT>NOFLSH
+    <DD>Disable flush after interrupt or quit. 
+    <DT>TOSTOP
+    <DD>Send SIGTTOU for background output. 
+    <DT>XCASE
+    <DD>Canonical upper/lower presentation (<B>LEGACY</B>). </DD></DL>
+  <H5><A name=tag_000_009_539_007>&nbsp;</A>Attribute Selection</H5>The 
+  following symbolic constants for use with <I><A 
+  href="http://opengroup.org/onlinepubs/007908775/xsh/tcsetattr.html">tcsetattr()</A></I> 
+  are defined: 
+  <DL compact>
+    <DT>TCSANOW
+    <DD>Change attributes immediately. 
+    <DT>TCSADRAIN
+    <DD>Change attributes when output has drained. 
+    <DT>TCSAFLUSH
+    <DD>Change attributes when output has drained; also flush pending input. 
+    </DD></DL>
+  <H5><A name=tag_000_009_539_008>&nbsp;</A>Line Control</H5>The following 
+  symbolic constants for use with <I><A 
+  href="http://opengroup.org/onlinepubs/007908775/xsh/tcflush.html">tcflush()</A></I> 
+  are defined: 
+  <DL compact>
+    <DT>TCIFLUSH
+    <DD>Flush pending input. Flush untransmitted output. 
+    <DT>TCIOFLUSH
+    <DD>Flush both pending input and untransmitted output. 
+    <DT>TCOFLUSH
+    <DD>Flush untransmitted output. </DD></DL>
+  <P>The following symbolic constants for use with <I><A 
+  href="http://opengroup.org/onlinepubs/007908775/xsh/tcflow.html">tcflow()</A></I> 
+  are defined: 
+  <DL compact>
+    <DT>TCIOFF
+    <DD>Transmit a STOP character, intended to suspend input data. 
+    <DT>TCION
+    <DD>Transmit a START character, intended to restart input data. 
+    <DT>TCOOFF
+    <DD>Suspend output. 
+    <DT>TCOON
+    <DD>Restart output. </DD></DL>
+  <P>The following are declared as functions and may also be defined as macros. 
+  Function prototypes must be provided for use with an ISO C compiler. <PRE><CODE>
+speed_t <A href="http://opengroup.org/onlinepubs/007908775/xsh/cfgetispeed.html">cfgetispeed</A>(const struct termios *);
+speed_t <A href="http://opengroup.org/onlinepubs/007908775/xsh/cfgetospeed.html">cfgetospeed</A>(const struct termios *);
+int     <A href="http://opengroup.org/onlinepubs/007908775/xsh/cfsetispeed.html">cfsetispeed</A>(struct termios *, speed_t);
+int     <A href="http://opengroup.org/onlinepubs/007908775/xsh/cfsetospeed.html">cfsetospeed</A>(struct termios *, speed_t);
+int     <A href="http://opengroup.org/onlinepubs/007908775/xsh/tcdrain.html">tcdrain</A>(int);
+int     <A href="http://opengroup.org/onlinepubs/007908775/xsh/tcflow.html">tcflow</A>(int, int);
+int     <A href="http://opengroup.org/onlinepubs/007908775/xsh/tcflush.html">tcflush</A>(int, int);
+int     <A href="http://opengroup.org/onlinepubs/007908775/xsh/tcgetattr.html">tcgetattr</A>(int, struct termios *);
+pid_t   <A href="http://opengroup.org/onlinepubs/007908775/xsh/tcgetsid.html">tcgetsid</A>(int);
+int     <A href="http://opengroup.org/onlinepubs/007908775/xsh/tcsendbreak.html">tcsendbreak</A>(int, int);
+int     <A href="http://opengroup.org/onlinepubs/007908775/xsh/tcsetattr.html">tcsetattr</A>(int, int, struct termios *);
+</CODE>
+</PRE></BLOCKQUOTE>
+<H4><A name=tag_000_009_540>&nbsp;</A>APPLICATION USAGE</H4>
+<BLOCKQUOTE>The following names are commonly used as extensions to the above, 
+  therefore portable applications must not use them: 
+  <P>
+  <TABLE valign="top" <tr>
+    <TBODY>
+    <TR>
+      <TH align=left>CBAUD 
+      <TH align=left>EXTB 
+      <TH align=left>VDSUSP 
+    <TR vAlign=top>
+      <TD align=left>DEFECHO 
+      <TD align=left>FLUSHO 
+      <TD align=left>VLNEXT 
+    <TR vAlign=top>
+      <TD align=left>ECHOCTL 
+      <TD align=left>LOBLK 
+      <TD align=left>VREPRINT 
+    <TR vAlign=top>
+      <TD align=left>ECHOKE 
+      <TD align=left>PENDIN 
+      <TD align=left>VSTATUS 
+    <TR vAlign=top>
+      <TD align=left>ECHOPRT 
+      <TD align=left>SWTCH 
+      <TD align=left>VWERASE 
+    <TR vAlign=top>
+      <TD align=left>EXTA 
+      <TD align=left>VDISCARD 
+      <TD align=left></TR></TBODY></TABLE></P></BLOCKQUOTE>
+<H4><A name=tag_000_009_541>&nbsp;</A>FUTURE DIRECTIONS</H4>
+<BLOCKQUOTE>None. </BLOCKQUOTE>
+<H4><A name=tag_000_009_542>&nbsp;</A>SEE ALSO</H4>
+<BLOCKQUOTE><I><A 
+  href="http://opengroup.org/onlinepubs/007908775/xsh/cfgetispeed.html">cfgetispeed()</A></I>, 
+  <I><A 
+  href="http://opengroup.org/onlinepubs/007908775/xsh/cfgetospeed.html">cfgetospeed()</A></I>, 
+  <I><A 
+  href="http://opengroup.org/onlinepubs/007908775/xsh/cfsetispeed.html">cfsetispeed()</A></I>, 
+  <I><A 
+  href="http://opengroup.org/onlinepubs/007908775/xsh/cfsetospeed.html">cfsetospeed()</A></I>, 
+  <I><A 
+  href="http://opengroup.org/onlinepubs/007908775/xsh/tcdrain.html">tcdrain()</A></I>, 
+  <I><A 
+  href="http://opengroup.org/onlinepubs/007908775/xsh/tcflow.html">tcflow()</A></I>, 
+  <I><A 
+  href="http://opengroup.org/onlinepubs/007908775/xsh/tcflush.html">tcflush()</A></I>, 
+  <I><A 
+  href="http://opengroup.org/onlinepubs/007908775/xsh/tcgetattr.html">tcgetattr()</A></I>, 
+  <I><A 
+  href="http://opengroup.org/onlinepubs/007908775/xsh/tcgetsid.html">tcgetsid()</A></I>, 
+  <I><A 
+  href="http://opengroup.org/onlinepubs/007908775/xsh/tcsendbreak.html">tcsendbreak()</A></I>, 
+  <I><A 
+  href="http://opengroup.org/onlinepubs/007908775/xsh/tcsetattr.html">tcsetattr()</A></I>, 
+  the <B>XBD</B> specification, <A 
+  href="http://opengroup.org/onlinepubs/007908775/xbd/termios.html"><B>General 
+  Terminal Interface</B>&nbsp;</A>. </BLOCKQUOTE>
+<HR noShade SIZE=2>
+
+<CENTER><FONT size=2>UNIX ® is a registered Trademark of The Open 
+Group.<BR>Copyright © 1997 The Open Group <BR>[ <A 
+href="http://opengroup.org/onlinepubs/007908775/index.html">Main Index</A> | <A 
+href="http://opengroup.org/onlinepubs/007908775/xshix.html">XSH</A> | <A 
+href="http://opengroup.org/onlinepubs/007908775/xcuix.html">XCU</A> | <A 
+href="http://opengroup.org/onlinepubs/007908775/xbdix.html">XBD</A> | <A 
+href="http://opengroup.org/onlinepubs/007908775/cursesix.html">XCURSES</A> | <A 
+href="http://opengroup.org/onlinepubs/007908775/xnsix.html">XNS</A> ] 
+</FONT></CENTER>
+<HR noShade SIZE=2>
+</BODY></HTML>

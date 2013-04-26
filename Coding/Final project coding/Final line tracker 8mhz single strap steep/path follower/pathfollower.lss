@@ -1,0 +1,185 @@
+
+pathfollower.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000b2  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .stab         000003f0  00000000  00000000  00000108  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  2 .stabstr      00000690  00000000  00000000  000004f8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	2c c0       	rjmp	.+88     	; 0x5c <__bad_interrupt>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	29 c0       	rjmp	.+82     	; 0x5c <__bad_interrupt>
+   a:	28 c0       	rjmp	.+80     	; 0x5c <__bad_interrupt>
+   c:	27 c0       	rjmp	.+78     	; 0x5c <__bad_interrupt>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	25 c0       	rjmp	.+74     	; 0x5c <__bad_interrupt>
+  12:	24 c0       	rjmp	.+72     	; 0x5c <__bad_interrupt>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	22 c0       	rjmp	.+68     	; 0x5c <__bad_interrupt>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+  1e:	1e c0       	rjmp	.+60     	; 0x5c <__bad_interrupt>
+  20:	1d c0       	rjmp	.+58     	; 0x5c <__bad_interrupt>
+  22:	1c c0       	rjmp	.+56     	; 0x5c <__bad_interrupt>
+  24:	1b c0       	rjmp	.+54     	; 0x5c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	e2 eb       	ldi	r30, 0xB2	; 178
+  3a:	f0 e0       	ldi	r31, 0x00	; 0
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <.do_copy_data_start>
+
+0000003e <.do_copy_data_loop>:
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+
+00000042 <.do_copy_data_start>:
+  42:	a0 36       	cpi	r26, 0x60	; 96
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <.do_copy_data_loop>
+
+00000048 <__do_clear_bss>:
+  48:	10 e0       	ldi	r17, 0x00	; 0
+  4a:	a0 e6       	ldi	r26, 0x60	; 96
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+  52:	a0 36       	cpi	r26, 0x60	; 96
+  54:	b1 07       	cpc	r27, r17
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+  58:	23 d0       	rcall	.+70     	; 0xa0 <main>
+  5a:	29 c0       	rjmp	.+82     	; 0xae <_exit>
+
+0000005c <__bad_interrupt>:
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
+
+0000005e <path_follower>:
+-----------------------------------------------------------------*/
+
+void path_follower(void)
+{
+	
+	if((bit_is_clear(PINC,2)))
+  5e:	9a 99       	sbic	0x13, 2	; 19
+  60:	03 c0       	rjmp	.+6      	; 0x68 <path_follower+0xa>
+	{
+		//sbi(PORTD,0);
+		cbi(PORTD,1);	//move left
+  62:	91 98       	cbi	0x12, 1	; 18
+		//robotmove('L');
+		sbi(PORTD,7);
+  64:	97 9a       	sbi	0x12, 7	; 18
+		cbi(PORTB,0);
+  66:	c0 98       	cbi	0x18, 0	; 24
+	}
+	if((bit_is_clear(PINB,1)))
+  68:	b1 99       	sbic	0x16, 1	; 22
+  6a:	03 c0       	rjmp	.+6      	; 0x72 <path_follower+0x14>
+	{
+		//sbi(PORTD,1);
+		cbi(PORTD,0);	//move right
+  6c:	90 98       	cbi	0x12, 0	; 18
+		//robotmove('R');
+		sbi(PORTB,0);
+  6e:	c0 9a       	sbi	0x18, 0	; 24
+		cbi(PORTD,7);
+  70:	97 98       	cbi	0x12, 7	; 18
+	}
+	if((bit_is_clear(PINC,3)) || (bit_is_clear(PINC,4)) || (bit_is_clear(PINC,5)))
+  72:	9b 9b       	sbis	0x13, 3	; 19
+  74:	04 c0       	rjmp	.+8      	; 0x7e <path_follower+0x20>
+  76:	9c 9b       	sbis	0x13, 4	; 19
+  78:	02 c0       	rjmp	.+4      	; 0x7e <path_follower+0x20>
+  7a:	9d 99       	sbic	0x13, 5	; 19
+  7c:	02 c0       	rjmp	.+4      	; 0x82 <path_follower+0x24>
+	{
+		//sbi(PORTD,0);
+		//sbi(PORTD,1);	//move forward
+		//robotmove('F');
+		sbi(PORTD,7);
+  7e:	97 9a       	sbi	0x12, 7	; 18
+		sbi(PORTB,0);
+  80:	c0 9a       	sbi	0x18, 0	; 24
+	}
+	if((!bit_is_clear(PINC,2)) && (!bit_is_clear(PINC,3)) && (!bit_is_clear(PINC,4)) && (!bit_is_clear(PINC,5)) && (!bit_is_clear(PINB,1)))
+  82:	9a 9b       	sbis	0x13, 2	; 19
+  84:	0c c0       	rjmp	.+24     	; 0x9e <path_follower+0x40>
+  86:	9b 9b       	sbis	0x13, 3	; 19
+  88:	0a c0       	rjmp	.+20     	; 0x9e <path_follower+0x40>
+  8a:	9c 9b       	sbis	0x13, 4	; 19
+  8c:	08 c0       	rjmp	.+16     	; 0x9e <path_follower+0x40>
+  8e:	9d 9b       	sbis	0x13, 5	; 19
+  90:	06 c0       	rjmp	.+12     	; 0x9e <path_follower+0x40>
+  92:	b1 9b       	sbis	0x16, 1	; 22
+  94:	04 c0       	rjmp	.+8      	; 0x9e <path_follower+0x40>
+	{
+		cbi(PORTD,0);
+  96:	90 98       	cbi	0x12, 0	; 18
+		cbi(PORTD,1);	//stop
+  98:	91 98       	cbi	0x12, 1	; 18
+		//robotmove('S');
+		cbi(PORTD,7);
+  9a:	97 98       	cbi	0x12, 7	; 18
+		cbi(PORTB,0);
+  9c:	c0 98       	cbi	0x18, 0	; 24
+  9e:	08 95       	ret
+
+000000a0 <main>:
+/*----------------------------------------------------------------
+-----------------MAIN PROGRAM-------------------------------------
+-----------------------------------------------------------------*/
+int main(void)
+{
+	DDRD=0x8F;						//SET DATA DIRECTION REGISTER
+  a0:	8f e8       	ldi	r24, 0x8F	; 143
+  a2:	81 bb       	out	0x11, r24	; 17
+									//SET 0 FOR INPUT PORT
+									//ONLY PORTB.0 IS OUTPUT
+									//CONFIGURE AS PER REQUIREMENT
+									//DEFAULT ALL OTHERS ARE INPUT
+									//CHANGE ACCORDING TO USE
+	DDRC=0x00;						//SET DATA DIRECTION REGISTER
+  a4:	14 ba       	out	0x14, r1	; 20
+									//SET 0 FOR INPUT PORT
+									//ONLY PORTD.7 AND PORTD.6 ARE OUTPUT
+									//CONFIGURE AS PER REQUIREMENT
+									//DEFAULT ALL OTHERS ARE INPUT
+									//CHANGE ACCORDING TO USE
+	DDRB = 0x01;
+  a6:	81 e0       	ldi	r24, 0x01	; 1
+  a8:	87 bb       	out	0x17, r24	; 23
+
+	for(;;)
+	{
+		path_follower();
+  aa:	d9 df       	rcall	.-78     	; 0x5e <path_follower>
+  ac:	fe cf       	rjmp	.-4      	; 0xaa <main+0xa>
+
+000000ae <_exit>:
+  ae:	f8 94       	cli
+
+000000b0 <__stop_program>:
+  b0:	ff cf       	rjmp	.-2      	; 0xb0 <__stop_program>

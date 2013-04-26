@@ -1,0 +1,155 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0124)http://publib.boulder.ibm.com/infocenter/pseries/v5r3/advanced/search.jsp?searchWord=usb.h&maxHits=500&workingSet=All+topics -->
+<HTML><HEAD><TITLE>Search</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<STYLE type=text/css>HTML {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: 0px; WIDTH: 100%; PADDING-TOP: 0px; BORDER-BOTTOM: 0px; HEIGHT: 100%
+}
+BODY {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BACKGROUND: buttonface; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px; HEIGHT: 100%; text: white
+}
+TABLE {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: buttonface; PADDING-BOTTOM: 0px; MARGIN: 0px; FONT: icon; PADDING-TOP: 0px; HEIGHT: 100%
+}
+FORM {
+	BACKGROUND: buttonface; MARGIN: 0px; HEIGHT: 100%
+}
+INPUT {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; FONT: icon; PADDING-TOP: 0px
+}
+A {
+	COLOR: windowtext; TEXT-DECORATION: none
+}
+#searchTD {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 7px
+}
+#searchWord {
+	BORDER-RIGHT: buttonshadow 1px solid; PADDING-RIGHT: 4px; BORDER-TOP: buttonshadow 1px solid; PADDING-LEFT: 4px; BORDER-LEFT: buttonshadow 1px solid; BORDER-BOTTOM: buttonshadow 1px solid
+}
+#searchLabel {
+	COLOR: windowtext
+}
+#go {
+	BORDER-RIGHT: buttonshadow 1px solid; BORDER-TOP: buttonshadow 1px solid; FONT-WEIGHT: bold; BACKGROUND: buttonshadow; MARGIN-LEFT: 1px; BORDER-LEFT: buttonshadow 1px solid; COLOR: window; BORDER-BOTTOM: buttonshadow 1px solid
+}
+#scopeLabel {
+	PADDING-LEFT: 15px; CURSOR: hand; COLOR: #0066ff; TEXT-DECORATION: underline
+}
+#scope {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; MARGIN-LEFT: 5px; BORDER-LEFT: 0px; COLOR: windowtext; BORDER-BOTTOM: 0px; TEXT-ALIGN: right; TEXT-DECORATION: none
+}
+#go {
+	PADDING-LEFT: 1px
+}
+</STYLE>
+
+<SCRIPT language=JavaScript>
+var isIE = navigator.userAgent.indexOf('MSIE') != -1;
+var isMozilla = navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && parseInt(navigator.appVersion.substring(0,1)) >= 5;
+
+var advancedDialog;
+var w = 300;
+var h = 300;
+
+function openAdvanced()
+{
+	var scope = document.getElementById("scope").firstChild;
+	var workingSet = "";
+	if (scope != null)
+	 	workingSet = document.getElementById("scope").firstChild.nodeValue;
+	 	
+
+	var l = top.screenLeft + (top.document.body.clientWidth - w) / 2;
+	var t = top.screenTop + (top.document.body.clientHeight - h) / 2;
+
+	// move the dialog just a bit higher than the middle
+	if (t-50 > 0) t = t-50;
+	
+	window.location="javascript://needModal";
+	advancedDialog = window.open("workingSetManager.jsp?workingSet="+encodeURIComponent(workingSet), "advancedDialog", "resizable=yes,height="+h+",width="+w+",left="+l+",top="+t );
+	advancedDialog.focus(); 
+}
+
+function closeAdvanced()
+{
+	try {
+		if (advancedDialog)
+			advancedDialog.close();
+	}
+	catch(e) {}
+}
+
+/**
+ * This function can be called from this page or from
+ * the advanced search page. When called from the advanced
+ * search page, a query is passed.
+ */
+function doSearch(query)
+{
+	var workingSet = document.getElementById("scope").firstChild.nodeValue;
+
+	if (!query || query == "")
+	{
+		var form = document.forms["searchForm"];
+		var searchWord = form.searchWord.value;
+		var maxHits = form.maxHits.value;
+		if (!searchWord || searchWord == "")
+			return;
+		query ="searchWord="+encodeURIComponent(searchWord)+"&maxHits="+maxHits;
+		if (workingSet != 'All topics')
+			query = query +"&scope="+encodeURIComponent(workingSet);
+	}
+		
+	/******** HARD CODED VIEW NAME *********/
+	// do some tests to ensure the results are available
+	if (parent.HelpFrame && 
+		parent.HelpFrame.NavFrame && 
+		parent.HelpFrame.NavFrame.showView &&
+		parent.HelpFrame.NavFrame.ViewsFrame && 
+		parent.HelpFrame.NavFrame.ViewsFrame.search && 
+		parent.HelpFrame.NavFrame.ViewsFrame.search.searchViewFrame) 
+	{
+		parent.HelpFrame.NavFrame.showView("search");
+		var searchView = parent.HelpFrame.NavFrame.ViewsFrame.search.searchViewFrame;
+		searchView.location.replace("searchView.jsp?"+query);
+	}
+}
+
+function fixHeights()
+{
+	if (!isIE) return;
+	if(document.getElementById("searchWord")) {
+		var h = document.getElementById("searchWord").offsetHeight;
+		document.getElementById("go").style.height = h;
+	}
+}
+
+function onloadHandler(e)
+{
+	var form = document.forms["searchForm"];
+	form.searchWord.value = 'usb\u002Eh';
+	fixHeights();
+}
+
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY dir=ltr onload=onloadHandler() onunload=closeAdvanced()>
+<FORM name=searchForm onsubmit=doSearch()>
+<TABLE id=searchTable cellSpacing=0 cellPadding=0 align=left border=0 
+valign="middle">
+  <TBODY>
+  <TR vAlign=center nowrap>
+    <TD id=searchTD><LABEL id=searchLabel accessKey=s for=searchWord>&nbsp;<U 
+      style="ACCELERATOR: true">S</U>earch </LABEL></TD>
+    <TD><INPUT id=searchWord title="Search Expression" alt="Search Expression" 
+      maxLength=256 size=24 name=searchWord> </TD>
+    <TD>&nbsp;<INPUT id=go title=GO onclick=this.blur();doSearch() type=button alt=GO value=GO> 
+      <INPUT type=hidden value=500 name=maxHits> </TD>
+    <TD noWrap><A id=scopeLabel 
+      onmouseover="window.status='Select Search Scope'; return true;" 
+      title="Select Search Scope" onmouseout="window.status='';" 
+      href="javascript:openAdvanced();" alt="Select Search Scope">Search 
+      scope:</A> </TD>
+    <TD noWrap><INPUT type=hidden value="All topics" name=workingSet> 
+      <DIV id=scope>All topics</DIV></TD></TR></TBODY></TABLE></FORM></BODY></HTML>

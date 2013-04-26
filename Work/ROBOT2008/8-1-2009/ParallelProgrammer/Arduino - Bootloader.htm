@@ -1,0 +1,208 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0039)http://arduino.cc/en/Hacking/Bootloader -->
+<HTML><HEAD><TITLE>Arduino - Bootloader</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8"><LINK 
+href="Arduino - Bootloader_files/arduino.css" type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY>
+<DIV id=page><!--PageHeaderFmt-->
+<DIV id=pageheader>
+<DIV class=title><A href="http://arduino.cc/">Arduino</A></DIV>
+<DIV class=search><!-- SiteSearch Google -->
+<FORM action=http://www.google.com/search method=get><INPUT type=hidden 
+value=UTF-8 name=ie> <INPUT type=hidden value=UTF-8 name=oe> <INPUT 
+maxLength=255 size=25 name=q> <INPUT type=submit value=search name=btnG> <INPUT 
+type=hidden value=http://www.arduino.cc/ name=domains> <INPUT type=hidden 
+value=http://www.arduino.cc/ name=sitesearch> 
+</FORM><!-- SiteSearch Google --></DIV></DIV><!--/PageHeaderFmt--><!--PageLeftFmt-->
+<DIV id=pagenav style="TEXT-ALIGN: right">
+<DIV style="FLOAT: left">
+<P><A class=wikilink href="http://arduino.cc/en/Main/Buy">Buy</A> | <A 
+class=wikilink href="http://arduino.cc/en/Main/Software">Download</A> | <A 
+class=wikilink href="http://arduino.cc/en/Guide/HomePage">Getting Started</A> | 
+<A class=wikilink href="http://arduino.cc/en/Tutorial/HomePage">Learning</A> | 
+<A class=wikilink href="http://arduino.cc/en/Reference/HomePage">Reference</A> | 
+<A class=wikilink href="http://arduino.cc/en/Main/Hardware">Hardware</A> | <A 
+class=wikilink href="http://arduino.cc/en/Main/FAQ">FAQ</A> </P>
+<P class=vspace></P></DIV><A class=urllink href="http://www.arduino.cc/blog/" 
+rel=nofollow>Blog »</A> | <A class=urllink 
+href="http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl" rel=nofollow>Forum »</A> | <A 
+class=urllink href="http://www.arduino.cc/playground/" rel=nofollow>Playground 
+»</A> </DIV><!--/PageLeftFmt-->
+<DIV id=pagetext><!--PageText-->
+<DIV id=wikitext>
+<P><STRONG>Learning</STRONG> &nbsp; <A class=wikilink 
+href="http://arduino.cc/en/Tutorial/HomePage">Examples</A> | <A class=wikilink 
+href="http://arduino.cc/en/Tutorial/Foundations">Foundations</A> | <A 
+class=wikilink href="http://arduino.cc/en/Hacking/HomePage">Hacking</A> | <A 
+class=wikilink href="http://arduino.cc/en/Tutorial/Links">Links</A> </P>
+<P class=vspace></P>
+<H2>Bootloader Development</H2>
+<H4>What's a bootloader?</H4>
+<P>See <A class=wikilink href="http://arduino.cc/en/Tutorial/Bootloader">this 
+page</A> for an explanation of what a bootloader is and why we're using one. 
+</P>
+<P class=vspace></P>
+<H4>Not using a bootloader</H4>
+<P>If you want to use the full program space (flash) of the chip or avoid the 
+bootloader delay, you can burn your sketches using an external <A class=wikilink 
+href="http://arduino.cc/en/Hacking/Programmer">programmer</A>. </P>
+<P class=vspace></P>
+<H4>Burning the Bootloader</H4>
+<P>To burn the bootloader, you'll need to buy an <A class=urllink 
+href="http://www.atmel.com/dyn/products/tools_card.asp?tool_id=2726" 
+rel=nofollow>AVR-ISP</A> (in-system programmer), <A class=urllink 
+href="http://www.ladyada.net/make/usbtinyisp/" rel=nofollow>USBtinyISP</A> or 
+build a <A class=wikilink 
+href="http://arduino.cc/en/Hacking/ParallelProgrammer">ParallelProgrammer</A>. 
+The programmer should be connected to the ICSP pins (the 2 by 3 pin header) - 
+make sure you plug it in the right way. The board must be powered by an external 
+power supply or the USB port. </P>
+<P class=vspace></P>
+<P>Make sure you have the right item selected in the <STRONG>Tools | 
+Board</STRONG> menu. Then, just launch the appropriate command from the Tools 
+&gt; Burn Bootloader menu of the Arduino environment. Burning the bootloader may 
+take 15 seconds or more, so be patient. </P>
+<P class=vspace></P>
+<H4>Bootloading an Arduino Mini</H4>
+<P>Here are some instructions on <A class=wikilink 
+href="http://arduino.cc/en/Hacking/MiniBootloader">bootloading the Mini</A>, 
+thanks to Gian Pablo Vilamil. </P>
+<P class=vspace></P>
+<H4>It still doesn't work! (parallel programmer on Windows XP)</H4>
+<P>Windows XP may be polling your parallel port and disrupting the bootloader 
+burning process. You'll need this <A class=urllink 
+href="http://www.melabs.com/downloads/XP_stop_polling.reg" rel=nofollow>registry 
+patch</A>: </P>
+<P class=vspace></P><PRE> 
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Parport\Parameters]
+"DisableWarmPoll"=dword:00000001
+
+</PRE>
+<P class=vspace></P>
+<P>See this <A class=urllink 
+href="http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1142106610" 
+rel=nofollow>forum thread</A> for details. </P>
+<P class=vspace></P>
+<H4>Versions of the bootloader</H4>
+<P>There are different versions of the bootloader - both in order to work on 
+different hardware and because it has changed over time. </P>
+<P class=vspace></P>
+<P>The current bootloaders (i.e. the ones included in Arduino 0009) are almost 
+identical for the Diecimila and NG (with <SPAN class=wikiword>ATmega168</SPAN>). 
+They both run at 19200 baud and take up 2 KB of flash memory on the <SPAN 
+class=wikiword>ATmega168</SPAN>. The only differences is the time the bootloader 
+waits for a new program to arrive and the number of times it flashes the pin 13 
+LED when it starts. Because of the automatic reset on the Diecimila, its 
+bootloader needs only wait a very short amount of time (less than a second) - to 
+save time, it also flashes the pin 13 LED only once. The NG bootloader waits 
+about 6-8 seconds and flashes the LED three times. </P>
+<P class=vspace></P>
+<P>The bootloader that actually shipped on the Arduino NG is slightly different. 
+It enables the internal pullup resistor on pin 6, and doesn't enable the 
+internal pullup on the RX pin. Nor does it timeout upon receiving invalid data, 
+so if you send data to it immediately after it resets, your sketch will never 
+start. </P>
+<P class=vspace></P>
+<P>The Arduino BT bootloader does some initial configuration of the bluetooth 
+module. </P>
+<P class=vspace></P>
+<P>The <SPAN class=wikiword>ATmega8</SPAN> bootloader only takes up 1 KB of 
+flash. It does not timeout when it receives invalid data, you need to make sure 
+that no data is sent to the board during the 6-8 seconds when the bootloader is 
+running. </P>
+<P class=vspace></P>
+<P>Some ancient versions of the bootloader run at 9600 baud (instead of 19200). 
+In order to successfully upload sketches to boards with this bootloader, you'll 
+need to change the serial.download_rate in your <A class=wikilink 
+href="http://arduino.cc/en/Hacking/Preferences">preferences file</A> to 9600. 
+</P>
+<P class=vspace></P>
+<P>Third parties have also worked on the bootloader. This page is link to some 
+other <A class=urllink 
+href="http://www.arduino.cc/playground/Code/BootloaderDevelopment" 
+rel=nofollow>bootloader development</A> </P>
+<P class=vspace></P>
+<H4>How does it work?</H4>
+<P>The "Burn Bootloader" commands in the Arduino environment use an open-source 
+tool, avrdude. There are four steps: unlocking the bootloader section of the 
+chip, setting the the fuses on the chip, uploading the bootloader code to the 
+chip, and locking the bootloader section of the chip. These are controlled by a 
+number of preferences in the Arduino <A class=wikilink 
+href="http://arduino.cc/en/Hacking/Preferences">preferences file</A>. </P>
+<P class=vspace></P>
+<P>For the <SPAN class=wikiword>ATmega8</SPAN> bootloader, these are: </P>
+<P class=vspace></P>
+<UL>
+  <LI>bootloader.atmega8.programmer (default value: stk500) is the protocal used 
+  by the bootloader. 
+  <P class=vspace></P>
+  <LI>bootloader.atmega8.unlock_bits (default value: 0xFF) is the value to write 
+  to the <SPAN class=wikiword>ATmega8</SPAN> lock byte to unlock the bootloader 
+  section. 
+  <P class=vspace></P>
+  <LI>bootloader.atmega8.high_fuses (default value: 0xca) is the value to write 
+  to the high byte of the <SPAN class=wikiword>ATmega8</SPAN> fuses. 
+  <P class=vspace></P>
+  <LI>bootloader.atmega8.low_fuses (default value: 0xdf) is the value to write 
+  to the low byte of the <SPAN class=wikiword>ATmega8</SPAN> fuses. 
+  <P class=vspace></P>
+  <LI>bootloader.atmega8.path (default value: bootloader) is the path (relative 
+  to the Arduino application directory) containing the precompiled bootloader. 
+  <P class=vspace></P>
+  <LI>bootloader.atmega8.file (default value: <SPAN 
+  class=wikiword>ATmegaBOOT</SPAN>.hex) is the name of the file containing the 
+  precompiled bootloader code (in bootloader.path). 
+  <P class=vspace></P>
+  <LI>bootloader.atmega8.lock_bits (default value: 0xCF) is the value to write 
+  to the <SPAN class=wikiword>ATmega8</SPAN> lock byte to lock the bootloader 
+  section (so it doesn't get accidently overwritten when you upload a sketch). 
+  </LI></UL>
+<P class=vspace></P>
+<P>For the <SPAN class=wikiword>ATmega168</SPAN>, these are (where &lt;BOARD&gt; 
+is either "diecimila" or "ng"): </P>
+<P class=vspace></P>
+<UL>
+  <LI>bootloader.atmega168-&lt;BOARD&gt;.programmer (default value: avrispmkii) 
+  is the protocal used by the bootloader. 
+  <P class=vspace></P>
+  <LI>bootloader.atmega168-&lt;BOARD&gt;.unlock_bits (default value: 0x3F) is 
+  the value to write to the <SPAN class=wikiword>ATmega168</SPAN> lock byte to 
+  unlock the bootloader section. 
+  <P class=vspace></P>
+  <LI>bootloader.atmega168-&lt;BOARD&gt;.extended_fuses (default value: 0x00) is 
+  the value to write to the high byte of the <SPAN 
+  class=wikiword>ATmega168</SPAN> fuses. 
+  <P class=vspace></P>
+  <LI>bootloader.atmega168-&lt;BOARD&gt;.high_fuses (default value: 0xdd) is the 
+  value to write to the high byte of the <SPAN class=wikiword>ATmega168</SPAN> 
+  fuses. 
+  <P class=vspace></P>
+  <LI>bootloader.atmega168-&lt;BOARD&gt;.low_fuses (default value: 0xff) is the 
+  value to write to the low byte of the <SPAN class=wikiword>ATmega168</SPAN> 
+  fuses. 
+  <P class=vspace></P>
+  <LI>bootloader.atmega168-&lt;BOARD&gt;.path (default value: bootloader168) is 
+  the path (relative to the Arduino application directory) containing the 
+  precompiled bootloader. 
+  <P class=vspace></P>
+  <LI>bootloader.atmega168-&lt;BOARD&gt;.file (default value: <SPAN 
+  class=wikiword>ATmegaBOOT</SPAN>_168_&lt;BOARD&gt;.hex) is the name of the 
+  file containing the precompiled bootloader code (in bootloader.path). 
+  <P class=vspace></P>
+  <LI>bootloader.atmega168-&lt;BOARD&gt;.lock_bits (default value: 0x0F) is the 
+  value to write to the <SPAN class=wikiword>ATmega168</SPAN> lock byte to lock 
+  the bootloader section (so it doesn't get accidently overwritten when you 
+  upload a sketch). </LI></UL>
+<P class=vspace></P>
+<H4>Source Code</H4>
+<P>The <A class=urllink 
+href="http://svn.berlios.de/viewcvs/arduino/trunk/hardware/bootloaders/" 
+rel=nofollow>bootloader source code</A> is available. </P></DIV></DIV><!--PageFooterFmt-->
+<DIV id=pagefooter><A 
+href="http://arduino.cc/en/Hacking/Bootloader?action=edit">Edit Page</A> | <A 
+href="http://arduino.cc/en/Hacking/Bootloader?action=diff">Page History</A> | <A 
+href="http://arduino.cc/en/Hacking/Bootloader?action=print" 
+target=_blank>Printable View</A> | <A 
+href="http://arduino.cc/en/Site/AllRecentChanges">All Recent Site Changes</A> 
+</DIV><!--/PageFooterFmt--></DIV></BODY></HTML>

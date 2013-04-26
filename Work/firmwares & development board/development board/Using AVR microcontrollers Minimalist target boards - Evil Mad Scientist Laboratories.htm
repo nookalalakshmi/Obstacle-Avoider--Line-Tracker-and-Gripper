@@ -1,0 +1,741 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0059)http://www.evilmadscientist.com/article.php/avrtargetboards -->
+<HTML lang=en xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>Using AVR microcontrollers: Minimalist target boards - Evil Mad Scientist Laboratories</TITLE>
+<META http-equiv=Content-Script-Type content=text/javascript>
+<META http-equiv=Content-Style-Type content=text/css>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1"><!-- <meta http-equiv="Pragma" content="no-cache" /> --><LINK 
+href="http://www.evilmadscientist.com/layout/nouveau/images/favicon.ico" 
+rel="SHORTCUT ICON"><!-- Load Stylesheets --><LINK title=nouveau 
+href="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/css.css" 
+type=text/css rel=stylesheet><LINK 
+title="RSS Feed: Evil Mad Scientist Laboratories" hreflang=en-gb 
+href="http://www.evilmadscientist.com/backend/geeklog.rss" 
+type=application/rss+xml rel=alternate><LINK title=Home 
+href="http://www.evilmadscientist.com/" rel=home><LINK title="Advanced Search" 
+href="http://www.evilmadscientist.com/search.php" rel=search><LINK 
+title=Directory href="http://www.evilmadscientist.com/directory.php" 
+rel=contents><LINK title=Webservices 
+href="http://www.evilmadscientist.com/webservices/atom/?introspection" 
+type=application/atomsvc+xml rel=service><!-- Load JavaScript -->
+<SCRIPT 
+src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/js.php" 
+type=text/javascript></SCRIPT>
+<!-- Load plugin Header Code --><!--[if lte IE 6]><LINK title=nouveau 
+href="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/ie6.css" 
+type=text/css rel=stylesheet>
+<SCRIPT 
+src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/gl_mooie6warning.js" 
+defer type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/gl_moopngfix.js" 
+defer type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/sitetailor_ie6vertmenu.js" 
+defer type=text/javascript></SCRIPT>
+<![endif]--><!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="http://www.evilmadscientist.com/layout/nouveau/ie7.css" title="nouveau">
+<![endif]-->
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY dir=ltr style="BACKGROUND: #303030">
+<DIV><A name=top></A><A 
+href="http://www.evilmadscientist.com/article.php/avrtargetboards#content-start"><!-- for screenreaders --><IMG 
+class=hidden alt="skip navigation" 
+src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/speck.gif"> 
+</A></DIV><!-- End of htmlheader.thtml --><!-- Start of header.thtml -->
+<DIV id=gl_container_fixed><!-- options: fixed | fluid-->
+<DIV id=gl_header>
+<DIV class=top-r-corner>
+<DIV class=top-l-corner><A href="http://www.evilmadscientist.com/"><IMG 
+id=header-site-logo title="Evil Mad Scientist Laboratories" 
+alt="Evil Mad Scientist Laboratories" 
+src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/glfusionheader2.png"> 
+</A>
+<DIV id=header-site-slogan></DIV></DIV></DIV></DIV><!-- end of gl_header --><!-- start of gl_menu -->
+<DIV id=gl_moomenu1>
+<DIV class=gl_moomenu1>
+<UL class=gl_moomenu1>
+  <LI><A href="http://www.evilmadscientist.com/search.php">Search</A> </LI>
+  <LI><A 
+  href="http://www.evilmadscientist.com/staticpages/index.php?page=products">Buy 
+  Stuff</A> </LI>
+  <LI><A 
+  href="http://www.evilmadscientist.com/staticpages/index.php?page=contact">Contact</A> 
+  </LI>
+  <LI><A class=parent1 href="http://www.evilmadscientist.com/" 
+  name=parent1>More</A> 
+  <UL>
+    <LI><A 
+    href="http://www.evilmadscientist.com/staticpages/index.php?page=AboutEMSL">About 
+    EMSL</A> </LI>
+    <LI><A class=parent1 href="http://www.evilmadscientist.com/forum/index.php" 
+    name=parent1>Forums</A> </LI>
+    <LI><A 
+    href="http://www.evilmadscientist.com/staticpages/index.php?page=groups">Flickr 
+    Group</A> </LI>
+    <LI><A class=parent1 href="http://www.evilmadscientist.com/links/index.php" 
+    name=parent1>Links</A> </LI></UL></LI>
+  <LI><A class=parent1 
+  href="http://www.evilmadscientist.com/article.php/avrtargetboards#" 
+  name=parent1>Topics</A> 
+  <UL>
+    <LI><A 
+    href="http://www.evilmadscientist.com/index.php?topic=20060618021019953">Field 
+    Trips (31)</A> </LI>
+    <LI><A 
+    href="http://www.evilmadscientist.com/index.php?topic=OtherTopics">Everything 
+    Else (87)</A> </LI>
+    <LI><A href="http://www.evilmadscientist.com/index.php?topic=Projects">EMSL 
+    Projects (232)</A> </LI>
+    <LI><A 
+    href="http://www.evilmadscientist.com/index.php?topic=20060616054238174">Site 
+    News (9)</A> </LI>
+    <LI><A href="http://www.evilmadscientist.com/index.php?topic=food">Play with 
+    your food (37)</A> </LI>
+    <LI><A href="http://www.evilmadscientist.com/index.php?topic=quizzes">EMSL 
+    Tests &amp; Quizzes (3)</A> </LI>
+    <LI><A 
+    href="http://www.evilmadscientist.com/index.php?topic=reviews">Reviews 
+    (6)</A> </LI>
+    <LI><A 
+    href="http://www.evilmadscientist.com/index.php?topic=General">General News 
+    (4)</A> </LI></UL></LI>
+  <LI><A href="http://www.evilmadscientist.com/">Home</A> </LI></UL></DIV></DIV>
+<DIV id=gl_wrapper>
+<DIV id=gl_content-wide-right><!-- START OF CONTENT AREA --><A id=content-start 
+name=content-start></A><!--for screenreaders --><!-- End of header.thtml --><!-- begin cached as story_avrtargetboards_n_article_c81e728d9d4c2f636f067f89cc14862c_nouveau -->
+<DIV class=story><SPAN class=story-icons><!-- displays the Submit to Digg.com icon. For more info visit http://digg.com/tools/integrate --><!-- end Digg.com icon code --></SPAN>
+<H1>Using AVR microcontrollers: Minimalist target boards</H1>
+<DIV class=story-body>
+<TABLE width=500>
+  <TBODY>
+  <TR>
+    <TD><A href="http://www.flickr.com/photos/oskay/543611675/"><IMG 
+      height=375 alt="USBtinyISP and simple target" 
+      src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/543611675_904e6d125c.jpg" 
+      width=500></A> </TD></TR>
+  <TR>
+    <TD>This is a quick how-to guide on making ultra-simple development boards 
+      for programming AVR microcontrollers. Most recent-vintage AVRs can be 
+      programmed through an ISP (in-system programmer) connection; all that is 
+      really needed is a place for the chip to sit and a way to connect to the 
+      programmer. That's where these minimalist AVR "target boards" come in. 
+      These little boards cost only about $2 and take only a few minutes to 
+      make. It turns out that I build a lot of these because asking "how do you 
+      make a circuit to program the AVR?" is really the same as asking how you 
+      can program an AVR that is in a circuit. And, we might as well start with 
+      a simple circuit. </TD></TR></TBODY></TABLE><BR>
+<TABLE width=500>
+  <TBODY>
+  <TR>
+    <TD colSpan=2>There are two basic types of microcontroller programmer that 
+      you can imagine: one that has a socket for your chip, and one that hooks 
+      up to your circuit where your chip is installed. We're interested in the 
+      latter, the set of so-called in-system programmers, sometimes called 
+      in-circuit programmers. You can also get programmers with dedicated 
+      sockets, of course, but they are typically more expensive and are not 
+      fundamentally "better." With an in-system programmer, not only can you 
+      program microcontrollers that are in larger circuits, but you can also 
+      easily <I>make</I> programmer target boards with sockets, giving you the 
+      benefits of a programmer with a socket. 
+      <P></P></TD></TR>
+  <TR>
+    <TD><A href="http://www.flickr.com/photos/oskay/543872899/"><IMG 
+      height=180 alt=AVRISPII 
+      src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/543872899_d888ca2570_m.jpg" 
+      width=240></A> </TD>
+    <TD>The de facto standard USB in-system AVR programmer is the Atmel AVRISP 
+      mkII, part number ATAVRISP2-ND from <A 
+      href="http://www.digikey.com/">Digi-Key</A>, for $36. I actually wrote a 
+      bit about using this programmer <A 
+      href="http://www.evilmadscientist.com/article.php/avrmac">last year</A>. 
+      It's a good very-few-frills programmer and it works quite well. It has a 
+      hard plastic shell with a USB "B" connector on one end and a cable ending 
+      in a 6-pin ISP connector on the other end. (If you take the case off of 
+      the AVRISP mkII, the circuit board has a place for you to add a 10-pin ISP 
+      cable as well, but this is an unpublicized feature.) </TD></TR>
+  <TR>
+    <TD colSpan=2>One drawback to this programmer is that it requires external 
+      power to be applied to the target board in order to operate. That's kind 
+      of silly, because the programmer draws the power that it needs to operate 
+      from USB, but does not pass that through to power the microcontroller 
+      during programming. Ideally, the programmer should have a switch, so that 
+      you can either use the programmer to power your target board or not. <BR>
+      <P><BR></P></TD></TR>
+  <TR>
+    <TD><A title="Photo Sharing" 
+      href="http://www.flickr.com/photos/oskay/543611771/"><IMG height=180 
+      alt="USBtinyISP, assembled" 
+      src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/543611771_f2ca85d800_m.jpg" 
+      width=240></A> <BR>
+      <P><BR></P></TD>
+    <TD>The new <A 
+      href="http://www.adafruit.com/index.php?main_page=product_info&amp;cPath=16&amp;products_id=46">USBtinyISP 
+      AVR Programmer</A> from Adafruit industries (Reviewed <A 
+      href="http://www.evilmadscientist.com/article.php/usbtinyisp">here</A>) is 
+      probably a better choice for most applications. It comes as an easy kit 
+      for <DEL>$18.00</DEL> $22.00 and it includes both 6-pin and 10-pin 
+      interfaces. The killer feature versus the AVRISP mkII is that it lets you 
+      use the USB power to directly power your target board. Well, that and that 
+      it comes with <I>both</I> 6-pin and 10-pin ISP cable connections. <BR>
+      <P><BR></P></TD></TR>
+  <TR>
+    <TD colSpan=2>
+      <P>One other neat option (for some of you): You can <A 
+      href="http://tinker.it/now/2006/12/04/turn-arduino-into-an-avr-isp-programmer/">use 
+      Arduino as an AVR-ISP programmer</A>. 
+      <P>For folks that don't want USB, there is no shortage of serial and 
+      parallel ISP programmers. Most of them use the 10-pin interface. Adafruit 
+      has <A 
+      href="http://www.adafruit.com/index.php?main_page=index&amp;cPath=16">one 
+      of each</A> serial and parallel. You can also get them from other sources 
+      (e.g., <A 
+      href="http://www.sparkfun.com/commerce/categories.php?cPath=1_7">SparkFun</A>), 
+      but usually at a higher cost. And, if you do have a parallel port, let's 
+      not forget that you can <I>almost</I> whip one up <A 
+      href="http://www.instructables.com/id/E5H5UDWB5UEUKIKV8V/">out of thin 
+      air</A>. 
+      <P>Anyway, back to the target boards. Previously we've mainly used "real" 
+      development boards that include power supplies, communications, and a 
+      crystal oscillator. </P></TD></TR>
+  <TR>
+    <TD><A title="Photo Sharing" 
+      href="http://www.flickr.com/photos/oskay/420826133/"><IMG height=180 
+      alt="ATMEGA168, and its messy dev board" 
+      src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/420826133_66b84f2324_m.jpg" 
+      width=240></A> </TD>
+    <TD>Typical varieties are <A 
+      href="http://www.sparkfun.com/commerce/categories.php?cPath=2_10">these</A> 
+      available from SparkFun Electronics, which are mostly made by <A 
+      href="http://www.olimex.com/">Olimex</A>. There is also an excellent board 
+      <A href="http://www.futurlec.com/ATMegaDevBoard.shtml">from Futurlec</A>, 
+      and there are dozens of others from other sources as well. (Notably <A 
+      href="http://hubbard.engr.scu.edu/embedded/avr/boards/index.html">these</A> 
+      excellent open-source reference designs by Pascal Stang.) 
+      <P>It's often overkill. In the dev board shown here, I'm only using the 
+      power connector, socket and the ISP connector of the original board-- none 
+      of the other features turned out to be handy for what I ended up building 
+      on this board. </P></TD></TR>
+  <TR>
+    <TD colSpan=2>
+      <P><BR>
+      <P>So, when does it make sense to solder your own target boards? For 
+      starters, it's easier to use through-hole (DIP) packaged AVRs. One of the 
+      really nice things about the AVR series of microcontrollers is that a many 
+      of them are available in hobbyist-friendly through-hole (DIP) packages. 
+      (However, if do need to use one of the varieties that is only available in 
+      a surface-mount package, getting somebody else's development board or 
+      laying out your own can really make sense.) 
+      <P>Let's get started.
+      <P>To begin with, we'll make a minimal target board for programming an 
+      ATtiny2313, a popular 20-pin AVR microcontroller. 
+      <P></P></TD></TR>
+  <TR>
+    <TD>
+      <P><A title="Photo Sharing" 
+      href="http://www.flickr.com/photos/oskay/543872723/"><IMG height=180 
+      alt="Components - big board" 
+      src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/543872723_3c6e8ab525_m.jpg" 
+      width=240></A> 
+      <P></P></TD>
+    <TD>
+      <P>Here are the components: Prototyping perfboard (<A 
+      href="http://www.bgmicro.com/">BG Micro</A> part number ACS1053, $0.99), a 
+      2x3 DIP header (Part of BG Micro part number ACS1019, $0.33), and a 20-pin 
+      DIP socket (BG Micro part number soc1029, $0.55). We also have a couple of 
+      optional components: a zero insertion force (ZIF) socket and a 3 x AAA 
+      battery box. ZIF sockets tend to be quite expensive-- we found these on 
+      eBay for only a few dollars each, so we'll actually build this board with 
+      one. 
+      <P></P></TD></TR>
+  <TR>
+    <TD>
+      <P><A title="Photo Sharing" 
+      href="http://www.flickr.com/photos/oskay/543773012/"><IMG height=180 
+      alt="Mark pin 1" 
+      src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/543773012_4be4df08e0_m.jpg" 
+      width=240></A> 
+      <P></P></TD>
+    <TD>
+      <P>The first step is to position the socket and the ISP connector header 
+      on the protoboard, and then (important!) to mark one end of the ISP 
+      connector as being the end that contains pin 1. When you eventually hook 
+      up the ISP connector cable to the header, you will need to make sure that 
+      you have the correct orientation. 
+      <P></P></TD></TR>
+  <TR>
+    <TD colSpan=2><BR>
+      <P><BR>The next step is to determine how to hook up the pins of the ISP 
+      header to the pins of the socket. Atmel <A 
+      href="http://www.atmel.com/dyn/resources/prod_documents/doc2521.pdf">Application 
+      Note 42</A> describes the pinouts of the 6-pin and 10-pin ISP interface 
+      connectors. From above, they look like this: 
+      <P>
+      <CENTER><IMG height=118 alt="" 
+      src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/avrtargetboards_1.jpg" 
+      width=275> </CENTER><BR>
+      <P>The pins on the 6-pin interface are power (+Vcc) and ground, and the 
+      four "signals" of the ISP connector, which are called RESET, SCK, MISO and 
+      MOSI. You will notice that the 10-pin interface is just padded by a lot of 
+      fat-- it doesn't provide additional functionality. 
+      <P>(Note: The nature of the power (Vcc) line is context sensitive, and you 
+      will need to think about which way your power goes through that connector. 
+      If you are using the AVRISP mkII or most other programmers, the Vcc is 
+      expected to be provided <I>from</I> the target board to the programmer. 
+      This is used to indicate to the programmer that the target is "live" and 
+      ready to be programmed. If this is the case, you <I>must</I> provide a 
+      separate power source for the target board. If you use the USBtinyISP, you 
+      have the <I>option</I> to use the Vcc pin on the ISP interface to provide 
+      power <I>to</I> the target board. That option should be disabled if your 
+      target board does supply power to the Vcc pin of the ISP interface.) 
+      <P><BR>
+      <P>Next, we need to identify the pins of the AVR that attach to those of 
+      the ISP connector. You can begin by looking at the datasheet for your 
+      particular flavor of AVR ( <A 
+      href="http://www.atmel.com/dyn/products/datasheets.asp?family_id=607">list 
+      here</A>) and finding the six pins that match up to the names of the pins 
+      on the ISP connector. Here, I've highlighted the relevant pins of three 
+      AVR devices that I happen to like and come in 8-pin (ATtiny45), 20-pin 
+      (ATtiny2313) and 28-pin (ATmega168) DIP packages: 
+      <P>
+      <CENTER><IMG height=230 alt="" 
+      src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/avrtargetboards_2.jpg" 
+      width=400> </CENTER>
+      <P>Many <I>but not all</I>of the AVR devices in a given package (e.g., 
+      DIP-8) share the same ISP connector pinouts, so these target boards can 
+      sometimes (with caution) even be used for different AVR microcontrollers. 
+      For example, the ATmega8, ATmega48, ATmega88, and ATmega168 share the same 
+      28-pin pinouts. Note that in the figure above there are more than six 
+      connections to the ATmega168. That's because there are extra power and 
+      ground lines running to the analog circuitry of the chip, which should be 
+      wired up even when the analog section is not in use. <BR>
+      <P><BR></P></TD></TR>
+  <TR>
+    <TD><A title="Photo Sharing" 
+      href="http://www.flickr.com/photos/oskay/543772998/"><IMG height=180 
+      alt=wired 
+      src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/543772998_cfd1c34868_m.jpg" 
+      width=240></A> <BR>
+      <P><BR></P></TD>
+    <TD>Now that we know where the various ISP pins of the header and the chip 
+      are, we can wire things up. We need six wires (obviously)-- hook MISO to 
+      MISO, MOSI to MOSI, and so on, and solder up the lines. Remember to index 
+      the header from the end that you marked earlier, the end with pin 1. 
+      <P>That's actually all there is to it-- the rest is just icing. <BR>
+      <P><BR></P></TD></TR>
+  <TR>
+    <TD><A title="Photo Sharing" 
+      href="http://www.flickr.com/photos/oskay/543772972/"><IMG height=180 
+      alt="Back side" 
+      src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/543772972_821f27b0f0_m.jpg" 
+      width=240></A> <BR>
+      <P><BR></P></TD>
+    <TD>Here's what the back side looks like; not much to look at! <BR>
+      <P><BR></P></TD></TR>
+  <TR>
+    <TD><A title="Photo Sharing" 
+      href="http://www.flickr.com/photos/oskay/543872637/"><IMG height=180 
+      alt="Completed board" 
+      src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/543872637_0158071e92_m.jpg" 
+      width=240></A> <BR>
+      <P><BR></P></TD>
+    <TD>You can optionally add a power supply to power the board, which may be 
+      not-so-optional if you are using a programmer that requires power from the 
+      board. Since the chip uses so little power on its own, a battery box is a 
+      good idea and can last a very long time. <BR>
+      <P><BR></P></TD></TR>
+  <TR>
+    <TD><A title="Photo Sharing" 
+      href="http://www.flickr.com/photos/oskay/543772906/"><IMG height=180 
+      alt="Using board" 
+      src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/543772906_61b672e8b3_m.jpg" 
+      width=240></A> <BR>
+      <P><BR></P></TD>
+    <TD>To use the target board, put the AVR in the socket and hook up the 
+      programmer to the ISP connector. Pay attention to the orientation. The end 
+      with Pin 1 is often marked with a stripe on the cable and/or a little 
+      triangle on the connector. <BR>
+      <P><BR></P></TD></TR>
+  <TR>
+    <TD><A title="Photo Sharing" 
+      href="http://www.flickr.com/photos/oskay/543872853/"><IMG height=180 
+      alt="Target w/battery box" 
+      src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/543872853_b289666d2b_m.jpg" 
+      width=240></A> <BR>
+      <P><BR></P></TD>
+    <TD><A title="Photo Sharing" 
+      href="http://www.flickr.com/photos/oskay/543773172/"><IMG height=180 
+      alt="tiny target board w/ socket" 
+      src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/543773172_0e65d6b896_m.jpg" 
+      width=240></A> <BR>
+      <P><BR></P></TD></TR>
+  <TR>
+    <TD><A title="Photo Sharing" 
+      href="http://www.flickr.com/photos/oskay/543773130/"><IMG height=180 
+      alt="Tiny target board" 
+      src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/543773130_6c589e146a_m.jpg" 
+      width=240></A> <BR>
+      <P><BR></P></TD>
+    <TD>You can build a simpler, smaller, and much cheaper version of this 
+      target board by omitting the ZIF socket. It's more difficult to use if you 
+      take the chip out *a lot* but otherwise it's a good solution. And of 
+      course, if you are using a programmer that supplies power to the target 
+      microcontroller, you can even omit the battery box. Cost under $2 and 
+      assembly time under 5 minutes. Nice. <BR>
+      <P><BR></P></TD></TR>
+  <TR>
+    <TD colSpan=2>So where do you go from here? First, get that programmer if 
+      you haven't already got one. Then install the GNU toolchain that's 
+      appropriate for your system (e.g., <A 
+      href="http://winavr.sourceforge.net/">winavr</A> for Windows or <A 
+      href="http://www.digithink.com/OSX-AVR/Introduction/Main">OSX-AVR</A> on 
+      the Mac), and then download some sample code and go to town-- there's no 
+      shortage of cool AVR projects out there, and we hope that that these hints 
+      will give a push in the right direction. </TD></TR></TBODY></TABLE>
+<P><BR>
+<P>
+<HR>
+
+<P><BR>
+<P>
+<TABLE width=500>
+  <TBODY>
+  <TR>
+    <TD>MetaBlog links for this story: [ <A 
+      href="http://del.icio.us/post?url=http://www.evilmadscientist.com/article.php/avrtargetboards">del.icio.us</A> 
+      | <A 
+      href="http://www.technorati.com/search/http://www.evilmadscientist.com/article.php/avrtargetboards">technorati</A> 
+      ] 
+      <P>Technorati tags: <A href="http://technorati.com/tag/electronics" 
+      rel=tag>electronics</A>, <A href="http://technorati.com/tag/hacks" 
+      rel=tag>hacks</A>, <A href="http://technorati.com/tag/make" 
+      rel=tag>make</A>, <A href="http://technorati.com/tag/diy" rel=tag>diy</A>, 
+      <A href="http://technorati.com/tag/howto" rel=tag>howto</A>, <A 
+      href="http://technorati.com/tag/microcontroller" 
+      rel=tag>microcontroller</A>, <A href="http://technorati.com/tag/avr" 
+      rel=tag>avr</A>, <A href="http://technorati.com/tag/firmware" 
+      rel=tag>firmware</A>, <A href="http://technorati.com/tag/programming" 
+      rel=tag>programming</A> </P></TD></TR></TBODY></TABLE></P></DIV>
+<DIV class=story-readmore></DIV>
+<DIV class=story-footer>
+<P>Contributed by: <A class=storybyline 
+href="http://www.evilmadscientist.com/users.php?mode=profile&amp;uid=2">Windell</A> 
+on Wednesday, June 13 2007 @ 03:01 PM PST, in <A 
+href="http://www.evilmadscientist.com/index.php?topic=Projects">EMSL 
+Projects</A> <BR><A 
+href="http://www.evilmadscientist.com/article.php/avrtargetboards">Permalink</A> 
+&nbsp;&nbsp; <A href="http://www.evilmadscientist.com/article.php/">E-mail</A> 
+&nbsp;&nbsp; <A href="http://www.evilmadscientist.com/article.php/">Print</A> 
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; </P></DIV>
+<DIV class=yui-u 
+style="PADDING-RIGHT: 1em; PADDING-LEFT: 1em; PADDING-BOTTOM: 1em; PADDING-TOP: 1em; BORDER-BOTTOM: rgb(247,247,247) 2px solid"></DIV></DIV>
+<DIV class=block-divider></DIV><!-- end cached as story_avrtargetboards_n_article_c81e728d9d4c2f636f067f89cc14862c_nouveau -->
+<DIV class=clearboth>
+<DIV class=block-box-comment><SPAN class=block-helpicon></SPAN>
+<H2>Story Options</H2>
+<UL class=list-story-options>
+  <LI><A 
+  href="http://www.evilmadscientist.com/profiles.php?sid=avrtargetboards&amp;what=emailstory">Mail 
+  Story to a Friend</A> 
+  <LI><A 
+  href="http://www.evilmadscientist.com/article.php/avrtargetboards/print" 
+  rel=nofollow>Printable Story Format</A> </LI></UL></DIV></DIV>
+<DIV class=clearboth></DIV>
+<DIV id=commentarea>
+<DIV class=block-divider></DIV><A id=comments name=comments></A>
+<DIV class=commentbar-line1></DIV>
+<DIV class=commentbar-line2>
+<FORM 
+style="MARGIN-TOP: 2px; FLOAT: right; MARGIN-BOTTOM: 3px; MARGIN-RIGHT: 10px" 
+action=http://www.evilmadscientist.com/comment.php method=post>
+<DIV><INPUT type=hidden value=avrtargetboards name=sid> <INPUT type=hidden 
+value=0 name=pid> <INPUT type=hidden value=article name=type> <INPUT type=hidden 
+value="Using AVR microcontrollers: Minimalist target boards" name=title> <INPUT type=submit value="Post a comment" name=reply> </DIV></FORM>
+<FORM style="MARGIN-TOP: 2px; FLOAT: right; MARGIN-BOTTOM: 3px" 
+action=http://www.evilmadscientist.com/article.php method=post>
+<DIV><INPUT type=hidden value=avrtargetboards name=story> <SELECT name=order> 
+  <OPTION value=DESC>Newest First</OPTION> <OPTION value=ASC selected>Oldest 
+  First</OPTION></SELECT> <SELECT name=mode> <OPTION value=flat>Flat</OPTION> 
+  <OPTION value=nested>Nested</OPTION> <OPTION value=nocomment>No 
+  Comments</OPTION> <OPTION value=threaded selected>Threaded</OPTION></SELECT> <INPUT type=submit value=Refresh> <INPUT type=hidden value=article name=type> 
+</DIV></FORM>
+<H2 
+style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; MARGIN: 5px; PADDING-TOP: 0px">6 
+comments</H2></DIV>
+<DIV class=commentbar-line3 
+style="CLEAR: both; MARGIN-BOTTOM: 10px; TEXT-ALIGN: center">The following 
+comments are owned by whomever posted them. This site is not responsible for 
+what they say.</DIV>
+<DIV class=comment style="CLEAR: right; PADDING-LEFT: 0px; MARGIN-BOTTOM: 10px">
+<DIV class=commenttitle><SPAN class=floatright 
+style="PADDING-RIGHT: 10px; FONT-WEIGHT: normal">Authored by: Anonymous on 
+Wednesday, November 28 2007 @ 02:06 AM PST</SPAN> Using AVR microcontrollers: 
+Minimalist target boards </DIV>
+<DIV 
+style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; VERTICAL-ALIGN: top; PADDING-TOP: 10px">&gt; 
+The killer feature versus the AVRISP mkII is that it lets you use the USB power 
+to directly power your target board.<BR><BR>Hmm, how? I'd be happy to open my 
+AVRISP and bring the right leads over, should be no big deal, I just want to not 
+fry everything in my tiny little setup in the process. :)</DIV>
+<DIV style="FLOAT: right; PADDING-BOTTOM: 10px"><SPAN>[ <A 
+href="http://www.evilmadscientist.com/comment.php?sid=avrtargetboards&amp;pid=2662&amp;title=Using+AVR+microcontrollers%3A+Minimalist+target+boards&amp;type=article">Reply 
+to This</A> | <A title="Permanent link to this comment" 
+href="http://www.evilmadscientist.com/comment.php?mode=view&amp;cid=2662" 
+rel="self bookmark">#</A> ] </SPAN></DIV></DIV>
+<DIV style="CLEAR: both; PADDING-LEFT: 25px">
+<UL class=bullet-grey 
+style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px">
+  <LI style="MARGIN-BOTTOM: 0px; MARGIN-LEFT: -1em"><A 
+  href="http://www.evilmadscientist.com/comment.php?mode=display&amp;format=threaded&amp;order=ASC&amp;pid=2662">Using 
+  AVR microcontrollers: Minimalist target boards</A> - Authored by: <A 
+  href="http://www.evilmadscientist.com/users.php?mode=profile&amp;uid=2">Windell</A> 
+  on Wednesday, November 28 2007 @ 02:18 AM PST </LI></UL></DIV>
+<DIV style="CLEAR: both; PADDING-LEFT: 50px">
+<UL class=bullet-grey 
+style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px">
+  <LI style="MARGIN-BOTTOM: 0px; MARGIN-LEFT: -1em"><A 
+  href="http://www.evilmadscientist.com/comment.php?mode=display&amp;format=threaded&amp;order=ASC&amp;pid=2663">Using 
+  AVR microcontrollers: Minimalist target boards</A> - Authored by: Anonymous on 
+  Wednesday, January 02 2008 @ 04:45 PM PST </LI></UL></DIV>
+<DIV style="CLEAR: both; PADDING-LEFT: 75px">
+<UL class=bullet-grey 
+style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px">
+  <LI style="MARGIN-BOTTOM: 0px; MARGIN-LEFT: -1em"><A 
+  href="http://www.evilmadscientist.com/comment.php?mode=display&amp;format=threaded&amp;order=ASC&amp;pid=2829">Using 
+  AVR microcontrollers: Minimalist target boards</A> - Authored by: <A 
+  href="http://www.evilmadscientist.com/users.php?mode=profile&amp;uid=2">Windell</A> 
+  on Wednesday, January 02 2008 @ 04:48 PM PST </LI></UL></DIV>
+<DIV style="CLEAR: both; PADDING-LEFT: 100px">
+<UL class=bullet-grey 
+style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px">
+  <LI style="MARGIN-BOTTOM: 0px; MARGIN-LEFT: -1em"><A 
+  href="http://www.evilmadscientist.com/comment.php?mode=display&amp;format=threaded&amp;order=ASC&amp;pid=2830">Using 
+  AVR microcontrollers: Minimalist target boards</A> - Authored by: Anonymous on 
+  Sunday, January 06 2008 @ 06:35 PM PST </LI></UL></DIV>
+<DIV style="CLEAR: both; PADDING-LEFT: 125px">
+<UL class=bullet-grey 
+style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px">
+  <LI style="MARGIN-BOTTOM: 0px; MARGIN-LEFT: -1em"><A 
+  href="http://www.evilmadscientist.com/comment.php?mode=display&amp;format=threaded&amp;order=ASC&amp;pid=2849">Using 
+  AVR microcontrollers: Minimalist target boards</A> - Authored by: <A 
+  href="http://www.evilmadscientist.com/users.php?mode=profile&amp;uid=2">Windell</A> 
+  on Sunday, January 06 2008 @ 06:42 PM PST </LI></UL></DIV>
+<P class=aligncenter></P></DIV><!-- END OF CONTENT AREA --></DIV><!-- end of gl_content --></DIV><!-- end of gl_wrapper --><!-- Start of Right Blocks -->
+<DIV class=gl_blockstyle1 id=gl_extra><!-- gl_blockstyle1 - default title w/shading | gl_blockstyle2 - title w/out shading | gl_blockstyle3 - no title or shading | See style.css for more info -->
+<DIV class=block-columnpad>
+<DIV class=gl_blockstyle3>Welcome to Evil Mad Scientist Laboratories. New 
+projects are posted every Wednesday.</DIV><BR>
+<DIV class=block-box-right><SPAN class=block-helpicon></SPAN>
+<H2>What's New</H2>
+<H3>Stories</H3>
+<UL>
+  <LI><A href="http://www.evilmadscientist.com/article.php?story=meggycable">A 
+  tale of two Meg...</A></LI></UL><BR>
+<H3>Comments <SMALL>last 7 days</SMALL></H3>
+<UL class=list-new-comments>
+  <LI><A 
+  href="http://www.evilmadscientist.com/article.php/fractalcookies#comments">Sierpinski&nbsp;Cookies</A> 
+
+  <LI><A title="A tale of two Meggies" 
+  href="http://www.evilmadscientist.com/article.php/meggycable#comments">A&nbsp;tale&nbsp;of&nbsp;two&nbsp;Meg... 
+  [+2]</A> 
+  <LI><A title="Using an ADXL330 accelerometer with an AVR microcontroller" 
+  href="http://www.evilmadscientist.com/article.php/ADXL330#comments">Using&nbsp;an&nbsp;ADXL330&nbsp;...</A> 
+
+  <LI><A 
+  href="http://www.evilmadscientist.com/article.php/meggyjr#comments">Meggy&nbsp;Jr&nbsp;RGB</A> 
+
+  <LI><A title="Weekend Projects with Bre Pettis: Make a Joule Thief" 
+  href="http://www.evilmadscientist.com/article.php/joulethief#comments">Weekend&nbsp;Projects&nbsp;...</A> 
+
+  <LI><A title="Turning Mollie into Maulie" 
+  href="http://www.evilmadscientist.com/article.php/maulie#comments">Turning&nbsp;Mollie&nbsp;in... 
+  [+6]</A> 
+  <LI><A title="How to make a Sawed-off USB Key" 
+  href="http://www.evilmadscientist.com/article.php/usbkey#comments">How&nbsp;to&nbsp;make&nbsp;a&nbsp;Saw... 
+  [+2]</A> 
+  <LI><A title="Cheap Perpetual Calendar" 
+  href="http://www.evilmadscientist.com/article.php/perpetualcalendar#comments">Cheap&nbsp;Perpetual&nbsp;C...</A> 
+
+  <LI><A title="Bristlebot: A tiny directional vibrobot" 
+  href="http://www.evilmadscientist.com/article.php/bristlebot#comments">Bristlebot:&nbsp;A&nbsp;tin... 
+  [+2]</A> 
+  <LI><A title="Now that's an Apple Pie!" 
+  href="http://www.evilmadscientist.com/article.php/ApplePie#comments">Now&nbsp;that's&nbsp;an&nbsp;App...</A> 
+  </LI></UL></DIV>
+<DIV class=aligncenter>
+<DIV class=block-divider-right></DIV></DIV>
+<DIV class=block-box-right><SPAN class=block-helpicon></SPAN>
+<H2>Bookmark EMSL</H2><A 
+href="feed://www.evilmadscientist.com/backend/geeklog.rss">EMSL RSS Feed</A> 
+<BR><A 
+href="http://del.icio.us/post?url=http://www.evilmadscientist.com/">del.icio.us</A><BR><A 
+href="feed://feeds.feedburner.com/EvilMadScientistLaboratories">feedburner</A><BR>Feed 
+on <A 
+href="http://www.google.com/reader/view/feed/http://www.evilmadscientist.com/backend/geeklog.rss">Google 
+Reader</A><BR>Add <A 
+href="http://technorati.com/faves?add=http://www.evilmadscientist.com">technorati 
+Fave</A>
+<P><A 
+href="http://www.technorati.com/search/http://www.evilmadscientist.com/">technorati</A> 
+search <BR>
+<P>Subscribe to get new articles by E-mail: <BR>
+<FORM action=http://www.feedblitz.com/f/f.fbz?AddNewUserDirect 
+method=post>E-mail address:<BR><INPUT maxLength=255 size=17 
+name=EMAIL><BR><INPUT type=hidden value=177238 name=FEEDID> <INPUT type=submit value=Subscribe!> <BR><A 
+href="http://www.feedblitz.com/f?previewfeed=177238">Preview</A> | Powered by <A 
+href="http://www.feedblitz.com/">FeedBlitz</A></FORM></P></DIV>
+<DIV class=aligncenter>
+<DIV class=block-divider-right></DIV></DIV>
+<DIV class=block-box-right><SPAN class=block-helpicon></SPAN>
+<H2>My Account</H2>
+<FORM style="MARGIN-TOP: 5px; MARGIN-BOTTOM: 5px" 
+action=http://www.evilmadscientist.com/users.php method=post>
+<DIV><LABEL for=loginname>Username:</LABEL><BR><INPUT id=loginname size=10 
+name=loginname><BR><LABEL for=passwd>Password:</LABEL><BR><INPUT id=passwd 
+type=password size=10 name=passwd><BR><INPUT type=submit value=Login> 
+</DIV></FORM>
+<P>Sign up as a <A href="http://www.evilmadscientist.com/users.php?mode=new" 
+rel=nofollow>New User</A><BR>Lost your <A 
+href="http://www.evilmadscientist.com/users.php?mode=getpassword" 
+rel=nofollow>password</A>?</P></DIV>
+<DIV class=aligncenter>
+<DIV class=block-divider-right></DIV></DIV>
+<DIV class=block-box-right><SPAN class=block-helpicon></SPAN>
+<H2>Who's Online</H2>Guest Users: 12<BR></DIV>
+<DIV class=aligncenter>
+<DIV class=block-divider-right></DIV></DIV>
+<DIV class=block-box-right><SPAN class=block-helpicon></SPAN>
+<H2>Forumposts</H2><!-- start latestpostsblock.thtml -->
+<TABLE cellSpacing=1 cellPadding=1 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=pluginTinyText>Order:&nbsp;<A 
+            href="http://www.evilmadscientist.com/index.php?mode=forumblock&amp;order=new">New</A> 
+            <A 
+            href="http://www.evilmadscientist.com/index.php?mode=forumblock&amp;order=views">Views</A> 
+            <A 
+            href="http://www.evilmadscientist.com/index.php?mode=forumblock&amp;order=posts">Posts</A>
+            <DIV style="TEXT-ALIGN: center">Latest 5 Forum Posts</DIV></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD><!-- start block_displayline.thtml -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class="pluginRow1 pluginTinyText alignleft" width="100%"><IMG 
+            alt="" 
+            src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/icon_minipost.gif"><B><A 
+            title="Re: PWM sound, coding gurus?" 
+            href="http://www.evilmadscientist.com/forum/viewtopic.php?showtopic=1200&amp;fromblock=yes">Re: 
+            PWM sound, codin..</A></B><BR>&nbsp;<SPAN 
+            class=pluginTinyText><B>By: </B>&nbsp;<A 
+            href="http://www.evilmadscientist.com/users.php?mode=profile&amp;uid=1184">KenCorey</A></SPAN><BR>&nbsp;<SPAN 
+            class=pluginTinyText><B>On: </B>&nbsp;Wednesday, January 21 2009 @ 
+            11:02 PM PST</SPAN><BR>&nbsp;<SPAN 
+            class=pluginTinyText><B>Views</B>&nbsp;0&nbsp;<B>Replies</B>&nbsp;0<BR></SPAN></TD></TR></TBODY></TABLE><!-- end block_displayline.thtml --><!-- start block_displayline.thtml -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class="pluginRow2 pluginTinyText alignleft" width="100%"><IMG 
+            alt="" 
+            src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/icon_minipost.gif"><B><A 
+            title="Re: Changing Avatars" 
+            href="http://www.evilmadscientist.com/forum/viewtopic.php?showtopic=1199&amp;fromblock=yes">Re: 
+            Changing Avatars</A></B><BR>&nbsp;<SPAN class=pluginTinyText><B>By: 
+            </B>&nbsp;<A 
+            href="http://www.evilmadscientist.com/users.php?mode=profile&amp;uid=2">Windell</A></SPAN><BR>&nbsp;<SPAN 
+            class=pluginTinyText><B>On: </B>&nbsp;Wednesday, January 21 2009 @ 
+            05:30 PM PST</SPAN><BR>&nbsp;<SPAN 
+            class=pluginTinyText><B>Views</B>&nbsp;0&nbsp;<B>Replies</B>&nbsp;0<BR></SPAN></TD></TR></TBODY></TABLE><!-- end block_displayline.thtml --><!-- start block_displayline.thtml -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class="pluginRow1 pluginTinyText alignleft" width="100%"><IMG 
+            alt="" 
+            src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/icon_minipost.gif"><B><A 
+            title="Re: Changing Avatars" 
+            href="http://www.evilmadscientist.com/forum/viewtopic.php?showtopic=1198&amp;fromblock=yes">Re: 
+            Changing Avatars</A></B><BR>&nbsp;<SPAN class=pluginTinyText><B>By: 
+            </B>&nbsp;<A 
+            href="http://www.evilmadscientist.com/users.php?mode=profile&amp;uid=55">Robotguy</A></SPAN><BR>&nbsp;<SPAN 
+            class=pluginTinyText><B>On: </B>&nbsp;Wednesday, January 21 2009 @ 
+            05:05 PM PST</SPAN><BR>&nbsp;<SPAN 
+            class=pluginTinyText><B>Views</B>&nbsp;0&nbsp;<B>Replies</B>&nbsp;0<BR></SPAN></TD></TR></TBODY></TABLE><!-- end block_displayline.thtml --><!-- start block_displayline.thtml -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class="pluginRow2 pluginTinyText alignleft" width="100%"><IMG 
+            alt="" 
+            src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/icon_minipost.gif"><B><A 
+            title="Re: Changing Avatars" 
+            href="http://www.evilmadscientist.com/forum/viewtopic.php?showtopic=1197&amp;fromblock=yes">Re: 
+            Changing Avatars</A></B><BR>&nbsp;<SPAN class=pluginTinyText><B>By: 
+            </B>&nbsp;<A 
+            href="http://www.evilmadscientist.com/users.php?mode=profile&amp;uid=2">Windell</A></SPAN><BR>&nbsp;<SPAN 
+            class=pluginTinyText><B>On: </B>&nbsp;Wednesday, January 21 2009 @ 
+            04:51 PM PST</SPAN><BR>&nbsp;<SPAN 
+            class=pluginTinyText><B>Views</B>&nbsp;0&nbsp;<B>Replies</B>&nbsp;0<BR></SPAN></TD></TR></TBODY></TABLE><!-- end block_displayline.thtml --><!-- start block_displayline.thtml -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class="pluginRow1 pluginTinyText alignleft" width="100%"><IMG 
+            alt="" 
+            src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/icon_minipost.gif"><B><A 
+            title="Changing Avatars" 
+            href="http://www.evilmadscientist.com/forum/viewtopic.php?showtopic=1196&amp;fromblock=yes">Changing 
+            Avatars</A></B><BR>&nbsp;<SPAN class=pluginTinyText><B>By: 
+            </B>&nbsp;<A 
+            href="http://www.evilmadscientist.com/users.php?mode=profile&amp;uid=55">Robotguy</A></SPAN><BR>&nbsp;<SPAN 
+            class=pluginTinyText><B>On: </B>&nbsp;Wednesday, January 21 2009 @ 
+            04:40 PM PST</SPAN><BR>&nbsp;<SPAN 
+            class=pluginTinyText><B>Views</B>&nbsp;54&nbsp;<B>Replies</B>&nbsp;3<BR></SPAN></TD></TR></TBODY></TABLE><!-- end block_displayline.thtml --></TD></TR></TBODY></TABLE><!-- end latestpostsblock.thtml --></DIV>
+<DIV class=aligncenter>
+<DIV class=block-divider-right></DIV></DIV>
+<DIV class=block-box-right><SPAN class=block-helpicon></SPAN>
+<H2>DIY Hardware for Electronic Art</H2><A 
+href="http://evilmadscience.com/majors/46-tables"><IMG 
+src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/panel.jpg"></A> 
+<BR><A href="http://evilmadscience.com/majors/46-tables">Interactive LED 
+Panels</A> 
+<P><A href="http://evilmadscience.com/tinykitlist/100-meggyjr"><IMG 
+src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/meggyjr.jpg"></A> 
+<BR><A href="http://evilmadscience.com/tinykitlist/100-meggyjr">Meggy Jr RGB</A> 
+<BR>LED matrix game <BR>development kit. 
+<P><A href="http://evilmadscience.com/tinykitlist/74-atmegaxx8"><IMG 
+src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/zif.jpg"></A> 
+<BR>Business-card sized<BR><A 
+href="http://evilmadscience.com/tinykitlist/74-atmegaxx8h">AVR target boards</A> 
+
+<P><A href="http://evilmadscience.com/tinykitlist/44-menorahs"><IMG 
+src="Using AVR microcontrollers Minimalist target boards - Evil Mad Scientist Laboratories_files/minimen.jpg"></A> 
+<BR><A href="http://evilmadscience.com/tinykitlist/44-menorah">LED Mini Menorah 
+Kits</A> </P></DIV>
+<DIV class=aligncenter>
+<DIV class=block-divider-right></DIV></DIV></DIV></DIV><!-- End of Right Blocks -->
+<DIV id=gl_footer>
+<DIV class=bottom-r-corner>
+<DIV class=bottom-l-corner></DIV></DIV><!-- begin Site Tailor footer menu -->
+<DIV class=st-fmenu2>
+<UL>
+  <LI><A href="http://www.evilmadscientist.com/">Home</A> 
+  <LI><A href="http://www.evilmadscientist.com/search.php">Search</A> 
+  <LI><A 
+  href="http://www.evilmadscientist.com/staticpages/index.php/contact">Contact 
+  Us</A> 
+  <LI class=st-f-last2><A 
+  href="http://www.evilmadscientist.com/article.php/avrtargetboards#top">Top</A> 
+  </LI></UL></DIV><!-- end Site Tailor footer menu -->
+<DIV id=footer-copyright>© 2009 Evil Mad Scientist 
+Laboratories&nbsp;&nbsp;•&nbsp;&nbsp;<A 
+href="http://www.evilmadscientist.com/terms.php">Terms of 
+Use</A>&nbsp;&nbsp;•&nbsp;&nbsp;<A 
+href="http://www.evilmadscientist.com/privpol.php">Privacy 
+Policy</A>&nbsp;&nbsp;•&nbsp;&nbsp;Page created in 0.84 seconds&nbsp;by <A 
+href="http://www.glfusion.org/">glFusion</A> </DIV><!-- end of footer-copyright --></DIV><!-- end of gl_footer--></DIV><!-- end of gl_container --></BODY></HTML>

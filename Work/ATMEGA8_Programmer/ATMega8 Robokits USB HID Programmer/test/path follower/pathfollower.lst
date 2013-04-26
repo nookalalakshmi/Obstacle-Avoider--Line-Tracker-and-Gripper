@@ -1,0 +1,522 @@
+   1               		.file	"pathfollower.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  11               		.text
+  12               	.Ltext0:
+  73               	.global	motormove
+  75               	motormove:
+   1:pathfollower.c **** 
+   2:pathfollower.c **** //			MADE BY ANKIT-LAKSHMI
+   3:pathfollower.c **** //			PROGRAM FOR PATH FOLLOWER
+   4:pathfollower.c **** 
+   5:pathfollower.c **** /*-------------------------------------------------------------------          
+   6:pathfollower.c ****  Description:
+   7:pathfollower.c ****  The robot will follow a 'black' path near which it is placed. In 
+   8:pathfollower.c ****  situations where it goes out of track, the indicator LEDs will tell 
+   9:pathfollower.c ****  the direction to move to get back its path.
+  10:pathfollower.c ****  
+  11:pathfollower.c ****  Note:
+  12:pathfollower.c ****   _delay_ms() function parameter passed should not exeed
+  13:pathfollower.c ****  262.14ms / F_CPU in mhz.
+  14:pathfollower.c ****  so for 16MHz the maximum paramer should be 16ms.
+  15:pathfollower.c ****  
+  16:pathfollower.c ****  For 1MHz it can be upto 262ms (250 is used for this example).
+  17:pathfollower.c ****   
+  18:pathfollower.c ****  Must be changed to get accurate delay at higher MHz.
+  19:pathfollower.c ****  
+  20:pathfollower.c ****  The timing will differ if the operating frequency is changed.
+  21:pathfollower.c **** ---------------------------------------------------------------------*/
+  22:pathfollower.c **** 
+  23:pathfollower.c **** /*----------------------------------------------------------------
+  24:pathfollower.c **** -----------------HEADER FILES-------------------------------------
+  25:pathfollower.c **** -----------------------------------------------------------------*/
+  26:pathfollower.c **** 
+  27:pathfollower.c **** #include<avr/io.h>					//HEADER FILE FOR AVR INPUT OUTPUT
+  28:pathfollower.c **** #include<compat/deprecated.h>		//HEADER FILE FOR FUNCTIONS LIKE SBI AND CBI
+  29:pathfollower.c **** #include<util/delay.h>				//HEADER FILE FOR DELAY
+  30:pathfollower.c **** 
+  31:pathfollower.c **** /*----------------------------------------------------------------
+  32:pathfollower.c **** -----------------FUNCTIONS----------------------------------------
+  33:pathfollower.c **** -----------------------------------------------------------------*/
+  34:pathfollower.c **** void motormove(char motor,char state)
+  35:pathfollower.c **** {
+  76               	 size = 0 */
+  78               	.LM1:
+  79               		cpi r24,lo8(50)
+  80               		brne .L2
+  36:pathfollower.c **** 	int n1,n2;
+  37:pathfollower.c **** 	if(motor=='1')
+  38:pathfollower.c **** 	{
+  39:pathfollower.c **** 		n1=7;
+  40:pathfollower.c **** 		n2=6;
+  41:pathfollower.c **** 	}
+  42:pathfollower.c **** 	if(motor=='2')
+  81               	r26,lo8(0)
+  82               		ldi r27,hi8(0)
+  83 0000 8233      		ldi r30,lo8(1)
+  84 0002 01F4      		ldi r31,hi8(1)
+  85 0004 A0E0      		rjmp .L3
+  86 0006 B0E0      	.L2:
+  87 0008 E1E0      		ldi r26,lo8(7)
+  88 000a F0E0      		ldi r27,hi8(7)
+  89 000c 00C0      		ldi r30,lo8(6)
+  90               		ldi r31,hi8(6)
+  91 000e A7E0      	.L3:
+  93 0012 E6E0      	.LM2:
+  94 0014 F0E0      		cpi r22,lo8(70)
+  95               		breq .L6
+  43:pathfollower.c **** 	{
+  44:pathfollower.c **** 		n1=0;
+  45:pathfollower.c **** 		n2=1;
+  46:pathfollower.c **** 	}
+  47:pathfollower.c **** 	
+  48:pathfollower.c **** 	switch (state)
+  96               	)
+  97               		brsh .L9
+  98 0016 6634      		cpi r22,lo8(66)
+  99 0018 01F0      		breq .+2
+ 100 001a 6734      		rjmp .L10
+ 101 001c 00F4      		rjmp .L12
+ 102 001e 6234      	.L9:
+ 103 0020 01F0      		cpi r22,lo8(83)
+ 104 0022 00C0      		breq .L7
+ 105 0024 00C0      		cpi r22,lo8(115)
+ 106               		breq .+2
+ 107 0026 6335      		rjmp .L10
+ 108 0028 01F0      		rjmp .L13
+ 109 002a 6337      	.L6:
+ 111 002e 00C0      	.LM3:
+ 112 0030 00C0      		in r20,56-32
+ 113               		ldi r24,lo8(1)
+  49:pathfollower.c **** 	{
+  50:pathfollower.c **** 	 case 'F':
+  51:pathfollower.c **** 			sbi(PORTB,n1);
+ 114               	ovw r18,r24
+ 115               		rjmp 2f
+ 116 0032 48B3      	1:	lsl r18
+ 117 0034 81E0      		rol r19
+ 118 0036 90E0      	2:	dec r26
+ 119 0038 9C01      		brpl 1b
+ 120 003a 00C0      		or r20,r18
+ 121 003c 220F      		out 56-32,r20
+ 123 0040 AA95      	.LM4:
+ 124 0042 02F4      		in r18,56-32
+ 125 0044 422B      		rjmp 2f
+ 126 0046 48BB      	1:	lsl r24
+  52:pathfollower.c **** 			cbi(PORTB,n2);
+ 127               	ec r30
+ 128               		brpl 1b
+ 129 0048 28B3      		rjmp .L11
+ 130 004a 00C0      	.L12:
+ 132 004e 991F      	.LM5:
+ 133 0050 EA95      		in r20,56-32
+ 134 0052 02F4      		ldi r24,lo8(1)
+ 135 0054 00C0      		ldi r25,hi8(1)
+ 136               		movw r18,r24
+  53:pathfollower.c **** 			break;
+  54:pathfollower.c **** 
+  55:pathfollower.c **** 	case 'B':
+  56:pathfollower.c **** 			sbi(PORTB,n2);
+ 137               	:	lsl r18
+ 138               		rol r19
+ 139 0056 48B3      	2:	dec r30
+ 140 0058 81E0      		brpl 1b
+ 141 005a 90E0      		or r20,r18
+ 142 005c 9C01      		out 56-32,r20
+ 144 0060 220F      	.LM6:
+ 145 0062 331F      		in r18,56-32
+ 146 0064 EA95      		rjmp 2f
+ 147 0066 02F4      	1:	lsl r24
+ 148 0068 422B      		rol r25
+ 149 006a 48BB      	2:	dec r26
+  57:pathfollower.c **** 			cbi(PORTB,n1);
+ 150               	:
+ 151               		com r24
+ 152 006c 28B3      		and r24,r18
+ 153 006e 00C0      		out 56-32,r24
+ 154 0070 880F      		ret
+ 155 0072 991F      	.L7:
+ 157 0076 02F4      	.LM7:
+ 158               		in r20,56-32
+ 159 0078 8095      		ldi r18,lo8(1)
+ 160 007a 8223      		ldi r19,hi8(1)
+ 161 007c 88BB      		movw r24,r18
+ 162 007e 0895      		rjmp 2f
+ 163               	1:	lsl r24
+  58:pathfollower.c **** 			break;
+  59:pathfollower.c **** 
+  60:pathfollower.c **** 	
+  61:pathfollower.c **** 	case 'S':
+  62:pathfollower.c **** 			cbi(PORTB,n2);
+ 164               	c r30
+ 165               		brpl 1b
+ 166 0080 48B3      		com r24
+ 167 0082 21E0      		and r24,r20
+ 168 0084 30E0      		out 56-32,r24
+ 170 0088 00C0      	.LM8:
+ 171 008a 880F      		in r24,56-32
+ 172 008c 991F      		rjmp 2f
+ 173 008e EA95      	1:	lsl r18
+ 174 0090 02F4      		rol r19
+ 175 0092 8095      	2:	dec r26
+ 176 0094 8423      		brpl 1b
+ 177 0096 88BB      		com r18
+  63:pathfollower.c **** 			cbi(PORTB,n1);
+ 178               	
+ 179               		ldi r18,lo8(1)
+ 180 0098 88B3      		ldi r19,hi8(1)
+ 181 009a 00C0      		movw r24,r18
+ 182 009c 220F      		rjmp 2f
+ 183 009e 331F      	1:	lsl r24
+ 184 00a0 AA95      		rol r25
+ 185 00a2 02F4      	2:	dec r30
+ 186 00a4 2095      		brpl 1b
+ 187 00a6 2823      		com r24
+ 188 00a8 28BB      		and r24,r20
+ 189 00aa 0895      		out 56-32,r24
+  64:pathfollower.c **** 			break;
+  65:pathfollower.c **** 
+  66:pathfollower.c **** 	case 's':
+  67:pathfollower.c **** 			cbi(PORTB,n1);
+ 191               	
+ 192               		and r24,r18
+ 193 00ac 48B3      		out 56-32,r24
+ 194 00ae 21E0      		ret
+ 195 00b0 30E0      	.L7:
+ 197 00b4 00C0      	.LM7:
+ 198 00b6 880F      		in r20,56-32
+ 199 00b8 991F      		ldi r18,lo8(1)
+ 200 00ba AA95      		ldi r19,hi8(1)
+ 201 00bc 02F4      		movw r24,r18
+ 202 00be 8095      		rjmp 2f
+ 203 00c0 8423      	1:	lsl r24
+ 204 00c2 88BB      		rol r25
+  68:pathfollower.c **** 			cbi(PORTB,n2);
+ 205               	-.LFBB1
+ 206               	.LM6:
+ 207 00c4 88B3      		in r18,56-32
+ 208 00c6 00C0      		rjmp 2f
+ 209 00c8 220F      	1:	lsl r24
+ 210 00ca 331F      		rol r25
+ 211 00cc EA95      	2:	dec r26
+ 212 00ce 02F4      		brpl 1b
+ 213 00d0 2095      	.L11:
+ 214 00d2 2823      		com r24
+ 215 00d4 28BB      		and r24,r18
+ 216               		out 56-32,r24
+ 217 00d6 0895      		ret
+ 218               	.L7:
+ 220               	.LM7:
+ 221               		in r20,56-32
+ 222               		ldi r18,lo8(1)
+ 223               		ldi r19,hi8(1)
+ 224               		movw r24,r18
+ 225               		rjmp 2f
+ 226               	1:	lsl r24
+ 227               		rol r25
+ 228               	2:	dec r30
+  69:pathfollower.c **** 			break;
+  70:pathfollower.c **** 	}	
+  71:pathfollower.c **** }
+  72:pathfollower.c **** 
+  73:pathfollower.c **** void robotmove(char mode)
+  74:pathfollower.c **** {
+ 229               	24,r20
+ 230               		out 56-32,r24
+ 232               	.LM8:
+ 233               		in r24,56-32
+  75:pathfollower.c **** 
+  76:pathfollower.c **** 	switch(mode)
+ 234               	32,r24
+ 235               		ret
+ 236 00d8 8C34      	.L7:
+ 238 00dc 8D34      	.LM7:
+ 239 00de 00F4      		in r20,56-32
+ 240 00e0 8234      		ldi r18,lo8(1)
+ 241 00e2 01F0      		ldi r19,hi8(1)
+ 242 00e4 8634      		movw r24,r18
+ 243 00e6 01F4      		rjmp 2f
+ 244 00e8 00C0      	1:	lsl r24
+ 245               		rol r25
+ 246 00ea 8235      	2:	dec r30
+ 247 00ec 01F0      		brpl 1b
+ 248 00ee 8335      		com r24
+ 249 00f0 01F4      		and r24,r20
+ 250 00f2 00C0      		out 56-32,r24
+  77:pathfollower.c **** 	{
+  78:pathfollower.c **** 		case 'F':
+  79:pathfollower.c **** 		 motormove('1','F');
+ 252               	
+ 253               		and r24,r18
+ 254 00f4 66E4      		out 56-32,r24
+ 255 00f6 00C0      		ret
+ 256               	.L7:
+  80:pathfollower.c **** 		 motormove('2','F');
+  81:pathfollower.c **** 		break;
+  82:pathfollower.c **** 		
+  83:pathfollower.c **** 		case 'B':
+  84:pathfollower.c **** 		 motormove('1','B');
+ 257               	o8(1)
+ 258               		ldi r25,hi8(1)
+ 259 00f8 62E4      		movw r18,r24
+ 260 00fa 00C0      		rjmp 2f
+ 261               	1:	lsl r18
+  85:pathfollower.c **** 		 motormove('2','B');
+  86:pathfollower.c **** 		break;
+  87:pathfollower.c **** 		
+  88:pathfollower.c **** 		case 'L':
+  89:pathfollower.c **** 		 motormove('1','B');
+ 262               	r19
+ 263               	2:	dec r30
+ 264 00fc 62E4      		brpl 1b
+ 265               		or r20,r18
+ 266 00fe 81E3      		out 56-32,r20
+  90:pathfollower.c **** 		 motormove('2','F');
+ 268               		in r18,56-32
+ 269               		rjmp 2f
+ 270 0102 66E4      	1:	lsl r24
+ 271 0104 00C0      		rol r25
+ 272               	2:	dec r26
+  91:pathfollower.c **** 		break;
+  92:pathfollower.c **** 		
+  93:pathfollower.c **** 		case 'R':
+  94:pathfollower.c **** 		 motormove('1','F');
+ 273               	 1b
+ 274               	.L11:
+ 275 0106 66E4      		com r24
+ 276               		and r24,r18
+ 277 0108 81E3      		out 56-32,r24
+ 278 010a 00D0      		ret
+  95:pathfollower.c **** 		 motormove('2','B');
+ 280               	.LM7:
+ 281 010c 62E4      		in r20,56-32
+ 282               		ldi r18,lo8(1)
+ 283 010e 82E3      		ldi r19,hi8(1)
+ 284 0110 00D0      		movw r24,r18
+ 285 0112 0895      		rjmp 2f
+ 286               	1:	lsl r24
+  96:pathfollower.c **** 		break;
+  97:pathfollower.c **** 		
+  98:pathfollower.c **** 		case 'S':
+  99:pathfollower.c **** 		 motormove('1','s');
+ 287               	,0,57,.LM6-.LFBB1
+ 288               	.LM6:
+ 289 0114 63E7      		in r18,56-32
+ 290 0116 81E3      		rjmp 2f
+ 291 0118 00D0      	1:	lsl r24
+ 100:pathfollower.c **** 		 motormove('2','s');
+ 292               	r25
+ 293               	2:	dec r26
+ 294 011a 63E7      		brpl 1b
+ 295 011c 82E3      	.L11:
+ 296 011e 00D0      		com r24
+ 297               		and r24,r18
+ 298 0120 0895      		out 56-32,r24
+ 299               		ret
+ 300               	.L7:
+ 302               	.LM7:
+ 303               		in r20,56-32
+ 304               		ldi r18,lo8(1)
+ 101:pathfollower.c **** 		break;
+ 102:pathfollower.c **** 	}
+ 103:pathfollower.c **** }
+ 104:pathfollower.c **** 
+ 105:pathfollower.c **** void path_follower(void)
+ 106:pathfollower.c **** {
+ 305               	1)
+ 306               		movw r24,r18
+ 307               		rjmp 2f
+ 308               	1:	lsl r24
+ 309               		rol r25
+ 107:pathfollower.c **** 	
+ 108:pathfollower.c **** 	if((bit_is_clear(PINC,2)) && (bit_is_clear(PINC,3)))
+ 310               	-.LFBB1
+ 311               	.LM6:
+ 312 0122 9A99      		in r18,56-32
+ 313 0124 00C0      		rjmp 2f
+ 314 0126 9B99      	1:	lsl r24
+ 315 0128 00C0      		rol r25
+ 109:pathfollower.c **** 	{
+ 110:pathfollower.c **** 		sbi(PORTD,0);
+ 316               	 r26
+ 317               		brpl 1b
+ 318 012a 909A      	.L11:
+ 111:pathfollower.c **** 		cbi(PORTD,1);	//move left
+ 319               	m r24
+ 320               		and r24,r18
+ 321 012c 9198      		out 56-32,r24
+ 112:pathfollower.c **** 		//robotmove('L');
+ 113:pathfollower.c **** 		sbi(PORTD,7);
+ 322               	2
+ 323               		ldi r24,lo8(1)
+ 324 012e 979A      		ldi r25,hi8(1)
+ 114:pathfollower.c **** 		cbi(PORTB,0);
+ 325               	vw r18,r24
+ 326               		rjmp 2f
+ 327 0130 C098      	1:	lsl r18
+ 328               		rol r19
+ 115:pathfollower.c **** 	}
+ 116:pathfollower.c **** 	if((bit_is_clear(PINB,1)) && (bit_is_clear(PINC,5)))
+ 329               	ec r30
+ 330               		brpl 1b
+ 331 0132 B199      		or r20,r18
+ 332 0134 00C0      		out 56-32,r20
+ 334 0138 00C0      	.LM6:
+ 117:pathfollower.c **** 	{
+ 118:pathfollower.c **** 		sbi(PORTD,1);
+ 335               	8,56-32
+ 336               		rjmp 2f
+ 337 013a 919A      	1:	lsl r24
+ 119:pathfollower.c **** 		cbi(PORTD,0);	//move right
+ 338               	l r25
+ 339               	2:	dec r26
+ 340 013c 9098      		brpl 1b
+ 120:pathfollower.c **** 		//robotmove('R');
+ 121:pathfollower.c **** 		sbi(PORTB,0);
+ 341               	1:
+ 342               		com r24
+ 343 013e C09A      		and r24,r18
+ 122:pathfollower.c **** 		cbi(PORTD,7);
+ 344               	t 56-32,r24
+ 345               		ret
+ 346 0140 9798      	.L7:
+ 123:pathfollower.c **** 	}
+ 124:pathfollower.c **** 	if((bit_is_clear(PINC,3)) && (bit_is_clear(PINC,4)) && (bit_is_clear(PINC,5)))
+ 348               	18,r24
+ 349               		rjmp 2f
+ 350 0142 9B99      	1:	lsl r18
+ 351 0144 00C0      		rol r19
+ 352 0146 9C99      	2:	dec r30
+ 353 0148 00C0      		brpl 1b
+ 354 014a 9D99      		or r20,r18
+ 355 014c 00C0      		out 56-32,r20
+ 125:pathfollower.c **** 	{
+ 126:pathfollower.c **** 		sbi(PORTD,0);
+ 356               	68,0,57,.LM6-.LFBB1
+ 357               	.LM6:
+ 358 014e 909A      		in r18,56-32
+ 127:pathfollower.c **** 		sbi(PORTD,1);	//move forward
+ 359               	mp 2f
+ 360               	1:	lsl r24
+ 361 0150 919A      		rol r25
+ 128:pathfollower.c **** 		//robotmove('F');
+ 129:pathfollower.c **** 		sbi(PORTD,7);
+ 362               	dec r26
+ 363               		brpl 1b
+ 364 0152 979A      	.L11:
+ 130:pathfollower.c **** 		sbi(PORTB,0);
+ 365               	m r24
+ 366               		and r24,r18
+ 367 0154 C09A      		out 56-32,r24
+ 368               		ret
+ 131:pathfollower.c **** 	}
+ 132:pathfollower.c **** 	if((!bit_is_clear(PINC,2)) && (!bit_is_clear(PINC,3)) && (!bit_is_clear(PINC,4)) && (!bit_is_clear
+ 369               	 r24,lo8(1)
+ 370               		ldi r25,hi8(1)
+ 371 0156 9A9B      		movw r18,r24
+ 372 0158 00C0      		rjmp 2f
+ 373 015a 9B9B      	1:	lsl r18
+ 374 015c 00C0      		rol r19
+ 375 015e 9C9B      	2:	dec r30
+ 376 0160 00C0      		brpl 1b
+ 377 0162 9D9B      		or r20,r18
+ 378 0164 00C0      		out 56-32,r20
+ 380 0168 00C0      	.LM6:
+ 133:pathfollower.c **** 	{
+ 134:pathfollower.c **** 		cbi(PORTD,0);
+ 381               	2
+ 382               		rjmp 2f
+ 383 016a 9098      	1:	lsl r24
+ 135:pathfollower.c **** 		cbi(PORTD,1);	//stop
+ 384               	l r25
+ 385               	2:	dec r26
+ 386 016c 9198      		brpl 1b
+ 136:pathfollower.c **** 		//robotmove('S');
+ 137:pathfollower.c **** 		cbi(PORTD,7);
+ 387               	1:
+ 388               		com r24
+ 389 016e 9798      		and r24,r18
+ 138:pathfollower.c **** 		cbi(PORTB,0);
+ 390               	t 56-32,r24
+ 391               		ret
+ 392 0170 C098      	.L7:
+ 394 0172 0895      	.LM7:
+ 395               		in r20,56-32
+ 396               		ldi r18,lo8(1)
+ 397               		ldi r19,hi8(1)
+ 398               		movw r24,r18
+ 399               		rjmp 2f
+ 400               	1:	lsl r24
+ 139:pathfollower.c **** 	}
+ 140:pathfollower.c **** 	
+ 141:pathfollower.c **** }
+ 142:pathfollower.c **** /*----------------------------------------------------------------
+ 143:pathfollower.c **** -----------------MAIN PROGRAM-------------------------------------
+ 144:pathfollower.c **** -----------------------------------------------------------------*/
+ 145:pathfollower.c **** int main(void)
+ 146:pathfollower.c **** {
+ 401               	,0,57,.LM6-.LFBB1
+ 402               	.LM6:
+ 403               		in r18,56-32
+ 404               		rjmp 2f
+ 405               	1:	lsl r24
+ 147:pathfollower.c **** 	DDRD=0x8F;						//SET DATA DIRECTION REGISTER
+ 406               	r25
+ 407               	2:	dec r26
+ 408 0174 8FE8      		brpl 1b
+ 409 0176 81BB      	.L11:
+ 148:pathfollower.c **** 									//SET 1 for OUTPUT PORT
+ 149:pathfollower.c **** 									//SET 0 FOR INPUT PORT
+ 150:pathfollower.c **** 									//ONLY PORTB.0 IS OUTPUT
+ 151:pathfollower.c **** 									//CONFIGURE AS PER REQUIREMENT
+ 152:pathfollower.c **** 									//DEFAULT ALL OTHERS ARE INPUT
+ 153:pathfollower.c **** 									//CHANGE ACCORDING TO USE
+ 154:pathfollower.c **** 	DDRC=0x00;						//SET DATA DIRECTION REGISTER
+ 410               	 r24
+ 411               		and r24,r18
+ 412 0178 14BA      		out 56-32,r24
+ 155:pathfollower.c **** 									//SET 1 for OUTPUT PORT
+ 156:pathfollower.c **** 									//SET 0 FOR INPUT PORT
+ 157:pathfollower.c **** 									//ONLY PORTD.7 AND PORTD.6 ARE OUTPUT
+ 158:pathfollower.c **** 									//CONFIGURE AS PER REQUIREMENT
+ 159:pathfollower.c **** 									//DEFAULT ALL OTHERS ARE INPUT
+ 160:pathfollower.c **** 									//CHANGE ACCORDING TO USE
+ 161:pathfollower.c **** 	DDRB = 0x01;
+ 413               	2
+ 414               		ldi r24,lo8(1)
+ 415 017a 81E0      		ldi r25,hi8(1)
+ 416 017c 87BB      		movw r18,r24
+ 417               		rjmp 2f
+ 162:pathfollower.c **** 
+ 163:pathfollower.c **** 	for(;;)
+ 164:pathfollower.c **** 	{
+ 165:pathfollower.c **** 		path_follower();
+ 418               	l r18
+ 419               		rol r19
+ 420 017e 00D0      	2:	dec r30
+ 421 0180 00C0      		brpl 1b
+ 422               		or r20,r18
+ 423               		out 56-32,r20
+ 425               	.LM6:
+DEFINED SYMBOLS
+                            *ABS*:00000000 pathfollower.c
+C:\Users\user\AppData\Local\Temp/ccxsmCIA.s:2      *ABS*:0000003f __SREG__
+C:\Users\user\AppData\Local\Temp/ccxsmCIA.s:3      *ABS*:0000003e __SP_H__
+C:\Users\user\AppData\Local\Temp/ccxsmCIA.s:4      *ABS*:0000003d __SP_L__
+C:\Users\user\AppData\Local\Temp/ccxsmCIA.s:5      *ABS*:00000034 __CCP__
+C:\Users\user\AppData\Local\Temp/ccxsmCIA.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\user\AppData\Local\Temp/ccxsmCIA.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\user\AppData\Local\Temp/ccxsmCIA.s:75     .text:00000000 motormove
+C:\Users\user\AppData\Local\Temp/ccxsmCIA.s:228    .text:000000d8 robotmove
+C:\Users\user\AppData\Local\Temp/ccxsmCIA.s:304    .text:00000122 path_follower
+C:\Users\user\AppData\Local\Temp/ccxsmCIA.s:400    .text:00000174 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

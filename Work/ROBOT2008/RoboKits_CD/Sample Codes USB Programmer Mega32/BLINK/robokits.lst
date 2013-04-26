@@ -1,0 +1,160 @@
+   1               		.file	"robokits.c"
+   2               		.arch atmega32
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	main
+  20               	main:
+  21               	.LFB7:
+  22               	.LM1:
+  23               	/* prologue: frame size=0 */
+  24               	/* prologue end (size=0) */
+  25               	.LM2:
+  26 0000 80EF      		ldi r24,lo8(-16)
+  27 0002 8ABB      		out 58-0x20,r24
+  28 0004 E4E2      		ldi r30,lo8(-3036)
+  29 0006 F4EF      		ldi r31,hi8(-3036)
+  30 0008 20EF      		ldi r18,lo8(-16)
+  31               	.L2:
+  32               	.LM3:
+  33 000a 1BBA      		out 59-0x20,__zero_reg__
+  34               	.LBB36:
+  35               	.LBB37:
+  36               	.LBB38:
+  37               	.LBB39:
+  38               	.LM4:
+  39 000c CF01      		movw r24,r30
+  40               	.LVL0:
+  41               	/* #APP */
+  42 000e 0197      		1: sbiw r24,1
+  43 0010 01F4      		brne 1b
+  44               	/* #NOAPP */
+  45               	.LBE39:
+  46               	.LBE38:
+  47               	.LBE37:
+  48               	.LBE36:
+  49               	.LBB40:
+  50               	.LBB41:
+  51               	.LBB42:
+  52               	.LBB43:
+  53 0012 CF01      		movw r24,r30
+  54               	.LVL1:
+  55               	/* #APP */
+  56 0014 0197      		1: sbiw r24,1
+  57 0016 01F4      		brne 1b
+  58               	/* #NOAPP */
+  59               	.LBE43:
+  60               	.LBE42:
+  61               	.LBE41:
+  62               	.LBE40:
+  63               	.LBB44:
+  64               	.LBB45:
+  65               	.LBB46:
+  66               	.LBB47:
+  67 0018 CF01      		movw r24,r30
+  68               	.LVL2:
+  69               	/* #APP */
+  70 001a 0197      		1: sbiw r24,1
+  71 001c 01F4      		brne 1b
+  72               	/* #NOAPP */
+  73               	.LBE47:
+  74               	.LBE46:
+  75               	.LBE45:
+  76               	.LBE44:
+  77               	.LBB48:
+  78               	.LBB49:
+  79               	.LBB50:
+  80               	.LBB51:
+  81 001e CF01      		movw r24,r30
+  82               	.LVL3:
+  83               	/* #APP */
+  84 0020 0197      		1: sbiw r24,1
+  85 0022 01F4      		brne 1b
+  86               	/* #NOAPP */
+  87               	.LBE51:
+  88               	.LBE50:
+  89               	.LBE49:
+  90               	.LBE48:
+  91               	.LM5:
+  92 0024 2BBB      		out 59-0x20,r18
+  93               	.LBB52:
+  94               	.LBB53:
+  95               	.LBB54:
+  96               	.LBB55:
+  97               	.LM6:
+  98 0026 CF01      		movw r24,r30
+  99               	.LVL4:
+ 100               	/* #APP */
+ 101 0028 0197      		1: sbiw r24,1
+ 102 002a 01F4      		brne 1b
+ 103               	/* #NOAPP */
+ 104               	.LBE55:
+ 105               	.LBE54:
+ 106               	.LBE53:
+ 107               	.LBE52:
+ 108               	.LBB56:
+ 109               	.LBB57:
+ 110               	.LBB58:
+ 111               	.LBB59:
+ 112 002c CF01      		movw r24,r30
+ 113               	.LVL5:
+ 114               	/* #APP */
+ 115 002e 0197      		1: sbiw r24,1
+ 116 0030 01F4      		brne 1b
+ 117               	/* #NOAPP */
+ 118               	.LBE59:
+ 119               	.LBE58:
+ 120               	.LBE57:
+ 121               	.LBE56:
+ 122               	.LBB60:
+ 123               	.LBB61:
+ 124               	.LBB62:
+ 125               	.LBB63:
+ 126 0032 CF01      		movw r24,r30
+ 127               	.LVL6:
+ 128               	/* #APP */
+ 129 0034 0197      		1: sbiw r24,1
+ 130 0036 01F4      		brne 1b
+ 131               	/* #NOAPP */
+ 132               	.LBE63:
+ 133               	.LBE62:
+ 134               	.LBE61:
+ 135               	.LBE60:
+ 136               	.LBB64:
+ 137               	.LBB65:
+ 138               	.LBB66:
+ 139               	.LBB67:
+ 140 0038 CF01      		movw r24,r30
+ 141               	.LVL7:
+ 142               	/* #APP */
+ 143 003a 0197      		1: sbiw r24,1
+ 144 003c 01F4      		brne 1b
+ 145               	/* #NOAPP */
+ 146 003e 00C0      		rjmp .L2
+ 147               	.LBE67:
+ 148               	.LBE66:
+ 149               	.LBE65:
+ 150               	.LBE64:
+ 151               	/* epilogue: frame size=0 */
+ 152               	/* epilogue: noreturn */
+ 153               	/* epilogue end (size=0) */
+ 154               	/* function main size 48 (48) */
+ 155               	.LFE7:
+ 181               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccGKcpiu.s:3      *ABS*:0000003f __SREG__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccGKcpiu.s:4      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccGKcpiu.s:5      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccGKcpiu.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccGKcpiu.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccGKcpiu.s:20     .text:00000000 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

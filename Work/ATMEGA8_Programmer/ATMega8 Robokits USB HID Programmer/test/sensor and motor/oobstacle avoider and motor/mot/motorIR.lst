@@ -1,0 +1,372 @@
+   1               		.file	"motorIR.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	__vector_1
+  20               	__vector_1:
+  21               	.LFB7:
+  22               	.LM1:
+  23 0000 1F92      		push __zero_reg__
+  24 0002 0F92      		push r0
+  25 0004 0FB6      		in r0,__SREG__
+  26 0006 0F92      		push r0
+  27 0008 1124      		clr __zero_reg__
+  28               	/* prologue: Signal */
+  29               	/* frame size = 0 */
+  30               	.LM2:
+  31 000a C29A      		sbi 56-32,2
+  32               	/* epilogue start */
+  33               	.LM3:
+  34 000c 0F90      		pop r0
+  35 000e 0FBE      		out __SREG__,r0
+  36 0010 0F90      		pop r0
+  37 0012 1F90      		pop __zero_reg__
+  38 0014 1895      		reti
+  39               	.LFE7:
+  41               	.global	motormove
+  43               	motormove:
+  44               	.LFB8:
+  45               	.LM4:
+  46               	.LVL0:
+  47               	/* prologue: function */
+  48               	/* frame size = 0 */
+  49               	.LM5:
+  50 0016 8233      		cpi r24,lo8(50)
+  51 0018 01F4      		brne .L4
+  52 001a A0E0      		ldi r26,lo8(0)
+  53 001c B0E0      		ldi r27,hi8(0)
+  54               	.LVL1:
+  55 001e E1E0      		ldi r30,lo8(1)
+  56 0020 F0E0      		ldi r31,hi8(1)
+  57               	.LVL2:
+  58 0022 00C0      		rjmp .L5
+  59               	.LVL3:
+  60               	.L4:
+  61 0024 A7E0      		ldi r26,lo8(7)
+  62 0026 B0E0      		ldi r27,hi8(7)
+  63               	.LVL4:
+  64 0028 E6E0      		ldi r30,lo8(6)
+  65 002a F0E0      		ldi r31,hi8(6)
+  66               	.LVL5:
+  67               	.L5:
+  68               	.LM6:
+  69 002c 6634      		cpi r22,lo8(70)
+  70 002e 01F0      		breq .L8
+  71 0030 6734      		cpi r22,lo8(71)
+  72 0032 00F4      		brsh .L11
+  73 0034 6234      		cpi r22,lo8(66)
+  74 0036 01F0      		breq .+2
+  75 0038 00C0      		rjmp .L12
+  76 003a 00C0      		rjmp .L14
+  77               	.L11:
+  78 003c 6335      		cpi r22,lo8(83)
+  79 003e 01F0      		breq .L9
+  80 0040 6337      		cpi r22,lo8(115)
+  81 0042 01F0      		breq .+2
+  82 0044 00C0      		rjmp .L12
+  83 0046 00C0      		rjmp .L15
+  84               	.L8:
+  85               	.LM7:
+  86 0048 48B3      		in r20,56-32
+  87 004a 81E0      		ldi r24,lo8(1)
+  88 004c 90E0      		ldi r25,hi8(1)
+  89               	.LVL6:
+  90 004e 9C01      		movw r18,r24
+  91 0050 00C0      		rjmp 2f
+  92 0052 220F      	1:	lsl r18
+  93 0054 331F      		rol r19
+  94 0056 AA95      	2:	dec r26
+  95 0058 02F4      		brpl 1b
+  96 005a 422B      		or r20,r18
+  97 005c 48BB      		out 56-32,r20
+  98               	.LM8:
+  99 005e 28B3      		in r18,56-32
+ 100 0060 00C0      		rjmp 2f
+ 101 0062 880F      	1:	lsl r24
+ 102 0064 991F      		rol r25
+ 103 0066 EA95      	2:	dec r30
+ 104 0068 02F4      		brpl 1b
+ 105 006a 00C0      		rjmp .L13
+ 106               	.LVL7:
+ 107               	.L14:
+ 108               	.LM9:
+ 109 006c 48B3      		in r20,56-32
+ 110 006e 81E0      		ldi r24,lo8(1)
+ 111 0070 90E0      		ldi r25,hi8(1)
+ 112               	.LVL8:
+ 113 0072 9C01      		movw r18,r24
+ 114 0074 00C0      		rjmp 2f
+ 115 0076 220F      	1:	lsl r18
+ 116 0078 331F      		rol r19
+ 117 007a EA95      	2:	dec r30
+ 118 007c 02F4      		brpl 1b
+ 119 007e 422B      		or r20,r18
+ 120 0080 48BB      		out 56-32,r20
+ 121               	.LM10:
+ 122 0082 28B3      		in r18,56-32
+ 123 0084 00C0      		rjmp 2f
+ 124 0086 880F      	1:	lsl r24
+ 125 0088 991F      		rol r25
+ 126 008a AA95      	2:	dec r26
+ 127 008c 02F4      		brpl 1b
+ 128               	.L13:
+ 129 008e 8095      		com r24
+ 130 0090 8223      		and r24,r18
+ 131 0092 88BB      		out 56-32,r24
+ 132 0094 0895      		ret
+ 133               	.LVL9:
+ 134               	.L9:
+ 135               	.LM11:
+ 136 0096 48B3      		in r20,56-32
+ 137 0098 21E0      		ldi r18,lo8(1)
+ 138 009a 30E0      		ldi r19,hi8(1)
+ 139 009c C901      		movw r24,r18
+ 140               	.LVL10:
+ 141 009e 00C0      		rjmp 2f
+ 142 00a0 880F      	1:	lsl r24
+ 143 00a2 991F      		rol r25
+ 144 00a4 EA95      	2:	dec r30
+ 145 00a6 02F4      		brpl 1b
+ 146 00a8 8095      		com r24
+ 147 00aa 8423      		and r24,r20
+ 148 00ac 88BB      		out 56-32,r24
+ 149               	.LM12:
+ 150 00ae 88B3      		in r24,56-32
+ 151 00b0 00C0      		rjmp 2f
+ 152 00b2 220F      	1:	lsl r18
+ 153 00b4 331F      		rol r19
+ 154 00b6 AA95      	2:	dec r26
+ 155 00b8 02F4      		brpl 1b
+ 156 00ba 2095      		com r18
+ 157 00bc 2823      		and r18,r24
+ 158 00be 28BB      		out 56-32,r18
+ 159 00c0 0895      		ret
+ 160               	.LVL11:
+ 161               	.L15:
+ 162               	.LM13:
+ 163 00c2 48B3      		in r20,56-32
+ 164 00c4 21E0      		ldi r18,lo8(1)
+ 165 00c6 30E0      		ldi r19,hi8(1)
+ 166 00c8 C901      		movw r24,r18
+ 167               	.LVL12:
+ 168 00ca 00C0      		rjmp 2f
+ 169 00cc 880F      	1:	lsl r24
+ 170 00ce 991F      		rol r25
+ 171 00d0 AA95      	2:	dec r26
+ 172 00d2 02F4      		brpl 1b
+ 173 00d4 8095      		com r24
+ 174 00d6 8423      		and r24,r20
+ 175 00d8 88BB      		out 56-32,r24
+ 176               	.LM14:
+ 177 00da 88B3      		in r24,56-32
+ 178 00dc 00C0      		rjmp 2f
+ 179 00de 220F      	1:	lsl r18
+ 180 00e0 331F      		rol r19
+ 181 00e2 EA95      	2:	dec r30
+ 182 00e4 02F4      		brpl 1b
+ 183 00e6 2095      		com r18
+ 184 00e8 2823      		and r18,r24
+ 185 00ea 28BB      		out 56-32,r18
+ 186               	.LVL13:
+ 187               	.L12:
+ 188 00ec 0895      		ret
+ 189               	.LFE8:
+ 191               	.global	robotmove
+ 193               	robotmove:
+ 194               	.LFB9:
+ 195               	.LM15:
+ 196               	.LVL14:
+ 197               	/* prologue: function */
+ 198               	/* frame size = 0 */
+ 199               	.LM16:
+ 200 00ee 8C34      		cpi r24,lo8(76)
+ 201 00f0 01F0      		breq .L20
+ 202 00f2 8D34      		cpi r24,lo8(77)
+ 203 00f4 00F4      		brsh .L23
+ 204 00f6 8234      		cpi r24,lo8(66)
+ 205 00f8 01F0      		breq .L18
+ 206 00fa 8634      		cpi r24,lo8(70)
+ 207 00fc 01F4      		brne .L24
+ 208 00fe 00C0      		rjmp .L28
+ 209               	.L23:
+ 210 0100 8235      		cpi r24,lo8(82)
+ 211 0102 01F0      		breq .L21
+ 212 0104 8335      		cpi r24,lo8(83)
+ 213 0106 01F4      		brne .L24
+ 214 0108 00C0      		rjmp .L29
+ 215               	.L28:
+ 216               	.LM17:
+ 217 010a 66E4      		ldi r22,lo8(70)
+ 218 010c 00C0      		rjmp .L26
+ 219               	.L18:
+ 220               	.LM18:
+ 221 010e 62E4      		ldi r22,lo8(66)
+ 222 0110 00C0      		rjmp .L27
+ 223               	.L20:
+ 224               	.LM19:
+ 225 0112 62E4      		ldi r22,lo8(66)
+ 226               	.L26:
+ 227 0114 81E3      		ldi r24,lo8(49)
+ 228               	.LVL15:
+ 229 0116 0E94 0000 		call motormove
+ 230               	.LM20:
+ 231 011a 66E4      		ldi r22,lo8(70)
+ 232 011c 00C0      		rjmp .L25
+ 233               	.LVL16:
+ 234               	.L21:
+ 235               	.LM21:
+ 236 011e 66E4      		ldi r22,lo8(70)
+ 237               	.L27:
+ 238 0120 81E3      		ldi r24,lo8(49)
+ 239               	.LVL17:
+ 240 0122 0E94 0000 		call motormove
+ 241               	.LM22:
+ 242 0126 62E4      		ldi r22,lo8(66)
+ 243               	.L25:
+ 244 0128 82E3      		ldi r24,lo8(50)
+ 245 012a 0E94 0000 		call motormove
+ 246 012e 0895      		ret
+ 247               	.LVL18:
+ 248               	.L29:
+ 249               	.LM23:
+ 250 0130 63E7      		ldi r22,lo8(115)
+ 251 0132 81E3      		ldi r24,lo8(49)
+ 252               	.LVL19:
+ 253 0134 0E94 0000 		call motormove
+ 254               	.LM24:
+ 255 0138 63E7      		ldi r22,lo8(115)
+ 256 013a 82E3      		ldi r24,lo8(50)
+ 257 013c 0E94 0000 		call motormove
+ 258               	.LVL20:
+ 259               	.L24:
+ 260 0140 0895      		ret
+ 261               	.LFE9:
+ 263               	.global	main
+ 265               	main:
+ 266               	.LFB10:
+ 267               	.LM25:
+ 268               	/* prologue: function */
+ 269               	/* frame size = 0 */
+ 270               	.LM26:
+ 271 0142 87EC      		ldi r24,lo8(-57)
+ 272 0144 87BB      		out 55-32,r24
+ 273               	.LM27:
+ 274 0146 81EF      		ldi r24,lo8(-15)
+ 275 0148 81BB      		out 49-32,r24
+ 276               	.LM28:
+ 277 014a C29A      		sbi 56-32,2
+ 278 014c 80E2      		ldi r24,lo8(20000)
+ 279 014e 9EE4      		ldi r25,hi8(20000)
+ 280               	.LVL21:
+ 281               	.LBB18:
+ 282               	.LBB19:
+ 283               	.LBB20:
+ 284               	.LBB21:
+ 285               	.LM29:
+ 286 0150 29E1      		ldi r18,lo8(25)
+ 287 0152 30E0      		ldi r19,hi8(25)
+ 288               	.L31:
+ 289 0154 F901      		movw r30,r18
+ 290               	.LVL22:
+ 291               	/* #APP */
+ 292               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 293 0156 3197      		1: sbiw r30,1
+ 294 0158 01F4      		brne 1b
+ 295               	 ;  0 "" 2
+ 296               	/* #NOAPP */
+ 297               	.LBE21:
+ 298               	.LBE20:
+ 299               	.LM30:
+ 300 015a 0197      		sbiw r24,1
+ 301               	.LM31:
+ 302 015c 01F4      		brne .L31
+ 303               	.LBE19:
+ 304               	.LBE18:
+ 305               	.LM32:
+ 306 015e C298      		cbi 56-32,2
+ 307               	.LM33:
+ 308 0160 929A      		sbi 50-32,2
+ 309               	.LM34:
+ 310 0162 939A      		sbi 50-32,3
+ 311               	.LM35:
+ 312 0164 80E4      		ldi r24,lo8(64)
+ 313               	.LVL23:
+ 314 0166 8BBF      		out 91-32,r24
+ 315               	.LM36:
+ 316 0168 82E0      		ldi r24,lo8(2)
+ 317 016a 85BF      		out 85-32,r24
+ 318               	.LM37:
+ 319               	/* #APP */
+ 320               	 ;  179 "motorIR.c" 1
+ 321 016c 7894      		sei
+ 322               	 ;  0 "" 2
+ 323               	/* #NOAPP */
+ 324               	.LBB22:
+ 325               	.LBB23:
+ 326               	.LBB24:
+ 327               	.LBB25:
+ 328               	.LM38:
+ 329 016e 29E1      		ldi r18,lo8(25)
+ 330 0170 30E0      		ldi r19,hi8(25)
+ 331               	.LVL24:
+ 332               	.L39:
+ 333               	.LBE25:
+ 334               	.LBE24:
+ 335               	.LBE23:
+ 336               	.LBE22:
+ 337               	.LM39:
+ 338 0172 C298      		cbi 56-32,2
+ 339               	.LM40:
+ 340 0174 9899      		sbic 51-32,0
+ 341 0176 00C0      		rjmp .L39
+ 342               	.LM41:
+ 343 0178 C29A      		sbi 56-32,2
+ 344 017a 80E1      		ldi r24,lo8(10000)
+ 345 017c 97E2      		ldi r25,hi8(10000)
+ 346               	.L33:
+ 347               	.LBB29:
+ 348               	.LBB28:
+ 349               	.LBB27:
+ 350               	.LBB26:
+ 351               	.LM42:
+ 352 017e F901      		movw r30,r18
+ 353               	.LVL25:
+ 354               	/* #APP */
+ 355               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 356 0180 3197      		1: sbiw r30,1
+ 357 0182 01F4      		brne 1b
+ 358               	 ;  0 "" 2
+ 359               	/* #NOAPP */
+ 360               	.LBE26:
+ 361               	.LBE27:
+ 362               	.LM43:
+ 363 0184 0197      		sbiw r24,1
+ 364               	.LM44:
+ 365 0186 01F4      		brne .L33
+ 366 0188 00C0      		rjmp .L39
+ 367               	.LBE28:
+ 368               	.LBE29:
+ 369               	.LFE10:
+ 419               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 motorIR.c
+C:\Users\ankit\AppData\Local\Temp/ccXuueu4.s:2      *ABS*:0000003f __SREG__
+C:\Users\ankit\AppData\Local\Temp/ccXuueu4.s:3      *ABS*:0000003e __SP_H__
+C:\Users\ankit\AppData\Local\Temp/ccXuueu4.s:4      *ABS*:0000003d __SP_L__
+C:\Users\ankit\AppData\Local\Temp/ccXuueu4.s:5      *ABS*:00000034 __CCP__
+C:\Users\ankit\AppData\Local\Temp/ccXuueu4.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\ankit\AppData\Local\Temp/ccXuueu4.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\ankit\AppData\Local\Temp/ccXuueu4.s:20     .text:00000000 __vector_1
+C:\Users\ankit\AppData\Local\Temp/ccXuueu4.s:43     .text:00000016 motormove
+C:\Users\ankit\AppData\Local\Temp/ccXuueu4.s:193    .text:000000ee robotmove
+C:\Users\ankit\AppData\Local\Temp/ccXuueu4.s:265    .text:00000142 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

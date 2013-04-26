@@ -1,0 +1,2405 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: AVR USB - A Firmware-Only USB Driver for Atmel AVR Microcontrollers
+Date: Mon, 22 Dec 2008 07:47:30 +0530
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01C96409.8ADB9760"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5579
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C96409.8ADB9760
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.obdev.at/products/avrusb/avrdoper.html
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>AVR USB - A Firmware-Only USB Driver for Atmel AVR =
+Microcontrollers</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dutf-8"><LINK=20
+href=3D"http://www.obdev.at/resources/css/common.css" type=3Dtext/css=20
+rel=3Dstylesheet><!--[if IE]><LINK=20
+href=3D"http://www.obdev.at/resources/css/explorer.css" type=3Dtext/css=20
+rel=3Dstylesheet><![endif]--><!--[if lt IE 7.]>=0A=
+<script defer type=3D"text/javascript" =
+src=3D"/resources/javascript/pngfix.js"></script>=0A=
+<![endif]--><LINK=20
+href=3D"/favicon.ico" type=3Dimage/x-icon rel=3Dicon><LINK =
+href=3D"/favicon.ico"=20
+type=3Dimage/x-icon rel=3D"shortcut icon"><LINK title=3D"RSS Feed"=20
+href=3D"/atom_feed.xml" type=3Dapplication/rss+xml rel=3Dalternate>
+<SCRIPT type=3Dtext/javascript>=0A=
+	function ODSwapImage(tagName, imgURL)=0A=
+	{=0A=
+		o =3D document[tagName];=0A=
+		if (!o && document.all) o =3D document.all[tagName];=0A=
+		o.src =3D imgURL;=0A=
+	}=0A=
+	function ODMaillink(address, subject)=0A=
+	{=0A=
+		if (subject) subject =3D "?subject=3D" + subject;=0A=
+		document.location =3D "mailto:" + address.replace(/:/, "@") + subject;=0A=
+	}=0A=
+</SCRIPT>
+
+<META content=3D"MSHTML 6.00.6000.16788" name=3DGENERATOR></HEAD>
+<BODY>
+<DIV id=3Dcentered-page>
+<DIV id=3Dpage-margin>
+<DIV id=3Dnavigation>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%">
+  <TBODY>
+  <TR>
+    <TD><A href=3D"http://www.obdev.at/index.html"><IMG height=3D50=20
+      src=3D"http://www.obdev.at/Images/pixel.gif" width=3D250 =
+border=3D0></A> </TD>
+    <TD style=3D"PADDING-RIGHT: 20px; PADDING-TOP: 40px" align=3Dright>
+      <TABLE cellSpacing=3D0 cellPadding=3D0>
+        <TBODY>
+        <TR>
+          <TD class=3Dmenu-item><A=20
+            =
+href=3D"http://www.obdev.at/products/index.html">products</A></TD>
+          <TD class=3Dmenu-item><A=20
+            href=3D"http://www.obdev.at/shop/index.html">shop</A></TD>
+          <TD class=3Dmenu-item><A=20
+            =
+href=3D"http://www.obdev.at/forums/index.html">forums</A></TD>
+          <TD class=3Dmenu-item><A=20
+            =
+href=3D"http://www.obdev.at/contact/index.html">contact</A></TD></TR></TB=
+ODY></TABLE></TD></TR></TBODY></TABLE></DIV>
+<DIV id=3Dpage-content>
+<DIV id=3Dpage-content-padding>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%" border=3D0>
+  <TBODY>
+  <TR>
+    <TD vAlign=3Dtop width=3D"99%">
+      <DIV class=3Dleft-column>
+      <DIV class=3Dpage-heading>
+      <H2>AVR-USB Reference Implementations</H2>
+      <H1>AVR-Doper</H1></DIV>
+      <DIV class=3Dintroduction>AVR-Doper is an STK500 compatible =
+In-System=20
+      Programmer (ISP) and High Voltage Serial Programmer (HVSP). It =
+comes with=20
+      a built-in USB to Serial adaptor to connect directly to USB. =
+</DIV>
+      <DIV class=3Dpostit-body>
+      <DIV class=3Dpostit-top></DIV>
+      <DIV class=3Dpostit-bottom>
+      <DIV class=3Dpostit-content><STRONG>Warning:</STRONG> There is a =
+serious bug=20
+      in ISP mode in all versions up to 2007-08-07! Please upgrade to at =
+least=20
+      2007-12-01. See release notes below. </DIV></DIV></DIV>
+      <H2>Features</H2><IMG height=3D145=20
+      src=3D"http://www.obdev.at/Images/avrusb/avrdoper.jpg" width=3D205 =
+align=3Dright=20
+      border=3D0>=20
+      <UL>
+        <LI>HVSP allows using RESET pin for I/O, which is especially =
+beneficial=20
+        on 8 and 14 pin devices.=20
+        <LI>Simple hardware which can be built on a single sided PCB. No =
+special=20
+        USB chips are needed.=20
+        <LI>Compatible to Atmel's STK500 with built-in USB to Serial =
+converter.=20
+        <LI>Adjustable ISP clock allows flashing of devices clocked at =
+very low=20
+        rate, e.g. 32 kHz.=20
+        <LI>ISP clock can be lowered with a jumper (if the programmer =
+software=20
+        does not support setting the ISP clock).=20
+        <LI>Second USB to Serial converter for processing debug output =
+from the=20
+        target.=20
+        <LI>HVSP connector compatible to HVProg, another STK500 =
+compatible=20
+        programmer (see <A =
+href=3D"http://www.der-hammer.info/hvprog/index_en.htm"=20
+        target=3D_blank>www.der-hammer.info/hvprog/index_en.htm</A>).=20
+        <LI>Uses USB power supply, no external supply required.=20
+        <LI>Firmware can be compiled to run on <A=20
+        href=3D"http://metalab.at/wiki/Avrprog-metaboard" =
+target=3D_blank>metaboard=20
+        hardware</A> and <A href=3D"http://www.fischl.de/usbasp/"=20
+        target=3D_blank>USBasp hardware</A>.=20
+        <LI>Open Source (including firmware and schematics). </LI></UL>
+      <H2>More Information</H2>
+      <P>More information about the project and all the sources for =
+hardware,=20
+      software and firmware can be found in the download below.</P>
+      <DIV class=3Dpostit-body>
+      <DIV class=3Dpostit-top></DIV>
+      <DIV class=3Dpostit-bottom>
+      <DIV class=3D"postit-content small"><STRONG>Note:</STRONG> =
+Implementing a=20
+      USB CDC device with AVR-USB violates some aspects of USB 1.1. =
+CDC-Mode may=20
+      therefore fail or be unreliable on some operating systems or =
+computer=20
+      hardware. Please look at the compatibility list included in the <A =
+
+      href=3D"http://www.recursion.jp/avrcdc/" =
+target=3Dblank>AVR-CDC</A> project or=20
+      test a simplified prototype on breadboard with your computer if =
+you want=20
+      to use CDC mode.=20
+      <P>We recommend that you use AVR-Doper in HID mode instead, which =
+has no=20
+      such problem. This mode is supported by <A=20
+      href=3D"http://savannah.nongnu.org/projects/avrdude"=20
+      target=3D_blank>avrdude</A>. More information about interface =
+modes and=20
+      their relative advantages can be found in the project description. =
+
+      </P></DIV></DIV></DIV>
+      <H2>Derived Work</H2>There are many ways to improve AVR-Doper. =
+Some people=20
+      have modified the circuit to fit particular needs:=20
+      <UL>
+        <LI><A =
+href=3D"http://www.rototron.info/?Page=3DUSBAVR/USBAVR.aspx"=20
+        =
+target=3D_blank>http://www.rototron.info/?Page=3DUSBAVR/USBAVR.aspx</A>: =
+
+        This is a simplified version without the High Voltage Serial =
+Programming=20
+        part.=20
+        <LI><A =
+href=3D"http://hobbyelektronik.org/wiki/index.php?title=3DAVR-Doper"=20
+        target=3D_blank>hobbyelektronik.org</A> (German description =
+only): A=20
+        somewhat smaller PCB for AVR-Doper.=20
+        <LI><A =
+href=3D"http://www.kreuzholzen.de/projects/mdoper/index_en.html"=20
+        =
+target=3D_blank>http://www.kreuzholzen.de/projects/mdoper/index_en.html</=
+A>:=20
+        This version omits the High Voltage Serial Programming part, but =
+adds=20
+        ESD protection and has a PCB which fits well into a commercial =
+case.=20
+        </LI></UL>
+      <H2>Download</H2>To download an archive with firmware and circuit =
+diagram,=20
+      please click one of the files below.=20
+      <P></P>
+      <DIV style=3D"WIDTH: 100%">
+      <TABLE class=3Ddownload-table>
+        <TBODY>
+        <TR>
+          <TH colSpan=3D3>Download AVR-Doper</TH></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2008-11-27.tar.gz"=
+>AVR-Doper.2008-11-27.tar.gz</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2008-11-27.tar.gz"=
+><STRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">456 kB</TD></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2008-11-27.zip">AV=
+R-Doper.2008-11-27.zip</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2008-11-27.zip"><S=
+TRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">492 kB</TD></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2008-04-27.tar.gz"=
+>AVR-Doper.2008-04-27.tar.gz</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2008-04-27.tar.gz"=
+><STRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">446 kB</TD></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2008-04-27.zip">AV=
+R-Doper.2008-04-27.zip</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2008-04-27.zip"><S=
+TRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">476 kB</TD></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2008-04-26.tar.gz"=
+>AVR-Doper.2008-04-26.tar.gz</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2008-04-26.tar.gz"=
+><STRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">446 kB</TD></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2008-04-26.zip">AV=
+R-Doper.2008-04-26.zip</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2008-04-26.zip"><S=
+TRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">476 kB</TD></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2008-02-05.tar.gz"=
+>AVR-Doper.2008-02-05.tar.gz</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2008-02-05.tar.gz"=
+><STRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">415 kB</TD></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2008-02-05.zip">AV=
+R-Doper.2008-02-05.zip</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2008-02-05.zip"><S=
+TRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">444 kB</TD></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2007-12-01.tar.gz"=
+>AVR-Doper.2007-12-01.tar.gz</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2007-12-01.tar.gz"=
+><STRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">413 kB</TD></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2007-12-01.zip">AV=
+R-Doper.2007-12-01.zip</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2007-12-01.zip"><S=
+TRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">442 kB</TD></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2007-08-07.tar.gz"=
+>AVR-Doper.2007-08-07.tar.gz</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2007-08-07.tar.gz"=
+><STRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">378 kB</TD></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2007-08-07.zip">AV=
+R-Doper.2007-08-07.zip</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2007-08-07.zip"><S=
+TRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">410 kB</TD></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2007-03-29.tar.gz"=
+>AVR-Doper.2007-03-29.tar.gz</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2007-03-29.tar.gz"=
+><STRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">367 kB</TD></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2007-03-29.zip">AV=
+R-Doper.2007-03-29.zip</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2007-03-29.zip"><S=
+TRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">387 kB</TD></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2007-02-01.tar.gz"=
+>AVR-Doper.2007-02-01.tar.gz</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2007-02-01.tar.gz"=
+><STRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">370 kB</TD></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2007-02-01.zip">AV=
+R-Doper.2007-02-01.zip</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2007-02-01.zip"><S=
+TRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">388 kB</TD></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2006-10-23.tar.gz"=
+>AVR-Doper.2006-10-23.tar.gz</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2006-10-23.tar.gz"=
+><STRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">370 kB</TD></TR>
+        <TR>
+          <TD style=3D"PADDING-LEFT: 16px"><A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2006-10-23.zip">AV=
+R-Doper.2006-10-23.zip</A></TD>
+          <TD align=3Dright><IMG=20
+            src=3D"http://www.obdev.at/Images/download-arrow.gif" =
+border=3D0> <A=20
+            =
+href=3D"http://www.obdev.at/downloads/avrusb/AVR-Doper.2006-10-23.zip"><S=
+TRONG>Download</STRONG></A></TD>
+          <TD style=3D"WIDTH: 60px; COLOR: #888">388=20
+kB</TD></TR></TBODY></TABLE></DIV>
+      <H2>Release Notes</H2>
+      <H3>Release 2008-11-27</H3>
+      <UL>
+        <LI>Fixed report ID for debug data HID interface. This interface =
+is not=20
+        yet in use because no host side driver has been written.=20
+        <LI>Fixed interface detection for Metaboard/USBasp hardware.=20
+        <LI>Don't configure Timer 1 for USBasp hardware. </LI></UL>
+      <H3>Release 2008-04-27</H3>
+      <UL>
+        <LI>Fixed bug from previous release: LED pin was not configured =
+as=20
+        output on AVR-Doper hardware. </LI></UL>
+      <H3>Release 2008-04-26</H3>
+      <UL>
+        <LI>Assigned a serial number. This should help to assign a =
+consistent=20
+        COM device regardless of the USB port used.=20
+        <LI>Improved ISP speed.=20
+        <LI>This version can be compiled for <A=20
+        href=3D"http://metalab.at/wiki/Avrprog-metaboard"=20
+        target=3D_blank>metaboard</A> and <A =
+href=3D"http://www.fischl.de/usbasp/"=20
+        target=3D_blank>USBasp</A> hardware </LI></UL>
+      <H3>Release 2008-02-05</H3>
+      <UL>
+        <LI>Reverted to old algorithm for entering HVSP mode.=20
+        <LI>Added <TT>.inf</TT> file for Windows Vista. This is required =
+for CDC=20
+        mode. </LI></UL>
+      <H3>Release 2007-12-01</H3>
+      <UL>
+        <LI>Fixed a serious bug in ISP mode! Reading fuse values and =
+similar=20
+        commands with avrdude could have unpredictable results on the =
+chip,=20
+        including chip erase etc. Please upgrade to this version!=20
+        <LI>Fixed HVSP mode for ATTiny24, 44 and 84 in circuit: Pins 11, =
+12 and=20
+        13 of the programming socket must be connected to GND.=20
+        <LI>HVSP mode is now tested with ATTiny11, 12, 13, 44 and 85. =
+</LI></UL>
+      <H3>Release 2007-08-07</H3>
+      <UL>
+        <LI>Transmit high address bits for devices with more than 64 kB =
+of=20
+        Flash.=20
+        <LI>The command line tool "avrdebug" accepts keyboard input now =
+which is=20
+        sent to the target device over the serial interface.=20
+        <LI>The "avrdebug" tool checks for both modes now: CDC and HID. =
+</LI></UL>
+      <H3>Release 2007-03-29</H3>
+      <UL>
+        <LI>Connected pins 2 and 3 of the 8 pin programming socket. =
+These pins=20
+        are swapped on some 8 pin devices. </LI></UL>
+      <H3>Release 2007-02-01</H3>
+      <UL>
+        <LI>Fixed bug in ISP value polling. Value polling is used when=20
+        programming older devices such as the AT90S8515.=20
+        <LI>Always round timer delay values up, never down. </LI></UL>
+      <H3>Release 2006-10-23</H3>
+      <UL>
+        <LI>Added patch for avrdude to support HID mode.=20
+        <LI>Updated Readme file with information about HID mode and =
+avrdude.=20
+        </LI></UL>
+      <H3>Release 2006-09-12</H3>
+      <UL>
+        <LI>Added compatibility macros to allow ATMega88 instead of =
+ATMega8.=20
+        <LI>Ignore synchLoops parameter in ISP mode since avrdude =
+sometimes=20
+        sends 0.=20
+        <LI>Changed default ISP clock speed to 2 (instead of fastest).=20
+      </LI></UL></DIV></TD>
+    <TD class=3Dright-column-td>
+      <DIV class=3Dright-column>
+      <DIV class=3D"rbox quick-links first-child">
+      <H3>AVR-USB</H3>
+      <DIV class=3Dseparator></DIV>
+      <DIV class=3Dcontent>
+      <H5>Information</H5>
+      <UL>
+        <LI><A=20
+        =
+href=3D"http://www.obdev.at/products/avrusb/index.html">Overview</A>=20
+        <LI><A=20
+        =
+href=3D"http://www.obdev.at/products/avrusb/benefits.html">Benefits</A>=20
+        <LI><A=20
+        =
+href=3D"http://www.obdev.at/products/avrusb/license.html">Licensing</A>=20
+        <LI><A=20
+        =
+href=3D"http://www.obdev.at/products/avrusb/download.html">Download</A>=20
+        <LI><A=20
+        =
+href=3D"http://www.obdev.at/products/avrusb/prjobdev.html">Reference=20
+        Projects</A>=20
+        <LI><A =
+href=3D"http://www.obdev.at/products/avrusb/links.html">Links</A>=20
+        </LI></UL>
+      <H5>Community Resources</H5>
+      <UL>
+        <LI><A=20
+        =
+href=3D"http://www.obdev.at/products/avrusb/projects.html">Community=20
+        Projects</A>=20
+        <LI><A href=3D"http://avrusb.wikidot.com/">Documentation =
+Wiki</A>=20
+        <LI><A =
+href=3D"http://forums.obdev.at/viewforum.php?f=3D8">Forum</A>=20
+        <LI><A=20
+        =
+href=3D"http://www.obdev.at/products/avrusb/feedback.html">Feedback</A>=20
+        </LI></UL></DIV></DIV>
+      <DIV class=3D"white rbox">
+      <H3>Related Information</H3>
+      <DIV class=3Dseparator></DIV>
+      <DIV class=3Dcontent>
+      <UL style=3D"MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+        <LI><A=20
+        =
+href=3D"http://www.obdev.at/developers/articles/00003.html">Article:=20
+        Implementing USB 1.1 in Firmware</A>=20
+        <LI><A =
+href=3D"http://www.obdev.at/products/avrmacpack/index.html">AVR=20
+        MacPack Development Environment</A> </LI></UL></DIV></DIV>
+      <DIV style=3D"MARGIN-TOP: 20px"></DIV>
+      <DIV class=3D"rbox quick-links first-child">
+      <H3>Sponsored Ads</H3>
+      <DIV class=3Dseparator></DIV>
+      <DIV class=3Dcontent>
+      <DIV style=3D"MARGIN-BOTTOM: -10px" align=3Dcenter>
+      <SCRIPT type=3Dtext/javascript><!--=0A=
+google_ad_client =3D "pub-1330380897213862";=0A=
+google_ad_width =3D 160;=0A=
+google_ad_height =3D 600;=0A=
+google_ad_format =3D "160x600_as";=0A=
+google_ad_type =3D "text_image";=0A=
+//2006-12-08: avrusb=0A=
+google_ad_channel =3D "8946101994";=0A=
+google_color_border =3D "eeeeee";=0A=
+google_color_bg =3D "eeeeee";=0A=
+google_color_link =3D "004499";=0A=
+google_color_text =3D "222222";=0A=
+google_color_url =3D "004499";=0A=
+//--></SCRIPT>
+
+      <SCRIPT =
+src=3D"http://pagead2.googlesyndication.com/pagead/show_ads.js"=20
+      type=3Dtext/javascript>=0A=
+</SCRIPT>
+
+      <SCRIPT type=3Dtext/javascript><!--=0A=
+google_ad_client =3D "pub-1330380897213862";=0A=
+google_ad_width =3D 160;=0A=
+google_ad_height =3D 600;=0A=
+google_ad_format =3D "160x600_as";=0A=
+google_ad_type =3D "text_image";=0A=
+//2006-12-08: avrusb=0A=
+google_ad_channel =3D "8946101994";=0A=
+google_color_border =3D "eeeeee";=0A=
+google_color_bg =3D "eeeeee";=0A=
+google_color_link =3D "004499";=0A=
+google_color_text =3D "222222";=0A=
+google_color_url =3D "004499";=0A=
+//--></SCRIPT>
+
+      <SCRIPT =
+src=3D"http://pagead2.googlesyndication.com/pagead/show_ads.js"=20
+      type=3Dtext/javascript>=0A=
+</SCRIPT>
+      </DIV></DIV></DIV></DIV></TD></TR></TBODY></TABLE></DIV>
+<DIV id=3Dfooter-separator></DIV></DIV>
+<DIV id=3Dpage-footer>Copyright =C2=A9 2008 Objective Development =
+Software GmbH=20
+<BR><STRONG>english</STRONG> | <A=20
+href=3D"http://www.obdev.at/products/avrusb/avrdoper-de.html">deutsch</A>=
+</DIV>
+<SCRIPT=20
+type=3Dtext/javascript>=0A=
+   // image preloading=0A=
+   aPLImgs =3D new Array();=0A=
+	</SCRIPT>
+</DIV></DIV></BODY></HTML>
+
+------=_NextPart_000_0000_01C96409.8ADB9760
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.obdev.at/Images/pixel.gif
+
+R0lGODlhCAAIAIAAAP///wAAACH5BAEAAAAALAAAAAAIAAgAAAIHhI+py+1dAAA7
+
+------=_NextPart_000_0000_01C96409.8ADB9760
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: http://www.obdev.at/Images/avrusb/avrdoper.jpg
+
+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
+iiEKKKKIQoooohP/2Q==
+
+------=_NextPart_000_0000_01C96409.8ADB9760
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.obdev.at/Images/download-arrow.gif
+
+R0lGODlhBwAIAMQaAKC83Yqw1pK22IWqzXCizo+z2XOfyHKGm2eRuIat1arD3GuRtGiPs8bN1Gub
+x5G02YSqzXCey6ezv26Em3Ojz52826O+3q/E2Ja32qG83f///wAAAAAAAAAAAAAAAAAAACH5BAEA
+ABoALAAAAAAHAAgAAAUhoKZdQiWKC5acGgMELPKKjUFYBaVoU5Q9kNPBMWBpJKcQADs=
+
+------=_NextPart_000_0000_01C96409.8ADB9760
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.obdev.at/resources/css/common.css
+
+xx-TABLE {
+	BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; BORDER-LEFT: =
+red 1px solid; BORDER-BOTTOM: red 1px solid
+}
+xx-TD {
+	BORDER-RIGHT: green 1px dotted; BORDER-TOP: green 1px dotted; =
+BORDER-LEFT: green 1px dotted; BORDER-BOTTOM: green 1px dotted
+}
+#centered-page {
+	MARGIN: 0px auto; WIDTH: 890px
+}
+#page-margin {
+	MARGIN: 0px 32px
+}
+#page-content {
+	PADDING-RIGHT: 9px; PADDING-LEFT: 9px; BACKGROUND: =
+url(images/page-body-bg.png) repeat-y left top; PADDING-BOTTOM: 0px; =
+PADDING-TOP: 0px
+}
+#page-content-padding {
+	PADDING-RIGHT: 25px; PADDING-LEFT: 40px; PADDING-BOTTOM: 25px; WIDTH: =
+100%; PADDING-TOP: 30px
+}
+#language-warning {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; =
+PADDING-BOTTOM: 3px; MARGIN: 0px; COLOR: #164495; PADDING-TOP: 3px; =
+BORDER-BOTTOM: #a6b1c2 1px solid; BACKGROUND-COLOR: #fff7c4; TEXT-ALIGN: =
+center
+}
+#navigation {
+	BACKGROUND: url(images/page-header-bg.png) no-repeat left top; HEIGHT: =
+72px
+}
+#navigation .navigation-logo {
+	PADDING-LEFT: 20px; VERTICAL-ALIGN: top; PADDING-TOP: 14px
+}
+#navigation .navigation-menu {
+	PADDING-RIGHT: 12px; PADDING-BOTTOM: 5px
+}
+#navigation .navigation-menu-item {
+	PADDING-LEFT: 2px
+}
+#navigation .cart-items-count {
+	PADDING-RIGHT: 18px; PADDING-TOP: 2px
+}
+#navigation .cart {
+	PADDING-TOP: 1px
+}
+#navigation .menu-item {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 15px; PADDING-BOTTOM: =
+5px; PADDING-TOP: 5px
+}
+#navigation .menu-item A:link {
+	COLOR: #555566; TEXT-DECORATION: none
+}
+#navigation .menu-item A:visited {
+	COLOR: #555566; TEXT-DECORATION: none
+}
+#navigation .menu-item A:active {
+	COLOR: #555566; TEXT-DECORATION: none
+}
+#navigation .menu-item A:hover {
+	COLOR: white; TEXT-DECORATION: none
+}
+#footer-separator {
+	BORDER-BOTTOM: #ccc 1px solid
+}
+#page-footer {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; FONT-SIZE: 10px; BACKGROUND: =
+url(images/page-footer-bg.png) no-repeat left bottom; PADDING-BOTTOM: =
+18px; COLOR: #8a93a0; LINE-HEIGHT: 1.5em; PADDING-TOP: 8px; TEXT-ALIGN: =
+center
+}
+#simple-page {
+	MARGIN: 0px; WIDTH: 100%
+}
+#simple-page #page-content {
+	BORDER-RIGHT: #8b9199 3px solid; BORDER-TOP: #8b9199 3px solid; =
+BACKGROUND: white; BORDER-LEFT: #8b9199 3px solid; BORDER-BOTTOM: medium =
+none
+}
+#simple-page #footer-separator {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium =
+none; BORDER-BOTTOM: medium none
+}
+#simple-page #page-footer {
+	BORDER-RIGHT: #8b9199 3px solid; BORDER-TOP: #ccc 1px solid; =
+BACKGROUND: white; BORDER-LEFT: #8b9199 3px solid; BORDER-BOTTOM: =
+#8b9199 3px solid
+}
+.left-column {
+	LINE-HEIGHT: 155%
+}
+.left-column TD {
+	LINE-HEIGHT: 155%
+}
+.right-column-td {
+	VERTICAL-ALIGN: top
+}
+.right-column {
+	FONT-SIZE: 10px; MARGIN-LEFT: 40px; WIDTH: 190px; LINE-HEIGHT: 145%; =
+MARGIN-RIGHT: 4px
+}
+.right-column H2 {
+	MARGIN-TOP: 24px; FONT-WEIGHT: normal; FONT-SIZE: 13px; MARGIN-BOTTOM: =
+0.7em; PADDING-BOTTOM: 2px; MARGIN-LEFT: 0px; COLOR: #333; =
+BORDER-BOTTOM: #ddd 1px solid
+}
+.right-column H3 {
+	FONT-SIZE: 12px; MARGIN-BOTTOM: 6px
+}
+.right-column H4 {
+	FONT-SIZE: 12px; MARGIN-BOTTOM: 5px
+}
+.right-column H5 {
+	MARGIN-TOP: 1.1em; FONT-SIZE: 11px; MARGIN-BOTTOM: 0.4em
+}
+.right-column UL {
+	PADDING-LEFT: 14px
+}
+.right-column :first-child {
+	MARGIN-TOP: 0px
+}
+A:link {
+	COLOR: #049; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #049; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #025; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: =
+32px; MARGIN: 0px; COLOR: #4c4c4c; PADDING-TOP: 32px; FONT-FAMILY: =
+Lucida Grande,Verdana,Arial,Helvetica; BACKGROUND-COLOR: #d5d9e1; =
+TEXT-ALIGN: center
+}
+TD {
+	FONT-SIZE: 12px; FONT-FAMILY: Lucida Grande,Verdana,Arial,Helvetica
+}
+TH {
+	FONT-SIZE: 12px; FONT-FAMILY: Lucida Grande,Verdana,Arial,Helvetica
+}
+TEXTAREA {
+	FONT-SIZE: 11px; FONT-FAMILY: Lucida Grande,Verdana,Arial,Helvetica
+}
+FORM {
+	FONT-SIZE: 12px
+}
+H1 {
+	FONT-SIZE: 20px; PADDING-BOTTOM: 0.2em; MARGIN: 0px 0px 1em; COLOR: =
+#334; LINE-HEIGHT: 1.1em
+}
+H2 {
+	MARGIN-TOP: 2em; FONT-WEIGHT: normal; FONT-SIZE: 14px; MARGIN-BOTTOM: =
+1em; COLOR: #111; LINE-HEIGHT: normal
+}
+.left-column H2 {
+	PADDING-LEFT: 40px; BACKGROUND: url(images/h2-bg.png) no-repeat right =
+top; LEFT: -40px; PADDING-BOTTOM: 8px; PADDING-TOP: 4px; POSITION: =
+relative
+}
+H3 {
+	MARGIN-TOP: 1.8em; FONT-SIZE: 12px; MARGIN-BOTTOM: 0.8em; COLOR: #777
+}
+H4 {
+	FONT-SIZE: 12px; MARGIN-BOTTOM: 3px; COLOR: #333
+}
+H5 {
+	FONT-SIZE: 11px; MARGIN-BOTTOM: 3px
+}
+H6 {
+	FONT-SIZE: 10px
+}
+HR.dotted {
+	BORDER-RIGHT: medium none; PADDING-RIGHT: 0px; BORDER-TOP: medium none; =
+PADDING-LEFT: 0px; BACKGROUND-IMAGE: url(images/hdots.gif); =
+PADDING-BOTTOM: 0px; MARGIN: 10px 0px; BORDER-LEFT: medium none; =
+PADDING-TOP: 0px; BORDER-BOTTOM: medium none; HEIGHT: 1px
+}
+I {
+	MARGIN-RIGHT: 0.3em; FONT-FAMILY: Helvetica
+}
+INPUT {
+	FONT-SIZE: 12px
+}
+PRE {
+	FONT-SIZE: 12px; FONT-FAMILY: Monaco, Courier New, monospace
+}
+SELECT {
+	FONT-SIZE: 12px
+}
+SMALL {
+	FONT-SIZE: 10px; LINE-HEIGHT: 145%
+}
+TT {
+	FONT-SIZE: 90%; FONT-FAMILY: Monaco, Courier New, monospace
+}
+KBD {
+	FONT-SIZE: 90%; FONT-FAMILY: Monaco, Courier New, monospace
+}
+UL {
+	PADDING-LEFT: 20px; LIST-STYLE-IMAGE: url(images/bullet.png); =
+MARGIN-LEFT: 0px
+}
+UL UL {
+	LIST-STYLE: circle none outside
+}
+OL {
+	PADDING-LEFT: 36px; LIST-STYLE-IMAGE: none; MARGIN-LEFT: 0px
+}
+.dimmed {
+	COLOR: #555
+}
+.disabled {
+	COLOR: #b7becb
+}
+.red {
+	COLOR: #c00
+}
+.green {
+	COLOR: #090
+}
+.box {
+	BORDER-RIGHT: #d9c68c 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: =
+#d9c68c 1px solid; MARGIN-TOP: 12px; PADDING-LEFT: 10px; MARGIN-BOTTOM: =
+18px; PADDING-BOTTOM: 8px; BORDER-LEFT: #d9c68c 1px solid; PADDING-TOP: =
+8px; BORDER-BOTTOM: #d9c68c 1px solid; BACKGROUND-COLOR: #f5eed9
+}
+.box UL {
+	PADDING-LEFT: 12px; MARGIN-BOTTOM: 0px
+}
+.box OL {
+	PADDING-LEFT: 24px; MARGIN-BOTTOM: 0px
+}
+.box P {
+	MARGIN-BOTTOM: 0px
+}
+.code {
+	FONT-SIZE: 11px; LINE-HEIGHT: 130%; FONT-FAMILY: Monaco, Courier New, =
+monospace; WHITE-SPACE: pre
+}
+.alert {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 12px; BORDER-LEFT-COLOR: #ddcc60; =
+BORDER-BOTTOM-COLOR: #ddcc60; PADDING-BOTTOM: 2px; BORDER-TOP-COLOR: =
+#ddcc60; PADDING-TOP: 2px; BACKGROUND-COLOR: #ffee80; =
+BORDER-RIGHT-COLOR: #ddcc60
+}
+.centered {
+	BORDER-RIGHT: medium none; BORDER-LEFT: medium none; TEXT-ALIGN: center
+}
+.large {
+	BORDER-LEFT-WIDTH: 8px; PADDING-BOTTOM: 8px; PADDING-TOP: 8px
+}
+.small {
+	PADDING-BOTTOM: 6px; LINE-HEIGHT: 140%; PADDING-TOP: 6px
+}
+.gray {
+	BORDER-LEFT-COLOR: #bbb; BORDER-BOTTOM-COLOR: #bbb; BORDER-TOP-COLOR: =
+#bbb; BACKGROUND-COLOR: #eee; BORDER-RIGHT-COLOR: #bbb
+}
+.white {
+	BORDER-LEFT-COLOR: #ccc; BORDER-BOTTOM-COLOR: #ccc; BORDER-TOP-COLOR: =
+#ccc; BACKGROUND-COLOR: white; BORDER-RIGHT-COLOR: #ccc
+}
+.titled {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; =
+PADDING-TOP: 0px
+}
+.titled .content {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 12px; PADDING-BOTTOM: 12px; =
+PADDING-TOP: 12px
+}
+.titled .title {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; FONT-SIZE: =
+12px; BACKGROUND: url(images/box-title-bg.gif) #d1cbb9 repeat-y; =
+PADDING-BOTTOM: 4px; COLOR: #222; PADDING-TOP: 4px; BORDER-BOTTOM: =
+#d9c68c 1px solid
+}
+.titled .footer {
+	PADDING-RIGHT: 8px; BORDER-TOP: #d9c68c 1px solid; PADDING-LEFT: 8px; =
+PADDING-BOTTOM: 8px; PADDING-TOP: 8px; WHITE-SPACE: nowrap; TEXT-ALIGN: =
+center
+}
+.gray .title {
+	BACKGROUND: url(images/box-title-gray-bg.gif) #cdcdcd repeat-y; COLOR: =
+#222; BORDER-BOTTOM: #bbb 1px solid
+}
+.gray .footer {
+	BORDER-TOP: #bbb 1px solid
+}
+.catalog TD {
+	FONT-SIZE: 11px
+}
+.catalog-footnote {
+	FONT-SIZE: 11px; COLOR: #944; PADDING-TOP: 0.7em; TEXT-ALIGN: right
+}
+.dict-table {
+	BORDER-COLLAPSE: collapse
+}
+.dict-table TD {
+	PADDING-RIGHT: 8px; BORDER-TOP: #ddd 1px solid; PADDING-LEFT: 8px; =
+FONT-SIZE: 11px; PADDING-BOTTOM: 3px; VERTICAL-ALIGN: top; PADDING-TOP: =
+4px
+}
+.dict-table TH {
+	PADDING-RIGHT: 8px; BORDER-TOP: #ddd 1px solid; PADDING-LEFT: 8px; =
+PADDING-BOTTOM: 3px; VERTICAL-ALIGN: top; PADDING-TOP: 3px; =
+BACKGROUND-COLOR: #eed; TEXT-ALIGN: left
+}
+.dict-table TD.first {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium =
+none; BORDER-BOTTOM: medium none
+}
+.dict-table TD.key {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px
+}
+.dict-table TD.tt {
+	FONT-WEIGHT: normal; FONT-FAMILY: Monaco
+}
+.download {
+	TABLE-LAYOUT: auto; MARGIN-BOTTOM: 15px; BORDER-BOTTOM: #cccccc 1px =
+solid
+}
+.download TD {
+	PADDING-RIGHT: 8px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 8px; =
+FONT-SIZE: 11px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px; TEXT-ALIGN: left
+}
+.download TH {
+	PADDING-RIGHT: 8px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 8px; =
+FONT-SIZE: 11px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px; TEXT-ALIGN: left
+}
+.download TH {
+	BACKGROUND: #e2e6ea
+}
+.download-table {
+	BORDER-RIGHT: #ccc 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: medium =
+none; MARGIN-TOP: 16px; PADDING-LEFT: 0px; MARGIN-BOTTOM: 20px; =
+PADDING-BOTTOM: 0px; BORDER-LEFT: #ccc 1px solid; WIDTH: 100%; =
+PADDING-TOP: 0px; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse; =
+border-spacing: 0
+}
+.download-table TH {
+	PADDING-RIGHT: 16px; BORDER-TOP: #ccc 1px solid; PADDING-LEFT: 16px; =
+FONT-SIZE: 11px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px; BORDER-BOTTOM: =
+#ccc 1px solid; BACKGROUND-COLOR: #e2e6ea; TEXT-ALIGN: left
+}
+.download-table TD {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-SIZE: 11px; PADDING-BOTTOM: =
+3px; PADDING-TOP: 3px; BORDER-BOTTOM: #ddd 1px solid; WHITE-SPACE: =
+nowrap
+}
+.faq-question {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px
+}
+.faq-answer {
+	BORDER-RIGHT: #d8d8d8 1px solid; PADDING-RIGHT: 12px; BORDER-TOP: =
+#d8d8d8 1px solid; MARGIN-TOP: 8px; DISPLAY: none; PADDING-LEFT: 12px; =
+FONT-SIZE: 11px; MARGIN-BOTTOM: 20px; PADDING-BOTTOM: 8px; BORDER-LEFT: =
+#d8d8d8 6px solid; PADDING-TOP: 8px; BORDER-BOTTOM: #d8d8d8 1px solid; =
+BACKGROUND-COLOR: #f0f0f0
+}
+.faq-answer TT {
+	FONT-SIZE: 11px
+}
+.faq-answer TD {
+	FONT-SIZE: 11px
+}
+.faq-answer OL {
+	MARGIN-LEFT: -10px
+}
+.faq-answer P {
+	MARGIN-BOTTOM: 0px
+}
+.faq-answer P:first-child {
+	MARGIN-TOP: 0px
+}
+.first-child {
+	MARGIN-TOP: 0px
+}
+.full-path {
+	FONT-SIZE: 90%; MARGIN-LEFT: 24px; FONT-FAMILY: Monaco, Courier New, =
+monospace
+}
+.highlights H3 {
+	MARGIN-TOP: 0.5em; FONT-WEIGHT: normal; FONT-SIZE: 15px; MARGIN-BOTTOM: =
+0.5em; COLOR: #333
+}
+.highlights P {
+	MARGIN-TOP: 0.5em; FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #555; =
+LINE-HEIGHT: 1.7em
+}
+.huge-link {
+	PADDING-RIGHT: 0px; BACKGROUND-POSITION: left center; MARGIN-TOP: 24px; =
+PADDING-LEFT: 32px; FONT-WEIGHT: bold; FONT-SIZE: 1.3em; =
+BACKGROUND-IMAGE: url(images/right-arrow.gif); PADDING-BOTTOM: 0px; =
+PADDING-TOP: 0px; BACKGROUND-REPEAT: no-repeat
+}
+.huge-link A {
+	COLOR: #d98a00
+}
+.introduction {
+	MARGIN-TOP: 18px; FONT-WEIGHT: bold; FONT-SIZE: 13px; MARGIN-BOTTOM: =
+28px; COLOR: #334; LINE-HEIGHT: 145%
+}
+.link-button {
+	BACKGROUND-POSITION: left center; PADDING-LEFT: 17px; FONT-SIZE: 11px; =
+FILTER: =
+progid:DXImageTransform.Microsoft.AlphaImageLoader(src=3D'/www.obdev.at/I=
+mages/link-arrow.png', sizingMethod=3D'crop'); BACKGROUND-IMAGE: none; =
+WIDTH: 100%; LINE-HEIGHT: 130%; BACKGROUND-REPEAT: no-repeat
+}
+.more {
+	TEXT-ALIGN: right
+}
+A.more {
+	PADDING-RIGHT: 10px; BACKGROUND: url(images/more-arrow.gif) no-repeat =
+100% 50%; ZOOM: 1; WHITE-SPACE: nowrap
+}
+.new-label {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #e87020
+}
+.small {
+	FONT-SIZE: 11px
+}
+.small UL {
+	LIST-STYLE-IMAGE: url(images/triangle.png)
+}
+.stretched LI {
+	MARGIN-TOP: 0.7em
+}
+.stretched LI LI {
+	MARGIN-TOP: 0em
+}
+.subnavigation {
+	BORDER-RIGHT: #ccc 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #ccc 1px =
+solid; MARGIN-TOP: 18px; PADDING-LEFT: 0px; MARGIN-BOTTOM: 12px; =
+PADDING-BOTTOM: 0px; BORDER-LEFT: #ccc 8px solid; PADDING-TOP: 0px; =
+BORDER-BOTTOM: #ccc 1px solid; BACKGROUND-COLOR: #eee
+}
+.subnavigation UL {
+	PADDING-RIGHT: 24px; PADDING-LEFT: 24px; LIST-STYLE-IMAGE: =
+url(images/triangle.png); PADDING-BOTTOM: 8px; MARGIN: 0px; PADDING-TOP: =
+8px
+}
+.subnavigation LI {
+	FONT-SIZE: 11px; LINE-HEIGHT: 135%
+}
+.page-heading {
+	MARGIN-BOTTOM: 24px
+}
+.page-heading H1 {
+	FONT-SIZE: 20px; PADDING-BOTTOM: 0.2em; MARGIN: 0px; COLOR: #334; =
+LINE-HEIGHT: 1.1em
+}
+.page-heading H2 {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; MARGIN-TOP: 0px; =
+FONT-SIZE: 12px; BACKGROUND: none transparent scroll repeat 0% 0%; =
+MARGIN-BOTTOM: 4px; PADDING-BOTTOM: 0px; BORDER-LEFT: medium none; =
+COLOR: #888; PADDING-TOP: 0px; BORDER-BOTTOM: medium none; FONT-STYLE: =
+italic
+}
+.page-heading H2 + H1 {
+	BORDER-TOP: #c8c8c8 1px solid; PADDING-TOP: 0.2em; BORDER-BOTTOM: =
+medium none
+}
+.page-heading H1 + H2 {
+	BORDER-TOP: #c8c8c8 1px solid; MARGIN-TOP: 4px; PADDING-LEFT: 0px; =
+BACKGROUND: none transparent scroll repeat 0% 0%; LEFT: 0px; =
+PADDING-TOP: 4px
+}
+.products-box {
+	FONT-WEIGHT: bold; LINE-HEIGHT: 1.4em
+}
+.quick-links {
+	FONT-SIZE: 12px; MARGIN-BOTTOM: 16px
+}
+.quick-links P {
+	MARGIN: 1px 0px
+}
+.quick-links UL {
+	MARGIN-TOP: 0px; LIST-STYLE-IMAGE: url(images/triangle.png); =
+MARGIN-BOTTOM: 0px; LINE-HEIGHT: 1.3em
+}
+.quote {
+	FONT-WEIGHT: normal; FONT-SIZE: 15px; COLOR: #777; LINE-HEIGHT: 1.2em; =
+FONT-STYLE: italic; FONT-FAMILY: Times
+}
+.reviews BLOCKQUOTE {
+	BORDER-TOP: #999 1px dotted; MARGIN: 12px 0px 4px; PADDING-TOP: 12px
+}
+.reviews BLOCKQUOTE.first-child {
+	BORDER-TOP: medium none
+}
+.rbox {
+	BACKGROUND: url(images/rbox-gray-bg.gif) repeat-y; MARGIN-BOTTOM: 10px; =
+WIDTH: 194px
+}
+.rbox .separator {
+	PADDING-RIGHT: 0px; BORDER-TOP: #bbbbbb 1px solid; PADDING-LEFT: 0px; =
+FONT-SIZE: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 3px; PADDING-TOP: 0px
+}
+.rbox H3 {
+	PADDING-RIGHT: 1em; PADDING-LEFT: 1em; FONT-SIZE: 12px; BACKGROUND: =
+url(images/rbox-gray-header.gif) no-repeat; PADDING-BOTTOM: 0.5em; =
+MARGIN: 0px; COLOR: #333; PADDING-TOP: 0.6em
+}
+.rbox .content {
+	PADDING-RIGHT: 1.2em; PADDING-LEFT: 1.2em; BACKGROUND: =
+url(images/rbox-gray-footer.gif) no-repeat 50% bottom; PADDING-BOTTOM: =
+1.3em; MARGIN: 0px; PADDING-TOP: 0.7em
+}
+.rbox .gradient-footer {
+	BACKGROUND-IMAGE: url(images/rbox-gray-footer.png)
+}
+.postit-top {
+	FONT-SIZE: 1px; BACKGROUND: url(images/postit-top.png) no-repeat left =
+top; HEIGHT: 4px
+}
+.postit-body {
+	MARGIN-TOP: 20px; BACKGROUND: url(images/postit-body.png) repeat-y left =
+top
+}
+.postit-bottom {
+	BACKGROUND: url(images/postit-bottom.png) no-repeat left bottom; =
+PADDING-BOTTOM: 16px
+}
+.postit-content {
+	PADDING-RIGHT: 2em; PADDING-LEFT: 1.5em; LINE-HEIGHT: 1.5em; =
+PADDING-TOP: 0.5em
+}
+.yellow {
+	BACKGROUND-IMAGE: url(images/rbox-yellow-bg.gif)
+}
+.yellow H3 {
+	BACKGROUND-IMAGE: url(images/rbox-yellow-header.gif)
+}
+.yellow .content {
+	BACKGROUND-IMAGE: url(images/rbox-yellow-footer.gif)
+}
+.yellow .separator {
+	BORDER-TOP: #d9c68c 1px solid
+}
+.white {
+	BACKGROUND-IMAGE: url(images/rbox-white-bg.gif)
+}
+.white .content {
+	BACKGROUND-IMAGE: url(images/rbox-white-footer.gif)
+}
+.screenshot {
+	MARGIN: 2em 0em; TEXT-ALIGN: center
+}
+.screenshot P {
+	MARGIN-TOP: 0px; FONT-STYLE: italic
+}
+.slightly-stretched LI {
+	FONT-SIZE: 11px; PADDING-BOTTOM: 3px
+}
+.spec-sheet {
+	BORDER-RIGHT: #a0a0a0 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: medium =
+none; PADDING-LEFT: 0px; FONT-SIZE: 11px; MARGIN-BOTTOM: 24px; =
+PADDING-BOTTOM: 0px; BORDER-LEFT: #a0a0a0 1px solid; PADDING-TOP: 0px; =
+BORDER-BOTTOM: #a0a0a0 1px solid
+}
+.spec-sheet H2 {
+	PADDING-RIGHT: 8px; BORDER-TOP: #a0a0a0 1px solid; PADDING-LEFT: 8px; =
+FONT-WEIGHT: bold; FONT-SIZE: 11px; BACKGROUND: #d7dbde; LEFT: 0px; =
+PADDING-BOTTOM: 4px; MARGIN: 0px; COLOR: #111; PADDING-TOP: 4px; =
+BORDER-BOTTOM: #a0a0a0 1px solid
+}
+.spec-sheet P {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; PADDING-BOTTOM: 10px; MARGIN: =
+0px; LINE-HEIGHT: 1.4em; PADDING-TOP: 5px
+}
+.pbox-title {
+	MARGIN-TOP: 6px; FONT-WEIGHT: bold; FONT-SIZE: 13px; MARGIN-BOTTOM: =
+2px; COLOR: #000
+}
+.pbox-subtitle {
+	FONT-SIZE: 11px; COLOR: #777
+}
+.pbox-teaser {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #e80
+}
+.mainpage-news {
+	PADDING-RIGHT: 0px; MARGIN-TOP: 4em; PADDING-LEFT: 0px; PADDING-BOTTOM: =
+0px; PADDING-TOP: 0px
+}
+.mainpage-news UL {
+	MARGIN-TOP: 0px
+}
+.mainpage-news LI {
+	PADDING-RIGHT: 0px; MARGIN-TOP: 1px; PADDING-LEFT: 0px; FONT-SIZE: =
+11px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.news-banner {
+	PADDING-RIGHT: 3px; BORDER-TOP: #bbb 1px solid; MARGIN-TOP: 24px; =
+PADDING-LEFT: 3px; FONT-WEIGHT: bold; PADDING-BOTTOM: 3px; PADDING-TOP: =
+3px; BORDER-BOTTOM: #bbb 1px solid; TEXT-ALIGN: center
+}
+
+------=_NextPart_000_0000_01C96409.8ADB9760
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.obdev.at/resources/css/explorer.css
+
+* HTML * {
+=09
+}
+.small UL {
+	LIST-STYLE-IMAGE: url(images/triangle.gif)
+}
+.subnavigation UL {
+	LIST-STYLE-IMAGE: url(images/triangle.gif)
+}
+.quick-links UL {
+	LIST-STYLE-IMAGE: url(images/triangle.gif)
+}
+UL {
+	LIST-STYLE-IMAGE: url(images/bullet.gif)
+}
+.right-column UL {
+	MARGIN-LEFT: 3px
+}
+HR.dotted {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; =
+BACKGROUND-IMAGE: none; MARGIN: 4px 0px; BORDER-LEFT: #ccc 1px solid; =
+BORDER-BOTTOM: #ccc 1px solid; HEIGHT: 1px
+}
+
+------=_NextPart_000_0000_01C96409.8ADB9760
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://pagead2.googlesyndication.com/pagead/show_ads.js
+
+(function(){=0A=
+var h=3Dfalse,j=3Dnull,m=3Dtrue,aa=3D(new Date).getTime();var =
+ba=3D{google_ad_channel:"channel",google_ad_host:"host",google_ad_host_ch=
+annel:"h_ch",google_ad_host_tier_id:"ht_id",google_ad_region:"region",goo=
+gle_ad_section:"region",google_ad_type:"ad_type",google_adtest:"adtest",g=
+oogle_allow_expandable_ads:"ea",google_alternate_ad_url:"alternate_ad_url=
+",google_alternate_color:"alt_color",google_bid:"bid",google_city:"gcs",g=
+oogle_color_bg:"color_bg",google_color_border:"color_border",google_color=
+_line:"color_line",google_color_link:"color_link",google_color_text:"colo=
+r_text",=0A=
+google_color_url:"color_url",google_contents:"contents",google_country:"g=
+l",google_cust_age:"cust_age",google_cust_ch:"cust_ch",google_cust_gender=
+:"cust_gender",google_cust_id:"cust_id",google_cust_interests:"cust_inter=
+ests",google_cust_job:"cust_job",google_cust_l:"cust_l",google_cust_lh:"c=
+ust_lh",google_cust_u_url:"cust_u_url",google_disable_video_autoplay:"dis=
+able_video_autoplay",google_ed:"ed",google_encoding:"oe",google_feedback:=
+"feedback_link",google_flash_version:"flash",google_gl:"gl",google_hints:=
+"hints",=0A=
+google_kw:"kw",google_kw_type:"kw_type",google_language:"hl",google_page_=
+url:"url",google_referrer_url:"ref",google_region:"gr",google_reuse_color=
+s:"reuse_colors",google_safe:"adsafe",google_targeting:"targeting",google=
+_ui_features:"ui",google_ui_version:"uiv",google_tag_js_version:"gut",goo=
+gle_video_doc_id:"video_doc_id",google_video_product_type:"video_product_=
+type"},ca=3D{google_ad_format:"format",google_ad_output:"output",google_a=
+d_callback:"callback",google_ad_override:"google_ad_override",google_ad_s=
+lot:"slotname",=0A=
+google_analytics_uacct:"ga_wpids",google_correlator:"correlator",google_c=
+pa_choice:"cpa_choice",google_ctr_threshold:"ctr_t",google_image_size:"im=
+age_size",google_last_modified_time:"lmt",google_max_num_ads:"num_ads",go=
+ogle_max_radlink_len:"max_radlink_len",google_num_radlinks:"num_radlinks"=
+,google_num_radlinks_per_unit:"num_radlinks_per_unit",google_only_ads_wit=
+h_video:"only_ads_with_video",google_page_location:"loc",google_rl_dest_u=
+rl:"rl_dest_url",google_rl_filtering:"rl_filtering",google_rl_mode:"rl_mo=
+de",=0A=
+google_rt:"rt",google_skip:"skip"};function =
+da(){}da.prototype.Hb=3Dfunction(){};da.prototype.Ib=3Dfunction(){};da.pr=
+ototype.Gb=3Dfunction(){};var n=3Dj;function ea(a){n&&n.Hb(a)}function =
+fa(a){n&&n.Ib(a)}function ga(a){n&&n.Gb(a)}function =
+r(){this.I=3Dthis.wb();this.qa=3Dh;if(!this.I){(this.qa=3Dthis.bb())||fa(=
+"Browser does not allow =
+cookies")}}r.prototype.ha=3D"__gads=3D";r.prototype.R=3D"GoogleAdServingT=
+est=3D";r.prototype.ib=3Dfunction(){return =
+this.I};r.prototype.setCookieInfo=3Dfunction(a){this.C=3Da._cookies_[0];i=
+f(this.C!=3Dj){this.I=3Dthis.C._value_;this.Fb()}};=0A=
+r.prototype.eb=3Dfunction(a){var b=3D(new Date).valueOf(),c=3Dnew =
+Date;c.setTime(b+a);return =
+c};r.prototype.db=3Dfunction(a){if(this.I!=3Dj||!this.qa)ea("Skipping =
+fetch cookie call");else{var =
+b=3D"script",c=3Ddocument.domain,d=3D"http://partner.googleadservices.com=
+/gampad/cookie.js?callback=3D_GA_googleCookieHelper.setCookieInfo&client=3D=
+"+ha(a)+"&domain=3D"+ha(c);ea("Issuing a fetch cookie call with <a =
+href=3D'"+d+"'>"+d+"</a>");document.write("<"+b+' =
+src=3D"'+d+'"></'+b+">")}};=0A=
+r.prototype.bb=3Dfunction(){document.cookie=3Dthis.R+"Good";var =
+a=3Dthis.Ea(this.R),b=3Da=3D=3D"Good";if(b){var =
+c=3Dthis.eb(-1);document.cookie=3Dthis.R+"; =
+expires=3D"+c.toGMTString()}return b};r.prototype.wb=3Dfunction(){var =
+a=3Dthis.Ea(this.ha);a!=3Dj?ea("Read first party cookie: "+a):fa("No =
+first party cookie found");return a};r.prototype.Ea=3Dfunction(a){var =
+b=3Ddocument.cookie,c=3Db.indexOf(a),d=3Dj;if(c!=3D-1){var =
+e=3Dc+a.length,f=3Db.indexOf(";",e);if(f=3D=3D-1)f=3Db.length;d=3Db.subst=
+ring(e,f)}return d};=0A=
+r.prototype.Fb=3Dfunction(){if(this.C=3D=3Dj)fa("Skipping cookie =
+creation: no cookie info");else if(this.I=3D=3Dj)ga("Skipping cookie =
+creation: no cookie value");else{var a=3Dnew =
+Date;a.setTime(1000*this.C._expires_);var =
+b=3Dthis.C._domain_,c=3Dthis.ha+this.I+"; expires=3D"+a.toGMTString()+"; =
+path=3D"+this.C._path_+"; domain=3D."+b;document.cookie=3Dc;ea("Written =
+cookie: "+c)}};function ia(a,b){var c;return a?(c=3DparseFloat(a))?c:b:b}=0A=
+function ja(){if(navigator.plugins&&navigator.mimeTypes.length){var =
+a=3Dnavigator.plugins["Shockwave Flash"];if(a&&a.description)return =
+a.description.replace(/([a-zA-Z]|\s)+/,"").replace(/(\s)+r/,".")}else =
+if(navigator.userAgent&&navigator.userAgent.indexOf("Windows =
+CE")>=3D0){var b=3D3,c=3D1;while(c)try{c=3Dnew =
+ActiveXObject("ShockwaveFlash.ShockwaveFlash."+(b+1));b++}catch(d){c=3Dj}=
+return b.toString()}else if(ka()){var c=3Dj;try{c=3Dnew =
+ActiveXObject("ShockwaveFlash.ShockwaveFlash.7")}catch(d){var =
+b=3D0;try{c=3Dnew ActiveXObject("ShockwaveFlash.ShockwaveFlash.6");=0A=
+b=3D6;c.AllowScriptAccess=3D"always"}catch(d){if(b=3D=3D6)return =
+b.toString()}try{c=3Dnew =
+ActiveXObject("ShockwaveFlash.ShockwaveFlash")}catch(d){}}if(c!=3Dj){var =
+b=3Dc.GetVariable("$version").split(" ")[1];return =
+b.replace(/,/g,".")}}return"0"};var =
+la=3Dla||{},s=3Dthis,na=3Dfunction(a,b,c){var =
+d=3Da.split("."),e=3Dc||s,f;!(d[0]in e)&&e.execScript&&e.execScript("var =
+"+d[0]);while(d.length&&(f=3Dd.shift()))if(!d.length&&ma(b))e[f]=3Db;else=
+ e=3De[f]?e[f]:(e[f]=3D{})},oa=3Dfunction(a,b){var =
+c=3Da.split("."),d=3Db||s;for(var e;e=3Dc.shift();)if(d[e])d=3Dd[e];else =
+return j;return d},t=3Dfunction(a){var b=3Dtypeof =
+a;if(b=3D=3D"object")if(a){if(typeof a.length=3D=3D"number"&&typeof =
+a.splice!=3D"undefined"&&!pa(a,"length"))return"array";if(typeof =
+a.call!=3D"undefined")return"function"}else return"null";=0A=
+else if(b=3D=3D"function"&&typeof =
+a.call=3D=3D"undefined")return"object";return b},qa=3Dfunction(a,b){if(b =
+in a)for(var c in =
+a)if(c=3D=3Db&&Object.prototype.hasOwnProperty.call(a,b))return m;return =
+h};if(Object.prototype.propertyIsEnumerable)var =
+pa=3Dfunction(a,b){return a instanceof =
+Object?Object.prototype.propertyIsEnumerable.call(a,b):qa(a,b)};else =
+pa=3Dqa;var ma=3Dfunction(a){return typeof a!=3D"undefined"};=0A=
+var ra=3Dfunction(a){var b=3Dt(a);return =
+b=3D=3D"array"||b=3D=3D"object"&&typeof =
+a.length=3D=3D"number"},sa=3Dfunction(a){return typeof =
+a=3D=3D"string"},ta=3Dfunction(a){return =
+t(a)=3D=3D"function"},ua=3Dfunction(a){var b=3Dt(a);return =
+b=3D=3D"object"||b=3D=3D"array"||b=3D=3D"function"},xa=3Dfunction(a){if(a=
+.hasOwnProperty&&a.hasOwnProperty(va)){var b=3Da[va];if(b)return =
+b}a[va]||(a[va]=3D++wa);return =
+a[va]},va=3D"closure_hashCode_",wa=3D0,ya=3Dfunction(a){var =
+b=3Dt(a);if(b=3D=3D"object"||b=3D=3D"array"){if(a.clone)return =
+a.clone();var c=3Db=3D=3D"array"?[]:{};for(var d in a)c[d]=3D=0A=
+ya(a[d]);return c}return a},u=3Dfunction(a,b){var =
+c=3Da.Jb;if(arguments.length>2){var =
+d=3DArray.prototype.slice.call(arguments,2);c&&d.unshift.apply(d,c);c=3Dd=
+}b=3Da.Lb||b;a=3Da.Kb||a;var e,f=3Db||s;e=3Dc?function(){var =
+g=3DArray.prototype.slice.call(arguments);g.unshift.apply(g,c);return =
+a.apply(f,g)}:function(){return =
+a.apply(f,arguments)};e.Jb=3Dc;e.Lb=3Db;e.Kb=3Da;return =
+e},za=3DDate.now||function(){return(new =
+Date).getTime()},Aa=3Dfunction(a,b,c){na(a,b,c)},v=3Dfunction(a,b){functi=
+on c(){}c.prototype=3Db.prototype;a.p=3Db.prototype;=0A=
+a.prototype=3Dnew c;a.prototype.constructor=3Da};var =
+Ba=3Dfunction(a,b,c){if(a.indexOf)return =
+a.indexOf(b,c);if(Array.indexOf)return Array.indexOf(a,b,c);var =
+d=3Dc=3D=3Dj?0:c<0?Math.max(0,a.length+c):c;for(var =
+e=3Dd;e<a.length;e++)if(e in a&&a[e]=3D=3D=3Db)return =
+e;return-1},Ca=3Dfunction(a,b,c){if(a.forEach)a.forEach(b,c);else =
+if(Array.forEach)Array.forEach(a,b,c);else{var =
+d=3Da.length,e=3Dsa(a)?a.split(""):a;for(var f=3D0;f<d;f++)f in =
+e&&b.call(c,e[f],f,a)}},Da=3Dfunction(a,b){var =
+c=3DBa(a,b),d;if(d=3Dc!=3D-1)Array.prototype.splice.call(a,c,1).length=3D=
+=3D1;return d};=0A=
+var Ea=3Dfunction(a){if(t(a)=3D=3D"array")return a.concat();else{var =
+b=3D[];for(var c=3D0,d=3Da.length;c<d;c++)b[c]=3Da[c];return b}};var =
+Fa=3Dfunction(a,b){this.x=3Dma(a)?a:0;this.y=3Dma(b)?b:0};Fa.prototype.cl=
+one=3Dfunction(){return new =
+Fa(this.x,this.y)};Fa.prototype.toString=3Dfunction(){return"("+this.x+",=
+ "+this.y+")"};var =
+w=3Dfunction(a,b){this.width=3Da;this.height=3Db};w.prototype.clone=3Dfun=
+ction(){return new =
+w(this.width,this.height)};w.prototype.toString=3Dfunction(){return"("+th=
+is.width+" x =
+"+this.height+")"};w.prototype.ceil=3Dfunction(){this.width=3DMath.ceil(t=
+his.width);this.height=3DMath.ceil(this.height);return =
+this};w.prototype.floor=3Dfunction(){this.width=3DMath.floor(this.width);=
+this.height=3DMath.floor(this.height);return this};=0A=
+w.prototype.round=3Dfunction(){this.width=3DMath.round(this.width);this.h=
+eight=3DMath.round(this.height);return =
+this};w.prototype.scale=3Dfunction(a){this.width*=3Da;this.height*=3Da;re=
+turn this};var Ga=3Dfunction(a,b,c){for(var d in =
+a)b.call(c,a[d],d,a)};var Ha=3Dfunction(a){return =
+a.replace(/^[\s\xa0]+|[\s\xa0]+$/g,"")},Na=3Dfunction(a,b){if(b)return =
+a.replace(Ia,"&amp;").replace(Ja,"&lt;").replace(Ka,"&gt;").replace(La,"&=
+quot;");else{if(!Ma.test(a))return =
+a;if(a.indexOf("&")!=3D-1)a=3Da.replace(Ia,"&amp;");if(a.indexOf("<")!=3D=
+-1)a=3Da.replace(Ja,"&lt;");if(a.indexOf(">")!=3D-1)a=3Da.replace(Ka,"&gt=
+;");if(a.indexOf('"')!=3D-1)a=3Da.replace(La,"&quot;");return =
+a}},Ia=3D/&/g,Ja=3D/</g,Ka=3D/>/g,La=3D/\"/g,Ma=3D/[&<>\"]/,Oa=3Dfunction=
+(a,b){var c=3Db.length;for(var d=3D0;d<c;d++){var e=3D=0A=
+c=3D=3D1?b:b.charAt(d);if(a.charAt(0)=3D=3De&&a.charAt(a.length-1)=3D=3De=
+)return a.substring(1,a.length-1)}return a},Qa=3Dfunction(a,b){var =
+c=3D0,d=3DHa(String(a)).split("."),e=3DHa(String(b)).split("."),f=3DMath.=
+max(d.length,e.length);for(var g=3D0;c=3D=3D0&&g<f;g++){var =
+i=3Dd[g]||"",k=3De[g]||"",l=3Dnew RegExp("(\\d*)(\\D*)","g"),o=3Dnew =
+RegExp("(\\d*)(\\D*)","g");do{var =
+p=3Dl.exec(i)||["","",""],q=3Do.exec(k)||["","",""];if(p[0].length=3D=3D0=
+&&q[0].length=3D=3D0)break;var =
+x=3Dp[1].length=3D=3D0?0:parseInt(p[1],10),M=3Dq[1].length=3D=3D0?0:parse=
+Int(q[1],=0A=
+10);c=3DPa(x,M)||Pa(p[2].length=3D=3D0,q[2].length=3D=3D0)||Pa(p[2],q[2])=
+}while(c=3D=3D0)}return c},Pa=3Dfunction(a,b){if(a<b)return-1;else =
+if(a>b)return 1;return 0};var =
+Ra,Sa,Ta,Ua,Va,Wa,Xa,Ya,Za,$a,ab,bb=3Dfunction(){if(s.navigator)return =
+s.navigator.userAgent;return j},cb=3Dfunction(){var =
+a=3Dh,b=3Dh,c=3Dh,d=3Dh,e=3Dh,f=3Dh,g=3Dh,i=3Dh,k=3Dh,l=3D"",o=3Dbb();if(=
+o){var =
+p=3Ds.navigator;a=3Do.indexOf("Opera")=3D=3D0;b=3D!a&&o.indexOf("MSIE")!=3D=
+-1;k=3D(c=3D!a&&o.indexOf("WebKit")!=3D-1)&&o.indexOf("Mobile")!=3D-1;e=3D=
+(d=3D!a&&!c&&p.product=3D=3D"Gecko")&&p.vendor=3D=3D"Camino";var =
+q,x;if(s.opera&&typeof =
+s.opera.version=3D=3D"function")q=3Ds.opera.version();else{if(d)x=3D/rv\:=
+([^\);]+)(\)|;)/;else if(b)x=3D/MSIE\s+([^\);]+)(\)|;)/;=0A=
+else =
+if(c)x=3D/WebKit\/(\S+)/;if(x){x.test(o);q=3DRegExp.$1}}l=3Dp.platform||"=
+";f=3Dl.indexOf("Mac")!=3D-1;g=3Dl.indexOf("Win")!=3D-1;i=3Dl.indexOf("Li=
+nux")!=3D-1}Ra=3Da;Sa=3Db;Ta=3Dd;Ua=3De;Va=3Dc;Wa=3Dk;Xa=3Dq;Ya=3Dl;Za=3D=
+f;$a=3Dg;ab=3Di};cb();var db=3DRa,y=3DSa,jb=3DTa,z=3DVa,kb=3DWa;var =
+A=3Dfunction(a){return Qa(Xa,a)>=3D0};var lb;var =
+mb=3Dfunction(){lb||(lb=3Dnew B);return lb},ob=3Dfunction(a){return =
+a?new B(nb(a)):mb()};=0A=
+var pb=3Dfunction(a){return =
+sa(a)?document.getElementById(a):a},qb=3Dpb,sb=3Dfunction(a,b){Ga(b,funct=
+ion(c,d){if(d=3D=3D"style")a.style.cssText=3Dc;else =
+if(d=3D=3D"class")a.className=3Dc;else =
+if(d=3D=3D"for")a.htmlFor=3Dc;else if(d in =
+rb)a.setAttribute(rb[d],c);else =
+a[d]=3Dc})},rb=3D{cellpadding:"cellPadding",cellspacing:"cellSpacing",col=
+span:"colSpan",rowspan:"rowSpan",valign:"vAlign",height:"height",width:"w=
+idth",usemap:"useMap",frameborder:"frameBorder",type:"type"},tb=3Dfunctio=
+n(a){var b=3Da||s||window,c=3Db.document;if(z&&!A("500")&&=0A=
+!kb){if(typeof b.innerHeight=3D=3D"undefined")b=3Dwindow;var =
+d=3Db.innerHeight,e=3Db.document.documentElement.scrollHeight;if(b=3D=3Db=
+.top)if(e<d)d-=3D15;return new w(b.innerWidth,d)}var =
+f=3Dob(c),g=3Df.gb()=3D=3D"CSS1Compat"&&(!db||db&&A("9.50"))?c.documentEl=
+ement:c.body;return new w(g.clientWidth,g.clientHeight)};var =
+ub=3Dfunction(a,b){a.appendChild(b)},vb=3Dfunction(a){return =
+a&&a.parentNode?a.parentNode.removeChild(a):j},wb=3Dfunction(a,b){var =
+c=3Db.parentNode;c&&c.replaceChild(a,b)};=0A=
+var xb=3Dz&&Qa(Xa,"521")<=3D0,yb=3Dfunction(a,b){if(typeof =
+a.contains!=3D"undefined"&&!xb&&b.nodeType=3D=3D1)return =
+a=3D=3Db||a.contains(b);if(typeof =
+a.compareDocumentPosition!=3D"undefined")return =
+a=3D=3Db||Boolean(a.compareDocumentPosition(b)&16);while(b&&a!=3Db)b=3Db.=
+parentNode;return b=3D=3Da},nb=3Dfunction(a){return =
+a.nodeType=3D=3D9?a:a.ownerDocument||a.document},zb=3Dfunction(a){if(a&&t=
+ypeof a.length=3D=3D"number")if(ua(a))return typeof =
+a.item=3D=3D"function"||typeof a.item=3D=3D"string";else if(ta(a))return =
+typeof a.item=3D=3D"function";return h},=0A=
+B=3Dfunction(a){this.n=3Da||s.document||document};B.prototype.X=3Dfunctio=
+n(){return this.n};B.prototype.xa=3Dfunction(a){return =
+sa(a)?this.n.getElementById(a):a};=0A=
+B.prototype.Ua=3Dfunction(a,b){if(y&&b&&(b.name||b.type)){var =
+c=3D["<",a];b.name&&c.push(' =
+name=3D"',Na(b.name),'"');if(b.type){c.push(' =
+type=3D"',Na(b.type),'"');b=3Dya(b);delete =
+b.type}c.push(">");a=3Dc.join("")}var =
+d=3Dthis.createElement(a);b&&sb(d,b);if(arguments.length>2){function =
+e(i){if(i)this.appendChild(d,sa(i)?this.createTextNode(i):i)}for(var =
+f=3D2;f<arguments.length;f++){var =
+g=3Darguments[f];ra(g)&&!(ua(g)&&g.nodeType>0)?Ca(zb(g)?Ea(g):g,e,this):e=
+.call(this,g)}}return d};B.prototype.createElement=3Dfunction(a){return =
+this.n.createElement(a)};=0A=
+B.prototype.createTextNode=3Dfunction(a){return =
+this.n.createTextNode(a)};B.prototype.gb=3Dfunction(){if(this.n.compatMod=
+e)return this.n.compatMode;if(z){var =
+a=3Dthis.Ua("div",{style:"position:absolute;width:0;height:0;width:1"}),b=
+=3Da.style.width=3D=3D"1px"?"BackCompat":"CSS1Compat";return =
+this.n.compatMode=3Db}return"BackCompat"};=0A=
+B.prototype.wa=3Dfunction(){var =
+a=3Dthis.n,b,c;if(!z&&a.compatMode=3D=3D"CSS1Compat"){b=3Da.documentEleme=
+nt.scrollLeft;c=3Da.documentElement.scrollTop}else{b=3Da.body.scrollLeft;=
+c=3Da.body.scrollTop}return new =
+Fa(b,c)};B.prototype.appendChild=3Dub;B.prototype.removeNode=3Dvb;B.proto=
+type.replaceNode=3Dwb;B.prototype.contains=3Dyb;var =
+Ab,Bb=3Dfunction(a,b){var =
+c=3Dnb(a);if(c.defaultView&&c.defaultView.getComputedStyle){var =
+d=3Dc.defaultView.getComputedStyle(a,"");if(d)return d[b]}return j};=0A=
+var Cb=3Dfunction(a){return =
+Bb(a,"position")||(a.currentStyle?a.currentStyle.position:j)||a.style.pos=
+ition},Db=3Dfunction(a){var =
+b;b=3Da?a.nodeType=3D=3D9?a:nb(a):mb().X();if(y&&b.compatMode!=3D"CSS1Com=
+pat")return b.body;return b.documentElement},Eb=3Dfunction(a){var =
+b=3Da.getBoundingClientRect();if(y){var =
+c=3Da.ownerDocument;b.left-=3Dc.documentElement.clientLeft+c.body.clientL=
+eft;b.top-=3Dc.documentElement.clientTop+c.body.clientTop}return =
+b},Fb=3Dfunction(a){var =
+b=3Dnb(a),c=3Djb&&b.getBoxObjectFor&&Cb(a)=3D=3D"absolute"&&(a.style.top=3D=
+=3D=0A=
+""||a.style.left=3D=3D"");if(typeof =
+Ab=3D=3D"undefined")Ab=3DUa&&!A("1.8.0.11");var d=3Dnew =
+Fa(0,0),e=3DDb(b);if(a=3D=3De)return d;var =
+f=3Dj,g;if(a.getBoundingClientRect&&!c){g=3DEb(a);var =
+i=3Dob(b).wa();d.x=3Dg.left+i.x;d.y=3Dg.top+i.y}else =
+if(b.getBoxObjectFor&&!c&&!Ab){g=3Db.getBoxObjectFor(a);var =
+k=3Db.getBoxObjectFor(e);d.x=3Dg.screenX-k.screenX;d.y=3Dg.screenY-k.scre=
+enY}else{f=3Da;do{d.x+=3Df.offsetLeft;d.y+=3Df.offsetTop;if(f!=3Da){d.x+=3D=
+f.clientLeft||0;d.y+=3Df.clientTop||0}if(z&&Cb(f)=3D=3D"fixed"){d.x+=3Db.=
+body.scrollLeft;d.y+=3Db.body.scrollTop;=0A=
+break}f=3Df.offsetParent}while(f&&f!=3Da);if(db||z&&Cb(a)=3D=3D"absolute"=
+)d.y-=3Db.body.offsetTop;f=3Da.offsetParent;while(f&&f!=3Db.body){d.x-=3D=
+f.scrollLeft;if(!db||f.tagName!=3D"TR")d.y-=3Df.scrollTop;f=3Df.offsetPar=
+ent}}if(jb&&a.getBoundingClientRect){var =
+l=3DCb(a);if(l=3D=3D"static"||l=3D=3D"relative"){d.x=3DMath.floor(d.x);d.=
+y=3DMath.floor(d.y)}}return d},Gb=3Dfunction(a){var b=3Dnew =
+Fa;if(a.nodeType=3D=3D1)if(a.getBoundingClientRect){var =
+c=3DEb(a);b.x=3Dc.left;b.y=3Dc.top}else{var =
+d=3Dob(a).wa(),e=3DFb(a);b.x=3De.x-d.x;b.y=3De.y-d.y}else{b.x=3Da.clientX=
+;=0A=
+b.y=3Da.clientY}return b},Hb=3Dfunction(a){var =
+b=3Dnb(a),c=3D"";if(b.createTextRange){var =
+d=3Db.body.createTextRange();d.moveToElementText(a);c=3Dd.queryCommandVal=
+ue("FontName")}if(!c){c=3DBb(a,"fontFamily")||(a.currentStyle?a.currentSt=
+yle.fontFamily:j)||a.style.fontFamily;if(db&&ab)c=3Dc.replace(/ =
+\[[^\]]*\]/,"")}var e=3Dc.split(",");if(e.length>1)c=3De[0];return =
+Oa(c,"\"'")};var Ib=3Ddocument,C=3Dnavigator,D=3Dwindow;=0A=
+function Jb(){var a=3DIb.cookie,b=3DMath.round((new =
+Date).getTime()/1000),c=3DD.google_analytics_domain_name,d=3Dtypeof =
+c=3D=3D"undefined"?Kb("auto"):Kb(c),e=3Da.indexOf("__utma=3D"+d+".")>-1,f=
+=3Da.indexOf("__utmb=3D"+d)>-1,g=3Da.indexOf("__utmc=3D"+d)>-1,i,k=3D{};i=
+f(e){i=3Da.split("__utma=3D"+d+".")[1].split(";")[0].split(".");k.sid=3Df=
+&&g?i[3]+"":D&&D.gaGlobal&&D.gaGlobal.sid?D.gaGlobal.sid:b+"";k.vid=3Di[0=
+]+"."+i[1];k.from_cookie=3Dm}else{k.sid=3DD&&D.gaGlobal&&D.gaGlobal.sid?D=
+.gaGlobal.sid:b+"";k.vid=3DD&&D.gaGlobal&&D.gaGlobal.vid?=0A=
+D.gaGlobal.vid:(Lb()^Mb()&2147483647)+"."+b;k.from_cookie=3Dh}k.dh=3Dd;k.=
+hid=3DD&&D.gaGlobal&&D.gaGlobal.hid?D.gaGlobal.hid:Lb();return =
+D.gaGlobal=3Dk}function Lb(){return Math.round(Math.random()*2147483647)}=0A=
+function Mb(){var =
+a=3DIb.cookie?Ib.cookie:"",b=3DD.history.length,c,d,e=3D[C.appName,C.vers=
+ion,C.language?C.language:C.browserLanguage,C.platform,C.userAgent,C.java=
+Enabled()?1:0].join("");if(D.screen)e+=3DD.screen.width+"x"+D.screen.heig=
+ht+D.screen.colorDepth;else =
+if(D.java){d=3Djava.awt.Toolkit.getDefaultToolkit().getScreenSize();e+=3D=
+d.screen.width+"x"+d.screen.height}e+=3Da;e+=3DIb.referrer?Ib.referrer:""=
+;c=3De.length;while(b>0)e+=3Db--^c++;return Nb(e)}=0A=
+function Nb(a){var =
+b=3D1,c=3D0,d,e;if(!(a=3D=3Dundefined||a=3D=3D"")){b=3D0;for(d=3Da.length=
+-1;d>=3D0;d--){e=3Da.charCodeAt(d);b=3D(b<<6&268435455)+e+(e<<14);c=3Db&2=
+66338304;b=3Dc!=3D0?b^c>>21:b}}return b}function =
+Kb(a){if(!a||a=3D=3D""||a=3D=3D"none")return =
+1;if("auto"=3D=3Da){a=3DIb.domain;if("www."=3D=3Da.substring(0,4))a=3Da.s=
+ubstring(4,a.length)}return Nb(a.toLowerCase())};var =
+E=3Dfunction(){};E.prototype.va=3Dh;E.prototype.dispose=3Dfunction(){if(!=
+this.va){this.va=3Dm;this.b()}};E.prototype.b=3Dfunction(){};var =
+Ob=3Dfunction(a){if(/^\s*$/.test(a))return h;var =
+b=3D/\\["\\\/bfnrtu]/g,c=3D/"[^"\\\n\r\u2028\u2029\x00-\x1f\x7f-\x9f]*"|t=
+rue|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g,d=3D/(?:^|:|,)(?:[\s\u=
+2028\u2029]*\[)+/g,e=3D/^[\],:{}\s\u2028\u2029]*$/;return =
+e.test(a.replace(b,"@").replace(c,"]").replace(d,""))},Pb=3Dfunction(a){S=
+tring(a);if(Ob(a))try{return eval("("+a+")")}catch(b){}throw =
+Error("Invalid JSON string: "+a);},Qb=3Dj,Rb=3Dfunction(a){Qb||(Qb=3Dnew =
+F);return Qb.serialize(a)},F=3Dfunction(){};=0A=
+F.prototype.serialize=3Dfunction(a){var b=3D[];this.fa(a,b);return =
+b.join("")};F.prototype.fa=3Dfunction(a,b){switch(typeof a){case =
+"string":this.Ha(a,b);break;case "number":this.Cb(a,b);break;case =
+"boolean":b.push(a);break;case "undefined":b.push("null");break;case =
+"object":if(a=3D=3Dj){b.push("null");break}if(t(a)=3D=3D"array"){this.Bb(=
+a,b);break}this.Db(a,b);break;case "function":break;default:throw =
+Error("Unknown type: "+typeof a);}};=0A=
+var =
+Sb=3D{'"':'\\"',"\\":"\\\\","/":"\\/","\u0008":"\\b","\u000c":"\\f","\n":=
+"\\n","\r":"\\r","\t":"\\t","\u000b":"\\u000b"};F.prototype.Ha=3Dfunction=
+(a,b){b.push('"',a.replace(/[\\\"\x00-\x1f\x80-\uffff]/g,function(c){if(c=
+ in Sb)return Sb[c];var =
+d=3Dc.charCodeAt(0),e=3D"\\u";if(d<16)e+=3D"000";else =
+if(d<256)e+=3D"00";else if(d<4096)e+=3D"0";return =
+Sb[c]=3De+d.toString(16)}),'"')};F.prototype.Cb=3Dfunction(a,b){b.push(is=
+Finite(a)&&!isNaN(a)?a:"null")};=0A=
+F.prototype.Bb=3Dfunction(a,b){var c=3Da.length;b.push("[");var =
+d=3D"";for(var =
+e=3D0;e<c;e++){b.push(d);this.fa(a[e],b);d=3D","}b.push("]")};F.prototype=
+.Db=3Dfunction(a,b){b.push("{");var c=3D"";for(var d in =
+a)if(a.hasOwnProperty(d)){var e=3Da[d];if(typeof =
+e!=3D"function"){b.push(c);this.Ha(d,b);b.push(":");this.fa(e,b);c=3D","}=
+}b.push("}")};var G=3D"SETUP_ACK",H=3D{},Ub=3Dfunction(a,b){var =
+c=3Db||Tb,d=3Dc.length,e=3D"";while(a-- =
+>0)e+=3Dc.charAt(Math.floor(Math.random()*d));return =
+e},Tb=3D"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";=
+var I=3Dfunction(){};v(I,E);I.prototype.f=3D0;var =
+J=3Dfunction(a){this.a=3Da;this.P=3D[];this.Qb=3Du(this.$a,this)};v(J,I);=
+J.prototype.f=3D2;J.prototype.ba=3Dh;J.prototype.Eb=3D0;J.prototype.conne=
+ct=3Dfunction(){if(this.a.s()=3D=3D0){this.l=3Dthis.a.t;this.l.XPC_toOute=
+r=3Du(this.ya,this)}else this.ma()};=0A=
+J.prototype.ma=3Dfunction(){var =
+a=3Dm;try{if(!this.l)this.l=3Dwindow.frameElement;if(this.l&&this.l.XPC_t=
+oOuter){this.Ca=3Dthis.l.XPC_toOuter;this.l.XPC_toOuter.XPC_toInner=3Du(t=
+his.ya,this);a=3Dh;this.send("tp",G);this.a.m()}}catch(b){}if(a){if(!this=
+.Ma)this.Ma=3Du(this.ma,this);window.setTimeout(this.Ma,100)}};J.prototyp=
+e.H=3Dfunction(a){if(this.a.s()=3D=3D0&&!this.a.g()&&a=3D=3DG){this.Ca=3D=
+this.l.XPC_toOuter.XPC_toInner;this.a.m()}else throw Error("Got =
+unexpected transport message.");};=0A=
+J.prototype.ya=3Dfunction(a,b){if(!this.ba&&this.P.length=3D=3D0)this.a.j=
+(a,b);else{this.P.push({serviceName:a,payload:b});if(this.P.length=3D=3D1=
+)this.Eb=3Dwindow.setTimeout(this.Qb,1)}};J.prototype.$a=3Dfunction(){whi=
+le(this.P.length){var =
+a=3Dthis.P.shift();this.a.j(a.serviceName,a.payload)}};J.prototype.send=3D=
+function(a,b){this.ba=3Dm;this.Ca(a,b);this.ba=3Dh};J.prototype.b=3Dfunct=
+ion(){J.p.b.call(this);this.l=3Dthis.Ca=3Dj};var =
+K=3Dfunction(a){this.a=3Da;this.Q=3Dthis.a.c.ppu;this.Sb=3Dthis.a.c.lpu;t=
+his.da=3D[]},Vb,Wb;v(K,I);K.prototype.f=3D4;K.prototype.ea=3D0;K.prototyp=
+e.w=3Dh;K.prototype.Y=3Dh;var =
+Xb=3D"googlexpc";K.prototype.M=3Dfunction(){return =
+Xb+"_"+this.a.name+"_msg"};K.prototype.L=3Dfunction(){return =
+Xb+"_"+this.a.name+"_ack"};K.prototype.connect=3Dfunction(){if(!this.Y){t=
+his.Sa();this.Y=3Dm}this.Oa()};K.prototype.Sa=3Dfunction(){var =
+a=3Dthis.M();this.D=3Dthis.U(a);this.Aa=3Dwindow.frames[a];a=3Dthis.L();t=
+his.z=3Dthis.U(a);this.ia=3Dwindow.frames[a]};=0A=
+K.prototype.U=3Dfunction(a){var =
+b=3Dmb().createElement("iframe"),c=3Db.style;c.position=3D"absolute";c.to=
+p=3D"-10px";c.left=3D"10px";c.width=3D"1px";c.height=3D"1px";b.id=3Db.nam=
+e=3Da;b.src=3Dthis.Q+"#INITIAL";document.body.appendChild(b);return =
+b};K.prototype.la=3Dfunction(){var =
+a=3Dthis.a.h.frames,b=3Da.length;for(var c=3D0;c<b;c++){var =
+d;try{if(a[c]&&a[c].name)d=3Da[c].name}catch(e){}if(!!d){var =
+f=3Dd.split("_");if(f.length=3D=3D3&&f[0]=3D=3DXb&&f[1]=3D=3D"reconnect")=
+{this.a.name=3Df[2];this.Ya();this.Y=3Dh;break}}}};=0A=
+K.prototype.Ya=3Dfunction(){if(this.D){this.D.parentNode.removeChild(this=
+.D);this.Aa=3Dthis.D=3Dj}if(this.z){this.z.parentNode.removeChild(this.z)=
+;this.ia=3Dthis.z=3Dj}};=0A=
+K.prototype.Oa=3Dfunction(){if(this.za(this.M())&&this.za(this.L())){this=
+.pb=3Dnew =
+Yb(this,this.a.h.frames[this.M()],u(this.ub,this));this.La=3Dnew =
+Yb(this,this.a.h.frames[this.L()],u(this.tb,this));this.pa()}else{if(this=
+.a.s()=3D=3D1&&!this.Ub)this.Ub=3Dthis.U(Xb+"_reconnect_"+this.a.name);el=
+se =
+this.a.s()=3D=3D0&&this.la();window.setTimeout(u(this.connect,this),100)}=
+};K.prototype.za=3Dfunction(a){try{var =
+b=3Dthis.a.h.frames[a];if(!b||b.location.href.indexOf(this.Sb)!=3D0)retur=
+n h}catch(c){return h}return m};=0A=
+K.prototype.pa=3Dfunction(){var =
+a=3Dthis.a.h.frames;if(a[this.L()]&&a[this.M()]){this.qb=3Dnew =
+Zb(this.Q,this.Aa);this.S=3Dnew =
+Zb(this.Q,this.ia);window.setTimeout(u(function(){this.qb.send("SETUP");t=
+his.w=3Dthis.Wb=3Dm},this),100)}else{if(!this.Pa)this.Pa=3Du(this.pa,this=
+);window.setTimeout(this.Pa,100)}};K.prototype.oa=3Dfunction(){if(this.Ab=
+&&this.Tb){this.a.m();if(this.K){for(var =
+a=3D0,b;a<this.K.length;a++){b=3Dthis.K[a];this.a.j(b.service,b.payload)}=
+delete this.K}}};=0A=
+K.prototype.ub=3Dfunction(a){if(a=3D=3D"SETUP"){if(!!this.S){this.S.send(=
+G);this.Ab=3Dm;this.oa()}}else if(this.a.g()||this.Ab){var =
+b=3Da.indexOf("|"),c=3Da.substring(0,b),d=3Da.substring(b+1);b=3Dc.indexO=
+f(",");if(b=3D=3D-1){var e=3Dc;this.S.send("ACK:"+e);this.ta(d)}else{var =
+e=3Dc.substring(0,b);this.S.send("ACK:"+e);var =
+f=3Dc.substring(b+1).split("/");f[0]=3DparseInt(f[0],10);f[1]=3DparseInt(=
+f[1],10);if(f[0]=3D=3D1)this.Da=3D[];this.Da.push(d);if(f[0]=3D=3Df[1]){t=
+his.ta(this.Da.join(""));delete this.Da}}}};=0A=
+K.prototype.tb=3Dfunction(a){if(a=3D=3DG){this.w=3Dh;this.Tb=3Dm;this.oa(=
+)}else if(this.a.g())if(!!this.w){var =
+b=3DparseInt(a.split(":")[1],10);if(b=3D=3Dthis.ea){this.w=3Dh;this.Ga()}=
+}};K.prototype.Ga=3Dfunction(){if(!(this.w||!this.da.length)){var =
+a=3Dthis.da.shift();++this.ea;this.qb.send(this.ea+a);this.w=3Dm}};K.prot=
+otype.ta=3Dfunction(a){var =
+b=3Da.indexOf(":"),c=3Da.substr(0,b),d=3Da.substring(b+1);this.a.g()?this=
+.a.j(c,d):(this.K||(this.K=3D[])).push({service:c,payload:d})};K.prototyp=
+e.J=3D3800;=0A=
+K.prototype.send=3Dfunction(a,b){var =
+c=3Da+":"+b;if(!y||b.length<=3Dthis.J)this.da.push("|"+c);else{var =
+d=3Db.length,e=3DMath.ceil(d/this.J),f=3D0,g=3D1;while(f<d){this.da.push(=
+","+g+"/"+e+"|"+c.substr(f,this.J));g++;f+=3Dthis.J}}this.Ga()};K.prototy=
+pe.b=3Dfunction(){K.p.b.call(this);var =
+a=3D$b;Da(a,this.pb);Da(a,this.La);this.pb=3Dthis.La=3Dj;vb(this.D);vb(th=
+is.z);this.D=3Dthis.z=3Dj;this.Aa=3Dthis.ia=3Dj};=0A=
+var $b=3D[],bc=3Dfunction(){var a=3Dh;try{for(var =
+b=3D0,c=3D$b.length;b<c;b++)a=3Da||$b[b].receive()}catch(d){$b[b].d.a.rb(=
+);if(!$b.length)return}var e=3Dza();if(a)Vb=3De;var =
+f=3De-Vb<1000?10:100;Wb=3Dwindow.setTimeout(ac,f)},ac=3Du(bc,K),cc=3Dfunc=
+tion(){Vb=3Dza();Wb&&window.clearTimeout(Wb);Wb=3Dwindow.setTimeout(ac,10=
+)},Zb=3Dfunction(a,b){this.Q=3Da;this.zb=3Db;this.sa=3D0};Zb.prototype.se=
+nd=3Dfunction(a){this.sa=3D++this.sa%2;var =
+b=3Dthis.Q+"#"+this.sa+encodeURIComponent(a);try{if(z)this.zb.location.hr=
+ef=3Db;else this.zb.location.replace(b)}catch(c){}cc()};=0A=
+var =
+Yb=3Dfunction(a,b,c){this.d=3Da;this.vb=3Db;this.Mb=3Dc;this.Xa=3Dthis.vb=
+.location.href.split("#")[0]+"#INITIAL";$b.push(this);cc()};Yb.prototype.=
+receive=3Dfunction(){var =
+a=3Dthis.vb.location.href;if(a!=3Dthis.Xa){this.Xa=3Da;var =
+b=3Da.split("#")[1];if(b){b=3Db.substr(1);this.Mb(decodeURIComponent(b))}=
+return m}else return h};var =
+L=3Dfunction(a,b){E.call(this);this.ob=3Db;this.r=3D[];this.Va(a)};v(L,E)=
+;L.prototype.V=3Dj;L.prototype.W=3Dj;L.prototype.G=3Dfunction(a){this.V=3D=
+a};L.prototype.Ja=3Dfunction(a){this.W=3Da};L.prototype.k=3Dfunction(){if=
+(this.r.length)return this.r.pop();return =
+this.ra()};L.prototype.v=3Dfunction(a){this.r.length<this.ob?this.r.push(=
+a):this.ua(a)};L.prototype.Va=3Dfunction(a){if(a>this.ob)throw =
+Error("[goog.structs.SimplePool] Initial cannot be greater than =
+max");for(var b=3D0;b<a;b++)this.r.push(this.ra())};=0A=
+L.prototype.ra=3Dfunction(){return =
+this.V?this.V():{}};L.prototype.ua=3Dfunction(a){if(this.W)this.W(a);else=
+ if(ta(a.dispose))a.dispose();else for(var b in a)delete =
+a[b]};L.prototype.b=3Dfunction(){L.p.b.call(this);var =
+a=3Dthis.r;while(a.length)this.ua(a.pop());delete this.r};var =
+N=3Dfunction(a,b){this.type=3Da;this.currentTarget=3Dthis.target=3Db};v(N=
+,E);N.prototype.b=3Dfunction(){delete this.type;delete =
+this.target;delete =
+this.currentTarget};N.prototype.F=3Dh;N.prototype.ca=3Dm;N.prototype.stop=
+Propagation=3Dfunction(){this.F=3Dm};N.prototype.preventDefault=3Dfunctio=
+n(){this.ca=3Dh};var =
+O=3Dfunction(a,b){a&&this.init(a,b)};v(O,N);O.prototype.type=3Dj;O.protot=
+ype.target=3Dj;O.prototype.relatedTarget=3Dj;O.prototype.offsetX=3D0;O.pr=
+ototype.offsetY=3D0;O.prototype.clientX=3D0;O.prototype.clientY=3D0;O.pro=
+totype.screenX=3D0;O.prototype.screenY=3D0;O.prototype.button=3D0;O.proto=
+type.keyCode=3D0;O.prototype.charCode=3D0;O.prototype.ctrlKey=3Dh;O.proto=
+type.altKey=3Dh;O.prototype.shiftKey=3Dh;O.prototype.metaKey=3Dh;O.protot=
+ype.i=3Dj;=0A=
+O.prototype.init=3Dfunction(a,b){this.type=3Da.type;this.target=3Da.targe=
+t||a.srcElement;this.currentTarget=3Db;this.relatedTarget=3Da.relatedTarg=
+et?a.relatedTarget:this.type=3D=3D"mouseover"?a.fromElement:this.type=3D=3D=
+"mouseout"?a.toElement:j;this.offsetX=3Dtypeof =
+a.layerX=3D=3D"number"?a.layerX:a.offsetX;this.offsetY=3Dtypeof =
+a.layerY=3D=3D"number"?a.layerY:a.offsetY;this.clientX=3Dtypeof =
+a.clientX=3D=3D"number"?a.clientX:a.pageX;this.clientY=3Dtypeof =
+a.clientY=3D=3D"number"?a.clientY:a.pageY;this.screenX=3Da.screenX||0;thi=
+s.screenY=3Da.screenY||=0A=
+0;this.button=3Da.button;this.keyCode=3Da.keyCode||0;this.charCode=3Da.ch=
+arCode||(this.type=3D=3D"keypress"?a.keyCode:0);this.ctrlKey=3Da.ctrlKey;=
+this.altKey=3Da.altKey;this.shiftKey=3Da.shiftKey;this.metaKey=3Da.metaKe=
+y;this.i=3Da;delete this.ca;delete =
+this.F};O.prototype.stopPropagation=3Dfunction(){this.F=3Dm;if(this.i.sto=
+pPropagation)this.i.stopPropagation();else this.i.cancelBubble=3Dm};=0A=
+O.prototype.preventDefault=3Dfunction(){this.ca=3Dh;if(this.i.preventDefa=
+ult)this.i.preventDefault();else{this.i.returnValue=3Dh;try{this.i.keyCod=
+e=3D-1}catch(a){}}};O.prototype.fb=3Dfunction(){return =
+this.i};O.prototype.b=3Dfunction(){O.p.b.call(this);this.i=3Dj};var =
+P=3Dfunction(){},dc=3D0;P.prototype.$=3Dj;P.prototype.listener=3Dj;P.prot=
+otype.proxy=3Dj;P.prototype.src=3Dj;P.prototype.type=3Dj;P.prototype.capt=
+ure=3Dj;P.prototype.handler=3Dj;P.prototype.key=3D0;P.prototype.removed=3D=
+h;P.prototype.na=3Dh;P.prototype.init=3Dfunction(a,b,c,d,e,f){if(ta(a))th=
+is.$=3Dm;else if(a&&a.handleEvent&&ta(a.handleEvent))this.$=3Dh;else =
+throw Error("Invalid listener =
+argument");this.listener=3Da;this.proxy=3Db;this.src=3Dc;this.type=3Dd;th=
+is.capture=3D!!e;this.handler=3Df;this.na=3Dh;this.key=3D++dc;this.remove=
+d=3Dh};=0A=
+P.prototype.handleEvent=3Dfunction(a){if(this.$)return =
+this.listener.call(this.handler||this.src,a);return =
+this.listener.handleEvent.call(this.listener,a)};var =
+ec=3D{},Q=3D{},fc=3D{},gc=3Dnew =
+L(0,600);gc.G(function(){return{q:0}});gc.Ja(function(a){a.q=3D0});var =
+hc=3Dnew =
+L(0,600);hc.G(function(){return[]});hc.Ja(function(a){a.length=3D0;delete=
+ a.O;delete a.Ba});var ic=3Dnew L(0,600);ic.G(function(){var =
+a=3Dfunction(b){return lc.call(a.src,a.key,b)};return a});var =
+mc=3Dfunction(){return new P},nc=3Dnew L(0,600);nc.G(mc);=0A=
+var oc=3Dfunction(){return new O},pc=3Dfunction(){var =
+a=3Dj;if(y){a=3Dnew L(0,600);a.G(oc)}return =
+a},qc=3Dpc(),rc=3D"on",sc=3D{},tc=3Dfunction(a,b,c,d,e){if(b)if(t(b)=3D=3D=
+"array"){for(var f=3D0;f<b.length;f++)tc(a,b[f],c,d,e);return j}else{var =
+g=3D!!d,i=3DQ;b in i||(i[b]=3Dgc.k());i=3Di[b];if(!(g in =
+i)){i[g]=3Dgc.k();i.q++}i=3Di[g];var =
+k=3Dxa(a),l,o;if(i[k]){l=3Di[k];for(var =
+f=3D0;f<l.length;f++){o=3Dl[f];if(o.listener=3D=3Dc&&o.handler=3D=3De){if=
+(o.removed)break;return l[f].key}}}else{l=3Di[k]=3Dhc.k();i.q++}var =
+p=3Dic.k();p.src=3Da;o=3Dnc.k();o.init(c,=0A=
+p,a,b,g,e);var =
+q=3Do.key;p.key=3Dq;l.push(o);ec[q]=3Do;fc[k]||(fc[k]=3Dhc.k());fc[k].pus=
+h(o);if(a.addEventListener){if(a=3D=3Ds||!a.Pb)a.addEventListener(b,p,g)}=
+else a.attachEvent(uc(b),p);return q}else throw Error("Invalid event =
+type");},vc=3Dfunction(a,b,c,d,e){if(t(b)=3D=3D"array"){for(var =
+f=3D0;f<b.length;f++)vc(a,b[f],c,d,e);return j}var =
+g=3D!!d,i=3Dwc(a,b,g);if(!i)return h;for(var =
+f=3D0;f<i.length;f++)if(i[f].listener=3D=3Dc&&i[f].capture=3D=3Dg&&i[f].h=
+andler=3D=3De)return xc(i[f].key);return =
+h},xc=3Dfunction(a){if(!ec[a])return h;=0A=
+var b=3Dec[a];if(b.removed)return h;var =
+c=3Db.src,d=3Db.type,e=3Db.proxy,f=3Db.capture;if(c.removeEventListener){=
+if(c=3D=3Ds||!c.Pb)c.removeEventListener(d,e,f)}else =
+c.detachEvent&&c.detachEvent(uc(d),e);var =
+g=3Dxa(c),i=3DQ[d][f][g];if(fc[g]){var =
+k=3Dfc[g];Da(k,b);k.length=3D=3D0&&delete =
+fc[g]}b.removed=3Dm;i.Ba=3Dm;yc(d,f,g,i);delete ec[a];return =
+m},yc=3Dfunction(a,b,c,d){if(!d.O)if(d.Ba){for(var =
+e=3D0,f=3D0;e<d.length;e++)if(d[e].removed)nc.v(d[e]);else{if(e!=3Df)d[f]=
+=3Dd[e];f++}d.length=3Df;d.Ba=3Dh;if(f=3D=3D0){hc.v(d);delete Q[a][b][c];=0A=
+Q[a][b].q--;if(Q[a][b].q=3D=3D0){gc.v(Q[a][b]);delete =
+Q[a][b];Q[a].q--}if(Q[a].q=3D=3D0){gc.v(Q[a]);delete =
+Q[a]}}}},wc=3Dfunction(a,b,c){var d=3DQ;if(b in d){d=3Dd[b];if(c in =
+d){d=3Dd[c];var e=3Dxa(a);if(d[e])return d[e]}}return =
+j},uc=3Dfunction(a){if(a in sc)return sc[a];return =
+sc[a]=3Drc+a},Ac=3Dfunction(a,b,c,d){var e=3D1,f=3DQ;if(b in =
+f){f=3Df[b];if(c in f){f=3Df[c];var g=3Dxa(a);if(f[g]){var =
+i=3Df[g];if(i.O)i.O++;else i.O=3D1;try{var k=3Di.length;for(var =
+l=3D0;l<k;l++){var =
+o=3Di[l];if(o&&!o.removed)e&=3Dzc(o,d)!=3D=3Dh}}finally{i.O--;yc(b,c,=0A=
+g,i)}}}}return Boolean(e)},zc=3Dfunction(a,b){var =
+c=3Da.handleEvent(b);a.na&&xc(a.key);return =
+c},lc=3Dfunction(a,b){if(!ec[a])return m;var =
+c=3Dec[a],d=3Dc.type,e=3DQ;if(!(d in e))return m;e=3De[d];var =
+f;if(y){var g=3Db||oa("window.event"),i=3Dm in =
+e;if(i){if(g.keyCode<0||g.returnValue!=3Dundefined)return =
+m;Bc(g)}xa(c.src);var k=3Dqc.k();k.init(g,this);f=3Dm;try{if(i){var =
+l=3Dhc.k();for(var =
+o=3Dk.currentTarget;o;o=3Do.parentNode)l.push(o);for(var =
+p=3Dl.length-1;!k.F&&p>=3D0;p--){k.currentTarget=3Dl[p];f&=3DAc(l[p],d,m,=
+k)}for(var p=3D0;!k.F&&=0A=
+p<l.length;p++){k.currentTarget=3Dl[p];f&=3DAc(l[p],d,h,k)}}else =
+f=3Dzc(c,k)}finally{if(l){l.length=3D0;hc.v(l)}k.dispose();qc.v(k)}return=
+ f}var q=3Dnew O(b,this);try{f=3Dzc(c,q)}finally{q.dispose()}return =
+f},Bc=3Dfunction(a){var =
+b=3Dh;if(a.keyCode=3D=3D0)try{a.keyCode=3D-1;return}catch(c){b=3Dm}if(b||=
+a.returnValue=3D=3Dundefined)a.returnValue=3Dm};var =
+R=3Dfunction(a){this.a=3Da;this.Rb=3Dthis.a.c.pru;this.sb=3Dthis.a.c.ifri=
+d;z&&Cc()};v(R,I);if(z){var =
+Dc=3D[],Ec=3D0,Cc=3Dfunction(){Ec||(Ec=3Dwindow.setTimeout(function(){Fc(=
+)},1000))},Fc=3Dfunction(a){var =
+b=3Dza(),c=3Da||3000;while(Dc.length&&b-Dc[0].timestamp>=3Dc){var =
+d=3DDc.shift().iframeElement;vb(d)}Ec=3Dwindow.setTimeout(Gc,1000)},Gc=3D=
+function(){Fc()}}R.prototype.f=3D3;R.prototype.connect=3Dfunction(){this.=
+send("tp","SETUP")};R.prototype.H=3Dfunction(a){if(a=3D=3D"SETUP"){this.s=
+end("tp",G);this.a.m()}else a=3D=3DG&&this.a.m()};=0A=
+R.prototype.send=3Dfunction(a,b){if(y){var =
+c=3Ddocument.createElement("div");c.innerHTML=3D'<iframe =
+onload=3D"this.xpcOnload()"></iframe>';var =
+d=3Dc.childNodes[0];d.xpcOnload=3DHc}else{var =
+d=3Ddocument.createElement("iframe");z?Dc.push({timestamp:za(),iframeElem=
+ent:d}):tc(d,"load",Hc)}var =
+e=3Dd.style;e.visibility=3D"hidden";e.width=3Dd.style.height=3D"0px";e.po=
+sition=3D"absolute";var =
+f=3Dthis.Rb;f+=3D"#"+this.a.name;if(this.sb)f+=3D","+this.sb;f+=3D"|"+a+"=
+:"+encodeURIComponent(b);d.src=3Df;document.body.appendChild(d)};=0A=
+var =
+Hc=3Dfunction(){vb(this);this.xpcOnload=3Dj};window.xpcRelay=3Dfunction(a=
+,b){var =
+c=3Db.indexOf(":"),d=3Db.substring(0,c),e=3Db.substring(c+1);H[a].j(d,dec=
+odeURIComponent(e))};R.prototype.b=3Dfunction(){R.p.b.call(this);z&&Fc(0)=
+};var =
+S=3Dfunction(a,b){this.a=3Da;this.aa=3Db||"*"};v(S,I);S.prototype.f=3D1;v=
+ar =
+Ic=3Dh,Kc=3Dfunction(){if(!Ic){tc(window.postMessage?window:document,"mes=
+sage",Jc,h,S);Ic=3Dm}},Jc=3Dfunction(a){var =
+b=3Da.fb().data,c=3Db.indexOf("|"),d=3Db.indexOf(":");if(c=3D=3D-1||d=3D=3D=
+-1)return h;var =
+e=3Db.substring(0,c),f=3Db.substring(c+1,d),g=3Db.substring(d+1),i=3DH[e]=
+;if(i){i.j(f,g);return m}for(var k in H){var =
+l=3DH[k];if(l.s()=3D=3D1&&!l.g()&&f=3D=3D"tp"&&g=3D=3D"SETUP"){l.name=3De=
+;H[e]=3Dl;H[k]=3Dj;l.j(f,g);return m}}return h};=0A=
+S.prototype.H=3Dfunction(a){switch(a){case =
+"SETUP":if(!this.Vb){this.Vb=3Dm;this.send("tp",G)}break;case =
+G:this.a.m();break}};S.prototype.connect=3Dfunction(){Kc();this.T()};S.pr=
+ototype.T=3Dfunction(){if(!this.a.g()){this.send("tp","SETUP");window.set=
+Timeout(u(this.T,this),100)}};S.prototype.send=3Dfunction(a,b){var =
+c=3Dthis.a.h;if(!!c){var =
+d=3Dc.postMessage?c:c.document;this.send=3Dfunction(e,f){d.postMessage(th=
+is.a.name+"|"+e+":"+f,this.aa)};this.send(a,b)}};=0A=
+S.prototype.b=3Dfunction(){S.p.b.call(this);vc(window.postMessage?window:=
+document,"message",Jc,h,S)};var =
+T=3Dfunction(a){this.a=3Da;this.Na=3Da.at||"";this.yb=3Da.rat||"";Lc();th=
+is[Mc]=3Dthis.N;this[Nc]=3Dthis.Ta};v(T,I);=0A=
+var =
+Oc=3D"GRPC____NIXVBS_wrapper",Pc=3D"GRPC____NIXVBS_get_wrapper",Mc=3D"GRP=
+C____NIXJS_handle_message",Nc=3D"GRPC____NIXJS_create_channel",Qc=3D"GRPC=
+____NIXVBS_container",Lc=3Dfunction(){if(!window.nix_setup_complete){var =
+a=3D"Class "+Oc+"\n Private m_Transport\nPrivate m_Auth\nPublic Sub =
+SetTransport(transport)\nIf isEmpty(m_Transport) Then\nSet m_Transport =
+=3D transport\nEnd If\nEnd Sub\nPublic Sub SetAuth(auth)\nIf =
+isEmpty(m_Auth) Then\nm_Auth =3D auth\nEnd If\nEnd Sub\nPublic Function =
+GetAuthToken()\n GetAuthToken =3D m_Auth\nEnd Function\nPublic Sub =
+SendMessage(service, payload)\n Call m_Transport."+Mc+=0A=
+"(service, payload)\nEnd Sub\nPublic Sub CreateChannel(channel)\n Call =
+m_Transport."+Nc+"(channel)\nEnd Sub\nPublic Sub "+Qc+"()\n End Sub\nEnd =
+Class\n Function "+Pc+"(transport, auth)\nDim wrap\nSet wrap =3D New =
+"+Oc+"\nwrap.SetTransport transport\nwrap.SetAuth auth\nSet "+Pc+" =3D =
+wrap\nEnd =
+Function";try{window.execScript(a,"vbscript");window.nix_setup_complete=3D=
+m}catch(b){}}};T.prototype.f=3D6;T.prototype.u=3Dh;T.prototype.o=3Dj;T.pr=
+ototype.connect=3Dfunction(){this.a.s()=3D=3D0?this.ka():this.ja()};=0A=
+T.prototype.ka=3Dfunction(){if(!this.u){var =
+a=3Dthis.a.t;try{a.contentWindow.opener=3Dwindow[Pc](this,this.Na);this.u=
+=3Dm}catch(b){}this.u||window.setTimeout(u(this.ka,this),100)}};T.prototy=
+pe.ja=3Dfunction(){if(!this.u){try{var a=3Dwindow.opener;if(a&&Qc in =
+a){this.o=3Da;var =
+b=3Dthis.o.GetAuthToken();if(b!=3Dthis.yb)return;this.o.CreateChannel(win=
+dow[Pc](this,this.Na));this.u=3Dm;this.a.m()}}catch(c){return}this.u||win=
+dow.setTimeout(u(this.ja,this),100)}};=0A=
+T.prototype.Ta=3Dfunction(a){this.o=3Da;var =
+b=3Dthis.o.GetAuthToken();b!=3Dthis.yb||this.a.m()};T.prototype.N=3Dfunct=
+ion(a,b){function =
+c(){this.a.j(a,b)}window.setTimeout(u(c,this),1)};T.prototype.send=3Dfunc=
+tion(a,b){this.o.SendMessage(a,b)};T.prototype.b=3Dfunction(){T.p.b.call(=
+this);this.o=3Dj};var =
+U=3Dfunction(a){E.call(this);this.c=3Da;this.name=3Dthis.c.cn||Ub(10);thi=
+s.Ia=3D{};H[this.name]=3Dthis;tc(window,"unload",Rc)};v(U,E);U.prototype.=
+d=3Dj;U.prototype.ga=3D1;U.prototype.g=3Dfunction(){return =
+this.ga=3D=3D2};U.prototype.h=3Dj;U.prototype.t=3Dj;U.prototype.Ka=3Dfunc=
+tion(a){this.h=3Da};=0A=
+U.prototype.Wa=3Dfunction(){if(!this.d){if(!this.c.tp)if(ta(document.post=
+Message)||ta(window.postMessage))this.c.tp=3D1;else =
+if(jb)this.c.tp=3D2;else if(y&&this.c.pru)this.c.tp=3D3;else =
+if(y)this.c.tp=3D6;else =
+if(this.c.lpu&&this.c.ppu)this.c.tp=3D4;switch(this.c.tp){case =
+1:this.d=3Dnew S(this,this.c.ph);break;case 6:this.d=3Dnew =
+T(this);break;case 2:this.d=3Dnew J(this);break;case 3:this.d=3Dnew =
+R(this);break;case 4:this.d=3Dnew K(this);break}if(!this.d)throw =
+Error("CrossPageChannel: No suitable transport found!");}};=0A=
+U.prototype.Za=3Dh;U.prototype.Ra=3Dh;U.prototype.connect=3Dfunction(a){t=
+his.Ob=3Da;if(this.Za)this.Ra=3Dm;else{if(this.c.ifrid)this.t=3Dsa(this.c=
+.ifrid)?document.getElementById(this.c.ifrid):this.c.ifrid;if(this.t){var=
+ =
+b=3Dthis.t.contentWindow;b||(b=3Dwindow.frames[this.c.ifrid]);this.Ka(b)}=
+if(!this.h)if(window=3D=3Dtop)throw Error("CrossPageChannel: Can't =
+connect, peer window-object not set.");else =
+this.Ka(window.parent);this.Wa();this.d.connect()}};=0A=
+U.prototype.close=3Dfunction(){if(!!this.g()){this.ga=3D3;this.d.dispose(=
+);this.d=3Dj}};U.prototype.m=3Dfunction(){if(!this.g()){this.ga=3D2;this.=
+Ob()}};U.prototype.rb=3Dfunction(){this.close()};U.prototype.xb=3Dfunctio=
+n(a,b,c){this.Ia[a]=3D{name:a,callback:b,jsonEncoded:!!c}};U.prototype.se=
+nd=3Dfunction(a,b){if(!!this.g())if(this.h.closed)this.close();else{if(ua=
+(b))b=3DRb(b);this.d.send(a,b)}};U.prototype.j=3Dfunction(a,b){if(!a||a=3D=
+=3D"tp")this.d.H(b);else if(this.g()){var =
+c=3Dthis.Ia[a];if(c){if(c.jsonEncoded)try{b=3DPb(b)}catch(d){return}c.cal=
+lback(b)}}};=0A=
+U.prototype.s=3Dfunction(){return =
+window.parent=3D=3Dthis.h?1:0};U.prototype.b=3Dfunction(){U.p.b.call(this=
+);this.close();this.t=3Dthis.h=3Dj;delete this.Ia;H[this.name]=3Dj};var =
+Rc=3Dfunction(){for(var a in H){var b=3DH[a];b&&b.dispose()}};var =
+Sc=3Dfunction(a){var =
+b=3Da||document.location.protocol+"//"+document.location.host;return =
+b+"/robots.txt"};var =
+V=3Dfunction(a,b){this.B=3Da.width;this.A=3Da.height;this.Nb=3Db;this.aa=3D=
+this.hb(a.src,document);this.Z=3Dh;this.e=3Da;this.nb(this.jb())};V.proto=
+type.jb=3Dfunction(){var =
+a=3D{};a.ifrid=3Dthis.e.id;a.pu=3Dthis.e.src;a.ph=3Dthis.aa;a.cn=3Dthis.N=
+b;a.ppu=3DSc(this.aa);a.lpu=3DSc();return =
+a};V.prototype.nb=3Dfunction(a){this.a=3Dnew =
+U(a);this.a.xb("expandable_ad",u(this.N,this));this.a.connect(function(){=
+});window.setTimeout(u(this.lb,this),30000)};=0A=
+V.prototype.lb=3Dfunction(){if(this.a&&!this.a.g()){this.a.d.connect=3Dfu=
+nction(){};if(this.a.d.f=3D=3D1)this.a.d.T=3Dfunction(){};if(this.a.d.f=3D=
+=3D4)this.a.d.la=3Dfunction(){};this.a.d.dispose();this.a.dispose()}};V.p=
+rototype.hb=3Dfunction(a,b){var =
+c=3Da.indexOf("//"),d=3Dc>0,e=3Dd?a.substring(0,c):b.location.protocol,f=3D=
+d?a.substring(c+2):b.location.host,g=3Df.indexOf("/");if(g<0)g=3Df.indexO=
+f("?");if(d&&g>0)f=3Df.substring(0,g);return e+"//"+f};=0A=
+V.prototype.N=3Dfunction(a){var =
+b=3Da.split("_"),c=3Db[0];if(c=3D=3D"expand")this.mb(b);else =
+c=3D=3D"collapse"&&this.kb()};V.prototype.Fa=3Dfunction(a){this.a.send("e=
+xpandable_ad",a)};V.prototype.mb=3Dfunction(a){if(!this.Z){var =
+b,c;for(var d in a){var =
+e=3Da[d].charAt(0);if(e=3D=3D"w")b=3DparseInt(a[d].substring(1),10);else =
+if(e=3D=3D"h")c=3DparseInt(a[d].substring(1),10)}var =
+f=3Dthis.ab(b,c);this.cb(b,c,f);this.Fa("ok_expand_w"+b+"_h"+c+"_d"+f)}};=0A=
+V.prototype.kb=3Dfunction(){if(!!this.Z){this.Qa();this.Fa("ok_collapse_w=
+"+this.B+"_h"+this.A)}};V.prototype.Qa=3Dfunction(){this.e.style.width=3D=
+this.B+"px";this.e.style.height=3Dthis.A+"px";this.e.style.left=3D"0";thi=
+s.e.style.top=3D"0";this.e.style.zIndex=3Dj;this.e.parentNode.style.zInde=
+x=3Dj;this.Z=3Dh};=0A=
+V.prototype.cb=3Dfunction(a,b,c){this.e.style.position=3D"absolute";this.=
+e.style.width=3Da+"px";this.e.style.height=3Db+"px";this.e.style.zIndex=3D=
+9999;this.e.parentNode.style.zIndex=3D9999;if(a>this.B&&(c=3D=3D0||c=3D=3D=
+3))this.e.style.left=3D"-"+(a-this.B)+"px";if(b>this.A&&(c=3D=3D1||c=3D=3D=
+0))this.e.style.top=3D"-"+(b-this.A)+"px";this.Z=3Dm};=0A=
+V.prototype.ab=3Dfunction(a,b){var =
+c=3DGb(this.e),d=3Dtb(window),e=3Da-this.B,f=3Db-this.A,g=3Dc.y,i=3Df>g,k=
+=3Dd.height-(c.y+this.A),l=3Di||k>=3Dg,o=3Dc.x,p=3De>o,q=3Dd.width-(c.x+t=
+his.B),x=3Dp||q>=3Do,M=3D0;if(l&&x)M=3D2;else if(l&&!x)M=3D3;else =
+if(!l&&x)M=3D1;else if(!l&&!x)M=3D0;return M};=0A=
+var =
+Tc=3Dfunction(){},Wc=3Dfunction(a,b,c,d,e){if(!a||!b||c<=3D0||d<=3D0)retu=
+rn j;var f=3DUb(10);b=3DUc(b,c,d,f);var g=3DVc(a,b,c,d,e);return new =
+V(g,f)},Uc=3Dfunction(a,b,c,d){var e=3Dmb().X();return =
+a+(a.indexOf("?")=3D=3D-1?"?":"&")+"w=3D"+b+"&h=3D"+c+"&xpc=3D"+d+"&p=3D"=
++escape(e.location.protocol+"//"+e.location.host)},Vc=3Dfunction(a,b,c,d,=
+e){var f=3D'<ins =
+style=3D"width:'+c+"px;height:"+d+'px;position:relative;margin:0;padding:=
+0;display:block;visibility:visible;border:none"><iframe =
+allowtransparency=3Dtrue frameborder=3D0 height=3D'+=0A=
+d+" hspace=3D0 id=3D"+a+' marginheight=3D0 marginwidth=3D0 =
+name=3Dgoogle_ads_frame scrolling=3Dno src=3D"'+b+'" =
+style=3D"left:0;position:absolute;top:0" vspace=3D0 =
+width=3D'+c+"></iframe></ins>",g=3Dob(),i=3Dg.xa(e);if(i)i.innerHTML=3Df;=
+else g.X().write(f);return =
+g.xa(a)};Aa("ExpandableAdSlot",V);Aa("ExpandableAdSlotFactory",Tc);var =
+W=3D"",Xc=3Dh;function Yc(a){return a!=3Dj?'"'+a+'"':'""'}function =
+ha(a){return typeof =
+encodeURIComponent=3D=3D"function"?encodeURIComponent(a):escape(a)}functi=
+on X(a,b){if(a&&b)window.google_ad_url+=3D"&"+a+"=3D"+b}function =
+Y(a){var b=3Dwindow,c=3Dba[a]||ca[a]||j,d=3Db[a];X(c,d)}function =
+Z(a,b){b!=3Dj&&X(a,ha(b))}function $(a){var =
+b=3Dwindow,c=3Dba[a]||ca[a]||j,d=3Db[a];Z(c,d)}function Zc(a,b){var =
+c=3Dwindow,d=3Dba[a]||ca[a]||j,e=3Dc[a];if(d&&e&&typeof =
+e=3D=3D"object")e=3De[b%e.length];X(d,e)}=0A=
+function $c(a){var b=3Da.screen,c=3Dnavigator.javaEnabled(),d=3D-(new =
+Date).getTimezoneOffset();if(b){X("u_h",b.height);X("u_w",b.width);X("u_a=
+h",b.availHeight);X("u_aw",b.availWidth);X("u_cd",b.colorDepth)}X("u_tz",=
+d);X("u_his",history.length);X("u_java",c);navigator.plugins&&X("u_nplug"=
+,navigator.plugins.length);navigator.mimeTypes&&X("u_nmime",navigator.mim=
+eTypes.length)}=0A=
+function =
+ad(a){if(!!a.google_enable_first_party_cookie){if(n=3D=3Dj)n=3Dnew =
+da;if(a._GA_googleCookieHelper=3D=3Dj)a._GA_googleCookieHelper=3Dnew =
+r;if(!a._google_cookie_fetched){a._google_cookie_fetched=3Dm;a._GA_google=
+CookieHelper.db(bd(a.google_ad_client))}}}function =
+bd(a){if(a){a=3Da.toLowerCase();if(a.substring(0,3)!=3D"ca-")a=3D"ca-"+a}=
+return a}function =
+cd(a){if(a){a=3Da.toLowerCase();if(a.substring(0,9)!=3D"dist-aff-")a=3D"d=
+ist-aff-"+a}return a}=0A=
+function dd(a){var b=3D"google_unique_id";if(a[b])++a[b];else =
+a[b]=3D1;return a[b]}function ed(){var =
+a=3Dy&&A("6")&&!A("8"),b=3Djb&&A("1.8.1"),c=3Dz&&A("525");if($a&&(a||b||c=
+))return m;else if(Za&&(c||b))return m;else if(ab&&b)return m;return h}=0A=
+function fd(a,b){var =
+c=3Da.google_allow_expandable_ads;if(c!=3Dj&&c=3D=3Dh||!b.body||a.google_=
+ad_output!=3D"html"||gd(a,b)||hd(a)||id(a.google_ad_format)||typeof =
+a.google_ad_height!=3D"number"&&String(parseInt(a.google_ad_height,10))!=3D=
+a.google_ad_height||typeof =
+a.google_ad_width!=3D"number"&&String(parseInt(a.google_ad_width,10))!=3D=
+a.google_ad_width||!ed())return h;return m}=0A=
+function jd(){var =
+a=3DMath.random(),b=3D0,c=3Dia("0.03",0.03),d=3D2*c;if(a<c)return"3014301=
+9";if(a<d)return"30143020";b=3Dd;c=3Dia("0.03",0.03);d=3D2*c;c+=3Db;d+=3D=
+b;if(a<c)return"30143021";if(a<d)return"30143022";return""}function =
+kd(){var =
+a=3DMath.random(),b=3Dia("0.01",0.01),c=3D2*b;if(a<b)return"6083027";if(a=
+<c)return"6083026";return""}function =
+ld(a){a.google_allow_expandable_ads=3Dh;a.google_expandable_iframe=3Dh}va=
+r md=3DMath.random()<0.0010;=0A=
+function =
+nd(a,b){a.google_image_requests||(a.google_image_requests=3D[]);var =
+c=3Dnew Image;c.src=3Db;a.google_image_requests.push(c)}=0A=
+function od(a,b,c,d){var =
+e=3Ddd(a);c=3Dc.substring(0,1992);c=3Dc.replace(/%\w?$/,"");var =
+f=3D"script";if((a.google_ad_output=3D=3D"js"||a.google_ad_output=3D=3D"j=
+son_html")&&(a.google_ad_request_done||a.google_radlink_request_done))b.w=
+rite("<"+f+' language=3D"JavaScript1.1" =
+src=3D'+Yc(pd(c))+"></"+f+">");else =
+if(a.google_ad_output=3D=3D"html")if(b.body&&(a.google_expandable_iframe|=
+|W.indexOf("30143020")!=3D-1)){var =
+g=3Da.google_container_id||d||j;a["google_expandable_ad_slot"+e]=3DWc("go=
+ogle_ads_frame"+e,pd(c),parseInt(a.google_ad_width,=0A=
+10),parseInt(a.google_ad_height,10),g)}else{var i=3D'<iframe =
+name=3D"google_ads_frame" width=3D'+Yc(a.google_ad_width)+" =
+height=3D"+Yc(a.google_ad_height)+" =
+frameborder=3D"+Yc(a.google_ad_frameborder)+" src=3D"+Yc(pd(c))+' =
+marginwidth=3D"0" marginheight=3D"0" vspace=3D"0" hspace=3D"0" =
+allowtransparency=3D"true" =
+scrolling=3D"no"></iframe>';if(Xc&&W.indexOf("30143022")!=3D-1)i=3D'<ins =
+style=3D"width:'+parseInt(a.google_ad_width,10)+"px;height:"+parseInt(a.g=
+oogle_ad_height,10)+'px;position:relative;margin:0;padding:0;display:bloc=
+k;visibility:visible;border:none">'+=0A=
+i+"</ins>";a.google_container_id?qd(a.google_container_id,b,i):b.write(i)=
+}else a.google_ad_output=3D=3D"textlink"&&b.write("<"+f+' =
+language=3D"JavaScript1.1" src=3D'+Yc(pd(c))+"></"+f+">");if(md){var =
+k=3Drd(a)+"/pagead/gen_204?id=3Difjs2&token=3D"+a.google_correlator+"&out=
+put=3D"+ha(a.google_ad_output)+"&url=3D"+ha(a.google_page_url);nd(a,k)}}=0A=
+function sd(a){for(var b in ba)a[b]=3Dj;for(var b in =
+ca)b=3D=3D"google_correlator"||(a[b]=3Dj);a.google_allow_expandable_ads=3D=
+j;a.google_container_id=3Dj;a.google_expandable_iframe=3Dj;a.googlen_tag_=
+js_version=3Dj}function hd(a){if(a.google_ad_format)return =
+a.google_ad_format.indexOf("_0ads")>0;return =
+a.google_ad_output!=3D"html"&&a.google_num_radlinks>0}function =
+id(a){return a&&a.indexOf("_sdo")!=3D-1}=0A=
+function td(a){var =
+b=3Dj,c=3Dwindow,d=3Ddocument,e=3Daa,f=3Dc.google_ad_format,g=3Drd(c),i;i=
+f(c.google_cpa_choice!=3Db){c.google_ad_url=3Dg+"/cpa/ads?";i=3Descape(bd=
+(c.google_ad_client));c.google_ad_region=3D"_google_cpa_region_";Y("googl=
+e_cpa_choice");if(typeof =
+d.characterSet!=3D"undefined")Z("oe",d.characterSet);else typeof =
+d.charset!=3D"undefined"&&Z("oe",d.charset)}else =
+if(id(f)){c.google_ad_url=3Dg+"/pagead/sdo?";i=3Descape(cd(c.google_ad_cl=
+ient))}else{c.google_ad_url=3Dg+"/pagead/ads?";i=3Descape(bd(c.google_ad_=
+client))}c.google_ad_url+=3D=0A=
+"client=3D"+i;Y("google_ad_host");Y("google_ad_host_tier_id");var =
+k=3Dc.google_num_slots_by_client,l=3Dc.google_num_slots_by_channel,o=3Dc.=
+google_prev_ad_formats_by_region,p=3Dc.google_prev_ad_slotnames_by_region=
+;if(c.google_ad_region=3D=3Db&&c.google_ad_section!=3Db)c.google_ad_regio=
+n=3Dc.google_ad_section;var =
+q=3Dc.google_ad_region=3D=3Db?"":c.google_ad_region;if(id(f)){c.google_nu=
+m_sdo_slots=3Dc.google_num_sdo_slots?c.google_num_sdo_slots+1:1;if(c.goog=
+le_num_sdo_slots>4)return h}else =
+if(hd(c)){c.google_num_0ad_slots=3Dc.google_num_0ad_slots?=0A=
+c.google_num_0ad_slots+1:1;if(c.google_num_0ad_slots>3)return h}else =
+if(c.google_cpa_choice=3D=3Db){c.google_num_ad_slots=3Dc.google_num_ad_sl=
+ots?c.google_num_ad_slots+1:1;if(c.google_num_slots_to_rotate){o[q]=3Db;p=
+[q]=3Db;if(c.google_num_slot_to_show=3D=3Db)c.google_num_slot_to_show=3De=
+%c.google_num_slots_to_rotate+1;if(c.google_num_slot_to_show!=3Dc.google_=
+num_ad_slots)return h}else if(c.google_num_ad_slots>6&&q=3D=3D"")return =
+h}X("dt",aa);Y("google_language");c.google_country?Y("google_country"):Y(=
+"google_gl");Y("google_region");=0A=
+$("google_city");$("google_hints");Y("google_safe");Y("google_encoding");=
+Y("google_last_modified_time");$("google_alternate_ad_url");Y("google_alt=
+ernate_color");Y("google_skip");Y("google_targeting");var =
+x=3Dc.google_ad_client;if(k[x])k[x]+=3D1;else{k[x]=3D1;k.length+=3D1}if(o=
+[q])if(!id(f)){Z("prev_fmts",o[q].toLowerCase());k.length>1&&X("slot",k[x=
+])}p[q]&&Z("prev_slotnames",p[q].toLowerCase());if(f&&!c.google_ad_slot){=
+Z("format",f.toLowerCase());id(f)||(o[q]=3Do[q]?o[q]+","+f:f)}if(c.google=
+_ad_slot)p[q]=3Dp[q]?=0A=
+p[q]+","+c.google_ad_slot:c.google_ad_slot;Y("google_max_num_ads");X("out=
+put",c.google_ad_output);Y("google_adtest");Y("google_ad_callback");Y("go=
+ogle_ad_slot");$("google_correlator");c.google_new_domain_checked=3D=3D1&=
+&c.google_new_domain_enabled=3D=3D0&&X("dblk",1);if(c.google_ad_channel){=
+$("google_ad_channel");var =
+M=3D"",jc=3Dc.google_ad_channel.split(ud);for(var =
+eb=3D0;eb<jc.length;eb++){var fb=3Djc[eb];if(l[fb])M+=3Dfb+"+";else =
+l[fb]=3D1}Z("pv_ch",M)}if(c.google_ad_host_channel){$("google_ad_host_cha=
+nnel");var Cd=3D=0A=
+vd(c.google_ad_host_channel,c.google_viewed_host_channels);Z("pv_h_ch",Cd=
+)}c.google_enable_first_party_cookie&&Z("cookie",c._GA_googleCookieHelper=
+.ib());$("google_page_url");Zc("google_color_bg",e);Zc("google_color_text=
+",e);Zc("google_color_link",e);Zc("google_color_url",e);Zc("google_color_=
+border",e);Zc("google_color_line",e);c.google_reuse_colors?X("reuse_color=
+s",1):X("reuse_colors",0);Y("google_kw_type");$("google_kw");$("google_co=
+ntents");Y("google_num_radlinks");Y("google_max_radlink_len");Y("google_r=
+l_filtering");=0A=
+Y("google_rl_mode");Y("google_rt");$("google_rl_dest_url");Y("google_num_=
+radlinks_per_unit");Y("google_ad_type");Y("google_image_size");Y("google_=
+ad_region");Xc=3Dfd(c,d);if(!Xc)ld(c);else =
+if(c.google_expandable_iframe=3D=3D=3Dh)ld(c);else if(i =
+in{"ca-pub-2944451727872625":1,"ca-pub-9483266128490610":1,"ca-pub-195592=
+4717845427":1,"ca-pub-6664249124335298":1})c.google_expandable_iframe=3Dm=
+;else if(!(c.google_expandable_iframe=3D=3Dm)){var =
+gb=3Djd();if(gb){if(W!=3D"")W+=3D",";W+=3Dgb}gb!=3D"30143020"&&ld(c)}X("e=
+id",W);var kc=3D=0A=
+c.google_allow_expandable_ads;if(kc!=3Dj)kc?X("ea","1"):X("ea","0");Y("go=
+ogle_feedback");$("google_referrer_url");$("google_page_location");X("frm=
+",c.google_iframing);Y("google_bid");Y("google_ctr_threshold");Y("google_=
+cust_age");Y("google_cust_gender");Y("google_cust_interests");Y("google_c=
+ust_id");Y("google_cust_job");Y("google_cust_u_url");Y("google_cust_l");Y=
+("google_cust_lh");Y("google_cust_ch");Y("google_ed");Y("google_video_doc=
+_id");Y("google_video_product_type");$("google_ui_features");$("google_ui=
+_version");=0A=
+$("google_tag_js_version");$("google_only_ads_with_video");$("google_disa=
+ble_video_autoplay");if(a){Z("ff",Hb(a));var =
+hb=3DFb(a),ib=3Dtb();if(hb&&ib){Z("biw",ib.width);Z("bih",ib.height);Z("a=
+dx",hb.x);Z("ady",hb.y)}}Jb();X("ga_vid",c.gaGlobal.vid);X("ga_sid",c.gaG=
+lobal.sid);X("ga_hid",c.gaGlobal.hid);X("ga_fc",c.gaGlobal.from_cookie);$=
+("google_analytics_uacct");Y("google_ad_override");Y("google_flash_versio=
+n");$c(c);md&&X("gen_204","ifjs2");return m}=0A=
+function vd(a,b){var c=3Da.split("|"),d=3D-1,e=3D[];for(var =
+f=3D0;f<c.length;f++){var g=3Dc[f].split(ud);b[f]||(b[f]=3D{});var =
+i=3D"";for(var k=3D0;k<g.length;k++){var =
+l=3Dg[k];if(b[f][l])i+=3D"+"+l;else =
+b[f][l]=3D1}i=3Di.slice(1);e[f]=3Di;if(i!=3D"")d=3Df}var =
+o=3D"";if(d>-1){for(var f=3D0;f<d;f++)o+=3De[f]+"|";o+=3De[d]}return o}=0A=
+function wd(){var a=3Dwindow,b=3Ddocument;ad(a);var =
+c=3Dkd();if(c){if(W!=3D"")W+=3D",";W+=3Dc}var d;if(c!=3D"6083027"){var =
+e=3D"google_temp_span";if(!qb(e)){b.write("<span =
+id=3D"+e+"></span>");d=3Dqb(e)}}var =
+f=3Dtd(d);d&&vb(d);if(!!f){od(a,b,a.google_ad_url);sd(a)}}function =
+pd(a){var b=3D(new =
+Date).getTime()-aa,c=3D"&dtd=3D"+(b<1000?b:"M");return a+c}function =
+xd(){wd();return m}=0A=
+function gd(a,b){if(a.top.location=3D=3Db.location)return h;var =
+c=3Db.documentElement;if(a.google_ad_width&&a.google_ad_height){var =
+d=3D1,e=3D1;if(a.innerHeight){d=3Da.innerWidth;e=3Da.innerHeight}else =
+if(c&&c.clientHeight){d=3Dc.clientWidth;e=3Dc.clientHeight}else =
+if(b.body){d=3Db.body.clientWidth;e=3Db.body.clientHeight}if(e>2*a.google=
+_ad_height||d>2*a.google_ad_width)return h}return m}=0A=
+function yd(a){var =
+b=3Dwindow,c=3Dj,d=3Db.onerror;b.onerror=3Da;if(b.google_ad_frameborder=3D=
+=3Dc)b.google_ad_frameborder=3D0;if(b.google_ad_output=3D=3Dc)b.google_ad=
+_output=3D"html";if(id(b.google_ad_format)){var =
+e=3Db.google_ad_format.match(/^(\d+)x(\d+)_.*/);if(e){b.google_ad_width=3D=
+parseInt(e[1],10);b.google_ad_height=3DparseInt(e[2],10);b.google_ad_outp=
+ut=3D"html"}}if(b.google_ad_format=3D=3Dc&&b.google_ad_output=3D=3D"html"=
+)b.google_ad_format=3Db.google_ad_width+"x"+b.google_ad_height;zd(b,docum=
+ent);if(b.google_num_slots_by_channel=3D=3D=0A=
+c)b.google_num_slots_by_channel=3D[];if(b.google_viewed_host_channels=3D=3D=
+c)b.google_viewed_host_channels=3D[];if(b.google_num_slots_by_client=3D=3D=
+c)b.google_num_slots_by_client=3D[];if(b.google_prev_ad_formats_by_region=
+=3D=3Dc)b.google_prev_ad_formats_by_region=3D[];if(b.google_prev_ad_slotn=
+ames_by_region=3D=3Dc)b.google_prev_ad_slotnames_by_region=3D[];if(b.goog=
+le_correlator=3D=3Dc)b.google_correlator=3Daa;if(b.google_adslot_loaded=3D=
+=3Dc)b.google_adslot_loaded=3D{};if(b.google_adContentsBySlot=3D=3Dc)b.go=
+ogle_adContentsBySlot=3D{};if(b.google_flash_version=3D=3D=0A=
+c)b.google_flash_version=3Dja();if(b.google_new_domain_checked=3D=3Dc)b.g=
+oogle_new_domain_checked=3D0;if(b.google_new_domain_enabled=3D=3Dc)b.goog=
+le_new_domain_enabled=3D0;b.onerror=3Dd}function Ad(a){if(a in Bd)return =
+Bd[a];return =
+Bd[a]=3Dnavigator.userAgent.toLowerCase().indexOf(a)!=3D-1}var =
+Bd=3D{};function ka(){return Ad("msie")&&!window.opera}=0A=
+function Dd(a){var =
+b=3D{},c=3Da.split("?"),d=3Dc[c.length-1].split("&");for(var =
+e=3D0;e<d.length;e++){var =
+f=3Dd[e].split("=3D");if(f[0])try{b[f[0].toLowerCase()]=3Df.length>1?wind=
+ow.decodeURIComponent?decodeURIComponent(f[1].replace(/\+/g," =
+")):unescape(f[1]):""}catch(g){}}return b}function Ed(){var =
+a=3Dwindow,b=3DDd(document.URL);if(b.google_ad_override){a.google_ad_over=
+ride=3Db.google_ad_override;a.google_adtest=3D"on"}}function =
+Fd(a,b){for(var c in b)a["google_"+c]=3Db[c]}=0A=
+function Gd(a,b){if(!b)return a.location;return a.referrer}function =
+Hd(a,b){if(!b&&a.google_referrer_url=3D=3Dj)return"0";else =
+if(b&&a.google_referrer_url=3D=3Dj)return"1";else =
+if(!b&&a.google_referrer_url!=3Dj)return"2";else =
+if(b&&a.google_referrer_url!=3Dj)return"3";return"4"}function =
+Id(a,b,c,d){a.page_url=3DGd(c,d);a.page_location=3Dj}function =
+Jd(a,b,c,d){a.page_url=3Db.google_page_url;a.page_location=3DGd(c,d)||"EM=
+PTY"}=0A=
+function Kd(a,b){var =
+c=3D{},d=3Dgd(a,b);c.iframing=3DHd(a,d);!!a.google_page_url?Jd(c,a,b,d):I=
+d(c,a,b,d);c.last_modified_time=3Db.location=3D=3Dc.page_url?Date.parse(b=
+.lastModified)/1000:j;c.referrer_url=3Dd?a.google_referrer_url:a.google_p=
+age_url&&a.google_referrer_url?a.google_referrer_url:b.referrer;return =
+c}function Ld(a){var =
+b=3D{},c=3Da.URL.substring(a.URL.lastIndexOf("http"));b.iframing=3Dj;b.pa=
+ge_url=3Dc;b.page_location=3Da.location;b.last_modified_time=3Dj;b.referr=
+er_url=3Dc;return b}=0A=
+function zd(a,b){var =
+c;c=3Da.google_page_url=3D=3Dj&&Md[b.domain]?Ld(b):Kd(a,b);Fd(a,c)}functi=
+on qd(a,b,c){if(a){var =
+d=3Db.getElementById(a);if(d&&c&&c.length!=3D""){d.style.visibility=3D"vi=
+sible";d.innerHTML=3Dc}}}var Md=3D{};Md["ad.yieldmanager.com"]=3Dm;var =
+ud=3D/[+, ]/;window.google_render_ad=3Dwd;var =
+Nd=3D{google:1,googlegroups:1,gmail:1,googlemail:1,orkut:1,googleimages:1=
+,googleprint:1};function Od(a){var =
+b=3Da.google_page_location||a.google_page_url;if(!b)return =
+h;b=3Db.toString();if(b.indexOf("http://")=3D=3D0)b=3Db.substring(7,b.len=
+gth);else =
+if(b.indexOf("https://")=3D=3D0)b=3Db.substring(8,b.length);var =
+c=3Db.indexOf("/");if(c=3D=3D-1)c=3Db.length;var =
+d=3Db.substring(0,c),e=3Dd.split("."),f=3Dh;if(e.length>=3D3)f=3De[e.leng=
+th-3]in Nd;if(e.length>=3D2)f=3Df||e[e.length-2]in Nd;return f}=0A=
+function Pd(a,b,c){if(Od(a)){a.google_new_domain_checked=3D1;return =
+h}if(a.google_new_domain_checked=3D=3D0){var =
+d=3DMath.random();if(d<=3Dc){var =
+e=3D"http://googleads.g.doubleclick.net/pagead/test_domain.js",f=3D"scrip=
+t";b.write("<"+f+' =
+src=3D"'+e+'"></'+f+">");a.google_new_domain_checked=3D1;return =
+m}}return h}function rd(a){var =
+b=3D"http://googleads.g.doubleclick.net",c=3D"http://pagead2.googlesyndic=
+ation.com";if(!Od(a)&&a.google_new_domain_enabled=3D=3D1)return b;return =
+c};function Qd(a,b){var =
+c=3D"script",d=3DPd(a,b,ia("1",0.01));d&&ka()?b.write("<"+c+' =
+src=3D"http://pagead2.googlesyndication.com/pagead/render_ads.js"></'+c+"=
+>"):b.write("<"+c+">window.google_render_ad();</"+c+">")}Ed();yd(xd);Qd(w=
+indow,document);=0A=
+})()=0A=
+
+------=_NextPart_000_0000_01C96409.8ADB9760--

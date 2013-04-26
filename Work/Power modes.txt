@@ -1,0 +1,9 @@
+five software selectable power saving modes. The Idle mode stops the CPU while allowing
+the SRAM, Timer/Counters, SPI port, and interrupt system to continue functioning. The Powerdown
+mode saves the register contents but freezes the Oscillator, disabling all other chip functions
+until the next Interrupt or Hardware Reset. In Power-save mode, the asynchronous timer
+continues to run, allowing the user to maintain a timer base while the rest of the device is sleeping.
+The ADC Noise Reduction mode stops the CPU and all I/O modules except asynchronous
+timer and ADC, to minimize switching noise during ADC conversions. In Standby mode, the
+crystal/resonator Oscillator is running while the rest of the device is sleeping. This allows very
+fast start-up combined with low-power consumption.

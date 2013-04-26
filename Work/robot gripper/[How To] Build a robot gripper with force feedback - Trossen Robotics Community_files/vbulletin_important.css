@@ -1,0 +1,42 @@
+FORM {
+	MARGIN: 0px
+}
+LABEL {
+	CURSOR: default
+}
+.normal {
+	FONT-WEIGHT: normal
+}
+.inlineimg {
+	VERTICAL-ALIGN: middle
+}
+.underline {
+	TEXT-DECORATION: underline
+}
+.vbmenu_hilite  {
+	CURSOR: pointer
+}
+.floatcontainer:unknown {
+	CLEAR: both; DISPLAY: block; VISIBILITY: hidden; HEIGHT: 0px; content: "."
+}
+.block_row:unknown {
+	CLEAR: both; DISPLAY: block; VISIBILITY: hidden; HEIGHT: 0px; content: "."
+}
+.floatcontainer {
+	DISPLAY: inline-block
+}
+.block_row {
+	DISPLAY: inline-block
+}
+ HTML .floatcontainer {
+	HEIGHT: 1%
+}
+ HTML .block_row {
+	HEIGHT: 1%
+}
+.floatcontainer {
+	DISPLAY: block
+}
+.block_row {
+	DISPLAY: block
+}

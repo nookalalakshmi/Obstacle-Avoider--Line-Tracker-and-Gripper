@@ -1,0 +1,116 @@
+   1               		.file	"IR-Remote.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	__vector_5
+  20               	__vector_5:
+  21               	.LFB7:
+  22               	.LM1:
+  23 0000 1F92      		push __zero_reg__
+  24 0002 0F92      		push r0
+  25 0004 0FB6      		in r0,__SREG__
+  26 0006 0F92      		push r0
+  27 0008 1124      		clr __zero_reg__
+  28 000a 8F93      		push r24
+  29 000c 9F93      		push r25
+  30               	/* prologue: Signal */
+  31               	/* frame size = 0 */
+  32               	.LM2:
+  33 000e 8091 0000 		lds r24,count
+  34 0012 9091 0000 		lds r25,(count)+1
+  35 0016 0196      		adiw r24,1
+  36 0018 9093 0000 		sts (count)+1,r25
+  37 001c 8093 0000 		sts count,r24
+  38               	.LM3:
+  39 0020 A899      		sbic 53-32,0
+  40 0022 00C0      		rjmp .L2
+  41               	.LM4:
+  42 0024 A89A      		sbi 53-32,0
+  43 0026 00C0      		rjmp .L3
+  44               	.L2:
+  45               	.LM5:
+  46 0028 A898      		cbi 53-32,0
+  47               	.L3:
+  48               	.LM6:
+  49 002a 8FED      		ldi r24,lo8(-33)
+  50 002c 84BD      		out 68-32,r24
+  51               	/* epilogue start */
+  52               	.LM7:
+  53 002e 9F91      		pop r25
+  54 0030 8F91      		pop r24
+  55 0032 0F90      		pop r0
+  56 0034 0FBE      		out __SREG__,r0
+  57 0036 0F90      		pop r0
+  58 0038 1F90      		pop __zero_reg__
+  59 003a 1895      		reti
+  60               	.LFE7:
+  62               	.global	main
+  64               	main:
+  65               	.LFB8:
+  66               	.LM8:
+  67               	/* prologue: function */
+  68               	/* frame size = 0 */
+  69               	.LM9:
+  70 003c 80E8      		ldi r24,lo8(-128)
+  71 003e 8ABB      		out 58-32,r24
+  72               	.LM10:
+  73 0040 8FEF      		ldi r24,lo8(-1)
+  74 0042 84BB      		out 52-32,r24
+  75               	.LM11:
+  76 0044 84E0      		ldi r24,lo8(4)
+  77 0046 85BD      		out 69-32,r24
+  78               	.LM12:
+  79 0048 8FED      		ldi r24,lo8(-33)
+  80 004a 84BD      		out 68-32,r24
+  81               	.LM13:
+  82 004c 80E4      		ldi r24,lo8(64)
+  83 004e 89BF      		out 89-32,r24
+  84               	.LM14:
+  85               	/* #APP */
+  86               	 ;  91 "IR-Remote.c" 1
+  87 0050 7894      		sei
+  88               	 ;  0 "" 2
+  89               	/* #NOAPP */
+  90               	.L9:
+  91               	.LM15:
+  92 0052 8091 0000 		lds r24,count
+  93 0056 9091 0000 		lds r25,(count)+1
+  94 005a 81FD      		sbrc r24,1
+  95 005c 00C0      		rjmp .L6
+  96               	.LM16:
+  97 005e A998      		cbi 53-32,1
+  98 0060 00C0      		rjmp .L9
+  99               	.L6:
+ 100               	.LM17:
+ 101 0062 A99A      		sbi 53-32,1
+ 102 0064 00C0      		rjmp .L9
+ 103               	.LFE8:
+ 105               	.global	ledout
+ 106               	.global	ledout
+ 107               		.section .bss
+ 110               	ledout:
+ 111 0000 0000      		.skip 2,0
+ 112               		.lcomm count,2
+ 145               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 IR-Remote.c
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/ccAzn1Vd.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/ccAzn1Vd.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/ccAzn1Vd.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/ccAzn1Vd.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/ccAzn1Vd.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/ccAzn1Vd.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/ccAzn1Vd.s:20     .text:00000000 __vector_5
+                             .bss:00000002 count
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/ccAzn1Vd.s:64     .text:0000003c main
+C:\DOCUME~1\HIMANS~1.RND\LOCALS~1\Temp/ccAzn1Vd.s:110    .bss:00000000 ledout
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

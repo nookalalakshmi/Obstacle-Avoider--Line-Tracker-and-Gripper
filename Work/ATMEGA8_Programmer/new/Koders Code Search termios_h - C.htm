@@ -1,0 +1,948 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0072)http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD id=pageHead><TITLE>Koders Code Search: termios.h - C</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=noarchive,index,follow name=robots>
+<META content=noarchive,index,follow name=GOOGLEBOT><LINK title="Koders search" 
+href="http://www.koders.com/search/KodersDescriptionOS1_1.xml" 
+type=application/opensearchdescription+xml rel=search><LINK 
+title="Koders Projects search" 
+href="http://www.koders.com/search/KodersDescriptionOS1_1Proj.xml" 
+type=application/opensearchdescription+xml rel=search><LINK 
+href="Koders Code Search termios_h - C_files/styles.css" type=text/css 
+rel=stylesheet><!--[if IE]><LINK 
+href="Koders Code Search termios_h - C_files/iestyles.css" type=text/css 
+rel=stylesheet><![endif]--><LINK 
+href="Koders Code Search termios_h - C_files/koders.com.css" type=text/css 
+rel=stylesheet>
+<META content=NOARCHIVE name=ROBOTS><LINK 
+href="Koders Code Search termios_h - C_files/home-page.css" type=text/css 
+rel=stylesheet>
+<SCRIPT language=javascript type=text/javascript>
+//Copyright (c) 2005-2007 Koders.com,
+//All Rights Reserved.
+var anchors;
+var symbolSegment = 0;
+var max = 0;
+	
+function assignInitial() {
+	var codeDiv = document.getElementById("CodeDiv");
+	if(codeDiv != null) {
+		anchors = codeDiv.getElementsByTagName("a");
+		assignR(300);
+	}
+}
+
+function assignR(max) {
+	if(symbolSegment + max >= anchors.length) {
+		max = anchors.length - symbolSegment; 
+	}
+	for(var i = 0; i < max; i++) {
+		var temp = "";
+		var index = symbolSegment +  i;
+		var anchor = anchors[index];
+
+		for(var k = 0; k < anchor.childNodes.length; k++) {
+			if(anchor.childNodes[k].data == undefined) {
+				temp = temp + anchor.childNodes[k].childNodes[0].data;
+			}
+			else {
+				temp = temp + anchor.childNodes[k].data;
+			}
+		}
+		
+		anchors[index].setAttribute("href", "javascript:searchRef('" + temp + "')");
+		anchors[index].setAttribute("title", "Search for references of '" + temp + "'");
+	}
+	
+	if(symbolSegment + max < anchors.length) { 
+		symbolSegment += max;
+		this.setTimeout("assignR(50)", 200);		
+	}
+	
+}
+
+function searchRef(symbol) {
+	location = homeUrl + "?s=" + symbol + "&scope=" + projectID + "&la=" + sourceLanguage;
+}
+
+function Hide(element) {
+	if(element) {
+		element.style.visibility = "hidden";
+		element.style.display = "none";
+	} 
+}
+
+function HideBanner() {
+	var eleArray = document.getElementsByTagName('div');
+	for(var i = 0; i < eleArray.length; i++) {
+		if(!eleArray[i] || !eleArray[i].id) {
+			continue;
+		}
+
+		var id = eleArray[i].id;
+		if(id && id.indexOf("RightBanner") != -1){
+			Hide(eleArray[i]);
+								
+			// hide all the iframes nested in the Banner
+			var arrIframe = eleArray[i].getElementsByTagName('iframe');
+			if(!arrIframe)
+				return;
+			
+			for(var j = 0; j < arrIframe.length; j++) {
+				Hide(arrIframe[j]);
+			}
+		}
+	}
+}
+
+var dojo;
+if(dojo) dojo.addOnLoad(assignInitial);
+else window.onload = assignInitial;
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=FRM name=FRM 
+action=kv.aspx?fid=07839ABF1AFBB840376EB0E2B7405630F01AA8A7 method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT id=__VIEWSTATE 
+type=hidden 
+value=/wEPDwUJMTYzMDIzMzAwD2QWBgIBD2QWAgIGDw8WBB4GRmlsZUlEAtiKjQceCVByb2plY3RJRALkigNkZAIFD2QWBAIDD2QWAmYPZBYIAgEPDxYCHgtOYXZpZ2F0ZVVybAUBL2QWAmYPDxYCHghJbWFnZVVybAVBaHR0cDovL21lZGlhLmJsYWNrZHVja3NvZnR3YXJlLmNvbS9rb2RlcnMvYmRzL2xvZ29fbWVkX3RhZ19iZC5naWZkZAIHDxAPFgIeC18hRGF0YUJvdW5kZ2QQFSINQWxsIExhbmd1YWdlcwxBY3Rpb25TY3JpcHQDQWRhA0FTUAdBU1AuTkVUCUFzc2VtYmxlcgFDAkMjA0MrKwVDb2JvbApDb2xkRnVzaW9uBkRlbHBoaQZFaWZmZWwGRXJsYW5nB0ZvcnRyYW4ESmF2YQpKYXZhU2NyaXB0A0pTUARMaXNwA0x1YQtNYXRoZW1hdGljYQZNYXRsYWIKT2JqZWN0aXZlQwRQZXJsA1BIUAZQcm9sb2cGUHl0aG9uBFJ1YnkGU2NoZW1lCVNtYWxsdGFsawNTUUwDVGNsAlZCBlZCLk5FVBUiASoMQWN0aW9uU2NyaXB0A0FkYQNBU1AHQVNQLk5FVAlBc3NlbWJsZXIBQwJDIwNDcHAFQ29ib2wKQ29sZEZ1c2lvbgZEZWxwaGkGRWlmZmVsBkVybGFuZwdGb3J0cmFuBEphdmEKSmF2YVNjcmlwdANKU1AETGlzcANMdWELTWF0aGVtYXRpY2EGTWF0bGFiCk9iamVjdGl2ZUMEUGVybANQSFAGUHJvbG9nBlB5dGhvbgRSdWJ5BlNjaGVtZQlTbWFsbHRhbGsDU1FMA1RjbAJWQgZWQi5ORVQUKwMiZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2RkAgkPEA8WAh8EZ2QQFR0MQWxsIExpY2Vuc2VzA0FGTARBTDIwA0FTTARBUFNMA0JTRANDUEwFRVBMMTAER1RQTANHUEwETEdQTAVJQk1QTARJT1NMBE1TQ0wETVNQTARNU1JMB01TVlNTREsETUlURAVNUEwxMAVNUEwxMQVOUEwxMAVOUEwxMQNPU0wEUFNGTAJTTANTUEwDVzNDA1pMTANaUEwVHQEqA0FGTARBTDIwA0FTTARBUFNMA0JTRANDUEwFRVBMMTAER1RQTANHUEwETEdQTAVJQk1QTARJT1NMBE1TQ0wETVNQTARNU1JMB01TVlNTREsETUlURAVNUEwxMAVNUEwxMQVOUEwxMAVOUEwxMQNPU0wEUFNGTAJTTANTUEwDVzNDA1pMTANaUEwUKwMdZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dkZAILDw8WAh8CBTBodHRwOi8vd3d3LmtvZGVycy5jb20vY29ycC9zdXBwb3J0L2xpY2Vuc2UtaW5mby9kFgJmDxYCHgNzcmMFEy9pbWFnZXMvaW5mb18xNi5naWZkAgkPDxYCHgdWaXNpYmxlZ2QWCmYPDxYEHwMFFC9pbWFnZXMvZG93bmxvYWQuZ2lmHgdUb29sVGlwBRJEb3dubG9hZCB0ZXJtaW9zLmhkZAICDxYCHgtfIUl0ZW1Db3VudAIBFgJmD2QWAmYPFQUJdGVybWlvcy5oAUMAAAhMT0M6IDM1M2QCAw8WAh8IAgEWAmYPZBYGZg8VAr4BT3VyIG1pc3Npb24gaXMgdG8gZXhwbG9yZSBhbmQgZGV2ZWxvcCBuZXcgb3BlcmF0aW5nIHN5c3RlbSBjb25jZXB0cyBhaW1lZCBhdCBwcm9kdWNpbmcgYSBtb3JlIGVmZmljaWVudCBjb21wdXRpbmcgZW52aXJvbm1lbnQgd2hlcmUgYm90aCB0aGUgbWFjaGluZSBhbmQgdXNlciB0aW1lIGFyZSB0YWtlbiBpbiBjb25zaWRlcmF0aW9uLjcvaW5mby5hc3B4P2M9UHJvamVjdEluZm8mcGlkPVlYNVRXU1gxUFYyUVROTjVSN1FQTDU4NkJCZAIBD2QWAmYPFQEOVW51bnVuaXVtKHV1dSlkAgIPFQIHQmVybGlPUwNjdnNkAgUPZBYCZg9kFgYCAQ8PFgIfAgU3L2luZm8uYXNweD9jPVByb2plY3RJbmZvJnBpZD1ZWDVUV1NYMVBWMlFUTk41UjdRUEw1ODZCQmQWAmYPDxYEHwMFEi9pbWFnZXMvZm9sZGVyLmdpZh8HBSRCZXJsaU9TXHVcdXV1XHV1dVx1dXVcbGliXGNcaW5jbHVkZVxkZAIDDw8WBB4EVGV4dAUeLi4uXHV1dVx1dXVcdXV1XGxpYlxjXGluY2x1ZGVcHwcFJEJlcmxpT1NcdVx1dXVcdXV1XHV1dVxsaWJcY1xpbmNsdWRlXGRkAgUPFgIfCAJEZAIHDxYCHwZoZAIHDxYCHwkFowM8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+DQp2YXIgZ2FKc0hvc3QgPSAoKCJodHRwczoiID09IGRvY3VtZW50LmxvY2F0aW9uLnByb3RvY29sKSA/ICJodHRwczovL3NzbC4iIDogImh0dHA6Ly93d3cuIik7DQpkb2N1bWVudC53cml0ZSh1bmVzY2FwZSgiJTNDc2NyaXB0IHNyYz0nIiArIGdhSnNIb3N0ICsgImdvb2dsZS1hbmFseXRpY3MuY29tL2dhLmpzJyB0eXBlPSd0ZXh0L2phdmFzY3JpcHQnJTNFJTNDL3NjcmlwdCUzRSIpKTsNCjwvc2NyaXB0Pg0KPHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPg0KdmFyIHBhZ2VUcmFja2VyID0gX2dhdC5fZ2V0VHJhY2tlcigiVUEtMTQ1MDQ4MC0zIik7DQpwYWdlVHJhY2tlci5faW5pdERhdGEoKTsNCnBhZ2VUcmFja2VyLl90cmFja1BhZ2V2aWV3KCk7DQo8L3NjcmlwdD4NCmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFGktvZGV2aWV3ZXIxJERvd25sb2FkQnV0dG9u name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['FRM'];
+if (!theForm) {
+    theForm = document.FRM;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<SCRIPT src="Koders Code Search termios_h - C_files/WebResource.axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="Koders Code Search termios_h - C_files/ScriptResource.axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="C:\ATMEGA8_Programmer\new\Koders Code Search termios_h - C_files\ScriptResource(1).axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="Koders Code Search termios_h - C_files/js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl05$scriptManager', document.getElementById('FRM'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);
+//]]>
+</SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD 
+    style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 2px; WIDTH: 425px; PADDING-TOP: 8px" 
+    align=left>
+      <TABLE id=t1 cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD style="WHITE-SPACE: nowrap" noWrap><A id=ctl03_Home 
+            href="http://www.koders.com/"><IMG id=ctl03_imgLogo 
+            style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-LEFT-COLOR: #000000; BORDER-BOTTOM-WIDTH: 0px; BORDER-BOTTOM-COLOR: #000000; WIDTH: 141px; BORDER-TOP-COLOR: #000000; HEIGHT: 32px; BORDER-RIGHT-WIDTH: 0px; BORDER-RIGHT-COLOR: #000000" 
+            hspace=0 
+            src="Koders Code Search termios_h - C_files/logo_med_tag_bd.gif" 
+            vspace=6></A> </TD>
+          <TD style="WHITE-SPACE: nowrap" noWrap><INPUT class=tbSearchSmall 
+            id=ctl03_ctl00_s style="WIDTH: 200px" maxLength=128 value=termios.h 
+            name=ctl03$ctl00$s> <INPUT class=btnSearch id=ctl03_btnSearch type=submit value=Search name=ctl03$btnSearch><INPUT 
+            style="DISPLAY: none"><BR>Filter: <SELECT id=ctl03_Languages 
+            name=ctl03$Languages> <OPTION value=* selected>All 
+              Languages</OPTION> <OPTION 
+              value=ActionScript>ActionScript</OPTION> <OPTION 
+              value=Ada>Ada</OPTION> <OPTION value=ASP>ASP</OPTION> <OPTION 
+              value=ASP.NET>ASP.NET</OPTION> <OPTION 
+              value=Assembler>Assembler</OPTION> <OPTION value=C>C</OPTION> 
+              <OPTION value=C#>C#</OPTION> <OPTION value=Cpp>C++</OPTION> 
+              <OPTION value=Cobol>Cobol</OPTION> <OPTION 
+              value=ColdFusion>ColdFusion</OPTION> <OPTION 
+              value=Delphi>Delphi</OPTION> <OPTION value=Eiffel>Eiffel</OPTION> 
+              <OPTION value=Erlang>Erlang</OPTION> <OPTION 
+              value=Fortran>Fortran</OPTION> <OPTION value=Java>Java</OPTION> 
+              <OPTION value=JavaScript>JavaScript</OPTION> <OPTION 
+              value=JSP>JSP</OPTION> <OPTION value=Lisp>Lisp</OPTION> <OPTION 
+              value=Lua>Lua</OPTION> <OPTION 
+              value=Mathematica>Mathematica</OPTION> <OPTION 
+              value=Matlab>Matlab</OPTION> <OPTION 
+              value=ObjectiveC>ObjectiveC</OPTION> <OPTION 
+              value=Perl>Perl</OPTION> <OPTION value=PHP>PHP</OPTION> <OPTION 
+              value=Prolog>Prolog</OPTION> <OPTION value=Python>Python</OPTION> 
+              <OPTION value=Ruby>Ruby</OPTION> <OPTION 
+              value=Scheme>Scheme</OPTION> <OPTION 
+              value=Smalltalk>Smalltalk</OPTION> <OPTION value=SQL>SQL</OPTION> 
+              <OPTION value=Tcl>Tcl</OPTION> <OPTION value=VB>VB</OPTION> 
+              <OPTION value=VB.NET>VB.NET</OPTION></SELECT>&nbsp;<SELECT 
+            id=ctl03_Licenses name=ctl03$Licenses> <OPTION value=* 
+              selected>All Licenses</OPTION> <OPTION value=AFL>AFL</OPTION> 
+              <OPTION value=AL20>AL20</OPTION> <OPTION value=ASL>ASL</OPTION> 
+              <OPTION value=APSL>APSL</OPTION> <OPTION value=BSD>BSD</OPTION> 
+              <OPTION value=CPL>CPL</OPTION> <OPTION value=EPL10>EPL10</OPTION> 
+              <OPTION value=GTPL>GTPL</OPTION> <OPTION value=GPL>GPL</OPTION> 
+              <OPTION value=LGPL>LGPL</OPTION> <OPTION 
+              value=IBMPL>IBMPL</OPTION> <OPTION value=IOSL>IOSL</OPTION> 
+              <OPTION value=MSCL>MSCL</OPTION> <OPTION value=MSPL>MSPL</OPTION> 
+              <OPTION value=MSRL>MSRL</OPTION> <OPTION 
+              value=MSVSSDK>MSVSSDK</OPTION> <OPTION value=MITD>MITD</OPTION> 
+              <OPTION value=MPL10>MPL10</OPTION> <OPTION 
+              value=MPL11>MPL11</OPTION> <OPTION value=NPL10>NPL10</OPTION> 
+              <OPTION value=NPL11>NPL11</OPTION> <OPTION value=OSL>OSL</OPTION> 
+              <OPTION value=PSFL>PSFL</OPTION> <OPTION value=SL>SL</OPTION> 
+              <OPTION value=SPL>SPL</OPTION> <OPTION value=W3C>W3C</OPTION> 
+              <OPTION value=ZLL>ZLL</OPTION> <OPTION 
+            value=ZPL>ZPL</OPTION></SELECT>&nbsp;<A id=ctl03_LicenseInfoLink 
+            href="http://www.koders.com/corp/support/license-info/"><IMG 
+            id=ctl03_InfoImg height=16 alt=InfoImg 
+            src="Koders Code Search termios_h - C_files/info_16.gif" width=16 
+            border=0></A> </TD>
+          <TD vAlign=center align=middle width=0px></TD></TR></TBODY></TABLE></TD>
+    <TD align=right>
+      <DIV class=kvHeaderLimiter>
+      <SCRIPT src="Koders Code Search termios_h - C_files/toolbar.js" 
+      type=text/javascript></SCRIPT>
+      <LINK href="Koders Code Search termios_h - C_files/toptoolbar.css" 
+      type=text/css rel=stylesheet><!-- {Begin Toolbar} -->
+      <DIV id=topToolbars>
+      <DIV class="topToolbar ttb_wider" 
+      onmouseover="Toolbar._onmouseover(event); " 
+      style="RIGHT: 0px; WIDTH: 463px; TOP: 0px" 
+      onmouseout="Toolbar._onmouseout(event); ">
+      <DIV class=topToolbarCorner></DIV>
+      <DIV class=topToolbarInner>
+      <DIV class=topToolbarButton style="WIDTH: 84px; CURSOR: hand" 
+      onclick="window.location='http://www.koders.com/corp/about/'">Company 
+      <SPAN class=topToolbarDownArrow>▼</SPAN> 
+      <DIV class=topToolbarPopup style="WIDTH: 110px"><A 
+      href="http://corp.koders.com/corp/about/">About Koders</A> <A 
+      href="http://corp.koders.com/corp/about#Contact">Contact Us</A> 
+      </DIV></DIV>
+      <DIV class=topToolbarButton style="WIDTH: 72px; CURSOR: hand" 
+      onclick="window.location='http://www.koders.com/info.aspx?c=tools'">Plugins 
+      <SPAN class=topToolbarDownArrow>▼</SPAN> 
+      <DIV class=topToolbarPopup style="WIDTH: 110px"><A 
+      href="http://www.koders.com/info.aspx?c=tools#IDEs"><IMG alt=e 
+      src="Koders Code Search termios_h - C_files/toolbar-eclipse_icon.gif"> 
+      Eclipse</A> <A href="http://www.koders.com/info.aspx?c=tools#IDEs"><IMG 
+      alt=v 
+      src="Koders Code Search termios_h - C_files/toolbar-visual_icon.gif"> 
+      Visual Studio</A> <A 
+      href="http://www.koders.com/info.aspx?c=tools#Firefox">Browser</A> <A 
+      href="http://www.koders.com/info.aspx?c=tools#AddSearch">Widget APIs</A> <!--<a href="http://www.koders.com/blog/?p=36">Koders APIs</a>--></DIV></DIV>
+      <DIV class=topToolbarButton style="WIDTH: 76px; CURSOR: hand" 
+      onclick="window.location='http://corp.koders.com/corp/support'">Support 
+      <SPAN class=topToolbarDownArrow>▼</SPAN> 
+      <DIV class=topToolbarPopup style="WIDTH: 160px"><A 
+      href="http://corp.koders.com/corp/support/">Support Overview</A> <A 
+      href="http://corp.koders.com/corp/support/code-search/getting-started/">Getting 
+      Started Guide</A> <A 
+      href="http://www.koders.com/info.aspx?c=feedback&amp;product=kdc&amp;type=bug">Feedback</A> 
+      <A href="http://corp.koders.com/corp/support/license-info/">License 
+      Info</A> </DIV></DIV>
+      <DIV class=topToolbarButton style="WIDTH: 98px; CURSOR: hand" 
+      onclick="window.location='http://corp.koders.com/corp/community/'">Community 
+      <SPAN class=topToolbarDownArrow>▼</SPAN> 
+      <DIV class=topToolbarPopup style="WIDTH: 150px"><A 
+      href="http://corp.koders.com/corp/community/">Community Overview</A> <A 
+      href="http://www.koders.com/info.aspx?c=forms/SubmitProject">Add 
+      Projects</A> <!--<a href="http://www.koders.com/blog/">Blog</a>--><A 
+      href="http://forums.koders.com/">Forums</A> <A 
+      href="http://corp.koders.com/zeitgeist/">Top Searches</A> </DIV></DIV>
+      <DIV class=topToolbarButton style="WIDTH: 102px; CURSOR: hand" 
+      onclick="window.location='http://www.koders.com/info.aspx?page=MyAccount'">My 
+      Account <SPAN class=topToolbarDownArrow>▼</SPAN> 
+      <DIV class=topToolbarPopup style="WIDTH: 98px"><A 
+      id=Sitetoolbar1_ctl00_toggleAccount 
+      href="http://www.koders.com/info.aspx?page=MyAccount">Join Now!</A> <A 
+      id=Sitetoolbar1_ctl00_toggleLogin 
+      href="http://www.koders.com/info.aspx?page=MyAccount&amp;action=Login">Login</A> 
+      </DIV></DIV></DIV></DIV><BR class=clear></DIV><!-- {End Toolbar} -->&nbsp; 
+      </DIV></TD></TR></TBODY></TABLE>
+<DIV id=leaderboard>
+<CENTER><!-- Media Server Begin: 728x90 --><!-- Media Server End: 728x90 --></CENTER></DIV>
+<DIV class=kodeViewerContDiv><!-- <div class="SidePadding" align="left"> -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE id=Table2 cellSpacing=5 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=info_panel vAlign=top>
+            <TABLE id=Table3 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=center align=middle width=60><INPUT 
+                  id=Kodeviewer1_DownloadButton title="Download termios.h" 
+                  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+                  type=image 
+                  src="Koders Code Search termios_h - C_files/download.gif" 
+                  name=Kodeviewer1$DownloadButton> <A id=Kodeviewer1_LinkButton1 
+                  href="javascript:__doPostBack('Kodeviewer1$LinkButton1','')">download</A> 
+                </TD>
+                <TD><B>termios.h </B><BR>Language: <B>C </B><BR>LOC: 353 
+                <BR></TD></TR></TBODY></TABLE></TD>
+          <TD class=kodeviewer_info_panel vAlign=top width=200><B>Project 
+            Info</B><BR><A 
+            title="Our mission is to explore and develop new operating system concepts aimed at producing a more efficient computing environment where both the machine and user time are taken in consideration." 
+            href="http://www.koders.com/info.aspx?c=ProjectInfo&amp;pid=YX5TWSX1PV2QTNN5R7QPL586BB"><B><SPAN 
+            id=Kodeviewer1_ProjectView_ctl00_Label2>Unununium(uuu)</SPAN></B></A> 
+            <BR>Server: BerliOS <BR>Type: cvs 
+</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<STYLE type=text/css>.RightBanner {
+	Z-INDEX: 2; RIGHT: 25px; FLOAT: right; WIDTH: 160px; POSITION: absolute; HEIGHT: 600px
+}
+</STYLE>
+
+<DIV class=RightBanner id=Kodeviewer1_RightBanner>
+<DIV style="MARGIN-BOTTOM: 2px" align=center>[<A style="FONT-SIZE: smaller" 
+href="javascript:HideBanner();">Show Code</A>] </DIV>
+<DIV><!-- Media Server Begin: 160x600 --><!-- Media Server End: 160x600 --><BR><BR><BR><!-- Media Server Begin: 160x602 --><!-- Media Server End: 160x602 --><BR><BR><BR><!-- Media Server Begin: 160x603 --><!-- Media Server End: 160x603 --></DIV>
+<DIV style="MARGIN-TOP: 2px" align=center>[<A style="FONT-SIZE: smaller" 
+href="javascript:HideBanner();">Show Code</A>] </DIV></DIV>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height="100%">
+      <TABLE id=Table9 style="HEIGHT: 100%" cellSpacing=8 cellPadding=0 
+border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top>
+            <TABLE id=Table1 
+            style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; BORDER-LEFT: gray 1px solid; BORDER-BOTTOM: gray 1px solid; BORDER-COLLAPSE: collapse" 
+            cellSpacing=0 cellPadding=3 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TH class=exp_header align=left><A 
+                  id=Kodeviewer1_ctl00_hyFicon 
+                  href="http://www.koders.com/info.aspx?c=ProjectInfo&amp;pid=YX5TWSX1PV2QTNN5R7QPL586BB"><IMG 
+                  id=Kodeviewer1_ctl00_ficon 
+                  title=BerliOS\u\uuu\uuu\uuu\lib\c\include\ 
+                  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+                  src="Koders Code Search termios_h - C_files/folder.gif" 
+                  align=left></A> <B><SPAN id=Kodeviewer1_ctl00_Label1 
+                  title=BerliOS\u\uuu\uuu\uuu\lib\c\include\>...\uuu\uuu\uuu\lib\c\include\</SPAN> 
+                  </B><BR></TH></TR>
+              <TR>
+                <TD class=exp_items>&nbsp;&nbsp; <A title=alloca.h 
+                  href="http://www.koders.com/c/fidE790F3B837F1A0F7F1EF63D459C3A5196376907E.aspx">alloca.h<BR></A>&nbsp;&nbsp; 
+                  <A title=ar.h 
+                  href="http://www.koders.com/c/fid09D36FA54B3DDA05FC6A7941B8C64834E7C7D3EE.aspx">ar.h<BR></A>&nbsp;&nbsp; 
+                  <A title=assert.h 
+                  href="http://www.koders.com/c/fid429EC68DFED63B40D8B95B971A95DBD3581DB49C.aspx">assert.h<BR></A>&nbsp;&nbsp; 
+                  <A title=byteswap.h 
+                  href="http://www.koders.com/c/fidB93B34CD44F0ECF724F1A4EAE3854BA2FE692F59.aspx">byteswap.h<BR></A>&nbsp;&nbsp; 
+                  <A title=cpio.h 
+                  href="http://www.koders.com/c/fidABD7392F9C963319987940C5C7A0466FD9A28947.aspx">cpio.h<BR></A>&nbsp;&nbsp; 
+                  <A title=ctype.h 
+                  href="http://www.koders.com/c/fid17998B15A67BDF8AECDB949A177A8CD88367A378.aspx">ctype.h<BR></A>&nbsp;&nbsp; 
+                  <A title=daemon.h 
+                  href="http://www.koders.com/c/fid2E8393218711115821D87E1AC7149D6712988D15.aspx">daemon.h<BR></A>&nbsp;&nbsp; 
+                  <A title=dietref.h 
+                  href="http://www.koders.com/c/fidF68C15602784E661A9E010A249FF7F9E5DFA7E3D.aspx">dietref.h<BR></A>&nbsp;&nbsp; 
+                  <A title=dietrefdef.h 
+                  href="http://www.koders.com/c/fid033D681E0AEAEEF51D449D5274DC951C09AA6290.aspx">dietrefdef.h<BR></A>&nbsp;&nbsp; 
+                  <A title=dirent.h 
+                  href="http://www.koders.com/c/fidC61F34591775B19C5B862538D021F91FED650AE2.aspx">dirent.h<BR></A>&nbsp;&nbsp; 
+                  <A title=dlfcn.h 
+                  href="http://www.koders.com/c/fid7E0BB9E61334ACD4F547A739488E20E0F68C502E.aspx">dlfcn.h<BR></A>&nbsp;&nbsp; 
+                  <A title=elf.h 
+                  href="http://www.koders.com/cpp/fid58F621524F2DADC04E2712E00982A6A062214164.aspx">elf.h<BR></A>&nbsp;&nbsp; 
+                  <A title=endian.h 
+                  href="http://www.koders.com/c/fid0E2B191EA10EF8846716DB2D723C56518A25AF12.aspx">endian.h<BR></A>&nbsp;&nbsp; 
+                  <A title=err.h 
+                  href="http://www.koders.com/c/fidBFAC23B69FFE83A446B5EA7850FECBE37D718B04.aspx">err.h<BR></A>&nbsp;&nbsp; 
+                  <A title=errno.h 
+                  href="http://www.koders.com/c/fid53B3BE16088320EE31E67B12F901FE3FB9D1F480.aspx">errno.h<BR></A>&nbsp;&nbsp; 
+                  <A title=fcntl.h 
+                  href="http://www.koders.com/c/fidC518CD248E542506492189FE75E3A15BD672E81E.aspx">fcntl.h<BR></A>&nbsp;&nbsp; 
+                  <A title=features.h 
+                  href="http://www.koders.com/c/fid3317CDE94961DD3B030CFABA02B4F18EDFAB1529.aspx">features.h<BR></A>&nbsp;&nbsp; 
+                  <A title=float.h 
+                  href="http://www.koders.com/c/fid0581FFB256248CF9757076070F5C85789A1BEBA9.aspx">float.h<BR></A>&nbsp;&nbsp; 
+                  <A title=fnmatch.h 
+                  href="http://www.koders.com/c/fid090AE42BE6555F1B50406F73A8ABD6332FF3F987.aspx">fnmatch.h<BR></A>&nbsp;&nbsp; 
+                  <A title=ftw.h 
+                  href="http://www.koders.com/c/fid0EF912E55FA7E64BA16330D98CA9D5FC80109321.aspx">ftw.h<BR></A>&nbsp;&nbsp; 
+                  <A title=getopt.h 
+                  href="http://www.koders.com/c/fidA58B51AFFDE51AD2D2FFF8220A02572A786F0F32.aspx">getopt.h<BR></A>&nbsp;&nbsp; 
+                  <A title=glob.h 
+                  href="http://www.koders.com/c/fid66F8E51BFFE85CFAAE8E08B6EDCFFF67E52CF118.aspx">glob.h<BR></A>&nbsp;&nbsp; 
+                  <A title=grp.h 
+                  href="http://www.koders.com/c/fid282F76D44256CD8B0E529B33C029776D7C0A546F.aspx">grp.h<BR></A>&nbsp;&nbsp; 
+                  <A title=iconv.h 
+                  href="http://www.koders.com/c/fid57059D2F95A56C6C1A9E8BDFDAA873FC1C3E5A71.aspx">iconv.h<BR></A>&nbsp;&nbsp; 
+                  <A title=inttypes.h 
+                  href="http://www.koders.com/c/fidB3F4D7BD8DC7518EA6781111F9484277EC1FCB49.aspx">inttypes.h<BR></A>&nbsp;&nbsp; 
+                  <A title=langinfo.h 
+                  href="http://www.koders.com/c/fid3FF53C381722372B0E21F3575CCF762CA4691094.aspx">langinfo.h<BR></A>&nbsp;&nbsp; 
+                  <A title=libgen.h 
+                  href="http://www.koders.com/c/fidF4D5103D44C323B7974250F845102874A23330D1.aspx">libgen.h<BR></A>&nbsp;&nbsp; 
+                  <A title=libintl.h 
+                  href="http://www.koders.com/c/fid950B861D2FE74DCE44C337D99E3E010455DCD52D.aspx">libintl.h<BR></A>&nbsp;&nbsp; 
+                  <A title=limits.h 
+                  href="http://www.koders.com/c/fid50BFE3C2FD1799BC608B1079DC8EB501AD1139D9.aspx">limits.h<BR></A>&nbsp;&nbsp; 
+                  <A title=locale.h 
+                  href="http://www.koders.com/c/fidF22A4FC29DE06089178161057AAD0F7AA7F18120.aspx">locale.h<BR></A>&nbsp;&nbsp; 
+                  <A title=malloc.h 
+                  href="http://www.koders.com/c/fid57D4842DD6EE6D492A82358B87C8B172BA3F0436.aspx">malloc.h<BR></A>&nbsp;&nbsp; 
+                  <A title=math.h 
+                  href="http://www.koders.com/c/fid4AC4696027788117FCD3F8546A5964603F87BE8A.aspx">math.h<BR></A>&nbsp;&nbsp; 
+                  <A title=md5.h 
+                  href="http://www.koders.com/c/fid8EF2E83F312ADBD90FD94BF25968A45C368C9EB2.aspx">md5.h<BR></A>&nbsp;&nbsp; 
+                  <A title=memory.h 
+                  href="http://www.koders.com/c/fid626F01EE847A01184E435D09788BAFF20F312481.aspx">memory.h<BR></A>&nbsp;&nbsp; 
+                  <A title=mntent.h 
+                  href="http://www.koders.com/c/fidD5C721229982945700E71F85CE3CC25097EA23D4.aspx">mntent.h<BR></A>&nbsp;&nbsp; 
+                  <A title=netdb.h 
+                  href="http://www.koders.com/c/fidB89EC5173398330B375715A88C105DF27075CFAF.aspx">netdb.h<BR></A>&nbsp;&nbsp; 
+                  <A title=nl_types.h 
+                  href="http://www.koders.com/c/fid12A90273DC9C0D70C904065CD2A63CFA430D1DCB.aspx">nl_types.h<BR></A>&nbsp;&nbsp; 
+                  <A title=paths.h 
+                  href="http://www.koders.com/c/fid0AD5308E860241D3BDD9A891E28C9ED818458F16.aspx">paths.h<BR></A>&nbsp;&nbsp; 
+                  <A title=poll.h 
+                  href="http://www.koders.com/c/fid84766EB1C9C730A229A0E5D048A5CD39F4935CC8.aspx">poll.h<BR></A>&nbsp;&nbsp; 
+                  <A title=pthread.h 
+                  href="http://www.koders.com/c/fid1DB5A7F33E56F9DDD9AFDC7EF0F05CF767EA426A.aspx">pthread.h<BR></A>&nbsp;&nbsp; 
+                  <A title=pty.h 
+                  href="http://www.koders.com/c/fid6039FDBA802427E169BB7C49BE279EB036A1F590.aspx">pty.h<BR></A>&nbsp;&nbsp; 
+                  <A title=pwd.h 
+                  href="http://www.koders.com/c/fid4FC95AE49F58D8BC0F8F132DB0F98A555186D9ED.aspx">pwd.h<BR></A>&nbsp;&nbsp; 
+                  <A title=regex.h 
+                  href="http://www.koders.com/c/fid2A0F6CDB7A7FAA3D1F90A11C8DC90E843D097484.aspx">regex.h<BR></A>&nbsp;&nbsp; 
+                  <A title=resolv.h 
+                  href="http://www.koders.com/c/fid430C7348E4FAE1F42A4307EE76B6119997BB07E9.aspx">resolv.h<BR></A>&nbsp;&nbsp; 
+                  <A title=sched.h 
+                  href="http://www.koders.com/c/fidC6447F6206F90DCEF4D03C424FF24BA2D3EBF7EE.aspx">sched.h<BR></A>&nbsp;&nbsp; 
+                  <A title=semaphore.h 
+                  href="http://www.koders.com/c/fidAD019024E529E5804650C35424B6B47E15212E41.aspx">semaphore.h<BR></A>&nbsp;&nbsp; 
+                  <A title=setjmp.h 
+                  href="http://www.koders.com/c/fid54DD8A2C4C26B406EAD45FB4E6A3179757A6F086.aspx">setjmp.h<BR></A>&nbsp;&nbsp; 
+                  <A title=shadow.h 
+                  href="http://www.koders.com/c/fid8A1F5DBA0B9BCA5C096624923FE9E16F6586B952.aspx">shadow.h<BR></A>&nbsp;&nbsp; 
+                  <A title=signal.h 
+                  href="http://www.koders.com/c/fidF560E3FC4BCD5200C7F55D4DFE77D0A3B6984BFD.aspx">signal.h<BR></A>&nbsp;&nbsp; 
+                  <A title=stdarg-cruft.h 
+                  href="http://www.koders.com/c/fidFCC5EB625E27EDAB28F325A801F816D4E26EF7C5.aspx">stdarg-cruft.h<BR></A>&nbsp;&nbsp; 
+                  <A title=stdarg.h 
+                  href="http://www.koders.com/c/fidB7FD9C6973954646C1A7309BE14CDFCC05C08B4B.aspx">stdarg.h<BR></A>&nbsp;&nbsp; 
+                  <A title=stdbool.h 
+                  href="http://www.koders.com/c/fidDF4818DD265741F8A74455FC281F0C1CBA35EB47.aspx">stdbool.h<BR></A>&nbsp;&nbsp; 
+                  <A title=stddef.h 
+                  href="http://www.koders.com/c/fidC2D98E08C7905D9D8CD2969D17C00FE71FD774E0.aspx">stddef.h<BR></A>&nbsp;&nbsp; 
+                  <A title=stdint.h 
+                  href="http://www.koders.com/c/fidD08713DC6E5AFCC8E65567039DC1DB906CC9A7E6.aspx">stdint.h<BR></A>&nbsp;&nbsp; 
+                  <A title=stdio.h 
+                  href="http://www.koders.com/c/fidBA34B16D0731D0AE92D06DEAC3B0762F71552E57.aspx">stdio.h<BR></A>&nbsp;&nbsp; 
+                  <A title=stdlib.h 
+                  href="http://www.koders.com/c/fid77B3A89F1B654D3A6419AA2642E6719EADA35166.aspx">stdlib.h<BR></A>&nbsp;&nbsp; 
+                  <A title=string.h 
+                  href="http://www.koders.com/c/fid6D94486B19C98C94B953A51DF5AF78081C65F336.aspx">string.h<BR></A>&nbsp;&nbsp; 
+                  <A title=strings.h 
+                  href="http://www.koders.com/c/fidC287290B4E65750CF78377437EF2862E3A9EAB56.aspx">strings.h<BR></A>&nbsp;&nbsp; 
+                  <A title=sysexits.h 
+                  href="http://www.koders.com/c/fid75C5BC27E481E16AC18DF61BE0EFA697996EEE8A.aspx">sysexits.h<BR></A>&nbsp;&nbsp; 
+                  <A title=syslog.h 
+                  href="http://www.koders.com/c/fidB99A6B93E26A7DFBD60A7891DB38C327922151D5.aspx">syslog.h<BR></A>&nbsp;&nbsp; 
+                  <A title=tar.h 
+                  href="http://www.koders.com/c/fidD1F5D45BB9928A1F4B57214A404BCF9EFD091B93.aspx">tar.h<BR></A>&nbsp;&nbsp; 
+                  <A title=termio.h 
+                  href="http://www.koders.com/c/fid0AA420573063D763910CA493FEB9C0956E0B6AAC.aspx">termio.h<BR></A>&nbsp;&nbsp; 
+                  <A title=termios.h 
+                  href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx">termios.h<BR></A>&nbsp;&nbsp; 
+                  <A title=time.h 
+                  href="http://www.koders.com/c/fid53A5B484947CA2809581DD7EF65308498E5AC900.aspx">time.h<BR></A>&nbsp;&nbsp; 
+                  <A title=unistd.h 
+                  href="http://www.koders.com/c/fid6D72DEF53B5D7C161C7FE38E02011A2BC466D119.aspx">unistd.h<BR></A>&nbsp;&nbsp; 
+                  <A title=utime.h 
+                  href="http://www.koders.com/c/fid96952E750AD18FBB6017D6B2B9C33980EBE9BF88.aspx">utime.h<BR></A>&nbsp;&nbsp; 
+                  <A title=utmp.h 
+                  href="http://www.koders.com/c/fid67DA0E39C22C51C34D1C05D36CB21C1FFAC975E4.aspx">utmp.h<BR></A>&nbsp;&nbsp; 
+                  <A title=write12.h 
+                  href="http://www.koders.com/c/fid38E55A67EA1AED87C720AB3E964D9E39421ECA93.aspx">write12.h<BR></A></TD></TR></TBODY></TABLE><BR></TD>
+          <TD vAlign=top>
+            <DIV><PRE id=kodeViewerLineNumbers><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L1" name=L1>1</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L2" name=L2>2</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L3" name=L3>3</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L4" name=L4>4</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L5" name=L5>5</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L6" name=L6>6</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L7" name=L7>7</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L8" name=L8>8</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L9" name=L9>9</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L10" name=L10>10</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L11" name=L11>11</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L12" name=L12>12</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L13" name=L13>13</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L14" name=L14>14</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L15" name=L15>15</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L16" name=L16>16</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L17" name=L17>17</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L18" name=L18>18</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L19" name=L19>19</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L20" name=L20>20</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L21" name=L21>21</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L22" name=L22>22</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L23" name=L23>23</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L24" name=L24>24</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L25" name=L25>25</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L26" name=L26>26</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L27" name=L27>27</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L28" name=L28>28</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L29" name=L29>29</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L30" name=L30>30</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L31" name=L31>31</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L32" name=L32>32</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L33" name=L33>33</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L34" name=L34>34</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L35" name=L35>35</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L36" name=L36>36</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L37" name=L37>37</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L38" name=L38>38</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L39" name=L39>39</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L40" name=L40>40</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L41" name=L41>41</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L42" name=L42>42</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L43" name=L43>43</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L44" name=L44>44</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L45" name=L45>45</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L46" name=L46>46</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L47" name=L47>47</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L48" name=L48>48</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L49" name=L49>49</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L50" name=L50>50</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L51" name=L51>51</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L52" name=L52>52</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L53" name=L53>53</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L54" name=L54>54</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L55" name=L55>55</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L56" name=L56>56</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L57" name=L57>57</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L58" name=L58>58</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L59" name=L59>59</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L60" name=L60>60</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L61" name=L61>61</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L62" name=L62>62</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L63" name=L63>63</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L64" name=L64>64</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L65" name=L65>65</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L66" name=L66>66</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L67" name=L67>67</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L68" name=L68>68</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L69" name=L69>69</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L70" name=L70>70</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L71" name=L71>71</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L72" name=L72>72</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L73" name=L73>73</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L74" name=L74>74</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L75" name=L75>75</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L76" name=L76>76</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L77" name=L77>77</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L78" name=L78>78</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L79" name=L79>79</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L80" name=L80>80</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L81" name=L81>81</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L82" name=L82>82</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L83" name=L83>83</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L84" name=L84>84</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L85" name=L85>85</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L86" name=L86>86</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L87" name=L87>87</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L88" name=L88>88</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L89" name=L89>89</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L90" name=L90>90</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L91" name=L91>91</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L92" name=L92>92</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L93" name=L93>93</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L94" name=L94>94</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L95" name=L95>95</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L96" name=L96>96</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L97" name=L97>97</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L98" name=L98>98</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L99" name=L99>99</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L100" name=L100>100</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L101" name=L101>101</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L102" name=L102>102</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L103" name=L103>103</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L104" name=L104>104</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L105" name=L105>105</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L106" name=L106>106</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L107" name=L107>107</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L108" name=L108>108</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L109" name=L109>109</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L110" name=L110>110</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L111" name=L111>111</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L112" name=L112>112</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L113" name=L113>113</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L114" name=L114>114</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L115" name=L115>115</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L116" name=L116>116</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L117" name=L117>117</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L118" name=L118>118</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L119" name=L119>119</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L120" name=L120>120</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L121" name=L121>121</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L122" name=L122>122</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L123" name=L123>123</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L124" name=L124>124</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L125" name=L125>125</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L126" name=L126>126</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L127" name=L127>127</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L128" name=L128>128</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L129" name=L129>129</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L130" name=L130>130</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L131" name=L131>131</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L132" name=L132>132</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L133" name=L133>133</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L134" name=L134>134</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L135" name=L135>135</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L136" name=L136>136</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L137" name=L137>137</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L138" name=L138>138</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L139" name=L139>139</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L140" name=L140>140</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L141" name=L141>141</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L142" name=L142>142</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L143" name=L143>143</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L144" name=L144>144</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L145" name=L145>145</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L146" name=L146>146</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L147" name=L147>147</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L148" name=L148>148</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L149" name=L149>149</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L150" name=L150>150</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L151" name=L151>151</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L152" name=L152>152</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L153" name=L153>153</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L154" name=L154>154</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L155" name=L155>155</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L156" name=L156>156</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L157" name=L157>157</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L158" name=L158>158</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L159" name=L159>159</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L160" name=L160>160</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L161" name=L161>161</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L162" name=L162>162</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L163" name=L163>163</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L164" name=L164>164</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L165" name=L165>165</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L166" name=L166>166</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L167" name=L167>167</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L168" name=L168>168</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L169" name=L169>169</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L170" name=L170>170</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L171" name=L171>171</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L172" name=L172>172</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L173" name=L173>173</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L174" name=L174>174</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L175" name=L175>175</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L176" name=L176>176</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L177" name=L177>177</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L178" name=L178>178</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L179" name=L179>179</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L180" name=L180>180</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L181" name=L181>181</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L182" name=L182>182</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L183" name=L183>183</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L184" name=L184>184</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L185" name=L185>185</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L186" name=L186>186</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L187" name=L187>187</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L188" name=L188>188</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L189" name=L189>189</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L190" name=L190>190</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L191" name=L191>191</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L192" name=L192>192</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L193" name=L193>193</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L194" name=L194>194</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L195" name=L195>195</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L196" name=L196>196</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L197" name=L197>197</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L198" name=L198>198</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L199" name=L199>199</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L200" name=L200>200</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L201" name=L201>201</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L202" name=L202>202</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L203" name=L203>203</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L204" name=L204>204</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L205" name=L205>205</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L206" name=L206>206</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L207" name=L207>207</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L208" name=L208>208</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L209" name=L209>209</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L210" name=L210>210</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L211" name=L211>211</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L212" name=L212>212</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L213" name=L213>213</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L214" name=L214>214</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L215" name=L215>215</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L216" name=L216>216</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L217" name=L217>217</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L218" name=L218>218</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L219" name=L219>219</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L220" name=L220>220</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L221" name=L221>221</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L222" name=L222>222</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L223" name=L223>223</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L224" name=L224>224</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L225" name=L225>225</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L226" name=L226>226</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L227" name=L227>227</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L228" name=L228>228</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L229" name=L229>229</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L230" name=L230>230</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L231" name=L231>231</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L232" name=L232>232</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L233" name=L233>233</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L234" name=L234>234</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L235" name=L235>235</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L236" name=L236>236</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L237" name=L237>237</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L238" name=L238>238</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L239" name=L239>239</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L240" name=L240>240</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L241" name=L241>241</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L242" name=L242>242</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L243" name=L243>243</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L244" name=L244>244</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L245" name=L245>245</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L246" name=L246>246</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L247" name=L247>247</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L248" name=L248>248</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L249" name=L249>249</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L250" name=L250>250</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L251" name=L251>251</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L252" name=L252>252</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L253" name=L253>253</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L254" name=L254>254</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L255" name=L255>255</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L256" name=L256>256</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L257" name=L257>257</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L258" name=L258>258</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L259" name=L259>259</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L260" name=L260>260</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L261" name=L261>261</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L262" name=L262>262</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L263" name=L263>263</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L264" name=L264>264</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L265" name=L265>265</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L266" name=L266>266</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L267" name=L267>267</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L268" name=L268>268</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L269" name=L269>269</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L270" name=L270>270</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L271" name=L271>271</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L272" name=L272>272</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L273" name=L273>273</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L274" name=L274>274</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L275" name=L275>275</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L276" name=L276>276</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L277" name=L277>277</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L278" name=L278>278</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L279" name=L279>279</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L280" name=L280>280</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L281" name=L281>281</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L282" name=L282>282</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L283" name=L283>283</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L284" name=L284>284</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L285" name=L285>285</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L286" name=L286>286</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L287" name=L287>287</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L288" name=L288>288</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L289" name=L289>289</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L290" name=L290>290</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L291" name=L291>291</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L292" name=L292>292</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L293" name=L293>293</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L294" name=L294>294</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L295" name=L295>295</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L296" name=L296>296</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L297" name=L297>297</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L298" name=L298>298</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L299" name=L299>299</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L300" name=L300>300</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L301" name=L301>301</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L302" name=L302>302</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L303" name=L303>303</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L304" name=L304>304</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L305" name=L305>305</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L306" name=L306>306</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L307" name=L307>307</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L308" name=L308>308</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L309" name=L309>309</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L310" name=L310>310</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L311" name=L311>311</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L312" name=L312>312</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L313" name=L313>313</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L314" name=L314>314</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L315" name=L315>315</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L316" name=L316>316</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L317" name=L317>317</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L318" name=L318>318</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L319" name=L319>319</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L320" name=L320>320</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L321" name=L321>321</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L322" name=L322>322</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L323" name=L323>323</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L324" name=L324>324</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L325" name=L325>325</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L326" name=L326>326</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L327" name=L327>327</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L328" name=L328>328</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L329" name=L329>329</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L330" name=L330>330</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L331" name=L331>331</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L332" name=L332>332</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L333" name=L333>333</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L334" name=L334>334</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L335" name=L335>335</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L336" name=L336>336</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L337" name=L337>337</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L338" name=L338>338</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L339" name=L339>339</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L340" name=L340>340</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L341" name=L341>341</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L342" name=L342>342</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L343" name=L343>343</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L344" name=L344>344</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L345" name=L345>345</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L346" name=L346>346</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L347" name=L347>347</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L348" name=L348>348</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L349" name=L349>349</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L350" name=L350>350</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L351" name=L351>351</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L352" name=L352>352</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L353" name=L353>353</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L354" name=L354>354</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L355" name=L355>355</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L356" name=L356>356</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L357" name=L357>357</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L358" name=L358>358</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L359" name=L359>359</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L360" name=L360>360</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L361" name=L361>361</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L362" name=L362>362</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L363" name=L363>363</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L364" name=L364>364</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L365" name=L365>365</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L366" name=L366>366</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L367" name=L367>367</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L368" name=L368>368</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L369" name=L369>369</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L370" name=L370>370</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L371" name=L371>371</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L372" name=L372>372</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L373" name=L373>373</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L374" name=L374>374</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L375" name=L375>375</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L376" name=L376>376</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L377" name=L377>377</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L378" name=L378>378</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L379" name=L379>379</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L380" name=L380>380</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L381" name=L381>381</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L382" name=L382>382</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L383" name=L383>383</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L384" name=L384>384</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L385" name=L385>385</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L386" name=L386>386</A><BR><A href="http://www.koders.com/c/fid07839ABF1AFBB840376EB0E2B7405630F01AA8A7.aspx#L387" name=L387>387</A><BR></PRE></DIV></TD>
+          <TD onmouseup=javascript:LogReuse(); vAlign=top>
+            <DIV id=CodeDiv><PRE>#<A class=r>ifndef</A>	<A class=r>_TERMIOS_H</A>
+#<A class=r>define</A>	<A class=r>_TERMIOS_H</A>
+
+#<A class=r>include</A> &lt;<A class=r>sys</A>/<A class=r>cdefs</A>.<A class=r>h</A>&gt;
+#<A class=r>include</A> &lt;<A class=r>sys</A>/<A class=r>types</A>.<A class=r>h</A>&gt;
+
+<A class=r>__BEGIN_DECLS</A>
+
+<SPAN class=k>struct</SPAN> <A class=r>winsize</A> {
+  <SPAN class=k>unsigned</SPAN> <SPAN class=k>short</SPAN> <A class=r>ws_row</A>;
+  <SPAN class=k>unsigned</SPAN> <SPAN class=k>short</SPAN> <A class=r>ws_col</A>;
+  <SPAN class=k>unsigned</SPAN> <SPAN class=k>short</SPAN> <A class=r>ws_xpixel</A>;
+  <SPAN class=k>unsigned</SPAN> <SPAN class=k>short</SPAN> <A class=r>ws_ypixel</A>;
+};
+
+#<A class=r>define</A> <A class=r>NCC</A> 8
+<SPAN class=k>struct</SPAN> <A class=r>termio</A> {
+  <SPAN class=k>unsigned</SPAN> <SPAN class=k>short</SPAN> <A class=r>c_iflag</A>;		<SPAN class=c>/* input mode flags */</SPAN>
+  <SPAN class=k>unsigned</SPAN> <SPAN class=k>short</SPAN> <A class=r>c_oflag</A>;		<SPAN class=c>/* output mode flags */</SPAN>
+  <SPAN class=k>unsigned</SPAN> <SPAN class=k>short</SPAN> <A class=r>c_cflag</A>;		<SPAN class=c>/* control mode flags */</SPAN>
+  <SPAN class=k>unsigned</SPAN> <SPAN class=k>short</SPAN> <A class=r>c_lflag</A>;		<SPAN class=c>/* local mode flags */</SPAN>
+  <SPAN class=k>unsigned</SPAN> <SPAN class=k>char</SPAN> <A class=r>c_line</A>;		<SPAN class=c>/* line discipline */</SPAN>
+  <SPAN class=k>unsigned</SPAN> <SPAN class=k>char</SPAN> <A class=r>c_cc</A>[<A class=r>NCC</A>];	<SPAN class=c>/* control characters */</SPAN>
+};
+
+<SPAN class=c>/* modem lines */</SPAN>
+#<A class=r>ifdef</A> <A class=r>__mips__</A>
+#<A class=r>define</A> <A class=r>TIOCM_LE</A>	0x001
+#<A class=r>define</A> <A class=r>TIOCM_DTR</A>	0x002
+#<A class=r>define</A> <A class=r>TIOCM_RTS</A>	0x004
+#<A class=r>define</A> <A class=r>TIOCM_ST</A>	0x010
+#<A class=r>define</A> <A class=r>TIOCM_SR</A>	0x020
+#<A class=r>define</A> <A class=r>TIOCM_CTS</A>	0x040
+#<A class=r>define</A> <A class=r>TIOCM_CAR</A>	0x100
+#<A class=r>define</A> <A class=r>TIOCM_RNG</A>	0x200
+#<A class=r>define</A> <A class=r>TIOCM_DSR</A>	0x400
+#<A class=r>define</A> <A class=r>TIOCM_CD</A>	<A class=r>TIOCM_CAR</A>
+#<A class=r>define</A> <A class=r>TIOCM_RI</A>	<A class=r>TIOCM_RNG</A>
+#<A class=r>define</A> <A class=r>TIOCM_OUT1</A>	0x2000
+#<A class=r>define</A> <A class=r>TIOCM_OUT2</A>	0x4000
+#<A class=r>define</A> <A class=r>TIOCM_LOOP</A>	0x8000
+#<SPAN class=k>else</SPAN>
+#<A class=r>define</A> <A class=r>TIOCM_LE</A>	0x001
+#<A class=r>define</A> <A class=r>TIOCM_DTR</A>	0x002
+#<A class=r>define</A> <A class=r>TIOCM_RTS</A>	0x004
+#<A class=r>define</A> <A class=r>TIOCM_ST</A>	0x008
+#<A class=r>define</A> <A class=r>TIOCM_SR</A>	0x010
+#<A class=r>define</A> <A class=r>TIOCM_CTS</A>	0x020
+#<A class=r>define</A> <A class=r>TIOCM_CAR</A>	0x040
+#<A class=r>define</A> <A class=r>TIOCM_RNG</A>	0x080
+#<A class=r>define</A> <A class=r>TIOCM_DSR</A>	0x100
+#<A class=r>define</A> <A class=r>TIOCM_CD</A>	<A class=r>TIOCM_CAR</A>
+#<A class=r>define</A> <A class=r>TIOCM_RI</A>	<A class=r>TIOCM_RNG</A>
+#<A class=r>define</A> <A class=r>TIOCM_OUT1</A>	0x2000
+#<A class=r>define</A> <A class=r>TIOCM_OUT2</A>	0x4000
+#<A class=r>define</A> <A class=r>TIOCM_LOOP</A>	0x8000
+#<A class=r>endif</A>
+
+<SPAN class=c>/* line disciplines */</SPAN>
+#<A class=r>define</A> <A class=r>N_TTY</A>		0
+#<A class=r>define</A> <A class=r>N_SLIP</A>		1
+#<A class=r>define</A> <A class=r>N_MOUSE</A>		2
+#<A class=r>define</A> <A class=r>N_PPP</A>		3
+#<A class=r>define</A> <A class=r>N_STRIP</A>		4
+#<A class=r>define</A> <A class=r>N_AX25</A>		5
+#<A class=r>define</A> <A class=r>N_X25</A>		6	<SPAN class=c>/* X.25 async */</SPAN>
+#<A class=r>define</A> <A class=r>N_6PACK</A>		7
+#<A class=r>define</A> <A class=r>N_MASC</A>		8	<SPAN class=c>/* Reserved for Mobitex module &lt;kaz@cafe.net&gt; */</SPAN>
+#<A class=r>define</A> <A class=r>N_R3964</A>		9	<SPAN class=c>/* Reserved for Simatic R3964 module */</SPAN>
+#<A class=r>define</A> <A class=r>N_PROFIBUS_FDL</A>	10	<SPAN class=c>/* Reserved for Profibus &lt;Dave@mvhi.com&gt; */</SPAN>
+#<A class=r>define</A> <A class=r>N_IRDA</A>		11	<SPAN class=c>/* Linux IR - http://irda.sourceforge.net/ */</SPAN>
+#<A class=r>define</A> <A class=r>N_SMSBLOCK</A>	12	<SPAN class=c>/* SMS block mode - for talking to GSM data cards about SMS messages */</SPAN>
+#<A class=r>define</A> <A class=r>N_HDLC</A>		13	<SPAN class=c>/* synchronous HDLC */</SPAN>
+#<A class=r>define</A> <A class=r>N_SYNC_PPP</A>	14	<SPAN class=c>/* synchronous PPP */</SPAN>
+#<A class=r>define</A> <A class=r>N_HCI</A>		15	<SPAN class=c>/* Bluetooth HCI UART */</SPAN>
+
+<SPAN class=k>typedef</SPAN> <SPAN class=k>unsigned</SPAN> <SPAN class=k>char</SPAN>	<A class=r>cc_t</A>;
+<SPAN class=k>typedef</SPAN> <SPAN class=k>unsigned</SPAN> <SPAN class=k>int</SPAN>	<A class=r>speed_t</A>;
+<SPAN class=k>typedef</SPAN> <SPAN class=k>unsigned</SPAN> <SPAN class=k>int</SPAN>	<A class=r>tcflag_t</A>;
+
+#<A class=r>define</A> <A class=r>_POSIX_VDISABLE</A> '\0'
+
+#<SPAN class=k>if</SPAN> <A class=r>defined</A>(<A class=r>__i386__</A>) || <A class=r>defined</A>(<A class=r>__arm__</A>) || <A class=r>defined</A>(<A class=r>__ia64__</A>) || <A class=r>defined</A>(<A class=r>__hppa__</A>) || <A class=r>defined</A>(<A class=r>__s390__</A>) || <A class=r>defined</A>(<A class=r>__s390x__</A>) || <A class=r>defined</A>(<A class=r>__x86_64__</A>)
+#<A class=r>define</A> <A class=r>NCCS</A>	19
+<SPAN class=k>struct</SPAN> <A class=r>termios</A> {
+  <A class=r>tcflag_t</A> <A class=r>c_iflag</A>;		<SPAN class=c>/* input mode flags */</SPAN>
+  <A class=r>tcflag_t</A> <A class=r>c_oflag</A>;		<SPAN class=c>/* output mode flags */</SPAN>
+  <A class=r>tcflag_t</A> <A class=r>c_cflag</A>;		<SPAN class=c>/* control mode flags */</SPAN>
+  <A class=r>tcflag_t</A> <A class=r>c_lflag</A>;		<SPAN class=c>/* local mode flags */</SPAN>
+  <A class=r>cc_t</A> <A class=r>c_line</A>;			<SPAN class=c>/* line discipline */</SPAN>
+  <A class=r>cc_t</A> <A class=r>c_cc</A>[<A class=r>NCCS</A>];		<SPAN class=c>/* control characters */</SPAN>
+};
+#<A class=r>elif</A> <A class=r>defined</A>(<A class=r>__mips__</A>) || <A class=r>defined</A>(<A class=r>__mips64__</A>)
+#<A class=r>define</A> <A class=r>NCCS</A>	23
+<SPAN class=k>struct</SPAN> <A class=r>termios</A> {
+	<A class=r>tcflag_t</A> <A class=r>c_iflag</A>;		<SPAN class=c>/* input mode flags */</SPAN>
+	<A class=r>tcflag_t</A> <A class=r>c_oflag</A>;		<SPAN class=c>/* output mode flags */</SPAN>
+	<A class=r>tcflag_t</A> <A class=r>c_cflag</A>;		<SPAN class=c>/* control mode flags */</SPAN>
+	<A class=r>tcflag_t</A> <A class=r>c_lflag</A>;		<SPAN class=c>/* local mode flags */</SPAN>
+	<SPAN class=c>/*
+	 * Seems nonexistent in the ABI, but Linux assumes existence ...
+	 */</SPAN>
+	<A class=r>cc_t</A> <A class=r>c_line</A>;			<SPAN class=c>/* line discipline */</SPAN>
+	<A class=r>cc_t</A> <A class=r>c_cc</A>[<A class=r>NCCS</A>];		<SPAN class=c>/* control characters */</SPAN>
+};
+#<A class=r>elif</A> <A class=r>defined</A>(<A class=r>powerpc</A>) || <A class=r>defined</A>(<A class=r>__powerpc64__</A>) || <A class=r>defined</A>(<A class=r>__alpha__</A>)
+#<A class=r>define</A> <A class=r>NCCS</A>	19
+<SPAN class=k>struct</SPAN> <A class=r>termios</A> {
+	<A class=r>tcflag_t</A> <A class=r>c_iflag</A>;		<SPAN class=c>/* input mode flags */</SPAN>
+	<A class=r>tcflag_t</A> <A class=r>c_oflag</A>;		<SPAN class=c>/* output mode flags */</SPAN>
+	<A class=r>tcflag_t</A> <A class=r>c_cflag</A>;		<SPAN class=c>/* control mode flags */</SPAN>
+	<A class=r>tcflag_t</A> <A class=r>c_lflag</A>;		<SPAN class=c>/* local mode flags */</SPAN>
+	<A class=r>cc_t</A> <A class=r>c_cc</A>[<A class=r>NCCS</A>];		<SPAN class=c>/* control characters */</SPAN>
+	<A class=r>cc_t</A> <A class=r>c_line</A>;			<SPAN class=c>/* line discipline (== c_cc[19]) */</SPAN>
+	<A class=r>speed_t</A> <A class=r>c_ispeed</A>;		<SPAN class=c>/* input speed */</SPAN>
+	<A class=r>speed_t</A> <A class=r>c_ospeed</A>;		<SPAN class=c>/* output speed */</SPAN>
+};
+#<A class=r>elif</A> <A class=r>defined</A>(<A class=r>__sparc__</A>)
+#<A class=r>define</A> <A class=r>NCCS</A> 17
+<SPAN class=k>struct</SPAN> <A class=r>termios</A> {
+	<A class=r>tcflag_t</A> <A class=r>c_iflag</A>;		<SPAN class=c>/* input mode flags */</SPAN>
+	<A class=r>tcflag_t</A> <A class=r>c_oflag</A>;		<SPAN class=c>/* output mode flags */</SPAN>
+	<A class=r>tcflag_t</A> <A class=r>c_cflag</A>;		<SPAN class=c>/* control mode flags */</SPAN>
+	<A class=r>tcflag_t</A> <A class=r>c_lflag</A>;		<SPAN class=c>/* local mode flags */</SPAN>
+	<A class=r>cc_t</A> <A class=r>c_line</A>;			<SPAN class=c>/* line discipline */</SPAN>
+	<A class=r>cc_t</A> <A class=r>c_cc</A>[<A class=r>NCCS</A>];		<SPAN class=c>/* control characters */</SPAN>
+};
+#<SPAN class=k>else</SPAN>
+# <A class=r>error</A> <SPAN class=str>"Struct termios undefined on your architecture"</SPAN>
+#<A class=r>endif</A>
+
+<SPAN class=c>/* c_cc characters */</SPAN>
+#<SPAN class=k>if</SPAN> <A class=r>defined</A>(<A class=r>__alpha__</A>)
+#<A class=r>define</A> <A class=r>VEOF</A>	0
+#<A class=r>define</A> <A class=r>VEOL</A>	1
+#<A class=r>define</A> <A class=r>VEOL2</A>	2
+#<A class=r>define</A> <A class=r>VERASE</A>	3
+#<A class=r>define</A> <A class=r>VWERASE</A> 4
+#<A class=r>define</A> <A class=r>VKILL</A>	5
+#<A class=r>define</A> <A class=r>VREPRINT</A> 6
+#<A class=r>define</A> <A class=r>VSWTC</A>	7
+#<A class=r>define</A> <A class=r>VINTR</A>	8
+#<A class=r>define</A> <A class=r>VQUIT</A>	9
+#<A class=r>define</A> <A class=r>VSUSP</A>	10
+#<A class=r>define</A> <A class=r>VSTART</A>	12
+#<A class=r>define</A> <A class=r>VSTOP</A>	13
+#<A class=r>define</A> <A class=r>VLNEXT</A>	14
+#<A class=r>define</A> <A class=r>VDISCARD</A> 15
+#<A class=r>define</A> <A class=r>VMIN</A>	16
+#<A class=r>define</A> <A class=r>VTIME</A>	17
+#<A class=r>elif</A> <A class=r>defined</A>(<A class=r>__mips__</A>)
+#<A class=r>define</A> <A class=r>VINTR</A>	0
+#<A class=r>define</A> <A class=r>VQUIT</A>	1
+#<A class=r>define</A> <A class=r>VERASE</A>	2
+#<A class=r>define</A> <A class=r>VKILL</A>	3
+#<A class=r>define</A> <A class=r>VMIN</A>	4
+#<A class=r>define</A> <A class=r>VTIME</A>	5
+#<A class=r>define</A> <A class=r>VEOL2</A>	6
+#<A class=r>define</A> <A class=r>VSWTC</A>	7
+#<A class=r>define</A> <A class=r>VSWTCH</A>	<A class=r>VSWTC</A>
+#<A class=r>define</A> <A class=r>VSTART</A>	8
+#<A class=r>define</A> <A class=r>VSTOP</A>	9
+#<A class=r>define</A> <A class=r>VSUSP</A>	10
+#<A class=r>define</A> <A class=r>VREPRINT</A> 12
+#<A class=r>define</A> <A class=r>VDISCARD</A> 13
+#<A class=r>define</A> <A class=r>VWERASE</A> 14
+#<A class=r>define</A> <A class=r>VLNEXT</A>	15
+#<A class=r>define</A> <A class=r>VEOF</A>	16
+#<A class=r>define</A> <A class=r>VEOL</A>	17
+#<A class=r>elif</A> <A class=r>defined</A>(<A class=r>powerpc</A>) || <A class=r>defined</A>(<A class=r>__powerpc64__</A>)
+#<A class=r>define</A> <A class=r>VINTR</A>	0
+#<A class=r>define</A> <A class=r>VQUIT</A>	1
+#<A class=r>define</A> <A class=r>VERASE</A>	2
+#<A class=r>define</A> <A class=r>VKILL</A>	3
+#<A class=r>define</A> <A class=r>VEOF</A>	4
+#<A class=r>define</A> <A class=r>VMIN</A>	5
+#<A class=r>define</A> <A class=r>VEOL</A>	6
+#<A class=r>define</A> <A class=r>VTIME</A>	7
+#<A class=r>define</A> <A class=r>VEOL2</A>	8
+#<A class=r>define</A> <A class=r>VSWTC</A>	9
+#<A class=r>define</A> <A class=r>VWERASE</A> 10
+#<A class=r>define</A> <A class=r>VREPRINT</A> 11
+#<A class=r>define</A> <A class=r>VSUSP</A>	12
+#<A class=r>define</A> <A class=r>VSTART</A>	13
+#<A class=r>define</A> <A class=r>VSTOP</A>	14
+#<A class=r>define</A> <A class=r>VLNEXT</A>	15
+#<A class=r>define</A> <A class=r>VDISCARD</A> 16
+#<A class=r>elif</A> <A class=r>defined</A>(<A class=r>__sparc__</A>)
+#<A class=r>define</A> <A class=r>VINTR</A>	0
+#<A class=r>define</A> <A class=r>VQUIT</A>	1
+#<A class=r>define</A> <A class=r>VERASE</A>	2
+#<A class=r>define</A> <A class=r>VKILL</A>	3
+#<A class=r>define</A> <A class=r>VEOF</A>	4
+#<A class=r>define</A> <A class=r>VEOL</A>	5
+#<A class=r>define</A> <A class=r>VEOL2</A>	6
+#<A class=r>define</A> <A class=r>VSWTC</A>	7
+#<A class=r>define</A> <A class=r>VSTART</A>	8
+#<A class=r>define</A> <A class=r>VSTOP</A>	9
+#<A class=r>define</A> <A class=r>VSUSP</A>	10
+#<A class=r>define</A> <A class=r>VDSUSP</A>	11
+#<A class=r>define</A> <A class=r>VREPRINT</A> 12
+#<A class=r>define</A> <A class=r>VDISCARD</A> 13
+#<A class=r>define</A> <A class=r>VWERASE</A> 14
+#<A class=r>define</A> <A class=r>VLNEXT</A>	15
+#<A class=r>define</A> <A class=r>VMIN</A>	16
+#<A class=r>define</A> <A class=r>VTIME</A>	17
+#<SPAN class=k>else</SPAN>			<SPAN class=c>/* arm, i386, parisc, s390, x86_64 */</SPAN>
+#<A class=r>define</A> <A class=r>VINTR</A>	0
+#<A class=r>define</A> <A class=r>VQUIT</A>	1
+#<A class=r>define</A> <A class=r>VERASE</A>	2
+#<A class=r>define</A> <A class=r>VKILL</A>	3
+#<A class=r>define</A> <A class=r>VEOF</A>	4
+#<A class=r>define</A> <A class=r>VTIME</A>	5
+#<A class=r>define</A> <A class=r>VMIN</A>	6
+#<A class=r>define</A> <A class=r>VSWTC</A>	7
+#<A class=r>define</A> <A class=r>VSTART</A>	8
+#<A class=r>define</A> <A class=r>VSTOP</A>	9
+#<A class=r>define</A> <A class=r>VSUSP</A>	10
+#<A class=r>define</A> <A class=r>VEOL</A>	11
+#<A class=r>define</A> <A class=r>VREPRINT</A> 12
+#<A class=r>define</A> <A class=r>VDISCARD</A> 13
+#<A class=r>define</A> <A class=r>VWERASE</A> 14
+#<A class=r>define</A> <A class=r>VLNEXT</A>	15
+#<A class=r>define</A> <A class=r>VEOL2</A>	16
+#<A class=r>endif</A>
+
+<SPAN class=c>/* c_iflag bits */</SPAN>
+#<A class=r>define</A> <A class=r>IGNBRK</A>	0000001
+#<A class=r>define</A> <A class=r>BRKINT</A>	0000002
+#<A class=r>define</A> <A class=r>IGNPAR</A>	0000004
+#<A class=r>define</A> <A class=r>PARMRK</A>	0000010
+#<A class=r>define</A> <A class=r>INPCK</A>	0000020
+#<A class=r>define</A> <A class=r>ISTRIP</A>	0000040
+#<A class=r>define</A> <A class=r>INLCR</A>	0000100
+#<A class=r>define</A> <A class=r>IGNCR</A>	0000200
+#<A class=r>define</A> <A class=r>ICRNL</A>	0000400
+#<A class=r>define</A> <A class=r>IUCLC</A>	0001000
+#<A class=r>define</A> <A class=r>IXON</A>	0002000
+#<A class=r>define</A> <A class=r>IXANY</A>	0004000
+#<A class=r>define</A> <A class=r>IXOFF</A>	0010000
+#<A class=r>define</A> <A class=r>IMAXBEL</A>	0020000
+
+<SPAN class=c>/* c_oflag bits */</SPAN>
+#<A class=r>define</A> <A class=r>OPOST</A>	0000001
+#<A class=r>define</A> <A class=r>OLCUC</A>	0000002
+#<A class=r>define</A> <A class=r>ONLCR</A>	0000004
+#<A class=r>define</A> <A class=r>OCRNL</A>	0000010
+#<A class=r>define</A> <A class=r>ONOCR</A>	0000020
+#<A class=r>define</A> <A class=r>ONLRET</A>	0000040
+#<A class=r>define</A> <A class=r>OFILL</A>	0000100
+#<A class=r>define</A> <A class=r>OFDEL</A>	0000200
+#<A class=r>define</A> <A class=r>NLDLY</A>	0000400
+#<A class=r>define</A>   <A class=r>NL0</A>	0000000
+#<A class=r>define</A>   <A class=r>NL1</A>	0000400
+#<A class=r>define</A> <A class=r>CRDLY</A>	0003000
+#<A class=r>define</A>   <A class=r>CR0</A>	0000000
+#<A class=r>define</A>   <A class=r>CR1</A>	0001000
+#<A class=r>define</A>   <A class=r>CR2</A>	0002000
+#<A class=r>define</A>   <A class=r>CR3</A>	0003000
+#<A class=r>define</A> <A class=r>TABDLY</A>	0014000
+#<A class=r>define</A>   <A class=r>TAB0</A>	0000000
+#<A class=r>define</A>   <A class=r>TAB1</A>	0004000
+#<A class=r>define</A>   <A class=r>TAB2</A>	0010000
+#<A class=r>define</A>   <A class=r>TAB3</A>	0014000
+#<A class=r>define</A>   <A class=r>XTABS</A>	0014000
+#<A class=r>define</A> <A class=r>BSDLY</A>	0020000
+#<A class=r>define</A>   <A class=r>BS0</A>	0000000
+#<A class=r>define</A>   <A class=r>BS1</A>	0020000
+#<A class=r>define</A> <A class=r>VTDLY</A>	0040000
+#<A class=r>define</A>   <A class=r>VT0</A>	0000000
+#<A class=r>define</A>   <A class=r>VT1</A>	0040000
+#<A class=r>define</A> <A class=r>FFDLY</A>	0100000
+#<A class=r>define</A>   <A class=r>FF0</A>	0000000
+#<A class=r>define</A>   <A class=r>FF1</A>	0100000
+
+<SPAN class=c>/* c_cflag bit meaning */</SPAN>
+#<A class=r>define</A> <A class=r>CBAUD</A>	0010017
+#<A class=r>define</A>  <A class=r>B0</A>	0000000		<SPAN class=c>/* hang up */</SPAN>
+#<A class=r>define</A>  <A class=r>B50</A>	0000001
+#<A class=r>define</A>  <A class=r>B75</A>	0000002
+#<A class=r>define</A>  <A class=r>B110</A>	0000003
+#<A class=r>define</A>  <A class=r>B134</A>	0000004
+#<A class=r>define</A>  <A class=r>B150</A>	0000005
+#<A class=r>define</A>  <A class=r>B200</A>	0000006
+#<A class=r>define</A>  <A class=r>B300</A>	0000007
+#<A class=r>define</A>  <A class=r>B600</A>	0000010
+#<A class=r>define</A>  <A class=r>B1200</A>	0000011
+#<A class=r>define</A>  <A class=r>B1800</A>	0000012
+#<A class=r>define</A>  <A class=r>B2400</A>	0000013
+#<A class=r>define</A>  <A class=r>B4800</A>	0000014
+#<A class=r>define</A>  <A class=r>B9600</A>	0000015
+#<A class=r>define</A>  <A class=r>B19200</A>	0000016
+#<A class=r>define</A>  <A class=r>B38400</A>	0000017
+#<A class=r>define</A> <A class=r>EXTA</A> <A class=r>B19200</A>
+#<A class=r>define</A> <A class=r>EXTB</A> <A class=r>B38400</A>
+#<A class=r>define</A> <A class=r>CSIZE</A>	0000060
+#<A class=r>define</A>   <A class=r>CS5</A>	0000000
+#<A class=r>define</A>   <A class=r>CS6</A>	0000020
+#<A class=r>define</A>   <A class=r>CS7</A>	0000040
+#<A class=r>define</A>   <A class=r>CS8</A>	0000060
+#<A class=r>define</A> <A class=r>CSTOPB</A>	0000100
+#<A class=r>define</A> <A class=r>CREAD</A>	0000200
+#<A class=r>define</A> <A class=r>PARENB</A>	0000400
+#<A class=r>define</A> <A class=r>PARODD</A>	0001000
+#<A class=r>define</A> <A class=r>HUPCL</A>	0002000
+#<A class=r>define</A> <A class=r>CLOCAL</A>	0004000
+#<A class=r>define</A> <A class=r>CBAUDEX</A> 0010000
+#<A class=r>define</A>    <A class=r>B57600</A> 0010001
+#<A class=r>define</A>   <A class=r>B115200</A> 0010002
+#<A class=r>define</A>   <A class=r>B230400</A> 0010003
+#<A class=r>define</A>   <A class=r>B460800</A> 0010004
+#<A class=r>define</A>   <A class=r>B500000</A> 0010005
+#<A class=r>define</A>   <A class=r>B576000</A> 0010006
+#<A class=r>define</A>   <A class=r>B921600</A> 0010007
+#<A class=r>define</A>  <A class=r>B1000000</A> 0010010
+#<A class=r>define</A>  <A class=r>B1152000</A> 0010011
+#<A class=r>define</A>  <A class=r>B1500000</A> 0010012
+#<A class=r>define</A>  <A class=r>B2000000</A> 0010013
+#<A class=r>define</A>  <A class=r>B2500000</A> 0010014
+#<A class=r>define</A>  <A class=r>B3000000</A> 0010015
+#<A class=r>define</A>  <A class=r>B3500000</A> 0010016
+#<A class=r>define</A>  <A class=r>B4000000</A> 0010017
+#<A class=r>define</A> <A class=r>CIBAUD</A>	  002003600000	<SPAN class=c>/* input baud rate (not used) */</SPAN>
+#<A class=r>define</A> <A class=r>CMSPAR</A>	  010000000000		<SPAN class=c>/* mark or space (stick) parity */</SPAN>
+#<A class=r>define</A> <A class=r>CRTSCTS</A>	  020000000000		<SPAN class=c>/* flow control */</SPAN>
+
+<SPAN class=c>/* c_lflag bits */</SPAN>
+#<A class=r>define</A> <A class=r>ISIG</A>	0000001
+#<A class=r>define</A> <A class=r>ICANON</A>	0000002
+#<A class=r>define</A> <A class=r>XCASE</A>	0000004
+#<A class=r>define</A> <A class=r>ECHO</A>	0000010
+#<A class=r>define</A> <A class=r>ECHOE</A>	0000020
+#<A class=r>define</A> <A class=r>ECHOK</A>	0000040
+#<A class=r>define</A> <A class=r>ECHONL</A>	0000100
+#<A class=r>define</A> <A class=r>NOFLSH</A>	0000200
+#<A class=r>define</A> <A class=r>ECHOCTL</A>	0001000
+#<A class=r>define</A> <A class=r>ECHOPRT</A>	0002000
+#<A class=r>define</A> <A class=r>ECHOKE</A>	0004000
+#<A class=r>ifdef</A> <A class=r>__mips__</A>
+#<A class=r>define</A> <A class=r>IEXTEN</A>	0000400
+#<A class=r>define</A> <A class=r>FLUSHO</A>	0020000
+#<A class=r>define</A> <A class=r>TOSTOP</A>	0100000
+#<SPAN class=k>else</SPAN>
+#<A class=r>define</A> <A class=r>TOSTOP</A>	0000400
+#<A class=r>define</A> <A class=r>FLUSHO</A>	0010000
+#<A class=r>define</A> <A class=r>IEXTEN</A>	0100000
+#<A class=r>endif</A>
+#<A class=r>define</A> <A class=r>PENDIN</A>	0040000
+
+<SPAN class=c>/* tcflow() and TCXONC use these */</SPAN>
+#<A class=r>define</A> <A class=r>TCOOFF</A>		0
+#<A class=r>define</A> <A class=r>TCOON</A>		1
+#<A class=r>define</A> <A class=r>TCIOFF</A>		2
+#<A class=r>define</A> <A class=r>TCION</A>		3
+
+<SPAN class=c>/* tcflush() and TCFLSH use these */</SPAN>
+#<A class=r>define</A> <A class=r>TCIFLUSH</A>	0
+#<A class=r>define</A> <A class=r>TCOFLUSH</A>	1
+#<A class=r>define</A> <A class=r>TCIOFLUSH</A>	2
+
+<SPAN class=c>/* tcsetattr uses these */</SPAN>
+#<A class=r>ifdef</A> <A class=r>__mips__</A>
+#<A class=r>define</A> <A class=r>TCSANOW</A>		0x540e
+#<A class=r>define</A> <A class=r>TCSADRAIN</A>	0x540f
+#<A class=r>define</A> <A class=r>TCSAFLUSH</A>	0x5410
+#<SPAN class=k>else</SPAN>
+#<A class=r>define</A> <A class=r>TCSANOW</A>		0
+#<A class=r>define</A> <A class=r>TCSADRAIN</A>	1
+#<A class=r>define</A> <A class=r>TCSAFLUSH</A>	2
+#<A class=r>endif</A>
+
+<SPAN class=k>int</SPAN> <A class=r>tcgetattr</A>(<SPAN class=k>int</SPAN> <A class=r>fd</A>, <SPAN class=k>struct</SPAN> <A class=r>termios</A> *<A class=r>termios_p</A>) <A class=r>__THROW</A>;
+<SPAN class=k>int</SPAN> <A class=r>tcsetattr</A>(<SPAN class=k>int</SPAN> <A class=r>fd</A>, <SPAN class=k>int</SPAN> <A class=r>optional_actions</A>, <SPAN class=k>struct</SPAN> <A class=r>termios</A> *<A class=r>termios_p</A>) <A class=r>__THROW</A>;
+<A class=r>speed_t</A> <A class=r>cfgetospeed</A>(<SPAN class=k>struct</SPAN> <A class=r>termios</A> *<A class=r>termios_p</A>) <A class=r>__THROW</A>;
+<SPAN class=k>int</SPAN> <A class=r>cfsetospeed</A>(<SPAN class=k>struct</SPAN> <A class=r>termios</A> *<A class=r>termios_p</A>, <A class=r>speed_t</A> <A class=r>speed</A>) <A class=r>__THROW</A>;
+<A class=r>speed_t</A> <A class=r>cfgetispeed</A>(<SPAN class=k>struct</SPAN> <A class=r>termios</A> *<A class=r>termios_p</A>) <A class=r>__THROW</A>;
+<SPAN class=k>int</SPAN> <A class=r>cfsetispeed</A>(<SPAN class=k>struct</SPAN> <A class=r>termios</A> *<A class=r>termios_p</A>, <A class=r>speed_t</A> <A class=r>speed</A>) <A class=r>__THROW</A>;
+<SPAN class=k>void</SPAN> <A class=r>cfmakeraw</A>(<SPAN class=k>struct</SPAN> <A class=r>termios</A> *<A class=r>t</A>) <A class=r>__THROW</A>;
+
+<SPAN class=k>int</SPAN> <A class=r>tcflush</A>(<SPAN class=k>int</SPAN> <A class=r>fd</A>, <SPAN class=k>int</SPAN> <A class=r>queue_selector</A>) <A class=r>__THROW</A>;
+<SPAN class=k>int</SPAN> <A class=r>tcdrain</A>(<SPAN class=k>int</SPAN> <A class=r>fd</A>) <A class=r>__THROW</A>;
+<SPAN class=k>int</SPAN> <A class=r>tcflow</A> (<SPAN class=k>int</SPAN> <A class=r>fd</A>,<SPAN class=k>int</SPAN> <A class=r>action</A>) <A class=r>__THROW</A>;
+<SPAN class=k>int</SPAN> <A class=r>tcsendbreak</A> (<SPAN class=k>int</SPAN> <A class=r>fd</A>,<SPAN class=k>int</SPAN> <A class=r>duration</A>) <A class=r>__THROW</A>;
+
+<A class=r>__END_DECLS</A>
+
+#<A class=r>endif</A>
+</PRE></DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+var jumpLine = "-1";
+if(jumpLine && jumpLine != "-1" && !document.location.hash){
+	if(document.attachEvent){
+		document.attachEvent("onreadystatechange", function(){
+			if(document.readyState != "complete") return;
+			var numbers = document.all["kodeViewerLineNumbers"];
+			var targetA = numbers.children.tags("a")[jumpLine - 1];
+			targetA.scrollIntoView();
+			document.body.scrollLeft = 0;
+		});
+	} else if(window.addEventListener){
+		window.addEventListener("load", function(){
+			document.location.replace(document.location + "#L" + jumpLine);
+		}, false);
+	}
+}
+	
+var homeUrl = "/"; 
+var projectID = "YX5TWSX1PV2QTNN5R7QPL586BB";
+var sourceLanguage = "C";
+var IsLogged = false;
+
+// only logs once
+function LogReuse() {
+	// dynamic image loading
+	if(!IsLogged) {
+		//alert("logging");
+		var	fileImg	= new Image();
+		var fileImgSrc = "/kv.aspx?fid=07839ABF1AFBB840376EB0E2B7405630F01AA8A7&mode=cp";
+		//alert("fileImgSrc = " + fileImgSrc);
+		fileImg.src	= fileImgSrc;
+		IsLogged = true;
+	} else {
+		//alert("already logged!");
+	}
+	return true;
+}
+</SCRIPT>
+</DIV><!-- Footer -->
+<DIV id=FooterDiv style="CLEAR: both" align=center>
+<DIV id=footer align=center>
+<DIV class=row_1><A title=Home href="http://www.koders.com/">Home</A> | <A 
+title="About Koders" href="http://corp.koders.com/corp/about/">Company</A> | <A 
+title="Download Plugins" 
+href="http://www.koders.com/info.aspx?c=tools">Downloads</A> | <A 
+title="Support resources" 
+href="http://corp.koders.com/corp/support/">Support</A> | <A title=Community 
+href="http://corp.koders.com/corp/community/">Community</A> | <A title=Legal 
+href="http://www.koders.com/corp/about/#Legal">Legal</A> | <A title="Contact us" 
+href="http://corp.koders.com/corp/about#Contact">Contact Us</A> | <A 
+title="Koders Site Map" href="http://www.koders.com/corp/sitemap/">Site Map</A> 
+</DIV>
+<DIV class=row_2><SPAN class=copy>Copyright © 2008 <A 
+title="Black Duck Software, Inc." href="http://www.blackducksoftware.com/" 
+target=_blank>Black Duck Software</A>. All rights reserved. </SPAN><SPAN 
+class=feed><A title=Subscribe! href="http://www.koders.com/blog/?feed=rss2">RSS 
+Feed</A> <IMG height=12 alt="Koders Rss Feeds" hspace=0 
+src="Koders Code Search termios_h - C_files/rss_sm.gif" width=12> 
+</SPAN></DIV><BR><BR><A id=KodersFooter_ctl00_hplWorkingTime 
+title=0.00\0.75\0.00\0.00\0.00\0.08\2.40\0.00\0.03\0.00s 
+style="COLOR: graytext">processed in: 3.26s</A> </DIV></DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+Sys.Application.initialize();
+//]]>
+</SCRIPT>
+</FORM>
+<SCRIPT type=text/javascript>
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+var pageTracker = _gat._getTracker("UA-1450480-3");
+pageTracker._initData();
+pageTracker._trackPageview();
+</SCRIPT>
+</BODY></HTML>

@@ -1,0 +1,288 @@
+BODY {
+	FONT-SIZE: 12px; MARGIN: 0px; FONT-FAMILY: Verdana, Kalimati; HEIGHT: 100%
+}
+HTML {
+	FONT-SIZE: 12px; MARGIN: 0px; FONT-FAMILY: Verdana, Kalimati; HEIGHT: 100%
+}
+A {
+	COLOR: #336699
+}
+.content_wrapper {
+	MIN-HEIGHT: 80%; TEXT-ALIGN: center
+}
+.koders_logo {
+	MARGIN-TOP: 1%
+}
+BODY.results .koders_logo {
+	MARGIN-TOP: 30px
+}
+.searching_loc {
+	MARGIN-TOP: 5px; DISPLAY: block; FONT-WEIGHT: normal; FONT-SIZE: 11px; MARGIN-BOTTOM: 20px; COLOR: #333; FONT-FAMILY: arial
+}
+.search_bar {
+	BACKGROUND-IMAGE: url(http://www.koders.com/media/images/homepage/search_panel_background.gif); MARGIN: 0px auto; WIDTH: 584px; BACKGROUND-REPEAT: no-repeat; POSITION: relative; HEIGHT: 90px; TEXT-ALIGN: left
+}
+.search_bar .search_box {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 4px; FONT-SIZE: 14px; LEFT: 18px; PADDING-BOTTOM: 0px; WIDTH: 452px; PADDING-TOP: 4px; FONT-FAMILY: Verdana, Kalimati; POSITION: absolute; TOP: 16px; HEIGHT: 28px
+}
+.search_bar .searchBG {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 4px; FONT-SIZE: 14px; LEFT: 18px; PADDING-BOTTOM: 0px; WIDTH: 452px; PADDING-TOP: 4px; FONT-FAMILY: Verdana, Kalimati; POSITION: absolute; TOP: 16px; HEIGHT: 28px
+}
+.search_bar .searchBG {
+	FONT-SIZE: 12px; BACKGROUND: url(http://www.koders.com/media/images/homepage/search_input_bg.gif) white repeat-x 0px 0px; OVERFLOW: hidden; COLOR: #aaa; PADDING-TOP: 6px; TEXT-ALIGN: center
+}
+UNKNOWN {
+	WIDTH: 475px! important; HEIGHT: 22px! important
+}
+.search_bar .search_box {
+	BORDER-RIGHT: #274e74 1px solid; BORDER-TOP: #274e74 1px solid; BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-LEFT: #274e74 1px solid; BORDER-BOTTOM: #274e74 1px solid
+}
+.search_bar .options {
+	LEFT: 18px; WIDTH: 260px; POSITION: absolute; TOP: 56px
+}
+.lanaguage_select_box {
+	MARGIN-RIGHT: 10px
+}
+.options SELECT {
+	FONT-SIZE: 11px; VERTICAL-ALIGN: top; WIDTH: 112px
+}
+.options .info_bubble {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; LEFT: 3px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; POSITION: relative; TOP: 1px
+}
+.options .info_bubble IMG {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+.search_button_container {
+	LEFT: 470px; POSITION: absolute; TOP: 16px
+}
+.search_button {
+	BORDER-RIGHT: medium none; BACKGROUND-POSITION: -10px top; BORDER-TOP: medium none; MARGIN-TOP: 0px; DISPLAY: block; FLOAT: left; BACKGROUND-IMAGE: url(http://www.koders.com/media/images/homepage/search_button.gif); BORDER-LEFT: medium none; WIDTH: 85px; CURSOR: pointer; BORDER-BOTTOM: medium none; HEIGHT: 29px
+}
+.search_button_hover {
+	BORDER-RIGHT: medium none; BACKGROUND-POSITION: -10px -29px; BORDER-TOP: medium none; MARGIN-TOP: 0px; DISPLAY: block; FLOAT: left; BACKGROUND-IMAGE: url(http://www.koders.com/media/images/homepage/search_button.gif); BORDER-LEFT: medium none; WIDTH: 85px; CURSOR: pointer; BORDER-BOTTOM: medium none; HEIGHT: 29px
+}
+.search_button_downarrow {
+	DISPLAY: block; FLOAT: left; BACKGROUND-IMAGE: url(http://www.koders.com/media/images/homepage/search_button_extender.gif); MARGIN-LEFT: -12px; WIDTH: 23px; HEIGHT: 29px
+}
+.search_button_downarrow:hover {
+	BACKGROUND-POSITION: 0px -29px
+}
+.search_button:hover {
+	BACKGROUND-POSITION: 0px -29px
+}
+.search_button_extender {
+	MARGIN-TOP: 0px; DISPLAY: block; FLOAT: left; BACKGROUND-IMAGE: url(http://www.koders.com/media/images/homepage/search_button_extender.gif); WIDTH: 23px; CURSOR: pointer; HEIGHT: 29px
+}
+.search_button_extender SPAN {
+	DISPLAY: none
+}
+.search_button_extender:hover {
+	BACKGROUND-IMAGE: url(http://www.koders.com/media/images/homepage/search_button_extender_oo.gif)
+}
+.search_bar .search_button:hover {
+	BACKGROUND-IMAGE: url(http://www.koders.com/media/images/homepage/search_button_oo.gif)
+}
+.search_examples TABLE TD {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; PADDING-BOTTOM: 8px; PADDING-TOP: 8px
+}
+.clear {
+	OVERFLOW: hidden; WIDTH: 100%
+}
+.helper_text {
+	PADDING-RIGHT: 3px; MARGIN-TOP: 10px; DISPLAY: block; PADDING-LEFT: 3px; FONT-SIZE: 12px; COLOR: #585858; FONT-FAMILY: Arial, Garuda, Freesans; POSITION: relative; HEIGHT: 50px; TEXT-ALIGN: center
+}
+.helper_text STRONG {
+	COLOR: #366ba0
+}
+#footer_wrapper {
+	MARGIN: -80px auto 0px; WIDTH: 100%; POSITION: relative; HEIGHT: 80px; TEXT-ALIGN: center
+}
+BODY.results .content_wrapper {
+	HEIGHT: auto
+}
+BODY.results #footer_wrapper {
+	MARGIN-TOP: 0px
+}
+#ft {
+	FONT-SIZE: 12px; FONT-FAMILY: Verdana, Kalimati; POSITION: relative; HEIGHT: 80px
+}
+#footer {
+	CLEAR: both; BORDER-TOP: #dbdbdb 1px solid; MARGIN: 0px auto; WIDTH: 615px; COLOR: #acacac; PADDING-TOP: 17px; TEXT-ALIGN: center
+}
+#footer .row_2 {
+	MARGIN: 15px auto 0px; WIDTH: 605px; FONT-FAMILY: Arial, Garuda, Freesans
+}
+#footer .copy {
+	CLEAR: left; DISPLAY: block; FLOAT: left
+}
+#footer .feed {
+	CLEAR: right; MARGIN-TOP: -1px; DISPLAY: block; FLOAT: right; VERTICAL-ALIGN: middle; LINE-HEIGHT: 16px
+}
+#footer .feed A {
+	COLOR: #ce4900; LINE-HEIGHT: 16px; HEIGHT: 16px
+}
+#footer .feed A:hover {
+	COLOR: #ce4900; LINE-HEIGHT: 16px; HEIGHT: 16px
+}
+#footer .feed IMG {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: -3px 0px 0px; VERTICAL-ALIGN: middle; PADDING-TOP: 0px
+}
+#footer A {
+	COLOR: #4c4c4c; TEXT-DECORATION: none
+}
+#footer A:hover {
+	COLOR: #336699; TEXT-DECORATION: underline
+}
+.more_wrapper {
+	TEXT-ALIGN: center
+}
+.more {
+	CLEAR: both; MARGIN-TOP: -10px; MARGIN-LEFT: auto; OVERFLOW: hidden; WIDTH: 590px; COLOR: #585858; MARGIN-RIGHT: auto; POSITION: relative; TEXT-ALIGN: left
+}
+.more .top {
+	BACKGROUND-POSITION: 0px 24px; Z-INDEX: 7000; BACKGROUND-IMAGE: url(http://www.koders.com/media/images/homepage/more_top.gif); OVERFLOW: hidden; BACKGROUND-REPEAT: no-repeat; POSITION: relative; HEIGHT: 32px
+}
+.more .tab_strip {
+	RIGHT: 9px; OVERFLOW: hidden; WIDTH: 289px; POSITION: absolute
+}
+.more .content {
+	BACKGROUND-POSITION: left bottom; MIN-HEIGHT: 270px; BACKGROUND-IMAGE: url(http://www.koders.com/media/images/homepage/more_bottom.gif); OVERFLOW: hidden; WIDTH: 100%; HEIGHT: auto
+}
+ HTML .more .content {
+	HEIGHT: 270px
+}
+BODY.no-results .more .content {
+	MIN-HEIGHT: 0px
+}
+ HTML BODY.no-results .more .content {
+	HEIGHT: auto
+}
+.welcome_content {
+	HEIGHT: auto
+}
+.welcome_content IFRAME {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; MARGIN-BOTTOM: 10px; MARGIN-LEFT: 10px; OVERFLOW: hidden; BORDER-LEFT: 0px; WIDTH: 97%; BORDER-BOTTOM: 0px; HEIGHT: 250px
+}
+.search_examples_content {
+	DISPLAY: none
+}
+.search_examples_content TABLE TD {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; FONT-SIZE: 11px; PADDING-BOTTOM: 8px; PADDING-TOP: 8px
+}
+.search_examples_content TABLE {
+	MARGIN: 8px; WIDTH: 100%
+}
+.search_examples_content P {
+	MARGIN: 0px
+}
+.featured_content {
+	HEIGHT: auto
+}
+.featured_content IFRAME {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; MARGIN-BOTTOM: 10px; MARGIN-LEFT: 10px; OVERFLOW: hidden; BORDER-LEFT: 0px; WIDTH: 97%; BORDER-BOTTOM: 0px; HEIGHT: 250px
+}
+.tab_strip SPAN {
+	DISPLAY: none
+}
+.welcome_tab_off {
+	DISPLAY: block; FLOAT: right; BACKGROUND-IMAGE: url(http://www.koders.com/media/images/homepage/welcome_tab_off.gif); WIDTH: 87px; CURSOR: pointer; HEIGHT: 27px
+}
+.welcome_tab_off_alt {
+	DISPLAY: block; FLOAT: right; BACKGROUND-IMAGE: url(http://www.koders.com/media/images/homepage/welcome_tab_off_2.gif); WIDTH: 87px; CURSOR: pointer; HEIGHT: 27px
+}
+.welcome_tab_on {
+	DISPLAY: block; FLOAT: right; BACKGROUND-IMAGE: url(http://www.koders.com/media/images/homepage/welcome_tab.gif); WIDTH: 87px; CURSOR: pointer; HEIGHT: 27px
+}
+.welcome_tab_on SPAN {
+	DISPLAY: none
+}
+.welcome_tab_off SPAN {
+	DISPLAY: none
+}
+.search_examples_tab_on {
+	DISPLAY: block; FLOAT: right; BACKGROUND-IMAGE: url(http://www.koders.com/media/images/homepage/search_examples_tab_on.gif); WIDTH: 122px; CURSOR: pointer; HEIGHT: 27px
+}
+.search_examples_tab_off {
+	DISPLAY: block; FLOAT: right; BACKGROUND-IMAGE: url(http://www.koders.com/media/images/homepage/search_examples_tab_off_1.gif); WIDTH: 122px; CURSOR: pointer; HEIGHT: 27px
+}
+.search_examples_tab_off_alt {
+	DISPLAY: block; FLOAT: right; BACKGROUND-IMAGE: url(http://www.koders.com/media/images/homepage/search_examples_tab_off_2.gif); WIDTH: 122px; CURSOR: pointer; HEIGHT: 27px
+}
+.search_examples_tab_on SPAN {
+	DISPLAY: none
+}
+.search_examples_tab_off SPAN {
+	DISPLAY: none
+}
+.featured_tab_on {
+	DISPLAY: block; FLOAT: right; BACKGROUND-IMAGE: url(http://media.blackducksoftware.com/koders/bds/featured_tab_on.gif); WIDTH: 80px; CURSOR: pointer; HEIGHT: 27px
+}
+.featured_tab_off {
+	DISPLAY: block; FLOAT: right; BACKGROUND-IMAGE: url(http://media.blackducksoftware.com/koders/bds/featured_tab_off.gif); WIDTH: 80px; CURSOR: pointer; HEIGHT: 27px
+}
+.featured_tab_on SPAN {
+	DISPLAY: none
+}
+.featured_tab_off SPAN {
+	DISPLAY: none
+}
+.results .bottom_spacer {
+	DISPLAY: none
+}
+.bottom_spacer {
+	HEIGHT: 100px
+}
+.topToolbarInner A {
+	TEXT-DECORATION: none! important
+}
+#search-examples TD {
+	VERTICAL-ALIGN: top
+}
+#search-examples LABEL {
+	FONT-WEIGHT: bold; WHITE-SPACE: nowrap
+}
+#teamstatus_wrapper  {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+#search-examples-old TD {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+#search-table-old TD {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px
+}
+BODY.home DIV.error-pane {
+	MARGIN: auto; WIDTH: 390px
+}
+.no-results {
+	PADDING-TOP: 10px; TEXT-ALIGN: center
+}
+BODY.no-results {
+	PADDING-TOP: 0px
+}
+.no-results SPAN.error_message {
+	DISPLAY: block; MARGIN-BOTTOM: 15px
+}
+.no-results LABEL {
+	FONT-SIZE: 0.9em
+}
+.no-results UL {
+	MARGIN-TOP: 10px; PADDING-LEFT: 20px; LIST-STYLE-TYPE: disc
+}
+.no-results UL LI {
+	
+}
+.no-results .error-pane {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: auto! important; PADDING-TOP: 0px
+}
+.no-results .error-pane .more .content {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 20px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.no-results .error-pane LABEL {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px
+}
+.no-results .error_message {
+	MARGIN-BOTTOM: 10px
+}
+#search-scope {
+	MIN-HEIGHT: 50px; MARGIN: 10px auto 0px
+}

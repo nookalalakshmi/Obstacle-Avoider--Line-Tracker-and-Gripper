@@ -1,0 +1,181 @@
+   1               		.file	"robokits.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	main
+  20               	main:
+  21               	.LFB7:
+  22               	.LM1:
+  23               	/* prologue: function */
+  24               	/* frame size = 0 */
+  25               	.LM2:
+  26 0000 80EF      		ldi r24,lo8(-16)
+  27 0002 8ABB      		out 58-32,r24
+  28               	.LBB54:
+  29               	.LBB55:
+  30               	.LBB56:
+  31               	.LBB57:
+  32               	.LM3:
+  33 0004 24E2      		ldi r18,lo8(-3036)
+  34 0006 34EF      		ldi r19,hi8(-3036)
+  35               	.L2:
+  36               	.LBE57:
+  37               	.LBE56:
+  38               	.LBE55:
+  39               	.LBE54:
+  40               	.LM4:
+  41 0008 1BBA      		out 59-32,__zero_reg__
+  42               	.LBB61:
+  43               	.LBB60:
+  44               	.LBB59:
+  45               	.LBB58:
+  46               	.LM5:
+  47 000a C901      		movw r24,r18
+  48               	.LVL0:
+  49               	/* #APP */
+  50               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  51 000c 0197      		1: sbiw r24,1
+  52 000e 01F4      		brne 1b
+  53               	 ;  0 "" 2
+  54               	/* #NOAPP */
+  55               	.LBE58:
+  56               	.LBE59:
+  57               	.LBE60:
+  58               	.LBE61:
+  59               	.LBB62:
+  60               	.LBB63:
+  61               	.LBB64:
+  62               	.LBB65:
+  63 0010 C901      		movw r24,r18
+  64               	.LVL1:
+  65               	/* #APP */
+  66               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  67 0012 0197      		1: sbiw r24,1
+  68 0014 01F4      		brne 1b
+  69               	 ;  0 "" 2
+  70               	/* #NOAPP */
+  71               	.LBE65:
+  72               	.LBE64:
+  73               	.LBE63:
+  74               	.LBE62:
+  75               	.LBB66:
+  76               	.LBB67:
+  77               	.LBB68:
+  78               	.LBB69:
+  79 0016 C901      		movw r24,r18
+  80               	.LVL2:
+  81               	/* #APP */
+  82               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  83 0018 0197      		1: sbiw r24,1
+  84 001a 01F4      		brne 1b
+  85               	 ;  0 "" 2
+  86               	/* #NOAPP */
+  87               	.LBE69:
+  88               	.LBE68:
+  89               	.LBE67:
+  90               	.LBE66:
+  91               	.LBB70:
+  92               	.LBB71:
+  93               	.LBB72:
+  94               	.LBB73:
+  95 001c C901      		movw r24,r18
+  96               	.LVL3:
+  97               	/* #APP */
+  98               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  99 001e 0197      		1: sbiw r24,1
+ 100 0020 01F4      		brne 1b
+ 101               	 ;  0 "" 2
+ 102               	/* #NOAPP */
+ 103               	.LBE73:
+ 104               	.LBE72:
+ 105               	.LBE71:
+ 106               	.LBE70:
+ 107               	.LM6:
+ 108 0022 DC9A      		sbi 59-32,4
+ 109               	.LBB74:
+ 110               	.LBB75:
+ 111               	.LBB76:
+ 112               	.LBB77:
+ 113               	.LM7:
+ 114 0024 C901      		movw r24,r18
+ 115               	.LVL4:
+ 116               	/* #APP */
+ 117               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 118 0026 0197      		1: sbiw r24,1
+ 119 0028 01F4      		brne 1b
+ 120               	 ;  0 "" 2
+ 121               	/* #NOAPP */
+ 122               	.LBE77:
+ 123               	.LBE76:
+ 124               	.LBE75:
+ 125               	.LBE74:
+ 126               	.LBB78:
+ 127               	.LBB79:
+ 128               	.LBB80:
+ 129               	.LBB81:
+ 130 002a C901      		movw r24,r18
+ 131               	.LVL5:
+ 132               	/* #APP */
+ 133               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 134 002c 0197      		1: sbiw r24,1
+ 135 002e 01F4      		brne 1b
+ 136               	 ;  0 "" 2
+ 137               	/* #NOAPP */
+ 138               	.LBE81:
+ 139               	.LBE80:
+ 140               	.LBE79:
+ 141               	.LBE78:
+ 142               	.LBB82:
+ 143               	.LBB83:
+ 144               	.LBB84:
+ 145               	.LBB85:
+ 146 0030 C901      		movw r24,r18
+ 147               	.LVL6:
+ 148               	/* #APP */
+ 149               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 150 0032 0197      		1: sbiw r24,1
+ 151 0034 01F4      		brne 1b
+ 152               	 ;  0 "" 2
+ 153               	/* #NOAPP */
+ 154               	.LBE85:
+ 155               	.LBE84:
+ 156               	.LBE83:
+ 157               	.LBE82:
+ 158               	.LBB86:
+ 159               	.LBB87:
+ 160               	.LBB88:
+ 161               	.LBB89:
+ 162 0036 C901      		movw r24,r18
+ 163               	.LVL7:
+ 164               	/* #APP */
+ 165               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 166 0038 0197      		1: sbiw r24,1
+ 167 003a 01F4      		brne 1b
+ 168               	 ;  0 "" 2
+ 169               	/* #NOAPP */
+ 170 003c 00C0      		rjmp .L2
+ 171               	.LBE89:
+ 172               	.LBE88:
+ 173               	.LBE87:
+ 174               	.LBE86:
+ 175               	.LFE7:
+ 201               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\Users\ankit\AppData\Local\Temp/ccbgEvjk.s:2      *ABS*:0000003f __SREG__
+C:\Users\ankit\AppData\Local\Temp/ccbgEvjk.s:3      *ABS*:0000003e __SP_H__
+C:\Users\ankit\AppData\Local\Temp/ccbgEvjk.s:4      *ABS*:0000003d __SP_L__
+C:\Users\ankit\AppData\Local\Temp/ccbgEvjk.s:5      *ABS*:00000034 __CCP__
+C:\Users\ankit\AppData\Local\Temp/ccbgEvjk.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\ankit\AppData\Local\Temp/ccbgEvjk.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\ankit\AppData\Local\Temp/ccbgEvjk.s:20     .text:00000000 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

@@ -1,0 +1,135 @@
+   1               		.file	"robokits.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	main
+  20               	main:
+  21               	.LFB7:
+  22               	.LM1:
+  23               	/* prologue: function */
+  24               	/* frame size = 0 */
+  25               	.LM2:
+  26 0000 80EF      		ldi r24,lo8(-16)
+  27 0002 8ABB      		out 58-32,r24
+  28               	.LM3:
+  29 0004 8BEF      		ldi r24,lo8(-5)
+  30 0006 87BB      		out 55-32,r24
+  31               	.LM4:
+  32 0008 91EF      		ldi r25,lo8(-15)
+  33 000a 91BB      		out 49-32,r25
+  34               	.LM5:
+  35 000c 8FEF      		ldi r24,lo8(-1)
+  36 000e 84BB      		out 52-32,r24
+  37               	.LM6:
+  38 0010 DC9A      		sbi 59-32,4
+  39               	.LM7:
+  40 0012 C29A      		sbi 56-32,2
+  41               	.LM8:
+  42 0014 919A      		sbi 50-32,1
+  43               	.LM9:
+  44 0016 929A      		sbi 50-32,2
+  45               	.LM10:
+  46 0018 939A      		sbi 50-32,3
+  47               	.LM11:
+  48 001a A89A      		sbi 53-32,0
+  49               	.LM12:
+  50 001c AB9A      		sbi 53-32,3
+  51               	.LM13:
+  52 001e 81B3      		in r24,49-32
+  53 0020 8066      		ori r24,lo8(96)
+  54 0022 81BB      		out 49-32,r24
+  55               	.LM14:
+  56 0024 9FBD      		out 79-32,r25
+  57               	.LM15:
+  58 0026 8AE0      		ldi r24,lo8(10)
+  59 0028 8EBD      		out 78-32,r24
+  60 002a 20E0      		ldi r18,lo8(0)
+  61               	.LVL0:
+  62               	.LBB18:
+  63               	.LBB19:
+  64               	.LBB20:
+  65               	.LBB21:
+  66               	.LM16:
+  67 002c 4AE6      		ldi r20,lo8(6250)
+  68 002e 58E1      		ldi r21,hi8(6250)
+  69 0030 00C0      		rjmp .L8
+  70               	.LVL1:
+  71               	.L3:
+  72               	.LBE21:
+  73               	.LBE20:
+  74               	.LBE19:
+  75               	.LBE18:
+  76               	.LM17:
+  77 0032 2ABD      		out 74-32,r18
+  78               	.LM18:
+  79 0034 28BD      		out 72-32,r18
+  80               	.LBB25:
+  81               	.LBB26:
+  82               	.LBB27:
+  83               	.LBB28:
+  84               	.LM19:
+  85 0036 CA01      		movw r24,r20
+  86               	.LVL2:
+  87               	/* #APP */
+  88               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  89 0038 0197      		1: sbiw r24,1
+  90 003a 01F4      		brne 1b
+  91               	 ;  0 "" 2
+  92               	/* #NOAPP */
+  93               	.LBE28:
+  94               	.LBE27:
+  95               	.LBE26:
+  96               	.LBE25:
+  97               	.LM20:
+  98 003c 2F5F      		subi r18,lo8(-(1))
+  99               	.LVL3:
+ 100               	.L8:
+ 101 003e 2F3F      		cpi r18,lo8(-1)
+ 102 0040 01F4      		brne .L3
+ 103               	.L6:
+ 104               	.LM21:
+ 105 0042 2ABD      		out 74-32,r18
+ 106               	.LM22:
+ 107 0044 28BD      		out 72-32,r18
+ 108               	.LBB29:
+ 109               	.LBB24:
+ 110               	.LBB23:
+ 111               	.LBB22:
+ 112               	.LM23:
+ 113 0046 CA01      		movw r24,r20
+ 114               	.LVL4:
+ 115               	/* #APP */
+ 116               	 ;  105 "c:/winavr-20080610/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 117 0048 0197      		1: sbiw r24,1
+ 118 004a 01F4      		brne 1b
+ 119               	 ;  0 "" 2
+ 120               	/* #NOAPP */
+ 121               	.LBE22:
+ 122               	.LBE23:
+ 123               	.LBE24:
+ 124               	.LBE29:
+ 125               	.LM24:
+ 126 004c 2150      		subi r18,lo8(-(-1))
+ 127 004e 01F4      		brne .L6
+ 128 0050 00C0      		rjmp .L8
+ 129               	.LFE7:
+ 155               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 robokits.c
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccaFhF01.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccaFhF01.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccaFhF01.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccaFhF01.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccaFhF01.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccaFhF01.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\Sandeep\LOCALS~1\Temp/ccaFhF01.s:20     .text:00000000 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

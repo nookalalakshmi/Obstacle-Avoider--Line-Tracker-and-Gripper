@@ -1,0 +1,339 @@
+BODY {
+	COLOR: black; BACKGROUND-COLOR: white
+}
+BODY.revised {
+	MARGIN-LEFT: 10px; COLOR: black; PADDING-TOP: 0.2em; BACKGROUND-COLOR: white
+}
+SPAN.mv {
+	FONT-STYLE: italic
+}
+SPAN.md {
+	TEXT-DECORATION: line-through
+}
+SPAN.pk {
+	FONT-WEIGHT: bold
+}
+SPAN.pkdef {
+	FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+SPAN.pv {
+	FONT-STYLE: italic
+}
+SPAN.pvdef {
+	FONT-STYLE: italic; TEXT-DECORATION: underline
+}
+SPAN.kwd {
+	FONT-WEIGHT: bold
+}
+SPAN.kdwdef {
+	FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+SPAN.oper {
+	FONT-STYLE: normal
+}
+SPAN.operdef {
+	TEXT-DECORATION: underline
+}
+SPAN.var {
+	FONT-STYLE: italic
+}
+SPAN.vardef {
+	FONT-STYLE: italic; TEXT-DECORATION: underline
+}
+DIV.dangertitle {
+	MARGIN-TOP: 1em; FONT-WEIGHT: bold
+}
+DIV.danger {
+	BORDER-RIGHT: thin solid; PADDING-RIGHT: 5px; BORDER-TOP: thin solid; MARGIN-TOP: 2px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 5px; BORDER-LEFT: thin solid; PADDING-TOP: 5px; BORDER-BOTTOM: thin solid
+}
+DIV.cautiontitle {
+	MARGIN-TOP: 1em; FONT-WEIGHT: bold
+}
+DIV.caution {
+	FONT-WEIGHT: bold
+}
+DIV.attention {
+	MARGIN-TOP: 1em
+}
+SPAN.attentiontitle {
+	FONT-WEIGHT: bold
+}
+DIV.notetitle {
+	FONT-WEIGHT: bold
+}
+DIV.notebody {
+	MARGIN-LEFT: 2em
+}
+DIV.note-noindent {
+	MARGIN-TOP: 1em; MARGIN-BOTTOM: 1em
+}
+SPAN.notetitle {
+	FONT-WEIGHT: bold
+}
+DIV.fnnum {
+	FLOAT: left
+}
+DIV.fntext {
+	MARGIN-LEFT: 2em
+}
+DIV.stepl {
+	MARGIN-LEFT: 2em
+}
+DIV.steplnum {
+	FLOAT: left
+}
+DIV.stepltext {
+	MARGIN-LEFT: 5em
+}
+DIV.notelisttitle {
+	FONT-WEIGHT: bold
+}
+DIV.warningtitle {
+	FONT-WEIGHT: bold
+}
+DIV.warningbody {
+	MARGIN-LEFT: 2em
+}
+UL.simple {
+	LIST-STYLE-TYPE: none
+}
+H2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 1.09em
+}
+H3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 1.09em
+}
+H4 {
+	FONT-WEIGHT: bold; FONT-SIZE: 1.09em
+}
+H5 {
+	FONT-WEIGHT: bold; FONT-SIZE: 1.09em
+}
+H6 {
+	FONT-WEIGHT: bold; FONT-SIZE: 1.09em
+}
+DIV.headtitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 1em; MARGIN-LEFT: 0em
+}
+DIV.head0 {
+	BORDER-TOP: thin solid; MARGIN-TOP: 0.5em; FONT-WEIGHT: bold; BORDER-LEFT-WIDTH: thin; FONT-SIZE: 1em; BORDER-BOTTOM-WIDTH: thin; MARGIN-LEFT: 0em; BORDER-RIGHT-WIDTH: thin
+}
+DIV.head1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 0.9em; MARGIN-LEFT: 1em; TEXT-INDENT: -1em; PADDING-TOP: 0.5em
+}
+DIV.head2 {
+	FONT-WEIGHT: normal; FONT-SIZE: 0.8em; MARGIN-LEFT: 2em; TEXT-INDENT: -1em
+}
+DIV.head3 {
+	FONT-WEIGHT: normal; FONT-SIZE: 0.8em; MARGIN-LEFT: 3em; TEXT-INDENT: -1em
+}
+DIV.head4 {
+	FONT-WEIGHT: normal; FONT-SIZE: 0.8em; MARGIN-LEFT: 4em; TEXT-INDENT: -1em
+}
+DIV.head5 {
+	FONT-WEIGHT: normal; FONT-SIZE: 0.8em; MARGIN-LEFT: 5em; TEXT-INDENT: -1em
+}
+DIV.head6 {
+	FONT-WEIGHT: normal; FONT-SIZE: 0.8em; MARGIN-LEFT: 6em; TEXT-INDENT: -1em
+}
+DIV.head7 {
+	FONT-WEIGHT: normal; FONT-SIZE: 0.8em; MARGIN-LEFT: 7em; TEXT-INDENT: -1em
+}
+DIV.head8 {
+	FONT-WEIGHT: normal; FONT-SIZE: 0.8em; MARGIN-LEFT: 8em; TEXT-INDENT: -1em
+}
+DIV.head9 {
+	FONT-WEIGHT: normal; FONT-SIZE: 0.8em; MARGIN-LEFT: 9em; TEXT-INDENT: -1em
+}
+A.toclink {
+	TEXT-DECORATION: none
+}
+A.toclink:hover {
+	TEXT-DECORATION: underline
+}
+A.ptoclink {
+	TEXT-DECORATION: none
+}
+A.ptoclink:hover {
+	TEXT-DECORATION: underline
+}
+A.indexlink {
+	TEXT-DECORATION: none
+}
+A.indexlink:hover {
+	TEXT-DECORATION: underline
+}
+A.figurelist {
+	TEXT-DECORATION: none
+}
+A.figurelist:hover {
+	TEXT-DECORATION: underline
+}
+A.tablelist {
+	TEXT-DECORATION: none
+}
+A.tablelist:hover {
+	TEXT-DECORATION: underline
+}
+UL.indexlist {
+	LIST-STYLE-TYPE: none
+}
+DIV.ledi {
+	MARGIN-LEFT: 3em
+}
+DIV.ledesc {
+	MARGIN-LEFT: 3em
+}
+SPAN.pblktitle {
+	FONT-WEIGHT: bold
+}
+DIV.pblklblbox {
+	BORDER-RIGHT: thin solid; PADDING-RIGHT: 5px; BORDER-TOP: thin solid; MARGIN-TOP: 2px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; BORDER-LEFT: thin solid; PADDING-TOP: 5px; BORDER-BOTTOM: thin solid
+}
+SPAN.ednoticestitle {
+	FONT-WEIGHT: bold
+}
+SPAN.term {
+	FONT-STYLE: italic
+}
+SPAN.idxshow {
+	COLOR: green
+}
+DIV.msg {
+	PADDING-RIGHT: 5px; BORDER-TOP: thin solid; MARGIN-TOP: 2px; PADDING-LEFT: 5px; BORDER-LEFT-WIDTH: thin; BORDER-BOTTOM-WIDTH: thin; MARGIN-BOTTOM: 2px; PADDING-BOTTOM: 5px; PADDING-TOP: 1px; BORDER-RIGHT-WIDTH: thin
+}
+DIV.msgnum {
+	FONT-WEIGHT: bold; FLOAT: left; MARGIN-BOTTOM: 1em; MARGIN-RIGHT: 1em
+}
+DIV.code {
+	FONT-WEIGHT: bold; MARGIN-BOTTOM: 1em
+}
+DIV.msgtext {
+	FONT-WEIGHT: bold; MARGIN-BOTTOM: 1em
+}
+DIV.msgitemtitle {
+	FONT-WEIGHT: bold
+}
+P.msgitem {
+	MARGIN-TOP: 0em
+}
+SPAN.version {
+	FONT-WEIGHT: bold; FONT-STYLE: italic
+}
+SPAN.release {
+	FONT-WEIGHT: bold; FONT-STYLE: italic
+}
+SPAN.refkey {
+	FONT-WEIGHT: bold; COLOR: white; BACKGROUND-COLOR: black
+}
+TT.apl {
+	FONT-STYLE: italic
+}
+SPAN.figcap {
+	FONT-STYLE: italic
+}
+SPAN.figdesc {
+	FONT-STYLE: italic
+}
+DIV.figbox {
+	BORDER-RIGHT: thin solid; PADDING-RIGHT: 5px; BORDER-TOP: thin solid; MARGIN-TOP: 2px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; BORDER-LEFT: thin solid; PADDING-TOP: 5px; BORDER-BOTTOM: thin solid
+}
+DIV.figrules {
+	PADDING-RIGHT: 5px; BORDER-TOP: thin solid; MARGIN-TOP: 2px; PADDING-LEFT: 5px; BORDER-LEFT-WIDTH: thin; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BORDER-BOTTOM: thin solid; BORDER-RIGHT-WIDTH: thin
+}
+DIV.fignone {
+	BORDER-RIGHT: thin; PADDING-RIGHT: 5px; BORDER-TOP: thin; MARGIN-TOP: 2px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; BORDER-LEFT: thin; PADDING-TOP: 5px; BORDER-BOTTOM: thin
+}
+DIV.qualifstart {
+	BORDER-RIGHT: thin solid; PADDING-RIGHT: 5px; BORDER-TOP: thin solid; MARGIN-TOP: 2px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; BORDER-BOTTOM-WIDTH: thin; MARGIN-BOTTOM: 2px; PADDING-BOTTOM: 5px; BORDER-LEFT: thin solid; PADDING-TOP: 1px; TEXT-ALIGN: center
+}
+DIV.qualifend {
+	BORDER-TOP-WIDTH: thin; BORDER-RIGHT: thin solid; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; MARGIN-BOTTOM: 2px; PADDING-BOTTOM: 1px; BORDER-LEFT: thin solid; PADDING-TOP: 5px; BORDER-BOTTOM: thin solid; TEXT-ALIGN: center
+}
+DT.qualifstart {
+	BORDER-RIGHT: thin solid; PADDING-RIGHT: 5px; BORDER-TOP: thin solid; MARGIN-TOP: 2px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; BORDER-BOTTOM-WIDTH: thin; MARGIN-BOTTOM: 2px; PADDING-BOTTOM: 5px; BORDER-LEFT: thin solid; PADDING-TOP: 1px; TEXT-ALIGN: center
+}
+DT.qualifend {
+	BORDER-TOP-WIDTH: thin; BORDER-RIGHT: thin solid; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; MARGIN-BOTTOM: 2px; PADDING-BOTTOM: 1px; BORDER-LEFT: thin solid; PADDING-TOP: 5px; BORDER-BOTTOM: thin solid; TEXT-ALIGN: center
+}
+DIV.singlemastpart {
+	FONT-WEIGHT: bold; FONT-SIZE: 2em; TEXT-ALIGN: center
+}
+TD.mastpart {
+	FONT-WEIGHT: bold; FONT-SIZE: 2em
+}
+SPAN.breadcrumbs {
+	FONT-SIZE: 0.66em
+}
+CAPTION {
+	FONT-STYLE: italic; TEXT-ALIGN: left
+}
+.tbldesc {
+	FONT-STYLE: italic
+}
+DIV.mmobj {
+	MARGIN-TOP: 1em; MARGIN-BOTTOM: 1em
+}
+DIV.mmobjleft {
+	MARGIN-TOP: 1em; MARGIN-BOTTOM: 1em; TEXT-ALIGN: left
+}
+DIV.mmobjcenter {
+	MARGIN-TOP: 1em; MARGIN-BOTTOM: 1em; TEXT-ALIGN: center
+}
+DIV.mmobjright {
+	MARGIN-TOP: 1em; MARGIN-BOTTOM: 1em; TEXT-ALIGN: right
+}
+PRE.screen {
+	BORDER-RIGHT: outset; PADDING-RIGHT: 5px; BORDER-TOP: outset; MARGIN-TOP: 2px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; BORDER-LEFT: outset; PADDING-TOP: 5px; BORDER-BOTTOM: outset; WHITE-SPACE: pre; BACKGROUND-COLOR: #cccccc
+}
+.base {
+	FONT-WEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+.italic {
+	FONT-STYLE: italic
+}
+.bold {
+	FONT-WEIGHT: bold
+}
+.underlined {
+	TEXT-DECORATION: underline
+}
+.bold-italic {
+	FONT-WEIGHT: bold; FONT-STYLE: italic
+}
+.smallcaps {
+	FONT-VARIANT: small-caps
+}
+.italic-underlined {
+	FONT-STYLE: italic; TEXT-DECORATION: underline
+}
+.bold-underlined {
+	FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+.bold-italic-underlined {
+	FONT-WEIGHT: bold; FONT-STYLE: italic; TEXT-DECORATION: underline
+}
+.smallcaps-underlined {
+	FONT-VARIANT: small-caps; TEXT-DECORATION: underline
+}
+.noshade {
+	BACKGROUND-COLOR: transparent
+}
+.xlight {
+	BACKGROUND-COLOR: #dadada
+}
+.light {
+	BACKGROUND-COLOR: #b0b0b0
+}
+.medium {
+	BACKGROUND-COLOR: #8c8c8c
+}
+.dark {
+	BACKGROUND-COLOR: #6e6e6e
+}
+.xdark {
+	BACKGROUND-COLOR: #585858
+}
+#changed {
+	FONT-WEIGHT: normal; LEFT: 1px; COLOR: black; FONT-STYLE: normal; POSITION: absolute; BACKGROUND-COLOR: white
+}
